@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+
+/Masterplan/bin
+/Masterplan/obj
+
+/Utils/bin
+/Utils/obj

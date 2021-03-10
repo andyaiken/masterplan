@@ -1,0 +1,2207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1FE3BA8-4B4F-4494-AE1F-44FF56674BE6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Masterplan</RootNamespace>
+    <AssemblyName>Masterplan</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Scroll.ico</ApplicationIcon>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Masterplan.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Masterplan.XML</DocumentationFile>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\BreakdownPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BreakdownPanel.Designer.cs">
+      <DependentUpon>BreakdownPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CalendarPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CalendarPanel.Designer.cs">
+      <DependentUpon>CalendarPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CardDeck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CardDeck.Designer.cs">
+      <DependentUpon>CardDeck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DicePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DicePanel.Designer.cs">
+      <DependentUpon>DicePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilterPanel.Designer.cs">
+      <DependentUpon>FilterPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FiveByFivePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FiveByFivePanel.Designer.cs">
+      <DependentUpon>FiveByFivePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InfoPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InfoPanel.Designer.cs">
+      <DependentUpon>InfoPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InitiativePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InitiativePanel.Designer.cs">
+      <DependentUpon>InitiativePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\KeyAbilitiesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\KeyAbilitiesPanel.Designer.cs">
+      <DependentUpon>KeyAbilitiesPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DeckGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DeckGrid.Designer.cs">
+      <DependentUpon>DeckGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DemographicsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DemographicsPanel.Designer.cs">
+      <DependentUpon>DemographicsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DiceGraphPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DiceGraphPanel.Designer.cs">
+      <DependentUpon>DiceGraphPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EncounterGauge.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EncounterGauge.Designer.cs">
+      <DependentUpon>EncounterGauge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\EncounterPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Elements\EncounterPanel.Designer.cs">
+      <DependentUpon>EncounterPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HitPointGauge.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HitPointGauge.Designer.cs">
+      <DependentUpon>HitPointGauge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LevelRangePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LevelRangePanel.Designer.cs">
+      <DependentUpon>LevelRangePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LibraryHelpPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LibraryHelpPanel.Designer.cs">
+      <DependentUpon>LibraryHelpPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\MapElementPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Elements\MapElementPanel.Designer.cs">
+      <DependentUpon>MapElementPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MapView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MapView.Designer.cs">
+      <DependentUpon>MapView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlotView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PlotView.Designer.cs">
+      <DependentUpon>PlotView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuestPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\QuestPanel.Designer.cs">
+      <DependentUpon>QuestPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\RegionalMapPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Elements\RegionalMapPanel.Designer.cs">
+      <DependentUpon>RegionalMapPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\SkillChallengePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Elements\SkillChallengePanel.Designer.cs">
+      <DependentUpon>SkillChallengePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TilePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TilePanel.Designer.cs">
+      <DependentUpon>TilePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TokenPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TokenPanel.Designer.cs">
+      <DependentUpon>TokenPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TitlePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TitlePanel.Designer.cs">
+      <DependentUpon>TitlePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Elements\TrapElementPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Elements\TrapElementPanel.Designer.cs">
+      <DependentUpon>TrapElementPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WelcomePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WelcomePanel.Designer.cs">
+      <DependentUpon>WelcomePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Ability.cs" />
+    <Compile Include="Data\Artifact.cs" />
+    <Compile Include="Data\Aura.cs" />
+    <Compile Include="Data\AutoBuildData.cs" />
+    <Compile Include="Data\Background.cs" />
+    <Compile Include="Data\Calendar.cs" />
+    <Compile Include="Data\CampaignSettings.cs" />
+    <Compile Include="Data\CombatData.cs" />
+    <Compile Include="Data\Condition.cs" />
+    <Compile Include="Data\Attachment.cs" />
+    <Compile Include="Data\Creature.cs" />
+    <Compile Include="Data\CreaturePower.cs" />
+    <Compile Include="Data\CreatureTemplate.cs" />
+    <Compile Include="Data\CustomCreature.cs" />
+    <Compile Include="Data\Damage.cs" />
+    <Compile Include="Data\Difficulty.cs" />
+    <Compile Include="Data\Encounter.cs" />
+    <Compile Include="Data\EncounterCard.cs" />
+    <Compile Include="Data\EncounterDeck.cs" />
+    <Compile Include="Data\EncounterLog.cs" />
+    <Compile Include="Data\EncounterSlot.cs" />
+    <Compile Include="Data\EncounterTemplate.cs" />
+    <Compile Include="Data\Encyclopedia.cs" />
+    <Compile Include="Data\Goal.cs" />
+    <Compile Include="Data\Hero.cs" />
+    <Compile Include="Data\ICreature.cs" />
+    <Compile Include="Data\Issue.cs" />
+    <Compile Include="Data\Library.cs" />
+    <Compile Include="Data\MagicItem.cs" />
+    <Compile Include="Data\Map.cs" />
+    <Compile Include="Data\MapSketch.cs" />
+    <Compile Include="Data\MonsterTheme.cs" />
+    <Compile Include="Data\Note.cs" />
+    <Compile Include="Data\NPC.cs" />
+    <Compile Include="Data\PlayerOption.cs" />
+    <Compile Include="Data\Parcel.cs" />
+    <Compile Include="Data\Party.cs" />
+    <Compile Include="Data\Plot.cs" />
+    <Compile Include="Data\PlotPoint.cs" />
+    <Compile Include="Data\Project.cs" />
+    <Compile Include="Data\Quest.cs" />
+    <Compile Include="Data\RegionalMap.cs" />
+    <Compile Include="Data\Role.cs" />
+    <Compile Include="Data\CombatState.cs" />
+    <Compile Include="Data\SkillChallenge.cs" />
+    <Compile Include="Data\Tile.cs" />
+    <Compile Include="Data\Token.cs" />
+    <Compile Include="Data\TokenLink.cs" />
+    <Compile Include="Data\Trap.cs" />
+    <Compile Include="Events\CardEventHandler.cs" />
+    <Compile Include="Events\MovementEventHandler.cs" />
+    <Compile Include="Events\MapSketchEventHandler.cs" />
+    <Compile Include="Events\MapAreaEventHandler.cs" />
+    <Compile Include="Events\CreatureEventHandler.cs" />
+    <Compile Include="Events\HeroEventHandler.cs" />
+    <Compile Include="Events\TileEventHandler.cs" />
+    <Compile Include="Events\TokenEventHandler.cs" />
+    <Compile Include="Extensibility\ExtensibilityManager.cs" />
+    <Compile Include="Extensibility\IAddIn.cs" />
+    <Compile Include="Extensibility\IApplication.cs" />
+    <Compile Include="Extensibility\ICommand.cs" />
+    <Compile Include="Extensibility\IPage.cs" />
+    <Compile Include="Preferences.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Session.cs" />
+    <Compile Include="Tools\AI.cs" />
+    <Compile Include="Tools\FiveByFive.cs" />
+    <Compile Include="Tools\Generators\ElfName.cs" />
+    <Compile Include="Tools\Generators\HalflingName.cs" />
+    <Compile Include="Tools\Generators\DwarfName.cs" />
+    <Compile Include="Tools\Generators\ExoticName.cs" />
+    <Compile Include="Tools\Generators\Potion.cs" />
+    <Compile Include="Tools\IO\AppImport.cs" />
+    <Compile Include="Tools\Generators\Book.cs" />
+    <Compile Include="Tools\GoalBuilder.cs" />
+    <Compile Include="Tools\HeroGroup.cs" />
+    <Compile Include="Tools\IO\CompendiumHelper.cs" />
+    <Compile Include="Tools\Conditions.cs" />
+    <Compile Include="Tools\CreatureHelper.cs" />
+    <Compile Include="Tools\Generators\DelveBuilder.cs" />
+    <Compile Include="Tools\Dice.cs" />
+    <Compile Include="Tools\Generators\EncounterBuilder.cs" />
+    <Compile Include="Tools\IO\EncounterExporter.cs" />
+    <Compile Include="Tools\Experience.cs" />
+    <Compile Include="Tools\HTML.cs" />
+    <Compile Include="Tools\Generators\MapBuilder.cs" />
+    <Compile Include="Tools\MapPrinting.cs" />
+    <Compile Include="Tools\Generators\NPCBuilder.cs" />
+    <Compile Include="Tools\Statistics.cs" />
+    <Compile Include="Tools\Generators\RoomBuilder.cs" />
+    <Compile Include="Tools\Screenshot.cs" />
+    <Compile Include="Tools\Skills.cs" />
+    <Compile Include="Tools\Generators\Treasure.cs" />
+    <Compile Include="Tools\TextHelper.cs" />
+    <Compile Include="Tools\Workspace.cs" />
+    <Compile Include="Tools\IO\CompendiumImport.cs" />
+    <Compile Include="UI\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AuraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AuraForm.Designer.cs">
+      <DependentUpon>AuraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CalendarForm.Designer.cs">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CampaignSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CampaignSettingsForm.Designer.cs">
+      <DependentUpon>CampaignSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AutoBuildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AutoBuildForm.Designer.cs">
+      <DependentUpon>AutoBuildForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CategoryListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CategoryListForm.Designer.cs">
+      <DependentUpon>CategoryListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CombatDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CombatDataForm.Designer.cs">
+      <DependentUpon>CombatDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CombatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CombatForm.Designer.cs">
+      <DependentUpon>CombatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CompendiumItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CompendiumItemForm.Designer.cs">
+      <DependentUpon>CompendiumItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CombatantSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CombatantSelectForm.Designer.cs">
+      <DependentUpon>CombatantSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AttackRollForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AttackRollForm.Designer.cs">
+      <DependentUpon>AttackRollForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArtifactBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArtifactBuilderForm.Designer.cs">
+      <DependentUpon>ArtifactBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArtifactDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArtifactDetailsForm.Designer.cs">
+      <DependentUpon>ArtifactDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArtifactSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArtifactSelectForm.Designer.cs">
+      <DependentUpon>ArtifactSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArtifactProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArtifactProfileForm.Designer.cs">
+      <DependentUpon>ArtifactProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ArtifactConcordanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArtifactConcordanceForm.Designer.cs">
+      <DependentUpon>ArtifactConcordanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TileChecklistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TileChecklistForm.Designer.cs">
+      <DependentUpon>TileChecklistForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MiniChecklistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MiniChecklistForm.Designer.cs">
+      <DependentUpon>MiniChecklistForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PowerDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PowerDetailsForm.Designer.cs">
+      <DependentUpon>PowerDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TerrainPowerDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TerrainPowerDetailsForm.Designer.cs">
+      <DependentUpon>TerrainPowerDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TerrainPowerSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TerrainPowerSelectForm.Designer.cs">
+      <DependentUpon>TerrainPowerSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GroupHealthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GroupHealthForm.Designer.cs">
+      <DependentUpon>GroupHealthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureSkillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureSkillForm.Designer.cs">
+      <DependentUpon>CreatureSkillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureSkillsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureSkillsForm.Designer.cs">
+      <DependentUpon>CreatureSkillsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureDetailsForm.Designer.cs">
+      <DependentUpon>CreatureDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureMultipleSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureMultipleSelectForm.Designer.cs">
+      <DependentUpon>CreatureMultipleSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureTemplateSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureTemplateSelectForm.Designer.cs">
+      <DependentUpon>CreatureTemplateSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EncounterReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EncounterReportForm.Designer.cs">
+      <DependentUpon>EncounterReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GroupInitiativeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GroupInitiativeForm.Designer.cs">
+      <DependentUpon>GroupInitiativeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DisplayNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DisplayNameForm.Designer.cs">
+      <DependentUpon>DisplayNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PartyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PartyForm.Designer.cs">
+      <DependentUpon>PartyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RandomCreatureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RandomCreatureForm.Designer.cs">
+      <DependentUpon>RandomCreatureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PowerStatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PowerStatisticsForm.Designer.cs">
+      <DependentUpon>PowerStatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LevelAdjustmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LevelAdjustmentForm.Designer.cs">
+      <DependentUpon>LevelAdjustmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InfoForm.Designer.cs">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SkillChallengeBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SkillChallengeBuilderForm.Designer.cs">
+      <DependentUpon>SkillChallengeBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TreasureListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TreasureListForm.Designer.cs">
+      <DependentUpon>TreasureListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MagicItemProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MagicItemProfileForm.Designer.cs">
+      <DependentUpon>MagicItemProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MagicItemBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MagicItemBuilderForm.Designer.cs">
+      <DependentUpon>MagicItemBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureTemplateStatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureTemplateStatsForm.Designer.cs">
+      <DependentUpon>CreatureTemplateStatsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureTemplateProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureTemplateProfileForm.Designer.cs">
+      <DependentUpon>CreatureTemplateProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureTemplateBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureTemplateBuilderForm.Designer.cs">
+      <DependentUpon>CreatureTemplateBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EncyclopediaEntryDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EncyclopediaEntryDetailsForm.Designer.cs">
+      <DependentUpon>EncyclopediaEntryDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IssuesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\IssuesForm.Designer.cs">
+      <DependentUpon>IssuesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TrapActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TrapActionForm.Designer.cs">
+      <DependentUpon>TrapActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TrapProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TrapProfileForm.Designer.cs">
+      <DependentUpon>TrapProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TrapBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TrapBuilderForm.Designer.cs">
+      <DependentUpon>TrapBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PowerRangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PowerRangeForm.Designer.cs">
+      <DependentUpon>PowerRangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PowerInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PowerInfoForm.Designer.cs">
+      <DependentUpon>PowerInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PowerBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PowerBuilderForm.Designer.cs">
+      <DependentUpon>PowerBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureAbilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureAbilityForm.Designer.cs">
+      <DependentUpon>CreatureAbilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureStatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureStatsForm.Designer.cs">
+      <DependentUpon>CreatureStatsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureProfileForm.Designer.cs">
+      <DependentUpon>CreatureProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DamageModListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DamageModListForm.Designer.cs">
+      <DependentUpon>DamageModListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureBuilderForm.Designer.cs">
+      <DependentUpon>CreatureBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureTemplateDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureTemplateDetailsForm.Designer.cs">
+      <DependentUpon>CreatureTemplateDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EncyclopediaImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EncyclopediaImageForm.Designer.cs">
+      <DependentUpon>EncyclopediaImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HeroSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\HeroSelectForm.Designer.cs">
+      <DependentUpon>HeroSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RechargeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RechargeForm.Designer.cs">
+      <DependentUpon>RechargeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DieRollerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DieRollerForm.Designer.cs">
+      <DependentUpon>DieRollerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FiveByFiveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FiveByFiveForm.Designer.cs">
+      <DependentUpon>FiveByFiveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MergeLibrariesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MergeLibrariesForm.Designer.cs">
+      <DependentUpon>MergeLibrariesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LibrarySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LibrarySelectForm.Designer.cs">
+      <DependentUpon>LibrarySelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionThemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionThemeForm.Designer.cs">
+      <DependentUpon>OptionThemeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RegionalMapSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RegionalMapSelectForm.Designer.cs">
+      <DependentUpon>RegionalMapSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GoalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GoalForm.Designer.cs">
+      <DependentUpon>GoalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GoalListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GoalListForm.Designer.cs">
+      <DependentUpon>GoalListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionPoisonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionPoisonForm.Designer.cs">
+      <DependentUpon>OptionPoisonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionDiseaseLevelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionDiseaseLevelForm.Designer.cs">
+      <DependentUpon>OptionDiseaseLevelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionDiseaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionDiseaseForm.Designer.cs">
+      <DependentUpon>OptionDiseaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionInformationForm.Designer.cs">
+      <DependentUpon>OptionInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionCreatureInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionCreatureInfoForm.Designer.cs">
+      <DependentUpon>OptionCreatureInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapLocationSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MapLocationSelectForm.Designer.cs">
+      <DependentUpon>MapLocationSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MapLocationForm.Designer.cs">
+      <DependentUpon>MapLocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MonsterThemePowerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MonsterThemePowerForm.Designer.cs">
+      <DependentUpon>MonsterThemePowerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RegionalMapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RegionalMapForm.Designer.cs">
+      <DependentUpon>RegionalMapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RegionalMapListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RegionalMapListForm.Designer.cs">
+      <DependentUpon>RegionalMapListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HealForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\HealForm.Designer.cs">
+      <DependentUpon>HealForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DeckBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DeckBuilderForm.Designer.cs">
+      <DependentUpon>DeckBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DeckViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DeckViewForm.Designer.cs">
+      <DependentUpon>DeckViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HeroIPlay4eForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\HeroIPlay4eForm.Designer.cs">
+      <DependentUpon>HeroIPlay4eForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HeroDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\HeroDetailsForm.Designer.cs">
+      <DependentUpon>HeroDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MagicItemSectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MagicItemSectionForm.Designer.cs">
+      <DependentUpon>MagicItemSectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MagicItemSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MagicItemSelectForm.Designer.cs">
+      <DependentUpon>MagicItemSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MagicItemDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MagicItemDetailsForm.Designer.cs">
+      <DependentUpon>MagicItemDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PremadeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PremadeForm.Designer.cs">
+      <DependentUpon>PremadeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SkillChallengeBreakdownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SkillChallengeBreakdownForm.Designer.cs">
+      <DependentUpon>SkillChallengeBreakdownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PasswordCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PasswordCheckForm.Designer.cs">
+      <DependentUpon>PasswordCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PasswordSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PasswordSetForm.Designer.cs">
+      <DependentUpon>PasswordSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RegenerationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RegenerationForm.Designer.cs">
+      <DependentUpon>RegenerationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DamageTypesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DamageTypesForm.Designer.cs">
+      <DependentUpon>DamageTypesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EncounterNoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EncounterNoteForm.Designer.cs">
+      <DependentUpon>EncounterNoteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EncyclopediaEntrySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EncyclopediaEntrySelectForm.Designer.cs">
+      <DependentUpon>EncyclopediaEntrySelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MonsterThemeSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MonsterThemeSelectForm.Designer.cs">
+      <DependentUpon>MonsterThemeSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomOverlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomOverlayForm.Designer.cs">
+      <DependentUpon>CustomOverlayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapAreaSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MapAreaSelectForm.Designer.cs">
+      <DependentUpon>MapAreaSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MonsterThemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MonsterThemeForm.Designer.cs">
+      <DependentUpon>MonsterThemeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OddsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OddsForm.Designer.cs">
+      <DependentUpon>OddsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionWeaponForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionWeaponForm.Designer.cs">
+      <DependentUpon>OptionWeaponForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QuickReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QuickReferenceForm.Designer.cs">
+      <DependentUpon>QuickReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TerrainPowerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TerrainPowerForm.Designer.cs">
+      <DependentUpon>TerrainPowerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ThemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ThemeForm.Designer.cs">
+      <DependentUpon>ThemeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TileSizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TileSizeForm.Designer.cs">
+      <DependentUpon>TileSizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TokenLinkListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TokenLinkListForm.Designer.cs">
+      <DependentUpon>TokenLinkListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EffectListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EffectListForm.Designer.cs">
+      <DependentUpon>EffectListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CompendiumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CompendiumForm.Designer.cs">
+      <DependentUpon>CompendiumForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureClassForm.Designer.cs">
+      <DependentUpon>CreatureClassForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EffectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EffectForm.Designer.cs">
+      <DependentUpon>EffectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CalendarListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CalendarListForm.Designer.cs">
+      <DependentUpon>CalendarListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CalendarEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CalendarEventForm.Designer.cs">
+      <DependentUpon>CalendarEventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CategoryForm.Designer.cs">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BackgroundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BackgroundForm.Designer.cs">
+      <DependentUpon>BackgroundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EndedEffectsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EndedEffectsForm.Designer.cs">
+      <DependentUpon>EndedEffectsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionRitualForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionRitualForm.Designer.cs">
+      <DependentUpon>OptionRitualForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionLevelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionLevelForm.Designer.cs">
+      <DependentUpon>OptionLevelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionPowerSectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionPowerSectionForm.Designer.cs">
+      <DependentUpon>OptionPowerSectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionEpicDestinyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionEpicDestinyForm.Designer.cs">
+      <DependentUpon>OptionEpicDestinyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionPowerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionPowerForm.Designer.cs">
+      <DependentUpon>OptionPowerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionFeatureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionFeatureForm.Designer.cs">
+      <DependentUpon>OptionFeatureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionParagonPathForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionParagonPathForm.Designer.cs">
+      <DependentUpon>OptionParagonPathForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionRaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionRaceForm.Designer.cs">
+      <DependentUpon>OptionRaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionBackgroundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionBackgroundForm.Designer.cs">
+      <DependentUpon>OptionBackgroundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EncyclopediaGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EncyclopediaGroupForm.Designer.cs">
+      <DependentUpon>EncyclopediaGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HandoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\HandoutForm.Designer.cs">
+      <DependentUpon>HandoutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionFeatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionFeatForm.Designer.cs">
+      <DependentUpon>OptionFeatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PausedCombatListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PausedCombatListForm.Designer.cs">
+      <DependentUpon>PausedCombatListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerOptions\OptionClassForm.Designer.cs">
+      <DependentUpon>OptionClassForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PowerBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PowerBrowserForm.Designer.cs">
+      <DependentUpon>PowerBrowserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MapSelectForm.Designer.cs">
+      <DependentUpon>MapSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapPrintingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MapPrintingForm.Designer.cs">
+      <DependentUpon>MapPrintingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LevelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LevelForm.Designer.cs">
+      <DependentUpon>LevelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ParcelSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ParcelSelectForm.Designer.cs">
+      <DependentUpon>ParcelSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerViewForm.Designer.cs">
+      <DependentUpon>PlayerViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TileLibrarySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TileLibrarySelectForm.Designer.cs">
+      <DependentUpon>TileLibrarySelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SkillChallengeSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SkillChallengeSelectForm.Designer.cs">
+      <DependentUpon>SkillChallengeSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SkillChallengeDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SkillChallengeDetailsForm.Designer.cs">
+      <DependentUpon>SkillChallengeDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TrapDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TrapDetailsForm.Designer.cs">
+      <DependentUpon>TrapDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TrapSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TrapSelectForm.Designer.cs">
+      <DependentUpon>TrapSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TrapAttackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TrapAttackForm.Designer.cs">
+      <DependentUpon>TrapAttackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TrapCountermeasureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TrapCountermeasureForm.Designer.cs">
+      <DependentUpon>TrapCountermeasureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreatureSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CreatureSelectForm.Designer.cs">
+      <DependentUpon>CreatureSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TileSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TileSelectForm.Designer.cs">
+      <DependentUpon>TileSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DetailsForm.Designer.cs">
+      <DependentUpon>DetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DemographicsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DemographicsForm.Designer.cs">
+      <DependentUpon>DemographicsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PowerAttackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PowerAttackForm.Designer.cs">
+      <DependentUpon>PowerAttackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PowerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PowerForm.Designer.cs">
+      <DependentUpon>PowerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PowerActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PowerActionForm.Designer.cs">
+      <DependentUpon>PowerActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TileBreakdownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TileBreakdownForm.Designer.cs">
+      <DependentUpon>TileBreakdownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TokenLinkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TokenLinkForm.Designer.cs">
+      <DependentUpon>TokenLinkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DateForm.Designer.cs">
+      <DependentUpon>DateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EncyclopediaEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EncyclopediaEntryForm.Designer.cs">
+      <DependentUpon>EncyclopediaEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomTokenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomTokenForm.Designer.cs">
+      <DependentUpon>CustomTokenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NPCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NPCForm.Designer.cs">
+      <DependentUpon>NPCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DamageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DamageForm.Designer.cs">
+      <DependentUpon>DamageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DamageModifierTemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DamageModifierTemplateForm.Designer.cs">
+      <DependentUpon>DamageModifierTemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DamageModifierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DamageModifierForm.Designer.cs">
+      <DependentUpon>DamageModifierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OngoingDamageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OngoingDamageForm.Designer.cs">
+      <DependentUpon>OngoingDamageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SavingThrowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SavingThrowForm.Designer.cs">
+      <DependentUpon>SavingThrowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SeasonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SeasonForm.Designer.cs">
+      <DependentUpon>SeasonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SatelliteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SatelliteForm.Designer.cs">
+      <DependentUpon>SatelliteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DayForm.Designer.cs">
+      <DependentUpon>DayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MonthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MonthForm.Designer.cs">
+      <DependentUpon>MonthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InitiativeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InitiativeForm.Designer.cs">
+      <DependentUpon>InitiativeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HeroListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\HeroListForm.Designer.cs">
+      <DependentUpon>HeroListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HeroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\HeroForm.Designer.cs">
+      <DependentUpon>HeroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomCreatureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomCreatureForm.Designer.cs">
+      <DependentUpon>CustomCreatureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomCreatureListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomCreatureListForm.Designer.cs">
+      <DependentUpon>CustomCreatureListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OverviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OverviewForm.Designer.cs">
+      <DependentUpon>OverviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DeckListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DeckListForm.Designer.cs">
+      <DependentUpon>DeckListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapAreaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MapAreaForm.Designer.cs">
+      <DependentUpon>MapAreaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MapListForm.Designer.cs">
+      <DependentUpon>MapListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MapBuilderForm.Designer.cs">
+      <DependentUpon>MapBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TileForm.Designer.cs">
+      <DependentUpon>TileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ParcelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ParcelForm.Designer.cs">
+      <DependentUpon>ParcelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ProjectForm.Designer.cs">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RoleForm.Designer.cs">
+      <DependentUpon>RoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EncounterBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EncounterBuilderForm.Designer.cs">
+      <DependentUpon>EncounterBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlotPointForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlotPointForm.Designer.cs">
+      <DependentUpon>PlotPointForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Elements\EncounterPanel.resx">
+      <DependentUpon>EncounterPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Elements\MapElementPanel.resx">
+      <DependentUpon>MapElementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MapView.resx">
+      <DependentUpon>MapView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PlotView.resx">
+      <DependentUpon>PlotView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\QuestPanel.resx">
+      <DependentUpon>QuestPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Elements\SkillChallengePanel.resx">
+      <DependentUpon>SkillChallengePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TitlePanel.resx">
+      <DependentUpon>TitlePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Elements\TrapElementPanel.resx">
+      <DependentUpon>TrapElementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WelcomePanel.resx">
+      <DependentUpon>WelcomePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AuraForm.resx">
+      <DependentUpon>AuraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CalendarForm.resx">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AutoBuildForm.resx">
+      <DependentUpon>AutoBuildForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CategoryListForm.resx">
+      <DependentUpon>CategoryListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CombatDataForm.resx">
+      <DependentUpon>CombatDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CombatForm.resx">
+      <DependentUpon>CombatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TokenLinkListForm.resx">
+      <DependentUpon>TokenLinkListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EffectListForm.resx">
+      <DependentUpon>EffectListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CompendiumForm.resx">
+      <DependentUpon>CompendiumForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureClassForm.resx">
+      <DependentUpon>CreatureClassForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EffectForm.resx">
+      <DependentUpon>EffectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CalendarListForm.resx">
+      <DependentUpon>CalendarListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CalendarEventForm.resx">
+      <DependentUpon>CalendarEventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BackgroundForm.resx">
+      <DependentUpon>BackgroundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EndedEffectsForm.resx">
+      <DependentUpon>EndedEffectsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionClassForm.resx">
+      <DependentUpon>OptionClassForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionRitualForm.resx">
+      <DependentUpon>OptionRitualForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionLevelForm.resx">
+      <DependentUpon>OptionLevelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionPowerSectionForm.resx">
+      <DependentUpon>OptionPowerSectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionEpicDestinyForm.resx">
+      <DependentUpon>OptionEpicDestinyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionPowerForm.resx">
+      <DependentUpon>OptionPowerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionFeatureForm.resx">
+      <DependentUpon>OptionFeatureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionParagonPathForm.resx">
+      <DependentUpon>OptionParagonPathForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionRaceForm.resx">
+      <DependentUpon>OptionRaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionBackgroundForm.resx">
+      <DependentUpon>OptionBackgroundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EncyclopediaGroupForm.resx">
+      <DependentUpon>EncyclopediaGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HandoutForm.resx">
+      <DependentUpon>HandoutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionFeatForm.resx">
+      <DependentUpon>OptionFeatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PausedCombatListForm.resx">
+      <DependentUpon>PausedCombatListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PowerBrowserForm.resx">
+      <DependentUpon>PowerBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapSelectForm.resx">
+      <DependentUpon>MapSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapPrintingForm.resx">
+      <DependentUpon>MapPrintingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LevelForm.resx">
+      <DependentUpon>LevelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ParcelSelectForm.resx">
+      <DependentUpon>ParcelSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerViewForm.resx">
+      <DependentUpon>PlayerViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TileLibrarySelectForm.resx">
+      <DependentUpon>TileLibrarySelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SkillChallengeSelectForm.resx">
+      <DependentUpon>SkillChallengeSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SkillChallengeDetailsForm.resx">
+      <DependentUpon>SkillChallengeDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TrapDetailsForm.resx">
+      <DependentUpon>TrapDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TrapSelectForm.resx">
+      <DependentUpon>TrapSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TrapAttackForm.resx">
+      <DependentUpon>TrapAttackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TrapCountermeasureForm.resx">
+      <DependentUpon>TrapCountermeasureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureSelectForm.resx">
+      <DependentUpon>CreatureSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TileSelectForm.resx">
+      <DependentUpon>TileSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DetailsForm.resx">
+      <DependentUpon>DetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DemographicsForm.resx">
+      <DependentUpon>DemographicsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PowerAttackForm.resx">
+      <DependentUpon>PowerAttackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PowerForm.resx">
+      <DependentUpon>PowerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PowerActionForm.resx">
+      <DependentUpon>PowerActionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TileBreakdownForm.resx">
+      <DependentUpon>TileBreakdownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TokenLinkForm.resx">
+      <DependentUpon>TokenLinkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DateForm.resx">
+      <DependentUpon>DateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EncyclopediaEntryForm.resx">
+      <DependentUpon>EncyclopediaEntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomTokenForm.resx">
+      <DependentUpon>CustomTokenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NPCForm.resx">
+      <DependentUpon>NPCForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DamageForm.resx">
+      <DependentUpon>DamageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DamageModifierTemplateForm.resx">
+      <DependentUpon>DamageModifierTemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DamageModifierForm.resx">
+      <DependentUpon>DamageModifierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OngoingDamageForm.resx">
+      <DependentUpon>OngoingDamageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SavingThrowForm.resx">
+      <DependentUpon>SavingThrowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SeasonForm.resx">
+      <DependentUpon>SeasonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SatelliteForm.resx">
+      <DependentUpon>SatelliteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DayForm.resx">
+      <DependentUpon>DayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MonthForm.resx">
+      <DependentUpon>MonthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InitiativeForm.resx">
+      <DependentUpon>InitiativeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HeroListForm.resx">
+      <DependentUpon>HeroListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HeroForm.resx">
+      <DependentUpon>HeroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomCreatureForm.resx">
+      <DependentUpon>CustomCreatureForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomCreatureListForm.resx">
+      <DependentUpon>CustomCreatureListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OverviewForm.resx">
+      <DependentUpon>OverviewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DeckListForm.resx">
+      <DependentUpon>DeckListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapAreaForm.resx">
+      <DependentUpon>MapAreaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapListForm.resx">
+      <DependentUpon>MapListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapBuilderForm.resx">
+      <DependentUpon>MapBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TileForm.resx">
+      <DependentUpon>TileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ParcelForm.resx">
+      <DependentUpon>ParcelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ProjectForm.resx">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RoleForm.resx">
+      <DependentUpon>RoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EncounterBuilderForm.resx">
+      <DependentUpon>EncounterBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlotPointForm.resx">
+      <DependentUpon>PlotPointForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LibraryForm.resx">
+      <DependentUpon>LibraryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LibraryListForm.resx">
+      <DependentUpon>LibraryListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SkillChallengeSkillForm.resx">
+      <DependentUpon>SkillChallengeSkillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TrapSkillForm.resx">
+      <DependentUpon>TrapSkillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ParcelListForm.resx">
+      <DependentUpon>ParcelListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\EncounterSelectionPage.resx">
+      <DependentUpon>EncounterSelectionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\EncounterTemplatePage.resx">
+      <DependentUpon>EncounterTemplatePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\MapAreasPage.resx">
+      <DependentUpon>MapAreasPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\MapLibrariesPage.resx">
+      <DependentUpon>MapLibrariesPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\VariantBasePage.resx">
+      <DependentUpon>VariantBasePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\VariantFinishPage.resx">
+      <DependentUpon>VariantFinishPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\VariantRolePage.resx">
+      <DependentUpon>VariantRolePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\VariantTemplatesPage.resx">
+      <DependentUpon>VariantTemplatesPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Compendium\compendiumsearch.wsdl" />
+    <None Include="Web References\Compendium\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\LibraryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LibraryForm.Designer.cs">
+      <DependentUpon>LibraryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LibraryListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LibraryListForm.Designer.cs">
+      <DependentUpon>LibraryListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SkillChallengeSkillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SkillChallengeSkillForm.Designer.cs">
+      <DependentUpon>SkillChallengeSkillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TrapSkillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TrapSkillForm.Designer.cs">
+      <DependentUpon>TrapSkillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ParcelListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ParcelListForm.Designer.cs">
+      <DependentUpon>ParcelListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Compendium\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\MapSizePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\MapSizePage.Designer.cs">
+      <DependentUpon>MapSizePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\MapTypePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\MapTypePage.Designer.cs">
+      <DependentUpon>MapTypePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\EncounterSelectionPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\EncounterSelectionPage.Designer.cs">
+      <DependentUpon>EncounterSelectionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\EncounterTemplatePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\EncounterTemplatePage.Designer.cs">
+      <DependentUpon>EncounterTemplatePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\EncounterTemplateWizard.cs" />
+    <Compile Include="Wizards\MapAreasPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\MapAreasPage.Designer.cs">
+      <DependentUpon>MapAreasPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\MapLibrariesPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\MapLibrariesPage.Designer.cs">
+      <DependentUpon>MapLibrariesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\MapWizard.cs" />
+    <Compile Include="Wizards\VariantFinishPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\VariantFinishPage.Designer.cs">
+      <DependentUpon>VariantFinishPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\VariantBasePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\VariantBasePage.Designer.cs">
+      <DependentUpon>VariantBasePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\VariantRolePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\VariantRolePage.Designer.cs">
+      <DependentUpon>VariantRolePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\VariantTemplatesPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\VariantTemplatesPage.Designer.cs">
+      <DependentUpon>VariantTemplatesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\VariantWizard.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\DicePanel.resx">
+      <DependentUpon>DicePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EncounterGauge.resx">
+      <DependentUpon>EncounterGauge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterPanel.resx">
+      <DependentUpon>FilterPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\InfoPanel.resx">
+      <DependentUpon>InfoPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LevelRangePanel.resx">
+      <DependentUpon>LevelRangePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LibraryHelpPanel.resx">
+      <DependentUpon>LibraryHelpPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TokenPanel.resx">
+      <DependentUpon>TokenPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scroll.ico" />
+    <EmbeddedResource Include="UI\CampaignSettingsForm.resx">
+      <DependentUpon>CampaignSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CompendiumItemForm.resx">
+      <DependentUpon>CompendiumItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CombatantSelectForm.resx">
+      <DependentUpon>CombatantSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AttackRollForm.resx">
+      <DependentUpon>AttackRollForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArtifactBuilderForm.resx">
+      <DependentUpon>ArtifactBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArtifactDetailsForm.resx">
+      <DependentUpon>ArtifactDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArtifactSelectForm.resx">
+      <DependentUpon>ArtifactSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArtifactProfileForm.resx">
+      <DependentUpon>ArtifactProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ArtifactConcordanceForm.resx">
+      <DependentUpon>ArtifactConcordanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TileChecklistForm.resx">
+      <DependentUpon>TileChecklistForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MiniChecklistForm.resx">
+      <DependentUpon>MiniChecklistForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PowerDetailsForm.resx">
+      <DependentUpon>PowerDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TerrainPowerDetailsForm.resx">
+      <DependentUpon>TerrainPowerDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TerrainPowerSelectForm.resx">
+      <DependentUpon>TerrainPowerSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GroupHealthForm.resx">
+      <DependentUpon>GroupHealthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureSkillForm.resx">
+      <DependentUpon>CreatureSkillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureSkillsForm.resx">
+      <DependentUpon>CreatureSkillsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureDetailsForm.resx">
+      <DependentUpon>CreatureDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureMultipleSelectForm.resx">
+      <DependentUpon>CreatureMultipleSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureTemplateSelectForm.resx">
+      <DependentUpon>CreatureTemplateSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EncounterReportForm.resx">
+      <DependentUpon>EncounterReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GroupInitiativeForm.resx">
+      <DependentUpon>GroupInitiativeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DisplayNameForm.resx">
+      <DependentUpon>DisplayNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PartyForm.resx">
+      <DependentUpon>PartyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RandomCreatureForm.resx">
+      <DependentUpon>RandomCreatureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PowerStatisticsForm.resx">
+      <DependentUpon>PowerStatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LevelAdjustmentForm.resx">
+      <DependentUpon>LevelAdjustmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InfoForm.resx">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SkillChallengeBuilderForm.resx">
+      <DependentUpon>SkillChallengeBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TreasureListForm.resx">
+      <DependentUpon>TreasureListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MagicItemProfileForm.resx">
+      <DependentUpon>MagicItemProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MagicItemBuilderForm.resx">
+      <DependentUpon>MagicItemBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureTemplateStatsForm.resx">
+      <DependentUpon>CreatureTemplateStatsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureTemplateProfileForm.resx">
+      <DependentUpon>CreatureTemplateProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureTemplateBuilderForm.resx">
+      <DependentUpon>CreatureTemplateBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EncyclopediaEntryDetailsForm.resx">
+      <DependentUpon>EncyclopediaEntryDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\IssuesForm.resx">
+      <DependentUpon>IssuesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TrapActionForm.resx">
+      <DependentUpon>TrapActionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TrapProfileForm.resx">
+      <DependentUpon>TrapProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TrapBuilderForm.resx">
+      <DependentUpon>TrapBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PowerRangeForm.resx">
+      <DependentUpon>PowerRangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PowerInfoForm.resx">
+      <DependentUpon>PowerInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PowerBuilderForm.resx">
+      <DependentUpon>PowerBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureAbilityForm.resx">
+      <DependentUpon>CreatureAbilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureStatsForm.resx">
+      <DependentUpon>CreatureStatsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureProfileForm.resx">
+      <DependentUpon>CreatureProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DamageModListForm.resx">
+      <DependentUpon>DamageModListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureBuilderForm.resx">
+      <DependentUpon>CreatureBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreatureTemplateDetailsForm.resx">
+      <DependentUpon>CreatureTemplateDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EncyclopediaImageForm.resx">
+      <DependentUpon>EncyclopediaImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HeroSelectForm.resx">
+      <DependentUpon>HeroSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RechargeForm.resx">
+      <DependentUpon>RechargeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DieRollerForm.resx">
+      <DependentUpon>DieRollerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FiveByFiveForm.resx">
+      <DependentUpon>FiveByFiveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MergeLibrariesForm.resx">
+      <DependentUpon>MergeLibrariesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LibrarySelectForm.resx">
+      <DependentUpon>LibrarySelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionThemeForm.resx">
+      <DependentUpon>OptionThemeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RegionalMapSelectForm.resx">
+      <DependentUpon>RegionalMapSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GoalForm.resx">
+      <DependentUpon>GoalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GoalListForm.resx">
+      <DependentUpon>GoalListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionPoisonForm.resx">
+      <DependentUpon>OptionPoisonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionDiseaseLevelForm.resx">
+      <DependentUpon>OptionDiseaseLevelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionDiseaseForm.resx">
+      <DependentUpon>OptionDiseaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionInformationForm.resx">
+      <DependentUpon>OptionInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionCreatureInfoForm.resx">
+      <DependentUpon>OptionCreatureInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapLocationSelectForm.resx">
+      <DependentUpon>MapLocationSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapLocationForm.resx">
+      <DependentUpon>MapLocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MonsterThemePowerForm.resx">
+      <DependentUpon>MonsterThemePowerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RegionalMapForm.resx">
+      <DependentUpon>RegionalMapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RegionalMapListForm.resx">
+      <DependentUpon>RegionalMapListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HealForm.resx">
+      <DependentUpon>HealForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DeckBuilderForm.resx">
+      <DependentUpon>DeckBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DeckViewForm.resx">
+      <DependentUpon>DeckViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HeroIPlay4eForm.resx">
+      <DependentUpon>HeroIPlay4eForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HeroDetailsForm.resx">
+      <DependentUpon>HeroDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MagicItemSectionForm.resx">
+      <DependentUpon>MagicItemSectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MagicItemSelectForm.resx">
+      <DependentUpon>MagicItemSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MagicItemDetailsForm.resx">
+      <DependentUpon>MagicItemDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PremadeForm.resx">
+      <DependentUpon>PremadeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SkillChallengeBreakdownForm.resx">
+      <DependentUpon>SkillChallengeBreakdownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PasswordCheckForm.resx">
+      <DependentUpon>PasswordCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PasswordSetForm.resx">
+      <DependentUpon>PasswordSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RegenerationForm.resx">
+      <DependentUpon>RegenerationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DamageTypesForm.resx">
+      <DependentUpon>DamageTypesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EncounterNoteForm.resx">
+      <DependentUpon>EncounterNoteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EncyclopediaEntrySelectForm.resx">
+      <DependentUpon>EncyclopediaEntrySelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MonsterThemeSelectForm.resx">
+      <DependentUpon>MonsterThemeSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomOverlayForm.resx">
+      <DependentUpon>CustomOverlayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapAreaSelectForm.resx">
+      <DependentUpon>MapAreaSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MonsterThemeForm.resx">
+      <DependentUpon>MonsterThemeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OddsForm.resx">
+      <DependentUpon>OddsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerOptions\OptionWeaponForm.resx">
+      <DependentUpon>OptionWeaponForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QuickReferenceForm.resx">
+      <DependentUpon>QuickReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TerrainPowerForm.resx">
+      <DependentUpon>TerrainPowerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ThemeForm.resx">
+      <DependentUpon>ThemeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TileSizeForm.resx">
+      <DependentUpon>TileSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\MapSizePage.resx">
+      <DependentUpon>MapSizePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\MapTypePage.resx">
+      <DependentUpon>MapTypePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Docs\Manual.docx" />
+    <None Include="Docs\Manual.pdf" />
+    <None Include="Resources\masterplan.png" />
+    <None Include="Resources\Purpled20.png" />
+    <None Include="Resources\aura.png" />
+    <None Include="Resources\S2.gif" />
+    <None Include="Resources\S3.gif" />
+    <None Include="Resources\Z1a.gif" />
+    <None Include="Resources\Z2a.gif" />
+    <None Include="Resources\Z3a.gif" />
+    <None Include="Resources\Z4a.gif" />
+    <Content Include="Docs\To Do.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.wizards.com/dndinsider/compendium/compendiumsearch.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Compendium\</RelPath>
+      <UpdateFromURL>http://www.wizards.com/dndinsider/compendium/compendiumsearch.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Masterplan_Compendium_CompendiumSearch</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Insight\Utils\Utils.csproj">
+      <Project>{6911A69E-8F57-4F71-ABF5-A4D3F6D93A43}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
