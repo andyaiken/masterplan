@@ -636,13 +636,6 @@ namespace Masterplan.UI
 			DoDragDrop(lib, DragDropEffects.Move);
 		}
 
-		private void CompendiumBtn_Click(object sender, EventArgs e)
-		{
-			CompendiumForm dlg = new CompendiumForm();
-			if (dlg.ShowDialog() == DialogResult.OK)
-				update_content(true);
-		}
-
 		private void HelpBtn_Click(object sender, EventArgs e)
 		{
 			show_help(!HelpPanel.Visible);
@@ -1076,7 +1069,7 @@ namespace Masterplan.UI
 					return;
 
 				OpenFileDialog dlg = new OpenFileDialog();
-				dlg.Filter = Program.CreatureAndMonsterFilter;
+				dlg.Filter = Program.CreatureFilter;
 				dlg.Multiselect = true;
 
 				if (dlg.ShowDialog() == DialogResult.OK)
@@ -1087,11 +1080,6 @@ namespace Masterplan.UI
 						if (filename.EndsWith("creature"))
 						{
 							c = Serialisation<Creature>.Load(filename, SerialisationMode.Binary);
-						}
-						if (filename.EndsWith("monster"))
-						{
-							string xml = File.ReadAllText(filename);
-							c = AppImport.ImportCreature(xml);
 						}
 
 						if (c != null)

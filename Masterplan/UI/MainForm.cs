@@ -95,14 +95,13 @@ namespace Masterplan.UI
 				{
 					Controls.Clear();
 
-					fWelcome = new WelcomePanel(Session.Preferences.ShowHeadlines);
+					fWelcome = new WelcomePanel();
 					fWelcome.Dock = DockStyle.Fill;
 
 					fWelcome.NewProjectClicked += new EventHandler(Welcome_NewProjectClicked);
 					fWelcome.OpenProjectClicked += new EventHandler(Welcome_OpenProjectClicked);
 					fWelcome.OpenLastProjectClicked += new EventHandler(Welcome_OpenLastProjectClicked);
 					fWelcome.DelveClicked += new EventHandler(Welcome_DelveClicked);
-					fWelcome.PremadeClicked += new EventHandler(Welcome_PremadeClicked);
 
 					Controls.Add(fWelcome);
 					Controls.Add(MainMenu);
@@ -384,7 +383,6 @@ namespace Masterplan.UI
 		MapView fDelveView = null;
 		RegionalMapPanel fMapView = null;
 
-		string fDownloadedFile = "";
 		string fPartyBreakdownSecondary = "";
 
 		#endregion
@@ -2014,52 +2012,6 @@ namespace Masterplan.UI
 			}
 		}
 
-		void Welcome_PremadeClicked(object sender, EventArgs e)
-		{
-			try
-			{
-				SaveFileDialog dlg = new SaveFileDialog();
-				dlg.Filter = Program.ProjectFilter;
-				dlg.FileName = "Example";
-				if (dlg.ShowDialog() == DialogResult.OK)
-				{
-					fDownloadedFile = dlg.FileName;
-
-					// Show the progress screen
-					Program.SplashScreen = new ProgressScreen("Downloading example adventure...", 100);
-					Program.SplashScreen.Show();
-
-					// Start the download
-					WebClient wc = new WebClient();
-					wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(wc_DownloadProgressChanged);
-					wc.DownloadFileCompleted += new System.ComponentModel.AsyncCompletedEventHandler(wc_DownloadFileCompleted);
-					wc.DownloadFileAsync(new Uri("http://www.habitualindolence.net/masterplan/downloads/example.masterplan"), fDownloadedFile);
-				}
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		void wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-		{
-			Program.SplashScreen.Progress = e.ProgressPercentage;
-		}
-
-		void wc_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
-		{
-			Program.SplashScreen.Progress = Program.SplashScreen.Actions;
-			Program.SplashScreen.CurrentAction = "Opening sample adventure...";
-
-			open_file(fDownloadedFile);
-
-			Program.SplashScreen.Close();
-			Program.SplashScreen = null;
-
-			fDownloadedFile = "";
-		}
-
 		#endregion
 
 		#region Plot view
@@ -2829,6 +2781,7 @@ namespace Masterplan.UI
 				ToolsExportHandout.Enabled = (Session.Project != null);
 				ToolsExportLoot.Enabled = (Session.Project != null);
 				ToolsIssues.Enabled = (Session.Project != null);
+				ToolsPowerStats.Enabled = (Session.Project != null);
 				ToolsTileChecklist.Enabled = (Session.Project != null);
 				ToolsMiniChecklist.Enabled = (Session.Project != null);
 
@@ -3141,22 +3094,6 @@ namespace Masterplan.UI
 			Cursor.Current = Cursors.Default;
 
 			return true;
-		}
-
-		private void AdvancedSample_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				Project previous_project = Session.Project;
-				string previous_filename = Session.FileName;
-				ViewType view = fView;
-
-				Welcome_PremadeClicked(sender, e);
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
 		}
 
 		private void FileExit_Click(object sender, EventArgs e)
@@ -3629,14 +3566,8 @@ namespace Masterplan.UI
 		{
 			try
 			{
-				//if (Session.Project != null)
-				//	Session.Project.PopulateProjectLibrary();
-
 				LibraryListForm dlg = new LibraryListForm();
 				dlg.ShowDialog();
-
-				//if (Session.Project != null)
-				//	Session.Project.SimplifyProjectLibrary();
 
 				UpdateView();
 			}
@@ -3676,66 +3607,6 @@ namespace Masterplan.UI
 					return;
 
 				System.Diagnostics.Process.Start(path);
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		private void HelpFeedback_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				System.Diagnostics.Process.Start("mailto:masterplan@habitualindolence.net?subject=Masterplan Feedback");
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		private void HelpTutorials_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				System.Diagnostics.Process.Start("http://www.habitualindolence.net/masterplan/tutorials.htm");
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		private void HelpWebsite_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				System.Diagnostics.Process.Start("http://www.habitualindolence.net/masterplan/");
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		private void HelpFacebook_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				System.Diagnostics.Process.Start("http://www.facebook.com/masterplanstudio/");
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		private void HelpTwitter_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				System.Diagnostics.Process.Start("http://www.twitter.com/Masterplan_4E/");
 			}
 			catch (Exception ex)
 			{

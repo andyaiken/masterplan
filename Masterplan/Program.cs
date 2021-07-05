@@ -186,16 +186,6 @@ namespace Masterplan
 		{
 			try
 			{
-				if (arg == "-headlines")
-				{
-					Session.Preferences.ShowHeadlines = true;
-				}
-
-				if (arg == "-noheadlines")
-				{
-					Session.Preferences.ShowHeadlines = false;
-				}
-
 				if (arg == "-creaturestats")
 				{
 					run_creature_stats();
@@ -463,7 +453,6 @@ namespace Masterplan
 		public static string EncyclopediaFilter = "Masterplan Campaign Encyclopedia|*.encyclopedia";
 		public static string RulesFilter = "Masterplan Rules|*.crunch";
 
-		public static string CreatureAndMonsterFilter = "Creatures|*.creature;*.monster";
 		public static string MonsterFilter = "Adventure Tools Creatures|*.monster";
 		public static string CreatureFilter = "Creatures|*.creature";
 		public static string CreatureTemplateFilter = "Creature Template|*.creaturetemplate";

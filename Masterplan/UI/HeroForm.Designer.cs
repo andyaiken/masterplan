@@ -92,7 +92,7 @@
 			this.FortLbl = new System.Windows.Forms.Label();
 			this.EffectsPage = new System.Windows.Forms.TabPage();
 			this.EffectList = new System.Windows.Forms.ListView();
-			this.EffectHdr = new System.Windows.Forms.ColumnHeader();
+			this.EffectHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.EffectToolbar = new System.Windows.Forms.ToolStrip();
 			this.EffectAddBtn = new System.Windows.Forms.ToolStripDropDownButton();
 			this.effectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,7 +102,6 @@
 			this.EffectRemoveBtn = new System.Windows.Forms.ToolStripButton();
 			this.EffectEditBtn = new System.Windows.Forms.ToolStripButton();
 			this.EffectLbl = new System.Windows.Forms.Label();
-			this.iPlay4eBtn = new System.Windows.Forms.Button();
 			this.ClassGroup.SuspendLayout();
 			this.RaceGroup.SuspendLayout();
 			this.NameGroup.SuspendLayout();
@@ -143,8 +142,8 @@
 			// 
 			// NameBox
 			// 
-			this.NameBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.NameBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.NameBox.Location = new System.Drawing.Point(89, 19);
 			this.NameBox.Name = "NameBox";
 			this.NameBox.Size = new System.Drawing.Size(180, 20);
@@ -193,8 +192,8 @@
 			// 
 			// SizeBox
 			// 
-			this.SizeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.SizeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.SizeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.SizeBox.Location = new System.Drawing.Point(89, 45);
 			this.SizeBox.Name = "SizeBox";
@@ -203,8 +202,8 @@
 			// 
 			// PlayerBox
 			// 
-			this.PlayerBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.PlayerBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.PlayerBox.Location = new System.Drawing.Point(89, 45);
 			this.PlayerBox.Name = "PlayerBox";
 			this.PlayerBox.Size = new System.Drawing.Size(180, 20);
@@ -221,8 +220,8 @@
 			// 
 			// RaceBox
 			// 
-			this.RaceBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.RaceBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.RaceBox.Location = new System.Drawing.Point(89, 19);
 			this.RaceBox.Name = "RaceBox";
 			this.RaceBox.Size = new System.Drawing.Size(180, 20);
@@ -239,8 +238,8 @@
 			// 
 			// ClassBox
 			// 
-			this.ClassBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.ClassBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ClassBox.Location = new System.Drawing.Point(89, 19);
 			this.ClassBox.Name = "ClassBox";
 			this.ClassBox.Size = new System.Drawing.Size(180, 20);
@@ -266,8 +265,8 @@
 			// 
 			// RoleBox
 			// 
-			this.RoleBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.RoleBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.RoleBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.RoleBox.FormattingEnabled = true;
 			this.RoleBox.Location = new System.Drawing.Point(89, 72);
@@ -277,8 +276,8 @@
 			// 
 			// SourceBox
 			// 
-			this.SourceBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.SourceBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.SourceBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
 			this.SourceBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.SourceBox.FormattingEnabled = true;
@@ -289,8 +288,8 @@
 			// 
 			// PPBox
 			// 
-			this.PPBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.PPBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.PPBox.Location = new System.Drawing.Point(89, 99);
 			this.PPBox.Name = "PPBox";
 			this.PPBox.Size = new System.Drawing.Size(180, 20);
@@ -307,8 +306,8 @@
 			// 
 			// EDBox
 			// 
-			this.EDBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.EDBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.EDBox.Location = new System.Drawing.Point(89, 125);
 			this.EDBox.Name = "EDBox";
 			this.EDBox.Size = new System.Drawing.Size(180, 20);
@@ -325,8 +324,8 @@
 			// 
 			// ClassGroup
 			// 
-			this.ClassGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.ClassGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ClassGroup.Controls.Add(this.ClassBox);
 			this.ClassGroup.Controls.Add(this.RoleBox);
 			this.ClassGroup.Controls.Add(this.EDLbl);
@@ -346,8 +345,8 @@
 			// 
 			// RaceGroup
 			// 
-			this.RaceGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.RaceGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.RaceGroup.Controls.Add(this.RaceBox);
 			this.RaceGroup.Controls.Add(this.SizeBox);
 			this.RaceGroup.Controls.Add(this.RaceLbl);
@@ -361,8 +360,8 @@
 			// 
 			// NameGroup
 			// 
-			this.NameGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.NameGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.NameGroup.Controls.Add(this.LevelBox);
 			this.NameGroup.Controls.Add(this.LevelLbl);
 			this.NameGroup.Controls.Add(this.NameBox);
@@ -409,9 +408,9 @@
 			// 
 			// Pages
 			// 
-			this.Pages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.Pages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.Pages.Controls.Add(this.GeneralPage);
 			this.Pages.Controls.Add(this.AdvancedPage);
 			this.Pages.Controls.Add(this.StatsPage);
@@ -449,8 +448,8 @@
 			// 
 			// LanguageGroup
 			// 
-			this.LanguageGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.LanguageGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.LanguageGroup.Controls.Add(this.LanguageBox);
 			this.LanguageGroup.Location = new System.Drawing.Point(6, 6);
 			this.LanguageGroup.Name = "LanguageGroup";
@@ -461,9 +460,9 @@
 			// 
 			// LanguageBox
 			// 
-			this.LanguageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.LanguageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.LanguageBox.Location = new System.Drawing.Point(6, 19);
 			this.LanguageBox.Multiline = true;
 			this.LanguageBox.Name = "LanguageBox";
@@ -473,9 +472,9 @@
 			// 
 			// PortraitGroup
 			// 
-			this.PortraitGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.PortraitGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.PortraitGroup.Controls.Add(this.PortraitPanel);
 			this.PortraitGroup.Location = new System.Drawing.Point(6, 70);
 			this.PortraitGroup.Name = "PortraitGroup";
@@ -486,9 +485,9 @@
 			// 
 			// PortraitPanel
 			// 
-			this.PortraitPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.PortraitPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.PortraitPanel.Controls.Add(this.PortraitBox);
 			this.PortraitPanel.Controls.Add(this.PortraitToolbar);
 			this.PortraitPanel.Location = new System.Drawing.Point(6, 19);
@@ -564,8 +563,8 @@
 			// 
 			// InitGroup
 			// 
-			this.InitGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.InitGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.InitGroup.Controls.Add(this.InitBox);
 			this.InitGroup.Controls.Add(this.InitLbl);
 			this.InitGroup.Location = new System.Drawing.Point(6, 202);
@@ -577,8 +576,8 @@
 			// 
 			// InitBox
 			// 
-			this.InitBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.InitBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.InitBox.Location = new System.Drawing.Point(89, 19);
 			this.InitBox.Minimum = new decimal(new int[] {
             100,
@@ -600,8 +599,8 @@
 			// 
 			// HPGroup
 			// 
-			this.HPGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.HPGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.HPGroup.Controls.Add(this.HPBox);
 			this.HPGroup.Controls.Add(this.HPLbl);
 			this.HPGroup.Location = new System.Drawing.Point(6, 6);
@@ -613,8 +612,8 @@
 			// 
 			// HPBox
 			// 
-			this.HPBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.HPBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.HPBox.Location = new System.Drawing.Point(89, 19);
 			this.HPBox.Maximum = new decimal(new int[] {
             500,
@@ -636,8 +635,8 @@
 			// 
 			// SkillsGroup
 			// 
-			this.SkillsGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.SkillsGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.SkillsGroup.Controls.Add(this.InsightBox);
 			this.SkillsGroup.Controls.Add(this.PerceptionBox);
 			this.SkillsGroup.Controls.Add(this.InsightLbl);
@@ -651,8 +650,8 @@
 			// 
 			// InsightBox
 			// 
-			this.InsightBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.InsightBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.InsightBox.Location = new System.Drawing.Point(89, 19);
 			this.InsightBox.Name = "InsightBox";
 			this.InsightBox.Size = new System.Drawing.Size(180, 20);
@@ -660,8 +659,8 @@
 			// 
 			// PerceptionBox
 			// 
-			this.PerceptionBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.PerceptionBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.PerceptionBox.Location = new System.Drawing.Point(89, 45);
 			this.PerceptionBox.Name = "PerceptionBox";
 			this.PerceptionBox.Size = new System.Drawing.Size(180, 20);
@@ -687,8 +686,8 @@
 			// 
 			// DefencesGroup
 			// 
-			this.DefencesGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.DefencesGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.DefencesGroup.Controls.Add(this.RefBox);
 			this.DefencesGroup.Controls.Add(this.WillBox);
 			this.DefencesGroup.Controls.Add(this.RefLbl);
@@ -706,8 +705,8 @@
 			// 
 			// RefBox
 			// 
-			this.RefBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.RefBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.RefBox.Location = new System.Drawing.Point(89, 71);
 			this.RefBox.Name = "RefBox";
 			this.RefBox.Size = new System.Drawing.Size(180, 20);
@@ -715,8 +714,8 @@
 			// 
 			// WillBox
 			// 
-			this.WillBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.WillBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.WillBox.Location = new System.Drawing.Point(89, 97);
 			this.WillBox.Name = "WillBox";
 			this.WillBox.Size = new System.Drawing.Size(180, 20);
@@ -742,8 +741,8 @@
 			// 
 			// ACBox
 			// 
-			this.ACBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.ACBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ACBox.Location = new System.Drawing.Point(89, 19);
 			this.ACBox.Name = "ACBox";
 			this.ACBox.Size = new System.Drawing.Size(180, 20);
@@ -751,8 +750,8 @@
 			// 
 			// FortBox
 			// 
-			this.FortBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.FortBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.FortBox.Location = new System.Drawing.Point(89, 45);
 			this.FortBox.Name = "FortBox";
 			this.FortBox.Size = new System.Drawing.Size(180, 20);
@@ -850,26 +849,26 @@
 			// effectToolStripMenuItem
 			// 
 			this.effectToolStripMenuItem.Name = "effectToolStripMenuItem";
-			this.effectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.effectToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
 			this.effectToolStripMenuItem.Text = "Effect";
 			this.effectToolStripMenuItem.Click += new System.EventHandler(this.EffectAddBtn_Click);
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(138, 6);
 			// 
 			// EffectAddToken
 			// 
 			this.EffectAddToken.Name = "EffectAddToken";
-			this.EffectAddToken.Size = new System.Drawing.Size(152, 22);
+			this.EffectAddToken.Size = new System.Drawing.Size(141, 22);
 			this.EffectAddToken.Text = "Map Token";
 			this.EffectAddToken.Click += new System.EventHandler(this.EffectAddToken_Click);
 			// 
 			// EffectAddOverlay
 			// 
 			this.EffectAddOverlay.Name = "EffectAddOverlay";
-			this.EffectAddOverlay.Size = new System.Drawing.Size(152, 22);
+			this.EffectAddOverlay.Size = new System.Drawing.Size(141, 22);
 			this.EffectAddOverlay.Text = "Map Overlay";
 			this.EffectAddOverlay.Click += new System.EventHandler(this.EffectAddOverlay_Click);
 			// 
@@ -902,16 +901,6 @@
 			this.EffectLbl.TabIndex = 2;
 			this.EffectLbl.Text = resources.GetString("EffectLbl.Text");
 			// 
-			// iPlay4eBtn
-			// 
-			this.iPlay4eBtn.Location = new System.Drawing.Point(12, 412);
-			this.iPlay4eBtn.Name = "iPlay4eBtn";
-			this.iPlay4eBtn.Size = new System.Drawing.Size(75, 23);
-			this.iPlay4eBtn.TabIndex = 3;
-			this.iPlay4eBtn.Text = "iPlay4E";
-			this.iPlay4eBtn.UseVisualStyleBackColor = true;
-			this.iPlay4eBtn.Click += new System.EventHandler(this.iPlay4eBtn_Click);
-			// 
 			// HeroForm
 			// 
 			this.AcceptButton = this.OKBtn;
@@ -919,7 +908,6 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.CancelBtn;
 			this.ClientSize = new System.Drawing.Size(319, 447);
-			this.Controls.Add(this.iPlay4eBtn);
 			this.Controls.Add(this.Pages);
 			this.Controls.Add(this.CancelBtn);
 			this.Controls.Add(this.OKBtn);
@@ -1042,7 +1030,6 @@
 		private System.Windows.Forms.ColumnHeader EffectHdr;
 		private System.Windows.Forms.Label EffectLbl;
 		private System.Windows.Forms.ToolStripButton PortraitPasteBtn;
-		private System.Windows.Forms.Button iPlay4eBtn;
 		private System.Windows.Forms.ToolStripDropDownButton EffectAddBtn;
 		private System.Windows.Forms.ToolStripMenuItem effectToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

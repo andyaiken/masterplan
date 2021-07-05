@@ -74,100 +74,6 @@ namespace Masterplan.UI
 			}
 		}
 
-		private void Import_CB_Click(object sender, EventArgs e)
-		{
-			OpenFileDialog dlg = new OpenFileDialog();
-			dlg.Filter = "Character File|*.dnd4e";
-			dlg.Multiselect = true;
-
-			if (dlg.ShowDialog() == DialogResult.OK)
-			{
-				foreach (string filename in dlg.FileNames)
-				{
-					string xml = File.ReadAllText(filename);
-					Hero hero = AppImport.ImportHero(xml);
-
-					if (hero != null)
-					{
-						add_hero(hero);
-						update_view();
-					}
-					else
-					{
-						MessageBox.Show("The character file could not be loaded.", "Masterplan", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					}
-				}
-			}
-		}
-
-		private void Import_iPlay4e_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				HeroIPlay4eForm dlg = new HeroIPlay4eForm("", true);
-				if (dlg.ShowDialog() == DialogResult.OK)
-				{
-					Hero hero = new Hero();
-					hero.Key = dlg.Key;
-
-					Cursor.Current = Cursors.WaitCursor;
-					bool ok = AppImport.ImportIPlay4e(hero);
-					Cursor.Current = Cursors.Default;
-
-					if (ok)
-					{
-						add_hero(hero);
-						update_view();
-					}
-					else
-					{
-						string str = "The character could not be found.";
-						str += Environment.NewLine;
-						str += Environment.NewLine;
-						str += "Make sure:";
-						str += Environment.NewLine;
-						str += "* The key is correct";
-						str += Environment.NewLine;
-						str += "* The character is public";
-
-						MessageBox.Show(str, "Masterplan", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		private void Import_iPlay4e_Party_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				HeroIPlay4eForm dlg = new HeroIPlay4eForm("", false);
-				if (dlg.ShowDialog() == DialogResult.OK)
-				{
-					Cursor.Current = Cursors.WaitCursor;
-					List<Hero> heroes = AppImport.ImportParty(dlg.Key);
-					Cursor.Current = Cursors.Default;
-
-					foreach (Hero hero in heroes)
-						add_hero(hero);
-
-					update_view();
-
-					if (heroes.Count == 0)
-					{
-						MessageBox.Show("No characters were found (make sure they are public).", "Masterplan", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
 		#region Random
 
 		private void RandomPC_Click(object sender, EventArgs e)
@@ -268,15 +174,6 @@ namespace Masterplan.UI
 			if (SelectedHero != null)
 			{
 				edit_hero();
-
-				//if (SelectedHero.Key == "")
-				//{
-				//    edit_hero();
-				//}
-				//else
-				//{
-				//    edit_iplay4e();
-				//}
 			}
 		}
 
@@ -292,31 +189,6 @@ namespace Masterplan.UI
 				Session.Modified = true;
 
 				update_view();
-			}
-		}
-
-		void edit_iplay4e()
-		{
-			List<Hero> list = Session.Project.Heroes.Contains(SelectedHero) ? Session.Project.Heroes : Session.Project.InactiveHeroes;
-			int index = list.IndexOf(SelectedHero);
-
-			HeroIPlay4eForm dlg = new HeroIPlay4eForm(SelectedHero.Key, true);
-			if (dlg.ShowDialog() == DialogResult.OK)
-			{
-				Hero hero = new Hero();
-				hero.Key = dlg.Key;
-
-				Cursor.Current = Cursors.WaitCursor;
-				bool ok = AppImport.ImportIPlay4e(hero);
-				Cursor.Current = Cursors.Default;
-
-				if (ok)
-				{
-					list[index] = hero;
-					Session.Modified = true;
-
-					update_view();
-				}
 			}
 		}
 
@@ -396,25 +268,6 @@ namespace Masterplan.UI
 			}
 		}
 
-		private void UpdateBtn_Click(object sender, EventArgs e)
-		{
-			Cursor.Current = Cursors.WaitCursor;
-
-			foreach (Hero hero in Session.Project.Heroes)
-			{
-				if ((hero.Key == null) || (hero.Key == ""))
-					continue;
-
-				AppImport.ImportIPlay4e(hero);
-			}
-
-			Session.Modified = true;
-
-			update_view();
-
-			Cursor.Current = Cursors.Default;
-		}
-
 		private void ParcelList_DoubleClick(object sender, EventArgs e)
 		{
 			if (SelectedParcel != null)
@@ -462,14 +315,6 @@ namespace Masterplan.UI
 
 			StatusBar.Visible = (Session.Project.Heroes.Count > Session.Project.Party.Size);
 			PartySizeLbl.Text = "Your project is set up for a party size of " + Session.Project.Party.Size + "; click here to change it";
-
-			bool iplay4e = false;
-			foreach (Hero hero in Session.Project.Heroes)
-			{
-				if (hero.Key != "")
-					iplay4e = true;
-			}
-			UpdateBtn.Visible = iplay4e;
 		}
 
 		void update_parcels()

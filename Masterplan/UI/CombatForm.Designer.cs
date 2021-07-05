@@ -55,12 +55,12 @@
 			this.CombatantsAddToken = new System.Windows.Forms.ToolStripMenuItem();
 			this.CombatantsAddOverlay = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+			this.CombatantsWaves = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
 			this.CombatantsRemove = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
 			this.CombatantsHideAll = new System.Windows.Forms.ToolStripMenuItem();
 			this.CombatantsShowAll = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
-			this.CombatantsWaves = new System.Windows.Forms.ToolStripMenuItem();
 			this.MapMenu = new System.Windows.Forms.ToolStripDropDownButton();
 			this.ShowMap = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
@@ -123,7 +123,6 @@
 			this.OptionsPortrait = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.ToolsAutoRemove = new System.Windows.Forms.ToolStripMenuItem();
-			this.OptionsIPlay4e = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
 			this.ToolsColumns = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolsColumnsInit = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,11 +134,11 @@
 			this.CombatantsPage = new System.Windows.Forms.TabPage();
 			this.ListSplitter = new System.Windows.Forms.SplitContainer();
 			this.CombatList = new Masterplan.UI.CombatForm.CombatListControl();
-			this.NameHdr = new System.Windows.Forms.ColumnHeader();
-			this.InitHdr = new System.Windows.Forms.ColumnHeader();
-			this.HPHdr = new System.Windows.Forms.ColumnHeader();
-			this.DefHdr = new System.Windows.Forms.ColumnHeader();
-			this.EffectsHdr = new System.Windows.Forms.ColumnHeader();
+			this.NameHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.InitHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.HPHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.DefHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.EffectsHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.ListContext = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.ListDetails = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
@@ -161,7 +160,7 @@
 			this.Preview = new System.Windows.Forms.WebBrowser();
 			this.TemplatesPage = new System.Windows.Forms.TabPage();
 			this.TemplateList = new System.Windows.Forms.ListView();
-			this.TemplateHdr = new System.Windows.Forms.ColumnHeader();
+			this.TemplateHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.LogPage = new System.Windows.Forms.TabPage();
 			this.LogBrowser = new System.Windows.Forms.WebBrowser();
 			this.MapView = new Masterplan.Controls.MapView();
@@ -370,6 +369,17 @@
 			this.toolStripSeparator6.Name = "toolStripSeparator6";
 			this.toolStripSeparator6.Size = new System.Drawing.Size(172, 6);
 			// 
+			// CombatantsWaves
+			// 
+			this.CombatantsWaves.Name = "CombatantsWaves";
+			this.CombatantsWaves.Size = new System.Drawing.Size(175, 22);
+			this.CombatantsWaves.Text = "Waves";
+			// 
+			// toolStripSeparator26
+			// 
+			this.toolStripSeparator26.Name = "toolStripSeparator26";
+			this.toolStripSeparator26.Size = new System.Drawing.Size(172, 6);
+			// 
 			// CombatantsRemove
 			// 
 			this.CombatantsRemove.Name = "CombatantsRemove";
@@ -395,17 +405,6 @@
 			this.CombatantsShowAll.Size = new System.Drawing.Size(175, 22);
 			this.CombatantsShowAll.Text = "Show All";
 			this.CombatantsShowAll.Click += new System.EventHandler(this.CombatantsShowAll_Click);
-			// 
-			// toolStripSeparator26
-			// 
-			this.toolStripSeparator26.Name = "toolStripSeparator26";
-			this.toolStripSeparator26.Size = new System.Drawing.Size(172, 6);
-			// 
-			// CombatantsWaves
-			// 
-			this.CombatantsWaves.Name = "CombatantsWaves";
-			this.CombatantsWaves.Size = new System.Drawing.Size(175, 22);
-			this.CombatantsWaves.Text = "Waves";
 			// 
 			// MapMenu
 			// 
@@ -440,14 +439,14 @@
 			// ShowMap
 			// 
 			this.ShowMap.Name = "ShowMap";
-			this.ShowMap.Size = new System.Drawing.Size(184, 22);
+			this.ShowMap.Size = new System.Drawing.Size(182, 22);
 			this.ShowMap.Text = "Show Map";
 			this.ShowMap.Click += new System.EventHandler(this.ShowMap_Click);
 			// 
 			// toolStripSeparator10
 			// 
 			this.toolStripSeparator10.Name = "toolStripSeparator10";
-			this.toolStripSeparator10.Size = new System.Drawing.Size(181, 6);
+			this.toolStripSeparator10.Size = new System.Drawing.Size(179, 6);
 			// 
 			// MapFog
 			// 
@@ -459,7 +458,7 @@
 			this.MapFog.Image = ((System.Drawing.Image)(resources.GetObject("MapFog.Image")));
 			this.MapFog.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MapFog.Name = "MapFog";
-			this.MapFog.Size = new System.Drawing.Size(184, 22);
+			this.MapFog.Size = new System.Drawing.Size(182, 22);
 			this.MapFog.Text = "Fog of War";
 			// 
 			// MapFogAllCreatures
@@ -486,104 +485,104 @@
 			// toolStripSeparator15
 			// 
 			this.toolStripSeparator15.Name = "toolStripSeparator15";
-			this.toolStripSeparator15.Size = new System.Drawing.Size(181, 6);
+			this.toolStripSeparator15.Size = new System.Drawing.Size(179, 6);
 			// 
 			// MapLOS
 			// 
 			this.MapLOS.Name = "MapLOS";
-			this.MapLOS.Size = new System.Drawing.Size(184, 22);
+			this.MapLOS.Size = new System.Drawing.Size(182, 22);
 			this.MapLOS.Text = "Show Line of Sight";
 			this.MapLOS.Click += new System.EventHandler(this.MapLOS_Click);
 			// 
 			// MapGrid
 			// 
 			this.MapGrid.Name = "MapGrid";
-			this.MapGrid.Size = new System.Drawing.Size(184, 22);
+			this.MapGrid.Size = new System.Drawing.Size(182, 22);
 			this.MapGrid.Text = "Show Grid";
 			this.MapGrid.Click += new System.EventHandler(this.MapGrid_Click);
 			// 
 			// MapGridLabels
 			// 
 			this.MapGridLabels.Name = "MapGridLabels";
-			this.MapGridLabels.Size = new System.Drawing.Size(184, 22);
+			this.MapGridLabels.Size = new System.Drawing.Size(182, 22);
 			this.MapGridLabels.Text = "Show Grid Labels";
 			this.MapGridLabels.Click += new System.EventHandler(this.MapGridLabels_Click);
 			// 
 			// MapHealth
 			// 
 			this.MapHealth.Name = "MapHealth";
-			this.MapHealth.Size = new System.Drawing.Size(184, 22);
+			this.MapHealth.Size = new System.Drawing.Size(182, 22);
 			this.MapHealth.Text = "Show Health Bars";
 			this.MapHealth.Click += new System.EventHandler(this.MapHealth_Click);
 			// 
 			// MapConditions
 			// 
 			this.MapConditions.Name = "MapConditions";
-			this.MapConditions.Size = new System.Drawing.Size(184, 22);
+			this.MapConditions.Size = new System.Drawing.Size(182, 22);
 			this.MapConditions.Text = "Show Conditions";
 			this.MapConditions.Click += new System.EventHandler(this.MapConditions_Click);
 			// 
 			// MapPictureTokens
 			// 
 			this.MapPictureTokens.Name = "MapPictureTokens";
-			this.MapPictureTokens.Size = new System.Drawing.Size(184, 22);
+			this.MapPictureTokens.Size = new System.Drawing.Size(182, 22);
 			this.MapPictureTokens.Text = "Show Picture Tokens";
 			this.MapPictureTokens.Click += new System.EventHandler(this.MapPictureTokens_Click);
 			// 
 			// toolStripSeparator7
 			// 
 			this.toolStripSeparator7.Name = "toolStripSeparator7";
-			this.toolStripSeparator7.Size = new System.Drawing.Size(181, 6);
+			this.toolStripSeparator7.Size = new System.Drawing.Size(179, 6);
 			// 
 			// MapNavigate
 			// 
 			this.MapNavigate.Name = "MapNavigate";
-			this.MapNavigate.Size = new System.Drawing.Size(184, 22);
+			this.MapNavigate.Size = new System.Drawing.Size(182, 22);
 			this.MapNavigate.Text = "Scroll and Zoom";
 			this.MapNavigate.Click += new System.EventHandler(this.MapNavigate_Click);
 			// 
 			// MapReset
 			// 
 			this.MapReset.Name = "MapReset";
-			this.MapReset.Size = new System.Drawing.Size(184, 22);
+			this.MapReset.Size = new System.Drawing.Size(182, 22);
 			this.MapReset.Text = "Reset View";
 			this.MapReset.Click += new System.EventHandler(this.MapReset_Click);
 			// 
 			// toolStripSeparator8
 			// 
 			this.toolStripSeparator8.Name = "toolStripSeparator8";
-			this.toolStripSeparator8.Size = new System.Drawing.Size(181, 6);
+			this.toolStripSeparator8.Size = new System.Drawing.Size(179, 6);
 			// 
 			// MapDrawing
 			// 
 			this.MapDrawing.Name = "MapDrawing";
-			this.MapDrawing.Size = new System.Drawing.Size(184, 22);
+			this.MapDrawing.Size = new System.Drawing.Size(182, 22);
 			this.MapDrawing.Text = "Allow Drawing";
 			this.MapDrawing.Click += new System.EventHandler(this.MapDrawing_Click);
 			// 
 			// MapClearDrawings
 			// 
 			this.MapClearDrawings.Name = "MapClearDrawings";
-			this.MapClearDrawings.Size = new System.Drawing.Size(184, 22);
+			this.MapClearDrawings.Size = new System.Drawing.Size(182, 22);
 			this.MapClearDrawings.Text = "Clear Drawings";
 			this.MapClearDrawings.Click += new System.EventHandler(this.MapClearDrawings_Click);
 			// 
 			// toolStripSeparator19
 			// 
 			this.toolStripSeparator19.Name = "toolStripSeparator19";
-			this.toolStripSeparator19.Size = new System.Drawing.Size(181, 6);
+			this.toolStripSeparator19.Size = new System.Drawing.Size(179, 6);
 			// 
 			// MapPrint
 			// 
 			this.MapPrint.Name = "MapPrint";
-			this.MapPrint.Size = new System.Drawing.Size(184, 22);
+			this.MapPrint.Size = new System.Drawing.Size(182, 22);
 			this.MapPrint.Text = "Print";
 			this.MapPrint.Click += new System.EventHandler(this.MapPrint_Click);
 			// 
 			// MapExport
 			// 
 			this.MapExport.Name = "MapExport";
-			this.MapExport.Size = new System.Drawing.Size(184, 22);
+			this.MapExport.Size = new System.Drawing.Size(182, 22);
 			this.MapExport.Text = "Export Screenshot";
 			this.MapExport.Click += new System.EventHandler(this.MapExport_Click);
 			// 
@@ -761,7 +760,7 @@
 			this.ToolsMenu.Image = ((System.Drawing.Image)(resources.GetObject("ToolsMenu.Image")));
 			this.ToolsMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ToolsMenu.Name = "ToolsMenu";
-			this.ToolsMenu.Size = new System.Drawing.Size(49, 22);
+			this.ToolsMenu.Size = new System.Drawing.Size(47, 22);
 			this.ToolsMenu.Text = "Tools";
 			this.ToolsMenu.Click += new System.EventHandler(this.ToolsMenu_DopDownOpening);
 			// 
@@ -814,7 +813,6 @@
             this.OptionsPortrait,
             this.toolStripSeparator5,
             this.ToolsAutoRemove,
-            this.OptionsIPlay4e,
             this.toolStripSeparator23,
             this.ToolsColumns});
 			this.OptionsMenu.Image = ((System.Drawing.Image)(resources.GetObject("OptionsMenu.Image")));
@@ -899,13 +897,6 @@
 			this.ToolsAutoRemove.Size = new System.Drawing.Size(229, 22);
 			this.ToolsAutoRemove.Text = "Remove Defeated Opponents";
 			this.ToolsAutoRemove.Click += new System.EventHandler(this.ToolsAutoRemove_Click);
-			// 
-			// OptionsIPlay4e
-			// 
-			this.OptionsIPlay4e.Name = "OptionsIPlay4e";
-			this.OptionsIPlay4e.Size = new System.Drawing.Size(229, 22);
-			this.OptionsIPlay4e.Text = "iPlay4e Integration";
-			this.OptionsIPlay4e.Click += new System.EventHandler(this.OptionsIPlay4e_Click);
 			// 
 			// toolStripSeparator23
 			// 
@@ -1011,8 +1002,8 @@
 			this.ListSplitter.Size = new System.Drawing.Size(354, 330);
 			this.ListSplitter.SplitterDistance = 159;
 			this.ListSplitter.TabIndex = 1;
-			this.ListSplitter.Resize += new System.EventHandler(this.ListSplitter_Resize);
 			this.ListSplitter.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.ListSplitter_SplitterMoved);
+			this.ListSplitter.Resize += new System.EventHandler(this.ListSplitter_Resize);
 			// 
 			// CombatList
 			// 
@@ -1059,11 +1050,11 @@
 			this.CombatList.View = System.Windows.Forms.View.Details;
 			this.CombatList.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.CombatList_DrawColumnHeader);
 			this.CombatList.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.CombatList_DrawItem);
+			this.CombatList.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.CombatList_DrawSubItem);
+			this.CombatList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.CombatList_ItemDrag);
+			this.CombatList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.CombatList_ItemSelectionChanged);
 			this.CombatList.SelectedIndexChanged += new System.EventHandler(this.CombatList_SelectedIndexChanged);
 			this.CombatList.DoubleClick += new System.EventHandler(this.CombatList_DoubleClick);
-			this.CombatList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.CombatList_ItemSelectionChanged);
-			this.CombatList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.CombatList_ItemDrag);
-			this.CombatList.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.CombatList_DrawSubItem);
 			// 
 			// NameHdr
 			// 
@@ -1332,7 +1323,7 @@
 			this.MapView.Mode = Masterplan.Controls.MapViewMode.Thumbnail;
 			this.MapView.Name = "MapView";
 			this.MapView.Plot = null;
-			this.MapView.ScalingFactor = 1;
+			this.MapView.ScalingFactor = 1D;
 			this.MapView.SelectedArea = null;
 			this.MapView.SelectedTiles = null;
 			this.MapView.Selection = new System.Drawing.Rectangle(0, 0, 0, 0);
@@ -1350,16 +1341,16 @@
 			this.MapView.Tactical = true;
 			this.MapView.TokenLinks = null;
 			this.MapView.Viewpoint = new System.Drawing.Rectangle(0, 0, 0, 0);
-			this.MapView.TokenDragged += new Masterplan.Events.DraggedTokenEventHandler(this.MapView_TokenDragged);
-			this.MapView.CancelledScrolling += new System.EventHandler(this.MapView_CancelledScrolling);
+			this.MapView.ItemMoved += new Masterplan.Events.MovementEventHandler(this.MapView_ItemMoved);
+			this.MapView.HoverTokenChanged += new System.EventHandler(this.MapView_HoverTokenChanged);
+			this.MapView.SelectedTokensChanged += new System.EventHandler(this.MapView_SelectedTokensChanged);
 			this.MapView.TokenActivated += new Masterplan.Events.TokenEventHandler(this.MapView_TokenActivated);
+			this.MapView.TokenDragged += new Masterplan.Events.DraggedTokenEventHandler(this.MapView_TokenDragged);
 			this.MapView.CreateTokenLink += new Masterplan.Events.CreateTokenLinkEventHandler(this.MapView_CreateTokenLink);
 			this.MapView.EditTokenLink += new Masterplan.Events.TokenLinkEventHandler(this.MapView_EditTokenLink);
-			this.MapView.MouseZoomed += new System.Windows.Forms.MouseEventHandler(this.MapView_MouseZoomed);
-			this.MapView.SelectedTokensChanged += new System.EventHandler(this.MapView_SelectedTokensChanged);
-			this.MapView.HoverTokenChanged += new System.EventHandler(this.MapView_HoverTokenChanged);
-			this.MapView.ItemMoved += new Masterplan.Events.MovementEventHandler(this.MapView_ItemMoved);
 			this.MapView.SketchCreated += new Masterplan.Events.MapSketchEventHandler(this.MapView_SketchCreated);
+			this.MapView.MouseZoomed += new System.Windows.Forms.MouseEventHandler(this.MapView_MouseZoomed);
+			this.MapView.CancelledScrolling += new System.EventHandler(this.MapView_CancelledScrolling);
 			// 
 			// MapContext
 			// 
@@ -1589,7 +1580,7 @@
 			// XPLbl
 			// 
 			this.XPLbl.Name = "XPLbl";
-			this.XPLbl.Size = new System.Drawing.Size(27, 17);
+			this.XPLbl.Size = new System.Drawing.Size(28, 17);
 			this.XPLbl.Text = "[xp]";
 			// 
 			// LevelLbl
@@ -1600,9 +1591,9 @@
 			// 
 			// MainPanel
 			// 
-			this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.MainPanel.Controls.Add(this.MapSplitter);
 			this.MainPanel.Controls.Add(this.InitiativePanel);
 			this.MainPanel.Controls.Add(this.Statusbar);
@@ -1696,8 +1687,8 @@
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Combat Encounter";
-			this.Shown += new System.EventHandler(this.CombatForm_Shown);
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CombatForm_FormClosing);
+			this.Shown += new System.EventHandler(this.CombatForm_Shown);
 			this.Toolbar.ResumeLayout(false);
 			this.Toolbar.PerformLayout();
 			this.MapSplitter.Panel1.ResumeLayout(false);
@@ -1827,7 +1818,6 @@
 		private System.Windows.Forms.ToolStripMenuItem effectToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem effectToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem effectToolStripMenuItem2;
-		private System.Windows.Forms.ToolStripMenuItem OptionsIPlay4e;
 		private System.Windows.Forms.ToolStripMenuItem ListRemoveEffect;
 		private System.Windows.Forms.ToolStripMenuItem effectToolStripMenuItem3;
 		private System.Windows.Forms.ToolStripMenuItem MapRemoveEffect;

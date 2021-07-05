@@ -31,7 +31,6 @@ namespace Masterplan.UI
 
 			fHero = h.Copy();
 
-			iPlay4eBtn.Visible = (fHero.Key != "");
 			update_hero();
 		}
 
@@ -297,32 +296,6 @@ namespace Masterplan.UI
 					case CustomTokenType.Overlay:
 						lvi.Group = EffectList.Groups[2];
 						break;
-				}
-			}
-		}
-
-		private void iPlay4eBtn_Click(object sender, EventArgs e)
-		{
-			HeroIPlay4eForm dlg = new HeroIPlay4eForm(fHero.Key, true);
-			if (dlg.ShowDialog() == DialogResult.OK)
-			{
-				// Refresh from iPlay4E
-
-				Hero hero = new Hero();
-				hero.Key = fHero.Key;
-				bool ok = Tools.AppImport.ImportIPlay4e(hero);
-				if (ok)
-				{
-					hero.ID = fHero.ID;
-					hero.Effects.AddRange(fHero.Effects);
-
-					fHero = hero;
-
-					update_hero();
-				}
-				else
-				{
-					MessageBox.Show("The iPlay4E character could not be downloaded.", "Masterplan", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 		}

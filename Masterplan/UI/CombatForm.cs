@@ -1268,11 +1268,6 @@ namespace Masterplan.UI
             Session.Preferences.CreatureAutoRemove = !Session.Preferences.CreatureAutoRemove;
 		}
 
-		private void OptionsIPlay4e_Click(object sender, EventArgs e)
-		{
-			Session.Preferences.iPlay4E = !Session.Preferences.iPlay4E;
-		}
-
 		#endregion
 
 		#endregion
@@ -2248,22 +2243,6 @@ namespace Masterplan.UI
 				if (e.Url.Scheme == "combat")
 				{
 					e.Cancel = true;
-
-					if (e.Url.LocalPath == "sync")
-					{
-						Cursor.Current = Cursors.WaitCursor;
-
-						foreach (Hero hero in Session.Project.Heroes)
-						{
-							if ((hero.Key == null) || (hero.Key == ""))
-								continue;
-
-							AppImport.ImportIPlay4e(hero);
-							Session.Modified = true;
-						}
-
-						Cursor.Current = Cursors.Default;
-					}
 
 					if (e.Url.LocalPath == "hp")
 					{
@@ -3253,7 +3232,6 @@ namespace Masterplan.UI
 			OptionsPortrait.Checked = (TwoColumns.Checked && MapBelow.Checked);
 
 			ToolsAutoRemove.Checked = Session.Preferences.CreatureAutoRemove;
-			OptionsIPlay4e.Checked = Session.Preferences.iPlay4E;
 		}
 
 		private void EffectMenu_DropDownOpening(object sender, EventArgs e)
@@ -5569,28 +5547,6 @@ namespace Masterplan.UI
 
 		void update_preview_panel()
 		{
-			#region iPlay4e
-
-			if (Session.Preferences.iPlay4E)
-			{
-				if (SelectedTokens.Count == 1)
-				{
-					Hero hero = SelectedTokens[0] as Hero;
-					if ((hero != null) && (hero.Key != ""))
-					{
-						Preview.Document.OpenNew(true);
-						Preview.Document.Write(HTML.Text("Loading iPlay4e character, please wait...", true, true, DisplaySize.Small));
-
-						string url = "http://iplay4e.appspot.com/view?xsl=jPint&key=" + hero.Key;
-						Preview.Navigate(url);
-
-						return;
-					}
-				}
-			}
-
-			#endregion
-
 			string html = "";
 
 			html += "<HTML>";
@@ -6339,25 +6295,6 @@ namespace Masterplan.UI
 				lines.Add("<TR>");
 				lines.Add("<TD>");
 				lines.Add("Place PCs on the map - drag PCs from the list into their starting positions on the map");
-				lines.Add("</TD>");
-				lines.Add("</TR>");
-			}
-
-			bool iPlay4E = false;
-			foreach (Hero hero in Session.Project.Heroes)
-			{
-				if ((hero.Key != null) && (hero.Key != ""))
-				{
-					iPlay4E = true;
-					break;
-				}
-			}
-
-			if (iPlay4E)
-			{
-				lines.Add("<TR>");
-				lines.Add("<TD>");
-				lines.Add("<A href=combat:sync>Update iPlay4E characters</A>");
 				lines.Add("</TD>");
 				lines.Add("</TR>");
 			}

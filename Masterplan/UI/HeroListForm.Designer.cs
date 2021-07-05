@@ -29,15 +29,10 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HeroListForm));
-			System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("PCs", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Inactive PCs", System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("PCs", System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Inactive PCs", System.Windows.Forms.HorizontalAlignment.Left);
 			this.Toolbar = new System.Windows.Forms.ToolStrip();
 			this.AddBtn = new System.Windows.Forms.ToolStripSplitButton();
-			this.Import_CB = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-			this.Import_iPlay4e = new System.Windows.Forms.ToolStripMenuItem();
-			this.Import_iPlay4e_Party = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.AddRandomCharacter = new System.Windows.Forms.ToolStripMenuItem();
 			this.AddRandomParty = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -52,28 +47,27 @@
 			this.StatBlockBtn = new System.Windows.Forms.ToolStripButton();
 			this.EntryBtn = new System.Windows.Forms.ToolStripButton();
 			this.HeroList = new System.Windows.Forms.ListView();
-			this.NameHdr = new System.Windows.Forms.ColumnHeader();
-			this.CharHdr = new System.Windows.Forms.ColumnHeader();
-			this.InsightHdr = new System.Windows.Forms.ColumnHeader();
-			this.PercHdr = new System.Windows.Forms.ColumnHeader();
+			this.NameHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.CharHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.InsightHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.PercHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.Pages = new System.Windows.Forms.TabControl();
 			this.DetailsPage = new System.Windows.Forms.TabPage();
-			this.OverviewPage = new System.Windows.Forms.TabPage();
-			this.ParcelPage = new System.Windows.Forms.TabPage();
-			this.ParcelList = new System.Windows.Forms.ListView();
-			this.ParcelHdr = new System.Windows.Forms.ColumnHeader();
-			this.ParcelDetailsHdr = new System.Windows.Forms.ColumnHeader();
-			this.CloseBtn = new System.Windows.Forms.Button();
-			this.UpdateBtn = new System.Windows.Forms.Button();
 			this.StatusBar = new System.Windows.Forms.StatusStrip();
 			this.PartySizeLbl = new System.Windows.Forms.ToolStripStatusLabel();
+			this.OverviewPage = new System.Windows.Forms.TabPage();
 			this.BreakdownPnl = new Masterplan.Controls.BreakdownPanel();
+			this.ParcelPage = new System.Windows.Forms.TabPage();
+			this.ParcelList = new System.Windows.Forms.ListView();
+			this.ParcelHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.ParcelDetailsHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.CloseBtn = new System.Windows.Forms.Button();
 			this.Toolbar.SuspendLayout();
 			this.Pages.SuspendLayout();
 			this.DetailsPage.SuspendLayout();
+			this.StatusBar.SuspendLayout();
 			this.OverviewPage.SuspendLayout();
 			this.ParcelPage.SuspendLayout();
-			this.StatusBar.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// Toolbar
@@ -99,11 +93,6 @@
 			// 
 			this.AddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.AddBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Import_CB,
-            this.toolStripSeparator4,
-            this.Import_iPlay4e,
-            this.Import_iPlay4e_Party,
-            this.toolStripSeparator1,
             this.AddRandomCharacter,
             this.AddRandomParty,
             this.toolStripSeparator6,
@@ -115,60 +104,29 @@
 			this.AddBtn.Text = "Add";
 			this.AddBtn.ButtonClick += new System.EventHandler(this.AddBtn_Click);
 			// 
-			// Import_CB
-			// 
-			this.Import_CB.Name = "Import_CB";
-			this.Import_CB.Size = new System.Drawing.Size(242, 22);
-			this.Import_CB.Text = "Import from Character Builder...";
-			this.Import_CB.Click += new System.EventHandler(this.Import_CB_Click);
-			// 
-			// toolStripSeparator4
-			// 
-			this.toolStripSeparator4.Name = "toolStripSeparator4";
-			this.toolStripSeparator4.Size = new System.Drawing.Size(239, 6);
-			// 
-			// Import_iPlay4e
-			// 
-			this.Import_iPlay4e.Name = "Import_iPlay4e";
-			this.Import_iPlay4e.Size = new System.Drawing.Size(242, 22);
-			this.Import_iPlay4e.Text = "Import Character from iPlay4e...";
-			this.Import_iPlay4e.Click += new System.EventHandler(this.Import_iPlay4e_Click);
-			// 
-			// Import_iPlay4e_Party
-			// 
-			this.Import_iPlay4e_Party.Name = "Import_iPlay4e_Party";
-			this.Import_iPlay4e_Party.Size = new System.Drawing.Size(242, 22);
-			this.Import_iPlay4e_Party.Text = "Import Party from iPlay4e...";
-			this.Import_iPlay4e_Party.Click += new System.EventHandler(this.Import_iPlay4e_Party_Click);
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(239, 6);
-			// 
 			// AddRandomCharacter
 			// 
 			this.AddRandomCharacter.Name = "AddRandomCharacter";
-			this.AddRandomCharacter.Size = new System.Drawing.Size(242, 22);
+			this.AddRandomCharacter.Size = new System.Drawing.Size(179, 22);
 			this.AddRandomCharacter.Text = "Random Character";
 			this.AddRandomCharacter.Click += new System.EventHandler(this.RandomPC_Click);
 			// 
 			// AddRandomParty
 			// 
 			this.AddRandomParty.Name = "AddRandomParty";
-			this.AddRandomParty.Size = new System.Drawing.Size(242, 22);
+			this.AddRandomParty.Size = new System.Drawing.Size(179, 22);
 			this.AddRandomParty.Text = "Random Party";
 			this.AddRandomParty.Click += new System.EventHandler(this.RandomParty_Click);
 			// 
 			// toolStripSeparator6
 			// 
 			this.toolStripSeparator6.Name = "toolStripSeparator6";
-			this.toolStripSeparator6.Size = new System.Drawing.Size(239, 6);
+			this.toolStripSeparator6.Size = new System.Drawing.Size(176, 6);
 			// 
 			// AddSuggest
 			// 
 			this.AddSuggest.Name = "AddSuggest";
-			this.AddSuggest.Size = new System.Drawing.Size(242, 22);
+			this.AddSuggest.Size = new System.Drawing.Size(179, 22);
 			this.AddSuggest.Text = "Suggest a Character";
 			this.AddSuggest.Click += new System.EventHandler(this.AddSuggest_Click);
 			// 
@@ -256,13 +214,13 @@
             this.PercHdr});
 			this.HeroList.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.HeroList.FullRowSelect = true;
-			listViewGroup3.Header = "PCs";
-			listViewGroup3.Name = "listViewGroup1";
-			listViewGroup4.Header = "Inactive PCs";
-			listViewGroup4.Name = "listViewGroup2";
+			listViewGroup1.Header = "PCs";
+			listViewGroup1.Name = "listViewGroup1";
+			listViewGroup2.Header = "Inactive PCs";
+			listViewGroup2.Name = "listViewGroup2";
 			this.HeroList.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup3,
-            listViewGroup4});
+            listViewGroup1,
+            listViewGroup2});
 			this.HeroList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
 			this.HeroList.HideSelection = false;
 			this.HeroList.Location = new System.Drawing.Point(3, 28);
@@ -299,9 +257,9 @@
 			// 
 			// Pages
 			// 
-			this.Pages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.Pages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.Pages.Controls.Add(this.DetailsPage);
 			this.Pages.Controls.Add(this.OverviewPage);
 			this.Pages.Controls.Add(this.ParcelPage);
@@ -324,6 +282,25 @@
 			this.DetailsPage.Text = "Details";
 			this.DetailsPage.UseVisualStyleBackColor = true;
 			// 
+			// StatusBar
+			// 
+			this.StatusBar.BackColor = System.Drawing.Color.Transparent;
+			this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.PartySizeLbl});
+			this.StatusBar.Location = new System.Drawing.Point(3, 237);
+			this.StatusBar.Name = "StatusBar";
+			this.StatusBar.Size = new System.Drawing.Size(562, 22);
+			this.StatusBar.SizingGrip = false;
+			this.StatusBar.TabIndex = 2;
+			// 
+			// PartySizeLbl
+			// 
+			this.PartySizeLbl.IsLink = true;
+			this.PartySizeLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+			this.PartySizeLbl.Name = "PartySizeLbl";
+			this.PartySizeLbl.Size = new System.Drawing.Size(216, 17);
+			this.PartySizeLbl.Text = "Your campaign is set up for a party of N";
+			// 
 			// OverviewPage
 			// 
 			this.OverviewPage.Controls.Add(this.BreakdownPnl);
@@ -334,6 +311,15 @@
 			this.OverviewPage.TabIndex = 1;
 			this.OverviewPage.Text = "Class Role Overview";
 			this.OverviewPage.UseVisualStyleBackColor = true;
+			// 
+			// BreakdownPnl
+			// 
+			this.BreakdownPnl.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.BreakdownPnl.Heroes = null;
+			this.BreakdownPnl.Location = new System.Drawing.Point(3, 3);
+			this.BreakdownPnl.Name = "BreakdownPnl";
+			this.BreakdownPnl.Size = new System.Drawing.Size(562, 256);
+			this.BreakdownPnl.TabIndex = 0;
 			// 
 			// ParcelPage
 			// 
@@ -385,52 +371,12 @@
 			this.CloseBtn.Text = "Close";
 			this.CloseBtn.UseVisualStyleBackColor = true;
 			// 
-			// UpdateBtn
-			// 
-			this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.UpdateBtn.Location = new System.Drawing.Point(12, 306);
-			this.UpdateBtn.Name = "UpdateBtn";
-			this.UpdateBtn.Size = new System.Drawing.Size(178, 23);
-			this.UpdateBtn.TabIndex = 4;
-			this.UpdateBtn.Text = "Update iPlay4e Characters";
-			this.UpdateBtn.UseVisualStyleBackColor = true;
-			this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
-			// 
-			// StatusBar
-			// 
-			this.StatusBar.BackColor = System.Drawing.Color.Transparent;
-			this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.PartySizeLbl});
-			this.StatusBar.Location = new System.Drawing.Point(3, 237);
-			this.StatusBar.Name = "StatusBar";
-			this.StatusBar.Size = new System.Drawing.Size(562, 22);
-			this.StatusBar.SizingGrip = false;
-			this.StatusBar.TabIndex = 2;
-			// 
-			// PartySizeLbl
-			// 
-			this.PartySizeLbl.IsLink = true;
-			this.PartySizeLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-			this.PartySizeLbl.Name = "PartySizeLbl";
-			this.PartySizeLbl.Size = new System.Drawing.Size(217, 17);
-			this.PartySizeLbl.Text = "Your campaign is set up for a party of N";
-			// 
-			// BreakdownPnl
-			// 
-			this.BreakdownPnl.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.BreakdownPnl.Heroes = null;
-			this.BreakdownPnl.Location = new System.Drawing.Point(3, 3);
-			this.BreakdownPnl.Name = "BreakdownPnl";
-			this.BreakdownPnl.Size = new System.Drawing.Size(562, 256);
-			this.BreakdownPnl.TabIndex = 0;
-			// 
 			// HeroListForm
 			// 
 			this.AcceptButton = this.CloseBtn;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(600, 341);
-			this.Controls.Add(this.UpdateBtn);
 			this.Controls.Add(this.CloseBtn);
 			this.Controls.Add(this.Pages);
 			this.MaximizeBox = false;
@@ -446,10 +392,10 @@
 			this.Pages.ResumeLayout(false);
 			this.DetailsPage.ResumeLayout(false);
 			this.DetailsPage.PerformLayout();
-			this.OverviewPage.ResumeLayout(false);
-			this.ParcelPage.ResumeLayout(false);
 			this.StatusBar.ResumeLayout(false);
 			this.StatusBar.PerformLayout();
+			this.OverviewPage.ResumeLayout(false);
+			this.ParcelPage.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -472,16 +418,10 @@
 		private System.Windows.Forms.ColumnHeader PercHdr;
 		private System.Windows.Forms.Button CloseBtn;
 		private System.Windows.Forms.ToolStripSplitButton AddBtn;
-		private System.Windows.Forms.ToolStripMenuItem Import_CB;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
 		private System.Windows.Forms.ToolStripButton StatBlockBtn;
-		private System.Windows.Forms.ToolStripMenuItem Import_iPlay4e;
-		private System.Windows.Forms.Button UpdateBtn;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
 		private System.Windows.Forms.ToolStripMenuItem AddRandomCharacter;
 		private System.Windows.Forms.ToolStripMenuItem AddRandomParty;
-		private System.Windows.Forms.ToolStripMenuItem Import_iPlay4e_Party;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripButton ActiveBtn;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;

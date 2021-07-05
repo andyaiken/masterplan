@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
-using System.Xml;
 
 using Utils;
 
@@ -28,11 +26,9 @@ namespace Masterplan.Controls
 			}
 		}
 
-		public WelcomePanel(bool show_headlines)
+		public WelcomePanel()
 		{
 			InitializeComponent();
-
-			fShowHeadlines = show_headlines;
 
 			SetStyle(ControlStyles.AllPaintingInWmPaint
 				| ControlStyles.OptimizedDoubleBuffer
@@ -41,12 +37,6 @@ namespace Masterplan.Controls
 
 			MenuBrowser.DocumentText = "";
 			set_options();
-
-			if (fShowHeadlines)
-			{
-				DownloadHeadlines("http://www.habitualindolence.net/masterplanblog/feed/");
-				//DownloadHeadlines("http://www.facebook.com/feeds/page.php?format=atom10&id=93998019773");
-			}
 		}
 
 		private void TitlePanel_FadeFinished(object sender, EventArgs e)
@@ -70,9 +60,6 @@ namespace Masterplan.Controls
 
 				if (e.Url.LocalPath == "delve")
 					OnDelveClicked();
-
-				if (e.Url.LocalPath == "premade")
-					OnPremadeClicked();
 
 				if (e.Url.LocalPath == "genesis")
 				{
@@ -128,91 +115,6 @@ namespace Masterplan.Controls
 		const int MAX_HEADLINES = 10;
 		const int MAX_LENGTH = 45;
 
-		List<Headline> fHeadlines = null;
-
-		public bool ShowHeadlines
-		{
-			get { return fShowHeadlines; }
-			set { fShowHeadlines = value; }
-		}
-		bool fShowHeadlines = false;
-
-		public void DownloadHeadlines(string address)
-		{
-			try
-			{
-				WebClient wc = new WebClient();
-				wc.DownloadStringCompleted += new DownloadStringCompletedEventHandler(downloaded_headlines);
-				Uri uri = new Uri(address);
-				wc.DownloadStringAsync(uri);
-			}
-			catch (WebException ex)
-			{
-				LogSystem.Trace(ex);
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		void downloaded_headlines(object sender, DownloadStringCompletedEventArgs e)
-		{
-			try
-			{
-				fHeadlines = new List<Headline>();
-
-				if (e.Error == null)
-				{
-					string str = e.Result;
-					XmlDocument doc = new XmlDocument();
-					doc.LoadXml(str);
-
-					XmlNode root = doc.DocumentElement;
-					if (root == null)
-						return;
-
-					XmlNode channnel_node = root.FirstChild;
-					if (channnel_node == null)
-						return;
-
-					foreach (XmlNode node in channnel_node.ChildNodes)
-					{
-						if (node.Name.ToLower() != "item")
-							continue;
-
-						Headline hl = new Headline();
-
-						XmlNode title_node = XMLHelper.FindChild(node, "title");
-						if (title_node == null)
-							continue;
-						hl.Title = title_node.InnerText;
-
-						XmlNode link_node = XMLHelper.FindChild(node, "link");
-						if (link_node == null)
-							continue;
-						hl.URL = link_node.InnerText;
-
-						XmlNode date_node = XMLHelper.FindChild(node, "pubDate");
-						if (link_node == null)
-							continue;
-						hl.Date = DateTime.Parse(date_node.InnerText);
-
-						if (hl.Title.Length > MAX_LENGTH)
-							hl.Title = hl.Title.Substring(0, MAX_LENGTH) + "...";
-
-						fHeadlines.Add(hl);
-					}
-				}
-
-				// Update the options
-				set_options();
-			}
-			catch
-			{
-			}
-		}
-
 		#region Events
 
 		[Category("Actions")]
@@ -226,9 +128,6 @@ namespace Masterplan.Controls
 
 		[Category("Actions")]
 		public event EventHandler DelveClicked;
-
-		[Category("Actions")]
-		public event EventHandler PremadeClicked;
 
 		protected void OnNewProjectClicked()
 		{
@@ -252,12 +151,6 @@ namespace Masterplan.Controls
 		{
 			if (DelveClicked != null)
 				DelveClicked(this, new EventArgs());
-		}
-
-		protected void OnPremadeClicked()
-		{
-			if (PremadeClicked != null)
-				PremadeClicked(this, new EventArgs());
 		}
 
 		#endregion
@@ -304,24 +197,6 @@ namespace Masterplan.Controls
 			lines.Add("</TD>");
 			lines.Add("</TR>");
 
-			/*
-			lines.Add("</TABLE>");
-			lines.Add("</P>");
-
-			#endregion
-
-			#region Advanced
-
-			lines.Add("<P class=table>");
-			lines.Add("<TABLE>");
-
-			lines.Add("<TR class=heading>");
-			lines.Add("<TD>");
-			lines.Add("<B>Advanced Options</B>");
-			lines.Add("</TD>");
-			lines.Add("</TR>");
-			*/
-
 			if (show_delve_option())
 			{
 				lines.Add("<TR>");
@@ -331,11 +206,14 @@ namespace Masterplan.Controls
 				lines.Add("</TR>");
 			}
 
-			lines.Add("<TR>");
-			lines.Add("<TD>");
-			lines.Add("<A href=\"masterplan:premade\">Download a premade adventure</A>");
-			lines.Add("</TD>");
-			lines.Add("</TR>");
+			if (show_manual_option())
+			{
+				lines.Add("<TR>");
+				lines.Add("<TD>");
+				lines.Add("<A href=\"masterplan:manual\">Read the Masterplan user manual</A>");
+				lines.Add("</TD>");
+				lines.Add("</TR>");
+			}
 
 			lines.Add("</TABLE>");
 			lines.Add("</P>");
@@ -388,103 +266,6 @@ namespace Masterplan.Controls
 				lines.Add("</TABLE>");
 				lines.Add("</P>");
 			}
-
-			#endregion
-
-			#region More Information
-
-			lines.Add("<P class=table>");
-			lines.Add("<TABLE>");
-
-			lines.Add("<TR class=heading>");
-			lines.Add("<TD>");
-			lines.Add("<B>More Information</B>");
-			lines.Add("</TD>");
-			lines.Add("</TR>");
-
-			if (show_manual_option())
-			{
-				lines.Add("<TR>");
-				lines.Add("<TD>");
-				lines.Add("<A href=\"masterplan:manual\">Read the Masterplan user manual</A>");
-				lines.Add("</TD>");
-				lines.Add("</TR>");
-			}
-
-			lines.Add("<TR>");
-			lines.Add("<TD>");
-			lines.Add("<A href=\"http://www.habitualindolence.net/masterplan/tutorials.htm\" target=_new>Watch a tutorial video</A>");
-			lines.Add("</TD>");
-			lines.Add("</TR>");
-
-			lines.Add("<TR>");
-			lines.Add("<TD>");
-			lines.Add("<A href=\"http://www.habitualindolence.net/masterplan/\" target=_new>Visit the Masterplan website</A>");
-			lines.Add("</TD>");
-			lines.Add("</TR>");
-
-			lines.Add("</TABLE>");
-			lines.Add("</P>");
-
-			#endregion
-
-			#region Latest News
-
-			lines.Add("<P class=table>");
-			lines.Add("<TABLE>");
-
-			lines.Add("<TR class=heading>");
-			lines.Add("<TD>");
-			lines.Add("<B>Latest News</B>");
-			lines.Add("</TD>");
-			lines.Add("</TR>");
-
-			if (!fShowHeadlines)
-			{
-				lines.Add("<TR>");
-				lines.Add("<TD class=dimmed>");
-				lines.Add("Headlines are disabled");
-				lines.Add("</TD>");
-				lines.Add("</TR>");
-			}
-			else if (fHeadlines == null)
-			{
-				lines.Add("<TR>");
-				lines.Add("<TD class=dimmed>");
-				lines.Add("Retrieving headlines...");
-				lines.Add("</TD>");
-				lines.Add("</TR>");
-			}
-			else if (fHeadlines.Count == 0)
-			{
-				lines.Add("<TR>");
-				lines.Add("<TD class=dimmed>");
-				lines.Add("Could not download headlines");
-				lines.Add("</TD>");
-				lines.Add("</TR>");
-			}
-			else
-			{
-				fHeadlines.Sort();
-
-				int added = 0;
-				foreach (Headline item in fHeadlines)
-				{
-					lines.Add("<TR>");
-					lines.Add("<TD>");
-					lines.Add(item.Date.ToString("dd MMM") + ":");
-					lines.Add("<A href=\"" + item.URL + "\" target=_new>" + item.Title + "</A>");
-					lines.Add("</TD>");
-					lines.Add("</TR>");
-
-					added += 1;
-					if (added == MAX_HEADLINES)
-						break;
-				}
-			}
-
-			lines.Add("</TABLE>");
-			lines.Add("</P>");
 
 			#endregion
 

@@ -119,7 +119,6 @@
 			this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
 			this.FileAdvanced = new System.Windows.Forms.ToolStripMenuItem();
 			this.AdvancedDelve = new System.Windows.Forms.ToolStripMenuItem();
-			this.AdvancedSample = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator42 = new System.Windows.Forms.ToolStripSeparator();
 			this.FileExit = new System.Windows.Forms.ToolStripMenuItem();
 			this.ProjectMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -169,14 +168,6 @@
 			this.HelpMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.HelpManual = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-			this.HelpFeedback = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
-			this.HelpTutorials = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator47 = new System.Windows.Forms.ToolStripSeparator();
-			this.HelpWebsite = new System.Windows.Forms.ToolStripMenuItem();
-			this.HelpFacebook = new System.Windows.Forms.ToolStripMenuItem();
-			this.HelpTwitter = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
 			this.HelpAbout = new System.Windows.Forms.ToolStripMenuItem();
 			this.PreviewSplitter = new System.Windows.Forms.SplitContainer();
 			this.NavigationSplitter = new System.Windows.Forms.SplitContainer();
@@ -205,7 +196,7 @@
 			this.BackgroundPage = new System.Windows.Forms.TabPage();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.BackgroundList = new System.Windows.Forms.ListView();
-			this.InfoHdr = new System.Windows.Forms.ColumnHeader();
+			this.InfoHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.BackgroundPanel = new System.Windows.Forms.Panel();
 			this.BackgroundDetails = new System.Windows.Forms.WebBrowser();
 			this.BackgroundToolbar = new System.Windows.Forms.ToolStrip();
@@ -228,7 +219,7 @@
 			this.EncyclopediaPage = new System.Windows.Forms.TabPage();
 			this.EncyclopediaSplitter = new System.Windows.Forms.SplitContainer();
 			this.EntryList = new System.Windows.Forms.ListView();
-			this.EntryHdr = new System.Windows.Forms.ColumnHeader();
+			this.EntryHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.EncyclopediaEntrySplitter = new System.Windows.Forms.SplitContainer();
 			this.EntryPanel = new System.Windows.Forms.Panel();
 			this.EntryDetails = new System.Windows.Forms.WebBrowser();
@@ -258,7 +249,7 @@
 			this.RulesPage = new System.Windows.Forms.TabPage();
 			this.RulesSplitter = new System.Windows.Forms.SplitContainer();
 			this.RulesList = new System.Windows.Forms.ListView();
-			this.RulesHdr = new System.Windows.Forms.ColumnHeader();
+			this.RulesHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.RulesToolbar = new System.Windows.Forms.ToolStrip();
 			this.RulesAddBtn = new System.Windows.Forms.ToolStripDropDownButton();
 			this.AddRace = new System.Windows.Forms.ToolStripMenuItem();
@@ -293,8 +284,8 @@
 			this.RulesPlayerViewBtn = new System.Windows.Forms.ToolStripButton();
 			this.AttachmentsPage = new System.Windows.Forms.TabPage();
 			this.AttachmentList = new System.Windows.Forms.ListView();
-			this.AttachmentHdr = new System.Windows.Forms.ColumnHeader();
-			this.AttachmentSizeHdr = new System.Windows.Forms.ColumnHeader();
+			this.AttachmentHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.AttachmentSizeHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.AttachmentToolbar = new System.Windows.Forms.ToolStrip();
 			this.AttachmentImportBtn = new System.Windows.Forms.ToolStripButton();
 			this.AttachmentRemoveBtn = new System.Windows.Forms.ToolStripButton();
@@ -307,7 +298,7 @@
 			this.JotterPage = new System.Windows.Forms.TabPage();
 			this.JotterSplitter = new System.Windows.Forms.SplitContainer();
 			this.NoteList = new System.Windows.Forms.ListView();
-			this.NoteHdr = new System.Windows.Forms.ColumnHeader();
+			this.NoteHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.NoteBox = new System.Windows.Forms.TextBox();
 			this.JotterToolbar = new System.Windows.Forms.ToolStrip();
 			this.NoteAddBtn = new System.Windows.Forms.ToolStripButton();
@@ -568,66 +559,66 @@
 			// ViewDefault
 			// 
 			this.ViewDefault.Name = "ViewDefault";
-			this.ViewDefault.Size = new System.Drawing.Size(191, 22);
+			this.ViewDefault.Size = new System.Drawing.Size(189, 22);
 			this.ViewDefault.Text = "Default View";
 			this.ViewDefault.Click += new System.EventHandler(this.ViewDefault_Click);
 			// 
 			// toolStripSeparator7
 			// 
 			this.toolStripSeparator7.Name = "toolStripSeparator7";
-			this.toolStripSeparator7.Size = new System.Drawing.Size(188, 6);
+			this.toolStripSeparator7.Size = new System.Drawing.Size(186, 6);
 			// 
 			// ViewEncounters
 			// 
 			this.ViewEncounters.Name = "ViewEncounters";
-			this.ViewEncounters.Size = new System.Drawing.Size(191, 22);
+			this.ViewEncounters.Size = new System.Drawing.Size(189, 22);
 			this.ViewEncounters.Text = "Show Encounters";
 			this.ViewEncounters.Click += new System.EventHandler(this.ViewEncounters_Click);
 			// 
 			// ViewTraps
 			// 
 			this.ViewTraps.Name = "ViewTraps";
-			this.ViewTraps.Size = new System.Drawing.Size(191, 22);
+			this.ViewTraps.Size = new System.Drawing.Size(189, 22);
 			this.ViewTraps.Text = "Show Traps / Hazards";
 			this.ViewTraps.Click += new System.EventHandler(this.ViewTraps_Click);
 			// 
 			// ViewChallenges
 			// 
 			this.ViewChallenges.Name = "ViewChallenges";
-			this.ViewChallenges.Size = new System.Drawing.Size(191, 22);
+			this.ViewChallenges.Size = new System.Drawing.Size(189, 22);
 			this.ViewChallenges.Text = "Show Skill Challenges";
 			this.ViewChallenges.Click += new System.EventHandler(this.ViewChallenges_Click);
 			// 
 			// ViewQuests
 			// 
 			this.ViewQuests.Name = "ViewQuests";
-			this.ViewQuests.Size = new System.Drawing.Size(191, 22);
+			this.ViewQuests.Size = new System.Drawing.Size(189, 22);
 			this.ViewQuests.Text = "Show Quests";
 			this.ViewQuests.Click += new System.EventHandler(this.ViewQuests_Click);
 			// 
 			// ViewParcels
 			// 
 			this.ViewParcels.Name = "ViewParcels";
-			this.ViewParcels.Size = new System.Drawing.Size(191, 22);
+			this.ViewParcels.Size = new System.Drawing.Size(189, 22);
 			this.ViewParcels.Text = "Show Treasure Parcels";
 			this.ViewParcels.Click += new System.EventHandler(this.ViewParcels_Click);
 			// 
 			// toolStripSeparator8
 			// 
 			this.toolStripSeparator8.Name = "toolStripSeparator8";
-			this.toolStripSeparator8.Size = new System.Drawing.Size(188, 6);
+			this.toolStripSeparator8.Size = new System.Drawing.Size(186, 6);
 			// 
 			// ViewHighlighting
 			// 
 			this.ViewHighlighting.Name = "ViewHighlighting";
-			this.ViewHighlighting.Size = new System.Drawing.Size(191, 22);
+			this.ViewHighlighting.Size = new System.Drawing.Size(189, 22);
 			this.ViewHighlighting.Text = "Highlighting";
 			this.ViewHighlighting.Click += new System.EventHandler(this.ViewHighlighting_Click);
 			// 
 			// toolStripSeparator6
 			// 
 			this.toolStripSeparator6.Name = "toolStripSeparator6";
-			this.toolStripSeparator6.Size = new System.Drawing.Size(188, 6);
+			this.toolStripSeparator6.Size = new System.Drawing.Size(186, 6);
 			// 
 			// ViewLinks
 			// 
@@ -636,7 +627,7 @@
             this.ViewLinksAngled,
             this.ViewLinksStraight});
 			this.ViewLinks.Name = "ViewLinks";
-			this.ViewLinks.Size = new System.Drawing.Size(191, 22);
+			this.ViewLinks.Size = new System.Drawing.Size(189, 22);
 			this.ViewLinks.Text = "Show Links";
 			this.ViewLinks.DropDownOpening += new System.EventHandler(this.ViewLinks_DropDownOpening);
 			// 
@@ -664,33 +655,33 @@
 			// ViewLevelling
 			// 
 			this.ViewLevelling.Name = "ViewLevelling";
-			this.ViewLevelling.Size = new System.Drawing.Size(191, 22);
+			this.ViewLevelling.Size = new System.Drawing.Size(189, 22);
 			this.ViewLevelling.Text = "Show Levelling";
 			this.ViewLevelling.Click += new System.EventHandler(this.ViewLevelling_Click);
 			// 
 			// ViewTooltips
 			// 
 			this.ViewTooltips.Name = "ViewTooltips";
-			this.ViewTooltips.Size = new System.Drawing.Size(191, 22);
+			this.ViewTooltips.Size = new System.Drawing.Size(189, 22);
 			this.ViewTooltips.Text = "Show Tooltips";
 			this.ViewTooltips.Click += new System.EventHandler(this.ViewTooltips_Click);
 			// 
 			// toolStripSeparator11
 			// 
 			this.toolStripSeparator11.Name = "toolStripSeparator11";
-			this.toolStripSeparator11.Size = new System.Drawing.Size(188, 6);
+			this.toolStripSeparator11.Size = new System.Drawing.Size(186, 6);
 			// 
 			// ViewNavigation
 			// 
 			this.ViewNavigation.Name = "ViewNavigation";
-			this.ViewNavigation.Size = new System.Drawing.Size(191, 22);
+			this.ViewNavigation.Size = new System.Drawing.Size(189, 22);
 			this.ViewNavigation.Text = "Show Navigation";
 			this.ViewNavigation.Click += new System.EventHandler(this.ViewNavigation_Click);
 			// 
 			// ViewPreview
 			// 
 			this.ViewPreview.Name = "ViewPreview";
-			this.ViewPreview.Size = new System.Drawing.Size(191, 22);
+			this.ViewPreview.Size = new System.Drawing.Size(189, 22);
 			this.ViewPreview.Text = "Show Preview";
 			this.ViewPreview.Click += new System.EventHandler(this.ViewPreview_Click);
 			// 
@@ -711,26 +702,26 @@
 			// FlowchartPrint
 			// 
 			this.FlowchartPrint.Name = "FlowchartPrint";
-			this.FlowchartPrint.Size = new System.Drawing.Size(196, 22);
+			this.FlowchartPrint.Size = new System.Drawing.Size(197, 22);
 			this.FlowchartPrint.Text = "Print...";
 			this.FlowchartPrint.Click += new System.EventHandler(this.FlowchartPrint_Click);
 			// 
 			// FlowchartExport
 			// 
 			this.FlowchartExport.Name = "FlowchartExport";
-			this.FlowchartExport.Size = new System.Drawing.Size(196, 22);
+			this.FlowchartExport.Size = new System.Drawing.Size(197, 22);
 			this.FlowchartExport.Text = "Export...";
 			this.FlowchartExport.Click += new System.EventHandler(this.FlowchartExport_Click);
 			// 
 			// toolStripSeparator27
 			// 
 			this.toolStripSeparator27.Name = "toolStripSeparator27";
-			this.toolStripSeparator27.Size = new System.Drawing.Size(193, 6);
+			this.toolStripSeparator27.Size = new System.Drawing.Size(194, 6);
 			// 
 			// FlowchartAllXP
 			// 
 			this.FlowchartAllXP.Name = "FlowchartAllXP";
-			this.FlowchartAllXP.Size = new System.Drawing.Size(196, 22);
+			this.FlowchartAllXP.Size = new System.Drawing.Size(197, 22);
 			this.FlowchartAllXP.Text = "Maximum Available XP";
 			this.FlowchartAllXP.Click += new System.EventHandler(this.FlowchartAllXP_Click);
 			// 
@@ -750,21 +741,21 @@
 			// PlotAdvancedTreasure
 			// 
 			this.PlotAdvancedTreasure.Name = "PlotAdvancedTreasure";
-			this.PlotAdvancedTreasure.Size = new System.Drawing.Size(185, 22);
+			this.PlotAdvancedTreasure.Size = new System.Drawing.Size(184, 22);
 			this.PlotAdvancedTreasure.Text = "Export Treasure List...";
 			this.PlotAdvancedTreasure.Click += new System.EventHandler(this.PlotAdvancedTreasure_Click);
 			// 
 			// PlotAdvancedIssues
 			// 
 			this.PlotAdvancedIssues.Name = "PlotAdvancedIssues";
-			this.PlotAdvancedIssues.Size = new System.Drawing.Size(185, 22);
+			this.PlotAdvancedIssues.Size = new System.Drawing.Size(184, 22);
 			this.PlotAdvancedIssues.Text = "Plot Design Issues";
 			this.PlotAdvancedIssues.Click += new System.EventHandler(this.PlotAdvancedIssues_Click);
 			// 
 			// PlotAdvancedDifficulty
 			// 
 			this.PlotAdvancedDifficulty.Name = "PlotAdvancedDifficulty";
-			this.PlotAdvancedDifficulty.Size = new System.Drawing.Size(185, 22);
+			this.PlotAdvancedDifficulty.Size = new System.Drawing.Size(184, 22);
 			this.PlotAdvancedDifficulty.Text = "Adjust Difficulty...";
 			this.PlotAdvancedDifficulty.Click += new System.EventHandler(this.PlotAdvancedDifficulty_Click);
 			// 
@@ -786,55 +777,55 @@
             this.toolStripSeparator29,
             this.ContextExplore});
 			this.PointMenu.Name = "PointMenu";
-			this.PointMenu.Size = new System.Drawing.Size(166, 232);
+			this.PointMenu.Size = new System.Drawing.Size(165, 232);
 			this.PointMenu.Opening += new System.ComponentModel.CancelEventHandler(this.PointMenu_Opening);
 			// 
 			// ContextAdd
 			// 
 			this.ContextAdd.Name = "ContextAdd";
-			this.ContextAdd.Size = new System.Drawing.Size(165, 22);
+			this.ContextAdd.Size = new System.Drawing.Size(164, 22);
 			this.ContextAdd.Text = "Add Point...";
 			this.ContextAdd.Click += new System.EventHandler(this.ContextAdd_Click);
 			// 
 			// ContextAddBetween
 			// 
 			this.ContextAddBetween.Name = "ContextAddBetween";
-			this.ContextAddBetween.Size = new System.Drawing.Size(165, 22);
+			this.ContextAddBetween.Size = new System.Drawing.Size(164, 22);
 			this.ContextAddBetween.Text = "Add Point";
 			// 
 			// toolStripSeparator28
 			// 
 			this.toolStripSeparator28.Name = "toolStripSeparator28";
-			this.toolStripSeparator28.Size = new System.Drawing.Size(162, 6);
+			this.toolStripSeparator28.Size = new System.Drawing.Size(161, 6);
 			// 
 			// ContextDisconnectAll
 			// 
 			this.ContextDisconnectAll.Name = "ContextDisconnectAll";
-			this.ContextDisconnectAll.Size = new System.Drawing.Size(165, 22);
+			this.ContextDisconnectAll.Size = new System.Drawing.Size(164, 22);
 			this.ContextDisconnectAll.Text = "Disconnect Point";
 			this.ContextDisconnectAll.Click += new System.EventHandler(this.ContextDisconnectAll_Click);
 			// 
 			// ContextDisconnect
 			// 
 			this.ContextDisconnect.Name = "ContextDisconnect";
-			this.ContextDisconnect.Size = new System.Drawing.Size(165, 22);
+			this.ContextDisconnect.Size = new System.Drawing.Size(164, 22);
 			this.ContextDisconnect.Text = "Disconnect From";
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(162, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(161, 6);
 			// 
 			// ContextMoveTo
 			// 
 			this.ContextMoveTo.Name = "ContextMoveTo";
-			this.ContextMoveTo.Size = new System.Drawing.Size(165, 22);
+			this.ContextMoveTo.Size = new System.Drawing.Size(164, 22);
 			this.ContextMoveTo.Text = "Move To Subplot";
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(162, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(161, 6);
 			// 
 			// ContextState
 			// 
@@ -843,7 +834,7 @@
             this.ContextStateCompleted,
             this.ContextStateSkipped});
 			this.ContextState.Name = "ContextState";
-			this.ContextState.Size = new System.Drawing.Size(165, 22);
+			this.ContextState.Size = new System.Drawing.Size(164, 22);
 			this.ContextState.Text = "State";
 			// 
 			// ContextStateNormal
@@ -870,31 +861,31 @@
 			// toolStripSeparator20
 			// 
 			this.toolStripSeparator20.Name = "toolStripSeparator20";
-			this.toolStripSeparator20.Size = new System.Drawing.Size(162, 6);
+			this.toolStripSeparator20.Size = new System.Drawing.Size(161, 6);
 			// 
 			// ContextEdit
 			// 
 			this.ContextEdit.Name = "ContextEdit";
-			this.ContextEdit.Size = new System.Drawing.Size(165, 22);
+			this.ContextEdit.Size = new System.Drawing.Size(164, 22);
 			this.ContextEdit.Text = "Edit";
 			this.ContextEdit.Click += new System.EventHandler(this.EditBtn_Click);
 			// 
 			// ContextRemove
 			// 
 			this.ContextRemove.Name = "ContextRemove";
-			this.ContextRemove.Size = new System.Drawing.Size(165, 22);
+			this.ContextRemove.Size = new System.Drawing.Size(164, 22);
 			this.ContextRemove.Text = "Remove";
 			this.ContextRemove.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// toolStripSeparator29
 			// 
 			this.toolStripSeparator29.Name = "toolStripSeparator29";
-			this.toolStripSeparator29.Size = new System.Drawing.Size(162, 6);
+			this.toolStripSeparator29.Size = new System.Drawing.Size(161, 6);
 			// 
 			// ContextExplore
 			// 
 			this.ContextExplore.Name = "ContextExplore";
-			this.ContextExplore.Size = new System.Drawing.Size(165, 22);
+			this.ContextExplore.Size = new System.Drawing.Size(164, 22);
 			this.ContextExplore.Text = "Explore Subplot";
 			this.ContextExplore.Click += new System.EventHandler(this.ExploreBtn_Click);
 			// 
@@ -979,8 +970,7 @@
 			// FileAdvanced
 			// 
 			this.FileAdvanced.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AdvancedDelve,
-            this.AdvancedSample});
+            this.AdvancedDelve});
 			this.FileAdvanced.Name = "FileAdvanced";
 			this.FileAdvanced.Size = new System.Drawing.Size(195, 22);
 			this.FileAdvanced.Text = "Advanced";
@@ -988,16 +978,9 @@
 			// AdvancedDelve
 			// 
 			this.AdvancedDelve.Name = "AdvancedDelve";
-			this.AdvancedDelve.Size = new System.Drawing.Size(245, 22);
+			this.AdvancedDelve.Size = new System.Drawing.Size(210, 22);
 			this.AdvancedDelve.Text = "Create a Dungeon Delve...";
 			this.AdvancedDelve.Click += new System.EventHandler(this.AdvancedDelve_Click);
-			// 
-			// AdvancedSample
-			// 
-			this.AdvancedSample.Name = "AdvancedSample";
-			this.AdvancedSample.Size = new System.Drawing.Size(245, 22);
-			this.AdvancedSample.Text = "Download a Premade Adventure";
-			this.AdvancedSample.Click += new System.EventHandler(this.AdvancedSample_Click);
 			// 
 			// toolStripSeparator42
 			// 
@@ -1242,7 +1225,7 @@
             this.toolStripMenuItem5,
             this.ToolsAddIns});
 			this.ToolsMenu.Name = "ToolsMenu";
-			this.ToolsMenu.Size = new System.Drawing.Size(48, 20);
+			this.ToolsMenu.Size = new System.Drawing.Size(46, 20);
 			this.ToolsMenu.Text = "Tools";
 			this.ToolsMenu.DropDownOpening += new System.EventHandler(this.ToolsMenu_DropDownOpening);
 			// 
@@ -1354,14 +1337,6 @@
 			this.HelpMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.HelpManual,
             this.toolStripSeparator12,
-            this.HelpFeedback,
-            this.toolStripMenuItem8,
-            this.HelpTutorials,
-            this.toolStripSeparator47,
-            this.HelpWebsite,
-            this.HelpFacebook,
-            this.HelpTwitter,
-            this.toolStripSeparator13,
             this.HelpAbout});
 			this.HelpMenu.Name = "HelpMenu";
 			this.HelpMenu.Size = new System.Drawing.Size(44, 20);
@@ -1371,69 +1346,19 @@
 			// 
 			this.HelpManual.Name = "HelpManual";
 			this.HelpManual.ShortcutKeys = System.Windows.Forms.Keys.F1;
-			this.HelpManual.Size = new System.Drawing.Size(204, 22);
+			this.HelpManual.Size = new System.Drawing.Size(152, 22);
 			this.HelpManual.Text = "Manual";
 			this.HelpManual.Click += new System.EventHandler(this.HelpManual_Click);
 			// 
 			// toolStripSeparator12
 			// 
 			this.toolStripSeparator12.Name = "toolStripSeparator12";
-			this.toolStripSeparator12.Size = new System.Drawing.Size(201, 6);
-			// 
-			// HelpFeedback
-			// 
-			this.HelpFeedback.Name = "HelpFeedback";
-			this.HelpFeedback.Size = new System.Drawing.Size(204, 22);
-			this.HelpFeedback.Text = "Send Feedback";
-			this.HelpFeedback.Click += new System.EventHandler(this.HelpFeedback_Click);
-			// 
-			// toolStripMenuItem8
-			// 
-			this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-			this.toolStripMenuItem8.Size = new System.Drawing.Size(201, 6);
-			// 
-			// HelpTutorials
-			// 
-			this.HelpTutorials.Name = "HelpTutorials";
-			this.HelpTutorials.Size = new System.Drawing.Size(204, 22);
-			this.HelpTutorials.Text = "Tutorials";
-			this.HelpTutorials.Click += new System.EventHandler(this.HelpTutorials_Click);
-			// 
-			// toolStripSeparator47
-			// 
-			this.toolStripSeparator47.Name = "toolStripSeparator47";
-			this.toolStripSeparator47.Size = new System.Drawing.Size(201, 6);
-			// 
-			// HelpWebsite
-			// 
-			this.HelpWebsite.Name = "HelpWebsite";
-			this.HelpWebsite.Size = new System.Drawing.Size(204, 22);
-			this.HelpWebsite.Text = "Masterplan Website";
-			this.HelpWebsite.Click += new System.EventHandler(this.HelpWebsite_Click);
-			// 
-			// HelpFacebook
-			// 
-			this.HelpFacebook.Name = "HelpFacebook";
-			this.HelpFacebook.Size = new System.Drawing.Size(204, 22);
-			this.HelpFacebook.Text = "Masterplan on Facebook";
-			this.HelpFacebook.Click += new System.EventHandler(this.HelpFacebook_Click);
-			// 
-			// HelpTwitter
-			// 
-			this.HelpTwitter.Name = "HelpTwitter";
-			this.HelpTwitter.Size = new System.Drawing.Size(204, 22);
-			this.HelpTwitter.Text = "Masterplan on Twitter";
-			this.HelpTwitter.Click += new System.EventHandler(this.HelpTwitter_Click);
-			// 
-			// toolStripSeparator13
-			// 
-			this.toolStripSeparator13.Name = "toolStripSeparator13";
-			this.toolStripSeparator13.Size = new System.Drawing.Size(201, 6);
+			this.toolStripSeparator12.Size = new System.Drawing.Size(149, 6);
 			// 
 			// HelpAbout
 			// 
 			this.HelpAbout.Name = "HelpAbout";
-			this.HelpAbout.Size = new System.Drawing.Size(204, 22);
+			this.HelpAbout.Size = new System.Drawing.Size(152, 22);
 			this.HelpAbout.Text = "About";
 			this.HelpAbout.Click += new System.EventHandler(this.HelpAbout_Click);
 			// 
@@ -1485,8 +1410,8 @@
 			this.NavigationTree.ShowRootLines = false;
 			this.NavigationTree.Size = new System.Drawing.Size(152, 385);
 			this.NavigationTree.TabIndex = 0;
-			this.NavigationTree.DragDrop += new System.Windows.Forms.DragEventHandler(this.NavigationTree_DragDrop);
 			this.NavigationTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.NavigationTree_AfterSelect);
+			this.NavigationTree.DragDrop += new System.Windows.Forms.DragEventHandler(this.NavigationTree_DragDrop);
 			this.NavigationTree.DragOver += new System.Windows.Forms.DragEventHandler(this.NavigationTree_DragOver);
 			// 
 			// PlotPanel
@@ -1516,10 +1441,10 @@
 			this.PlotView.ShowTooltips = true;
 			this.PlotView.Size = new System.Drawing.Size(350, 336);
 			this.PlotView.TabIndex = 2;
-			this.PlotView.PlotLayoutChanged += new System.EventHandler(this.PlotView_PlotLayoutChanged);
-			this.PlotView.DoubleClick += new System.EventHandler(this.PlotView_DoubleClick);
 			this.PlotView.SelectionChanged += new System.EventHandler(this.PlotView_SelectionChanged);
+			this.PlotView.PlotLayoutChanged += new System.EventHandler(this.PlotView_PlotLayoutChanged);
 			this.PlotView.PlotChanged += new System.EventHandler(this.PlotView_PlotChanged);
+			this.PlotView.DoubleClick += new System.EventHandler(this.PlotView_DoubleClick);
 			// 
 			// BreadcrumbBar
 			// 
@@ -1634,7 +1559,7 @@
 			this.ExploreBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExploreBtn.Image")));
 			this.ExploreBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ExploreBtn.Name = "ExploreBtn";
-			this.ExploreBtn.Size = new System.Drawing.Size(93, 22);
+			this.ExploreBtn.Size = new System.Drawing.Size(94, 22);
 			this.ExploreBtn.Text = "Explore Subplot";
 			this.ExploreBtn.Click += new System.EventHandler(this.ExploreBtn_Click);
 			// 
@@ -2619,9 +2544,9 @@
 			this.AttachmentList.TabIndex = 1;
 			this.AttachmentList.UseCompatibleStateImageBehavior = false;
 			this.AttachmentList.View = System.Windows.Forms.View.Details;
-			this.AttachmentList.DoubleClick += new System.EventHandler(this.AttachmentExtractAndRun_Click);
 			this.AttachmentList.DragDrop += new System.Windows.Forms.DragEventHandler(this.AttachmentList_DragDrop);
 			this.AttachmentList.DragOver += new System.Windows.Forms.DragEventHandler(this.AttachmentList_DragOver);
+			this.AttachmentList.DoubleClick += new System.EventHandler(this.AttachmentExtractAndRun_Click);
 			// 
 			// AttachmentHdr
 			// 
@@ -2683,20 +2608,20 @@
 			this.AttachmentExtract.Image = ((System.Drawing.Image)(resources.GetObject("AttachmentExtract.Image")));
 			this.AttachmentExtract.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AttachmentExtract.Name = "AttachmentExtract";
-			this.AttachmentExtract.Size = new System.Drawing.Size(55, 22);
+			this.AttachmentExtract.Size = new System.Drawing.Size(56, 22);
 			this.AttachmentExtract.Text = "Extract";
 			// 
 			// AttachmentExtractSimple
 			// 
 			this.AttachmentExtractSimple.Name = "AttachmentExtractSimple";
-			this.AttachmentExtractSimple.Size = new System.Drawing.Size(224, 22);
+			this.AttachmentExtractSimple.Size = new System.Drawing.Size(225, 22);
 			this.AttachmentExtractSimple.Text = "Extract to Desktop";
 			this.AttachmentExtractSimple.Click += new System.EventHandler(this.AttachmentExtractSimple_Click);
 			// 
 			// AttachmentExtractAndRun
 			// 
 			this.AttachmentExtractAndRun.Name = "AttachmentExtractAndRun";
-			this.AttachmentExtractAndRun.Size = new System.Drawing.Size(224, 22);
+			this.AttachmentExtractAndRun.Size = new System.Drawing.Size(225, 22);
 			this.AttachmentExtractAndRun.Text = "Extract to Desktop and Open";
 			this.AttachmentExtractAndRun.Click += new System.EventHandler(this.AttachmentExtractAndRun_Click);
 			// 
@@ -3260,9 +3185,9 @@
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Masterplan";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.Shown += new System.EventHandler(this.MainForm_Shown);
 			this.Layout += new System.Windows.Forms.LayoutEventHandler(this.MainForm_Layout);
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.WorkspaceToolbar.ResumeLayout(false);
 			this.WorkspaceToolbar.PerformLayout();
 			this.PointMenu.ResumeLayout(false);
@@ -3379,7 +3304,6 @@
 		private System.Windows.Forms.ToolStripMenuItem ProjectMenu;
 		private System.Windows.Forms.ToolStripMenuItem HelpMenu;
 		private System.Windows.Forms.ToolStripMenuItem HelpAbout;
-		private System.Windows.Forms.ToolStripMenuItem HelpFeedback;
 		private System.Windows.Forms.ToolStripMenuItem ProjectProject;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
 		private System.Windows.Forms.ToolStripButton SearchBtn;
@@ -3397,8 +3321,6 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
 		private System.Windows.Forms.ToolStripMenuItem ProjectPlayers;
 		private System.Windows.Forms.ToolStripMenuItem ProjectCalendars;
-		private System.Windows.Forms.ToolStripMenuItem HelpWebsite;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
 		private System.Windows.Forms.SplitContainer NavigationSplitter;
 		private System.Windows.Forms.TreeView NavigationTree;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
@@ -3578,9 +3500,6 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
 		private System.Windows.Forms.ToolStripMenuItem EncSharePublish;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator40;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
-		private System.Windows.Forms.ToolStripMenuItem HelpFacebook;
-		private System.Windows.Forms.ToolStripMenuItem HelpTwitter;
 		private System.Windows.Forms.ToolStripMenuItem AddTheme;
 		private System.Windows.Forms.ToolStripDropDownButton RulesShareBtn;
 		private System.Windows.Forms.ToolStripMenuItem RulesShareExport;
@@ -3632,15 +3551,12 @@
 		private System.Windows.Forms.ListView EntryImageList;
 		private System.Windows.Forms.TabPage CompendiumPage;
 		private System.Windows.Forms.WebBrowser CompendiumBrowser;
-		private System.Windows.Forms.ToolStripMenuItem HelpTutorials;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator47;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator34;
 		private System.Windows.Forms.ToolStripMenuItem ToolsIssues;
 		private Masterplan.Controls.InfoPanel InfoPanel;
 		private System.Windows.Forms.ToolStrip ReferenceToolbar;
 		private System.Windows.Forms.ToolStripButton DieRollerBtn;
 		private System.Windows.Forms.ToolStripMenuItem ToolsExportLoot;
-		private System.Windows.Forms.ToolStripMenuItem AdvancedSample;
 		private System.Windows.Forms.ToolStripDropDownButton AdvancedBtn;
 		private System.Windows.Forms.ToolStripMenuItem PlotAdvancedTreasure;
 		private System.Windows.Forms.ToolStripMenuItem PlotAdvancedIssues;

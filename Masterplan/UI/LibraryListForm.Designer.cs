@@ -55,13 +55,12 @@
 			this.LibraryEditBtn = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
 			this.LibraryMergeBtn = new System.Windows.Forms.ToolStripButton();
-			this.CompendiumBtn = new System.Windows.Forms.Button();
 			this.HelpBtn = new System.Windows.Forms.Button();
 			this.Pages = new System.Windows.Forms.TabControl();
 			this.CreaturesPage = new System.Windows.Forms.TabPage();
 			this.CreatureList = new System.Windows.Forms.ListView();
-			this.CreatureNameHdr = new System.Windows.Forms.ColumnHeader();
-			this.CreatureInfoHdr = new System.Windows.Forms.ColumnHeader();
+			this.CreatureNameHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.CreatureInfoHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.CreatureContext = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.CreatureContextRemove = new System.Windows.Forms.ToolStripMenuItem();
 			this.CreatureContextCategory = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,8 +91,8 @@
 			this.CreatureToolsExport = new System.Windows.Forms.ToolStripMenuItem();
 			this.TemplatesPage = new System.Windows.Forms.TabPage();
 			this.TemplateList = new System.Windows.Forms.ListView();
-			this.TemplateNameHdr = new System.Windows.Forms.ColumnHeader();
-			this.TemplateInfoHdr = new System.Windows.Forms.ColumnHeader();
+			this.TemplateNameHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.TemplateInfoHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.TemplateContext = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.TemplateContextRemove = new System.Windows.Forms.ToolStripMenuItem();
 			this.TemplateContextType = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,8 +117,8 @@
 			this.TemplateToolsExport = new System.Windows.Forms.ToolStripMenuItem();
 			this.TrapsPage = new System.Windows.Forms.TabPage();
 			this.TrapList = new System.Windows.Forms.ListView();
-			this.TrapNameHdr = new System.Windows.Forms.ColumnHeader();
-			this.TrapInfoHdr = new System.Windows.Forms.ColumnHeader();
+			this.TrapNameHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.TrapInfoHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.TrapContext = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.TrapContextRemove = new System.Windows.Forms.ToolStripMenuItem();
 			this.TrapContextType = new System.Windows.Forms.ToolStripMenuItem();
@@ -144,8 +143,8 @@
 			this.TrapToolsExport = new System.Windows.Forms.ToolStripMenuItem();
 			this.ChallengePage = new System.Windows.Forms.TabPage();
 			this.ChallengeList = new System.Windows.Forms.ListView();
-			this.ChallengeNameHdr = new System.Windows.Forms.ColumnHeader();
-			this.ChallengeInfoHdr = new System.Windows.Forms.ColumnHeader();
+			this.ChallengeNameHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.ChallengeInfoHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.ChallengeToolbar = new System.Windows.Forms.ToolStrip();
 			this.ChallengeAdd = new System.Windows.Forms.ToolStripDropDownButton();
 			this.ChallengeAddAdd = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,7 +164,7 @@
 			this.MagicItemsPage = new System.Windows.Forms.TabPage();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.MagicItemList = new System.Windows.Forms.ListView();
-			this.MagicItemHdr = new System.Windows.Forms.ColumnHeader();
+			this.MagicItemHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.MagicItemContext = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.MagicItemContextRemove = new System.Windows.Forms.ToolStripMenuItem();
 			this.MagicItemToolbar = new System.Windows.Forms.ToolStrip();
@@ -178,7 +177,7 @@
 			this.MagicItemToolsDemographics = new System.Windows.Forms.ToolStripMenuItem();
 			this.MagicItemToolsExport = new System.Windows.Forms.ToolStripMenuItem();
 			this.MagicItemVersionList = new System.Windows.Forms.ListView();
-			this.MagicItemInfoHdr = new System.Windows.Forms.ColumnHeader();
+			this.MagicItemInfoHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.MagicItemVersionToolbar = new System.Windows.Forms.ToolStrip();
 			this.MagicItemRemoveBtn = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -190,7 +189,7 @@
 			this.MagicItemStatBlockBtn = new System.Windows.Forms.ToolStripButton();
 			this.TilesPage = new System.Windows.Forms.TabPage();
 			this.TileList = new System.Windows.Forms.ListView();
-			this.TileSetNameHdr = new System.Windows.Forms.ColumnHeader();
+			this.TileSetNameHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.TileContext = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.TileContextRemove = new System.Windows.Forms.ToolStripMenuItem();
 			this.TileContextCategory = new System.Windows.Forms.ToolStripMenuItem();
@@ -220,8 +219,8 @@
 			this.TileToolsExport = new System.Windows.Forms.ToolStripMenuItem();
 			this.TerrainPowersPage = new System.Windows.Forms.TabPage();
 			this.TerrainPowerList = new System.Windows.Forms.ListView();
-			this.TPNameHdr = new System.Windows.Forms.ColumnHeader();
-			this.TPInfoHdr = new System.Windows.Forms.ColumnHeader();
+			this.TPNameHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.TPInfoHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.TPContext = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.TPContextRemove = new System.Windows.Forms.ToolStripMenuItem();
 			this.TerrainPowerToolbar = new System.Windows.Forms.ToolStrip();
@@ -242,8 +241,8 @@
 			this.TPToolsExport = new System.Windows.Forms.ToolStripMenuItem();
 			this.ArtifactPage = new System.Windows.Forms.TabPage();
 			this.ArtifactList = new System.Windows.Forms.ListView();
-			this.ArtifactHdr = new System.Windows.Forms.ColumnHeader();
-			this.ArtifactInfoHdr = new System.Windows.Forms.ColumnHeader();
+			this.ArtifactHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.ArtifactInfoHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.ArtifactContext = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.ArtifactContextRemove = new System.Windows.Forms.ToolStripMenuItem();
 			this.ArtifactToolbar = new System.Windows.Forms.ToolStrip();
@@ -312,7 +311,6 @@
 			// 
 			this.Splitter.Panel1.Controls.Add(this.LibraryTree);
 			this.Splitter.Panel1.Controls.Add(this.LibraryToolbar);
-			this.Splitter.Panel1.Controls.Add(this.CompendiumBtn);
 			this.Splitter.Panel1.Controls.Add(this.HelpBtn);
 			// 
 			// Splitter.Panel2
@@ -333,13 +331,13 @@
 			this.LibraryTree.Name = "LibraryTree";
 			this.LibraryTree.ShowPlusMinus = false;
 			this.LibraryTree.ShowRootLines = false;
-			this.LibraryTree.Size = new System.Drawing.Size(249, 360);
+			this.LibraryTree.Size = new System.Drawing.Size(249, 383);
 			this.LibraryTree.TabIndex = 1;
-			this.LibraryTree.DoubleClick += new System.EventHandler(this.LibraryEditBtn_Click);
-			this.LibraryTree.DragDrop += new System.Windows.Forms.DragEventHandler(this.LibraryList_DragDrop);
-			this.LibraryTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.LibraryTree_AfterSelect);
 			this.LibraryTree.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.LibraryList_ItemDrag);
+			this.LibraryTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.LibraryTree_AfterSelect);
+			this.LibraryTree.DragDrop += new System.Windows.Forms.DragEventHandler(this.LibraryList_DragDrop);
 			this.LibraryTree.DragOver += new System.Windows.Forms.DragEventHandler(this.LibraryList_DragOver);
+			this.LibraryTree.DoubleClick += new System.EventHandler(this.LibraryEditBtn_Click);
 			// 
 			// LibraryToolbar
 			// 
@@ -424,17 +422,6 @@
 			this.LibraryMergeBtn.Text = "Merge";
 			this.LibraryMergeBtn.Click += new System.EventHandler(this.LibraryMergeBtn_Click);
 			// 
-			// CompendiumBtn
-			// 
-			this.CompendiumBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.CompendiumBtn.Location = new System.Drawing.Point(0, 385);
-			this.CompendiumBtn.Name = "CompendiumBtn";
-			this.CompendiumBtn.Size = new System.Drawing.Size(249, 23);
-			this.CompendiumBtn.TabIndex = 2;
-			this.CompendiumBtn.Text = "Download Compendium Items";
-			this.CompendiumBtn.UseVisualStyleBackColor = true;
-			this.CompendiumBtn.Click += new System.EventHandler(this.CompendiumBtn_Click);
-			// 
 			// HelpBtn
 			// 
 			this.HelpBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -494,8 +481,8 @@
 			this.CreatureList.TabIndex = 1;
 			this.CreatureList.UseCompatibleStateImageBehavior = false;
 			this.CreatureList.View = System.Windows.Forms.View.Details;
-			this.CreatureList.DoubleClick += new System.EventHandler(this.OppEditBtn_Click);
 			this.CreatureList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.OppList_ItemDrag);
+			this.CreatureList.DoubleClick += new System.EventHandler(this.OppEditBtn_Click);
 			// 
 			// CreatureNameHdr
 			// 
@@ -719,7 +706,7 @@
 			this.CreatureTools.Image = ((System.Drawing.Image)(resources.GetObject("CreatureTools.Image")));
 			this.CreatureTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.CreatureTools.Name = "CreatureTools";
-			this.CreatureTools.Size = new System.Drawing.Size(49, 22);
+			this.CreatureTools.Size = new System.Drawing.Size(47, 22);
 			this.CreatureTools.Text = "Tools";
 			// 
 			// CreatureToolsDemographics
@@ -789,8 +776,8 @@
 			this.TemplateList.TabIndex = 2;
 			this.TemplateList.UseCompatibleStateImageBehavior = false;
 			this.TemplateList.View = System.Windows.Forms.View.Details;
-			this.TemplateList.DoubleClick += new System.EventHandler(this.TemplateEditBtn_Click);
 			this.TemplateList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.TemplateList_ItemDrag);
+			this.TemplateList.DoubleClick += new System.EventHandler(this.TemplateEditBtn_Click);
 			// 
 			// TemplateNameHdr
 			// 
@@ -877,26 +864,26 @@
 			// addTemplateToolStripMenuItem
 			// 
 			this.addTemplateToolStripMenuItem.Name = "addTemplateToolStripMenuItem";
-			this.addTemplateToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+			this.addTemplateToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
 			this.addTemplateToolStripMenuItem.Text = "Add a Template...";
 			this.addTemplateToolStripMenuItem.Click += new System.EventHandler(this.TemplateAddBtn_Click);
 			// 
 			// TemplateAddTheme
 			// 
 			this.TemplateAddTheme.Name = "TemplateAddTheme";
-			this.TemplateAddTheme.Size = new System.Drawing.Size(167, 22);
+			this.TemplateAddTheme.Size = new System.Drawing.Size(165, 22);
 			this.TemplateAddTheme.Text = "Add a Theme...";
 			this.TemplateAddTheme.Click += new System.EventHandler(this.TemplateAddTheme_Click);
 			// 
 			// toolStripSeparator20
 			// 
 			this.toolStripSeparator20.Name = "toolStripSeparator20";
-			this.toolStripSeparator20.Size = new System.Drawing.Size(164, 6);
+			this.toolStripSeparator20.Size = new System.Drawing.Size(162, 6);
 			// 
 			// TemplateImport
 			// 
 			this.TemplateImport.Name = "TemplateImport";
-			this.TemplateImport.Size = new System.Drawing.Size(167, 22);
+			this.TemplateImport.Size = new System.Drawing.Size(165, 22);
 			this.TemplateImport.Text = "Import...";
 			this.TemplateImport.Click += new System.EventHandler(this.TemplateImport_Click);
 			// 
@@ -983,13 +970,13 @@
 			this.TemplateTools.Image = ((System.Drawing.Image)(resources.GetObject("TemplateTools.Image")));
 			this.TemplateTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TemplateTools.Name = "TemplateTools";
-			this.TemplateTools.Size = new System.Drawing.Size(49, 22);
+			this.TemplateTools.Size = new System.Drawing.Size(47, 22);
 			this.TemplateTools.Text = "Tools";
 			// 
 			// TemplateToolsExport
 			// 
 			this.TemplateToolsExport.Name = "TemplateToolsExport";
-			this.TemplateToolsExport.Size = new System.Drawing.Size(116, 22);
+			this.TemplateToolsExport.Size = new System.Drawing.Size(117, 22);
 			this.TemplateToolsExport.Text = "Export...";
 			this.TemplateToolsExport.Click += new System.EventHandler(this.TemplateToolsExport_Click);
 			// 
@@ -1029,8 +1016,8 @@
 			this.TrapList.TabIndex = 4;
 			this.TrapList.UseCompatibleStateImageBehavior = false;
 			this.TrapList.View = System.Windows.Forms.View.Details;
-			this.TrapList.DoubleClick += new System.EventHandler(this.TrapEditBtn_Click);
 			this.TrapList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.TrapList_ItemDrag);
+			this.TrapList.DoubleClick += new System.EventHandler(this.TrapEditBtn_Click);
 			// 
 			// TrapNameHdr
 			// 
@@ -1116,19 +1103,19 @@
 			// TrapAddAdd
 			// 
 			this.TrapAddAdd.Name = "TrapAddAdd";
-			this.TrapAddAdd.Size = new System.Drawing.Size(141, 22);
+			this.TrapAddAdd.Size = new System.Drawing.Size(139, 22);
 			this.TrapAddAdd.Text = "Add a Trap...";
 			this.TrapAddAdd.Click += new System.EventHandler(this.TrapAddBtn_Click);
 			// 
 			// toolStripSeparator25
 			// 
 			this.toolStripSeparator25.Name = "toolStripSeparator25";
-			this.toolStripSeparator25.Size = new System.Drawing.Size(138, 6);
+			this.toolStripSeparator25.Size = new System.Drawing.Size(136, 6);
 			// 
 			// TrapAddImport
 			// 
 			this.TrapAddImport.Name = "TrapAddImport";
-			this.TrapAddImport.Size = new System.Drawing.Size(141, 22);
+			this.TrapAddImport.Size = new System.Drawing.Size(139, 22);
 			this.TrapAddImport.Text = "Import...";
 			this.TrapAddImport.Click += new System.EventHandler(this.TrapAddImport_Click);
 			// 
@@ -1216,7 +1203,7 @@
 			this.TrapTools.Image = ((System.Drawing.Image)(resources.GetObject("TrapTools.Image")));
 			this.TrapTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TrapTools.Name = "TrapTools";
-			this.TrapTools.Size = new System.Drawing.Size(49, 22);
+			this.TrapTools.Size = new System.Drawing.Size(47, 22);
 			this.TrapTools.Text = "Tools";
 			// 
 			// TrapToolsDemographics
@@ -1268,8 +1255,8 @@
 			this.ChallengeList.TabIndex = 6;
 			this.ChallengeList.UseCompatibleStateImageBehavior = false;
 			this.ChallengeList.View = System.Windows.Forms.View.Details;
-			this.ChallengeList.DoubleClick += new System.EventHandler(this.ChallengeEditBtn_Click);
 			this.ChallengeList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.ChallengeList_ItemDrag);
+			this.ChallengeList.DoubleClick += new System.EventHandler(this.ChallengeEditBtn_Click);
 			// 
 			// ChallengeNameHdr
 			// 
@@ -1416,13 +1403,13 @@
 			this.ChallengeTools.Image = ((System.Drawing.Image)(resources.GetObject("ChallengeTools.Image")));
 			this.ChallengeTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ChallengeTools.Name = "ChallengeTools";
-			this.ChallengeTools.Size = new System.Drawing.Size(49, 22);
+			this.ChallengeTools.Size = new System.Drawing.Size(47, 22);
 			this.ChallengeTools.Text = "Tools";
 			// 
 			// ChallengeToolsExport
 			// 
 			this.ChallengeToolsExport.Name = "ChallengeToolsExport";
-			this.ChallengeToolsExport.Size = new System.Drawing.Size(116, 22);
+			this.ChallengeToolsExport.Size = new System.Drawing.Size(117, 22);
 			this.ChallengeToolsExport.Text = "Export...";
 			this.ChallengeToolsExport.Click += new System.EventHandler(this.ChallengeToolsExport_Click);
 			// 
@@ -1552,7 +1539,7 @@
 			this.MagicItemTools.Image = ((System.Drawing.Image)(resources.GetObject("MagicItemTools.Image")));
 			this.MagicItemTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MagicItemTools.Name = "MagicItemTools";
-			this.MagicItemTools.Size = new System.Drawing.Size(49, 22);
+			this.MagicItemTools.Size = new System.Drawing.Size(47, 22);
 			this.MagicItemTools.Text = "Tools";
 			// 
 			// MagicItemToolsDemographics
@@ -1593,8 +1580,8 @@
 			this.MagicItemVersionList.TabIndex = 1;
 			this.MagicItemVersionList.UseCompatibleStateImageBehavior = false;
 			this.MagicItemVersionList.View = System.Windows.Forms.View.Details;
-			this.MagicItemVersionList.DoubleClick += new System.EventHandler(this.MagicItemEditBtn_Click);
 			this.MagicItemVersionList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.MagicItemList_ItemDrag);
+			this.MagicItemVersionList.DoubleClick += new System.EventHandler(this.MagicItemEditBtn_Click);
 			// 
 			// MagicItemInfoHdr
 			// 
@@ -1715,8 +1702,8 @@
 			this.TileList.Sorting = System.Windows.Forms.SortOrder.Ascending;
 			this.TileList.TabIndex = 4;
 			this.TileList.UseCompatibleStateImageBehavior = false;
-			this.TileList.DoubleClick += new System.EventHandler(this.TileSetEditBtn_Click);
 			this.TileList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.TileSetView_ItemDrag);
+			this.TileList.DoubleClick += new System.EventHandler(this.TileSetEditBtn_Click);
 			// 
 			// TileSetNameHdr
 			// 
@@ -1939,13 +1926,13 @@
 			this.TileTools.Image = ((System.Drawing.Image)(resources.GetObject("TileTools.Image")));
 			this.TileTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TileTools.Name = "TileTools";
-			this.TileTools.Size = new System.Drawing.Size(49, 22);
+			this.TileTools.Size = new System.Drawing.Size(47, 22);
 			this.TileTools.Text = "Tools";
 			// 
 			// TileToolsExport
 			// 
 			this.TileToolsExport.Name = "TileToolsExport";
-			this.TileToolsExport.Size = new System.Drawing.Size(116, 22);
+			this.TileToolsExport.Size = new System.Drawing.Size(117, 22);
 			this.TileToolsExport.Text = "Export...";
 			this.TileToolsExport.Click += new System.EventHandler(this.TileToolsExport_Click);
 			// 
@@ -1985,8 +1972,8 @@
 			this.TerrainPowerList.TabIndex = 6;
 			this.TerrainPowerList.UseCompatibleStateImageBehavior = false;
 			this.TerrainPowerList.View = System.Windows.Forms.View.Details;
-			this.TerrainPowerList.DoubleClick += new System.EventHandler(this.TPEditBtn_Click);
 			this.TerrainPowerList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.TPList_ItemDrag);
+			this.TerrainPowerList.DoubleClick += new System.EventHandler(this.TPEditBtn_Click);
 			// 
 			// TPNameHdr
 			// 
@@ -2048,19 +2035,19 @@
 			// TPAddTerrainPower
 			// 
 			this.TPAddTerrainPower.Name = "TPAddTerrainPower";
-			this.TPAddTerrainPower.Size = new System.Drawing.Size(190, 22);
+			this.TPAddTerrainPower.Size = new System.Drawing.Size(188, 22);
 			this.TPAddTerrainPower.Text = "Add a Terrain Power...";
 			this.TPAddTerrainPower.Click += new System.EventHandler(this.TPAddBtn_Click);
 			// 
 			// toolStripSeparator28
 			// 
 			this.toolStripSeparator28.Name = "toolStripSeparator28";
-			this.toolStripSeparator28.Size = new System.Drawing.Size(187, 6);
+			this.toolStripSeparator28.Size = new System.Drawing.Size(185, 6);
 			// 
 			// TPAddImport
 			// 
 			this.TPAddImport.Name = "TPAddImport";
-			this.TPAddImport.Size = new System.Drawing.Size(190, 22);
+			this.TPAddImport.Size = new System.Drawing.Size(188, 22);
 			this.TPAddImport.Text = "Import...";
 			this.TPAddImport.Click += new System.EventHandler(this.TPAddImport_Click);
 			// 
@@ -2147,13 +2134,13 @@
 			this.TPTools.Image = ((System.Drawing.Image)(resources.GetObject("TPTools.Image")));
 			this.TPTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TPTools.Name = "TPTools";
-			this.TPTools.Size = new System.Drawing.Size(49, 22);
+			this.TPTools.Size = new System.Drawing.Size(47, 22);
 			this.TPTools.Text = "Tools";
 			// 
 			// TPToolsExport
 			// 
 			this.TPToolsExport.Name = "TPToolsExport";
-			this.TPToolsExport.Size = new System.Drawing.Size(116, 22);
+			this.TPToolsExport.Size = new System.Drawing.Size(117, 22);
 			this.TPToolsExport.Text = "Export...";
 			this.TPToolsExport.Click += new System.EventHandler(this.TPToolsExport_Click);
 			// 
@@ -2193,8 +2180,8 @@
 			this.ArtifactList.TabIndex = 6;
 			this.ArtifactList.UseCompatibleStateImageBehavior = false;
 			this.ArtifactList.View = System.Windows.Forms.View.Details;
-			this.ArtifactList.DoubleClick += new System.EventHandler(this.ArtifactEdit_Click);
 			this.ArtifactList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.ArtifactList_ItemDrag);
+			this.ArtifactList.DoubleClick += new System.EventHandler(this.ArtifactEdit_Click);
 			// 
 			// ArtifactHdr
 			// 
@@ -2355,13 +2342,13 @@
 			this.ArtifactTools.Image = ((System.Drawing.Image)(resources.GetObject("ArtifactTools.Image")));
 			this.ArtifactTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ArtifactTools.Name = "ArtifactTools";
-			this.ArtifactTools.Size = new System.Drawing.Size(49, 22);
+			this.ArtifactTools.Size = new System.Drawing.Size(47, 22);
 			this.ArtifactTools.Text = "Tools";
 			// 
 			// ArtifactToolsExport
 			// 
 			this.ArtifactToolsExport.Name = "ArtifactToolsExport";
-			this.ArtifactToolsExport.Size = new System.Drawing.Size(116, 22);
+			this.ArtifactToolsExport.Size = new System.Drawing.Size(117, 22);
 			this.ArtifactToolsExport.Text = "Export...";
 			this.ArtifactToolsExport.Click += new System.EventHandler(this.ArtifactToolsExport_Click);
 			// 
@@ -2584,7 +2571,6 @@
 		private System.Windows.Forms.ToolStripMenuItem TileMap;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
 		private System.Windows.Forms.ToolStripMenuItem TileContextSize;
-		private System.Windows.Forms.Button CompendiumBtn;
 		private System.Windows.Forms.Button HelpBtn;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
 		private System.Windows.Forms.ToolStripButton LibraryMergeBtn;

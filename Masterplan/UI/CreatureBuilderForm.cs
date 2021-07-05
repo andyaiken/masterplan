@@ -44,7 +44,6 @@ namespace Masterplan.UI
 				NPC npc = creature as NPC;
 				fCreature = npc.Copy();
 
-				OptionsImport.Enabled = false;
 				OptionsVariant.Enabled = false;
 			}
 
@@ -242,13 +241,6 @@ namespace Masterplan.UI
 						fCreature.Tactics = dlg.Details;
 						update_statblock();
 					}
-				}
-
-				if (e.Url.LocalPath == "import")
-				{
-					e.Cancel = true;
-
-					import_creature();
 				}
 
 				if (e.Url.LocalPath == "variant")
@@ -576,11 +568,6 @@ namespace Masterplan.UI
 
 		#region Menu
 
-		private void OptionsImport_Click(object sender, EventArgs e)
-		{
-			import_creature();
-		}
-
 		private void OptionsVariant_Click(object sender, EventArgs e)
 		{
 			create_variant();
@@ -741,11 +728,6 @@ namespace Masterplan.UI
 						lines.Add("<TABLE>");
 						lines.Add("<TR class=heading>");
 						lines.Add("<TD><B>Create A New Creature</B></TD>");
-						lines.Add("</TR>");
-						lines.Add("<TR>");
-						lines.Add("<TD>");
-						lines.Add("Import a <A href=build:import>creature file</A> from Adventure Tools");
-						lines.Add("</TD>");
 						lines.Add("</TR>");
 						lines.Add("<TR>");
 						lines.Add("<TD>");
@@ -1176,28 +1158,6 @@ namespace Masterplan.UI
 			}
 
 			return str;
-		}
-
-		void import_creature()
-		{
-			OpenFileDialog dlg = new OpenFileDialog();
-			dlg.Filter = Program.MonsterFilter;
-
-			if (dlg.ShowDialog() == DialogResult.OK)
-			{
-				string xml = File.ReadAllText(dlg.FileName);
-				Creature c = AppImport.ImportCreature(xml);
-				if (c != null)
-				{
-					Guid id = fCreature.ID;
-					CreatureHelper.CopyFields(c, fCreature);
-					//fCreature = c;
-					fCreature.ID = id;
-
-					find_sample_powers();
-					update_view();
-				}
-			}
 		}
 
 		void create_random()

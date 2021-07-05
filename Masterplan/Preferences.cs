@@ -23,16 +23,6 @@ namespace Masterplan
 		}
 		string fLastFile = "";
 
-		/// <summary>
-		/// Gets or sets whether headlines are shown on the welcome screen.
-		/// </summary>
-		public bool ShowHeadlines
-		{
-			get { return fShowHeadlines; }
-			set { fShowHeadlines = value; }
-		}
-		bool fShowHeadlines = true;
-
 		#region Window
 
 		/// <summary>
@@ -186,16 +176,6 @@ namespace Masterplan
 			set { fCreatureAutoRemove = value; }
 		}
 		bool fCreatureAutoRemove = true;
-
-		/// <summary>
-		/// Gets or sets whether iPlay4E integration is active.
-		/// </summary>
-		public bool iPlay4E
-		{
-			get { return fiPlay4E; }
-			set { fiPlay4E = value; }
-		}
-		bool fiPlay4E = true;
 
 		/// <summary>
 		/// Gets or sets whether the combat view starts with two columns when there is a combat map.

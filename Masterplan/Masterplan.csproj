@@ -298,11 +298,9 @@
     <Compile Include="Tools\Generators\DwarfName.cs" />
     <Compile Include="Tools\Generators\ExoticName.cs" />
     <Compile Include="Tools\Generators\Potion.cs" />
-    <Compile Include="Tools\IO\AppImport.cs" />
     <Compile Include="Tools\Generators\Book.cs" />
     <Compile Include="Tools\GoalBuilder.cs" />
     <Compile Include="Tools\HeroGroup.cs" />
-    <Compile Include="Tools\IO\CompendiumHelper.cs" />
     <Compile Include="Tools\Conditions.cs" />
     <Compile Include="Tools\CreatureHelper.cs" />
     <Compile Include="Tools\Generators\DelveBuilder.cs" />
@@ -321,7 +319,6 @@
     <Compile Include="Tools\Generators\Treasure.cs" />
     <Compile Include="Tools\TextHelper.cs" />
     <Compile Include="Tools\Workspace.cs" />
-    <Compile Include="Tools\IO\CompendiumImport.cs" />
     <Compile Include="UI\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,12 +366,6 @@
     </Compile>
     <Compile Include="UI\CombatForm.Designer.cs">
       <DependentUpon>CombatForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\CompendiumItemForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\CompendiumItemForm.Designer.cs">
-      <DependentUpon>CompendiumItemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CombatantSelectForm.cs">
       <SubType>Form</SubType>
@@ -802,12 +793,6 @@
     <Compile Include="UI\DeckViewForm.Designer.cs">
       <DependentUpon>DeckViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\HeroIPlay4eForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\HeroIPlay4eForm.Designer.cs">
-      <DependentUpon>HeroIPlay4eForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\HeroDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -831,12 +816,6 @@
     </Compile>
     <Compile Include="UI\MagicItemDetailsForm.Designer.cs">
       <DependentUpon>MagicItemDetailsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\PremadeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\PremadeForm.Designer.cs">
-      <DependentUpon>PremadeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\SkillChallengeBreakdownForm.cs">
       <SubType>Form</SubType>
@@ -951,12 +930,6 @@
     </Compile>
     <Compile Include="UI\EffectListForm.Designer.cs">
       <DependentUpon>EffectListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\CompendiumForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\CompendiumForm.Designer.cs">
-      <DependentUpon>CompendiumForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CreatureClassForm.cs">
       <SubType>Form</SubType>
@@ -1455,10 +1428,6 @@
     <EmbeddedResource Include="UI\EffectListForm.resx">
       <DependentUpon>EffectListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\CompendiumForm.resx">
-      <DependentUpon>CompendiumForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureClassForm.resx">
       <DependentUpon>CreatureClassForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1734,11 +1703,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\Compendium\compendiumsearch.wsdl" />
-    <None Include="Web References\Compendium\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -1773,11 +1737,6 @@
     </Compile>
     <Compile Include="UI\ParcelListForm.Designer.cs">
       <DependentUpon>ParcelListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\Compendium\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Wizards\MapSizePage.cs">
       <SubType>UserControl</SubType>
@@ -1868,9 +1827,6 @@
     <EmbeddedResource Include="Scroll.ico" />
     <EmbeddedResource Include="UI\CampaignSettingsForm.resx">
       <DependentUpon>CampaignSettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\CompendiumItemForm.resx">
-      <DependentUpon>CompendiumItemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CombatantSelectForm.resx">
       <DependentUpon>CombatantSelectForm.cs</DependentUpon>
@@ -2086,9 +2042,6 @@
     <EmbeddedResource Include="UI\DeckViewForm.resx">
       <DependentUpon>DeckViewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\HeroIPlay4eForm.resx">
-      <DependentUpon>HeroIPlay4eForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\HeroDetailsForm.resx">
       <DependentUpon>HeroDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2100,9 +2053,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MagicItemDetailsForm.resx">
       <DependentUpon>MagicItemDetailsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\PremadeForm.resx">
-      <DependentUpon>PremadeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SkillChallengeBreakdownForm.resx">
       <DependentUpon>SkillChallengeBreakdownForm.cs</DependentUpon>
@@ -2175,24 +2125,8 @@
     <Content Include="Docs\To Do.txt" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://www.wizards.com/dndinsider/compendium/compendiumsearch.asmx%3fWSDL">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\Compendium\</RelPath>
-      <UpdateFromURL>http://www.wizards.com/dndinsider/compendium/compendiumsearch.asmx%3fWSDL</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>Masterplan_Compendium_CompendiumSearch</CachedSettingsPropName>
-    </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Insight\Utils\Utils.csproj">
-      <Project>{6911A69E-8F57-4F71-ABF5-A4D3F6D93A43}</Project>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{6911a69e-8f57-4f71-abf5-a4d3f6d93a43}</Project>
       <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>

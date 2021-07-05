@@ -2996,7 +2996,7 @@ namespace Masterplan.Tools
 			}
 
 			lines.Add("<HR>");
-			lines.Add("<P class=signature>Designed using <A href=\"http://www.habitualindolence.net/masterplan\">Masterplan</A></P>");
+			lines.Add("<P class=signature>Designed using <B>Masterplan</B></P>");
 
 			lines.Add("</BODY>");
 
