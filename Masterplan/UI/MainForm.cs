@@ -2601,28 +2601,6 @@ namespace Masterplan.UI
 
 		private void ReferencePages_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if ((ReferencePages.SelectedTab == CompendiumPage) && (CompendiumBrowser.Url == null))
-			{
-				List<string> lines = new List<string>();
-
-				lines.AddRange(HTML.GetHead(null, null, DisplaySize.Small));
-				lines.Add("<BODY>");
-
-				lines.Add("<P class=instruction>");
-				lines.Add("No PC details have been entered; click <A href=\"party:edit\">here</A> to do this now.");
-				lines.Add("</P>");
-
-				lines.Add("<P class=instruction>");
-				lines.Add("When PCs have been entered, you will see a useful breakdown of their defences, passive skills and known languages here.");
-				lines.Add("</P>");
-
-				lines.Add("</BODY>");
-				lines.Add("</HTML>");
-
-				CompendiumBrowser.DocumentText = HTML.Concatenate(lines);
-
-				CompendiumBrowser.Navigate("http://www.wizards.com/dndinsider/compendium/database.aspx");
-			}
 		}
 
 		#endregion

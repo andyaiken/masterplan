@@ -339,22 +339,23 @@
 			this.ElfTextBtn = new System.Windows.Forms.ToolStripButton();
 			this.DwarfTextBtn = new System.Windows.Forms.ToolStripButton();
 			this.PrimordialTextBtn = new System.Windows.Forms.ToolStripButton();
-			this.CompendiumPage = new System.Windows.Forms.TabPage();
-			this.CompendiumBrowser = new System.Windows.Forms.WebBrowser();
 			this.InfoPanel = new Masterplan.Controls.InfoPanel();
 			this.ReferenceToolbar = new System.Windows.Forms.ToolStrip();
 			this.DieRollerBtn = new System.Windows.Forms.ToolStripButton();
 			this.WorkspaceToolbar.SuspendLayout();
 			this.PointMenu.SuspendLayout();
 			this.MainMenu.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.PreviewSplitter)).BeginInit();
 			this.PreviewSplitter.Panel1.SuspendLayout();
 			this.PreviewSplitter.Panel2.SuspendLayout();
 			this.PreviewSplitter.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.NavigationSplitter)).BeginInit();
 			this.NavigationSplitter.Panel1.SuspendLayout();
 			this.NavigationSplitter.Panel2.SuspendLayout();
 			this.NavigationSplitter.SuspendLayout();
 			this.PlotPanel.SuspendLayout();
 			this.WorkspaceSearchBar.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.PreviewInfoSplitter)).BeginInit();
 			this.PreviewInfoSplitter.Panel1.SuspendLayout();
 			this.PreviewInfoSplitter.SuspendLayout();
 			this.PreviewPanel.SuspendLayout();
@@ -362,21 +363,25 @@
 			this.Pages.SuspendLayout();
 			this.WorkspacePage.SuspendLayout();
 			this.BackgroundPage.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
 			this.BackgroundPanel.SuspendLayout();
 			this.BackgroundToolbar.SuspendLayout();
 			this.EncyclopediaPage.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.EncyclopediaSplitter)).BeginInit();
 			this.EncyclopediaSplitter.Panel1.SuspendLayout();
 			this.EncyclopediaSplitter.Panel2.SuspendLayout();
 			this.EncyclopediaSplitter.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.EncyclopediaEntrySplitter)).BeginInit();
 			this.EncyclopediaEntrySplitter.Panel1.SuspendLayout();
 			this.EncyclopediaEntrySplitter.Panel2.SuspendLayout();
 			this.EncyclopediaEntrySplitter.SuspendLayout();
 			this.EntryPanel.SuspendLayout();
 			this.EncyclopediaToolbar.SuspendLayout();
 			this.RulesPage.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.RulesSplitter)).BeginInit();
 			this.RulesSplitter.Panel1.SuspendLayout();
 			this.RulesSplitter.Panel2.SuspendLayout();
 			this.RulesSplitter.SuspendLayout();
@@ -386,11 +391,13 @@
 			this.AttachmentsPage.SuspendLayout();
 			this.AttachmentToolbar.SuspendLayout();
 			this.JotterPage.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.JotterSplitter)).BeginInit();
 			this.JotterSplitter.Panel1.SuspendLayout();
 			this.JotterSplitter.Panel2.SuspendLayout();
 			this.JotterSplitter.SuspendLayout();
 			this.JotterToolbar.SuspendLayout();
 			this.ReferencePage.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.ReferenceSplitter)).BeginInit();
 			this.ReferenceSplitter.Panel1.SuspendLayout();
 			this.ReferenceSplitter.Panel2.SuspendLayout();
 			this.ReferenceSplitter.SuspendLayout();
@@ -399,7 +406,6 @@
 			this.ToolsPage.SuspendLayout();
 			this.ToolBrowserPanel.SuspendLayout();
 			this.GeneratorToolbar.SuspendLayout();
-			this.CompendiumPage.SuspendLayout();
 			this.ReferenceToolbar.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -1346,19 +1352,19 @@
 			// 
 			this.HelpManual.Name = "HelpManual";
 			this.HelpManual.ShortcutKeys = System.Windows.Forms.Keys.F1;
-			this.HelpManual.Size = new System.Drawing.Size(152, 22);
+			this.HelpManual.Size = new System.Drawing.Size(133, 22);
 			this.HelpManual.Text = "Manual";
 			this.HelpManual.Click += new System.EventHandler(this.HelpManual_Click);
 			// 
 			// toolStripSeparator12
 			// 
 			this.toolStripSeparator12.Name = "toolStripSeparator12";
-			this.toolStripSeparator12.Size = new System.Drawing.Size(149, 6);
+			this.toolStripSeparator12.Size = new System.Drawing.Size(130, 6);
 			// 
 			// HelpAbout
 			// 
 			this.HelpAbout.Name = "HelpAbout";
-			this.HelpAbout.Size = new System.Drawing.Size(152, 22);
+			this.HelpAbout.Size = new System.Drawing.Size(133, 22);
 			this.HelpAbout.Text = "About";
 			this.HelpAbout.Click += new System.EventHandler(this.HelpAbout_Click);
 			// 
@@ -1954,6 +1960,7 @@
 			// EntryImageList
 			// 
 			this.EntryImageList.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.EntryImageList.HideSelection = false;
 			this.EntryImageList.Location = new System.Drawing.Point(0, 0);
 			this.EntryImageList.Name = "EntryImageList";
 			this.EntryImageList.Size = new System.Drawing.Size(128, 385);
@@ -2866,7 +2873,6 @@
 			this.ReferencePages.Alignment = System.Windows.Forms.TabAlignment.Left;
 			this.ReferencePages.Controls.Add(this.PartyPage);
 			this.ReferencePages.Controls.Add(this.ToolsPage);
-			this.ReferencePages.Controls.Add(this.CompendiumPage);
 			this.ReferencePages.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ReferencePages.Location = new System.Drawing.Point(0, 0);
 			this.ReferencePages.Multiline = true;
@@ -3122,28 +3128,6 @@
 			this.PrimordialTextBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.PrimordialTextBtn.Click += new System.EventHandler(this.PrimordialTextBtn_Click);
 			// 
-			// CompendiumPage
-			// 
-			this.CompendiumPage.Controls.Add(this.CompendiumBrowser);
-			this.CompendiumPage.Location = new System.Drawing.Point(23, 4);
-			this.CompendiumPage.Name = "CompendiumPage";
-			this.CompendiumPage.Padding = new System.Windows.Forms.Padding(3);
-			this.CompendiumPage.Size = new System.Drawing.Size(567, 402);
-			this.CompendiumPage.TabIndex = 2;
-			this.CompendiumPage.Text = "Compendium";
-			this.CompendiumPage.UseVisualStyleBackColor = true;
-			// 
-			// CompendiumBrowser
-			// 
-			this.CompendiumBrowser.AllowWebBrowserDrop = false;
-			this.CompendiumBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.CompendiumBrowser.Location = new System.Drawing.Point(3, 3);
-			this.CompendiumBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-			this.CompendiumBrowser.Name = "CompendiumBrowser";
-			this.CompendiumBrowser.ScriptErrorsSuppressed = true;
-			this.CompendiumBrowser.Size = new System.Drawing.Size(561, 396);
-			this.CompendiumBrowser.TabIndex = 0;
-			// 
 			// InfoPanel
 			// 
 			this.InfoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -3196,10 +3180,12 @@
 			this.PreviewSplitter.Panel1.ResumeLayout(false);
 			this.PreviewSplitter.Panel1.PerformLayout();
 			this.PreviewSplitter.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.PreviewSplitter)).EndInit();
 			this.PreviewSplitter.ResumeLayout(false);
 			this.NavigationSplitter.Panel1.ResumeLayout(false);
 			this.NavigationSplitter.Panel2.ResumeLayout(false);
 			this.NavigationSplitter.Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.NavigationSplitter)).EndInit();
 			this.NavigationSplitter.ResumeLayout(false);
 			this.PlotPanel.ResumeLayout(false);
 			this.PlotPanel.PerformLayout();
@@ -3207,6 +3193,7 @@
 			this.WorkspaceSearchBar.PerformLayout();
 			this.PreviewInfoSplitter.Panel1.ResumeLayout(false);
 			this.PreviewInfoSplitter.Panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.PreviewInfoSplitter)).EndInit();
 			this.PreviewInfoSplitter.ResumeLayout(false);
 			this.PreviewPanel.ResumeLayout(false);
 			this.PreviewToolbar.ResumeLayout(false);
@@ -3217,6 +3204,7 @@
 			this.BackgroundPage.PerformLayout();
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
 			this.BackgroundPanel.ResumeLayout(false);
 			this.BackgroundToolbar.ResumeLayout(false);
@@ -3225,9 +3213,11 @@
 			this.EncyclopediaPage.PerformLayout();
 			this.EncyclopediaSplitter.Panel1.ResumeLayout(false);
 			this.EncyclopediaSplitter.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.EncyclopediaSplitter)).EndInit();
 			this.EncyclopediaSplitter.ResumeLayout(false);
 			this.EncyclopediaEntrySplitter.Panel1.ResumeLayout(false);
 			this.EncyclopediaEntrySplitter.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.EncyclopediaEntrySplitter)).EndInit();
 			this.EncyclopediaEntrySplitter.ResumeLayout(false);
 			this.EntryPanel.ResumeLayout(false);
 			this.EncyclopediaToolbar.ResumeLayout(false);
@@ -3237,6 +3227,7 @@
 			this.RulesSplitter.Panel1.PerformLayout();
 			this.RulesSplitter.Panel2.ResumeLayout(false);
 			this.RulesSplitter.Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.RulesSplitter)).EndInit();
 			this.RulesSplitter.ResumeLayout(false);
 			this.RulesToolbar.ResumeLayout(false);
 			this.RulesToolbar.PerformLayout();
@@ -3252,6 +3243,7 @@
 			this.JotterSplitter.Panel1.ResumeLayout(false);
 			this.JotterSplitter.Panel2.ResumeLayout(false);
 			this.JotterSplitter.Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.JotterSplitter)).EndInit();
 			this.JotterSplitter.ResumeLayout(false);
 			this.JotterToolbar.ResumeLayout(false);
 			this.JotterToolbar.PerformLayout();
@@ -3259,6 +3251,7 @@
 			this.ReferenceSplitter.Panel1.ResumeLayout(false);
 			this.ReferenceSplitter.Panel2.ResumeLayout(false);
 			this.ReferenceSplitter.Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.ReferenceSplitter)).EndInit();
 			this.ReferenceSplitter.ResumeLayout(false);
 			this.ReferencePages.ResumeLayout(false);
 			this.PartyPage.ResumeLayout(false);
@@ -3267,7 +3260,6 @@
 			this.ToolBrowserPanel.ResumeLayout(false);
 			this.GeneratorToolbar.ResumeLayout(false);
 			this.GeneratorToolbar.PerformLayout();
-			this.CompendiumPage.ResumeLayout(false);
 			this.ReferenceToolbar.ResumeLayout(false);
 			this.ReferenceToolbar.PerformLayout();
 			this.ResumeLayout(false);
@@ -3549,8 +3541,6 @@
 		private System.Windows.Forms.ToolStripButton PrimordialTextBtn;
 		private System.Windows.Forms.SplitContainer EncyclopediaEntrySplitter;
 		private System.Windows.Forms.ListView EntryImageList;
-		private System.Windows.Forms.TabPage CompendiumPage;
-		private System.Windows.Forms.WebBrowser CompendiumBrowser;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator34;
 		private System.Windows.Forms.ToolStripMenuItem ToolsIssues;
 		private Masterplan.Controls.InfoPanel InfoPanel;
