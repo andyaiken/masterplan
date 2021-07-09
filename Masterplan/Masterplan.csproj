@@ -76,12 +76,6 @@
     <Compile Include="Controls\FilterPanel.Designer.cs">
       <DependentUpon>FilterPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\FiveByFivePanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\FiveByFivePanel.Designer.cs">
-      <DependentUpon>FiveByFivePanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\InfoPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -237,7 +231,6 @@
     <Compile Include="Data\EncounterSlot.cs" />
     <Compile Include="Data\EncounterTemplate.cs" />
     <Compile Include="Data\Encyclopedia.cs" />
-    <Compile Include="Data\Goal.cs" />
     <Compile Include="Data\Hero.cs" />
     <Compile Include="Data\ICreature.cs" />
     <Compile Include="Data\Issue.cs" />
@@ -284,14 +277,12 @@
     </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="Tools\AI.cs" />
-    <Compile Include="Tools\FiveByFive.cs" />
     <Compile Include="Tools\Generators\ElfName.cs" />
     <Compile Include="Tools\Generators\HalflingName.cs" />
     <Compile Include="Tools\Generators\DwarfName.cs" />
     <Compile Include="Tools\Generators\ExoticName.cs" />
     <Compile Include="Tools\Generators\Potion.cs" />
     <Compile Include="Tools\Generators\Book.cs" />
-    <Compile Include="Tools\GoalBuilder.cs" />
     <Compile Include="Tools\HeroGroup.cs" />
     <Compile Include="Tools\Conditions.cs" />
     <Compile Include="Tools\CreatureHelper.cs" />
@@ -401,18 +392,6 @@
     <Compile Include="UI\ArtifactConcordanceForm.Designer.cs">
       <DependentUpon>ArtifactConcordanceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\TileChecklistForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\TileChecklistForm.Designer.cs">
-      <DependentUpon>TileChecklistForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\MiniChecklistForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\MiniChecklistForm.Designer.cs">
-      <DependentUpon>MiniChecklistForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\PowerDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,11 +500,11 @@
     <Compile Include="UI\SkillChallengeBuilderForm.Designer.cs">
       <DependentUpon>SkillChallengeBuilderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\TreasureListForm.cs">
+    <Compile Include="UI\ProjectChecklistForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\TreasureListForm.Designer.cs">
-      <DependentUpon>TreasureListForm.cs</DependentUpon>
+    <Compile Include="UI\ProjectChecklistForm.Designer.cs">
+      <DependentUpon>ProjectChecklistForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\MagicItemProfileForm.cs">
       <SubType>Form</SubType>
@@ -665,12 +644,6 @@
     <Compile Include="UI\DieRollerForm.Designer.cs">
       <DependentUpon>DieRollerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FiveByFiveForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FiveByFiveForm.Designer.cs">
-      <DependentUpon>FiveByFiveForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\MergeLibrariesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -694,18 +667,6 @@
     </Compile>
     <Compile Include="UI\RegionalMapSelectForm.Designer.cs">
       <DependentUpon>RegionalMapSelectForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\GoalForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\GoalForm.Designer.cs">
-      <DependentUpon>GoalForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\GoalListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\GoalListForm.Designer.cs">
-      <DependentUpon>GoalListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\PlayerOptions\OptionPoisonForm.cs">
       <SubType>Form</SubType>
@@ -1841,12 +1802,6 @@
     <EmbeddedResource Include="UI\ArtifactConcordanceForm.resx">
       <DependentUpon>ArtifactConcordanceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\TileChecklistForm.resx">
-      <DependentUpon>TileChecklistForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\MiniChecklistForm.resx">
-      <DependentUpon>MiniChecklistForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\PowerDetailsForm.resx">
       <DependentUpon>PowerDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1901,8 +1856,8 @@
     <EmbeddedResource Include="UI\SkillChallengeBuilderForm.resx">
       <DependentUpon>SkillChallengeBuilderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\TreasureListForm.resx">
-      <DependentUpon>TreasureListForm.cs</DependentUpon>
+    <EmbeddedResource Include="UI\ProjectChecklistForm.resx">
+      <DependentUpon>ProjectChecklistForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MagicItemProfileForm.resx">
       <DependentUpon>MagicItemProfileForm.cs</DependentUpon>
@@ -1973,9 +1928,6 @@
     <EmbeddedResource Include="UI\DieRollerForm.resx">
       <DependentUpon>DieRollerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FiveByFiveForm.resx">
-      <DependentUpon>FiveByFiveForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\MergeLibrariesForm.resx">
       <DependentUpon>MergeLibrariesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1987,12 +1939,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\RegionalMapSelectForm.resx">
       <DependentUpon>RegionalMapSelectForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\GoalForm.resx">
-      <DependentUpon>GoalForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\GoalListForm.resx">
-      <DependentUpon>GoalListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionPoisonForm.resx">
       <DependentUpon>OptionPoisonForm.cs</DependentUpon>

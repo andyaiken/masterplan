@@ -10,7 +10,6 @@ using Masterplan.Controls;
 using Masterplan.Data;
 using Masterplan.Tools;
 using Masterplan.Tools.Generators;
-using Masterplan.Wizards;
 
 namespace Masterplan.UI
 {

@@ -29,7 +29,7 @@ namespace Masterplan.Data
 	/// Class representing a creature.
 	/// </summary>
 	[Serializable]
-	public class Creature : ICreature, IComparable<Creature>
+	public class Creature : ICreature
 	{
 		/// <summary>
 		/// Default constructor.
@@ -432,16 +432,6 @@ namespace Masterplan.Data
 		Image fImage = null;
 
 		/// <summary>
-		/// Gets or sets the Compendium URL for the creature.
-		/// </summary>
-		public string URL
-		{
-			get { return fURL; }
-			set { fURL = value; }
-		}
-		string fURL = "";
-
-		/// <summary>
 		/// Level N [role]
 		/// </summary>
 		public string Info
@@ -469,6 +459,15 @@ namespace Masterplan.Data
 				return str;
 			}
         }
+
+		/// <summary>
+		/// Gets a string representation of the creature.
+		/// </summary>
+		/// <returns>Returns the name of the creature, followed by level and role.</returns>
+		public override string ToString()
+		{
+			return fName + " (" + Info + ")";
+		}
 
 		/// <summary>
 		/// Creates a copy of the creature.
@@ -527,18 +526,7 @@ namespace Masterplan.Data
 
 			c.Image = fImage;
 
-			c.URL = fURL;
-
 			return c;
-		}
-
-		/// <summary>
-		/// Name (Info)
-		/// </summary>
-		/// <returns></returns>
-		public override string ToString()
-		{
-			return fName + " (" + Info + ")";
 		}
 
 		/// <summary>
@@ -546,7 +534,7 @@ namespace Masterplan.Data
 		/// </summary>
 		/// <param name="rhs">The other creature.</param>
 		/// <returns>Returns -1 if this creature should be sorted before the other, +1 if the other should be sorted before this; 0 otherwise.</returns>
-		public int CompareTo(Creature rhs)
+		public int CompareTo(ICreature rhs)
 		{
 			return fName.CompareTo(rhs.Name);
 		}

@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using Masterplan.Data;
-using Masterplan.Events;
 
 namespace Masterplan.Controls
 {

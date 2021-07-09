@@ -22,26 +22,6 @@ namespace Masterplan.Data
 		List<PlotPoint> fPoints = new List<PlotPoint>();
 
 		/// <summary>
-		/// Gets or sets the list of goals.
-		/// </summary>
-		public PartyGoals Goals
-		{
-			get { return fGoals; }
-			set { fGoals = value; }
-		}
-		PartyGoals fGoals = new PartyGoals();
-
-		/// <summary>
-		/// Gets or sets the 5x5 data.
-		/// </summary>
-		public FiveByFiveData FiveByFive
-		{
-			get { return f5x5; }
-			set { f5x5 = value; }
-		}
-		FiveByFiveData f5x5 = new FiveByFiveData();
-
-		/// <summary>
 		/// Finds the plot point with the given ID.
 		/// </summary>
 		/// <param name="id">The ID of the desired plot point.</param>
@@ -247,9 +227,6 @@ namespace Masterplan.Data
 
 			foreach (PlotPoint pp in fPoints)
 				p.Points.Add(pp.Copy());
-
-			p.Goals = fGoals.Copy();
-			p.FiveByFive = f5x5.Copy();
 
 			return p;
 		}

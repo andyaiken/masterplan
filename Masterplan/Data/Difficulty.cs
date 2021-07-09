@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Masterplan.Data
+﻿namespace Masterplan.Data
 {
 	/// <summary>
 	/// Difficulty level.

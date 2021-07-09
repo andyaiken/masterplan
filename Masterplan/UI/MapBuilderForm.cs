@@ -6,10 +6,10 @@ using System.Windows.Forms;
 using Utils;
 
 using Masterplan.Data;
+using Masterplan.Events;
 using Masterplan.Tools;
 using Masterplan.Tools.Generators;
 using Masterplan.Wizards;
-using Masterplan.Events;
 
 namespace Masterplan.UI
 {

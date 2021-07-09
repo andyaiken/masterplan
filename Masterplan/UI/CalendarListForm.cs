@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
-
-using Utils;
 
 using Masterplan.Data;
 using Masterplan.Tools;

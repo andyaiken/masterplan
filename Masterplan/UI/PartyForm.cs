@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 
 using Masterplan.Data;
-using Masterplan.Tools;
 
 namespace Masterplan.UI
 {

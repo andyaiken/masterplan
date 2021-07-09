@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,8 +6,6 @@ using Utils;
 using Utils.Wizards;
 
 using Masterplan.Data;
-using Masterplan.Tools;
-using System.Collections.Generic;
 
 namespace Masterplan.Wizards
 {

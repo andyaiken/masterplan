@@ -189,7 +189,7 @@ namespace Masterplan.Data
 	/// Interface for a creature.
 	/// Implemented by Creature, CustomCreature and NPC classes.
 	/// </summary>
-	public interface ICreature
+	public interface ICreature : IComparable<ICreature>
 	{
 		/// <summary>
 		/// Gets or sets the unique ID of the creature.

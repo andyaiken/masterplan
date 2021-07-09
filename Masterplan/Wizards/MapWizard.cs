@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Utils.Wizards;
 
-using Utils.Wizards;
-
-using Masterplan.Data;
 using Masterplan.Tools.Generators;
 
 namespace Masterplan.Wizards

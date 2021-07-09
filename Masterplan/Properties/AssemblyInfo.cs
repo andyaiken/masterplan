@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Masterplan Adventure Design Studio")]
-[assembly: AssemblyCopyright("Copyright © Habitual Indolence 2010. All rights reserved. This product is protected by copyright and distributed under licences restricting copying, distribution and decompilation.")]
+[assembly: AssemblyCopyright("Copyright © Andy Aiken 2021. All rights reserved. This product is protected by copyright and distributed under licences restricting copying, distribution and decompilation.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -22,4 +22,4 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("2c6aabe4-bd47-498a-9dd1-cf0d8d69973e")]
 
-[assembly: AssemblyVersion("11.11.0.*")]
+[assembly: AssemblyVersion("12.0.0.*")]

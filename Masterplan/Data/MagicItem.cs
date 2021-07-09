@@ -106,16 +106,6 @@ namespace Masterplan.Data
 		List<MagicItemSection> fSections = new List<MagicItemSection>();
 
 		/// <summary>
-		/// Gets or sets the Compendium URL for the item.
-		/// </summary>
-		public string URL
-		{
-			get { return fURL; }
-			set { fURL = value; }
-		}
-		string fURL = "";
-
-		/// <summary>
 		/// Level N [type]
 		/// </summary>
 		public string Info
@@ -143,8 +133,6 @@ namespace Masterplan.Data
 
 			foreach (MagicItemSection section in fSections)
 				mi.Sections.Add(section.Copy());
-
-			mi.URL = fURL;
 
 			return mi;
 		}

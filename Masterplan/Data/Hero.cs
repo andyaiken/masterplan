@@ -58,16 +58,6 @@ namespace Masterplan.Data
 		Guid fID = Guid.NewGuid();
 
 		/// <summary>
-		/// Gets or sets the iPlay4e key.
-		/// </summary>
-		public string Key
-		{
-			get { return fKey; }
-			set { fKey = value; }
-		}
-		string fKey = "";
-
-		/// <summary>
 		/// Gets or sets the name of the hero.
 		/// </summary>
 		public string Name
@@ -383,7 +373,6 @@ namespace Masterplan.Data
 			Hero h = new Hero();
 
 			h.ID = fID;
-			h.Key = fKey;
 			h.Name = fName;
 			h.Player = fPlayer;
 			h.Size = fSize;

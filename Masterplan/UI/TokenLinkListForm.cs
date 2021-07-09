@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-using Utils;
-
 using Masterplan.Data;
 
 namespace Masterplan.UI

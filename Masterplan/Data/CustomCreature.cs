@@ -579,7 +579,7 @@ namespace Masterplan.Data
         }
 
 		/// <summary>
-		/// Gea string representation of the creature.
+		/// Gets a string representation of the creature.
 		/// </summary>
 		/// <returns>Returns the name of the creature.</returns>
 		public override string ToString()
@@ -644,6 +644,16 @@ namespace Masterplan.Data
 			cc.Image = fImage;
 
 			return cc;
+		}
+
+		/// <summary>
+		/// Compares this creature to another.
+		/// </summary>
+		/// <param name="rhs">The other creature.</param>
+		/// <returns>Returns -1 if this creature should be sorted before the other, +1 if the other should be sorted before this; 0 otherwise.</returns>
+		public int CompareTo(ICreature rhs)
+		{
+			return fName.CompareTo(rhs.Name);
 		}
 	}
 }

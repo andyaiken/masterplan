@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Xml;
 
 using Utils;
@@ -132,9 +131,6 @@ namespace Masterplan.Tools
 				XMLHelper.CreateChild(doc, defences_node, "Fortitude").InnerText = hero.Fortitude.ToString();
 				XMLHelper.CreateChild(doc, defences_node, "Reflex").InnerText = hero.Reflex.ToString();
 				XMLHelper.CreateChild(doc, defences_node, "Will").InnerText = hero.Will.ToString();
-
-				if (hero.Key != "")
-					XMLHelper.CreateChild(doc, hero_node, "Key").InnerText = hero.Key;
 			}
 
 			return doc.OuterXml;

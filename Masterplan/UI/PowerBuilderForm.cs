@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
-
-using Utils;
 
 using Masterplan.Data;
 using Masterplan.Tools;
-using Masterplan.Wizards;
 
 namespace Masterplan.UI
 {

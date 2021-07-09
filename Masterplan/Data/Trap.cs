@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Utils;
-
 using Masterplan.Tools;
 
 namespace Masterplan.Data
@@ -175,16 +173,6 @@ namespace Masterplan.Data
 		List<string> fCountermeasures = new List<string>();
 
 		/// <summary>
-		/// Gets or sets the Compendium URL for the trap.
-		/// </summary>
-		public string URL
-		{
-			get { return fURL; }
-			set { fURL = value; }
-		}
-		string fURL = "";
-
-		/// <summary>
 		/// Gets the XP value for the trap.
 		/// </summary>
 		public int XP
@@ -262,8 +250,6 @@ namespace Masterplan.Data
 
 			foreach (string cm in fCountermeasures)
 				t.Countermeasures.Add(cm);
-
-			t.URL = fURL;
 
 			return t;
 		}

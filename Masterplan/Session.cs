@@ -8,7 +8,6 @@ using Utils;
 
 using Masterplan.Data;
 using Masterplan.Extensibility;
-using Masterplan.Tools;
 using Masterplan.UI;
 
 namespace Masterplan

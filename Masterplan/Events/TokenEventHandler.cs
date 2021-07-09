@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 using Masterplan.Data;
-using Masterplan.Controls;
-using System.Drawing;
 
 namespace Masterplan.Events
 {

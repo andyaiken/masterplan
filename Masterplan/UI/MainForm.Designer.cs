@@ -87,7 +87,6 @@
 			this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
 			this.FlowchartAllXP = new System.Windows.Forms.ToolStripMenuItem();
 			this.AdvancedBtn = new System.Windows.Forms.ToolStripDropDownButton();
-			this.PlotAdvancedTreasure = new System.Windows.Forms.ToolStripMenuItem();
 			this.PlotAdvancedIssues = new System.Windows.Forms.ToolStripMenuItem();
 			this.PlotAdvancedDifficulty = new System.Windows.Forms.ToolStripMenuItem();
 			this.PointMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -124,6 +123,7 @@
 			this.ProjectMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.ProjectProject = new System.Windows.Forms.ToolStripMenuItem();
 			this.ProjectOverview = new System.Windows.Forms.ToolStripMenuItem();
+			this.ProjectChecklist = new System.Windows.Forms.ToolStripMenuItem();
 			this.ProjectCampaignSettings = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
 			this.ProjectPassword = new System.Windows.Forms.ToolStripMenuItem();
@@ -153,13 +153,8 @@
 			this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
 			this.ToolsExportProject = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolsExportHandout = new System.Windows.Forms.ToolStripMenuItem();
-			this.ToolsExportLoot = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
-			this.ToolsTileChecklist = new System.Windows.Forms.ToolStripMenuItem();
-			this.ToolsMiniChecklist = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator49 = new System.Windows.Forms.ToolStripSeparator();
 			this.ToolsIssues = new System.Windows.Forms.ToolStripMenuItem();
-			this.ToolsPowerStats = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
 			this.ToolsLibraries = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
@@ -735,7 +730,6 @@
 			// 
 			this.AdvancedBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.AdvancedBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.PlotAdvancedTreasure,
             this.PlotAdvancedIssues,
             this.PlotAdvancedDifficulty});
 			this.AdvancedBtn.Image = ((System.Drawing.Image)(resources.GetObject("AdvancedBtn.Image")));
@@ -744,24 +738,17 @@
 			this.AdvancedBtn.Size = new System.Drawing.Size(73, 22);
 			this.AdvancedBtn.Text = "Advanced";
 			// 
-			// PlotAdvancedTreasure
-			// 
-			this.PlotAdvancedTreasure.Name = "PlotAdvancedTreasure";
-			this.PlotAdvancedTreasure.Size = new System.Drawing.Size(184, 22);
-			this.PlotAdvancedTreasure.Text = "Export Treasure List...";
-			this.PlotAdvancedTreasure.Click += new System.EventHandler(this.PlotAdvancedTreasure_Click);
-			// 
 			// PlotAdvancedIssues
 			// 
 			this.PlotAdvancedIssues.Name = "PlotAdvancedIssues";
-			this.PlotAdvancedIssues.Size = new System.Drawing.Size(184, 22);
+			this.PlotAdvancedIssues.Size = new System.Drawing.Size(180, 22);
 			this.PlotAdvancedIssues.Text = "Plot Design Issues";
 			this.PlotAdvancedIssues.Click += new System.EventHandler(this.PlotAdvancedIssues_Click);
 			// 
 			// PlotAdvancedDifficulty
 			// 
 			this.PlotAdvancedDifficulty.Name = "PlotAdvancedDifficulty";
-			this.PlotAdvancedDifficulty.Size = new System.Drawing.Size(184, 22);
+			this.PlotAdvancedDifficulty.Size = new System.Drawing.Size(180, 22);
 			this.PlotAdvancedDifficulty.Text = "Adjust Difficulty...";
 			this.PlotAdvancedDifficulty.Click += new System.EventHandler(this.PlotAdvancedDifficulty_Click);
 			// 
@@ -1005,6 +992,7 @@
 			this.ProjectMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ProjectProject,
             this.ProjectOverview,
+            this.ProjectChecklist,
             this.ProjectCampaignSettings,
             this.toolStripSeparator30,
             this.ProjectPassword,
@@ -1038,6 +1026,13 @@
 			this.ProjectOverview.Size = new System.Drawing.Size(243, 22);
 			this.ProjectOverview.Text = "Project Overview";
 			this.ProjectOverview.Click += new System.EventHandler(this.ProjectOverview_Click);
+			// 
+			// ProjectChecklist
+			// 
+			this.ProjectChecklist.Name = "ProjectChecklist";
+			this.ProjectChecklist.Size = new System.Drawing.Size(243, 22);
+			this.ProjectChecklist.Text = "Project Checklist";
+			this.ProjectChecklist.Click += new System.EventHandler(this.ProjectChecklist_Click);
 			// 
 			// ProjectCampaignSettings
 			// 
@@ -1219,13 +1214,8 @@
             this.toolStripSeparator25,
             this.ToolsExportProject,
             this.ToolsExportHandout,
-            this.ToolsExportLoot,
             this.toolStripSeparator34,
-            this.ToolsTileChecklist,
-            this.ToolsMiniChecklist,
-            this.toolStripSeparator49,
             this.ToolsIssues,
-            this.ToolsPowerStats,
             this.toolStripMenuItem4,
             this.ToolsLibraries,
             this.toolStripMenuItem5,
@@ -1238,98 +1228,65 @@
 			// ToolsImportProject
 			// 
 			this.ToolsImportProject.Name = "ToolsImportProject";
-			this.ToolsImportProject.Size = new System.Drawing.Size(204, 22);
+			this.ToolsImportProject.Size = new System.Drawing.Size(168, 22);
 			this.ToolsImportProject.Text = "Import Project...";
 			this.ToolsImportProject.Click += new System.EventHandler(this.ToolsImportProject_Click);
 			// 
 			// toolStripSeparator25
 			// 
 			this.toolStripSeparator25.Name = "toolStripSeparator25";
-			this.toolStripSeparator25.Size = new System.Drawing.Size(201, 6);
+			this.toolStripSeparator25.Size = new System.Drawing.Size(165, 6);
 			// 
 			// ToolsExportProject
 			// 
 			this.ToolsExportProject.Name = "ToolsExportProject";
-			this.ToolsExportProject.Size = new System.Drawing.Size(204, 22);
+			this.ToolsExportProject.Size = new System.Drawing.Size(168, 22);
 			this.ToolsExportProject.Text = "Export Project...";
 			this.ToolsExportProject.Click += new System.EventHandler(this.ToolsExportProject_Click);
 			// 
 			// ToolsExportHandout
 			// 
 			this.ToolsExportHandout.Name = "ToolsExportHandout";
-			this.ToolsExportHandout.Size = new System.Drawing.Size(204, 22);
+			this.ToolsExportHandout.Size = new System.Drawing.Size(168, 22);
 			this.ToolsExportHandout.Text = "Export Handout...";
 			this.ToolsExportHandout.Click += new System.EventHandler(this.ToolsExportHandout_Click);
-			// 
-			// ToolsExportLoot
-			// 
-			this.ToolsExportLoot.Name = "ToolsExportLoot";
-			this.ToolsExportLoot.Size = new System.Drawing.Size(204, 22);
-			this.ToolsExportLoot.Text = "Export Treasure List...";
-			this.ToolsExportLoot.Click += new System.EventHandler(this.ToolsExportLoot_Click);
 			// 
 			// toolStripSeparator34
 			// 
 			this.toolStripSeparator34.Name = "toolStripSeparator34";
-			this.toolStripSeparator34.Size = new System.Drawing.Size(201, 6);
-			// 
-			// ToolsTileChecklist
-			// 
-			this.ToolsTileChecklist.Name = "ToolsTileChecklist";
-			this.ToolsTileChecklist.Size = new System.Drawing.Size(204, 22);
-			this.ToolsTileChecklist.Text = "Map Tile Checklist...";
-			this.ToolsTileChecklist.Click += new System.EventHandler(this.ToolsTileChecklist_Click);
-			// 
-			// ToolsMiniChecklist
-			// 
-			this.ToolsMiniChecklist.Name = "ToolsMiniChecklist";
-			this.ToolsMiniChecklist.Size = new System.Drawing.Size(204, 22);
-			this.ToolsMiniChecklist.Text = "Miniature Checklist...";
-			this.ToolsMiniChecklist.Click += new System.EventHandler(this.ToolsMiniChecklist_Click);
-			// 
-			// toolStripSeparator49
-			// 
-			this.toolStripSeparator49.Name = "toolStripSeparator49";
-			this.toolStripSeparator49.Size = new System.Drawing.Size(201, 6);
+			this.toolStripSeparator34.Size = new System.Drawing.Size(165, 6);
 			// 
 			// ToolsIssues
 			// 
 			this.ToolsIssues.Name = "ToolsIssues";
-			this.ToolsIssues.Size = new System.Drawing.Size(204, 22);
+			this.ToolsIssues.Size = new System.Drawing.Size(168, 22);
 			this.ToolsIssues.Text = "Plot Design Issues";
 			this.ToolsIssues.Click += new System.EventHandler(this.ToolsIssues_Click);
-			// 
-			// ToolsPowerStats
-			// 
-			this.ToolsPowerStats.Name = "ToolsPowerStats";
-			this.ToolsPowerStats.Size = new System.Drawing.Size(204, 22);
-			this.ToolsPowerStats.Text = "Creature Power Statistics";
-			this.ToolsPowerStats.Click += new System.EventHandler(this.ToolsPowerStats_Click);
 			// 
 			// toolStripMenuItem4
 			// 
 			this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-			this.toolStripMenuItem4.Size = new System.Drawing.Size(201, 6);
+			this.toolStripMenuItem4.Size = new System.Drawing.Size(165, 6);
 			// 
 			// ToolsLibraries
 			// 
 			this.ToolsLibraries.Name = "ToolsLibraries";
 			this.ToolsLibraries.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-			this.ToolsLibraries.Size = new System.Drawing.Size(204, 22);
+			this.ToolsLibraries.Size = new System.Drawing.Size(168, 22);
 			this.ToolsLibraries.Text = "Libraries";
 			this.ToolsLibraries.Click += new System.EventHandler(this.ToolsLibraries_Click);
 			// 
 			// toolStripMenuItem5
 			// 
 			this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-			this.toolStripMenuItem5.Size = new System.Drawing.Size(201, 6);
+			this.toolStripMenuItem5.Size = new System.Drawing.Size(165, 6);
 			// 
 			// ToolsAddIns
 			// 
 			this.ToolsAddIns.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addinsToolStripMenuItem});
 			this.ToolsAddIns.Name = "ToolsAddIns";
-			this.ToolsAddIns.Size = new System.Drawing.Size(204, 22);
+			this.ToolsAddIns.Size = new System.Drawing.Size(168, 22);
 			this.ToolsAddIns.Text = "Add-Ins";
 			// 
 			// addinsToolStripMenuItem
@@ -1482,6 +1439,7 @@
 			// PlotSearchBox
 			// 
 			this.PlotSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PlotSearchBox.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.PlotSearchBox.Name = "PlotSearchBox";
 			this.PlotSearchBox.Size = new System.Drawing.Size(200, 25);
 			this.PlotSearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
@@ -2147,6 +2105,7 @@
 			// EncSearchBox
 			// 
 			this.EncSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.EncSearchBox.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.EncSearchBox.Name = "EncSearchBox";
 			this.EncSearchBox.Size = new System.Drawing.Size(150, 25);
 			this.EncSearchBox.TextChanged += new System.EventHandler(this.EncSearchBox_TextChanged);
@@ -2827,6 +2786,7 @@
 			// NoteSearchBox
 			// 
 			this.NoteSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.NoteSearchBox.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.NoteSearchBox.Name = "NoteSearchBox";
 			this.NoteSearchBox.Size = new System.Drawing.Size(150, 25);
 			this.NoteSearchBox.TextChanged += new System.EventHandler(this.NoteSearchBox_TextChanged);
@@ -3546,9 +3506,7 @@
 		private Masterplan.Controls.InfoPanel InfoPanel;
 		private System.Windows.Forms.ToolStrip ReferenceToolbar;
 		private System.Windows.Forms.ToolStripButton DieRollerBtn;
-		private System.Windows.Forms.ToolStripMenuItem ToolsExportLoot;
 		private System.Windows.Forms.ToolStripDropDownButton AdvancedBtn;
-		private System.Windows.Forms.ToolStripMenuItem PlotAdvancedTreasure;
 		private System.Windows.Forms.ToolStripMenuItem PlotAdvancedIssues;
 		private System.Windows.Forms.ToolStripMenuItem PlotAdvancedDifficulty;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator48;
@@ -3560,11 +3518,7 @@
 		private System.Windows.Forms.ToolStripDropDownButton EncAddBtn;
 		private System.Windows.Forms.ToolStripMenuItem EncAddEntry;
 		private System.Windows.Forms.ToolStripMenuItem EncAddGroup;
-		private System.Windows.Forms.ToolStripMenuItem ToolsPowerStats;
-		private System.Windows.Forms.ToolStripMenuItem ToolsTileChecklist;
-		private System.Windows.Forms.ToolStripMenuItem ToolsMiniChecklist;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator49;
-
+		private System.Windows.Forms.ToolStripMenuItem ProjectChecklist;
 	}
 }
 

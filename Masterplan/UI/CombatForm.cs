@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
-using System.Net;
 using System.Windows.Forms;
 
 using Utils;
@@ -5283,7 +5282,6 @@ namespace Masterplan.UI
 				ListViewItem lvi = CombatList.Items.Add(hero.Name);
 				lvi.Tag = hero;
 
-				//CombatData cd = fHeroData[hero.ID];
 				CombatData cd = hero.CombatData;
 
 				switch (hero.GetState(cd.Damage))
@@ -5302,11 +5300,6 @@ namespace Masterplan.UI
 				if (hero.Portrait != null)
 				{
 					CombatList.SmallImageList.Images.Add(new Bitmap(hero.Portrait, 16, 16));
-					lvi.ImageIndex = CombatList.SmallImageList.Images.Count - 1;
-				}
-				else if (hero.Key != "")
-				{
-					CombatList.SmallImageList.Images.Add(new Bitmap(Masterplan.Properties.Resources.Purpled20, 16, 16));
 					lvi.ImageIndex = CombatList.SmallImageList.Images.Count - 1;
 				}
 				else

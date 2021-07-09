@@ -3,8 +3,6 @@ using System.Windows.Forms;
 
 using Utils;
 
-using Masterplan.Data;
-
 namespace Masterplan.UI
 {
 	partial class OptionInformationForm : Form

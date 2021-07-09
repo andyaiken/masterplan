@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using Utils;
 
 using Masterplan.Data;
-using System.Collections.Generic;
 
 namespace Masterplan.Tools
 {

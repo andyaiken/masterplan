@@ -1,5 +1,3 @@
-using System;
-
 namespace Utils.Wizards
 {
 	/// <summary>

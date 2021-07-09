@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 
 using Utils;
 
@@ -614,9 +613,6 @@ namespace Masterplan.Data
 
 			foreach (Hero hero in fHeroes)
 			{
-				if (hero.Key == null)
-					hero.Key = "";
-
 				if (hero.Level == 0)
 					hero.Level = fParty.Level;
 
@@ -837,12 +833,6 @@ namespace Masterplan.Data
 
 		void update_plot(Plot p)
 		{
-			if (p.Goals == null)
-				p.Goals = new PartyGoals();
-
-			if (p.FiveByFive == null)
-				p.FiveByFive = new FiveByFiveData();
-
 			foreach (PlotPoint pp in p.Points)
 			{
 				if (pp.ReadAloud == null)

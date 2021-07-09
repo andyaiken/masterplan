@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
-using Masterplan.Controls;
 using Masterplan.Data;
 
 namespace Masterplan.UI

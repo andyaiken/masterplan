@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using Masterplan.Data;
-using Masterplan.Tools;
 using Masterplan.UI;
 
 namespace Masterplan.Controls

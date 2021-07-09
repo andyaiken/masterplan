@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using Utils;
-
 namespace Masterplan.Controls
 {
 	partial class LevelRangePanel : UserControl

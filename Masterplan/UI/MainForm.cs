@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.IO;
-using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
 
 using Utils;
-using Utils.Forms;
 
 using Masterplan.Controls;
 using Masterplan.Data;
@@ -776,47 +773,6 @@ namespace Masterplan.UI
 
 								UpdateView();
 							}
-						}
-					}
-
-					if (e.Url.LocalPath == "goals")
-					{
-						GoalListForm dlg = new GoalListForm(PlotView.Plot.Goals);
-						if (dlg.ShowDialog() == DialogResult.OK)
-						{
-							PlotView.Plot.Goals = dlg.Goals;
-							Session.Modified = true;
-
-							if (dlg.CreatePlot)
-							{
-								PlotView.Plot.Points.Clear();
-								GoalBuilder.Build(PlotView.Plot);
-								PlotView.RecalculateLayout();
-							}
-
-							UpdateView();
-						}
-					}
-
-					if (e.Url.LocalPath == "5x5")
-					{
-						if (PlotView.Plot.FiveByFive.Columns.Count == 0)
-							PlotView.Plot.FiveByFive.Initialise();
-
-						FiveByFiveForm dlg = new FiveByFiveForm(PlotView.Plot.FiveByFive);
-						if (dlg.ShowDialog() == DialogResult.OK)
-						{
-							PlotView.Plot.FiveByFive = dlg.FiveByFive;
-							Session.Modified = true;
-
-							if (dlg.CreatePlot)
-							{
-								PlotView.Plot.Points.Clear();
-								FiveByFive.Build(PlotView.Plot);
-								PlotView.RecalculateLayout();
-							}
-
-							UpdateView();
 						}
 					}
 
@@ -2714,6 +2670,7 @@ namespace Masterplan.UI
 			{
 				ProjectProject.Enabled = (Session.Project != null);
 				ProjectOverview.Enabled = (Session.Project != null);
+				ProjectChecklist.Enabled = (Session.Project != null);
 				ProjectCampaignSettings.Enabled = (Session.Project != null);
 				ProjectPassword.Enabled = (Session.Project != null);
 				ProjectTacticalMaps.Enabled = (Session.Project != null);
@@ -2757,11 +2714,7 @@ namespace Masterplan.UI
 				ToolsImportProject.Enabled = (Session.Project != null);
 				ToolsExportProject.Enabled = (Session.Project != null);
 				ToolsExportHandout.Enabled = (Session.Project != null);
-				ToolsExportLoot.Enabled = (Session.Project != null);
 				ToolsIssues.Enabled = (Session.Project != null);
-				ToolsPowerStats.Enabled = (Session.Project != null);
-				ToolsTileChecklist.Enabled = (Session.Project != null);
-				ToolsMiniChecklist.Enabled = (Session.Project != null);
 
 				ToolsAddIns.DropDownItems.Clear();
 				foreach (IAddIn addin in Session.AddIns)
@@ -3127,6 +3080,22 @@ namespace Masterplan.UI
 			}
 		}
 
+		private void ProjectChecklist_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (Session.Project != null)
+				{
+					ProjectChecklistForm dlg = new ProjectChecklistForm();
+					dlg.ShowDialog();
+				}
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
+			}
+		}
+
 		private void ProjectCampaignSettings_Click(object sender, EventArgs e)
 		{
 			try
@@ -3450,88 +3419,11 @@ namespace Masterplan.UI
 			}
 		}
 
-		private void ToolsExportLoot_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				TreasureListForm dlg = new TreasureListForm(Session.Project.Plot);
-				dlg.ShowDialog();
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		private void ToolsTileChecklist_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if (Session.Project != null)
-				{
-					TileChecklistForm dlg = new TileChecklistForm();
-					dlg.ShowDialog();
-				}
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		private void ToolsMiniChecklist_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if (Session.Project != null)
-				{
-					MiniChecklistForm dlg = new MiniChecklistForm();
-					dlg.ShowDialog();
-				}
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
 		private void ToolsIssues_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				IssuesForm dlg = new IssuesForm(Session.Project.Plot);
-				dlg.ShowDialog();
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		private void ToolsPowerStats_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				List<ICreature> creatures = new List<ICreature>();
-				List<Creature> all_creatures = Session.Creatures;
-				foreach (ICreature c in all_creatures)
-					creatures.Add(c);
-				if (Session.Project != null)
-				{
-					foreach (ICreature c in Session.Project.CustomCreatures)
-						creatures.Add(c);
-					foreach (ICreature c in Session.Project.NPCs)
-						creatures.Add(c);
-				}
-
-				List<CreaturePower> powers = new List<CreaturePower>();
-				foreach (ICreature creature in creatures)
-				{
-					if (creature != null)
-						powers.AddRange(creature.CreaturePowers);
-				}
-
-				PowerStatisticsForm dlg = new PowerStatisticsForm(powers, creatures.Count);
 				dlg.ShowDialog();
 			}
 			catch (Exception ex)
@@ -4205,12 +4097,6 @@ namespace Masterplan.UI
 		#endregion
 
 		#region Advanced menu
-
-		private void PlotAdvancedTreasure_Click(object sender, EventArgs e)
-		{
-			TreasureListForm dlg = new TreasureListForm(PlotView.Plot);
-			dlg.ShowDialog();
-		}
 
 		private void PlotAdvancedIssues_Click(object sender, EventArgs e)
 		{

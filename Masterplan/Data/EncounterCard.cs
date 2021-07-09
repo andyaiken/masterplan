@@ -2366,15 +2366,6 @@ namespace Masterplan.Data
 					content.Add("</TR>");
 				}
 
-				if ((c != null) && (c.URL != ""))
-				{
-					content.Add("<TR>");
-					content.Add("<TD colspan=3>");
-					content.Add("Copyright <A href=\"" + c.URL + "\">Wizards of the Coast</A> 2010");
-					content.Add("</TD>");
-					content.Add("</TR>");
-				}
-
 				#endregion
 			}
 

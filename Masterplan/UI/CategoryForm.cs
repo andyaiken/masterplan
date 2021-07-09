@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-using Masterplan.Data;
-
 namespace Masterplan.UI
 {
 	partial class CategoryForm : Form

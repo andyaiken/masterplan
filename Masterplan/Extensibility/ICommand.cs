@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Masterplan.Extensibility
+﻿namespace Masterplan.Extensibility
 {
 	/// <summary>
 	/// Interface implemented by add-in commands.

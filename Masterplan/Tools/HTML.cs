@@ -1101,22 +1101,6 @@ namespace Masterplan.Tools
 							lines.Add("<TR>");
 							lines.Add("<TD class=indent>Add a <A href=\"plot:challenge\">skill challenge</A>.</TD>");
 							lines.Add("</TR>");
-
-							lines.Add("<TR>");
-							lines.Add("<TD>Build a plot by setting the <A href=\"plot:goals\">party goals</A>.</TD>");
-							lines.Add("</TR>");
-
-							//lines.Add("<TR>");
-							//lines.Add("<TD>Use these tools to build an entire plot line:</TD>");
-							//lines.Add("</TR>");
-
-							//lines.Add("<TR>");
-							//lines.Add("<TD class=indent>Set the <A href=\"plot:goals\">party goals</A>.</TD>");
-							//lines.Add("</TR>");
-
-							//lines.Add("<TR>");
-							//lines.Add("<TD class=indent>Use the <A href=\"plot:5x5\">5x5 method</A>.</TD>");
-							//lines.Add("</TR>");
 						}
 
 						if (parent_point != null)
@@ -2273,57 +2257,6 @@ namespace Masterplan.Tools
 			}
 
 			lines.Add("</BODY>");
-
-			return Concatenate(lines);
-		}
-
-		public static string Goal(Goal goal)
-		{
-			List<string> lines = new List<string>();
-
-			if (goal != null)
-			{
-				lines.AddRange(GetHead(null, null, DisplaySize.Small));
-
-				lines.Add("<H3>" + Process(goal.Name, true) + "</H3>");
-
-				if (goal.Details == "")
-				{
-					lines.Add("<P class=instruction>(no details)</P>");
-				}
-				else
-				{
-					string details = Process(goal.Details, true);
-					// = fMarkdown.Transform(details);
-
-					lines.Add(details);
-				}
-
-				if (goal.Prerequisites.Count != 0)
-				{
-					lines.Add("<P><B>Prerequisite Goals</B>:</P>");
-					lines.Add("<UL>");
-
-					foreach (Goal subgoal in goal.Prerequisites)
-						lines.Add("<LI>" + Process(subgoal.Name, true) + "</LI>");
-
-					lines.Add("</UL>");
-				}
-			}
-			else
-			{
-				lines.AddRange(GetHead(null, null, DisplaySize.Small));
-
-				lines.Add("<BODY>");
-
-				lines.Add("<P>On this screen you can define <B>party goals</B>.</P>");
-				lines.Add("<P>Party goals specify the challenges the party will face during the adventure - for example, <I>rescuing the princess</I>.</P>");
-				lines.Add("<P>Goals can have sub-goals - for example, <I>finding where the princess is being held</I>, <I>cracking the code that unlocks the door</I>, <I>obtaining the right tools</I>, and so on. This can go as many levels deep as you like, and you can reorder your goals by dragging them around.</P>");
-				lines.Add("<P>When you have finished, press <B>OK</B>; an outline plot will be built for you.</P>");
-
-				lines.Add("</BODY>");
-				lines.Add("</HTML>");
-			}
 
 			return Concatenate(lines);
 		}

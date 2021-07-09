@@ -7,8 +7,8 @@ using System.Windows.Forms;
 
 using Masterplan.Controls;
 using Masterplan.Data;
-using Masterplan.Tools;
 using Masterplan.Events;
+using Masterplan.Tools;
 
 namespace Masterplan.UI
 {

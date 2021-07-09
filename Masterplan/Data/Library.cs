@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 using Masterplan.Tools;
-using System.Drawing;
 
 namespace Masterplan.Data
 {
@@ -547,9 +546,6 @@ namespace Masterplan.Data
 
 				if (c.Tactics == null)
 					c.Tactics = "";
-
-				if (c.URL == null)
-					c.URL = "";
 
 				if (c.Image != null)
 					Program.SetResolution(c.Image);
