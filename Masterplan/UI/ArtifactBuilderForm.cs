@@ -327,7 +327,7 @@ namespace Masterplan.UI
 
 		void update_statblock()
 		{
-			StatBlockBrowser.DocumentText = HTML.Artifact(fArtifact, DisplaySize.Small, true, true);
+			StatBlockBrowser.DocumentText = HTML.Artifact(fArtifact, Session.Preferences.TextSize, true, true);
 		}
 
 		private void FileImport_Click(object sender, EventArgs e)

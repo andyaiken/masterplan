@@ -695,7 +695,7 @@ namespace Masterplan.UI
 		{
 			EncounterCard card = new EncounterCard(fCreature);
 
-			List<string> lines = HTML.GetHead("Creature", "", DisplaySize.Small);
+			List<string> lines = HTML.GetHead("Creature", "", Session.Preferences.TextSize);
 			lines.Add("<BODY>");
 
 			lines.Add("<TABLE class=clear>");
@@ -941,7 +941,7 @@ namespace Masterplan.UI
 		void update_entry()
 		{
 			EncyclopediaEntry entry = Session.Project.Encyclopedia.FindEntryForAttachment(fCreature.ID);
-			EntryBrowser.DocumentText = HTML.EncyclopediaEntry(entry, Session.Project.Encyclopedia, DisplaySize.Small, true, false, false, false);
+			EntryBrowser.DocumentText = HTML.EncyclopediaEntry(entry, Session.Project.Encyclopedia, Session.Preferences.TextSize, true, false, false, false);
 		}
 
 		#endregion

@@ -36,7 +36,7 @@ namespace Masterplan.Controls
 				| ControlStyles.UserPaint, true);
 
 			MenuBrowser.DocumentText = "";
-			set_options();
+			RefreshOptions();
 		}
 
 		private void TitlePanel_FadeFinished(object sender, EventArgs e)
@@ -112,9 +112,6 @@ namespace Masterplan.Controls
 			}
 		}
 
-		const int MAX_HEADLINES = 10;
-		const int MAX_LENGTH = 45;
-
 		#region Events
 
 		[Category("Actions")]
@@ -155,18 +152,18 @@ namespace Masterplan.Controls
 
 		#endregion
 
-		void set_options()
+		public void RefreshOptions()
 		{
 			List<string> lines = new List<string>();
 
 			lines.Add("<HTML>");
-			lines.AddRange(HTML.GetHead("Masterplan", "Main Menu", DisplaySize.Small));
+			lines.AddRange(HTML.GetHead("Masterplan", "Main Menu", Session.Preferences.TextSize));
 			lines.Add("<BODY>");
 
 			#region Getting Started
 
 			lines.Add("<P class=table>");
-			lines.Add("<TABLE>");
+			lines.Add("<TABLE class=wide>");
 			
 			lines.Add("<TR class=heading>");
 			lines.Add("<TD>");

@@ -1488,16 +1488,16 @@ namespace Masterplan.UI
 
 				if (map_area != null)
 				{
-					Preview.Document.Write(HTML.MapArea(map_area, DisplaySize.Small));
+					Preview.Document.Write(HTML.MapArea(map_area, Session.Preferences.TextSize));
 				}
 				else if (loc != null)
 				{
-					Preview.Document.Write(HTML.MapLocation(loc, DisplaySize.Small));
+					Preview.Document.Write(HTML.MapLocation(loc, Session.Preferences.TextSize));
 				}
 				else
 				{
 					int party_level = (point != null) ? Workspace.GetPartyLevel(point) : 0;
-					Preview.Document.Write(HTML.PlotPoint(point, PlotView.Plot, party_level, true, fView, DisplaySize.Small));
+					Preview.Document.Write(HTML.PlotPoint(point, PlotView.Plot, party_level, true, fView, Session.Preferences.TextSize));
 				}
 
 				PreviewInfoSplitter.Panel2.Controls.Clear();
@@ -2697,9 +2697,9 @@ namespace Masterplan.UI
 				PlayerViewClear.Enabled = ((Session.PlayerView != null) && (Session.PlayerView.Mode != PlayerViewMode.Blank));
 				PlayerViewOtherDisplay.Enabled = (Screen.AllScreens.Length > 1);
 				PlayerViewOtherDisplay.Checked = ((Screen.AllScreens.Length > 1) && (PlayerViewForm.UseOtherDisplay));
-				TextSizeSmall.Checked = (PlayerViewForm.DisplaySize == DisplaySize.Small);
-				TextSizeMedium.Checked = (PlayerViewForm.DisplaySize == DisplaySize.Medium);
-				TextSizeLarge.Checked = (PlayerViewForm.DisplaySize == DisplaySize.Large);
+				TextSizeSmall.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Small);
+				TextSizeMedium.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Medium);
+				TextSizeLarge.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Large);
 			}
 			catch (Exception ex)
 			{
@@ -3309,7 +3309,7 @@ namespace Masterplan.UI
 		{
 			try
 			{
-				PlayerViewForm.DisplaySize = DisplaySize.Small;
+				Session.Preferences.PlayerViewTextSize = DisplaySize.Small;
 			}
 			catch (Exception ex)
 			{
@@ -3321,7 +3321,7 @@ namespace Masterplan.UI
 		{
 			try
 			{
-				PlayerViewForm.DisplaySize = DisplaySize.Medium;
+				Session.Preferences.PlayerViewTextSize = DisplaySize.Medium;
 			}
 			catch (Exception ex)
 			{
@@ -3333,7 +3333,7 @@ namespace Masterplan.UI
 		{
 			try
 			{
-				PlayerViewForm.DisplaySize = DisplaySize.Large;
+				Session.Preferences.PlayerViewTextSize = DisplaySize.Large;
 			}
 			catch (Exception ex)
 			{
@@ -4270,7 +4270,7 @@ namespace Masterplan.UI
 					if (dlg.ShowDialog() == DialogResult.OK)
 					{
 						int party_level = Workspace.GetPartyLevel(point);
-						File.WriteAllText(dlg.FileName, HTML.PlotPoint(point, PlotView.Plot, party_level, false, fView, DisplaySize.Small));
+						File.WriteAllText(dlg.FileName, HTML.PlotPoint(point, PlotView.Plot, party_level, false, fView, Session.Preferences.TextSize));
 					}
 				}
 			}
@@ -5837,7 +5837,7 @@ namespace Masterplan.UI
 
 		private void ElfNameBtn_Click(object sender, EventArgs e)
 		{
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 
 			lines.Add("<BODY>");
 			lines.Add("<H3>Elvish Names</H3>");
@@ -5880,7 +5880,7 @@ namespace Masterplan.UI
 
 		private void DwarfNameBtn_Click(object sender, EventArgs e)
 		{
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 
 			lines.Add("<BODY>");
 			lines.Add("<H3>Dwarvish Names</H3>");
@@ -5923,7 +5923,7 @@ namespace Masterplan.UI
 
 		private void HalflingNameBtn_Click(object sender, EventArgs e)
 		{
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 
 			lines.Add("<BODY>");
 			lines.Add("<H3>Halfling Names</H3>");
@@ -5966,7 +5966,7 @@ namespace Masterplan.UI
 
 		private void ExoticNameBtn_Click(object sender, EventArgs e)
 		{
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 
 			lines.Add("<BODY>");
 			lines.Add("<H3>Exotic Names</H3>");
@@ -6008,7 +6008,7 @@ namespace Masterplan.UI
 
 		private void TreasureBtn_Click(object sender, EventArgs e)
 		{
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 
 			lines.Add("<BODY>");
 			lines.Add("<H3>Art Objects</H3>");
@@ -6045,7 +6045,7 @@ namespace Masterplan.UI
 
 		private void BookTitleBtn_Click(object sender, EventArgs e)
 		{
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 
 			lines.Add("<BODY>");
 			lines.Add("<H3>Book Titles</H3>");
@@ -6060,7 +6060,7 @@ namespace Masterplan.UI
 
 		private void PotionBtn_Click(object sender, EventArgs e)
 		{
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 
 			lines.Add("<BODY>");
 			lines.Add("<H3>Potions</H3>");
@@ -6075,7 +6075,7 @@ namespace Masterplan.UI
 
 		private void NPCBtn_Click(object sender, EventArgs e)
 		{
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 
 			lines.Add("<BODY>");
 			lines.Add("<H3>NPC Description</H3>");
@@ -6139,7 +6139,7 @@ namespace Masterplan.UI
 
 		private void RoomBtn_Click(object sender, EventArgs e)
 		{
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 
 			lines.Add("<BODY>");
 			lines.Add("<H3>" + RoomBuilder.Name() + "</H3>");
@@ -6166,7 +6166,7 @@ namespace Masterplan.UI
 
 		private void DwarfTextBtn_Click(object sender, EventArgs e)
 		{
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 
 			lines.Add("<BODY>");
 
@@ -6181,7 +6181,7 @@ namespace Masterplan.UI
 
 		private void PrimordialTextBtn_Click(object sender, EventArgs e)
 		{
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 
 			lines.Add("<BODY>");
 
@@ -6525,7 +6525,7 @@ namespace Masterplan.UI
 			try
 			{
 				BackgroundDetails.Document.OpenNew(true);
-				BackgroundDetails.Document.Write(HTML.Background(SelectedBackground, DisplaySize.Small));
+				BackgroundDetails.Document.Write(HTML.Background(SelectedBackground, Session.Preferences.TextSize));
 			}
 			catch (Exception ex)
 			{
@@ -6713,16 +6713,16 @@ namespace Masterplan.UI
 				{
 					if (SelectedEncyclopediaItem is EncyclopediaEntry)
 					{
-						str = HTML.EncyclopediaEntry(SelectedEncyclopediaItem as EncyclopediaEntry, enc, DisplaySize.Small, true, true, true, false);
+						str = HTML.EncyclopediaEntry(SelectedEncyclopediaItem as EncyclopediaEntry, enc, Session.Preferences.TextSize, true, true, true, false);
 					}
 					if (SelectedEncyclopediaItem is EncyclopediaGroup)
 					{
-						str = HTML.EncyclopediaGroup(SelectedEncyclopediaItem as EncyclopediaGroup, enc, DisplaySize.Small, true, true);
+						str = HTML.EncyclopediaGroup(SelectedEncyclopediaItem as EncyclopediaGroup, enc, Session.Preferences.TextSize, true, true);
 					}
 				}
 				else
 				{
-					str = HTML.EncyclopediaEntry(null, enc, DisplaySize.Small, true, true, true, false);
+					str = HTML.EncyclopediaEntry(null, enc, Session.Preferences.TextSize, true, true, true, false);
 				}
 
 				EntryDetails.Document.OpenNew(true);
@@ -6879,13 +6879,13 @@ namespace Masterplan.UI
 			if (SelectedRule != null)
 			{
 				RulesBrowser.Document.OpenNew(true);
-				RulesBrowser.Document.Write(HTML.PlayerOption(SelectedRule, DisplaySize.Small));
+				RulesBrowser.Document.Write(HTML.PlayerOption(SelectedRule, Session.Preferences.TextSize));
 			}
 			else
 			{
 				List<string> lines = new List<string>();
 				lines.Add("<HTML>");
-				lines.AddRange(HTML.GetHead(null, null, DisplaySize.Small));
+				lines.AddRange(HTML.GetHead(null, null, Session.Preferences.TextSize));
 				lines.Add("<BODY>");
 				lines.Add("<P class=instruction>On this page you can create and manage campaign-specific rules elements.</P>");
 				lines.Add("</BODY>");
@@ -7081,7 +7081,7 @@ namespace Masterplan.UI
 			{
 				List<string> lines = new List<string>();
 
-				lines.AddRange(HTML.GetHead(null, null, DisplaySize.Small));
+				lines.AddRange(HTML.GetHead(null, null, Session.Preferences.TextSize));
 				lines.Add("<BODY>");
 
 				lines.Add("<P class=instruction>");
@@ -7106,7 +7106,7 @@ namespace Masterplan.UI
 				PartyBrowser.DocumentText = "";
 
 			PartyBrowser.Document.OpenNew(true);
-			PartyBrowser.Document.Write(HTML.PCs(fPartyBreakdownSecondary, DisplaySize.Small));
+			PartyBrowser.Document.Write(HTML.PCs(fPartyBreakdownSecondary, Session.Preferences.TextSize));
 		}
 
 		#endregion

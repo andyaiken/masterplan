@@ -107,7 +107,7 @@ namespace Masterplan.UI
 
 		void update_stats()
 		{
-			List<string> lines = HTML.GetHead("", "", DisplaySize.Small);
+			List<string> lines = HTML.GetHead("", "", Session.Preferences.TextSize);
 
 			lines.Add("<BODY>");
 

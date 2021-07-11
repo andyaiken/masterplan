@@ -322,14 +322,14 @@ namespace Masterplan.UI
 
 		void update_statblock()
 		{
-			List<string> lines = HTML.GetHead("Trap", "", DisplaySize.Small);
+			List<string> lines = HTML.GetHead("Trap", "", Session.Preferences.TextSize);
 			lines.Add("<BODY>");
 
 			lines.Add("<TABLE class=clear>");
 			lines.Add("<TR class=clear>");
 			lines.Add("<TD class=clear>");
 			lines.Add("<P class=table>");
-			lines.Add(HTML.Trap(fTrap, null, false, false, true, DisplaySize.Small));
+			lines.Add(HTML.Trap(fTrap, null, false, false, true, Session.Preferences.TextSize));
 			lines.Add("</P>");
 			lines.Add("</TD>");
 			lines.Add("<TD class=clear>");

@@ -58,7 +58,7 @@ namespace Masterplan.UI
 
 		private void TrapList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			string html = HTML.Trap(Trap, null, true, false, false, DisplaySize.Small);
+			string html = HTML.Trap(Trap, null, true, false, false, Session.Preferences.TextSize);
 
 			Browser.Document.OpenNew(true);
 			Browser.Document.Write(html);

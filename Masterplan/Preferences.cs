@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 
 using Masterplan.Controls;
+using Masterplan.Tools;
 using Masterplan.UI;
 
 namespace Masterplan
@@ -90,6 +91,16 @@ namespace Masterplan
 		PlotViewLinkStyle fLinkStyle = PlotViewLinkStyle.Curved;
 
         #endregion
+
+		/// <summary>
+		/// Gets or sets the text size for the application.
+		/// </summary>
+		public DisplaySize TextSize { get; set; } = DisplaySize.Small;
+
+		/// <summary>
+		/// Gets or sets the text size for the player view.
+		/// </summary>
+		public DisplaySize PlayerViewTextSize { get; set; } = DisplaySize.Small;
 
 		/// <summary>
 		/// Gets or sets whether the XP calculation sums all plot points.

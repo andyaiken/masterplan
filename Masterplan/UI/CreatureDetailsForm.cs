@@ -15,7 +15,7 @@ namespace Masterplan.UI
 
 			fCard = card;
 
-			Browser.DocumentText = HTML.StatBlock(fCard, null, null, true, false, true, CardMode.View, DisplaySize.Small);
+			Browser.DocumentText = HTML.StatBlock(fCard, null, null, true, false, true, CardMode.View, Session.Preferences.TextSize);
 		}
 
 		EncounterCard fCard = null;

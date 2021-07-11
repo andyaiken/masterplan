@@ -15,7 +15,7 @@ namespace Masterplan.UI
 
 			fChallenge = sc.Copy() as SkillChallenge;
 
-			Browser.DocumentText = HTML.SkillChallenge(fChallenge, false, true, DisplaySize.Small);
+			Browser.DocumentText = HTML.SkillChallenge(fChallenge, false, true, Session.Preferences.TextSize);
 		}
 
 		SkillChallenge fChallenge = null;

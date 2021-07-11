@@ -16,7 +16,7 @@ namespace Masterplan.Controls
 
 		string get_html()
 		{
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 
 			lines.Add("<P>This is the Libraries screen.</P>");
 

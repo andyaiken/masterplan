@@ -29,7 +29,7 @@ namespace Masterplan.UI
 		void update_stats()
 		{
 			Browser.Document.OpenNew(true);
-			Browser.Document.Write(HTML.StatBlock(DeckView.TopCard, null, null, true, false, true, CardMode.View, DisplaySize.Small));
+			Browser.Document.Write(HTML.StatBlock(DeckView.TopCard, null, null, true, false, true, CardMode.View, Session.Preferences.TextSize));
 		}
 	}
 }

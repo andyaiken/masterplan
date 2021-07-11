@@ -141,7 +141,7 @@ namespace Masterplan.UI
 		void update_browser()
 		{
 			Browser.Document.OpenNew(true);
-			Browser.Document.Write(HTML.StatBlock(fCard, null, null, true, false, true, CardMode.View, DisplaySize.Small));
+			Browser.Document.Write(HTML.StatBlock(fCard, null, null, true, false, true, CardMode.View, Session.Preferences.TextSize));
 		}
 	}
 }

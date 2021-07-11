@@ -44,7 +44,7 @@ namespace Masterplan.UI
 
 		private void ItemList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			string html = HTML.MagicItem(MagicItem, DisplaySize.Small, false, true);
+			string html = HTML.MagicItem(MagicItem, Session.Preferences.TextSize, false, true);
 
 			Browser.Document.OpenNew(true);
 			Browser.Document.Write(html);

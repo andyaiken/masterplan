@@ -128,7 +128,7 @@ namespace Masterplan.UI
 
 		void update_power()
 		{
-			PowerBrowser.DocumentText = HTML.TerrainPower(fToken.TerrainPower, DisplaySize.Small);
+			PowerBrowser.DocumentText = HTML.TerrainPower(fToken.TerrainPower, Session.Preferences.TextSize);
 		}
 	}
 }

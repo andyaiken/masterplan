@@ -26,7 +26,6 @@ namespace Masterplan.UI
 	partial class PlayerViewForm : Form
 	{
 		public static bool UseOtherDisplay = true;
-		public static DisplaySize DisplaySize = DisplaySize.Small;
 
 		public PlayerViewForm(Form parent)
 		{
@@ -107,7 +106,7 @@ namespace Masterplan.UI
 
         public void ShowMessage(string message)
 		{
-			string html = HTML.Text(message, true, true, DisplaySize);
+			string html = HTML.Text(message, true, true, Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();
@@ -116,7 +115,7 @@ namespace Masterplan.UI
 		public void ShowPlainText(Attachment att)
 		{
 			string str = new ASCIIEncoding().GetString(att.Contents);
-			string html = HTML.Text(str, true, false, DisplaySize);
+			string html = HTML.Text(str, true, false, Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();
@@ -219,7 +218,7 @@ namespace Masterplan.UI
 
 		public void ShowPlotPoint(PlotPoint pp)
 		{
-			string html = HTML.Text(pp.ReadAloud, false, false, DisplaySize);
+			string html = HTML.Text(pp.ReadAloud, false, false, Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();
@@ -227,7 +226,7 @@ namespace Masterplan.UI
 
         public void ShowBackground(Background background)
 		{
-			string html = HTML.Background(background, DisplaySize);
+			string html = HTML.Background(background, Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();
@@ -235,7 +234,7 @@ namespace Masterplan.UI
 
 		public void ShowBackground(List<Background> backgrounds)
 		{
-			string html = HTML.Background(backgrounds, DisplaySize);
+			string html = HTML.Background(backgrounds, Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();
@@ -245,13 +244,13 @@ namespace Masterplan.UI
 		{
 			if (item is EncyclopediaEntry)
 			{
-				string html = HTML.EncyclopediaEntry(item as EncyclopediaEntry, Session.Project.Encyclopedia, DisplaySize, false, false, false, false);
+				string html = HTML.EncyclopediaEntry(item as EncyclopediaEntry, Session.Project.Encyclopedia, Session.Preferences.PlayerViewTextSize, false, false, false, false);
 				set_html(html);
 			}
 
 			if (item is EncyclopediaGroup)
 			{
-				string html = HTML.EncyclopediaGroup(item as EncyclopediaGroup, Session.Project.Encyclopedia, DisplaySize, false, false);
+				string html = HTML.EncyclopediaGroup(item as EncyclopediaGroup, Session.Project.Encyclopedia, Session.Preferences.PlayerViewTextSize, false, false);
 				set_html(html);
 			}
 
@@ -260,7 +259,7 @@ namespace Masterplan.UI
 
 		public void ShowEncyclopediaGroup(EncyclopediaGroup group)
 		{
-			string html = HTML.EncyclopediaGroup(group, Session.Project.Encyclopedia, DisplaySize, false, false);
+			string html = HTML.EncyclopediaGroup(group, Session.Project.Encyclopedia, Session.Preferences.PlayerViewTextSize, false, false);
 			set_html(html);
 
 			Show();
@@ -497,7 +496,7 @@ namespace Masterplan.UI
 		
 		public void ShowHandout(List<object> items, bool include_dm_info)
 		{
-			string html = HTML.Handout(items, DisplaySize, include_dm_info);
+			string html = HTML.Handout(items, Session.Preferences.PlayerViewTextSize, include_dm_info);
 			set_html(html);
 
 			Show();
@@ -505,7 +504,7 @@ namespace Masterplan.UI
 
         public void ShowPCs()
 		{
-			string html = HTML.PartyBreakdown(DisplaySize);
+			string html = HTML.PartyBreakdown(Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();
@@ -513,7 +512,7 @@ namespace Masterplan.UI
 
 		public void ShowPlayerOption(IPlayerOption option)
 		{
-			string html = HTML.PlayerOption(option, DisplaySize);
+			string html = HTML.PlayerOption(option, Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();
@@ -537,7 +536,7 @@ namespace Masterplan.UI
 
 		public void ShowHero(Hero h)
 		{
-			string html = HTML.StatBlock(h, null, true, false, false, DisplaySize);
+			string html = HTML.StatBlock(h, null, true, false, false, Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();
@@ -545,7 +544,7 @@ namespace Masterplan.UI
 
 		public void ShowEncounterCard(EncounterCard card)
 		{
-			string html = HTML.StatBlock(card, null, null, true, false, true, CardMode.View, DisplaySize);
+			string html = HTML.StatBlock(card, null, null, true, false, true, CardMode.View, Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();
@@ -553,7 +552,7 @@ namespace Masterplan.UI
 
 		public void ShowCreatureTemplate(CreatureTemplate template)
 		{
-			string html = HTML.CreatureTemplate(template, DisplaySize, false);
+			string html = HTML.CreatureTemplate(template, Session.Preferences.PlayerViewTextSize, false);
 			set_html(html);
 
 			Show();
@@ -561,7 +560,7 @@ namespace Masterplan.UI
 
 		public void ShowTrap(Trap trap)
 		{
-			string html = HTML.Trap(trap, null, true, false, false, DisplaySize);
+			string html = HTML.Trap(trap, null, true, false, false, Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();
@@ -569,7 +568,7 @@ namespace Masterplan.UI
 
 		public void ShowSkillChallenge(SkillChallenge sc)
 		{
-			string html = HTML.SkillChallenge(sc, false, true, DisplaySize);
+			string html = HTML.SkillChallenge(sc, false, true, Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();
@@ -577,7 +576,7 @@ namespace Masterplan.UI
 
 		public void ShowMagicItem(MagicItem item)
 		{
-			string html = HTML.MagicItem(item, DisplaySize, false, true);
+			string html = HTML.MagicItem(item, Session.Preferences.PlayerViewTextSize, false, true);
 			set_html(html);
 
 			Show();
@@ -585,7 +584,7 @@ namespace Masterplan.UI
 
 		public void ShowArtifact(Artifact artifact)
 		{
-			string html = HTML.Artifact(artifact, DisplaySize, false, true);
+			string html = HTML.Artifact(artifact, Session.Preferences.PlayerViewTextSize, false, true);
 			set_html(html);
 
 			Show();
@@ -593,7 +592,7 @@ namespace Masterplan.UI
 
 		public void ShowTerrainPower(TerrainPower tp)
 		{
-			string html = HTML.TerrainPower(tp, DisplaySize);
+			string html = HTML.TerrainPower(tp, Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();
@@ -601,7 +600,7 @@ namespace Masterplan.UI
 
 		public void ShowEncounterReportTable(ReportTable table)
 		{
-			string html = HTML.EncounterReportTable(table, DisplaySize);
+			string html = HTML.EncounterReportTable(table, Session.Preferences.PlayerViewTextSize);
 			set_html(html);
 
 			Show();

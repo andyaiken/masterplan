@@ -28,7 +28,7 @@ namespace Masterplan.UI
 		{
 			List<string> lines = new List<string>();
 
-			lines.AddRange(HTML.GetHead("Power Statistics", "", DisplaySize.Small));
+			lines.AddRange(HTML.GetHead("Power Statistics", "", Session.Preferences.TextSize));
 			lines.Add("<BODY>");
 
 			#region Number of powers

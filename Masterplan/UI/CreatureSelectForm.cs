@@ -72,7 +72,7 @@ namespace Masterplan.UI
 
 		private void CreatureList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			string html = HTML.StatBlock(Creature, null, null, true, false, true, CardMode.View, DisplaySize.Small);
+			string html = HTML.StatBlock(Creature, null, null, true, false, true, CardMode.View, Session.Preferences.TextSize);
 
 			Browser.Document.OpenNew(true);
 			Browser.Document.Write(html);

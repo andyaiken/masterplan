@@ -5543,7 +5543,7 @@ namespace Masterplan.UI
 			string html = "";
 
 			html += "<HTML>";
-			html += HTML.Concatenate(HTML.GetHead("", "", DisplaySize.Small));
+			html += HTML.Concatenate(HTML.GetHead("", "", Session.Preferences.TextSize));
 			html += "<BODY>";
 
 			if (fCombatStarted)
@@ -5579,18 +5579,18 @@ namespace Masterplan.UI
 
 					EncounterSlot slot = fEncounter.FindSlot(fCurrentActor);
 					if (slot != null)
-						html += HTML.StatBlock(slot.Card, fCurrentActor, fEncounter, false, true, true, CardMode.Combat, DisplaySize.Small);
+						html += HTML.StatBlock(slot.Card, fCurrentActor, fEncounter, false, true, true, CardMode.Combat, Session.Preferences.TextSize);
 
 					Hero hero = Session.Project.FindHero(fCurrentActor.ID);
 					if (hero != null)
 					{
 						bool show_effects = (tokens.Count != 0);
-						html += HTML.StatBlock(hero, fEncounter, false, true, show_effects, DisplaySize.Small);
+						html += HTML.StatBlock(hero, fEncounter, false, true, show_effects, Session.Preferences.TextSize);
 					}
 
 					Trap trap = fEncounter.FindTrap(fCurrentActor.ID);
 					if (trap != null)
-						html += HTML.Trap(trap, fCurrentActor, false, true, false, DisplaySize.Small);
+						html += HTML.Trap(trap, fCurrentActor, false, true, false, Session.Preferences.TextSize);
 
 					html += "</TD>";
 					html += "<TD class=clear>";
@@ -6017,7 +6017,7 @@ namespace Masterplan.UI
 				//lines.Add("<HTML>");
 
 				//lines.Add("<HEAD>");
-				//lines.AddRange(HTML.GetStyle(DisplaySize.Small));
+				//lines.AddRange(HTML.GetStyle(Session.Preferences.TextSize));
 				//lines.Add("</HEAD>");
 
 				//lines.Add("<BODY>");
@@ -6050,7 +6050,7 @@ namespace Masterplan.UI
 				if ((TwoColumnPreview) && (cd == fCurrentActor))
 					html = "";
 				else
-					html = HTML.StatBlock(hero, fEncounter, false, false, false, DisplaySize.Small);
+					html = HTML.StatBlock(hero, fEncounter, false, false, false, Session.Preferences.TextSize);
 			}
 
 			if (token is CreatureToken)
@@ -6062,7 +6062,7 @@ namespace Masterplan.UI
 				if ((TwoColumnPreview) && (cd == fCurrentActor))
 					html = "";
 				else
-					html = HTML.StatBlock(slot.Card, ct.Data, fEncounter, false, false, full, CardMode.Combat, DisplaySize.Small);
+					html = HTML.StatBlock(slot.Card, ct.Data, fEncounter, false, false, full, CardMode.Combat, Session.Preferences.TextSize);
 			}
 
 			if (token is CustomToken)
@@ -6070,7 +6070,7 @@ namespace Masterplan.UI
 				CustomToken ct = token as CustomToken;
 				bool drag = ((fEncounter.MapID != Guid.Empty) && (ct.Data.Location == CombatData.NoPoint));
 
-				html = HTML.CustomMapToken(ct, drag, false, DisplaySize.Small);
+				html = HTML.CustomMapToken(ct, drag, false, Session.Preferences.TextSize);
 			}
 
 			return html;
@@ -6087,12 +6087,12 @@ namespace Masterplan.UI
 					return "";
 			}
 
-			return HTML.Trap(SelectedTrap, cd, false, false, false, DisplaySize.Small);
+			return HTML.Trap(SelectedTrap, cd, false, false, false, Session.Preferences.TextSize);
 		}
 
 		string html_skill_challenge()
 		{
-			return HTML.SkillChallenge(SelectedChallenge, true, false, DisplaySize.Small);
+			return HTML.SkillChallenge(SelectedChallenge, true, false, Session.Preferences.TextSize);
 		}
 
 		string html_encounter_start()
@@ -6464,7 +6464,7 @@ namespace Masterplan.UI
 
 			bool active = false;
 
-			lines.AddRange(HTML.GetHead(null, null, PlayerViewForm.DisplaySize));
+			lines.AddRange(HTML.GetHead(null, null, Session.Preferences.PlayerViewTextSize));
 
 			lines.Add("<BODY bgcolor=black>");
 
@@ -6597,7 +6597,7 @@ namespace Masterplan.UI
 
 			if (!player_view)
 			{
-				lines.AddRange(HTML.GetHead("Encounter Log", "", DisplaySize.Small));
+				lines.AddRange(HTML.GetHead("Encounter Log", "", Session.Preferences.TextSize));
 				lines.Add("<BODY>");
 			}
 

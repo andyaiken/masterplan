@@ -383,7 +383,7 @@ namespace Masterplan.UI
 
 				if (dlg.ShowDialog() == DialogResult.OK)
 				{
-					List<string> lines = HTML.GetHead("Loot", "", DisplaySize.Small);
+					List<string> lines = HTML.GetHead("Loot", "", Session.Preferences.TextSize);
 
 					lines.Add("<BODY>");
 					lines.Add("<P>");
@@ -402,7 +402,7 @@ namespace Masterplan.UI
 							{
 								MagicItem mi = ItemList.CheckedItems[index].Tag as MagicItem;
 								if (mi != null)
-									lines.Add(HTML.MagicItem(mi, DisplaySize.Small, false, false));
+									lines.Add(HTML.MagicItem(mi, Session.Preferences.TextSize, false, false));
 							}
 
 							lines.Add("</TD>");

@@ -239,7 +239,7 @@ namespace Masterplan.UI
 			int level = (fCreature != null) ? fCreature.Level : 0;
 			IRole role = (fCreature != null) ? fCreature.Role : null;
 
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 			lines.Add("<BODY>");
 
 			lines.Add("<TABLE class=clear>");

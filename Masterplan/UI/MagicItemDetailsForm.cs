@@ -15,7 +15,7 @@ namespace Masterplan.UI
 
 			fItem = item.Copy() as MagicItem;
 
-			Browser.DocumentText = HTML.MagicItem(fItem, DisplaySize.Small, false, true);
+			Browser.DocumentText = HTML.MagicItem(fItem, Session.Preferences.TextSize, false, true);
 		}
 
 		MagicItem fItem = null;

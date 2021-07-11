@@ -84,7 +84,7 @@ namespace Masterplan.UI
 		{
 			EncounterSlot slot = fEncounter.FindSlot(SelectedCombatant);
 			EncounterCard card = slot != null ? slot.Card : null;
-			Browser.DocumentText = HTML.StatBlock(card, SelectedCombatant, fEncounter, true, false, true, CardMode.View, DisplaySize.Small);
+			Browser.DocumentText = HTML.StatBlock(card, SelectedCombatant, fEncounter, true, false, true, CardMode.View, Session.Preferences.TextSize);
 		}
 
 		void update_map_area()

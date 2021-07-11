@@ -47,7 +47,7 @@ namespace Masterplan.UI
 
 		void update_entry()
 		{
-			Browser.DocumentText = HTML.EncyclopediaEntry(fEntry, Session.Project.Encyclopedia, DisplaySize.Small, fShowDMInfo, false, false, true);
+			Browser.DocumentText = HTML.EncyclopediaEntry(fEntry, Session.Project.Encyclopedia, Session.Preferences.TextSize, fShowDMInfo, false, false, true);
 		}
 
 		private void Browser_Navigating(object sender, WebBrowserNavigatingEventArgs e)

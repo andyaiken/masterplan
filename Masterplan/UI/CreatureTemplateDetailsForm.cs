@@ -15,7 +15,7 @@ namespace Masterplan.UI
 
 			fTemplate = ct.Copy();
 
-			Browser.DocumentText = HTML.CreatureTemplate(fTemplate, DisplaySize.Small, false);
+			Browser.DocumentText = HTML.CreatureTemplate(fTemplate, Session.Preferences.TextSize, false);
 		}
 
 		CreatureTemplate fTemplate = null;

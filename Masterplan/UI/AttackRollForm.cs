@@ -124,7 +124,7 @@ namespace Masterplan.UI
 		{
 			List<string> lines = new List<string>();
 
-			lines.AddRange(HTML.GetHead(fPower.Name, "", DisplaySize.Small));
+			lines.AddRange(HTML.GetHead(fPower.Name, "", Session.Preferences.TextSize));
 
 			lines.Add("<BODY>");
 

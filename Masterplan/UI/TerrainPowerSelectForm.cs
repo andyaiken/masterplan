@@ -55,7 +55,7 @@ namespace Masterplan.UI
 
 		private void ChallengeList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			string html = HTML.TerrainPower(TerrainPower, DisplaySize.Small);
+			string html = HTML.TerrainPower(TerrainPower, Session.Preferences.TextSize);
 
 			Browser.Document.OpenNew(true);
 			Browser.Document.Write(html);

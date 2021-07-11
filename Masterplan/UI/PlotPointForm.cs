@@ -231,7 +231,7 @@ namespace Masterplan.UI
 			List<string> lines = new List<string>();
 
 			lines.Add("<HTML>");
-			lines.AddRange(HTML.GetHead("Plot Point", "Plot Point", DisplaySize.Small));
+			lines.AddRange(HTML.GetHead("Plot Point", "Plot Point", Session.Preferences.TextSize));
 			lines.Add("<BODY>");
 
 			lines.Add("<P>");
@@ -668,7 +668,7 @@ namespace Masterplan.UI
 
 		private void EncyclopediaList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			string text = HTML.EncyclopediaEntry(SelectedEntry, Session.Project.Encyclopedia, DisplaySize.Small, true, false, false, true);
+			string text = HTML.EncyclopediaEntry(SelectedEntry, Session.Project.Encyclopedia, Session.Preferences.TextSize, true, false, false, true);
 
 			EncBrowser.Document.OpenNew(true);
 			EncBrowser.Document.Write(text);

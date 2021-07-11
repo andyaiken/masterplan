@@ -16,7 +16,7 @@ namespace Masterplan.UI
 
 			List<string> lines = new List<string>();
 
-			lines.AddRange(HTML.GetHead("Plot Design Issues", "", DisplaySize.Small));
+			lines.AddRange(HTML.GetHead("Plot Design Issues", "", Session.Preferences.TextSize));
 			lines.Add("<BODY>");
 
 			List<DifficultyIssue> difficulty_issues = new List<DifficultyIssue>();

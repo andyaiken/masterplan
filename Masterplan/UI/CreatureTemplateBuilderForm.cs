@@ -411,7 +411,7 @@ namespace Masterplan.UI
 
 		void update_statblock()
 		{
-			StatBlockBrowser.DocumentText = HTML.CreatureTemplate(fTemplate, DisplaySize.Small, true);
+			StatBlockBrowser.DocumentText = HTML.CreatureTemplate(fTemplate, Session.Preferences.TextSize, true);
 		}
 
 		#endregion

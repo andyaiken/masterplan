@@ -38,7 +38,7 @@ namespace Masterplan.UI
 			examples.Add("The target is slowed (save ends)");
 			examples.Add("The target is immobilised until the start of your next turn");
 
-			List<string> lines = HTML.GetHead(null, null, DisplaySize.Small);
+			List<string> lines = HTML.GetHead(null, null, Session.Preferences.TextSize);
 			lines.Add("<BODY>");
 
 			lines.Add("<P class=table>");

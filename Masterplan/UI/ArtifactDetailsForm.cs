@@ -15,7 +15,7 @@ namespace Masterplan.UI
 
 			fArtifact = artifact.Copy();
 
-			Browser.DocumentText = HTML.Artifact(fArtifact, DisplaySize.Small, false, true);
+			Browser.DocumentText = HTML.Artifact(fArtifact, Session.Preferences.TextSize, false, true);
 		}
 
 		Artifact fArtifact = null;

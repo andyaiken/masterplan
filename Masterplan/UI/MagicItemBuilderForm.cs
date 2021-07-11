@@ -141,7 +141,7 @@ namespace Masterplan.UI
 
 		void update_statblock()
 		{
-			StatBlockBrowser.DocumentText = HTML.MagicItem(fMagicItem, DisplaySize.Small, true, true);
+			StatBlockBrowser.DocumentText = HTML.MagicItem(fMagicItem, Session.Preferences.TextSize, true, true);
 		}
 
 		private void FileExport_Click(object sender, EventArgs e)

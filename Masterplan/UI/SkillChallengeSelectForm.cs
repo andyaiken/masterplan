@@ -55,7 +55,7 @@ namespace Masterplan.UI
 
 		private void ChallengeList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			string html = HTML.SkillChallenge(SkillChallenge, false, true, DisplaySize.Small);
+			string html = HTML.SkillChallenge(SkillChallenge, false, true, Session.Preferences.TextSize);
 
 			Browser.Document.OpenNew(true);
 			Browser.Document.Write(html);

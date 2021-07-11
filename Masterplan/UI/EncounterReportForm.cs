@@ -103,7 +103,7 @@ namespace Masterplan.UI
 		void update_report()
 		{
 			ReportTable table = fReport.CreateTable(fReportType, fBreakdownType, fEncounter);
-			Browser.DocumentText = HTML.EncounterReportTable(table, DisplaySize.Small);
+			Browser.DocumentText = HTML.EncounterReportTable(table, Session.Preferences.TextSize);
 
 			Graph.ShowTable(table);
 		}

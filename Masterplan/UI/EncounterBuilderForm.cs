@@ -2641,7 +2641,7 @@ namespace Masterplan.UI
             try
             {
 				NoteDetails.Document.OpenNew(true);
-                NoteDetails.Document.Write(HTML.EncounterNote(SelectedNote, DisplaySize.Small));
+                NoteDetails.Document.Write(HTML.EncounterNote(SelectedNote, Session.Preferences.TextSize));
             }
             catch (Exception ex)
             {

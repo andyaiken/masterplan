@@ -14,17 +14,29 @@ using Masterplan.Properties;
 
 namespace Masterplan.Tools
 {
-	enum DisplaySize
+	/// <summary>
+	/// Text size.
+	/// </summary>
+	public enum DisplaySize
 	{
+		/// <summary>
+		/// Small text.
+		/// </summary>
 		Small,
+
+		/// <summary>
+		/// Medium text.
+		/// </summary>
 		Medium,
+
+		/// <summary>
+		/// Large text.
+		/// </summary>
 		Large
 	}
 
 	class HTML
 	{
-		//static Markdown fMarkdown = new Markdown();
-
 		#region Predefined
 
 		public static string Text(string str, bool strip_html, bool centred, DisplaySize size)
@@ -59,7 +71,7 @@ namespace Masterplan.Tools
 			if (include_wrapper)
 			{
 				lines.Add("<HTML>");
-				lines.AddRange(HTML.GetStyle(DisplaySize.Small));
+				lines.AddRange(HTML.GetStyle(size));
 				lines.Add("<BODY>");
 			}
 
@@ -102,7 +114,7 @@ namespace Masterplan.Tools
 			if (include_wrapper)
 			{
 				lines.Add("<HTML>");
-				lines.AddRange(HTML.GetStyle(DisplaySize.Small));
+				lines.AddRange(HTML.GetStyle(size));
 				lines.Add("<BODY>");
 			}
 
@@ -162,7 +174,7 @@ namespace Masterplan.Tools
 			if (include_wrapper)
 			{
 				lines.Add("<HTML>");
-				lines.AddRange(HTML.GetStyle(DisplaySize.Small));
+				lines.AddRange(HTML.GetStyle(size));
 				lines.Add("<BODY>");
 			}
 
@@ -192,7 +204,7 @@ namespace Masterplan.Tools
 			if (include_wrapper)
 			{
 				lines.Add("<HTML>");
-				lines.AddRange(HTML.GetStyle(DisplaySize.Small));
+				lines.AddRange(HTML.GetStyle(size));
 				lines.Add("<BODY>");
 			}
 
@@ -907,7 +919,6 @@ namespace Masterplan.Tools
 				string readaloud = Process(pp.ReadAloud, false);
 				if (readaloud != "")
 				{
-					//readaloud = fMarkdown.Transform(readaloud);
 					readaloud = readaloud.Replace("<p>", "<p class=readaloud>");
 					lines.Add(readaloud);
 				}
@@ -915,7 +926,6 @@ namespace Masterplan.Tools
 				string details = Process(pp.Details, false);
 				if (details != "")
 				{
-					//details = fMarkdown.Transform(details);
 					lines.Add(details);
 				}
 
@@ -1406,7 +1416,6 @@ namespace Masterplan.Tools
 				string str = Process(en.Contents, false);
                 if (str != "")
                 {
-					//str = fMarkdown.Transform(str);
 					str = str.Replace("<p>", "<p class=encounter_note>");
                     lines.Add(str);
                 }
@@ -1439,7 +1448,6 @@ namespace Masterplan.Tools
                 string details = Process(bg.Details, false);
                 if (details != "")
                 {
-					//details = fMarkdown.Transform(details);
 					details = details.Replace("<p>", "<p class=background>");
                     lines.Add(details);
                 }
@@ -1476,7 +1484,6 @@ namespace Masterplan.Tools
 				{
 					lines.Add("<H3>" + title + "</H3>");
 
-					//details = fMarkdown.Transform(details);
 					details = details.Replace("<p>", "<p class=background>");
 					lines.Add(details);
 				}
@@ -1752,7 +1759,6 @@ namespace Masterplan.Tools
 						Background bg = item as Background;
 
 						string details = Process(bg.Details, false);
-						//details = fMarkdown.Transform(details);
 						details = details.Replace("<p>", "<p class=background>");
 
 						lines.Add("<H3>" + Process(bg.Title, true) + "</H3>");
@@ -2265,7 +2271,7 @@ namespace Masterplan.Tools
 		{
 			List<string> lines = new List<string>();
 
-			lines.AddRange(HTML.GetHead("Encounter Log", "", DisplaySize.Small));
+			lines.AddRange(HTML.GetHead("Encounter Log", "", size));
 			lines.Add("<BODY>");
 
 			#region Title
@@ -2503,7 +2509,7 @@ namespace Masterplan.Tools
 
 				StreamWriter sw = new StreamWriter(filename);
 
-				List<string> content = get_content();
+				List<string> content = get_content(Session.Preferences.TextSize);
 				foreach (string line in content)
 					sw.WriteLine(line);
 
@@ -2744,11 +2750,11 @@ namespace Masterplan.Tools
 					pt_sizes[24] = 24;
 					break;
 				case DisplaySize.Medium:
-					pt_sizes[8] = 16;
-					pt_sizes[9] = 18;
-					pt_sizes[12] = 24;
-					pt_sizes[16] = 32;
-					pt_sizes[24] = 48;
+					pt_sizes[8] = 12;
+					pt_sizes[9] = 14;
+					pt_sizes[12] = 18;
+					pt_sizes[16] = 24;
+					pt_sizes[24] = 36;
 					break;
 				case DisplaySize.Large:
 					pt_sizes[8] = 25;
@@ -2768,11 +2774,11 @@ namespace Masterplan.Tools
 					break;
 				case DisplaySize.Medium:
 					px_sizes[15] = 30;
-					px_sizes[300] = 600;
+					px_sizes[300] = 300;
 					break;
 				case DisplaySize.Large:
 					px_sizes[15] = 45;
-					px_sizes[300] = 1000;
+					px_sizes[300] = 300;
 					break;
 			}
 
@@ -2874,14 +2880,14 @@ namespace Masterplan.Tools
 			return on + content + off;
 		}
 
-		List<string> get_content()
+		List<string> get_content(DisplaySize size)
 		{
 			List<string> lines = new List<string>();
 
 			string desc = Session.Project.Name + ": " + get_description();
 
 			lines.Add("<HTML>");
-			lines.AddRange(GetHead(Session.Project.Name, desc, DisplaySize.Small));
+			lines.AddRange(GetHead(Session.Project.Name, desc, size));
 			lines.AddRange(get_body());
 			lines.Add("</HTML>");
 
@@ -3078,7 +3084,6 @@ namespace Masterplan.Tools
 				details = details.Substring(0, start_index) + link + details.Substring(end_index + end.Length);
 			}
 
-			//details = fMarkdown.Transform(details);
 			details = details.Replace("<p>", "<p class=encyclopedia_entry>");
 
 			return details;

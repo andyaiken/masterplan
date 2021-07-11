@@ -15,7 +15,7 @@ namespace Masterplan.UI
 
 			fTerrainPower = tp.Copy();
 
-			Browser.DocumentText = HTML.TerrainPower(fTerrainPower, DisplaySize.Small);
+			Browser.DocumentText = HTML.TerrainPower(fTerrainPower, Session.Preferences.TextSize);
 		}
 
 		TerrainPower fTerrainPower = null;

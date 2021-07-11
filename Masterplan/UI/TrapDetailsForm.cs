@@ -15,7 +15,7 @@ namespace Masterplan.UI
 
 			fTrap = trap.Copy();
 
-			Browser.DocumentText = HTML.Trap(fTrap, null, true, false, false, DisplaySize.Small);
+			Browser.DocumentText = HTML.Trap(fTrap, null, true, false, false, Session.Preferences.TextSize);
 		}
 
 		Trap fTrap = null;

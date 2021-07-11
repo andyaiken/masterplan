@@ -150,14 +150,14 @@ namespace Masterplan.UI
 				MagicItem item = Session.FindMagicItem(fParcel.MagicItemID, SearchType.Global);
 				if (item != null)
 				{
-					string html = HTML.MagicItem(item, DisplaySize.Small, false, true);
+					string html = HTML.MagicItem(item, Session.Preferences.TextSize, false, true);
 					Browser.DocumentText = html;
 				}
 
 				Artifact a = Session.FindArtifact(fParcel.ArtifactID, SearchType.Global);
 				if (a != null)
 				{
-					string html = HTML.Artifact(a, DisplaySize.Small, false, true);
+					string html = HTML.Artifact(a, Session.Preferences.TextSize, false, true);
 					Browser.DocumentText = html;
 				}
 			}

@@ -53,7 +53,7 @@ namespace Masterplan.UI
 			{
 				List<string> lines = new List<string>();
 
-				lines.AddRange(HTML.GetHead("", "", DisplaySize.Small));
+				lines.AddRange(HTML.GetHead("", "", Session.Preferences.TextSize));
 				lines.Add("<BODY>");
 				lines.Add("<P class=instruction>");
 				lines.Add("(select a template from the list to see its details here)");
@@ -65,7 +65,7 @@ namespace Masterplan.UI
 			}
 			else
 			{
-				html = HTML.CreatureTemplate(Template, DisplaySize.Small, false);
+				html = HTML.CreatureTemplate(Template, Session.Preferences.TextSize, false);
 			}
 
 			Browser.Document.OpenNew(true);

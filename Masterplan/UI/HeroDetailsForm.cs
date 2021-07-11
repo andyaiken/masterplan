@@ -15,7 +15,7 @@ namespace Masterplan.UI
 
 			fHero = hero.Copy();
 
-			Browser.DocumentText = HTML.StatBlock(fHero, null, true, false, false, DisplaySize.Small);
+			Browser.DocumentText = HTML.StatBlock(fHero, null, true, false, false, Session.Preferences.TextSize);
 		}
 
 		Hero fHero = null;

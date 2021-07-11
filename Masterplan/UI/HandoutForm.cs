@@ -345,7 +345,7 @@ namespace Masterplan.UI
 		void update_handout()
 		{
 			Browser.Document.OpenNew(true);
-			Browser.Document.Write(HTML.Handout(fItems, DisplaySize.Small, fShowDMInfo));
+			Browser.Document.Write(HTML.Handout(fItems, Session.Preferences.TextSize, fShowDMInfo));
 		}
 
 		private void SourceList_ItemDrag(object sender, ItemDragEventArgs e)

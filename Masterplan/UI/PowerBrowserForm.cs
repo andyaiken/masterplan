@@ -266,7 +266,7 @@ namespace Masterplan.UI
 			List<string> content = new List<string>();
 			fPowers = new List<CreaturePower>();
 
-			content.AddRange(HTML.GetHead(null, null, DisplaySize.Small));
+			content.AddRange(HTML.GetHead(null, null, Session.Preferences.TextSize));
 			content.Add("<BODY>");
 
 			List<ICreature> creatures = SelectedCreatures;
