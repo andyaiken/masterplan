@@ -31,6 +31,11 @@ namespace Masterplan.UI
 			TrapList_SelectedIndexChanged(null, null);
 		}
 
+		~TrapSelectForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			OKBtn.Enabled = (Trap != null);

@@ -19,6 +19,11 @@ namespace Masterplan.UI
 			update_list();
 		}
 
+		~TokenLinkListForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RemoveBtn.Enabled = (SelectedLink != null);

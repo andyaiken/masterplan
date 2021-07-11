@@ -47,6 +47,11 @@ namespace Masterplan.UI
 			ImmuneBox.Text = fTemplate.Immune;
 		}
 
+		~DamageModListForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RemoveDmgBtn.Enabled = ((SelectedDamageMod != null) || (SelectedDamageModTemplate != null));

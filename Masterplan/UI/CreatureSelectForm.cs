@@ -27,6 +27,11 @@ namespace Masterplan.UI
 			CreatureList_SelectedIndexChanged(null, null);
 		}
 
+		~CreatureSelectForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		public CreatureSelectForm(List<Creature> creatures)
 		{
 			InitializeComponent();

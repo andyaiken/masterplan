@@ -103,6 +103,11 @@ namespace Masterplan.UI
 			update_list();
 		}
 
+		~CreatureSkillsForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			TrainedBtn.Enabled = (SelectedSkill != null);

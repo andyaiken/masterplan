@@ -55,6 +55,11 @@ namespace Masterplan.UI
 			lvi_custom.Group = SkillSourceList.Groups[2];
 		}
 
+		~SkillChallengeBuilderForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RemoveBtn.Enabled = (SelectedSkill != null);

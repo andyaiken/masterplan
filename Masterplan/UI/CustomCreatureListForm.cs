@@ -17,6 +17,11 @@ namespace Masterplan.UI
 			update_creatures();
 		}
 
+		~CustomCreatureListForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RemoveBtn.Enabled = (SelectedCreature != null) || (SelectedNPC != null);

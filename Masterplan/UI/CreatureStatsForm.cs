@@ -35,6 +35,11 @@ namespace Masterplan.UI
 			update_recommendations();
 		}
 
+		~CreatureStatsForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			HPRecBtn.Enabled = (HPBox.Value != fHP);

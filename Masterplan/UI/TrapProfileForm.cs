@@ -36,6 +36,11 @@ namespace Masterplan.UI
 			}
 		}
 
+		~TrapProfileForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			InitBox.Enabled = HasInitBox.Checked;

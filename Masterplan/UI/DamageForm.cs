@@ -43,6 +43,11 @@ namespace Masterplan.UI
 			update_value();
 		}
 
+		~DamageForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			ResetBtn.Enabled = (DmgBox.Value != 0);

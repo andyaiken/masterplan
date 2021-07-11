@@ -24,6 +24,11 @@ namespace Masterplan.UI
 			update_maps();
 		}
 
+		~MapListForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RemoveBtn.Enabled = (SelectedMap != null);

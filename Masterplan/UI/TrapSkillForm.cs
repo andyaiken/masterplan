@@ -30,6 +30,11 @@ namespace Masterplan.UI
 			update_advice();
 		}
 
+		~TrapSkillForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			DCLbl.Enabled = DCBtn.Checked;

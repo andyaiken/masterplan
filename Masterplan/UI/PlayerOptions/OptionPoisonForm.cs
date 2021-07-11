@@ -23,6 +23,11 @@ namespace Masterplan.UI
 			update_sections();
 		}
 
+		~OptionPoisonForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			int index = fPoison.Sections.IndexOf(SelectedSection);

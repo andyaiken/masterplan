@@ -36,6 +36,11 @@ namespace Masterplan.UI
 			update_map_area();
 		}
 
+		~DisplayNameForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			NameBox.Enabled = (SelectedCombatant != null);

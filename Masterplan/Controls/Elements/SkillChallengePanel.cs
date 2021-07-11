@@ -16,6 +16,11 @@ namespace Masterplan.Controls
 			Application.Idle += new EventHandler(Application_Idle);
 		}
 
+		~SkillChallengePanel()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			ChooseBtn.Enabled = (Session.SkillChallenges.Count != 0);

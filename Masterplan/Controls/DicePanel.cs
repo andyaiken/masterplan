@@ -22,6 +22,11 @@ namespace Masterplan.Controls
 			fCentred.LineAlignment = StringAlignment.Center;
 		}
 
+		~DicePanel()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RollBtn.Enabled = (fDice.Count != 0);

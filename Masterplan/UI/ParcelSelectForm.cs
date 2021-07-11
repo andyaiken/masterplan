@@ -18,6 +18,11 @@ namespace Masterplan.UI
 			update_list();
 		}
 
+		~ParcelSelectForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RandomiseBtn.Enabled = (Parcel != null);

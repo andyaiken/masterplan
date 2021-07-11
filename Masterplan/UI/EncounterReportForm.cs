@@ -26,6 +26,11 @@ namespace Masterplan.UI
 			update_mvp();
 		}
 
+		~EncounterReportForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			ReportTime.Checked = fReportType == ReportType.Time;

@@ -31,6 +31,11 @@ namespace Masterplan.UI
 			update_list();
 		}
 
+		~OverviewForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			EncounterBtn.Checked = (fType == OverviewType.Encounters);

@@ -35,6 +35,11 @@ namespace Masterplan.UI
 			update_advice();
 		}
 
+		~TrapAttackForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			InitBox.Enabled = InitBtn.Checked;

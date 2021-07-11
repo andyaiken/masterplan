@@ -69,6 +69,11 @@ namespace Masterplan.UI
 			}
 		}
 
+		~PowerActionForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			bool is_trait = TraitBox.Checked;

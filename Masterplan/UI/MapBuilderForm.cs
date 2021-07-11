@@ -109,6 +109,11 @@ namespace Masterplan.UI
 			update_areas();
 		}
 
+		~MapBuilderForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RemoveBtn.Enabled = ((MapView.SelectedTiles != null) && (MapView.SelectedTiles.Count != 0));

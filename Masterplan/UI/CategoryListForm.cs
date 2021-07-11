@@ -45,6 +45,11 @@ namespace Masterplan.UI
 			}
 		}
 
+		~CategoryListForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			OKBtn.Enabled = (CatList.CheckedItems.Count != 0);

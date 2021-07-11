@@ -25,6 +25,11 @@ namespace Masterplan.UI
 			update_levels();
 		}
 
+		~OptionEpicDestinyForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			LevelEditBtn.Enabled = (SelectedLevel != null);

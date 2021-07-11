@@ -49,6 +49,11 @@ namespace Masterplan.UI
 				PortraitBox.Image = fCreature.Image;
 		}
 
+		~CustomCreatureForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			PowerRemoveBtn.Enabled = (SelectedPower != null);

@@ -23,6 +23,11 @@ namespace Masterplan.UI
 			update_list();
 		}
 
+		~EffectListForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RemoveBtn.Enabled = (SelectedEffect != null);

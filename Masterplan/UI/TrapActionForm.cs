@@ -25,6 +25,11 @@ namespace Masterplan.UI
 			TargetBox.Text = fAttack.Target;
 		}
 
+		~TrapActionForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 		}

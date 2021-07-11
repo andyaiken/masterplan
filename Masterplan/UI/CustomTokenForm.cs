@@ -34,6 +34,11 @@ namespace Masterplan.UI
 			TilePanel.Colour = fToken.Colour;
 		}
 
+		~CustomTokenForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RemoveBtn.Enabled = (fToken.TerrainPower != null);

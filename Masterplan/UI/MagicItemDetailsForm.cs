@@ -13,7 +13,7 @@ namespace Masterplan.UI
 		{
 			InitializeComponent();
 
-			fItem = item.Copy() as MagicItem;
+			fItem = item.Copy();
 
 			Browser.DocumentText = HTML.MagicItem(fItem, Session.Preferences.TextSize, false, true);
 		}

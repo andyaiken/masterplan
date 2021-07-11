@@ -23,6 +23,11 @@ namespace Masterplan.UI
 			DetailsBox.Text = fArea.Details;
 		}
 
+		~MapAreaForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			LeftLessBtn.Enabled = (MapView.Viewpoint.Width != 1);

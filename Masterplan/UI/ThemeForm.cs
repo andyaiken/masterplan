@@ -36,6 +36,11 @@ namespace Masterplan.UI
 			}
 		}
 
+		~ThemeForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			SelectThemeBtn.Enabled = (Session.Themes.Count != 0);

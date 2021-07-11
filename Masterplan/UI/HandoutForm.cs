@@ -41,6 +41,11 @@ namespace Masterplan.UI
 			Application.Idle += new EventHandler(Application_Idle);
 		}
 
+		~HandoutForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			AddBtn.Enabled = (SelectedSource != null);

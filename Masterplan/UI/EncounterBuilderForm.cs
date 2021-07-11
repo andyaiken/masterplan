@@ -78,6 +78,11 @@ namespace Masterplan.UI
 			update_party_label();
 		}
 
+		~EncounterBuilderForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			try

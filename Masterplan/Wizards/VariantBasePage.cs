@@ -19,6 +19,11 @@ namespace Masterplan.Wizards
 			Application.Idle += new EventHandler(Application_Idle);
 		}
 
+		~VariantBasePage()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			SearchClearBtn.Enabled = (SearchBox.Text != "");

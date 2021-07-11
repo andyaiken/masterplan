@@ -61,6 +61,11 @@ namespace Masterplan.UI
 			update_view();
 		}
 
+		~CreatureBuilderForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			PicturePasteBtn.Enabled = Clipboard.ContainsImage();

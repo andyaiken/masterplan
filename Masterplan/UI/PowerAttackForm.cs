@@ -35,6 +35,11 @@ namespace Masterplan.UI
 			}
 		}
 
+		~PowerAttackForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			DefenceType dt = (DefenceType)DefenceBox.SelectedItem;

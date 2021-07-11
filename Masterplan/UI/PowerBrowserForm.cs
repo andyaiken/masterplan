@@ -38,6 +38,11 @@ namespace Masterplan.UI
 			}
 		}
 
+		~PowerBrowserForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			ModeAll.Checked = fShowAll;

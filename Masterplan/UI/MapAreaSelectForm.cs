@@ -43,7 +43,12 @@ namespace Masterplan.UI
 				AreaBox.Items.Add("(no map)");
 				AreaBox.SelectedIndex = 0;
             }
-        }
+		}
+
+		~MapAreaSelectForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
 
 		bool map_tiles_exist()
 		{

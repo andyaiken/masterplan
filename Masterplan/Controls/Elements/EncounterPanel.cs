@@ -17,6 +17,11 @@ namespace Masterplan.Controls
 			Application.Idle += new EventHandler(Application_Idle);
 		}
 
+		~EncounterPanel()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RunBtn.Enabled = ((fEncounter.Count != 0) || (fEncounter.Traps.Count != 0) || (fEncounter.SkillChallenges.Count != 0));

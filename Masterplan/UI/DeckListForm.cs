@@ -17,6 +17,11 @@ namespace Masterplan.UI
 			update_decks();
 		}
 
+		~DeckListForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RemoveBtn.Enabled = (SelectedDeck != null);

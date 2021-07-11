@@ -28,6 +28,11 @@ namespace Masterplan.UI
 			DeckView_SelectedCellChanged(null, null);
 		}
 
+		~DeckBuilderForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		#region Properties
 
 		public EncounterDeck Deck

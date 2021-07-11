@@ -378,6 +378,11 @@ namespace Masterplan.UI
 			update_statusbar();
 		}
 
+		~CombatForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		#region Properties
 
 		Encounter fEncounter = null;

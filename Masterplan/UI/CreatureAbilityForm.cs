@@ -44,8 +44,6 @@ namespace Masterplan.UI
 
 		void update_mods()
 		{
-			int halflevel = fCreature.Level / 2;
-
 			StrModBox.Text = get_text((int)StrBox.Value);
 			ConModBox.Text = get_text((int)ConBox.Value);
 			DexModBox.Text = get_text((int)DexBox.Value);

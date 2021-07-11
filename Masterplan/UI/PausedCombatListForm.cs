@@ -18,6 +18,11 @@ namespace Masterplan.UI
 			set_map();
 		}
 
+		~PausedCombatListForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		public CombatState SelectedCombat
 		{
 			get

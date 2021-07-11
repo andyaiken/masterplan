@@ -33,6 +33,11 @@ namespace Masterplan.UI
 			update_hero();
 		}
 
+		~HeroForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			PortraitPasteBtn.Enabled = Clipboard.ContainsImage();

@@ -32,6 +32,11 @@ namespace Masterplan.UI
 			update_list();
 		}
 
+		~RechargeForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RollBtn.Enabled = (SelectedPowerID != Guid.Empty);

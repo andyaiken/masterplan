@@ -30,6 +30,11 @@ namespace Masterplan.UI
 			SoldierBox.Checked = fPower.Roles.Contains(RoleType.Soldier);
 		}
 
+		~MonsterThemePowerForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			List<RoleType> roles = get_roles();

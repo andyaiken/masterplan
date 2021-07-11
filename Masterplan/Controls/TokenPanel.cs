@@ -16,6 +16,11 @@ namespace Masterplan.Controls
 			Application.Idle += new EventHandler(Application_Idle);
 		}
 
+		~TokenPanel()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			ImageClear.Enabled = (fImage != null);

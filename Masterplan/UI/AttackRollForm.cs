@@ -28,6 +28,11 @@ namespace Masterplan.UI
 			RollDamageBtn_Click(null, null);
 		}
 
+		~AttackRollForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			ApplyDamageBox.Visible = fAddedCombatant;

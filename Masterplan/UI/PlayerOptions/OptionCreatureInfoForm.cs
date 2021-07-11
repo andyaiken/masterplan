@@ -29,6 +29,11 @@ namespace Masterplan.UI
 			update_information();
 		}
 
+		~OptionCreatureLoreForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RemoveBtn.Enabled = (SelectedInformation != null);

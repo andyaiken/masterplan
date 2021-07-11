@@ -18,6 +18,11 @@ namespace Masterplan.UI
 			ClearBtn.Visible = (Session.Project.Password != "");
 		}
 
+		~PasswordSetForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			OKBtn.Enabled = (PasswordBox.Text.ToLower() == RetypeBox.Text.ToLower());

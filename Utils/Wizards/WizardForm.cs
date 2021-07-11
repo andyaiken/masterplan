@@ -27,6 +27,11 @@ namespace Utils.Wizards
 				set_page(0);
 		}
 
+		~WizardForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			IWizardPage page = CurrentPage;

@@ -46,6 +46,11 @@ namespace Masterplan.UI
 			update_sections();
 		}
 
+		~OptionPowerForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			int index = fPower.Sections.IndexOf(SelectedSection);

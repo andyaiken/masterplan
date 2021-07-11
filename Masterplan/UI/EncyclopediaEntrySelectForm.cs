@@ -50,6 +50,11 @@ namespace Masterplan.UI
 			Application.Idle += new EventHandler(Application_Idle);
 		}
 
+		~EncyclopediaEntrySelectForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
             OKBtn.Enabled = (EncyclopediaEntry != null);

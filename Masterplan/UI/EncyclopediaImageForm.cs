@@ -19,6 +19,11 @@ namespace Masterplan.UI
 			PictureBox.Image = fImage.Image;
 		}
 
+		~EncyclopediaImageForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			PasteBtn.Enabled = Clipboard.ContainsImage();

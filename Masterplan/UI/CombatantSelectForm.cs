@@ -22,7 +22,6 @@ namespace Masterplan.UI
 				}
 			}
 			foreach (Hero hero in Session.Project.Heroes)
-			//foreach (CombatData hero in heroes.Values)
 			{
 				ListViewItem lvi = CombatantList.Items.Add(hero.Name);
 				lvi.Tag = hero.CombatData;
@@ -36,6 +35,11 @@ namespace Masterplan.UI
 			}
 
 			Application.Idle += new EventHandler(Application_Idle);
+		}
+
+		~CombatantSelectForm()
+		{
+			Application.Idle -= Application_Idle;
 		}
 
 		void Application_Idle(object sender, EventArgs e)

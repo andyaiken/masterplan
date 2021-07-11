@@ -37,6 +37,11 @@ namespace Masterplan.UI
 			update_effects();
 		}
 
+		~CombatDataForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			bool damage = false;

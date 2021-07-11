@@ -56,6 +56,11 @@ namespace Masterplan.UI
 				Pages.SelectedTab = RPGPage;
 		}
 
+		~PlotPointForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			MapLocation loc = null;

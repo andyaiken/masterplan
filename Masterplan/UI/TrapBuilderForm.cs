@@ -22,6 +22,11 @@ namespace Masterplan.UI
 			update_statblock();
 		}
 
+		~TrapBuilderForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			LevelDownBtn.Enabled = (fTrap.Level > 1);

@@ -70,6 +70,11 @@ namespace Masterplan.UI
 			update_satellites();
 		}
 
+		~CalendarForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		#region Properties
 
 		public Calendar Calendar

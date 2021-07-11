@@ -25,6 +25,11 @@ namespace Masterplan.UI
 			update_stats();
 		}
 
+		~CreatureMultipleSelectForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			OKBtn.Enabled = (SelectedCreatures.Count >= 2);

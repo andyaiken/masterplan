@@ -61,6 +61,11 @@ namespace Masterplan.UI
 			update_pictures();
 		}
 
+		~EncyclopediaEntryForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RemoveBtn.Enabled = (SelectedImage != null);

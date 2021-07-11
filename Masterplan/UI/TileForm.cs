@@ -27,6 +27,11 @@ namespace Masterplan.UI
 			image_changed();
 		}
 
+		~TileForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			PasteBtn.Enabled = Clipboard.ContainsImage();

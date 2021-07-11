@@ -28,6 +28,11 @@ namespace Masterplan.UI
 			ChallengeList_SelectedIndexChanged(null, null);
 		}
 
+		~TerrainPowerSelectForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			OKBtn.Enabled = (TerrainPower != null);

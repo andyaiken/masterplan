@@ -19,6 +19,11 @@ namespace Masterplan.UI
 			update_view();
 		}
 
+		~HeroListForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			RemoveBtn.Enabled = (SelectedHero != null);

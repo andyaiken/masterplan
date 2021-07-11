@@ -27,6 +27,11 @@ namespace Masterplan.UI
 			update_libraries();
 		}
 
+		~LibraryListForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		#region Properties
 
 		public Library SelectedLibrary

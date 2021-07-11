@@ -20,6 +20,11 @@ namespace Masterplan.UI
 			update_entry();
 		}
 
+		~EncyclopediaEntryDetailsForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			DMBtn.Checked = fShowDMInfo;

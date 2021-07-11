@@ -35,6 +35,11 @@ namespace Masterplan.UI
 			}
 		}
 
+		~RegionalMapForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			PasteBtn.Enabled = Clipboard.ContainsImage();

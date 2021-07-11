@@ -21,6 +21,11 @@ namespace Masterplan.UI
 			CreatureList_SelectedIndexChanged(null, null);
 		}
 
+		~CreatureTemplateSelectForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			OKBtn.Enabled = (Template != null);

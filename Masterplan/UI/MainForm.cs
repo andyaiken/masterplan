@@ -169,6 +169,11 @@ namespace Masterplan.UI
 			UpdateView();
 		}
 
+		~MainForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		#region Properties
 
 		public Background SelectedBackground

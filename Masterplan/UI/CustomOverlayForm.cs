@@ -49,7 +49,12 @@ namespace Masterplan.UI
             OpaqueBox.Checked = fToken.Opaque;
 		}
 
-        void Application_Idle(object sender, EventArgs e)
+		~CustomOverlayForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
+		void Application_Idle(object sender, EventArgs e)
         {
             RemoveBtn.Enabled = (fToken.TerrainPower != null);
 			SelectBtn.Enabled = (Session.TerrainPowers.Count != 0);

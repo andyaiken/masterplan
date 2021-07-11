@@ -18,6 +18,11 @@ namespace Masterplan.Controls
 			update_view();
 		}
 
+		~TrapElementPanel()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			ChooseBtn.Enabled = (Session.Traps.Count != 0);

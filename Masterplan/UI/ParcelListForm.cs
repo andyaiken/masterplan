@@ -19,6 +19,11 @@ namespace Masterplan.UI
 			update_list();
 		}
 
+		~ParcelListForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		bool fViewAssigned = false;
 		bool fViewUnassigned = true;
 

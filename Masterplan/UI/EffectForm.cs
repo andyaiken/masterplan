@@ -63,6 +63,11 @@ namespace Masterplan.UI
 			init(condition, current_actor, current_round);
 		}
 
+		~EffectForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		public EffectForm(OngoingCondition condition, Hero hero)
 		{
 			InitializeComponent();

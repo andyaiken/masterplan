@@ -24,6 +24,11 @@ namespace Masterplan.UI
 			update_powers();
 		}
 
+		~OptionLevelForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			FeatureRemoveBtn.Enabled = (SelectedFeature != null);

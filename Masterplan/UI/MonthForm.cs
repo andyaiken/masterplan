@@ -21,6 +21,11 @@ namespace Masterplan.UI
 			LeapPeriodBox.Value = Math.Max(2, fMonthInfo.LeapPeriod);
 		}
 
+		~MonthForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		void Application_Idle(object sender, EventArgs e)
 		{
 			LeapPeriodLbl.Enabled = (LeapModBox.Value != 0);

@@ -41,6 +41,11 @@ namespace Masterplan.UI
             }
         }
 
+        ~MapLocationSelectForm()
+        {
+            Application.Idle -= Application_Idle;
+        }
+
         void Application_Idle(object sender, EventArgs e)
         {
 			MapLbl.Enabled = (Session.Project.RegionalMaps.Count != 0);

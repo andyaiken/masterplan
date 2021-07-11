@@ -37,6 +37,11 @@ namespace Masterplan.UI
             update_powers();
         }
 
+        ~MonsterThemeForm()
+        {
+            Application.Idle -= Application_Idle;
+        }
+
         void Application_Idle(object sender, EventArgs e)
         {
             PowerRemoveBtn.Enabled = (SelectedPower != null);

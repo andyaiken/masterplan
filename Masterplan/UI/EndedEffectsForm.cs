@@ -24,6 +24,11 @@ namespace Masterplan.UI
 			update_list();
 		}
 
+		~EndedEffectsForm()
+		{
+			Application.Idle -= Application_Idle;
+		}
+
 		public Pair<CombatData, OngoingCondition> SelectedCondition
 		{
 			get
