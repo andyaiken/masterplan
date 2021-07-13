@@ -34,14 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -2067,11 +2063,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y $(ProjectDir)..\Manual.pdf $(ProjectDir)$(OutDir)
+    <PostBuildEvent>xcopy /y $(ProjectDir)..\Manual.pdf $(TargetDir)
 
-md $(ProjectDir)$(OutDir)Libraries
+md $(TargetDir)\Libraries
 
-xcopy /y $(ProjectDir)..\Libraries\* $(ProjectDir)$(OutDir)\Libraries\</PostBuildEvent>
+xcopy /y $(ProjectDir)..\Libraries\* $(TargetDir)\Libraries\</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
