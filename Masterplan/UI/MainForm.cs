@@ -2700,11 +2700,6 @@ namespace Masterplan.UI
 				PlayerViewShow.Enabled = (Session.Project != null);
 				PlayerViewShow.Checked = (Session.PlayerView != null);
 				PlayerViewClear.Enabled = ((Session.PlayerView != null) && (Session.PlayerView.Mode != PlayerViewMode.Blank));
-				PlayerViewOtherDisplay.Enabled = (Screen.AllScreens.Length > 1);
-				PlayerViewOtherDisplay.Checked = ((Screen.AllScreens.Length > 1) && (PlayerViewForm.UseOtherDisplay));
-				TextSizeSmall.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Small);
-				TextSizeMedium.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Medium);
-				TextSizeLarge.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Large);
 			}
 			catch (Exception ex)
 			{
@@ -2720,6 +2715,14 @@ namespace Masterplan.UI
 				ToolsExportProject.Enabled = (Session.Project != null);
 				ToolsExportHandout.Enabled = (Session.Project != null);
 				ToolsIssues.Enabled = (Session.Project != null);
+				ToolsPreferencesTextSizeSmall.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Small);
+				ToolsPreferencesTextSizeMedium.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Medium);
+				ToolsPreferencesTextSizeLarge.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Large);
+				ToolsPreferencesPlayerViewSmall.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Small);
+				ToolsPreferencesPlayerViewMedium.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Medium);
+				ToolsPreferencesPlayerViewLarge.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Large);
+				ToolsPreferencesPlayerViewOtherDisplay.Enabled = (Screen.AllScreens.Length > 1);
+				ToolsPreferencesPlayerViewOtherDisplay.Checked = ((Screen.AllScreens.Length > 1) && (PlayerViewForm.UseOtherDisplay));
 
 				ToolsAddIns.DropDownItems.Clear();
 				foreach (IAddIn addin in Session.AddIns)
@@ -3285,60 +3288,12 @@ namespace Masterplan.UI
 			}
 		}
 
-		private void ToolsPlayerViewSecondary_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				PlayerViewForm.UseOtherDisplay = !PlayerViewForm.UseOtherDisplay;
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
 		private void ToolsPlayerViewClear_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				if (Session.PlayerView != null)
 					Session.PlayerView.ShowDefault();
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		private void TextSizeSmall_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				Session.Preferences.PlayerViewTextSize = DisplaySize.Small;
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		private void TextSizeMedium_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				Session.Preferences.PlayerViewTextSize = DisplaySize.Medium;
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
-
-		private void TextSizeLarge_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				Session.Preferences.PlayerViewTextSize = DisplaySize.Large;
 			}
 			catch (Exception ex)
 			{
@@ -3460,6 +3415,90 @@ namespace Masterplan.UI
 				ICommand command = tsmi.Tag as ICommand;
 
 				command.Execute();
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
+			}
+		}
+
+		private void ToolsPreferencesTextSizeSmall_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Session.Preferences.TextSize = DisplaySize.Small;
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
+			}
+		}
+
+		private void ToolsPreferencesTextSizeMedium_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Session.Preferences.TextSize = DisplaySize.Medium;
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
+			}
+		}
+
+		private void ToolsPreferencesTextSizeLarge_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Session.Preferences.TextSize = DisplaySize.Large;
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
+			}
+		}
+
+		private void ToolsPreferencesPlayerViewSmall_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Session.Preferences.PlayerViewTextSize = DisplaySize.Small;
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
+			}
+		}
+
+		private void ToolsPreferencesPlayerViewMedium_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Session.Preferences.PlayerViewTextSize = DisplaySize.Medium;
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
+			}
+		}
+
+		private void ToolsPreferencesPlayerViewLarge_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Session.Preferences.PlayerViewTextSize = DisplaySize.Large;
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
+			}
+		}
+
+		private void ToolsPreferencesPlayerViewOtherDisplay_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				PlayerViewForm.UseOtherDisplay = !PlayerViewForm.UseOtherDisplay;
 			}
 			catch (Exception ex)
 			{

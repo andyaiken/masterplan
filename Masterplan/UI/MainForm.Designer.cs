@@ -141,13 +141,6 @@
 			this.PlayerViewMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.PlayerViewShow = new System.Windows.Forms.ToolStripMenuItem();
 			this.PlayerViewClear = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
-			this.PlayerViewOtherDisplay = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
-			this.PlayerViewTextSize = new System.Windows.Forms.ToolStripMenuItem();
-			this.TextSizeSmall = new System.Windows.Forms.ToolStripMenuItem();
-			this.TextSizeMedium = new System.Windows.Forms.ToolStripMenuItem();
-			this.TextSizeLarge = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolsMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolsImportProject = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
@@ -160,6 +153,18 @@
 			this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
 			this.ToolsAddIns = new System.Windows.Forms.ToolStripMenuItem();
 			this.addinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
+			this.ToolsPreferences = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolsPreferencesTextSize = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolsPreferencesTextSizeSmall = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolsPreferencesTextSizeMedium = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolsPreferencesTextSizeLarge = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolsPreferencesPlayerView = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolsPreferencesPlayerViewSmall = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolsPreferencesPlayerViewMedium = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolsPreferencesPlayerViewLarge = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripSeparator();
+			this.ToolsPreferencesPlayerViewOtherDisplay = new System.Windows.Forms.ToolStripMenuItem();
 			this.HelpMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.HelpManual = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
@@ -1135,11 +1140,7 @@
 			// 
 			this.PlayerViewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.PlayerViewShow,
-            this.PlayerViewClear,
-            this.toolStripMenuItem7,
-            this.PlayerViewOtherDisplay,
-            this.toolStripSeparator14,
-            this.PlayerViewTextSize});
+            this.PlayerViewClear});
 			this.PlayerViewMenu.Name = "PlayerViewMenu";
 			this.PlayerViewMenu.Size = new System.Drawing.Size(79, 20);
 			this.PlayerViewMenu.Text = "Player View";
@@ -1159,54 +1160,6 @@
 			this.PlayerViewClear.Text = "Clear";
 			this.PlayerViewClear.Click += new System.EventHandler(this.ToolsPlayerViewClear_Click);
 			// 
-			// toolStripMenuItem7
-			// 
-			this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-			this.toolStripMenuItem7.Size = new System.Drawing.Size(191, 6);
-			// 
-			// PlayerViewOtherDisplay
-			// 
-			this.PlayerViewOtherDisplay.Name = "PlayerViewOtherDisplay";
-			this.PlayerViewOtherDisplay.Size = new System.Drawing.Size(194, 22);
-			this.PlayerViewOtherDisplay.Text = "Show on Other Display";
-			this.PlayerViewOtherDisplay.Click += new System.EventHandler(this.ToolsPlayerViewSecondary_Click);
-			// 
-			// toolStripSeparator14
-			// 
-			this.toolStripSeparator14.Name = "toolStripSeparator14";
-			this.toolStripSeparator14.Size = new System.Drawing.Size(191, 6);
-			// 
-			// PlayerViewTextSize
-			// 
-			this.PlayerViewTextSize.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TextSizeSmall,
-            this.TextSizeMedium,
-            this.TextSizeLarge});
-			this.PlayerViewTextSize.Name = "PlayerViewTextSize";
-			this.PlayerViewTextSize.Size = new System.Drawing.Size(194, 22);
-			this.PlayerViewTextSize.Text = "Text Size";
-			// 
-			// TextSizeSmall
-			// 
-			this.TextSizeSmall.Name = "TextSizeSmall";
-			this.TextSizeSmall.Size = new System.Drawing.Size(119, 22);
-			this.TextSizeSmall.Text = "Small";
-			this.TextSizeSmall.Click += new System.EventHandler(this.TextSizeSmall_Click);
-			// 
-			// TextSizeMedium
-			// 
-			this.TextSizeMedium.Name = "TextSizeMedium";
-			this.TextSizeMedium.Size = new System.Drawing.Size(119, 22);
-			this.TextSizeMedium.Text = "Medium";
-			this.TextSizeMedium.Click += new System.EventHandler(this.TextSizeMedium_Click);
-			// 
-			// TextSizeLarge
-			// 
-			this.TextSizeLarge.Name = "TextSizeLarge";
-			this.TextSizeLarge.Size = new System.Drawing.Size(119, 22);
-			this.TextSizeLarge.Text = "Large";
-			this.TextSizeLarge.Click += new System.EventHandler(this.TextSizeLarge_Click);
-			// 
 			// ToolsMenu
 			// 
 			this.ToolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1219,7 +1172,9 @@
             this.toolStripMenuItem4,
             this.ToolsLibraries,
             this.toolStripMenuItem5,
-            this.ToolsAddIns});
+            this.ToolsAddIns,
+            this.toolStripMenuItem8,
+            this.ToolsPreferences});
 			this.ToolsMenu.Name = "ToolsMenu";
 			this.ToolsMenu.Size = new System.Drawing.Size(46, 20);
 			this.ToolsMenu.Text = "Tools";
@@ -1294,6 +1249,96 @@
 			this.addinsToolStripMenuItem.Name = "addinsToolStripMenuItem";
 			this.addinsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
 			this.addinsToolStripMenuItem.Text = "[add-ins]";
+			// 
+			// toolStripMenuItem8
+			// 
+			this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+			this.toolStripMenuItem8.Size = new System.Drawing.Size(165, 6);
+			// 
+			// ToolsPreferences
+			// 
+			this.ToolsPreferences.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolsPreferencesTextSize,
+            this.ToolsPreferencesPlayerView});
+			this.ToolsPreferences.Name = "ToolsPreferences";
+			this.ToolsPreferences.Size = new System.Drawing.Size(168, 22);
+			this.ToolsPreferences.Text = "Preferences";
+			// 
+			// ToolsPreferencesTextSize
+			// 
+			this.ToolsPreferencesTextSize.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolsPreferencesTextSizeSmall,
+            this.ToolsPreferencesTextSizeMedium,
+            this.ToolsPreferencesTextSizeLarge});
+			this.ToolsPreferencesTextSize.Name = "ToolsPreferencesTextSize";
+			this.ToolsPreferencesTextSize.Size = new System.Drawing.Size(134, 22);
+			this.ToolsPreferencesTextSize.Text = "Text Size";
+			// 
+			// ToolsPreferencesTextSizeSmall
+			// 
+			this.ToolsPreferencesTextSizeSmall.Name = "ToolsPreferencesTextSizeSmall";
+			this.ToolsPreferencesTextSizeSmall.Size = new System.Drawing.Size(119, 22);
+			this.ToolsPreferencesTextSizeSmall.Text = "Small";
+			this.ToolsPreferencesTextSizeSmall.Click += new System.EventHandler(this.ToolsPreferencesTextSizeSmall_Click);
+			// 
+			// ToolsPreferencesTextSizeMedium
+			// 
+			this.ToolsPreferencesTextSizeMedium.Name = "ToolsPreferencesTextSizeMedium";
+			this.ToolsPreferencesTextSizeMedium.Size = new System.Drawing.Size(119, 22);
+			this.ToolsPreferencesTextSizeMedium.Text = "Medium";
+			this.ToolsPreferencesTextSizeMedium.Click += new System.EventHandler(this.ToolsPreferencesTextSizeMedium_Click);
+			// 
+			// ToolsPreferencesTextSizeLarge
+			// 
+			this.ToolsPreferencesTextSizeLarge.Name = "ToolsPreferencesTextSizeLarge";
+			this.ToolsPreferencesTextSizeLarge.Size = new System.Drawing.Size(119, 22);
+			this.ToolsPreferencesTextSizeLarge.Text = "Large";
+			this.ToolsPreferencesTextSizeLarge.Click += new System.EventHandler(this.ToolsPreferencesTextSizeLarge_Click);
+			// 
+			// ToolsPreferencesPlayerView
+			// 
+			this.ToolsPreferencesPlayerView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolsPreferencesPlayerViewSmall,
+            this.ToolsPreferencesPlayerViewMedium,
+            this.ToolsPreferencesPlayerViewLarge,
+            this.toolStripMenuItem19,
+            this.ToolsPreferencesPlayerViewOtherDisplay});
+			this.ToolsPreferencesPlayerView.Name = "ToolsPreferencesPlayerView";
+			this.ToolsPreferencesPlayerView.Size = new System.Drawing.Size(134, 22);
+			this.ToolsPreferencesPlayerView.Text = "Player View";
+			// 
+			// ToolsPreferencesPlayerViewSmall
+			// 
+			this.ToolsPreferencesPlayerViewSmall.Name = "ToolsPreferencesPlayerViewSmall";
+			this.ToolsPreferencesPlayerViewSmall.Size = new System.Drawing.Size(194, 22);
+			this.ToolsPreferencesPlayerViewSmall.Text = "Small";
+			this.ToolsPreferencesPlayerViewSmall.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewSmall_Click);
+			// 
+			// ToolsPreferencesPlayerViewMedium
+			// 
+			this.ToolsPreferencesPlayerViewMedium.Name = "ToolsPreferencesPlayerViewMedium";
+			this.ToolsPreferencesPlayerViewMedium.Size = new System.Drawing.Size(194, 22);
+			this.ToolsPreferencesPlayerViewMedium.Text = "Medium";
+			this.ToolsPreferencesPlayerViewMedium.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewMedium_Click);
+			// 
+			// ToolsPreferencesPlayerViewLarge
+			// 
+			this.ToolsPreferencesPlayerViewLarge.Name = "ToolsPreferencesPlayerViewLarge";
+			this.ToolsPreferencesPlayerViewLarge.Size = new System.Drawing.Size(194, 22);
+			this.ToolsPreferencesPlayerViewLarge.Text = "Large";
+			this.ToolsPreferencesPlayerViewLarge.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewLarge_Click);
+			// 
+			// toolStripMenuItem19
+			// 
+			this.toolStripMenuItem19.Name = "toolStripMenuItem19";
+			this.toolStripMenuItem19.Size = new System.Drawing.Size(191, 6);
+			// 
+			// ToolsPreferencesPlayerViewOtherDisplay
+			// 
+			this.ToolsPreferencesPlayerViewOtherDisplay.Name = "ToolsPreferencesPlayerViewOtherDisplay";
+			this.ToolsPreferencesPlayerViewOtherDisplay.Size = new System.Drawing.Size(194, 22);
+			this.ToolsPreferencesPlayerViewOtherDisplay.Text = "Show on Other Display";
+			this.ToolsPreferencesPlayerViewOtherDisplay.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewOtherDisplay_Click);
 			// 
 			// HelpMenu
 			// 
@@ -1439,7 +1484,6 @@
 			// PlotSearchBox
 			// 
 			this.PlotSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.PlotSearchBox.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.PlotSearchBox.Name = "PlotSearchBox";
 			this.PlotSearchBox.Size = new System.Drawing.Size(200, 25);
 			this.PlotSearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
@@ -2105,7 +2149,6 @@
 			// EncSearchBox
 			// 
 			this.EncSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.EncSearchBox.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.EncSearchBox.Name = "EncSearchBox";
 			this.EncSearchBox.Size = new System.Drawing.Size(150, 25);
 			this.EncSearchBox.TextChanged += new System.EventHandler(this.EncSearchBox_TextChanged);
@@ -2786,7 +2829,6 @@
 			// NoteSearchBox
 			// 
 			this.NoteSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.NoteSearchBox.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.NoteSearchBox.Name = "NoteSearchBox";
 			this.NoteSearchBox.Size = new System.Drawing.Size(150, 25);
 			this.NoteSearchBox.TextChanged += new System.EventHandler(this.NoteSearchBox_TextChanged);
@@ -3375,8 +3417,6 @@
 		private System.Windows.Forms.ToolStripMenuItem PlayerViewMenu;
 		private System.Windows.Forms.ToolStripMenuItem PlayerViewShow;
 		private System.Windows.Forms.ToolStripMenuItem PlayerViewClear;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
-		private System.Windows.Forms.ToolStripMenuItem PlayerViewOtherDisplay;
 		private System.Windows.Forms.ToolStripMenuItem ToolsImportProject;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator25;
 		private System.Windows.Forms.ToolStripMenuItem ToolsExportHandout;
@@ -3396,12 +3436,7 @@
 		private System.Windows.Forms.ToolStripMenuItem AddQuest;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
 		private System.Windows.Forms.ToolStripMenuItem ProjectEncounters;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
-		private System.Windows.Forms.ToolStripMenuItem PlayerViewTextSize;
-		private System.Windows.Forms.ToolStripMenuItem TextSizeSmall;
-		private System.Windows.Forms.ToolStripMenuItem TextSizeLarge;
 		private System.Windows.Forms.ToolStripButton AttachmentImportBtn;
-		private System.Windows.Forms.ToolStripMenuItem TextSizeMedium;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator27;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;
 		private System.Windows.Forms.ToolStripMenuItem ContextState;
@@ -3519,6 +3554,18 @@
 		private System.Windows.Forms.ToolStripMenuItem EncAddEntry;
 		private System.Windows.Forms.ToolStripMenuItem EncAddGroup;
 		private System.Windows.Forms.ToolStripMenuItem ProjectChecklist;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
+		private System.Windows.Forms.ToolStripMenuItem ToolsPreferences;
+		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesTextSize;
+		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesTextSizeSmall;
+		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesTextSizeMedium;
+		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesTextSizeLarge;
+		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesPlayerView;
+		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesPlayerViewSmall;
+		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesPlayerViewMedium;
+		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesPlayerViewLarge;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem19;
+		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesPlayerViewOtherDisplay;
 	}
 }
 
