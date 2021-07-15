@@ -2715,12 +2715,14 @@ namespace Masterplan.UI
 				ToolsExportProject.Enabled = (Session.Project != null);
 				ToolsExportHandout.Enabled = (Session.Project != null);
 				ToolsIssues.Enabled = (Session.Project != null);
-				ToolsPreferencesTextSizeSmall.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Small);
-				ToolsPreferencesTextSizeMedium.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Medium);
-				ToolsPreferencesTextSizeLarge.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Large);
+				ToolsPreferencesTextSizeSmall.Checked = (Session.Preferences.TextSize == DisplaySize.Small);
+				ToolsPreferencesTextSizeMedium.Checked = (Session.Preferences.TextSize == DisplaySize.Medium);
+				ToolsPreferencesTextSizeLarge.Checked = (Session.Preferences.TextSize == DisplaySize.Large);
+				ToolsPreferencesTextSizeExtraLarge.Checked = (Session.Preferences.TextSize == DisplaySize.ExtraLarge);
 				ToolsPreferencesPlayerViewSmall.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Small);
 				ToolsPreferencesPlayerViewMedium.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Medium);
 				ToolsPreferencesPlayerViewLarge.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.Large);
+				ToolsPreferencesPlayerViewExtraLarge.Checked = (Session.Preferences.PlayerViewTextSize == DisplaySize.ExtraLarge);
 				ToolsPreferencesPlayerViewOtherDisplay.Enabled = (Screen.AllScreens.Length > 1);
 				ToolsPreferencesPlayerViewOtherDisplay.Checked = ((Screen.AllScreens.Length > 1) && (PlayerViewForm.UseOtherDisplay));
 
@@ -3427,6 +3429,9 @@ namespace Masterplan.UI
 			try
 			{
 				Session.Preferences.TextSize = DisplaySize.Small;
+				update_preview();
+				if (fWelcome != null)
+					fWelcome.RefreshOptions();
 			}
 			catch (Exception ex)
 			{
@@ -3439,6 +3444,9 @@ namespace Masterplan.UI
 			try
 			{
 				Session.Preferences.TextSize = DisplaySize.Medium;
+				update_preview();
+				if (fWelcome != null)
+					fWelcome.RefreshOptions();
 			}
 			catch (Exception ex)
 			{
@@ -3451,6 +3459,24 @@ namespace Masterplan.UI
 			try
 			{
 				Session.Preferences.TextSize = DisplaySize.Large;
+				update_preview();
+				if (fWelcome != null)
+					fWelcome.RefreshOptions();
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
+			}
+		}
+
+		private void ToolsPreferencesTextSizeExtraLarge_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Session.Preferences.TextSize = DisplaySize.ExtraLarge;
+				update_preview();
+				if (fWelcome != null)
+					fWelcome.RefreshOptions();
 			}
 			catch (Exception ex)
 			{
@@ -3487,6 +3513,18 @@ namespace Masterplan.UI
 			try
 			{
 				Session.Preferences.PlayerViewTextSize = DisplaySize.Large;
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
+			}
+		}
+
+		private void ToolsPreferencesPlayerViewExtraLarge_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Session.Preferences.PlayerViewTextSize = DisplaySize.ExtraLarge;
 			}
 			catch (Exception ex)
 			{

@@ -32,7 +32,12 @@ namespace Masterplan.Tools
 		/// <summary>
 		/// Large text.
 		/// </summary>
-		Large
+		Large,
+
+		/// <summary>
+		/// Extra large text.
+		/// </summary>
+		ExtraLarge
 	}
 
 	class HTML
@@ -1639,7 +1644,7 @@ namespace Masterplan.Tools
 						foreach (EncyclopediaGroup group in groups)
 						{
 							lines.Add("<P class=table>");
-							lines.Add("<TABLE class=wide>");
+							lines.Add("<TABLE>");
 
 							lines.Add("<TR class=shaded align=center>");
 							lines.Add("<TD>");
@@ -2310,7 +2315,7 @@ namespace Masterplan.Tools
 			#endregion
 
 			lines.Add("<P class=table>");
-			lines.Add("<TABLE class=wide>");
+			lines.Add("<TABLE>");
 
 			#region Header row
 
@@ -2715,16 +2720,17 @@ namespace Masterplan.Tools
 
 			lines.Add("<HEAD>");
 
-			if (title != null)
-				lines.Add(wrap(title, "title"));
+			lines.Add("<META http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />");
+			lines.Add("<META name=\"Generator\" content=\"Masterplan\" />");
+			lines.Add("<META name=\"Originator\" content=\"Masterplan\" />");
 
 			if (description != null)
-				lines.Add("<META name=\"Description\" content=\"" + description + "\">");
-
-			lines.Add("<META name=\"Generator\" content=\"Masterplan\">");
-			lines.Add("<META name=\"Originator\" content=\"Masterplan\">");
+				lines.Add("<META name=\"Description\" content=\"" + description + "\" />");
 
 			lines.AddRange(GetStyle(size));
+
+			if (title != null)
+				lines.Add(wrap(title, "title"));
 
 			lines.Add("</HEAD>");
 
@@ -2757,28 +2763,18 @@ namespace Masterplan.Tools
 					pt_sizes[24] = 36;
 					break;
 				case DisplaySize.Large:
+					pt_sizes[8] = 16;
+					pt_sizes[9] = 18;
+					pt_sizes[12] = 24;
+					pt_sizes[16] = 32;
+					pt_sizes[24] = 48;
+					break;
+				case DisplaySize.ExtraLarge:
 					pt_sizes[8] = 25;
 					pt_sizes[9] = 30;
 					pt_sizes[12] = 40;
 					pt_sizes[16] = 50;
 					pt_sizes[24] = 72;
-					break;
-			}
-
-			Dictionary<int, int> px_sizes = new Dictionary<int, int>();
-			switch (size)
-			{
-				case DisplaySize.Small:
-					px_sizes[15] = 15;
-					px_sizes[300] = 300;
-					break;
-				case DisplaySize.Medium:
-					px_sizes[15] = 30;
-					px_sizes[300] = 300;
-					break;
-				case DisplaySize.Large:
-					px_sizes[15] = 45;
-					px_sizes[300] = 300;
 					break;
 			}
 
@@ -2808,27 +2804,26 @@ namespace Masterplan.Tools
 
 			if (!loaded)
 			{
-				lines.Add("body                 { font-family: Arial; font-size: " + pt_sizes[9] + "pt }");
+				lines.Add("body                 { font-family: 'Segoe UI'; font-size: " + pt_sizes[9] + "pt }");
 				lines.Add("h1, h2, h3, h4       { color: #000060 }");
 				lines.Add("h1                   { font-size: " + pt_sizes[24] + "pt; font-weight: bold; text-align: center }");
 				lines.Add("h2                   { font-size: " + pt_sizes[16] + "pt; font-weight: bold; text-align: center }");
 				lines.Add("h3                   { font-size: " + pt_sizes[12] + "pt }");
 				lines.Add("h4                   { font-size: " + pt_sizes[9] + "pt }");
-				lines.Add("p                    { }");
+				lines.Add("p                    { padding: 3px 0 }");
 				lines.Add("p.instruction        { color: #666666; text-align: center; font-size: " + pt_sizes[8] + "pt }");
 				lines.Add("p.description        { }");
 				lines.Add("p.signature          { color: #666666; text-align: center }");
-				lines.Add("p.readaloud          { padding-left: " + px_sizes[15] + "px; padding-right: " + px_sizes[15] + "px; font-style: italic }");
+				lines.Add("p.readaloud          { padding-left: 15px; padding-right: 15px; font-style: italic }");
 				lines.Add("p.background         { }");
 				lines.Add("p.encounter_note     { }");
 				lines.Add("p.encyclopedia_entry { }");
 				lines.Add("p.note               { }");
 				lines.Add("p.table              { text-align: center }");
 				lines.Add("p.figure             { text-align: center }");
-				lines.Add("table                { font-size: " + pt_sizes[8] + "pt; border-color: #BBBBBB; border-style: solid; border-width: 1px; border-collapse: collapse; table-layout: fixed; width: " + px_sizes[300] + "px }");
-				lines.Add("table.clear          { border-style: none; table-layout: fixed; width: 99% }");
-				lines.Add("table.wide           { width: 99% }");
-				lines.Add("table.initiative     { table-layout: auto; border-style: none; width=99% }");
+				lines.Add("table                { font-size: " + pt_sizes[8] + "pt; border-color: #BBBBBB; border-style: solid; border-width: 1px; border-collapse: collapse; table-layout: fixed; width: 99% }");
+				lines.Add("table.clear          { border-style: none }");
+				lines.Add("table.initiative     { table-layout: auto; border-style: none }");
 				lines.Add("tr                   { background-color: #E1E7C5 }");
 				lines.Add("tr.clear             { background-color: #FFFFFF }");
 				lines.Add("tr.heading           { background-color: #143D5F; color: #FFFFFF }");
@@ -2846,13 +2841,13 @@ namespace Masterplan.Tools
 				lines.Add("tr.encounter         { background-color: #8B0000; color: #FFFFFF }");
 				lines.Add("tr.daily             { background-color: #000000; color: #FFFFFF }");
 				lines.Add("tr.warning           { background-color: #E5A0A0; color: #000000; text-align: center }");
-				lines.Add("td                   { padding-top: 2px; padding-bottom: 2px; vertical-align: top }");
-				lines.Add("td.clear             { vertical-align: top }");
-				lines.Add("td.indent            { padding-left: " + px_sizes[15] + "px }");
+				lines.Add("td                   { padding-top: 3px; padding-bottom: 3px; vertical-align: top }");
+				lines.Add("td.clear             { vertical-align: top; padding-left: 10px; padding-right: 10px }");
+				lines.Add("td.indent            { padding-left: 15px }");
 				lines.Add("td.readaloud         { font-style: italic }");
 				lines.Add("td.dimmed            { color: #666666 }");
 				lines.Add("td.pvlogentry        { color: lightgrey; background-color: #000000 }");
-				lines.Add("td.pvlogindent       { color: #FFFFFF; background-color: #000000; padding-left: " + px_sizes[15] + "px }");
+				lines.Add("td.pvlogindent       { color: #FFFFFF; background-color: #000000; padding-left: 15px }");
 				lines.Add("ul, ol               { font-size: " + pt_sizes[8] + "pt }");
 				lines.Add("a                    { text-decoration: none }");
 				lines.Add("a:link               { color: #0000C0 }");

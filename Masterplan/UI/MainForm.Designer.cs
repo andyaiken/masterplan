@@ -342,6 +342,8 @@
 			this.InfoPanel = new Masterplan.Controls.InfoPanel();
 			this.ReferenceToolbar = new System.Windows.Forms.ToolStrip();
 			this.DieRollerBtn = new System.Windows.Forms.ToolStripButton();
+			this.ToolsPreferencesTextSizeExtraLarge = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolsPreferencesPlayerViewExtraLarge = new System.Windows.Forms.ToolStripMenuItem();
 			this.WorkspaceToolbar.SuspendLayout();
 			this.PointMenu.SuspendLayout();
 			this.MainMenu.SuspendLayout();
@@ -1269,7 +1271,8 @@
 			this.ToolsPreferencesTextSize.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolsPreferencesTextSizeSmall,
             this.ToolsPreferencesTextSizeMedium,
-            this.ToolsPreferencesTextSizeLarge});
+            this.ToolsPreferencesTextSizeLarge,
+            this.ToolsPreferencesTextSizeExtraLarge});
 			this.ToolsPreferencesTextSize.Name = "ToolsPreferencesTextSize";
 			this.ToolsPreferencesTextSize.Size = new System.Drawing.Size(134, 22);
 			this.ToolsPreferencesTextSize.Text = "Text Size";
@@ -1277,21 +1280,21 @@
 			// ToolsPreferencesTextSizeSmall
 			// 
 			this.ToolsPreferencesTextSizeSmall.Name = "ToolsPreferencesTextSizeSmall";
-			this.ToolsPreferencesTextSizeSmall.Size = new System.Drawing.Size(119, 22);
+			this.ToolsPreferencesTextSizeSmall.Size = new System.Drawing.Size(180, 22);
 			this.ToolsPreferencesTextSizeSmall.Text = "Small";
 			this.ToolsPreferencesTextSizeSmall.Click += new System.EventHandler(this.ToolsPreferencesTextSizeSmall_Click);
 			// 
 			// ToolsPreferencesTextSizeMedium
 			// 
 			this.ToolsPreferencesTextSizeMedium.Name = "ToolsPreferencesTextSizeMedium";
-			this.ToolsPreferencesTextSizeMedium.Size = new System.Drawing.Size(119, 22);
+			this.ToolsPreferencesTextSizeMedium.Size = new System.Drawing.Size(180, 22);
 			this.ToolsPreferencesTextSizeMedium.Text = "Medium";
 			this.ToolsPreferencesTextSizeMedium.Click += new System.EventHandler(this.ToolsPreferencesTextSizeMedium_Click);
 			// 
 			// ToolsPreferencesTextSizeLarge
 			// 
 			this.ToolsPreferencesTextSizeLarge.Name = "ToolsPreferencesTextSizeLarge";
-			this.ToolsPreferencesTextSizeLarge.Size = new System.Drawing.Size(119, 22);
+			this.ToolsPreferencesTextSizeLarge.Size = new System.Drawing.Size(180, 22);
 			this.ToolsPreferencesTextSizeLarge.Text = "Large";
 			this.ToolsPreferencesTextSizeLarge.Click += new System.EventHandler(this.ToolsPreferencesTextSizeLarge_Click);
 			// 
@@ -1301,6 +1304,7 @@
             this.ToolsPreferencesPlayerViewSmall,
             this.ToolsPreferencesPlayerViewMedium,
             this.ToolsPreferencesPlayerViewLarge,
+            this.ToolsPreferencesPlayerViewExtraLarge,
             this.toolStripMenuItem19,
             this.ToolsPreferencesPlayerViewOtherDisplay});
 			this.ToolsPreferencesPlayerView.Name = "ToolsPreferencesPlayerView";
@@ -3159,6 +3163,20 @@
 			this.DieRollerBtn.Text = "Die Roller";
 			this.DieRollerBtn.Click += new System.EventHandler(this.DieRollerBtn_Click);
 			// 
+			// ToolsPreferencesTextSizeExtraLarge
+			// 
+			this.ToolsPreferencesTextSizeExtraLarge.Name = "ToolsPreferencesTextSizeExtraLarge";
+			this.ToolsPreferencesTextSizeExtraLarge.Size = new System.Drawing.Size(180, 22);
+			this.ToolsPreferencesTextSizeExtraLarge.Text = "Extra Large";
+			this.ToolsPreferencesTextSizeExtraLarge.Click += new System.EventHandler(this.ToolsPreferencesTextSizeExtraLarge_Click);
+			// 
+			// ToolsPreferencesPlayerViewExtraLarge
+			// 
+			this.ToolsPreferencesPlayerViewExtraLarge.Name = "ToolsPreferencesPlayerViewExtraLarge";
+			this.ToolsPreferencesPlayerViewExtraLarge.Size = new System.Drawing.Size(194, 22);
+			this.ToolsPreferencesPlayerViewExtraLarge.Text = "Extra Large";
+			this.ToolsPreferencesPlayerViewExtraLarge.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewExtraLarge_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3566,6 +3584,8 @@
 		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesPlayerViewLarge;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem19;
 		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesPlayerViewOtherDisplay;
+		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesTextSizeExtraLarge;
+		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesPlayerViewExtraLarge;
 	}
 }
 

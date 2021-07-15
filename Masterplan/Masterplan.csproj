@@ -2067,7 +2067,7 @@
 
 md $(TargetDir)\Libraries
 
-xcopy /y $(ProjectDir)..\Libraries\* $(TargetDir)\Libraries\</PostBuildEvent>
+xcopy /y $(ProjectDir)..\Libraries\*.library $(TargetDir)\Libraries\</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>
