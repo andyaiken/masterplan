@@ -41,14 +41,10 @@ namespace Masterplan.UI
 				{
 					Gauge.Maximum = 1;
 					Progress = 1;
-
-					//Gauge.Style = ProgressBarStyle.Marquee;
 				}
 				else
 				{
 					Gauge.Maximum = fActions;
-
-					//Gauge.Style = ProgressBarStyle.Continuous;
 				}
 			}
 		}

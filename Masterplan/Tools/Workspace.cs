@@ -81,17 +81,6 @@ namespace Masterplan.Tools
 						break;
 
 					int layer_xp = GetLayerXP(layer);
-
-					/*
-					foreach (PlotPoint point in layer)
-					{
-						if (point.State == PlotPointState.Skipped)
-							continue;
-
-						layer_xp += point.GetXP();
-					}
-					*/
-
 					xp += layer_xp;
 				}
 

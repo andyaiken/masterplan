@@ -18,7 +18,6 @@ namespace Masterplan.UI
 
 			fPower = power;
 			fEncounter = enc;
-			//fHeroData = hero_data;
 
 			add_attack_roll(null);
 
@@ -38,7 +37,6 @@ namespace Masterplan.UI
 
 		CreaturePower fPower = null;
 		Encounter fEncounter = null;
-		//Dictionary<Guid, CombatData> fHeroData = null;
 
 		bool fAddedCombatant = false;
 
@@ -79,7 +77,6 @@ namespace Masterplan.UI
 
 				Guid id = new Guid(e.Url.LocalPath);
 				Hero hero = Session.Project.FindHero(id);
-				//CombatData cd = fHeroData[id];
 				if (hero != null)
 				{
 					CombatData cd = hero.CombatData;
@@ -142,7 +139,6 @@ namespace Masterplan.UI
 			string heroes = "";
 			foreach (Hero hero in Session.Project.Heroes)
 			{
-				//CombatData cd = fHeroData[hero.ID];
 				CombatData cd = hero.CombatData;
 
 				if ((!roll_exists(hero.ID)) && (hero.GetState(cd.Damage) != CreatureState.Defeated))
@@ -209,10 +205,7 @@ namespace Masterplan.UI
 					int defence = 0;
 					Hero hero = Session.Project.FindHero(roll.First.ID);
 					if (hero != null)
-					//if (fHeroData.ContainsKey(roll.First.ID))
 					{
-						//Hero hero = Session.Project.FindHero(roll.First.ID);
-
 						switch (fPower.Attack.Defence)
 						{
 							case DefenceType.AC:

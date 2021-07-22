@@ -8,13 +8,12 @@ namespace Masterplan.UI
 {
 	partial class EffectListForm : Form
 	{
-		public EffectListForm(/*Dictionary<Guid, CombatData> hero_data,*/ Encounter enc, CombatData current_actor, int current_round)
+		public EffectListForm(Encounter enc, CombatData current_actor, int current_round)
 		{
 			InitializeComponent();
 
 			Application.Idle += new EventHandler(Application_Idle);
 
-			//fHeroData = hero_data;
 			fEncounter = enc;
 			fCurrentActor = current_actor;
 			fCurrentRound = current_round;
@@ -33,7 +32,6 @@ namespace Masterplan.UI
 			EditBtn.Enabled = (SelectedEffect != null);
 		}
 
-		//Dictionary<Guid, CombatData> fHeroData = null;
 		Encounter fEncounter = null;
 		CombatData fCurrentActor = null;
 		int fCurrentRound = int.MinValue;
@@ -85,9 +83,7 @@ namespace Masterplan.UI
 			EffectList.Items.Clear();
 
 			foreach (Hero hero in Session.Project.Heroes)
-			//foreach (Guid hero_id in fHeroData.Keys)
 			{
-				//CombatData cd = fHeroData[hero_id];
 				CombatData cd = hero.CombatData;
 
 				if (cd.Conditions.Count > 0)

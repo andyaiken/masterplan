@@ -285,7 +285,6 @@ namespace Masterplan.UI
 								TrapElement te = SelectedTrap.First.Element as TrapElement;
 
 								TrapBuilderForm dlg = new TrapBuilderForm(SelectedTrap.Second);
-								//TrapForm dlg = new TrapForm(SelectedTrap.Second);
 								if (dlg.ShowDialog() == DialogResult.OK)
 								{
 									te.Trap = dlg.Trap;
@@ -303,7 +302,6 @@ namespace Masterplan.UI
 								int index = enc.Traps.IndexOf(SelectedTrap.Second);
 
 								TrapBuilderForm dlg = new TrapBuilderForm(SelectedTrap.Second);
-								//TrapForm dlg = new TrapForm(SelectedTrap.Second);
 								if (dlg.ShowDialog() == DialogResult.OK)
 								{
 									enc.Traps[index] = dlg.Trap;

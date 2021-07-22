@@ -30,7 +30,6 @@ namespace Masterplan.Tools
 			mapview.Mode = MapViewMode.Plain;
             mapview.LineOfSight = false;
 			mapview.Encounter = enc;
-			//mapview.HeroData = heroes;
 			mapview.TokenLinks = tokens;
 
 			return Map(mapview);

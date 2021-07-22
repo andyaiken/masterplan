@@ -157,21 +157,6 @@ namespace Masterplan.UI
 
 		private void ParcelSelectForm_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			/*
-			if ((Parcel != null) && (Parcel.MagicItemID != Guid.Empty))
-			{
-				MagicItem item = Session.FindMagicItem(Parcel.MagicItemID, SearchType.Global);
-				if ((item != null) && (Treasure.PlaceholderItems.Contains(item)))
-				{
-					MagicItemSelectForm dlg = new MagicItemSelectForm(item.Level);
-					if (dlg.ShowDialog() == DialogResult.OK)
-					{
-						Parcel.SetAsMagicItem(dlg.MagicItem);
-						Session.Modified = true;
-					}
-				}
-			}
-			*/
 		}
 	}
 }

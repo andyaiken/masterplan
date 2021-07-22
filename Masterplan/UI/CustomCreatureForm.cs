@@ -174,10 +174,7 @@ namespace Masterplan.UI
 			CreaturePower p = new CreaturePower();
 			p.Name = "New Power";
 
-			//PowerForm dlg = new PowerForm(p, false);
 			PowerBuilderForm dlg = new PowerBuilderForm(p, fCreature, false);
-			//dlg.ShowAdvicePage((int)LevelBox.Value, fCreature.Role);
-
 			if (dlg.ShowDialog() == DialogResult.OK)
 			{
 				fCreature.CreaturePowers.Add(dlg.Power);
@@ -200,10 +197,7 @@ namespace Masterplan.UI
 			{
 				int index = fCreature.CreaturePowers.IndexOf(SelectedPower);
 
-				//PowerForm dlg = new PowerForm(SelectedPower, false);
 				PowerBuilderForm dlg = new PowerBuilderForm(SelectedPower, fCreature, false);
-				//dlg.ShowAdvicePage((int)LevelBox.Value, fCreature.Role);
-
 				if (dlg.ShowDialog() == DialogResult.OK)
 				{
 					fCreature.CreaturePowers[index] = dlg.Power;

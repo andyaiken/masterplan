@@ -408,7 +408,6 @@ namespace Masterplan.UI
 				{
 					int index = Session.Project.CustomCreatures.IndexOf(cc);
 
-					//CustomCreatureForm dlg = new CustomCreatureForm(cc);
 					CreatureBuilderForm dlg = new CreatureBuilderForm(cc);
 					if (dlg.ShowDialog() == DialogResult.OK)
 					{
@@ -484,7 +483,6 @@ namespace Masterplan.UI
 								CreatureHelper.AdjustCreatureLevel(creature, SelectedSlot.Card.LevelAdjustment);
 								creature.ID = Guid.NewGuid();
 
-								//CustomCreatureForm dlg = new CustomCreatureForm(creature);
 								CreatureBuilderForm dlg = new CreatureBuilderForm(creature);
 								if (dlg.ShowDialog() == DialogResult.OK)
 								{
@@ -510,7 +508,6 @@ namespace Masterplan.UI
 				int index = fEncounter.Traps.IndexOf(SelectedSlotTrap);
 
 				TrapBuilderForm dlg = new TrapBuilderForm(SelectedSlotTrap);
-				//TrapForm dlg = new TrapForm(SelectedSlotTrap);
 				if (dlg.ShowDialog() == DialogResult.OK)
 				{
 					dlg.Trap.ID = Guid.NewGuid();
@@ -932,7 +929,6 @@ namespace Masterplan.UI
 				creature.Level = fPartyLevel;
 
 				CreatureBuilderForm dlg = new CreatureBuilderForm(creature);
-				//CustomCreatureForm dlg = new CustomCreatureForm(creature);
 				if (dlg.ShowDialog() == DialogResult.OK)
 				{
 					Session.Project.CustomCreatures.Add(dlg.Creature as CustomCreature);
@@ -957,7 +953,6 @@ namespace Masterplan.UI
 				trap.Attacks.Add(new TrapAttack());
 
 				TrapBuilderForm dlg = new TrapBuilderForm(trap);
-				//TrapForm dlg = new TrapForm(trap);
 				if (dlg.ShowDialog() == DialogResult.OK)
 				{
 					fEncounter.Traps.Add(dlg.Trap);

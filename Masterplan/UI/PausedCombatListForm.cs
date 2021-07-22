@@ -103,7 +103,6 @@ namespace Masterplan.UI
 				MapView.Map = m;
 				MapView.Viewpoint = SelectedCombat.Viewpoint;
 				MapView.Encounter = SelectedCombat.Encounter;
-				//MapView.HeroData = SelectedCombat.HeroData;
 				MapView.TokenLinks = SelectedCombat.TokenLinks;
 
 				MapView.Sketches.Clear();

@@ -59,6 +59,7 @@
 			this.PortraitBox = new System.Windows.Forms.PictureBox();
 			this.EntryPage = new System.Windows.Forms.TabPage();
 			this.EntryBrowser = new System.Windows.Forms.WebBrowser();
+			this.PreviewBtn = new System.Windows.Forms.ToolStripButton();
 			this.Toolbar.SuspendLayout();
 			this.BtnPnl.SuspendLayout();
 			this.Pages.SuspendLayout();
@@ -79,7 +80,8 @@
             this.LevelLbl,
             this.toolStripSeparator3,
             this.AdviceBtn,
-            this.PowersBtn});
+            this.PowersBtn,
+            this.PreviewBtn});
 			this.Toolbar.Location = new System.Drawing.Point(0, 0);
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(684, 25);
@@ -100,7 +102,7 @@
 			// FileExport
 			// 
 			this.FileExport.Name = "FileExport";
-			this.FileExport.Size = new System.Drawing.Size(152, 22);
+			this.FileExport.Size = new System.Drawing.Size(117, 22);
 			this.FileExport.Text = "Export...";
 			this.FileExport.Click += new System.EventHandler(this.FileExport_Click);
 			// 
@@ -374,6 +376,16 @@
 			this.EntryBrowser.TabIndex = 0;
 			this.EntryBrowser.WebBrowserShortcutsEnabled = false;
 			// 
+			// PreviewBtn
+			// 
+			this.PreviewBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.PreviewBtn.Image = ((System.Drawing.Image)(resources.GetObject("PreviewBtn.Image")));
+			this.PreviewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.PreviewBtn.Name = "PreviewBtn";
+			this.PreviewBtn.Size = new System.Drawing.Size(52, 22);
+			this.PreviewBtn.Text = "Preview";
+			this.PreviewBtn.Click += new System.EventHandler(this.PreviewBtn_Click);
+			// 
 			// CreatureBuilderForm
 			// 
 			this.AcceptButton = this.OKBtn;
@@ -439,5 +451,6 @@
 		private System.Windows.Forms.ToolStripButton PowersBtn;
 		private System.Windows.Forms.ToolStripDropDownButton FileMenu;
 		private System.Windows.Forms.ToolStripMenuItem FileExport;
+		private System.Windows.Forms.ToolStripButton PreviewBtn;
 	}
 }

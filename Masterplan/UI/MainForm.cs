@@ -239,62 +239,6 @@ namespace Masterplan.UI
 			}
 		}
 
-		/*
-		public EncyclopediaEntry SelectedEntry
-		{
-			get
-			{
-				if (EntryList.SelectedItems.Count != 0)
-					return EntryList.SelectedItems[0].Tag as EncyclopediaEntry;
-
-				return null;
-			}
-			set
-			{
-				EntryList.SelectedItems.Clear();
-
-				if (value != null)
-				{
-					foreach (ListViewItem lvi in EntryList.Items)
-					{
-						EncyclopediaEntry entry = lvi.Tag as EncyclopediaEntry;
-						if ((entry != null) && (entry.ID == value.ID))
-							lvi.Selected = true;
-					}
-				}
-
-				update_entry();
-			}
-		}
-
-		public EncyclopediaGroup SelectedGroup
-		{
-			get
-			{
-				if (EntryList.SelectedItems.Count != 0)
-					return EntryList.SelectedItems[0].Tag as EncyclopediaGroup;
-
-				return null;
-			}
-			set
-			{
-				EntryList.SelectedItems.Clear();
-
-				if (value != null)
-				{
-					foreach (ListViewItem lvi in EntryList.Items)
-					{
-						EncyclopediaGroup group = lvi.Tag as EncyclopediaGroup;
-						if ((group != null) && (group.ID == value.ID))
-							lvi.Selected = true;
-					}
-				}
-
-				update_entry();
-			}
-		}
-		*/
-
 		public IPlayerOption SelectedRule
 		{
 			get
@@ -406,8 +350,6 @@ namespace Masterplan.UI
 					SearchBtn.Checked = WorkspaceSearchBar.Visible;
 					PlotClearBtn.Visible = (PlotSearchBox.Text != "");
 
-					//EditBtn.Enabled = ((fView == ViewType.Flowchart) && (selected_point != null));
-					//ExploreBtn.Enabled = ((fView == ViewType.Flowchart) && (selected_point != null));
 					EditBtn.Enabled = (selected_point != null);
 					ExploreBtn.Enabled = (selected_point != null);
 					PlotPointMenu.Enabled = (selected_point != null);
@@ -459,7 +401,6 @@ namespace Masterplan.UI
 
 					RulesPlayerViewBtn.Enabled = (SelectedRule != null);
 					RuleEncyclopediaBtn.Enabled = (SelectedRule != null);
-					//RulesExportBtn.Enabled = (SelectedRule != null);
 
 					RulesShareExport.Enabled = ((Session.Project != null) && (Session.Project.PlayerOptions.Count != 0));
 					RulesSharePublish.Enabled = ((Session.Project != null) && (Session.Project.PlayerOptions.Count != 0));
@@ -568,12 +509,6 @@ namespace Masterplan.UI
 
 				if (Pages.SelectedTab == JotterPage)
 				{
-					//if (key == (Keys.Control | Keys.A))
-					//{
-					//	NoteAddBtn_Click(null, null);
-					//	return true;
-					//}
-					//else
 					if (key == (Keys.Control | Keys.X))
 					{
 						NoteCutBtn_Click(null, null);
@@ -660,16 +595,6 @@ namespace Masterplan.UI
 						str += "If you move Masterplan to a new location (like My Documents or the Desktop), you won't have this problem.";
 
 						MessageBox.Show(str, "Masterplan", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					}
-					else
-					{
-						//string str = "You do not have any libraries containing creatures. You need these to use Masterplan's encounter building features.";
-						//str += Environment.NewLine;
-						//str += Environment.NewLine;
-						//str += "Would you like to enter details for some creatures now, or load a library file?";
-
-						//if (MessageBox.Show(str, "Masterplan", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-						//    ToolsLibraries_Click(sender, e);
 					}
 				}
 			}
@@ -822,8 +747,6 @@ namespace Masterplan.UI
                     {
 						EncyclopediaEntryDetailsForm dlg = new EncyclopediaEntryDetailsForm(entry);
 						dlg.ShowDialog();
-                        //SelectedEncyclopediaItem = entry;
-                        //Pages.SelectedTab = EncyclopediaPage;
                     }
 				}
 
@@ -1691,7 +1614,6 @@ namespace Masterplan.UI
 					if (te != null)
 					{
 						TrapBuilderForm dlg = new TrapBuilderForm(te.Trap);
-						//TrapForm dlg = new TrapForm(te.Trap);
 						if (dlg.ShowDialog() == DialogResult.OK)
 						{
 							te.Trap = dlg.Trap;
@@ -4252,16 +4174,6 @@ namespace Masterplan.UI
 		{
 			try
 			{
-				/*
-				if (fView != ViewType.Flowchart)
-				{
-					string msg = "This cannot be done in Delve View or Map View mode.";
-					MessageBox.Show(msg, "Masterplan", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-					return;
-				}
-				*/
-
 				PlotPoint pp = get_selected_point();
 				if (pp != null)
 				{
@@ -4291,16 +4203,6 @@ namespace Masterplan.UI
 		{
 			try
 			{
-				/*
-				if (fView != ViewType.Flowchart)
-				{
-					string msg = "This cannot be done in Delve View or Map View mode.";
-					MessageBox.Show(msg, "Masterplan", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-					return;
-				}
-				*/
-
 				PlotPoint pp = get_selected_point();
 				if (pp != null)
 				{
@@ -5412,21 +5314,6 @@ namespace Masterplan.UI
 			}
 		}
 
-		/*
-		private void RulesExportBtn_Click(object sender, EventArgs e)
-		{
-			if (SelectedRule != null)
-			{
-				SaveFileDialog dlg = new SaveFileDialog();
-				dlg.FileName = SelectedRule.Name;
-				dlg.Filter = Program.HTMLFilter;
-
-				if (dlg.ShowDialog() == DialogResult.OK)
-					File.WriteAllText(dlg.FileName, RulesBrowser.DocumentText);
-			}
-		}
-		*/
-
 		private void RulesPlayerViewBtn_Click(object sender, EventArgs e)
 		{
 			if (SelectedRule != null)
@@ -5658,20 +5545,6 @@ namespace Masterplan.UI
 				if (att.Type == AttachmentType.Image)
 					Session.PlayerView.ShowImage(att);
 
-				/*
-				if (att.Type == AttachmentType.Audio)
-				{
-					// Can't handle this yet
-					//PlayerViewForm.ShowAudio(att);
-				}
-
-				if (att.Type == AttachmentType.Video)
-				{
-					// Can't handle this yet
-					//PlayerViewForm.ShowVideo(att);
-				}
-				*/
-
 				if (att.Type == AttachmentType.URL)
 					Session.PlayerView.ShowWebPage(att);
 
@@ -5693,7 +5566,6 @@ namespace Masterplan.UI
 			try
 			{
 				Note n = new Note();
-				//n.Content = "(new note)";
 
 				Session.Project.Notes.Add(n);
 				Session.Modified = true;
@@ -7243,7 +7115,6 @@ namespace Masterplan.UI
 
 				// Move this to the subplot
 				PlotView.Plot.RemovePoint(points.Second);
-				//points.Second.Links.Clear();
 				points.First.Subplot.Points.Add(points.Second);
 				Session.Modified = true;
 

@@ -97,7 +97,6 @@ namespace Masterplan.Wizards
 		private void SearchClearBtn_Click(object sender, EventArgs e)
 		{
 			SearchBox.Text = "";
-			//update_list();
 		}
 
 		void update_list()

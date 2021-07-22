@@ -64,7 +64,6 @@ namespace Masterplan.Controls
 		private void EditBtn_Click(object sender, EventArgs e)
 		{
 			TrapBuilderForm dlg = new TrapBuilderForm(fTrapElement.Trap);
-			//TrapForm dlg = new TrapForm(fTrapElement.Trap);
 			if (dlg.ShowDialog() == DialogResult.OK)
 			{
 				fTrapElement.Trap = dlg.Trap;

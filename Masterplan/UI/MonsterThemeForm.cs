@@ -77,7 +77,6 @@ namespace Masterplan.UI
             CreaturePower power = new CreaturePower();
             power.Name = "New Power";
 
-            //PowerForm dlg = new PowerForm(power, false);
 			PowerBuilderForm dlg = new PowerBuilderForm(power, null, false);
             if (dlg.ShowDialog() == DialogResult.OK)
                 add_power(dlg.Power);
@@ -113,7 +112,6 @@ namespace Masterplan.UI
             {
                 int index = fTheme.Powers.IndexOf(SelectedPower);
 
-                //PowerForm dlg = new PowerForm(SelectedPower.Power, false);
 				PowerBuilderForm dlg = new PowerBuilderForm(SelectedPower.Power, null, false);
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {

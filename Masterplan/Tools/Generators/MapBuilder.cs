@@ -603,22 +603,7 @@ namespace Masterplan.Tools.Generators
 			int index = Session.Random.Next() % doors.Count;
 			Tile t = doors[index];
 
-			if (ep == null)
-			{
-				/*
-				TileData td = add_first_tile(t);
-
-				Orientation orient = get_orientation(t, td);
-				if (orient == Orientation.NorthSouth)
-					orient = Orientation.EastWest;
-				else
-					orient = Orientation.NorthSouth;
-
-				Direction dir = get_starting_direction(orient);
-				fEndpoints.Add(get_endpoint(t, td, dir));
-				*/
-			}
-			else
+			if (ep != null)
 			{
 				// Add the tile anywhere on the endpoint
 				Pair<TileData, Direction> pair = add_tile(t, ep, true, true);

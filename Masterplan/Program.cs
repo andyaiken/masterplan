@@ -33,8 +33,6 @@ namespace Masterplan
                 load_preferences();
 				load_libraries();
 
-				//handle_arg("-creaturestats");
-
 				foreach (string arg in args)
 					handle_arg(arg);
 

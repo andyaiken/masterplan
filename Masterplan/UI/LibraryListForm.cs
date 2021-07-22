@@ -1836,7 +1836,6 @@ namespace Masterplan.UI
                     continue;
 
                 ListViewItem lvi = TemplateList.Items.Add(mt.Name);
-                //lvi.SubItems.Add("Theme");
                 lvi.Tag = mt;
                 lvi.Group = TemplateList.Groups[2];
             }
@@ -1868,7 +1867,6 @@ namespace Masterplan.UI
 			t.Attacks.Add(new TrapAttack());
 
 			TrapBuilderForm dlg = new TrapBuilderForm(t);
-			//TrapForm dlg = new TrapForm(t);
 			if (dlg.ShowDialog() == DialogResult.OK)
 			{
 				SelectedLibrary.Traps.Add(dlg.Trap);
@@ -1947,7 +1945,6 @@ namespace Masterplan.UI
 				int index = lib.Traps.IndexOf(SelectedTraps[0]);
 
 				TrapBuilderForm dlg = new TrapBuilderForm(SelectedTraps[0]);
-				//TrapForm dlg = new TrapForm(SelectedTraps[0]);
 				if (dlg.ShowDialog() == DialogResult.OK)
 				{
 					lib.Traps[index] = dlg.Trap;

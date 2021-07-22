@@ -703,10 +703,6 @@ namespace Masterplan
 
 				if (fProject != null)
 				{
-					//List<Guid> ids = new List<Guid>();
-					//foreach (Creature item in list)
-					//	ids.Add(item.ID);
-
 					BinarySearchTree<Guid> bst = new BinarySearchTree<Guid>();
 					foreach (Creature item in list)
 					{
@@ -749,10 +745,6 @@ namespace Masterplan
 
                 if (fProject != null)
                 {
-                    //List<Guid> ids = new List<Guid>();
-                    //foreach (CreatureTemplate item in list)
-                    //	ids.Add(item.ID);
-
                     BinarySearchTree<Guid> bst = new BinarySearchTree<Guid>();
                     foreach (CreatureTemplate item in list)
 					{
@@ -795,10 +787,6 @@ namespace Masterplan
 
                 if (fProject != null)
                 {
-                    //List<Guid> ids = new List<Guid>();
-                    //foreach (MonsterTheme item in list)
-                    //	ids.Add(item.ID);
-
                     BinarySearchTree<Guid> bst = new BinarySearchTree<Guid>();
                     foreach (MonsterTheme item in list)
 					{
@@ -841,10 +829,6 @@ namespace Masterplan
 
 				if (fProject != null)
 				{
-					//List<Guid> ids = new List<Guid>();
-					//foreach (Trap item in list)
-					//	ids.Add(item.ID);
-
 					BinarySearchTree<Guid> bst = new BinarySearchTree<Guid>();
 					foreach (Trap item in list)
 					{
@@ -879,10 +863,6 @@ namespace Masterplan
 
 				if (fProject != null)
 				{
-					//List<Guid> ids = new List<Guid>();
-					//foreach (SkillChallenge item in list)
-					//	ids.Add(item.ID);
-
 					BinarySearchTree<Guid> bst = new BinarySearchTree<Guid>();
 					foreach (SkillChallenge item in list)
 					{
@@ -925,10 +905,6 @@ namespace Masterplan
 
 				if (fProject != null)
 				{
-					//List<Guid> ids = new List<Guid>();
-					//foreach (SkillChallenge item in list)
-					//	ids.Add(item.ID);
-
 					BinarySearchTree<Guid> bst = new BinarySearchTree<Guid>();
 					foreach (MagicItem item in list)
 					{
@@ -971,10 +947,6 @@ namespace Masterplan
 
 				if (fProject != null)
 				{
-					//List<Guid> ids = new List<Guid>();
-					//foreach (SkillChallenge item in list)
-					//	ids.Add(item.ID);
-
 					BinarySearchTree<Guid> bst = new BinarySearchTree<Guid>();
 					foreach (Artifact item in list)
 					{
@@ -1017,10 +989,6 @@ namespace Masterplan
 
 				if (fProject != null)
 				{
-					//List<Guid> ids = new List<Guid>();
-					//foreach (Tile item in list)
-					//	ids.Add(item.ID);
-
 					BinarySearchTree<Guid> bst = new BinarySearchTree<Guid>();
 					foreach (Tile item in list)
 					{
@@ -1063,10 +1031,6 @@ namespace Masterplan
 
 				if (fProject != null)
 				{
-					//List<Guid> ids = new List<Guid>();
-					//foreach (Tile item in list)
-					//	ids.Add(item.ID);
-
 					BinarySearchTree<Guid> bst = new BinarySearchTree<Guid>();
 					foreach (TerrainPower item in list)
 					{

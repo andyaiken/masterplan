@@ -154,25 +154,6 @@ namespace Masterplan.UI
 					lvi_dmg.SubItems.Add(Statistics.NormalDamage(fLevel));
 					lvi_dmg.Group = AdviceList.Groups[1];
 					AdviceList.Items.Add(lvi_dmg);
-
-					/*
-					DamageCategory cat = (fPower.Action.Use == PowerUseType.Encounter) ? DamageCategory.Limited : DamageCategory.Normal;
-
-					ListViewItem lvi_low = new ListViewItem("Low damage:");
-					lvi_low.SubItems.Add(Powers.Damage(DamageDegree.Low, cat, fLevel));
-					lvi_low.Group = AdviceList.Groups[1];
-					AdviceList.Items.Add(lvi_low);
-
-					ListViewItem lvi_med = new ListViewItem("Medium damage:");
-					lvi_med.SubItems.Add(Powers.Damage(DamageDegree.Medium, cat, fLevel));
-					lvi_med.Group = AdviceList.Groups[1];
-					AdviceList.Items.Add(lvi_med);
-
-					ListViewItem lvi_high = new ListViewItem("High damage:");
-					lvi_high.SubItems.Add(Powers.Damage(DamageDegree.High, cat, fLevel));
-					lvi_high.Group = AdviceList.Groups[1];
-					AdviceList.Items.Add(lvi_high);
-					*/
 				}
 				else if (fRole is Minion)
 				{

@@ -80,22 +80,8 @@ namespace Masterplan.Data
 		/// </summary>
 		public Image Image
 		{
-			get
-			{
-				return fImage;
-			}
-			set
-			{
-				fImage = value;
-
-				/*
-				MemoryStream ms = new MemoryStream();
-				value.Save(ms, ImageFormat.Jpeg);
-				ms.Close();
-
-				fImage = Image.FromStream(ms);
-				*/
-			}
+			get { return fImage; }
+			set { fImage = value; }
 		}
 		Image fImage = null;
 

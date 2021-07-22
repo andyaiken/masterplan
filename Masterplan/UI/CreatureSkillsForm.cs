@@ -156,10 +156,18 @@ namespace Masterplan.UI
 			foreach (SkillData sd in fSkills)
 			{
 				ListViewItem lvi = new ListViewItem(sd.SkillName);
-				lvi.SubItems.Add(sd.Trained ? "Yes" : "");
-				lvi.SubItems.Add(sd.Ability.ToString());
-				lvi.SubItems.Add((sd.Misc != 0) ? sd.Misc.ToString() : "");
-				lvi.SubItems.Add(sd.Total.ToString());
+				lvi.SubItems.Add((sd.Level >= 0) ? "+" + sd.Level.ToString() : sd.Level.ToString());
+				lvi.SubItems.Add((sd.Ability >= 0) ? "+" + sd.Ability.ToString() : sd.Ability.ToString());
+				lvi.SubItems.Add(sd.Trained ? "+5" : "");
+				if (sd.Misc != 0)
+				{
+					lvi.SubItems.Add((sd.Misc >= 0) ? "+" + sd.Misc.ToString() : sd.Misc.ToString());
+				}
+				else
+				{
+					lvi.SubItems.Add("");
+				}
+				lvi.SubItems.Add((sd.Total >= 0) ? "+" + sd.Total.ToString() : sd.Total.ToString());
 
 				if (!sd.Show)
 				{

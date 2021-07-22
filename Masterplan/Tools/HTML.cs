@@ -666,28 +666,8 @@ namespace Masterplan.Tools
 						lines.Add("<A href=\"poweredit:" + cp.ID + "\">edit this power</A>");
 						lines.Add("|");
 						lines.Add("<A href=\"powerremove:" + cp.ID + "\">remove this power</A>");
-						//lines.Add("|");
-						//lines.Add("<A href=\"powerduplicate:" + cp.ID + "\">duplicate this power</A>");
 						lines.Add("</TD>");
 						lines.Add("</TR>");
-
-						//if (powers[cat].Count > 1)
-						//{
-						//    int index = powers[cat].IndexOf(cp);
-						//    bool up = (index != 0);
-						//    bool down = (index != powers[cat].Count - 1);
-
-						//    lines.Add("<TR>");
-						//    lines.Add("<TD colspan=3 align=center>");
-						//    if (up)
-						//        lines.Add("<A href=\"powerup:" + cp.ID + "\">move up</A>");
-						//    if (up && down)
-						//        lines.Add("|");
-						//    if (down)
-						//        lines.Add("<A href=\"powerdown:" + cp.ID + "\">move down</A>");
-						//    lines.Add("</TD>");
-						//    lines.Add("</TR>");
-						//}
 					}
 				}
 			}
@@ -2099,25 +2079,6 @@ namespace Masterplan.Tools
 
 					#endregion
 
-					#region Trained skills
-
-					//lines.Add("<TR class=shaded>");
-					//lines.Add("<TD colspan=3>");
-					//lines.Add("<B>Trained Skills</B>");
-					//lines.Add("</TD>");
-					//lines.Add("</TR>");
-
-					//List<string> skill_names = Skills.GetSkillNames();
-					//foreach (string skill in skill_names)
-					//{
-					//    lines.Add("<TR>");
-					//    lines.Add("<TD><A href=show" + skill + ">" + skill + "</A></TD>");
-					//    lines.Add("<TD colspan=2>" + "-" + "</TD>");
-					//    lines.Add("</TR>");
-					//}
-
-					#endregion
-
 					#region Languages
 
 					if (language_bst.Count != 0)
@@ -2702,8 +2663,6 @@ namespace Masterplan.Tools
 				pairs.Add(new Pair<string, string>("<", "&lt;"));
 				pairs.Add(new Pair<string, string>(">", "&gt;"));
 			}
-
-			//pairs.Add(new Pair<string, string>("\n", "\n<BR>\n"));
 
 			string html = raw_text;
 			foreach (Pair<string, string> pair in pairs)
@@ -5936,17 +5895,6 @@ namespace Masterplan.Tools
 					lines.Add("</TD>");
 					lines.Add("</TR>");
 				}
-
-				/*
-				if (disease.Attack != "")
-				{
-					lines.Add("<TR>");
-					lines.Add("<TD colspan=3>");
-					lines.Add("<B>Attack</B>: " + Process(disease.Attack, true));
-					lines.Add("</TD>");
-					lines.Add("</TR>");
-				}
-				*/
 
 				// Stages
 				if (disease.Levels.Count != 0)

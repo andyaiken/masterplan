@@ -32,15 +32,16 @@
 			this.OKBtn = new System.Windows.Forms.Button();
 			this.CancelBtn = new System.Windows.Forms.Button();
 			this.SkillList = new System.Windows.Forms.ListView();
-			this.SkillHdr = new System.Windows.Forms.ColumnHeader();
-			this.TrainedHdr = new System.Windows.Forms.ColumnHeader();
-			this.AbilityHdr = new System.Windows.Forms.ColumnHeader();
-			this.MiscHdr = new System.Windows.Forms.ColumnHeader();
-			this.TotalHdr = new System.Windows.Forms.ColumnHeader();
+			this.SkillHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.TrainedHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.AbilityHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.MiscHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.TotalHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.SkillPanel = new System.Windows.Forms.Panel();
 			this.Toolbar = new System.Windows.Forms.ToolStrip();
 			this.TrainedBtn = new System.Windows.Forms.ToolStripButton();
 			this.EditSkillBtn = new System.Windows.Forms.ToolStripButton();
+			this.LevelHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.SkillPanel.SuspendLayout();
 			this.Toolbar.SuspendLayout();
 			this.SuspendLayout();
@@ -49,7 +50,7 @@
 			// 
 			this.OKBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.OKBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.OKBtn.Location = new System.Drawing.Point(243, 367);
+			this.OKBtn.Location = new System.Drawing.Point(303, 367);
 			this.OKBtn.Name = "OKBtn";
 			this.OKBtn.Size = new System.Drawing.Size(75, 23);
 			this.OKBtn.TabIndex = 5;
@@ -61,7 +62,7 @@
 			// 
 			this.CancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.CancelBtn.Location = new System.Drawing.Point(324, 367);
+			this.CancelBtn.Location = new System.Drawing.Point(384, 367);
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 6;
@@ -72,8 +73,9 @@
 			// 
 			this.SkillList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.SkillHdr,
-            this.TrainedHdr,
+            this.LevelHdr,
             this.AbilityHdr,
+            this.TrainedHdr,
             this.MiscHdr,
             this.TotalHdr});
 			this.SkillList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -82,7 +84,7 @@
 			this.SkillList.Location = new System.Drawing.Point(0, 25);
 			this.SkillList.MultiSelect = false;
 			this.SkillList.Name = "SkillList";
-			this.SkillList.Size = new System.Drawing.Size(387, 324);
+			this.SkillList.Size = new System.Drawing.Size(447, 324);
 			this.SkillList.TabIndex = 7;
 			this.SkillList.UseCompatibleStateImageBehavior = false;
 			this.SkillList.View = System.Windows.Forms.View.Details;
@@ -96,7 +98,7 @@
 			// TrainedHdr
 			// 
 			this.TrainedHdr.Text = "Trained";
-			this.TrainedHdr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.TrainedHdr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// AbilityHdr
 			// 
@@ -115,14 +117,14 @@
 			// 
 			// SkillPanel
 			// 
-			this.SkillPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.SkillPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.SkillPanel.Controls.Add(this.SkillList);
 			this.SkillPanel.Controls.Add(this.Toolbar);
 			this.SkillPanel.Location = new System.Drawing.Point(12, 12);
 			this.SkillPanel.Name = "SkillPanel";
-			this.SkillPanel.Size = new System.Drawing.Size(387, 349);
+			this.SkillPanel.Size = new System.Drawing.Size(447, 349);
 			this.SkillPanel.TabIndex = 8;
 			// 
 			// Toolbar
@@ -132,7 +134,7 @@
             this.EditSkillBtn});
 			this.Toolbar.Location = new System.Drawing.Point(0, 0);
 			this.Toolbar.Name = "Toolbar";
-			this.Toolbar.Size = new System.Drawing.Size(387, 25);
+			this.Toolbar.Size = new System.Drawing.Size(447, 25);
 			this.Toolbar.TabIndex = 0;
 			this.Toolbar.Text = "toolStrip1";
 			// 
@@ -142,7 +144,7 @@
 			this.TrainedBtn.Image = ((System.Drawing.Image)(resources.GetObject("TrainedBtn.Image")));
 			this.TrainedBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TrainedBtn.Name = "TrainedBtn";
-			this.TrainedBtn.Size = new System.Drawing.Size(51, 22);
+			this.TrainedBtn.Size = new System.Drawing.Size(49, 22);
 			this.TrainedBtn.Text = "Trained";
 			this.TrainedBtn.Click += new System.EventHandler(this.TrainedBtn_Click);
 			// 
@@ -156,13 +158,18 @@
 			this.EditSkillBtn.Text = "Edit Skill";
 			this.EditSkillBtn.Click += new System.EventHandler(this.EditSkillBtn_Click);
 			// 
+			// LevelHdr
+			// 
+			this.LevelHdr.Text = "Level";
+			this.LevelHdr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			// 
 			// CreatureSkillsForm
 			// 
 			this.AcceptButton = this.OKBtn;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.CancelBtn;
-			this.ClientSize = new System.Drawing.Size(411, 402);
+			this.ClientSize = new System.Drawing.Size(471, 402);
 			this.Controls.Add(this.SkillPanel);
 			this.Controls.Add(this.CancelBtn);
 			this.Controls.Add(this.OKBtn);
@@ -196,5 +203,6 @@
 		private System.Windows.Forms.ToolStrip Toolbar;
 		private System.Windows.Forms.ToolStripButton TrainedBtn;
 		private System.Windows.Forms.ToolStripButton EditSkillBtn;
+		private System.Windows.Forms.ColumnHeader LevelHdr;
 	}
 }

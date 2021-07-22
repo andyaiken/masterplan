@@ -85,32 +85,6 @@ namespace Masterplan.UI
 			lvi_multiple.SubItems.Add(Statistics.MultipleDamage(level));
 			lvi_multiple.Group = DamageList.Groups[0];
 
-			/*
-			ListViewItem lvi_low_normal = DamageList.Items.Add("Low");
-			lvi_low_normal.SubItems.Add(Powers.Damage(DamageDegree.Low, DamageCategory.Normal, level));
-			lvi_low_normal.Group = DamageList.Groups[0];
-
-            ListViewItem lvi_medium_normal = DamageList.Items.Add("Medium");
-            lvi_medium_normal.SubItems.Add(Powers.Damage(DamageDegree.Medium, DamageCategory.Normal, level));
-            lvi_medium_normal.Group = DamageList.Groups[0];
-
-            ListViewItem lvi_high_normal = DamageList.Items.Add("High");
-            lvi_high_normal.SubItems.Add(Powers.Damage(DamageDegree.High, DamageCategory.Normal, level));
-            lvi_high_normal.Group = DamageList.Groups[0];
-
-            ListViewItem lvi_low_limited = DamageList.Items.Add("Low");
-            lvi_low_limited.SubItems.Add(Powers.Damage(DamageDegree.Low, DamageCategory.Limited, level));
-            lvi_low_limited.Group = DamageList.Groups[1];
-
-            ListViewItem lvi_medium_limited = DamageList.Items.Add("Medium");
-            lvi_medium_limited.SubItems.Add(Powers.Damage(DamageDegree.Medium, DamageCategory.Limited, level));
-            lvi_medium_limited.Group = DamageList.Groups[1];
-
-            ListViewItem lvi_high_limited = DamageList.Items.Add("High");
-            lvi_high_limited.SubItems.Add(Powers.Damage(DamageDegree.High, DamageCategory.Limited, level));
-            lvi_high_limited.Group = DamageList.Groups[1];
-			*/
-
             DamageList.EndUpdate();
 		}
 

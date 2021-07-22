@@ -115,13 +115,11 @@ namespace Masterplan.Tools.Generators
 		static string prefix()
 		{
 			List<string> values = new List<string>();
-			//values.Add("A");
 			values.Add("Al");
 			values.Add("An");
 			values.Add("Ar");
 			values.Add("Ara");
 			values.Add("Az");
-			//values.Add("B");
 			values.Add("Bal");
 			values.Add("Bar");
 			values.Add("Bari");
@@ -129,7 +127,6 @@ namespace Masterplan.Tools.Generators
 			values.Add("Bel");
 			values.Add("Bof");
 			values.Add("Bol");
-			//values.Add("D");
 			values.Add("Dal");
 			values.Add("Dar");
 			values.Add("Dare");
@@ -168,7 +165,6 @@ namespace Masterplan.Tools.Generators
 			values.Add("Nora");
 			values.Add("Nur");
 			values.Add("Nura");
-			//values.Add("O");
 			values.Add("Ol");
 			values.Add("Or");
 			values.Add("Ori");
@@ -224,7 +220,6 @@ namespace Masterplan.Tools.Generators
 			values.Add("grim");
 			values.Add("gur");
 			values.Add("guk");
-			//values.Add("i");
 			values.Add("ik");
 			values.Add("ias");
 			values.Add("ili");
@@ -238,7 +233,6 @@ namespace Masterplan.Tools.Generators
 			values.Add("kas");
 			values.Add("kral");
 			values.Add("lond");
-			//values.Add("o");
 			values.Add("oak");
 			values.Add("on");
 			values.Add("lon");
@@ -277,7 +271,6 @@ namespace Masterplan.Tools.Generators
 		static string suffix_female()
 		{
 			List<string> values = new List<string>();
-			//values.Add("a");
 			values.Add("aed");
 			values.Add("ala");
 			values.Add("la");

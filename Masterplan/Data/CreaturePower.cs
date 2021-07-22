@@ -339,8 +339,6 @@ namespace Masterplan.Data
 
 				switch (fAction.Action)
 				{
-					//case ActionType.None:
-					//	return CreaturePowerCategory.Trait;
 					case ActionType.Interrupt:
 					case ActionType.Opportunity:
 					case ActionType.Reaction:
@@ -716,12 +714,6 @@ namespace Masterplan.Data
 				else
 					attack = "<A href=power:attack>" + attack + "</A> <A href=power:clearattack>(clear attack)</A>";
 			}
-			//if (range != "")
-			//{
-			//    if (attack != "")
-			//        range += "<BR>";
-			//    attack = range + attack;
-			//}
 			if (range != "")
 				lines.Add("Range: " + range);
 			if (attack != "")

@@ -549,7 +549,6 @@ namespace Masterplan.Data
 			{
 				List<PlotPoint> points = new List<PlotPoint>();
 
-				//add_points(fPlot, points);
 				foreach (PlotPoint pp in fPlot.Points)
 					points.AddRange(pp.Subtree);
 

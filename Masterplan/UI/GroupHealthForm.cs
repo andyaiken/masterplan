@@ -42,19 +42,6 @@ namespace Masterplan.UI
 			update_hp_panel();
 
 			fUpdating = false;
-
-			//if (SelectedHero != null)
-			//{
-			//    int index = Session.Project.Heroes.IndexOf(SelectedHero);
-			//    HeroHPForm dlg = new HeroHPForm(SelectedHero);
-			//    if (dlg.ShowDialog() == DialogResult.OK)
-			//    {
-			//        Session.Project.Heroes[index] = dlg.Hero;
-			//        Session.Modified = true;
-
-			//        update_list();
-			//    }
-			//}
 		}
 
 		private void CombatantList_DoubleClick(object sender, EventArgs e)

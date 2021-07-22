@@ -188,45 +188,10 @@ namespace Masterplan.UI
 
 			if (e.Url.Scheme == "powerup")
 			{
-				//CreaturePower pwr = find_power(new Guid(e.Url.LocalPath));
-				//if (pwr != null)
-				//{
-				//    e.Cancel = true;
-				//    List<CreaturePower> powers = CreatureHelper.CreaturePowersByCategory(fCreature, pwr.Category);
-				//    int index = powers.IndexOf(pwr);
-
-				//    if (index != 0)
-				//    {
-				//        // Move power up
-				//        CreaturePower other = powers[index - 1];
-				//        int n = fCreature.CreaturePowers.IndexOf(other);
-				//        fCreature.CreaturePowers.Remove(pwr);
-				//        fCreature.CreaturePowers.Insert(n, pwr);
-
-				//        update_statblock();
-				//    }
-				//}
 			}
 
 			if (e.Url.Scheme == "powerdown")
 			{
-				//CreaturePower pwr = find_power(new Guid(e.Url.LocalPath));
-				//if (pwr != null)
-				//{
-				//    e.Cancel = true;
-				//    List<CreaturePower> powers = CreatureHelper.CreaturePowersByCategory(fCreature, pwr.Category);
-				//    int index = powers.IndexOf(pwr);
-
-				//    if (index != powers.Count - 1)
-				//    {
-				//        // Move power down
-				//        CreaturePower other = powers[index + 1];
-				//        int n = fCreature.CreaturePowers.IndexOf(other);
-				//        fCreature.CreaturePowers.Remove(pwr);
-				//        fCreature.CreaturePowers.Insert(n, pwr);
-				//        update_statblock();
-				//    }
-				//}
 			}
 
 			if (e.Url.Scheme == "poweredit")
@@ -321,86 +286,6 @@ namespace Masterplan.UI
 
 		private void OptionsVariant_Click(object sender, EventArgs e)
 		{
-			/*
-			VariantWizard wizard = new VariantWizard();
-			if (wizard.Show() == DialogResult.OK)
-			{
-				VariantData data = wizard.Data as VariantData;
-
-				EncounterCard card = new EncounterCard();
-				card.CreatureID = data.BaseCreature.ID;
-				foreach (CreatureTemplate ct in data.Templates)
-					card.TemplateIDs.Add(ct.ID);
-
-				Creature custom = new Creature();
-
-				custom.Name = "Variant " + card.Title;
-				custom.Details = data.BaseCreature.Details;
-				custom.Size = data.BaseCreature.Size;
-				custom.Level = card.Level;
-				if (data.BaseCreature.Image != null)
-					custom.Image = new Bitmap(data.BaseCreature.Image);
-
-				custom.Senses = card.Senses;
-				custom.Movement = card.Movement;
-				custom.Resist = card.Resist;
-				custom.Vulnerable = card.Vulnerable;
-				custom.Immune = card.Immune;
-
-				if (data.BaseCreature.Role is Minion)
-				{
-					custom.Role = new Minion();
-				}
-				else
-				{
-					ComplexRole cr = new ComplexRole();
-
-					cr.Type = data.Roles[data.SelectedRoleIndex];
-					cr.Flag = card.Flag;
-					cr.Leader = card.Leader;
-
-					custom.Role = cr;
-				}
-
-				// Set ability scores
-				custom.Strength.Score = data.BaseCreature.Strength.Score;
-				custom.Constitution.Score = data.BaseCreature.Constitution.Score;
-				custom.Dexterity.Score = data.BaseCreature.Dexterity.Score;
-				custom.Intelligence.Score = data.BaseCreature.Intelligence.Score;
-				custom.Wisdom.Score = data.BaseCreature.Wisdom.Score;
-				custom.Charisma.Score = data.BaseCreature.Charisma.Score;
-
-				// Combat stats
-				custom.Initiative = data.BaseCreature.Initiative;
-				custom.HP = card.HP;
-				custom.AC = card.AC;
-				custom.Fortitude = card.Fortitude;
-				custom.Reflex = card.Reflex;
-				custom.Will = card.Will;
-
-				// Regeneration
-				custom.Regeneration = (card.Regeneration != null) ? card.Regeneration : null;
-
-				// Auras
-				List<Aura> auras = card.Auras;
-				foreach (Aura aura in auras)
-					custom.Auras.Add(aura.Copy());
-
-				// Add powers
-				List<CreaturePower> powers = card.CreaturePowers;
-				foreach (CreaturePower power in powers)
-					custom.CreaturePowers.Add(power.Copy());
-
-				// Add damage modifiers
-				List<DamageModifier> mods = card.DamageModifiers;
-				foreach (DamageModifier mod in mods)
-					custom.DamageModifiers.Add(mod.Copy());
-
-				CreatureHelper.CopyFields(custom, fCreature);
-				//fCreature = custom;
-				update_view();
-			}
-			*/
 		}
 
 		#endregion

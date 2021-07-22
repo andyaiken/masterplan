@@ -141,7 +141,6 @@ namespace Masterplan.UI
 			{
 				int index = Session.Project.CustomCreatures.IndexOf(SelectedCreature);
 
-				//CustomCreatureForm dlg = new CustomCreatureForm(SelectedCreature);
 				CreatureBuilderForm dlg = new CreatureBuilderForm(SelectedCreature);
 				if (dlg.ShowDialog() == DialogResult.OK)
 				{
@@ -156,7 +155,6 @@ namespace Masterplan.UI
 			{
 				int index = Session.Project.NPCs.IndexOf(SelectedNPC);
 
-				//NPCForm dlg = new NPCForm(SelectedNPC);
 				CreatureBuilderForm dlg = new CreatureBuilderForm(SelectedNPC);
 				if (dlg.ShowDialog() == DialogResult.OK)
 				{

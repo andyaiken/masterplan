@@ -1563,7 +1563,6 @@ namespace Masterplan.Controls
 						int creature_size = Creature.GetSize(hero.Size);
 
 						// Get auras from CombatData
-						//CombatData cd = fHeroData[hero.ID];
 						CombatData cd = hero.CombatData;
 						if (cd != null)
 						{
@@ -1669,10 +1668,7 @@ namespace Masterplan.Controls
 						Hero hero = Session.Project.FindHero(ct.CreatureID);
 						if (hero != null)
 						{
-							//ct.Data.Location = fHeroData[ct.CreatureID].Location;
 							ct.Data.Location = hero.CombatData.Location;
-
-							//Hero hero = Session.Project.FindHero(ct.CreatureID);
 							size = hero.Size;
 						}
 
@@ -1792,9 +1788,7 @@ namespace Masterplan.Controls
 			if (fEncounter != null)
 			{
 				foreach (Hero h in Session.Project.Heroes)
-				//foreach (Guid hero_id in fHeroData.Keys)
 				{
-					//Hero h = Session.Project.FindHero(hero_id);
 					if (h == null)
 						continue;
 
@@ -2165,7 +2159,6 @@ namespace Masterplan.Controls
 							{
 								img.RotateFlip(RotateFlipType.Rotate90FlipNone);
 								g.DrawImage(img, tile_rect, 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, ia);
-								//img.RotateFlip(RotateFlipType.RotateNoneFlipNone);
 							}
 						}
 						break;
@@ -2175,7 +2168,6 @@ namespace Masterplan.Controls
 							{
 								img.RotateFlip(RotateFlipType.Rotate180FlipNone);
 								g.DrawImage(img, tile_rect, 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, ia);
-								//img.RotateFlip(RotateFlipType.RotateNoneFlipNone);
 							}
 						}
 						break;
@@ -2185,7 +2177,6 @@ namespace Masterplan.Controls
 							{
 								img.RotateFlip(RotateFlipType.Rotate270FlipNone);
 								g.DrawImage(img, tile_rect, 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, ia);
-								//img.RotateFlip(RotateFlipType.RotateNoneFlipNone);
 							}
 						}
 						break;
@@ -2269,24 +2260,14 @@ namespace Masterplan.Controls
 		{
 			Color c = Color.FromArgb(0, 80, 0);
 
-			//CombatData data = hero.CombatData;
-			//if ((fHeroData != null) && (fHeroData.ContainsKey(hero.ID)))
+			int hp_max = hero.HP;
+			if (hp_max != 0)
 			{
-				//data = fHeroData[hero.ID];
-				//if (data != null)
-				{
-					int hp_max = hero.HP;
-					if (hp_max != 0)
-					{
-						int hp_bloodied = hp_max / 2;
-						int hp_current = hp_max + hero.CombatData.TempHP - hero.CombatData.Damage;
-
-						if (hp_current <= 0)
-							c = Color.Gray;
-						else if (hp_current <= hp_max / 2)
-							c = Color.Maroon;
-					}
-				}
+				int hp_current = hp_max + hero.CombatData.TempHP - hero.CombatData.Damage;
+				if (hp_current <= 0)
+					c = Color.Gray;
+				else if (hp_current <= hp_max / 2)
+					c = Color.Maroon;
 			}
 
 			bool boxed = fBoxedTokens.Contains(hero);
@@ -3051,17 +3032,11 @@ namespace Masterplan.Controls
 										}
 									}
 
-									//fHighlightedTokens.Clear();
-									//fHighlightedTokens.Add(slot_data.First);
-
 									fHoverToken = slot_data.First;
 								}
 							}
 							else
 							{
-								//hover_changed = (fHighlightedTokens.Count != 0);
-								//fHighlightedTokens.Clear();
-
 								if (fHoverToken != null)
 								{
 									hover_changed = true;
@@ -3238,7 +3213,6 @@ namespace Masterplan.Controls
 						if (fDraggedToken.Token is Hero)
 						{
 							Hero hero = fDraggedToken.Token as Hero;
-							//fHeroData[hero.ID].Location = fDraggedToken.Location;
 							hero.CombatData.Location = fDraggedToken.Location;
 						}
 
@@ -3254,27 +3228,7 @@ namespace Masterplan.Controls
 
 					if ((fDraggedToken != null) && (fDraggedToken.LinkedToken != null))
 					{
-						//RectangleF r1 = get_token_rect(fDraggedToken.Token);
-						//RectangleF r2 = get_token_rect(fDraggedToken.LinkedToken);
-
 						TokenLink current_link = find_link(fDraggedToken.Token, fDraggedToken.LinkedToken);
-
-						/*
-						foreach (TokenLink link in fTokenLinks)
-						{
-							RectangleF r3 = get_token_rect(link.Tokens[0]);
-							RectangleF r4 = get_token_rect(link.Tokens[1]);
-
-							bool first = ((r1 == r3) || (r2 == r3));
-							bool second = ((r1 == r4) || (r2 == r4));
-							if (first && second)
-							{
-								current_link = link;
-								break;
-							}
-						}
-						*/
-
 						if (current_link == null)
 						{
 							if (fDraggedToken.Token != fDraggedToken.LinkedToken)
@@ -3697,17 +3651,13 @@ namespace Masterplan.Controls
 			CustomToken custom = e.Data.GetData(typeof(CustomToken)) as CustomToken;
 			if (custom != null)
 			{
-				// Disallow drop if not over a tile
-				//if (allow_creature_move(new Rectangle(square, new Size(custom.Size, custom.Size)), CombatData.NoPoint))
-				{
-					fNewToken = new NewToken();
-					fNewToken.Token = custom;
-					fNewToken.Location = square;
+				fNewToken = new NewToken();
+				fNewToken.Token = custom;
+				fNewToken.Location = square;
 
-					e.Effect = DragDropEffects.Move;
+				e.Effect = DragDropEffects.Move;
 
-					Invalidate();
-				}
+				Invalidate();
 			}
 		}
 
@@ -3768,7 +3718,6 @@ namespace Masterplan.Controls
 			{
 				// Stop dragging the hero; set this location
 				Hero h = fNewToken.Token as Hero;
-				//fHeroData[h.ID].Location = fNewToken.Location;
 				h.CombatData.Location = fNewToken.Location;
 
 				fNewToken = null;
@@ -3827,22 +3776,17 @@ namespace Masterplan.Controls
 				}
 			}
 
-			//if (fHeroData != null)
+			foreach (Hero h in Session.Project.Heroes)
 			{
-				foreach (Hero h in Session.Project.Heroes)
-				//foreach (Guid hero_id in fHeroData.Keys)
-				{
-					//Hero h = Session.Project.FindHero(hero_id);
-					if (h == null)
-						return null;
+				if (h == null)
+					return null;
 
-					// Find the hero rectangle
-					int size = Creature.GetSize(h.Size);
-					Rectangle rect = new Rectangle(h.CombatData.Location, new Size(size, size));
+				// Find the hero rectangle
+				int size = Creature.GetSize(h.Size);
+				Rectangle rect = new Rectangle(h.CombatData.Location, new Size(size, size));
 
-					if (rect.Contains(square))
-						return new Pair<IToken, Rectangle>(h, rect);
-				}
+				if (rect.Contains(square))
+					return new Pair<IToken, Rectangle>(h, rect);
 			}
 
 			foreach (CustomToken ct in fEncounter.CustomTokens)
@@ -3945,14 +3889,7 @@ namespace Masterplan.Controls
 
 			if (token is Hero)
 			{
-				//if (fHeroData == null)
-				//	return CombatData.NoPoint;
-
 				Hero h = token as Hero;
-				//if (!fHeroData.ContainsKey(h.ID))
-				//	return CombatData.NoPoint;
-
-				//return fHeroData[h.ID].Location;
 				return h.CombatData.Location;
 			}
 
@@ -4052,8 +3989,6 @@ namespace Masterplan.Controls
 			{
 				Hero hero = token as Hero;
 				return hero.CombatData;
-				//if (fHeroData.ContainsKey(hero.ID))
-				//	return fHeroData[hero.ID];
 			}
 
 			return null;

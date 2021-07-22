@@ -15,7 +15,8 @@ namespace Masterplan.UI
 		enum SidebarType
 		{
 			Advice,
-			Powers
+			Powers,
+			Preview
 		}
 
 		const int SAMPLE_POWERS = 5;
@@ -71,6 +72,7 @@ namespace Masterplan.UI
 
 			AdviceBtn.Checked = fSidebar == SidebarType.Advice;
 			PowersBtn.Checked = fSidebar == SidebarType.Powers;
+			PreviewBtn.Checked = fSidebar == SidebarType.Preview;
 
 			LevelDownBtn.Enabled = (fCreature.Level > 1);
 		}
@@ -315,8 +317,6 @@ namespace Masterplan.UI
 								custom = new NPC();
 
 							custom.Name = card.Title;
-							//custom.Details = card.Details;
-							//custom.Size = card.Size;
 							custom.Level = card.Level;
 
 							custom.Senses = card.Senses;
@@ -379,7 +379,6 @@ namespace Masterplan.UI
 					pwr.Name = "New Power";
 					pwr.Action = new PowerAction();
 
-					//PowerForm dlg = new PowerForm(pwr, false);
 					PowerBuilderForm dlg = new PowerBuilderForm(pwr, fCreature, false);
 					if (dlg.ShowDialog() == DialogResult.OK)
 					{
@@ -396,7 +395,6 @@ namespace Masterplan.UI
 					pwr.Name = "New Trait";
 					pwr.Action = null;
 
-					//PowerForm dlg = new PowerForm(pwr, false);
 					PowerBuilderForm dlg = new PowerBuilderForm(pwr, fCreature, false);
 					if (dlg.ShowDialog() == DialogResult.OK)
 					{
@@ -482,7 +480,6 @@ namespace Masterplan.UI
 					e.Cancel = true;
 					int index = fCreature.CreaturePowers.IndexOf(pwr);
 
-					//PowerForm dlg = new PowerForm(pwr, false);
 					PowerBuilderForm dlg = new PowerBuilderForm(pwr, fCreature, false);
 					if (dlg.ShowDialog() == DialogResult.OK)
 					{
@@ -570,6 +567,26 @@ namespace Masterplan.UI
 
 		#region Menu
 
+		private void FileExport_Click(object sender, EventArgs e)
+		{
+			SaveFileDialog dlg = new SaveFileDialog();
+			dlg.Title = "Export Creature";
+			dlg.FileName = fCreature.Name;
+			dlg.Filter = Program.CreatureFilter;
+
+			if (dlg.ShowDialog() == DialogResult.OK)
+			{
+				Creature c = new Creature(fCreature);
+				bool ok = Serialisation<Creature>.Save(dlg.FileName, c, SerialisationMode.Binary);
+
+				if (!ok)
+				{
+					string error = "The creature could not be exported.";
+					MessageBox.Show(error, "Masterplan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+		}
+
 		private void OptionsVariant_Click(object sender, EventArgs e)
 		{
 			create_variant();
@@ -638,6 +655,15 @@ namespace Masterplan.UI
 			}
 		}
 
+		private void PreviewBtn_Click(object sender, EventArgs e)
+		{
+			if (fSidebar != SidebarType.Preview)
+			{
+				fSidebar = SidebarType.Preview;
+				update_statblock();
+			}
+		}
+
 		private void LevelUpBtn_Click(object sender, EventArgs e)
 		{
 			CreatureHelper.AdjustCreatureLevel(fCreature, +1);
@@ -701,234 +727,240 @@ namespace Masterplan.UI
 			List<string> lines = HTML.GetHead("Creature", "", Session.Preferences.TextSize);
 			lines.Add("<BODY>");
 
-			lines.Add("<TABLE class=clear>");
-			lines.Add("<TR class=clear>");
-			lines.Add("<TD class=clear>");
+			if (fSidebar != SidebarType.Preview)
+			{
+				lines.Add("<TABLE class=clear>");
+				lines.Add("<TR class=clear>");
+				lines.Add("<TD class=clear>");
+			}
 
 			#region Creature
 
 			lines.Add("<P class=table>");
-			lines.AddRange(card.AsText(null, CardMode.Build, true));
+			lines.AddRange(card.AsText(null, fSidebar != SidebarType.Preview ? CardMode.Build : CardMode.View, true));
 			lines.Add("</P>");
 
 			#endregion
 
-			lines.Add("</TD>");
-
-			switch (fSidebar)
+			if (fSidebar != SidebarType.Preview)
 			{
-				case SidebarType.Advice:
-					{
-						lines.Add("<TD class=clear>");
-						lines.Add("<P class=table>");
+				lines.Add("</TD>");
 
-						#region Create A New Creature
-
-						bool hybrid = (Session.Creatures.Count >= 2);
-
-						lines.Add("<P class=table>");
-						lines.Add("<TABLE>");
-						lines.Add("<TR class=heading>");
-						lines.Add("<TD><B>Create A New Creature</B></TD>");
-						lines.Add("</TR>");
-						lines.Add("<TR>");
-						lines.Add("<TD>");
-						lines.Add("Create a <A href=build:variant>variant</A> of an existing creature");
-						lines.Add("</TD>");
-						lines.Add("</TR>");
-						lines.Add("<TR>");
-						lines.Add("<TD>");
-						lines.Add("Generate a <A href=build:random>random creature</A>");
-						lines.Add("</TD>");
-						lines.Add("</TR>");
-						if (hybrid)
+				switch (fSidebar)
+				{
+					case SidebarType.Advice:
 						{
+							lines.Add("<TD class=clear>");
+							lines.Add("<P class=table>");
+
+							#region Create A New Creature
+
+							bool hybrid = (Session.Creatures.Count >= 2);
+
+							lines.Add("<P class=table>");
+							lines.Add("<TABLE>");
+							lines.Add("<TR class=heading>");
+							lines.Add("<TD><B>Create A New Creature</B></TD>");
+							lines.Add("</TR>");
 							lines.Add("<TR>");
 							lines.Add("<TD>");
-							lines.Add("Generate a <A href=build:hybrid>hybrid creature</A>");
+							lines.Add("Create a <A href=build:variant>variant</A> of an existing creature");
 							lines.Add("</TD>");
 							lines.Add("</TR>");
-						}
-						lines.Add("</TABLE>");
-						lines.Add("</P>");
-
-						#endregion
-
-						#region Modify This Creature
-
-						bool template = false;
-						ComplexRole cr = fCreature.Role as ComplexRole;
-						if (cr != null)
-							template = (cr.Flag != RoleFlag.Solo);
-
-						lines.Add("<P class=table>");
-						lines.Add("<TABLE>");
-						lines.Add("<TR class=heading>");
-						lines.Add("<TD><B>Modify This Creature</B></TD>");
-						lines.Add("</TR>");
-						lines.Add("<TR>");
-						lines.Add("<TD>");
-						lines.Add("Generate a <A href=build:name>new name</A> for this creature");
-						lines.Add("</TD>");
-						lines.Add("</TR>");
-						lines.Add("<TR>");
-						lines.Add("<TD>");
-						lines.Add("Browse for <A href=power:browse>existing powers</A> for this creature");
-						lines.Add("</TD>");
-						lines.Add("</TR>");
-						if (template)
-						{
 							lines.Add("<TR>");
 							lines.Add("<TD>");
-							lines.Add("Apply a <A href=build:template>template</A> to this creature");
+							lines.Add("Generate a <A href=build:random>random creature</A>");
 							lines.Add("</TD>");
-						}
-						lines.Add("</TR>");
-						lines.Add("<TR>");
-						lines.Add("<TD>");
-						lines.Add("See <A href=power:statistics>power statistics</A> for other creatures of this type");
-						lines.Add("</TD>");
-						lines.Add("</TR>");
-						lines.Add("</TABLE>");
-						lines.Add("</P>");
-
-						#endregion
-
-						#region Advice
-
-						lines.Add("<P class=table>");
-						lines.Add("<TABLE>");
-
-						lines.Add("<TR class=heading>");
-						lines.Add("<TD colspan=2><B>Creature Advice</B></TD>");
-						lines.Add("</TR>");
-
-						int init = Statistics.Initiative(fCreature.Level, fCreature.Role);
-						int ac = Statistics.AC(fCreature.Level, fCreature.Role);
-						int nad = Statistics.NAD(fCreature.Level, fCreature.Role);
-
-						bool minion = ((fCreature.Role != null) && (fCreature.Role is Minion));
-						if (!minion)
-						{
-							int hp = (minion) ? 1 : Statistics.HP(fCreature.Level, fCreature.Role as ComplexRole, fCreature.Constitution.Score);
-
-							lines.Add("<TR>");
-							lines.Add("<TD>Hit Points</TD>");
-							lines.Add("<TD align=center>+" + Statistics.AttackBonus(DefenceType.AC, fCreature.Level, fCreature.Role) + "</TD>");
 							lines.Add("</TR>");
-						}
-
-						lines.Add("<TR>");
-						lines.Add("<TD>Initiative Bonus</TD>");
-						lines.Add("<TD align=center>+" + init + "</TD>");
-						lines.Add("</TR>");
-
-						lines.Add("<TR>");
-						lines.Add("<TD>Armour Class</TD>");
-						lines.Add("<TD align=center>+" + ac + "</TD>");
-						lines.Add("</TR>");
-
-						lines.Add("<TR>");
-						lines.Add("<TD>Other Defences</TD>");
-						lines.Add("<TD align=center>+" + nad + "</TD>");
-						lines.Add("</TR>");
-
-						lines.Add("<TR>");
-						lines.Add("<TD>Number of Powers</TD>");
-						lines.Add("<TD align=center>4 - 6</TD>");
-						lines.Add("</TR>");
-
-						lines.Add("</TABLE>");
-						lines.Add("</P>");
-
-						#endregion
-
-						lines.Add("</TD>");
-					}
-					break;
-				case SidebarType.Powers:
-					{
-						lines.Add("<TD class=clear>");
-						lines.Add("<P class=table>");
-
-						#region Powers
-
-						if (fSamplePowers.Count != 0)
-						{
-							lines.Add("<P text-align=left>");
-							lines.Add("The following powers might be suitable for this creature.");
-							lines.Add("Click <A href=power:refresh>here</A> to resample this list, or <A href=power:browse>here</A> to look for other powers.");
+							if (hybrid)
+							{
+								lines.Add("<TR>");
+								lines.Add("<TD>");
+								lines.Add("Generate a <A href=build:hybrid>hybrid creature</A>");
+								lines.Add("</TD>");
+								lines.Add("</TR>");
+							}
+							lines.Add("</TABLE>");
 							lines.Add("</P>");
+
+							#endregion
+
+							#region Modify This Creature
+
+							bool template = false;
+							ComplexRole cr = fCreature.Role as ComplexRole;
+							if (cr != null)
+								template = (cr.Flag != RoleFlag.Solo);
+
+							lines.Add("<P class=table>");
+							lines.Add("<TABLE>");
+							lines.Add("<TR class=heading>");
+							lines.Add("<TD><B>Modify This Creature</B></TD>");
+							lines.Add("</TR>");
+							lines.Add("<TR>");
+							lines.Add("<TD>");
+							lines.Add("Generate a <A href=build:name>new name</A> for this creature");
+							lines.Add("</TD>");
+							lines.Add("</TR>");
+							lines.Add("<TR>");
+							lines.Add("<TD>");
+							lines.Add("Browse for <A href=power:browse>existing powers</A> for this creature");
+							lines.Add("</TD>");
+							lines.Add("</TR>");
+							if (template)
+							{
+								lines.Add("<TR>");
+								lines.Add("<TD>");
+								lines.Add("Apply a <A href=build:template>template</A> to this creature");
+								lines.Add("</TD>");
+							}
+							lines.Add("</TR>");
+							lines.Add("<TR>");
+							lines.Add("<TD>");
+							lines.Add("See <A href=power:statistics>power statistics</A> for other creatures of this type");
+							lines.Add("</TD>");
+							lines.Add("</TR>");
+							lines.Add("</TABLE>");
+							lines.Add("</P>");
+
+							#endregion
+
+							#region Advice
 
 							lines.Add("<P class=table>");
 							lines.Add("<TABLE>");
 
-							Dictionary<CreaturePowerCategory, List<CreaturePower>> powers = new Dictionary<CreaturePowerCategory, List<CreaturePower>>();
+							lines.Add("<TR class=heading>");
+							lines.Add("<TD colspan=2><B>Creature Advice</B></TD>");
+							lines.Add("</TR>");
 
-							Array power_categories = Enum.GetValues(typeof(CreaturePowerCategory));
-							foreach (CreaturePowerCategory cat in power_categories)
-								powers[cat] = new List<CreaturePower>();
+							int init = Statistics.Initiative(fCreature.Level, fCreature.Role);
+							int ac = Statistics.AC(fCreature.Level, fCreature.Role);
+							int nad = Statistics.NAD(fCreature.Level, fCreature.Role);
 
-							foreach (CreaturePower cp in fSamplePowers)
-								powers[cp.Category].Add(cp);
-
-							foreach (CreaturePowerCategory cat in power_categories)
+							bool minion = ((fCreature.Role != null) && (fCreature.Role is Minion));
+							if (!minion)
 							{
-								int count = powers[cat].Count;
-								if (count == 0)
-									continue;
+								int hp = (minion) ? 1 : Statistics.HP(fCreature.Level, fCreature.Role as ComplexRole, fCreature.Constitution.Score);
 
-								string name = "";
-								switch (cat)
-								{
-									case CreaturePowerCategory.Trait:
-										name = "Traits";
-										break;
-									case CreaturePowerCategory.Standard:
-									case CreaturePowerCategory.Move:
-									case CreaturePowerCategory.Minor:
-									case CreaturePowerCategory.Free:
-										name = cat + " Actions";
-										break;
-									case CreaturePowerCategory.Triggered:
-										name = "Triggered Actions";
-										break;
-									case CreaturePowerCategory.Other:
-										name = "Other Actions";
-										break;
-								}
-
-								lines.Add("<TR class=creature>");
-								lines.Add("<TD colspan=3>");
-								lines.Add("<B>" + name + "</B>");
-								lines.Add("</TD>");
+								lines.Add("<TR>");
+								lines.Add("<TD>Hit Points</TD>");
+								lines.Add("<TD align=center>+" + Statistics.AttackBonus(DefenceType.AC, fCreature.Level, fCreature.Role) + "</TD>");
 								lines.Add("</TR>");
-
-								foreach (CreaturePower cp in powers[cat])
-								{
-									lines.AddRange(cp.AsHTML(null, CardMode.View, false));
-
-									lines.Add("<TR>");
-									lines.Add("<TD colspan=3 align=center>");
-									lines.Add("<A href=samplepower:" + cp.ID + ">copy this power into " + fCreature.Name + "</A>");
-									lines.Add("</TD>");
-									lines.Add("</TR>");
-								}
 							}
+
+							lines.Add("<TR>");
+							lines.Add("<TD>Initiative Bonus</TD>");
+							lines.Add("<TD align=center>+" + init + "</TD>");
+							lines.Add("</TR>");
+
+							lines.Add("<TR>");
+							lines.Add("<TD>Armour Class</TD>");
+							lines.Add("<TD align=center>+" + ac + "</TD>");
+							lines.Add("</TR>");
+
+							lines.Add("<TR>");
+							lines.Add("<TD>Other Defences</TD>");
+							lines.Add("<TD align=center>+" + nad + "</TD>");
+							lines.Add("</TR>");
+
+							lines.Add("<TR>");
+							lines.Add("<TD>Number of Powers</TD>");
+							lines.Add("<TD align=center>4 - 6</TD>");
+							lines.Add("</TR>");
 
 							lines.Add("</TABLE>");
 							lines.Add("</P>");
+
+							#endregion
+
+							lines.Add("</TD>");
 						}
+						break;
+					case SidebarType.Powers:
+						{
+							lines.Add("<TD class=clear>");
+							lines.Add("<P class=table>");
 
-						#endregion
+							#region Powers
 
-						lines.Add("</TD>");
-					}
-					break;
+							if (fSamplePowers.Count != 0)
+							{
+								lines.Add("<P text-align=left>");
+								lines.Add("The following powers might be suitable for this creature.");
+								lines.Add("Click <A href=power:refresh>here</A> to resample this list, or <A href=power:browse>here</A> to look for other powers.");
+								lines.Add("</P>");
+
+								lines.Add("<P class=table>");
+								lines.Add("<TABLE>");
+
+								Dictionary<CreaturePowerCategory, List<CreaturePower>> powers = new Dictionary<CreaturePowerCategory, List<CreaturePower>>();
+
+								Array power_categories = Enum.GetValues(typeof(CreaturePowerCategory));
+								foreach (CreaturePowerCategory cat in power_categories)
+									powers[cat] = new List<CreaturePower>();
+
+								foreach (CreaturePower cp in fSamplePowers)
+									powers[cp.Category].Add(cp);
+
+								foreach (CreaturePowerCategory cat in power_categories)
+								{
+									int count = powers[cat].Count;
+									if (count == 0)
+										continue;
+
+									string name = "";
+									switch (cat)
+									{
+										case CreaturePowerCategory.Trait:
+											name = "Traits";
+											break;
+										case CreaturePowerCategory.Standard:
+										case CreaturePowerCategory.Move:
+										case CreaturePowerCategory.Minor:
+										case CreaturePowerCategory.Free:
+											name = cat + " Actions";
+											break;
+										case CreaturePowerCategory.Triggered:
+											name = "Triggered Actions";
+											break;
+										case CreaturePowerCategory.Other:
+											name = "Other Actions";
+											break;
+									}
+
+									lines.Add("<TR class=creature>");
+									lines.Add("<TD colspan=3>");
+									lines.Add("<B>" + name + "</B>");
+									lines.Add("</TD>");
+									lines.Add("</TR>");
+
+									foreach (CreaturePower cp in powers[cat])
+									{
+										lines.AddRange(cp.AsHTML(null, CardMode.View, false));
+
+										lines.Add("<TR>");
+										lines.Add("<TD colspan=3 align=center>");
+										lines.Add("<A href=samplepower:" + cp.ID + ">copy this power into " + fCreature.Name + "</A>");
+										lines.Add("</TD>");
+										lines.Add("</TR>");
+									}
+								}
+
+								lines.Add("</TABLE>");
+								lines.Add("</P>");
+							}
+
+							#endregion
+
+							lines.Add("</TD>");
+						}
+						break;
+				}
+
+				lines.Add("</TR>");
+				lines.Add("</TABLE>");
 			}
-
-			lines.Add("</TR>");
-			lines.Add("</TABLE>");
 
 			lines.Add("</BODY>");
 			lines.Add("</HTML>");
@@ -1265,7 +1297,6 @@ namespace Masterplan.UI
 
 				Guid id = fCreature.ID;
 				CreatureHelper.CopyFields(custom, fCreature);
-				//fCreature = custom;
 				fCreature.ID = id;
 
 				find_sample_powers();
@@ -1553,26 +1584,6 @@ namespace Masterplan.UI
 			}
 
 			return selected;
-		}
-
-		private void FileExport_Click(object sender, EventArgs e)
-		{
-			SaveFileDialog dlg = new SaveFileDialog();
-			dlg.Title = "Export Creature";
-			dlg.FileName = fCreature.Name;
-			dlg.Filter = Program.CreatureFilter;
-
-			if (dlg.ShowDialog() == DialogResult.OK)
-			{
-				Creature c = new Creature(fCreature);
-				bool ok = Serialisation<Creature>.Save(dlg.FileName, c, SerialisationMode.Binary);
-
-				if (!ok)
-				{
-					string error = "The creature could not be exported.";
-					MessageBox.Show(error, "Masterplan", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
-			}
 		}
 	}
 }

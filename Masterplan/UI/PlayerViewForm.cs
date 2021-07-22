@@ -281,7 +281,6 @@ namespace Masterplan.UI
 				mv.ScalingFactor = fParentMap.ScalingFactor;
 				mv.Encounter = fParentMap.Encounter;
 				mv.Plot = fParentMap.Plot;
-				//mv.HeroData = fParentMap.HeroData;
 				mv.TokenLinks = fParentMap.TokenLinks;
 				mv.AllowDrawing = fParentMap.AllowDrawing;
 				mv.Mode = MapViewMode.PlayerView;

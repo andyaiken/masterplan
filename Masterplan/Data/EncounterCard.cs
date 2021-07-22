@@ -1093,27 +1093,6 @@ namespace Masterplan.Data
                     return "";
 
 				Dictionary<string, int> skill_list = CreatureHelper.ParseSkills(creature.Skills);
-				//Dictionary<string, int> skill_list = new Dictionary<string, int>();
-
-				//string[] skills = creature.Skills.Split(new string[] { ",", ";" }, StringSplitOptions.RemoveEmptyEntries);
-				//foreach (string skill in skills)
-				//{
-				//    try
-				//    {
-				//        string str = skill.Trim();
-
-				//        int index = str.IndexOf(" ");
-				//        string skill_name = str.Substring(0, index);
-				//        string skill_bonus = str.Substring(index + 1);
-				//        int bonus = int.Parse(skill_bonus);
-
-				//        skill_list[skill_name] = bonus;
-				//    }
-				//    catch (Exception ex)
-				//    {
-				//        LogSystem.Trace(ex);
-				//    }
-				//}
 
                 MonsterTheme mt = (fThemeID != Guid.Empty) ? Session.FindTheme(fThemeID, SearchType.Global) : null;
                 if (mt != null)

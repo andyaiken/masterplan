@@ -47,14 +47,12 @@ namespace Masterplan.UI
 
 		class InitiativeSorter : IComparer, IComparer<ListViewItem>
 		{
-			public InitiativeSorter(/*Dictionary<Guid, CombatData> hero_data,*/ Dictionary<Guid, CombatData> trap_data, Encounter enc)
+			public InitiativeSorter(Dictionary<Guid, CombatData> trap_data, Encounter enc)
 			{
-				//fHeroData = hero_data;
 				fTrapData = trap_data;
 				fEncounter = enc;
 			}
 
-			//Dictionary<Guid, CombatData> fHeroData = null;
 			Dictionary<Guid, CombatData> fTrapData = null;
 			Encounter fEncounter = null;
 
@@ -103,10 +101,6 @@ namespace Masterplan.UI
 					{
 						Hero hero = lvi.Tag as Hero;
 						return hero.CombatData.Initiative;
-						//if (fHeroData.ContainsKey(hero.ID))
-						//    return fHeroData[hero.ID].Initiative;
-						//else
-						//    return int.MinValue;
 					}
 
 					if (lvi.Tag is CreatureToken)
@@ -222,21 +216,6 @@ namespace Masterplan.UI
 				h.CombatData.ID = h.ID;
 				h.CombatData.DisplayName = h.Name;
 			}
-			//if (cs.HeroData != null)
-			//    fHeroData = cs.HeroData;
-			//if (fHeroData == null)
-			//    fHeroData = new Dictionary<Guid, CombatData>();
-			//foreach (Hero h in Session.Project.Heroes)
-			//{
-			//    if (fHeroData.ContainsKey(h.ID))
-			//        continue;
-
-			//    CombatData cd = new CombatData();
-			//    cd.DisplayName = h.Name;
-			//    cd.ID = h.ID;
-
-			//    fHeroData[h.ID] = cd;
-			//}
 
 			#endregion
 
@@ -326,9 +305,7 @@ namespace Masterplan.UI
 
 				Hero hero = Session.Project.FindHero(cs.CurrentActor);
 				if (hero != null)
-				//if (fHeroData.ContainsKey(cs.CurrentActor))
 				{
-					//fCurrentActor = fHeroData[cs.CurrentActor];
 					fCurrentActor = hero.CombatData;
 				}
 				else if (fTrapData.ContainsKey(cs.CurrentActor))
@@ -343,7 +320,7 @@ namespace Masterplan.UI
 				}
 			}
 
-			CombatList.ListViewItemSorter = new InitiativeSorter(/*fHeroData,*/ fTrapData, fEncounter);
+			CombatList.ListViewItemSorter = new InitiativeSorter(fTrapData, fEncounter);
 
 			set_map(cs.TokenLinks, cs.Viewpoint, cs.Sketches);
 			MapMenu.Visible = (fEncounter.MapID != Guid.Empty);
@@ -386,7 +363,6 @@ namespace Masterplan.UI
 		Encounter fEncounter = null;
 		int fPartyLevel = Session.Project.Party.Level;
 
-		//Dictionary<Guid, CombatData> fHeroData = null;
 		Dictionary<Guid, CombatData> fTrapData = null;
 
 		bool fCombatStarted = false;
@@ -986,30 +962,6 @@ namespace Masterplan.UI
 			try
 			{
 				show_player_view(PlayerMap == null, PlayerInitiative != null);
-				//Session.Preferences.PlayerViewMap = !Session.Preferences.PlayerViewMap;
-
-				//if ((PlayerMap != null) && (PlayerInitiative == null))
-				//{
-				//    // It's all we're showing; turn it off
-				//    Session.PlayerView.ShowDefault();
-				//}
-				//else
-				//{
-				//    if (Session.PlayerView == null)
-				//        Session.PlayerView = new PlayerViewForm(this);
-
-				//    if (PlayerInitiative == null)
-				//    {
-				//        Session.PlayerView.ShowTacticalMap(MapView, InitiativeView());
-				//        //Activate();
-				//    }
-				//    else
-				//    {
-				//        // We're already showing the initiative list
-				//        SplitContainer splitter = Session.PlayerView.Controls[0] as SplitContainer;
-				//        splitter.Panel1Collapsed = false;
-				//    }
-				//}
 			}
 			catch (Exception ex)
 			{
@@ -1022,16 +974,6 @@ namespace Masterplan.UI
 			try
 			{
 				show_player_view(PlayerMap != null, PlayerInitiative == null);
-				//Session.Preferences.PlayerViewInitiative = !Session.Preferences.PlayerViewInitiative;
-
-				//if (Session.PlayerView == null)
-				//    return;
-
-				//if (Session.PlayerView.Controls.Count == 0)
-				//    return;
-
-				//SplitContainer splitter = Session.PlayerView.Controls[0] as SplitContainer;
-				//splitter.Panel2Collapsed = !Session.Preferences.PlayerViewInitiative;
 			}
 			catch (Exception ex)
 			{
@@ -1227,8 +1169,6 @@ namespace Masterplan.UI
 				ListSplitter.Orientation = System.Windows.Forms.Orientation.Horizontal;
 				ListSplitter.SplitterDistance = ListSplitter.Height / 2;
 
-				//if (MapSplitter.SplitterDistance > 350)
-				//	MapSplitter.SplitterDistance -= 350;
 				MapSplitter.SplitterDistance = 350;
 			}
 			catch (Exception ex)
@@ -1256,8 +1196,6 @@ namespace Masterplan.UI
 				{
 					ListSplitter.SplitterDistance = ListSplitter.Width / 2;
 				}
-				//MapSplitter.SplitterDistance += 350;
-				//ListSplitter.SplitterDistance = ListSplitter.Width - 350;
 			}
 			catch (Exception ex)
 			{
@@ -1307,7 +1245,6 @@ namespace Masterplan.UI
 						if (token is Hero)
 						{
 							Hero hero = token as Hero;
-							//CombatData cd = fHeroData[hero.ID];
 							CombatData cd = hero.CombatData;
 							if (!cd.Delaying)
 								delayed = false;
@@ -1348,55 +1285,6 @@ namespace Masterplan.UI
 					// We do this in case they had temp HP
 					update_list();
 					update_maps();
-
-					/*
-					// Show start screen
-					List<CombatData> heroes = new List<CombatData>();
-					//foreach (Guid id in fHeroData.Keys)
-					//	heroes.Add(fHeroData[id]);
-					foreach (Hero hero in Session.Project.Heroes)
-						heroes.Add(hero.CombatData);
-					List<CombatData> traps = new List<CombatData>();
-					foreach (Guid id in fTrapData.Keys)
-					{
-						Trap trap = fEncounter.FindTrap(id);
-						if ((trap != null) && (trap.Initiative != int.MinValue))
-							traps.Add(fTrapData[id]);
-					}
-					CombatStartForm dlg = new CombatStartForm(fEncounter, heroes, traps);
-					if (dlg.ShowDialog() == DialogResult.OK)
-					{
-						Session.Preferences.InitiativeMode = dlg.OpponentMode;
-						roll_initiative();
-
-						if (dlg.HeroMode == InitiativeMode.Individual)
-						{
-							foreach (Hero hero in Session.Project.Heroes)
-							{
-								int init = hero.InitBonus + Session.Dice(1, 20);
-								//fHeroData[hero.ID].Initiative = init;
-								hero.CombatData.Initiative = init;
-							}
-						}
-
-						if (dlg.TrapMode == InitiativeMode.Individual)
-						{
-							foreach (Trap trap in fEncounter.Traps)
-							{
-								if (trap.Initiative == int.MinValue)
-									continue;
-
-								int init = trap.Initiative + Session.Dice(1, 20);
-								fTrapData[trap.ID].Initiative = init;
-							}
-						}
-					}
-					else
-					{
-						Close();
-						return;
-					}
-					*/
 				}
 			}
 			catch (Exception ex)
@@ -1540,31 +1428,6 @@ namespace Masterplan.UI
 
 		private void CombatList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			/*
-			try
-			{
-				if (SelectedTokens.Count == 0)
-				{
-					MapView.HighlightedToken = null;
-					if (PlayerMap != null)
-						PlayerMap.HighlightedToken = null;
-
-					update_preview_panel();
-				}
-				else
-				{
-					MapView.HighlightedToken = SelectedTokens[0];
-					if (PlayerMap != null)
-						PlayerMap.HighlightedToken = SelectedTokens[0];
-
-					update_preview_panel();
-				}
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-			*/
 		}
 
 		private void CombatList_DoubleClick(object sender, EventArgs e)
@@ -2021,9 +1884,6 @@ namespace Masterplan.UI
 
 					if (cd == null)
 					{
-						//if (fHeroData.ContainsKey(id))
-						//    cd = fHeroData[id];
-
 						Hero hero = Session.Project.FindHero(id);
 						if (hero != null)
 						{
@@ -2078,7 +1938,6 @@ namespace Masterplan.UI
 							Hero hero = Session.Project.FindHero(id);
 							if (hero != null)
 							{
-								//cd = fHeroData[hero.ID];
 								cd = hero.CombatData;
 							}
 						}
@@ -2108,38 +1967,6 @@ namespace Masterplan.UI
 					OngoingCondition oc = hero.Effects[index];
 
 					apply_effect(oc.Copy(), SelectedTokens, false);
-
-					/*
-					foreach (IToken token in SelectedTokens)
-					{
-						if (token == hero)
-							continue;
-
-						CombatData cd = null;
-
-						if (token is CreatureToken)
-						{
-							CreatureToken ct = token as CreatureToken;
-							cd = ct.Data;
-						}
-
-						if (token is Hero)
-						{
-							Hero h = token as Hero;
-							cd = h.CombatData;
-							//if (fHeroData.ContainsKey(h.ID))
-							//    cd = fHeroData[h.ID];
-						}
-
-						if (cd != null)
-						{
-							apply_effect(oc.Copy(), SelectedTokens, false);
-							fLog.AddEffectEntry(cd.ID, oc.ToString(fEncounter, false), true);
-
-							cd.Conditions.Add(oc.Copy());
-						}
-					}
-					*/
 
 					update_list();
 					update_preview_panel();
@@ -2683,7 +2510,6 @@ namespace Masterplan.UI
 				if (e.Item.Tag is Hero)
 				{
 					Hero hero = e.Item.Tag as Hero;
-					//CombatData cd = fHeroData[hero.ID];
 					CombatData cd = hero.CombatData;
 
 					state = CreatureState.Active;
@@ -2826,7 +2652,6 @@ namespace Masterplan.UI
 						if (token is Hero)
 						{
 							Hero hero = token as Hero;
-							//CombatData cd = fHeroData[hero.ID];
 							CombatData cd = hero.CombatData;
 
 							if (!cd.Delaying)
@@ -2974,7 +2799,6 @@ namespace Masterplan.UI
 						if (token is Hero)
 						{
 							Hero hero = token as Hero;
-							//CombatData cd = fHeroData[hero.ID];
 							CombatData cd = hero.CombatData;
 
 							if (!cd.Delaying)
@@ -3545,7 +3369,6 @@ namespace Masterplan.UI
 		{
 			Map m = Session.Project.FindTacticalMap(fEncounter.MapID);
 			MapView.Map = m;
-			//MapView.HeroData = fHeroData;
 
 			if (token_links != null)
 			{
@@ -3633,7 +3456,6 @@ namespace Masterplan.UI
 				if (token is Hero)
 				{
 					Hero h = token as Hero;
-					//cd = fHeroData[h.ID];
 					cd = h.CombatData;
 				}
 
@@ -3691,7 +3513,6 @@ namespace Masterplan.UI
 				if (token is Hero)
 				{
 					Hero h = token as Hero;
-					//cd = fHeroData[h.ID];
 					cd = h.CombatData;
 				}
 
@@ -3746,8 +3567,6 @@ namespace Masterplan.UI
 			}
 
 			update_list();
-			//update_preview_panel();
-			//update_maps();
 		}
 
 		void show_player_view(bool map, bool initiative)
@@ -3769,7 +3588,6 @@ namespace Masterplan.UI
 					{
 						// We're not showing anything; turn it on
 						Session.PlayerView.ShowTacticalMap(MapView, InitiativeView());
-						//Activate();
 					}
 
 					SplitContainer splitter = Session.PlayerView.Controls[0] as SplitContainer;
@@ -3792,7 +3610,6 @@ namespace Masterplan.UI
 			{
 				if (Visible)
 				{
-					//update_list();
 					update_preview_panel();
 				}
 			}
@@ -3852,7 +3669,6 @@ namespace Masterplan.UI
 					if (token is Hero)
 					{
 						Hero hero = token as Hero;
-						//cd = fHeroData[hero.ID];
 						cd = hero.CombatData;
 					}
 
@@ -3916,7 +3732,6 @@ namespace Masterplan.UI
 				str += "Player: " + hero.Player;
 			}
 
-			//CombatData cd = fHeroData[hero.ID];
 			CombatData cd = hero.CombatData;
 			if (cd != null)
 			{
@@ -4006,7 +3821,6 @@ namespace Masterplan.UI
 				}
 				else
 				{
-					//CombatData cd = fHeroData[h.ID];
 					CombatData cd = h.CombatData;
 
 					int dmg = cd.Damage;
@@ -4019,7 +3833,6 @@ namespace Masterplan.UI
 					CombatDataForm dlg = new CombatDataForm(cd, null, fEncounter, fCurrentActor, fCurrentRound, false);
 					if (dlg.ShowDialog() == DialogResult.OK)
 					{
-						//fHeroData[h.ID] = dlg.Data;
 						h.CombatData = dlg.Data;
 
 						if (dmg != dlg.Data.Damage)
@@ -4148,7 +3961,6 @@ namespace Masterplan.UI
 					if (token is Hero)
 					{
 						Hero hero = token as Hero;
-						//MapView.HeroData[hero.ID].Location = CombatData.NoPoint;
 						hero.CombatData.Location = CombatData.NoPoint;
 
 						remove_effects(token);
@@ -4198,8 +4010,6 @@ namespace Masterplan.UI
 					{
 						Hero h = token as Hero;
 
-						//MapView.HeroData[h.ID].Initiative = int.MinValue;
-						//MapView.HeroData[h.ID].Location = CombatData.NoPoint;
 						h.CombatData.Initiative = int.MinValue;
 						h.CombatData.Location = CombatData.NoPoint;
 
@@ -4252,11 +4062,6 @@ namespace Masterplan.UI
 				CombatData cd = hero.CombatData;
 				remove_effects(token_id, cd);
 			}
-			//foreach (Guid hero_id in fHeroData.Keys)
-			//{
-			//    CombatData cd = fHeroData[hero_id];
-			//    remove_effects(token_id, cd);
-			//}
 
 			foreach (EncounterSlot slot in fEncounter.AllSlots)
 			{
@@ -4315,7 +4120,6 @@ namespace Masterplan.UI
 			if (token is Hero)
 			{
 				Hero h = token as Hero;
-				//return fHeroData[h.ID].Location;
 				return h.CombatData.Location;
 			}
 
@@ -4403,15 +4207,9 @@ namespace Masterplan.UI
 
 		bool edit_initiative(Hero hero)
 		{
-			int score = 0;
-			//if (fHeroData.ContainsKey(hero.ID))
-			//    score = fHeroData[hero.ID].Initiative;
-			score = hero.CombatData.Initiative;
-
-			InitiativeForm dlg = new InitiativeForm(hero.InitBonus, score);
+			InitiativeForm dlg = new InitiativeForm(hero.InitBonus, hero.CombatData.Initiative);
 			if (dlg.ShowDialog() == DialogResult.OK)
 			{
-				//fHeroData[hero.ID].Initiative = dlg.Score;
 				hero.CombatData.Initiative = dlg.Score;
 
 				update_list();
@@ -4474,13 +4272,8 @@ namespace Masterplan.UI
 			{
 				foreach (CombatData cd in slot.CombatData)
 				{
-					//if (cd.Delaying)
-					//	continue;
 					if (slot.GetState(cd) == CreatureState.Defeated)
 						continue;
-
-					//if (cd.Damage >= slot.Card.HP)
-					//	continue;
 
 					int score = cd.Initiative;
 					if (score == int.MinValue)
@@ -4492,12 +4285,8 @@ namespace Masterplan.UI
 			}
 
 			foreach (Hero hero in Session.Project.Heroes)
-			//foreach (CombatData cd in fHeroData.Values)
 			{
 				CombatData cd = hero.CombatData;
-
-				//if (cd.Delaying)
-				//	continue;
 
 				int score = cd.Initiative;
 				if (score == int.MinValue)
@@ -4613,9 +4402,7 @@ namespace Masterplan.UI
 			}
 
 			foreach (Hero hero in Session.Project.Heroes)
-			//foreach (Guid hero_id in fHeroData.Keys)
 			{
-				//CombatData cd = fHeroData[hero_id];
 				CombatData cd = hero.CombatData;
 
 				foreach (OngoingCondition oc in cd.Conditions)
@@ -4850,13 +4637,9 @@ namespace Masterplan.UI
 			}
 			foreach (Hero hero in Session.Project.Heroes)
 			{
-				//if (!fHeroData.ContainsKey(hero.ID))
-				//	continue;
-
 				if (!data.ContainsKey(hero.InitBonus))
 					data[hero.InitBonus] = new List<CombatData>();
 
-				//CombatData cd = fHeroData[hero.ID];
 				CombatData cd = hero.CombatData;
 
 				if (cd.Initiative == init)
@@ -5013,9 +4796,6 @@ namespace Masterplan.UI
 						remove_links(ct);
 
 						cd.Location = CombatData.NoPoint;
-
-						//fRemovedCreatureXP += xp;
-						//slot.CombatData.Remove(cd);
 					}
 				}
 			}
@@ -5035,38 +4815,6 @@ namespace Masterplan.UI
 			SkillChallenge selected_challenge = SelectedChallenge;
 
 			CombatList.BeginUpdate();
-
-			#region Columns
-
-			//int required_width = NameHdr.Width + InitHdr.Width + HPHdr.Width + SystemInformation.VerticalScrollBarWidth;
-			//int required_defences = required_width + DefHdr.Width;
-			//int required_conditions = required_defences + ConditionsHdr.Width;
-
-			//bool show_defences = (CombatList.Width > required_defences);
-			//if (show_defences)
-			//{
-			//    if (!CombatList.Columns.Contains(DefHdr))
-			//        CombatList.Columns.Add(DefHdr);
-			//}
-			//else
-			//{
-			//    if (CombatList.Columns.Contains(DefHdr))
-			//        CombatList.Columns.Remove(DefHdr);
-			//}
-
-			//bool show_conditions = (CombatList.Width > required_conditions);
-			//if (show_conditions)
-			//{
-			//    if (!CombatList.Columns.Contains(ConditionsHdr))
-			//        CombatList.Columns.Add(ConditionsHdr);
-			//}
-			//else
-			//{
-			//    if (CombatList.Columns.Contains(ConditionsHdr))
-			//        CombatList.Columns.Remove(ConditionsHdr);
-			//}
-
-			#endregion
 
 			CombatList.Items.Clear();
 
@@ -5653,7 +5401,6 @@ namespace Masterplan.UI
 
 			int count = 0;
 			foreach (Hero hero in Session.Project.Heroes)
-			//foreach (Guid hero_id in fHeroData.Keys)
 			{
 				if (hero.CombatData.Initiative != int.MinValue)
 					count += 1;
@@ -5783,7 +5530,6 @@ namespace Masterplan.UI
 			Hero hero = tokens[0] as Hero;
 			if (hero != null)
 			{
-				//cd = fHeroData[hero.ID];
 				cd = hero.CombatData;
 			}
 
@@ -5885,7 +5631,6 @@ namespace Masterplan.UI
 					Hero hero = token as Hero;
 					if (hero != null)
 					{
-						//CombatData cd = fHeroData[hero.ID];
 						CombatData cd = hero.CombatData;
 						cd.Conditions.Add(oc.Copy());
 
@@ -5951,7 +5696,6 @@ namespace Masterplan.UI
 			Hero hero = SelectedTokens[0] as Hero;
 			if (hero != null)
 			{
-				//cd = fHeroData[hero.ID];
 				cd = hero.CombatData;
 			}
 
@@ -5985,7 +5729,6 @@ namespace Masterplan.UI
 			Hero hero = MapView.SelectedTokens[0] as Hero;
 			if (hero != null)
 			{
-				//cd = fHeroData[hero.ID];
 				cd = hero.CombatData;
 			}
 
@@ -6017,22 +5760,10 @@ namespace Masterplan.UI
 			{
 				List<string> lines = new List<string>();
 
-				//lines.Add("<HTML>");
-
-				//lines.Add("<HEAD>");
-				//lines.AddRange(HTML.GetStyle(Session.Preferences.TextSize));
-				//lines.Add("</HEAD>");
-
-				//lines.Add("<BODY>");
-
 				foreach (IToken token in tokens)
 				{
 					lines.Add(html_token(token, false));
 				}
-
-				//lines.Add("</BODY>");
-
-				//lines.Add("</HTML>");
 
 				html = HTML.Concatenate(lines);
 			}
@@ -6047,7 +5778,6 @@ namespace Masterplan.UI
 			if (token is Hero)
 			{
 				Hero hero = token as Hero;
-				//CombatData cd = fHeroData[hero.ID];
 				CombatData cd = hero.CombatData;
 
 				if ((TwoColumnPreview) && (cd == fCurrentActor))
@@ -6511,7 +6241,6 @@ namespace Masterplan.UI
 				if (lvi.Tag is Hero)
 				{
 					Hero hero = lvi.Tag as Hero;
-					//cd = fHeroData[hero.ID];
 					cd = hero.CombatData;
 
 					name = hero.Name;
@@ -6538,7 +6267,6 @@ namespace Masterplan.UI
 					{
 						active = true;
 
-						//colour = "white";
 						name = "<B>" + name + "</B>";
 					}
 					EncounterSlot slot = fEncounter.FindSlot(cd);
