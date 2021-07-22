@@ -7,9 +7,6 @@ using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.Windows.Forms;
 
-using Utils;
-using Utils.Graphics;
-
 using Masterplan.Data;
 using Masterplan.Events;
 using Masterplan.Tools;
@@ -1590,7 +1587,7 @@ namespace Masterplan.Controls
 						RectangleF aura_rect = fLayoutData.GetRegion(rect.Location, rect.Size);
 
 						float rounding = fLayoutData.SquareSize * 0.8f;
-						GraphicsPath path = Utils.Graphics.RoundedRectangle.Create(aura_rect, rounding);
+						GraphicsPath path = RoundedRectangle.Create(aura_rect, rounding);
 
 						using (Pen p = new Pen(Color.FromArgb(200, Color.Red)))
 						{

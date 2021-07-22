@@ -4,10 +4,9 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
-using Utils;
-
 using Masterplan.Data;
 using Masterplan.Extensibility;
+using Masterplan.Tools;
 using Masterplan.UI;
 
 namespace Masterplan
@@ -79,7 +78,7 @@ namespace Masterplan
 			get
 			{
 				Assembly ass = Assembly.GetEntryAssembly();
-				return Utils.FileName.Directory(ass.Location) + "Libraries\\";
+				return Tools.FileName.Directory(ass.Location) + "Libraries\\";
 			}
 		}
 
@@ -89,21 +88,21 @@ namespace Masterplan
 		{
 			DirectoryInfo di = new DirectoryInfo(LibraryFolder);
 
-			string filename = Utils.FileName.TrimInvalidCharacters(lib.Name);
+			string filename = Tools.FileName.TrimInvalidCharacters(lib.Name);
 
 			return di + filename + ".library";
 		}
 
 		public static Library FindLibrary(string name)
 		{
-			string filename = Utils.FileName.TrimInvalidCharacters(name);
+			string filename = Tools.FileName.TrimInvalidCharacters(name);
 
 			foreach (Library lib in Libraries)
 			{
 				if (lib.Name == name)
 					return lib;
 
-				string lib_filename = Utils.FileName.TrimInvalidCharacters(lib.Name);
+				string lib_filename = Tools.FileName.TrimInvalidCharacters(lib.Name);
 				if (lib_filename == filename)
 					return lib;
 			}
@@ -117,21 +116,21 @@ namespace Masterplan
 			{
 				if (Program.SplashScreen != null)
 				{
-					Program.SplashScreen.CurrentSubAction = Utils.FileName.Name(filename);
+					Program.SplashScreen.CurrentSubAction = Tools.FileName.Name(filename);
 					Program.SplashScreen.Progress += 1;
 				}
 
 				Library lib = Serialisation<Library>.Load(filename, SerialisationMode.Binary);
 				if (lib != null)
 				{
-					lib.Name = Utils.FileName.Name(filename);
+					lib.Name = Tools.FileName.Name(filename);
 					lib.Update();
 
 					Session.Libraries.Add(lib);
 				}
 				else
 				{
-					LogSystem.Trace("Could not load " + Utils.FileName.Name(filename));
+					LogSystem.Trace("Could not load " + Tools.FileName.Name(filename));
 				}
 
 				return lib;
@@ -1102,12 +1101,12 @@ namespace Masterplan
 			try
 			{
 				Assembly ass = Assembly.GetEntryAssembly();
-				string dir = Utils.FileName.Directory(ass.Location) + "Backup\\";
+				string dir = Tools.FileName.Directory(ass.Location) + "Backup\\";
 
 				if (!Directory.Exists(dir))
 					Directory.CreateDirectory(dir);
 
-				string new_name = dir + Utils.FileName.Name(filename);
+				string new_name = dir + Tools.FileName.Name(filename);
 				File.Copy(filename, new_name, true);
 			}
 			catch (Exception ex)
@@ -1123,12 +1122,12 @@ namespace Masterplan
 			try
 			{
 				Assembly ass = Assembly.GetEntryAssembly();
-				string dir = Utils.FileName.Directory(ass.Location) + "Backup\\";
+				string dir = Tools.FileName.Directory(ass.Location) + "Backup\\";
 
 				if (!Directory.Exists(dir))
 					Directory.CreateDirectory(dir);
 
-				string backup_name = dir + Utils.FileName.Name(filename);
+				string backup_name = dir + Tools.FileName.Name(filename);
 				if (File.Exists(backup_name))
 				{
 					p = Serialisation<Project>.Load(backup_name, SerialisationMode.Binary);

@@ -6,8 +6,6 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 
-using Utils;
-
 using Masterplan.Controls;
 using Masterplan.Data;
 using Masterplan.Events;

@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace Utils.Graphics
+namespace Masterplan.Tools
 {
 	/// <summary>
 	/// Class for creating rectangles with rounded corners.

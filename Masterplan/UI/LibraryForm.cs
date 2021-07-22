@@ -43,7 +43,7 @@ namespace Masterplan.UI
 			else
 			{
 				Assembly ass = Assembly.GetEntryAssembly();
-				string dir = Utils.FileName.Directory(ass.FullName);
+				string dir = Tools.FileName.Directory(ass.FullName);
 				DirectoryInfo di = new DirectoryInfo(dir);
 
 				string filename = di + NameBox.Text + ".library";

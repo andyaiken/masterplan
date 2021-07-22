@@ -1,7 +1,5 @@
 ﻿using System.Windows.Forms;
 
-using Utils.Wizards;
-
 namespace Masterplan.Wizards
 {
 	partial class VariantFinishPage : UserControl, IWizardPage

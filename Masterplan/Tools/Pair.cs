@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Utils
+namespace Masterplan.Tools
 {
 	/// <summary>
 	/// Class representing a pair of linked objects.

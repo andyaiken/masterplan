@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 
-using Utils;
-using Utils.Wizards;
-
 using Masterplan.Data;
+using Masterplan.Tools;
 
 namespace Masterplan.Wizards
 {

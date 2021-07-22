@@ -1,4 +1,4 @@
-namespace Utils.Wizards
+namespace Masterplan.Wizards
 {
 	partial class WizardForm
 	{

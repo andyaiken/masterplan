@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-using Utils;
-using Utils.Wizards;
-
 using Masterplan.Data;
+using Masterplan.Tools;
 using Masterplan.UI;
 
 namespace Masterplan.Wizards

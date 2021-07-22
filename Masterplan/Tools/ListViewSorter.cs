@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Windows.Forms;
 
-namespace Utils
+namespace Masterplan.Tools
 {
 	/// <summary>
 	/// Provides methods for sorting ListView contents by column.

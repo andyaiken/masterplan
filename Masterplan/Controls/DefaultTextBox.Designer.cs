@@ -1,4 +1,4 @@
-﻿namespace Utils.Controls
+﻿namespace Masterplan.Controls
 {
 	partial class DefaultTextBox
 	{

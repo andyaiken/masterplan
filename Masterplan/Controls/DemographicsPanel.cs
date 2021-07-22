@@ -5,9 +5,8 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-using Utils;
-
 using Masterplan.Data;
+using Masterplan.Tools;
 
 namespace Masterplan.Controls
 {

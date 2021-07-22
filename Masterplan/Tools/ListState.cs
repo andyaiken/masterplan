@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 
-namespace Utils
+namespace Masterplan.Tools
 {
 	/// <summary>
 	/// Class providing static methods for saving and restoring the visible items in a ListView control.

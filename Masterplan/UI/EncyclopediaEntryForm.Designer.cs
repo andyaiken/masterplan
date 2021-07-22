@@ -33,13 +33,13 @@
 			this.CancelBtn = new System.Windows.Forms.Button();
 			this.TitleLbl = new System.Windows.Forms.Label();
 			this.TitleBox = new System.Windows.Forms.TextBox();
-			this.DetailsBox = new Utils.Controls.DefaultTextBox();
+			this.DetailsBox = new Masterplan.Controls.DefaultTextBox();
 			this.Pages = new System.Windows.Forms.TabControl();
 			this.DetailsPage = new System.Windows.Forms.TabPage();
 			this.PlayerStatusbar = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.DMPage = new System.Windows.Forms.TabPage();
-			this.DMBox = new Utils.Controls.DefaultTextBox();
+			this.DMBox = new Masterplan.Controls.DefaultTextBox();
 			this.DMStatusBar = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.LinksPage = new System.Windows.Forms.TabPage();
@@ -372,7 +372,7 @@
 		private System.Windows.Forms.Button CancelBtn;
 		private System.Windows.Forms.Label TitleLbl;
 		private System.Windows.Forms.TextBox TitleBox;
-		private Utils.Controls.DefaultTextBox DetailsBox;
+		private Masterplan.Controls.DefaultTextBox DetailsBox;
 		private System.Windows.Forms.TabControl Pages;
 		private System.Windows.Forms.TabPage DetailsPage;
 		private System.Windows.Forms.TabPage LinksPage;
@@ -383,7 +383,7 @@
 		private System.Windows.Forms.Label CatLbl;
 		private System.Windows.Forms.ComboBox CatBox;
 		private System.Windows.Forms.TabPage DMPage;
-		private Utils.Controls.DefaultTextBox DMBox;
+		private Masterplan.Controls.DefaultTextBox DMBox;
 		private System.Windows.Forms.StatusStrip DMStatusBar;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
 		private System.Windows.Forms.TabPage ImagesTab;

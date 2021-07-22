@@ -1,7 +1,5 @@
 ﻿using System.Windows.Forms;
 
-using Utils.Wizards;
-
 using Masterplan.Tools.Generators;
 
 namespace Masterplan.Wizards

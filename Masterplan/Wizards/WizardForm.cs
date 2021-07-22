@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Utils.Wizards
+namespace Masterplan.Wizards
 {
 	partial class WizardForm : Form
 	{

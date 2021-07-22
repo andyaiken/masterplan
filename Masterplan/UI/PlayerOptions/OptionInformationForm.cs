@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using Utils;
+using Masterplan.Tools;
 
 namespace Masterplan.UI
 {

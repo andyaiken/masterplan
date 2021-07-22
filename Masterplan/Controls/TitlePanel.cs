@@ -7,8 +7,6 @@ using System.Drawing.Text;
 using System.Reflection;
 using System.Windows.Forms;
 
-using Utils;
-
 namespace Masterplan.Controls
 {
 	partial class TitlePanel : UserControl

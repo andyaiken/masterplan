@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Utils
+namespace Masterplan.Tools
 {
 	/// <summary>
 	/// Class containing string manipulation methods.

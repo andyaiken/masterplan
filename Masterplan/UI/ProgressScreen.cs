@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Utils.Forms
+namespace Masterplan.UI
 {
 	/// <summary>
 	/// Form used to display progress of an action.

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-using Utils;
-
 using Masterplan.Tools;
 using Masterplan.UI;
 

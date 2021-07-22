@@ -32,7 +32,7 @@
 			this.CancelBtn = new System.Windows.Forms.Button();
 			this.TitleLbl = new System.Windows.Forms.Label();
 			this.TitleBox = new System.Windows.Forms.TextBox();
-			this.DetailsBox = new Utils.Controls.DefaultTextBox();
+			this.DetailsBox = new Masterplan.Controls.DefaultTextBox();
 			this.Pages = new System.Windows.Forms.TabControl();
 			this.DetailsPage = new System.Windows.Forms.TabPage();
 			this.Statusbar = new System.Windows.Forms.StatusStrip();
@@ -174,7 +174,7 @@
 		private System.Windows.Forms.Button CancelBtn;
 		private System.Windows.Forms.Label TitleLbl;
 		private System.Windows.Forms.TextBox TitleBox;
-		private Utils.Controls.DefaultTextBox DetailsBox;
+		private Masterplan.Controls.DefaultTextBox DetailsBox;
 		private System.Windows.Forms.TabControl Pages;
 		private System.Windows.Forms.TabPage DetailsPage;
 		private System.Windows.Forms.StatusStrip Statusbar;

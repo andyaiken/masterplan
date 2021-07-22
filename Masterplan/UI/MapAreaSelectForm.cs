@@ -177,7 +177,7 @@ namespace Masterplan.UI
 			td.TileID = tile.ID;
 
 			Map map = new Map();
-			map.Name = Utils.FileName.Name(open_dlg.FileName);
+			map.Name = Tools.FileName.Name(open_dlg.FileName);
 			map.Tiles.Add(td);
 
 			Session.Project.Maps.Add(map);
@@ -196,7 +196,7 @@ namespace Masterplan.UI
 				td.TileID = dlg.Tile.ID;
 
 				Map map = new Map();
-				map.Name = Utils.FileName.Name("New Map");
+				map.Name = Tools.FileName.Name("New Map");
 				map.Tiles.Add(td);
 
 				Session.Project.Maps.Add(map);

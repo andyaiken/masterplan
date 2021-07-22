@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 using System.Xml;
 using System.Text;
 
-namespace Utils
+namespace Masterplan.Tools
 {
 	/// <summary>
 	/// Enumeration defining the supported serialisation modes.

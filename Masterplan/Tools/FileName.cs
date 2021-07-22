@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace Utils
+namespace Masterplan.Tools
 {
 	/// <summary>
 	/// Class providing a set of static methods for file manipulation.

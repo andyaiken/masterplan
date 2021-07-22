@@ -4,8 +4,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-using Utils;
-
 using Masterplan.Controls;
 using Masterplan.Data;
 using Masterplan.Tools;

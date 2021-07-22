@@ -38,8 +38,8 @@
 			this.Pages = new System.Windows.Forms.TabControl();
 			this.DetailsPage = new System.Windows.Forms.TabPage();
 			this.TextSplitter = new System.Windows.Forms.SplitContainer();
-			this.DetailsBox = new Utils.Controls.DefaultTextBox();
-			this.ReadAloudBox = new Utils.Controls.DefaultTextBox();
+			this.DetailsBox = new Masterplan.Controls.DefaultTextBox();
+			this.ReadAloudBox = new Masterplan.Controls.DefaultTextBox();
 			this.MainToolbar = new System.Windows.Forms.ToolStrip();
 			this.SettingsMenu = new System.Windows.Forms.ToolStripDropDownButton();
 			this.SettingsColour = new System.Windows.Forms.ToolStripMenuItem();
@@ -927,8 +927,8 @@
 		private System.Windows.Forms.ToolStripButton DateBtn;
 		private System.Windows.Forms.ToolStripLabel ClearDateLbl;
 		private System.Windows.Forms.SplitContainer TextSplitter;
-		private Utils.Controls.DefaultTextBox ReadAloudBox;
-		private Utils.Controls.DefaultTextBox DetailsBox;
+		private Masterplan.Controls.DefaultTextBox ReadAloudBox;
+		private Masterplan.Controls.DefaultTextBox DetailsBox;
         private System.Windows.Forms.TabPage EncyclopediaPage;
         private System.Windows.Forms.ListView EncyclopediaList;
         private System.Windows.Forms.ToolStrip EncyclopediaToolbar;

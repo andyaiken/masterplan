@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Utils
+namespace Masterplan.Tools
 {
 	/// <summary>
 	/// Utility class for performing quick searches.

@@ -1,4 +1,4 @@
-﻿namespace Utils.Forms
+﻿namespace Masterplan.UI
 {
 	partial class ProgressScreen
 	{

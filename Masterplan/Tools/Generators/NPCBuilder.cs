@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 
-using Utils;
-
 namespace Masterplan.Tools.Generators
 {
 	class NPCBuilder

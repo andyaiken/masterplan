@@ -7,8 +7,6 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
-using Utils;
-
 using Masterplan.Controls;
 using Masterplan.Data;
 using Masterplan.Events;
@@ -3553,7 +3551,7 @@ namespace Masterplan.UI
 			try
 			{
 				Assembly ass = Assembly.GetEntryAssembly();
-				string path = Utils.FileName.Directory(ass.FullName) +"Manual.pdf";
+				string path = Tools.FileName.Directory(ass.FullName) +"Manual.pdf";
 
 				if (!File.Exists(path))
 					return;

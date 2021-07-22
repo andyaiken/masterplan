@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace Utils
+namespace Masterplan.Tools
 {
 	/// <summary>
 	/// Class containing static methods and properties used for diagnostic logging.

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Utils.Wizards
+namespace Masterplan.Wizards
 {
 	/// <summary>
 	/// Abstract class which can be inherited to define a custom wizard.

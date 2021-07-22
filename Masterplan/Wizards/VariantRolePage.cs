@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using Utils.Wizards;
-
 using Masterplan.Data;
 
 namespace Masterplan.Wizards

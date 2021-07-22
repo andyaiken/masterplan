@@ -5,8 +5,6 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Reflection;
 
-using Utils;
-
 using Masterplan.Data;
 using Masterplan.Tools.Generators;
 using Masterplan.UI;
@@ -2790,7 +2788,7 @@ namespace Masterplan.Tools
 			Assembly ass = Assembly.GetEntryAssembly();
 			if (ass != null)
 			{
-				string external_style_file = Utils.FileName.Directory(ass.Location) + "Style." + size + ".css";
+				string external_style_file = Tools.FileName.Directory(ass.Location) + "Style." + size + ".css";
 				if (File.Exists(external_style_file))
 				{
 					string[] file_lines = File.ReadAllLines(external_style_file);

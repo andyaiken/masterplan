@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace Utils.Controls
+namespace Masterplan.Controls
 {
 	/// <summary>
 	/// Text box which supports default text.

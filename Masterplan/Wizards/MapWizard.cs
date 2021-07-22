@@ -1,6 +1,4 @@
-﻿using Utils.Wizards;
-
-using Masterplan.Tools.Generators;
+﻿using Masterplan.Tools.Generators;
 
 namespace Masterplan.Wizards
 {

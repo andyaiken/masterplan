@@ -1,4 +1,4 @@
-namespace Utils.Wizards
+namespace Masterplan.Wizards
 {
 	/// <summary>
 	/// Interface defining a page in a wizard.

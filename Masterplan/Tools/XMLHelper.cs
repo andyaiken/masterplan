@@ -2,7 +2,7 @@
 using System.Xml;
 using System.Collections.Generic;
 
-namespace Utils
+namespace Masterplan.Tools
 {
 	/// <summary>
 	/// Class containing XML manipulation methods.

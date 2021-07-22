@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-using Utils;
-
 using Masterplan.Data;
 
 namespace Masterplan.Tools.Generators

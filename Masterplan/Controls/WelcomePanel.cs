@@ -5,8 +5,6 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
-using Utils;
-
 using Masterplan.Data;
 using Masterplan.Tools;
 
@@ -310,7 +308,7 @@ namespace Masterplan.Controls
 		string get_manual_filename()
 		{
 			Assembly ass = Assembly.GetEntryAssembly();
-			return Utils.FileName.Directory(ass.FullName) + "Manual.pdf";
+			return FileName.Directory(ass.FullName) + "Manual.pdf";
 		}
     }
 }
