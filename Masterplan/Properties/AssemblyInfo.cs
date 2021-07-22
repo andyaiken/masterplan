@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Masterplan")]
 [assembly: AssemblyDescription("Masterplan Adventure Design Studio is a plot organisation, campaign building and adventure design studio for D&D 4th Edition.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Habitual Indolence")]
 [assembly: AssemblyProduct("Masterplan Adventure Design Studio")]
 [assembly: AssemblyCopyright("Copyright © Andy Aiken 2021. All rights reserved. This product is protected by copyright and distributed under licences restricting copying, distribution and decompilation.")]
 [assembly: AssemblyTrademark("")]

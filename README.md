@@ -14,11 +14,13 @@ Extract all the files in this zip into their own folder, and run `Masterplan.exe
 
 ## Building and running it
 
-**Prerequisites** You'll need to have Visual Studio installed (community edition is fine).
+**Prerequisites** You'll need to have Visual Studio installed (community edition is fine), and the `Microsoft Visual Studio Installer Projects` extension loaded.
 
-To build Masterplan, open `Masterplan.sln` in Visual Studio and build the solution (F6).
+To build Masterplan, open `Masterplan.sln` in Visual Studio and build the `Masterplan` project (F6).
 
-Bear in mind that every time you build Masterplan, the library files are copied from `./Libraries` into the output folder, so any changes you make to these libraries won't be retained.
+Bear in mind that every time you build Masterplan in Visual Studio, the library files are copied from `./Libraries` into the output folder, so any changes you make to these libraries won't be retained.
+
+The other project in the solution is called `Setup`, which creates an installer.
 
 ## Contributing to it
 
