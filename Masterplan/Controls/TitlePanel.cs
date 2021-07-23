@@ -7,6 +7,8 @@ using System.Drawing.Text;
 using System.Reflection;
 using System.Windows.Forms;
 
+using Masterplan.Tools;
+
 namespace Masterplan.Controls
 {
 	partial class TitlePanel : UserControl
@@ -104,66 +106,73 @@ namespace Masterplan.Controls
 		{
 			base.OnPaint(e);
 
-			e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
-			e.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-			e.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
-
-			if (fTitleRect == Rectangle.Empty)
+			try
 			{
-				Rectangle rect = ClientRectangle;
-				SizeF version_size = e.Graphics.MeasureString(fVersion, Font);
-				double version_height = version_size.Height + (Height / 10);
+				e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
+				e.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+				e.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
 
-				fTitleRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, (int)(rect.Height - version_height - 1));
-				fVersionRect = new Rectangle(rect.Left, fTitleRect.Bottom, rect.Width - 1, (int)version_height);
-			}
-
-			if (fMode == TitlePanelMode.WelcomeScreen)
-			{
-				ColorMatrix cm = new ColorMatrix();
-				cm.Matrix33 = (0.25F * fAlpha) / MAX_ALPHA;
-
-				ImageAttributes ia = new ImageAttributes();
-				ia.SetColorMatrix(cm);
-
-				Image scroll_img = Masterplan.Properties.Resources.Scroll;
-
-				int y = ClientRectangle.Y + (int)(ClientRectangle.Height * 0.1);
-				int img_height = (int)(ClientRectangle.Height * 0.8);
-				int img_width = scroll_img.Width * img_height / scroll_img.Height;
-				if (img_width > ClientRectangle.Width)
+				if (fTitleRect == Rectangle.Empty)
 				{
-					img_width = ClientRectangle.Width;
-					img_height = scroll_img.Height * img_width / scroll_img.Width;
-				}
-				int x = ClientRectangle.X + ((ClientRectangle.Width - img_width) / 2);
+					Rectangle rect = ClientRectangle;
+					SizeF version_size = e.Graphics.MeasureString(fVersion, Font);
+					double version_height = version_size.Height + (Height / 10);
 
-				Rectangle img_rect = new Rectangle(x, y, img_width, img_height);
-				e.Graphics.DrawImage(scroll_img, img_rect, 0, 0, scroll_img.Width, scroll_img.Height, GraphicsUnit.Pixel, ia);
-			}
-
-			using (Brush title_brush = new SolidBrush(Color.FromArgb(fAlpha, ForeColor)))
-			{
-				float text_height = fTitleRect.Height / 2F;
-				float text_width = fTitleRect.Width / fTitle.Length;
-				float text_size = Math.Min(text_height, text_width);
-
-				if (fZooming)
-				{
-					float delta = 0.1F * fAlpha / MAX_ALPHA;
-					text_size *= (0.9F + delta);
-				}
-
-				if (text_height > 0)
-				{
-					using (Font title_font = new Font(Font.FontFamily, text_size))
-					{
-						e.Graphics.DrawString(fTitle, title_font, title_brush, fTitleRect, fFormat);
-					}
+					fTitleRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, (int)(rect.Height - version_height - 1));
+					fVersionRect = new Rectangle(rect.Left, fTitleRect.Bottom, rect.Width - 1, (int)version_height);
 				}
 
 				if (fMode == TitlePanelMode.WelcomeScreen)
-					e.Graphics.DrawString(fVersion, Font, title_brush, fVersionRect, fFormat);
+				{
+					ColorMatrix cm = new ColorMatrix();
+					cm.Matrix33 = (0.25F * fAlpha) / MAX_ALPHA;
+
+					ImageAttributes ia = new ImageAttributes();
+					ia.SetColorMatrix(cm);
+
+					Image scroll_img = Masterplan.Properties.Resources.Scroll;
+
+					int y = ClientRectangle.Y + (int)(ClientRectangle.Height * 0.1);
+					int img_height = (int)(ClientRectangle.Height * 0.8);
+					int img_width = scroll_img.Width * img_height / scroll_img.Height;
+					if (img_width > ClientRectangle.Width)
+					{
+						img_width = ClientRectangle.Width;
+						img_height = scroll_img.Height * img_width / scroll_img.Width;
+					}
+					int x = ClientRectangle.X + ((ClientRectangle.Width - img_width) / 2);
+
+					Rectangle img_rect = new Rectangle(x, y, img_width, img_height);
+					e.Graphics.DrawImage(scroll_img, img_rect, 0, 0, scroll_img.Width, scroll_img.Height, GraphicsUnit.Pixel, ia);
+				}
+
+				using (Brush title_brush = new SolidBrush(Color.FromArgb(fAlpha, ForeColor)))
+				{
+					float text_height = fTitleRect.Height / 2F;
+					float text_width = fTitleRect.Width / fTitle.Length;
+					float text_size = Math.Min(text_height, text_width);
+
+					if (fZooming)
+					{
+						float delta = 0.1F * fAlpha / MAX_ALPHA;
+						text_size *= (0.9F + delta);
+					}
+
+					if (text_height > 0)
+					{
+						using (Font title_font = new Font(Font.FontFamily, text_size))
+						{
+							e.Graphics.DrawString(fTitle, title_font, title_brush, fTitleRect, fFormat);
+						}
+					}
+
+					if (fMode == TitlePanelMode.WelcomeScreen)
+						e.Graphics.DrawString(fVersion, Font, title_brush, fVersionRect, fFormat);
+				}
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
 			}
 		}
 
