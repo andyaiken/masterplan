@@ -482,6 +482,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -2063,15 +2071,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Masterplan"
-        "ProductCode" = "8:{5A64AB36-24CA-4E8B-A10B-F38F19566582}"
-        "PackageCode" = "8:{368B5347-434A-4BA0-A6CE-136FE1C4227D}"
+        "ProductCode" = "8:{D3071804-436A-4DAF-A5C8-7FE6373E17BE}"
+        "PackageCode" = "8:{C05D6A10-C5E3-4CBE-9712-104B2E48CBA5}"
         "UpgradeCode" = "8:{9F69CB5D-A7A1-4AEA-B468-35992F863740}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:12.2.0"
         "Manufacturer" = "8:Habitual Indolence"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
