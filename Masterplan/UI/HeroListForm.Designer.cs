@@ -62,6 +62,7 @@
 			this.ParcelHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.ParcelDetailsHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.CloseBtn = new System.Windows.Forms.Button();
+			this.ImportCB = new System.Windows.Forms.ToolStripMenuItem();
 			this.Toolbar.SuspendLayout();
 			this.Pages.SuspendLayout();
 			this.DetailsPage.SuspendLayout();
@@ -93,6 +94,7 @@
 			// 
 			this.AddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.AddBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ImportCB,
             this.AddRandomCharacter,
             this.AddRandomParty,
             this.toolStripSeparator6,
@@ -107,26 +109,26 @@
 			// AddRandomCharacter
 			// 
 			this.AddRandomCharacter.Name = "AddRandomCharacter";
-			this.AddRandomCharacter.Size = new System.Drawing.Size(179, 22);
+			this.AddRandomCharacter.Size = new System.Drawing.Size(242, 22);
 			this.AddRandomCharacter.Text = "Random Character";
 			this.AddRandomCharacter.Click += new System.EventHandler(this.RandomPC_Click);
 			// 
 			// AddRandomParty
 			// 
 			this.AddRandomParty.Name = "AddRandomParty";
-			this.AddRandomParty.Size = new System.Drawing.Size(179, 22);
+			this.AddRandomParty.Size = new System.Drawing.Size(242, 22);
 			this.AddRandomParty.Text = "Random Party";
 			this.AddRandomParty.Click += new System.EventHandler(this.RandomParty_Click);
 			// 
 			// toolStripSeparator6
 			// 
 			this.toolStripSeparator6.Name = "toolStripSeparator6";
-			this.toolStripSeparator6.Size = new System.Drawing.Size(176, 6);
+			this.toolStripSeparator6.Size = new System.Drawing.Size(239, 6);
 			// 
 			// AddSuggest
 			// 
 			this.AddSuggest.Name = "AddSuggest";
-			this.AddSuggest.Size = new System.Drawing.Size(179, 22);
+			this.AddSuggest.Size = new System.Drawing.Size(242, 22);
 			this.AddSuggest.Text = "Suggest a Character";
 			this.AddSuggest.Click += new System.EventHandler(this.AddSuggest_Click);
 			// 
@@ -371,6 +373,13 @@
 			this.CloseBtn.Text = "Close";
 			this.CloseBtn.UseVisualStyleBackColor = true;
 			// 
+			// ImportCB
+			// 
+			this.ImportCB.Name = "ImportCB";
+			this.ImportCB.Size = new System.Drawing.Size(242, 22);
+			this.ImportCB.Text = "Import from Character Builder...";
+			this.ImportCB.Click += new System.EventHandler(this.Import_CB_Click);
+			// 
 			// HeroListForm
 			// 
 			this.AcceptButton = this.CloseBtn;
@@ -433,6 +442,6 @@
 		private System.Windows.Forms.ColumnHeader ParcelDetailsHdr;
 		private System.Windows.Forms.StatusStrip StatusBar;
 		private System.Windows.Forms.ToolStripStatusLabel PartySizeLbl;
-
+		private System.Windows.Forms.ToolStripMenuItem ImportCB;
 	}
 }

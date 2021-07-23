@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 using Masterplan.Data;
@@ -42,6 +43,7 @@ namespace Masterplan.UI
 				NPC npc = creature as NPC;
 				fCreature = npc.Copy();
 
+				OptionsImport.Enabled = false;
 				OptionsVariant.Enabled = false;
 			}
 
@@ -245,6 +247,13 @@ namespace Masterplan.UI
 						fCreature.Tactics = dlg.Details;
 						update_statblock();
 					}
+				}
+
+				if (e.Url.LocalPath == "import")
+				{
+					e.Cancel = true;
+
+					import_creature();
 				}
 
 				if (e.Url.LocalPath == "variant")
@@ -567,6 +576,11 @@ namespace Masterplan.UI
 
 		#region Menu
 
+		private void OptionsImport_Click(object sender, EventArgs e)
+		{
+			import_creature();
+		}
+
 		private void FileExport_Click(object sender, EventArgs e)
 		{
 			SaveFileDialog dlg = new SaveFileDialog();
@@ -757,31 +771,36 @@ namespace Masterplan.UI
 
 							bool hybrid = (Session.Creatures.Count >= 2);
 
-							lines.Add("<P class=table>");
-							lines.Add("<TABLE>");
-							lines.Add("<TR class=heading>");
-							lines.Add("<TD><B>Create A New Creature</B></TD>");
-							lines.Add("</TR>");
+						lines.Add("<P class=table>");
+						lines.Add("<TABLE>");
+						lines.Add("<TR class=heading>");
+						lines.Add("<TD><B>Create A New Creature</B></TD>");
+						lines.Add("</TR>");
+						lines.Add("<TR>");
+						lines.Add("<TD>");
+						lines.Add("Import a <A href=build:import>creature file</A> from Adventure Tools");
+						lines.Add("</TD>");
+						lines.Add("</TR>");
+						lines.Add("<TR>");
+						lines.Add("<TD>");
+						lines.Add("Create a <A href=build:variant>variant</A> of an existing creature");
+						lines.Add("</TD>");
+						lines.Add("</TR>");
+						lines.Add("<TR>");
+						lines.Add("<TD>");
+						lines.Add("Generate a <A href=build:random>random creature</A>");
+						lines.Add("</TD>");
+						lines.Add("</TR>");
+						if (hybrid)
+						{
 							lines.Add("<TR>");
 							lines.Add("<TD>");
-							lines.Add("Create a <A href=build:variant>variant</A> of an existing creature");
+							lines.Add("Generate a <A href=build:hybrid>hybrid creature</A>");
 							lines.Add("</TD>");
 							lines.Add("</TR>");
-							lines.Add("<TR>");
-							lines.Add("<TD>");
-							lines.Add("Generate a <A href=build:random>random creature</A>");
-							lines.Add("</TD>");
-							lines.Add("</TR>");
-							if (hybrid)
-							{
-								lines.Add("<TR>");
-								lines.Add("<TD>");
-								lines.Add("Generate a <A href=build:hybrid>hybrid creature</A>");
-								lines.Add("</TD>");
-								lines.Add("</TR>");
-							}
-							lines.Add("</TABLE>");
-							lines.Add("</P>");
+						}
+						lines.Add("</TABLE>");
+						lines.Add("</P>");
 
 							#endregion
 
@@ -1192,6 +1211,28 @@ namespace Masterplan.UI
 			}
 
 			return str;
+		}
+
+		void import_creature()
+		{
+			OpenFileDialog dlg = new OpenFileDialog();
+			dlg.Filter = Program.MonsterFilter;
+
+			if (dlg.ShowDialog() == DialogResult.OK)
+			{
+				string xml = File.ReadAllText(dlg.FileName);
+				Creature c = AppImport.ImportCreature(xml);
+				if (c != null)
+				{
+					Guid id = fCreature.ID;
+					CreatureHelper.CopyFields(c, fCreature);
+					//fCreature = c;
+					fCreature.ID = id;
+
+					find_sample_powers();
+					update_view();
+				}
+			}
 		}
 
 		void create_random()

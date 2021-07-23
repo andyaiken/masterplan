@@ -33,6 +33,7 @@
 			this.FileMenu = new System.Windows.Forms.ToolStripDropDownButton();
 			this.FileExport = new System.Windows.Forms.ToolStripMenuItem();
 			this.OptionsMenu = new System.Windows.Forms.ToolStripDropDownButton();
+			this.OptionsImport = new System.Windows.Forms.ToolStripMenuItem();
 			this.OptionsVariant = new System.Windows.Forms.ToolStripMenuItem();
 			this.OptionsRandom = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -110,6 +111,7 @@
 			// 
 			this.OptionsMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.OptionsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OptionsImport,
             this.OptionsVariant,
             this.OptionsRandom,
             this.toolStripSeparator1,
@@ -121,6 +123,13 @@
 			this.OptionsMenu.Name = "OptionsMenu";
 			this.OptionsMenu.Size = new System.Drawing.Size(62, 22);
 			this.OptionsMenu.Text = "Options";
+			// 
+			// OptionsImport
+			// 
+			this.OptionsImport.Name = "OptionsImport";
+			this.OptionsImport.Size = new System.Drawing.Size(242, 22);
+			this.OptionsImport.Text = "Import from Adventure Tools...";
+			this.OptionsImport.Click += new System.EventHandler(this.OptionsImport_Click);
 			// 
 			// OptionsVariant
 			// 
@@ -430,6 +439,7 @@
 		private System.Windows.Forms.WebBrowser StatBlockBrowser;
 		private System.Windows.Forms.TabPage PicturePage;
 		private System.Windows.Forms.ToolStripDropDownButton OptionsMenu;
+		private System.Windows.Forms.ToolStripMenuItem OptionsImport;
 		private System.Windows.Forms.ToolStripMenuItem OptionsVariant;
 		private System.Windows.Forms.PictureBox PortraitBox;
 		private System.Windows.Forms.ToolStrip PictureToolbar;

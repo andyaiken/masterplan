@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 using Masterplan.Data;
+using Masterplan.Tools;
 
 namespace Masterplan.UI
 {
@@ -72,6 +74,32 @@ namespace Masterplan.UI
 			{
 				add_hero(dlg.Hero);
 				update_view();
+			}
+		}
+
+		private void Import_CB_Click(object sender, EventArgs e)
+		{
+			OpenFileDialog dlg = new OpenFileDialog();
+			dlg.Filter = "Character File|*.dnd4e";
+			dlg.Multiselect = true;
+
+			if (dlg.ShowDialog() == DialogResult.OK)
+			{
+				foreach (string filename in dlg.FileNames)
+				{
+					string xml = File.ReadAllText(filename);
+					Hero hero = AppImport.ImportHero(xml);
+
+					if (hero != null)
+					{
+						add_hero(hero);
+						update_view();
+					}
+					else
+					{
+						MessageBox.Show("The character file could not be loaded.", "Masterplan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+				}
 			}
 		}
 

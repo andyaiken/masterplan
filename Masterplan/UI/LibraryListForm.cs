@@ -1072,7 +1072,7 @@ namespace Masterplan.UI
 					return;
 
 				OpenFileDialog dlg = new OpenFileDialog();
-				dlg.Filter = Program.CreatureFilter;
+				dlg.Filter = Program.CreatureAndMonsterFilter;
 				dlg.Multiselect = true;
 
 				if (dlg.ShowDialog() == DialogResult.OK)
@@ -1083,6 +1083,11 @@ namespace Masterplan.UI
 						if (filename.EndsWith("creature"))
 						{
 							c = Serialisation<Creature>.Load(filename, SerialisationMode.Binary);
+						}
+						if (filename.EndsWith("monster"))
+						{
+							string xml = File.ReadAllText(filename);
+							c = AppImport.ImportCreature(xml);
 						}
 
 						if (c != null)
