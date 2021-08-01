@@ -98,7 +98,7 @@ namespace Masterplan.Controls
         /// <param name="e">Event arguments.</param>
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            if ((e.Modifiers & Keys.Control) == Keys.Control)
+            if ((e.Modifiers & Keys.Control) == Keys.Control & (e.Modifiers & Keys.Alt) != Keys.Alt)
             {
                 if (e.KeyCode == Keys.A)
                 {
