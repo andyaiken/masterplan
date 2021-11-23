@@ -876,10 +876,22 @@ namespace Masterplan.Data
 							if (exp != null)
 							{
 								DiceExpression exp_adj = exp.Adjust(fLevelAdjustment);
-								DiceExpression exp_adj_2 = exp_adj.Adjust(Session.Project.CampaignSettings.Damage);
-								if ((exp_adj_2 != null) && (exp.ToString() != exp_adj_2.ToString()))
+								if ((exp_adj != null) && (exp.ToString() != exp_adj.ToString()))
 								{
-									cp.Details = cp.Details.Replace(dmg_str, exp_adj_2 + " damage (adjusted from " + dmg_str + ")");
+									cp.Details = cp.Details.Replace(dmg_str, exp_adj + " damage (adjusted from " + dmg_str + ")");
+								}
+							}
+						}
+						string dmg_str_2 = AI.ExtractDamageR(cp.Details);
+						if (dmg_str_2 !="")
+                        {
+							DiceExpression exp = DiceExpression.Parse(dmg_str_2);
+							if (exp != null)
+							{
+								DiceExpression exp_adj = exp.Adjust(Session.Project.CampaignSettings.Damage);
+								if ((exp_adj != null) && (exp.ToString() != exp_adj.ToString()))
+								{
+									cp.Details = cp.Details.Replace(dmg_str_2, exp_adj + " (was " + dmg_str_2 +")");
 								}
 							}
 						}

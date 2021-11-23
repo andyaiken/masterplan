@@ -43,7 +43,7 @@ namespace Masterplan.Data
 		/// </summary>
 		public double Damage
 		{
-			get { return fDamage; }
+			get { if (fDamage == 0) fDamage = 1; return fDamage; }
 			set { if (value == 0) value = 1; fDamage = value; }
 		}
 		double fDamage = 1.0;
