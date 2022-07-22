@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 using Masterplan.Data;
-using System.Text.RegularExpressions;
 
 namespace Masterplan.Tools
 {

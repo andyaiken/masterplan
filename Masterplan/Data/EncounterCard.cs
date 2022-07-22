@@ -853,7 +853,7 @@ namespace Masterplan.Data
                 }
 
 				// Handle level adjustment
-				if (fLevelAdjustment != 0 || Session.Project.CampaignSettings.AttackBonus!=0 || Math.Abs(Session.Project.CampaignSettings.Damage-1.0)< 1e-5)
+				if (fLevelAdjustment != 0 || Session.Project.CampaignSettings.AttackBonus != 0 || Math.Abs(Session.Project.CampaignSettings.Damage - 1.0) < 1e-5)
 				{
 					foreach (CreaturePower cp in powers)
 					{
