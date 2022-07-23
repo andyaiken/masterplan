@@ -853,7 +853,7 @@ namespace Masterplan.Data
                 }
 
 				// Handle level adjustment
-				if (fLevelAdjustment != 0)
+				if (fLevelAdjustment != 0 || Session.Project.CampaignSettings.AttackBonus != 0 || Math.Abs(Session.Project.CampaignSettings.Damage - 1.0) < 1e-5)
 				{
 					foreach (CreaturePower cp in powers)
 					{
@@ -879,6 +879,19 @@ namespace Masterplan.Data
 								if ((exp_adj != null) && (exp.ToString() != exp_adj.ToString()))
 								{
 									cp.Details = cp.Details.Replace(dmg_str, exp_adj + " damage (adjusted from " + dmg_str + ")");
+								}
+							}
+						}
+						string dmg_str_2 = AI.ExtractDamageR(cp.Details);
+						if (dmg_str_2 !="")
+                        {
+							DiceExpression exp = DiceExpression.Parse(dmg_str_2);
+							if (exp != null)
+							{
+								DiceExpression exp_adj = exp.Adjust(Session.Project.CampaignSettings.Damage);
+								if ((exp_adj != null) && (exp.ToString() != exp_adj.ToString()))
+								{
+									cp.Details = cp.Details.Replace(dmg_str_2, exp_adj + " (was " + dmg_str_2 +")");
 								}
 							}
 						}

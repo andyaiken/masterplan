@@ -385,5 +385,14 @@ namespace Masterplan.Tools
 
 			return adjusted;
 		}
+		public DiceExpression Adjust(double percentage_adjustment)
+		{
+			double diceExpected = Throws * (Sides + 1) / 2.0f;
+			double expected = diceExpected + Constant;
+			double adjusted = expected * percentage_adjustment;
+			double adjustedConstant = adjusted - diceExpected;
+
+			return new DiceExpression(Throws, Sides, (int)adjustedConstant);
+		}
 	}
 }

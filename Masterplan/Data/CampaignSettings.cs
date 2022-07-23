@@ -39,6 +39,16 @@ namespace Masterplan.Data
 		int fAttackBonus = 0;
 
 		/// <summary>
+		/// Gets or sets the damage multiplier.
+		/// </summary>
+		public double Damage
+		{
+			get { if (fDamage == 0) fDamage = 1; return fDamage; }
+			set { if (value == 0) value = 1; fDamage = value; }
+		}
+		double fDamage = 1.0;
+
+		/// <summary>
 		/// Gets or sets the bonus to AC.
 		/// </summary>
 		public int ACBonus

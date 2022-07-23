@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 using Masterplan.Data;
 
@@ -282,6 +283,30 @@ namespace Masterplan.Tools
 					return section;
 			}
 
+			return "";
+		}
+
+		const String damageRegExp = @"((?<dCount>[0-9]{1,2})d(?<dSize>[0-9]{1,2})[ ]*(?<dConst>(\+|-)[ ]*[0-9]{1,2})?|(?<dConst>[0-9]{1,2}))[ ]*[a-z, ]*?[ ]+(dmg|damage)";
+		/*
+		 * This regexp will match text like 
+		 * 10d12+3 fire and lightning damage
+		 * 12 fire dmg
+		 * 1d6 - 3 damage
+		 * 
+		 * it has 3 named capture groups - 
+		 * dCount contains the number of dice to roll
+		 * dSize has the sides on the dice to roll
+		 * dConst has the constant damage expression
+		 */
+
+		public static string ExtractDamageR(string source)
+		{
+			Regex re = new Regex(damageRegExp);
+			Match match = re.Match(source);
+			if (match.Success)
+            {
+				return match.Value;
+            }
 			return "";
 		}
 
