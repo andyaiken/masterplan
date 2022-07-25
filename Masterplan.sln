@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masterplan", "Masterplan\Masterplan.csproj", "{C1FE3BA8-4B4F-4494-AE1F-44FF56674BE6}"
 EndProject
@@ -16,11 +16,15 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1FE3BA8-4B4F-4494-AE1F-44FF56674BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1FE3BA8-4B4F-4494-AE1F-44FF56674BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1FE3BA8-4B4F-4494-AE1F-44FF56674BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1FE3BA8-4B4F-4494-AE1F-44FF56674BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7F557FC-1888-43F1-85DE-F7D4E81134E7}.Debug|Any CPU.ActiveCfg = Release
 		{F7F557FC-1888-43F1-85DE-F7D4E81134E7}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
