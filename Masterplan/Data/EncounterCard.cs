@@ -882,7 +882,7 @@ namespace Masterplan.Data
 								}
 							}
 						}
-						string dmg_str_2 = AI.ExtractDamageR(cp.Details);
+						string dmg_str_2 = AI.ExtractDamage(cp.Details);
 						if (dmg_str_2 !="")
                         {
 							DiceExpression exp = DiceExpression.Parse(dmg_str_2);

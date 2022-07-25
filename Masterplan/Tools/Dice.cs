@@ -3,128 +3,128 @@ using System.Collections.Generic;
 
 namespace Masterplan.Tools
 {
-    class DiceStatistics
-    {
-        public static Dictionary<int, int> Odds(List<int> dice, int constant)
-        {
-            Dictionary<int, int> odds = new Dictionary<int, int>();
+	class DiceStatistics
+	{
+		public static Dictionary<int, int> Odds(List<int> dice, int constant)
+		{
+			Dictionary<int, int> odds = new Dictionary<int, int>();
 
-            if (dice.Count > 0)
-            {
-                int combinations = 1;
-                foreach (int die in dice)
-                    combinations *= die;
+			if (dice.Count > 0)
+			{
+				int combinations = 1;
+				foreach (int die in dice)
+					combinations *= die;
 
-                // Work out how quickly each die rolls over
-                int[] frequencies = new int[dice.Count];
-                frequencies[dice.Count - 1] = 1;
-                for (int n = dice.Count - 2; n >= 0; --n)
-                    frequencies[n] = frequencies[n + 1] * dice[n + 1];
+				// Work out how quickly each die rolls over
+				int[] frequencies = new int[dice.Count];
+				frequencies[dice.Count - 1] = 1;
+				for (int n = dice.Count - 2; n >= 0; --n)
+					frequencies[n] = frequencies[n + 1] * dice[n + 1];
 
-                for (int n = 0; n != combinations; ++n)
-                {
-                    // Work out the number for each die
-                    List<int> rolls = new List<int>();
-                    for (int index = 0; index != dice.Count; ++index)
-                    {
-                        int die = dice[index];
-                        int roll = ((n / frequencies[index]) % die) + 1;
+				for (int n = 0; n != combinations; ++n)
+				{
+					// Work out the number for each die
+					List<int> rolls = new List<int>();
+					for (int index = 0; index != dice.Count; ++index)
+					{
+						int die = dice[index];
+						int roll = ((n / frequencies[index]) % die) + 1;
 
-                        rolls.Add(roll);
-                    }
+						rolls.Add(roll);
+					}
 
-                    // Work out the sum
-                    int sum = constant;
-                    foreach (int roll in rolls)
-                        sum += roll;
+					// Work out the sum
+					int sum = constant;
+					foreach (int roll in rolls)
+						sum += roll;
 
-                    if (!odds.ContainsKey(sum))
-                        odds[sum] = 0;
+					if (!odds.ContainsKey(sum))
+						odds[sum] = 0;
 
-                    odds[sum] += 1;
-                }
-            }
+					odds[sum] += 1;
+				}
+			}
 
-            return odds;
-        }
+			return odds;
+		}
 
-        public static string Expression(List<int> dice, int constant)
-        {
-            int d4 = 0;
-            int d6 = 0;
-            int d8 = 0;
-            int d10 = 0;
-            int d12 = 0;
-            int d20 = 0;
+		public static string Expression(List<int> dice, int constant)
+		{
+			int d4 = 0;
+			int d6 = 0;
+			int d8 = 0;
+			int d10 = 0;
+			int d12 = 0;
+			int d20 = 0;
 
-            foreach (int die in dice)
-            {
-                switch (die)
-                {
-                    case 4:
-                        d4 += 1;
-                        break;
-                    case 6:
-                        d6 += 1;
-                        break;
-                    case 8:
-                        d8 += 1;
-                        break;
-                    case 10:
-                        d10 += 1;
-                        break;
-                    case 12:
-                        d12 += 1;
-                        break;
-                    case 20:
-                        d20 += 1;
-                        break;
-                }
-            }
+			foreach (int die in dice)
+			{
+				switch (die)
+				{
+					case 4:
+						d4 += 1;
+						break;
+					case 6:
+						d6 += 1;
+						break;
+					case 8:
+						d8 += 1;
+						break;
+					case 10:
+						d10 += 1;
+						break;
+					case 12:
+						d12 += 1;
+						break;
+					case 20:
+						d20 += 1;
+						break;
+				}
+			}
 
-            string exp = "";
-            if (d4 != 0)
-            {
-                if (exp != "")
-                    exp += " + ";
+			string exp = "";
+			if (d4 != 0)
+			{
+				if (exp != "")
+					exp += " + ";
 
-                exp += d4 + "d4";
-            }
-            if (d6 != 0)
-            {
-                if (exp != "")
-                    exp += " + ";
+				exp += d4 + "d4";
+			}
+			if (d6 != 0)
+			{
+				if (exp != "")
+					exp += " + ";
 
-                exp += d6 + "d6";
-            }
-            if (d8 != 0)
-            {
-                if (exp != "")
-                    exp += " + ";
+				exp += d6 + "d6";
+			}
+			if (d8 != 0)
+			{
+				if (exp != "")
+					exp += " + ";
 
-                exp += d8 + "d8";
-            }
-            if (d10 != 0)
-            {
-                if (exp != "")
-                    exp += " + ";
+				exp += d8 + "d8";
+			}
+			if (d10 != 0)
+			{
+				if (exp != "")
+					exp += " + ";
 
-                exp += d10 + "d10";
-            }
-            if (d12 != 0)
-            {
-                if (exp != "")
-                    exp += " + ";
+				exp += d10 + "d10";
+			}
+			if (d12 != 0)
+			{
+				if (exp != "")
+					exp += " + ";
 
-                exp += d12 + "d12";
-            }
-            if (d20 != 0)
-            {
-                if (exp != "")
-                    exp += " + ";
+				exp += d12 + "d12";
+			}
+			if (d20 != 0)
+			{
+				if (exp != "")
+					exp += " + ";
 
-                exp += d20 + "d20";
-            }
+				exp += d20 + "d20";
+			}
 
 			if (constant != 0)
 			{
@@ -136,9 +136,9 @@ namespace Masterplan.Tools
 				exp += constant.ToString();
 			}
 
-            return exp;
-        }
-    }
+			return exp;
+		}
+	}
 
 	class DiceExpression
 	{
@@ -384,6 +384,15 @@ namespace Masterplan.Tools
 			}
 
 			return adjusted;
+		}
+		public DiceExpression Adjust(double percentage_adjustment)
+		{
+			double diceExpected = Throws * (Sides + 1) / 2.0f;
+			double expected = diceExpected + Constant;
+			double adjusted = expected * percentage_adjustment;
+			double adjustedConstant = adjusted - diceExpected;
+
+			return new DiceExpression(Throws, Sides, (int)adjustedConstant);
 		}
 	}
 }
