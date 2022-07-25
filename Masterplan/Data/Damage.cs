@@ -116,9 +116,9 @@ namespace Masterplan.Data
 		public override string ToString()
 		{
 			if (fValue == 0)
-				return "Immune to " + fType.ToString().ToLower();
+				return Session.I18N.ImmuneTo + " " + fType.ToString().ToLower();
 
-			string header = (fValue < 0) ? "Resist" : "Vulnerable";
+			string header = (fValue < 0) ? Session.I18N.Resist : Session.I18N.Vulnerable;
 			int val = Math.Abs(fValue);
 
 			return header + " " + val + " " + fType.ToString().ToLower();
@@ -226,9 +226,9 @@ namespace Masterplan.Data
 		{
 			int total_mod = fHeroicValue + fParagonValue + fEpicValue;
 			if (total_mod == 0)
-				return "Immune to " + fType.ToString().ToLower();
+				return Session.I18N.ImmuneTo + " " + fType.ToString().ToLower();
 
-			string header = (fHeroicValue < 0) ? "Resist" : "Vulnerable";
+			string header = (fHeroicValue < 0) ? Session.I18N.Resist : Session.I18N.Vulnerable;
 			int heroic = Math.Abs(fHeroicValue);
 			int paragon = Math.Abs(fParagonValue);
 			int epic = Math.Abs(fEpicValue);

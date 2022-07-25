@@ -281,6 +281,7 @@
     <Compile Include="Extensibility\IApplication.cs" />
     <Compile Include="Extensibility\ICommand.cs" />
     <Compile Include="Extensibility\IPage.cs" />
+    <Compile Include="I18N.cs" />
     <Compile Include="Preferences.cs" />
     <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1362,12 +1363,15 @@
     </Compile>
     <EmbeddedResource Include="Controls\Elements\EncounterPanel.resx">
       <DependentUpon>EncounterPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Elements\MapElementPanel.resx">
       <DependentUpon>MapElementPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MapView.resx">
       <DependentUpon>MapView.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PlotView.resx">
       <DependentUpon>PlotView.cs</DependentUpon>
@@ -1375,27 +1379,35 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\QuestPanel.resx">
       <DependentUpon>QuestPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Elements\SkillChallengePanel.resx">
       <DependentUpon>SkillChallengePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TitlePanel.resx">
       <DependentUpon>TitlePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Elements\TrapElementPanel.resx">
       <DependentUpon>TrapElementPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\WelcomePanel.resx">
       <DependentUpon>WelcomePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AuraForm.resx">
       <DependentUpon>AuraForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AutoBuildForm.resx">
       <DependentUpon>AutoBuildForm.cs</DependentUpon>
@@ -1407,156 +1419,207 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CombatDataForm.resx">
       <DependentUpon>CombatDataForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CombatForm.resx">
       <DependentUpon>CombatForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ProgressScreen.resx">
       <DependentUpon>ProgressScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TokenLinkListForm.resx">
       <DependentUpon>TokenLinkListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EffectListForm.resx">
       <DependentUpon>EffectListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureClassForm.resx">
       <DependentUpon>CreatureClassForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EffectForm.resx">
       <DependentUpon>EffectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CalendarListForm.resx">
       <DependentUpon>CalendarListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CalendarEventForm.resx">
       <DependentUpon>CalendarEventForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BackgroundForm.resx">
       <DependentUpon>BackgroundForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EndedEffectsForm.resx">
       <DependentUpon>EndedEffectsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionClassForm.resx">
       <DependentUpon>OptionClassForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionRitualForm.resx">
       <DependentUpon>OptionRitualForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionLevelForm.resx">
       <DependentUpon>OptionLevelForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionPowerSectionForm.resx">
       <DependentUpon>OptionPowerSectionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionEpicDestinyForm.resx">
       <DependentUpon>OptionEpicDestinyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionPowerForm.resx">
       <DependentUpon>OptionPowerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionFeatureForm.resx">
       <DependentUpon>OptionFeatureForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionParagonPathForm.resx">
       <DependentUpon>OptionParagonPathForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionRaceForm.resx">
       <DependentUpon>OptionRaceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionBackgroundForm.resx">
       <DependentUpon>OptionBackgroundForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EncyclopediaGroupForm.resx">
       <DependentUpon>EncyclopediaGroupForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\HandoutForm.resx">
       <DependentUpon>HandoutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionFeatForm.resx">
       <DependentUpon>OptionFeatForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PausedCombatListForm.resx">
       <DependentUpon>PausedCombatListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PowerBrowserForm.resx">
       <DependentUpon>PowerBrowserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MapSelectForm.resx">
       <DependentUpon>MapSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MapPrintingForm.resx">
       <DependentUpon>MapPrintingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LevelForm.resx">
       <DependentUpon>LevelForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ParcelSelectForm.resx">
       <DependentUpon>ParcelSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerViewForm.resx">
       <DependentUpon>PlayerViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TileLibrarySelectForm.resx">
       <DependentUpon>TileLibrarySelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SkillChallengeSelectForm.resx">
       <DependentUpon>SkillChallengeSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SkillChallengeDetailsForm.resx">
       <DependentUpon>SkillChallengeDetailsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TrapDetailsForm.resx">
       <DependentUpon>TrapDetailsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TrapSelectForm.resx">
       <DependentUpon>TrapSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TrapAttackForm.resx">
       <DependentUpon>TrapAttackForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TrapCountermeasureForm.resx">
       <DependentUpon>TrapCountermeasureForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureSelectForm.resx">
       <DependentUpon>CreatureSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TileSelectForm.resx">
       <DependentUpon>TileSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DetailsForm.resx">
       <DependentUpon>DetailsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DemographicsForm.resx">
       <DependentUpon>DemographicsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PowerAttackForm.resx">
       <DependentUpon>PowerAttackForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PowerForm.resx">
       <DependentUpon>PowerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PowerActionForm.resx">
       <DependentUpon>PowerActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TileBreakdownForm.resx">
       <DependentUpon>TileBreakdownForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TokenLinkForm.resx">
       <DependentUpon>TokenLinkForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DateForm.resx">
       <DependentUpon>DateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EncyclopediaEntryForm.resx">
       <DependentUpon>EncyclopediaEntryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomTokenForm.resx">
       <DependentUpon>CustomTokenForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\NPCForm.resx">
       <DependentUpon>NPCForm.cs</DependentUpon>
@@ -1564,39 +1627,51 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DamageForm.resx">
       <DependentUpon>DamageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DamageModifierTemplateForm.resx">
       <DependentUpon>DamageModifierTemplateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DamageModifierForm.resx">
       <DependentUpon>DamageModifierForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\OngoingDamageForm.resx">
       <DependentUpon>OngoingDamageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SavingThrowForm.resx">
       <DependentUpon>SavingThrowForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SeasonForm.resx">
       <DependentUpon>SeasonForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SatelliteForm.resx">
       <DependentUpon>SatelliteForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DayForm.resx">
       <DependentUpon>DayForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MonthForm.resx">
       <DependentUpon>MonthForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\InitiativeForm.resx">
       <DependentUpon>InitiativeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\HeroListForm.resx">
       <DependentUpon>HeroListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\HeroForm.resx">
       <DependentUpon>HeroForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomCreatureForm.resx">
       <DependentUpon>CustomCreatureForm.cs</DependentUpon>
@@ -1604,6 +1679,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomCreatureListForm.resx">
       <DependentUpon>CustomCreatureListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\OverviewForm.resx">
       <DependentUpon>OverviewForm.cs</DependentUpon>
@@ -1611,9 +1687,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DeckListForm.resx">
       <DependentUpon>DeckListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MapAreaForm.resx">
       <DependentUpon>MapAreaForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MapListForm.resx">
       <DependentUpon>MapListForm.cs</DependentUpon>
@@ -1621,21 +1699,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MapBuilderForm.resx">
       <DependentUpon>MapBuilderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TileForm.resx">
       <DependentUpon>TileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ParcelForm.resx">
       <DependentUpon>ParcelForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ProjectForm.resx">
       <DependentUpon>ProjectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\RoleForm.resx">
       <DependentUpon>RoleForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EncounterBuilderForm.resx">
       <DependentUpon>EncounterBuilderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -1643,6 +1727,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlotPointForm.resx">
       <DependentUpon>PlotPointForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1659,36 +1744,47 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SkillChallengeSkillForm.resx">
       <DependentUpon>SkillChallengeSkillForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TrapSkillForm.resx">
       <DependentUpon>TrapSkillForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ParcelListForm.resx">
       <DependentUpon>ParcelListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Wizards\EncounterSelectionPage.resx">
       <DependentUpon>EncounterSelectionPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Wizards\EncounterTemplatePage.resx">
       <DependentUpon>EncounterTemplatePage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Wizards\MapAreasPage.resx">
       <DependentUpon>MapAreasPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Wizards\MapLibrariesPage.resx">
       <DependentUpon>MapLibrariesPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Wizards\VariantBasePage.resx">
       <DependentUpon>VariantBasePage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Wizards\VariantFinishPage.resx">
       <DependentUpon>VariantFinishPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Wizards\VariantRolePage.resx">
       <DependentUpon>VariantRolePage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Wizards\VariantTemplatesPage.resx">
       <DependentUpon>VariantTemplatesPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Wizards\WizardForm.resx">
       <DependentUpon>WizardForm.cs</DependentUpon>
@@ -1802,157 +1898,207 @@
   <ItemGroup>
     <EmbeddedResource Include="Controls\DicePanel.resx">
       <DependentUpon>DicePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\EncounterGauge.resx">
       <DependentUpon>EncounterGauge.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilterPanel.resx">
       <DependentUpon>FilterPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\InfoPanel.resx">
       <DependentUpon>InfoPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LevelRangePanel.resx">
       <DependentUpon>LevelRangePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LibraryHelpPanel.resx">
       <DependentUpon>LibraryHelpPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TokenPanel.resx">
       <DependentUpon>TokenPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Scroll.ico" />
     <EmbeddedResource Include="UI\CampaignSettingsForm.resx">
       <DependentUpon>CampaignSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CombatantSelectForm.resx">
       <DependentUpon>CombatantSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AttackRollForm.resx">
       <DependentUpon>AttackRollForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ArtifactBuilderForm.resx">
       <DependentUpon>ArtifactBuilderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ArtifactDetailsForm.resx">
       <DependentUpon>ArtifactDetailsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ArtifactSelectForm.resx">
       <DependentUpon>ArtifactSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ArtifactProfileForm.resx">
       <DependentUpon>ArtifactProfileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ArtifactConcordanceForm.resx">
       <DependentUpon>ArtifactConcordanceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PowerDetailsForm.resx">
       <DependentUpon>PowerDetailsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TerrainPowerDetailsForm.resx">
       <DependentUpon>TerrainPowerDetailsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TerrainPowerSelectForm.resx">
       <DependentUpon>TerrainPowerSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\GroupHealthForm.resx">
       <DependentUpon>GroupHealthForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureSkillForm.resx">
       <DependentUpon>CreatureSkillForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureSkillsForm.resx">
       <DependentUpon>CreatureSkillsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureDetailsForm.resx">
       <DependentUpon>CreatureDetailsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureMultipleSelectForm.resx">
       <DependentUpon>CreatureMultipleSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureTemplateSelectForm.resx">
       <DependentUpon>CreatureTemplateSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EncounterReportForm.resx">
       <DependentUpon>EncounterReportForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\GroupInitiativeForm.resx">
       <DependentUpon>GroupInitiativeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DisplayNameForm.resx">
       <DependentUpon>DisplayNameForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PartyForm.resx">
       <DependentUpon>PartyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\RandomCreatureForm.resx">
       <DependentUpon>RandomCreatureForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PowerStatisticsForm.resx">
       <DependentUpon>PowerStatisticsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LevelAdjustmentForm.resx">
       <DependentUpon>LevelAdjustmentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\InfoForm.resx">
       <DependentUpon>InfoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SkillChallengeBuilderForm.resx">
       <DependentUpon>SkillChallengeBuilderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ProjectChecklistForm.resx">
       <DependentUpon>ProjectChecklistForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MagicItemProfileForm.resx">
       <DependentUpon>MagicItemProfileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MagicItemBuilderForm.resx">
       <DependentUpon>MagicItemBuilderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureTemplateStatsForm.resx">
       <DependentUpon>CreatureTemplateStatsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureTemplateProfileForm.resx">
       <DependentUpon>CreatureTemplateProfileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureTemplateBuilderForm.resx">
       <DependentUpon>CreatureTemplateBuilderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EncyclopediaEntryDetailsForm.resx">
       <DependentUpon>EncyclopediaEntryDetailsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\IssuesForm.resx">
       <DependentUpon>IssuesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TrapActionForm.resx">
       <DependentUpon>TrapActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TrapProfileForm.resx">
       <DependentUpon>TrapProfileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TrapBuilderForm.resx">
       <DependentUpon>TrapBuilderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PowerRangeForm.resx">
       <DependentUpon>PowerRangeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PowerInfoForm.resx">
       <DependentUpon>PowerInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PowerBuilderForm.resx">
       <DependentUpon>PowerBuilderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureAbilityForm.resx">
       <DependentUpon>CreatureAbilityForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureStatsForm.resx">
       <DependentUpon>CreatureStatsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureProfileForm.resx">
       <DependentUpon>CreatureProfileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DamageModListForm.resx">
       <DependentUpon>DamageModListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureBuilderForm.resx">
       <DependentUpon>CreatureBuilderForm.cs</DependentUpon>
@@ -1960,57 +2106,75 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CreatureTemplateDetailsForm.resx">
       <DependentUpon>CreatureTemplateDetailsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EncyclopediaImageForm.resx">
       <DependentUpon>EncyclopediaImageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\HeroSelectForm.resx">
       <DependentUpon>HeroSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\RechargeForm.resx">
       <DependentUpon>RechargeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DieRollerForm.resx">
       <DependentUpon>DieRollerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MergeLibrariesForm.resx">
       <DependentUpon>MergeLibrariesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LibrarySelectForm.resx">
       <DependentUpon>LibrarySelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionThemeForm.resx">
       <DependentUpon>OptionThemeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\RegionalMapSelectForm.resx">
       <DependentUpon>RegionalMapSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionPoisonForm.resx">
       <DependentUpon>OptionPoisonForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionDiseaseLevelForm.resx">
       <DependentUpon>OptionDiseaseLevelForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionDiseaseForm.resx">
       <DependentUpon>OptionDiseaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionInformationForm.resx">
       <DependentUpon>OptionInformationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionCreatureInfoForm.resx">
       <DependentUpon>OptionCreatureInfoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MapLocationSelectForm.resx">
       <DependentUpon>MapLocationSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MapLocationForm.resx">
       <DependentUpon>MapLocationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MonsterThemePowerForm.resx">
       <DependentUpon>MonsterThemePowerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\RegionalMapForm.resx">
       <DependentUpon>RegionalMapForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\RegionalMapListForm.resx">
       <DependentUpon>RegionalMapListForm.cs</DependentUpon>
@@ -2018,81 +2182,105 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\HealForm.resx">
       <DependentUpon>HealForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DeckBuilderForm.resx">
       <DependentUpon>DeckBuilderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DeckViewForm.resx">
       <DependentUpon>DeckViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\HeroDetailsForm.resx">
       <DependentUpon>HeroDetailsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MagicItemSectionForm.resx">
       <DependentUpon>MagicItemSectionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MagicItemSelectForm.resx">
       <DependentUpon>MagicItemSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MagicItemDetailsForm.resx">
       <DependentUpon>MagicItemDetailsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SkillChallengeBreakdownForm.resx">
       <DependentUpon>SkillChallengeBreakdownForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PasswordCheckForm.resx">
       <DependentUpon>PasswordCheckForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PasswordSetForm.resx">
       <DependentUpon>PasswordSetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\RegenerationForm.resx">
       <DependentUpon>RegenerationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DamageTypesForm.resx">
       <DependentUpon>DamageTypesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EncounterNoteForm.resx">
       <DependentUpon>EncounterNoteForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EncyclopediaEntrySelectForm.resx">
       <DependentUpon>EncyclopediaEntrySelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MonsterThemeSelectForm.resx">
       <DependentUpon>MonsterThemeSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomOverlayForm.resx">
       <DependentUpon>CustomOverlayForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MapAreaSelectForm.resx">
       <DependentUpon>MapAreaSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MonsterThemeForm.resx">
       <DependentUpon>MonsterThemeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\OddsForm.resx">
       <DependentUpon>OddsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PlayerOptions\OptionWeaponForm.resx">
       <DependentUpon>OptionWeaponForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QuickReferenceForm.resx">
       <DependentUpon>QuickReferenceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TerrainPowerForm.resx">
       <DependentUpon>TerrainPowerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ThemeForm.resx">
       <DependentUpon>ThemeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TileSizeForm.resx">
       <DependentUpon>TileSizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Wizards\MapSizePage.resx">
       <DependentUpon>MapSizePage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Wizards\MapTypePage.resx">
       <DependentUpon>MapTypePage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Resources\masterplan.png" />
     <None Include="Resources\Purpled20.png" />

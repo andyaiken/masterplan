@@ -53,7 +53,7 @@
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Die Roller";
+			this.Text = Session.I18N.DieRoller;
 			this.ResumeLayout(false);
 
 		}

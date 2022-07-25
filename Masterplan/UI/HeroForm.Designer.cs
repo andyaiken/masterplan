@@ -178,7 +178,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 2;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// SizeLbl
@@ -341,7 +341,7 @@
 			this.ClassGroup.Size = new System.Drawing.Size(275, 157);
 			this.ClassGroup.TabIndex = 2;
 			this.ClassGroup.TabStop = false;
-			this.ClassGroup.Text = "Class";
+			this.ClassGroup.Text = Session.I18N.Class;
 			// 
 			// RaceGroup
 			// 
@@ -356,7 +356,7 @@
 			this.RaceGroup.Size = new System.Drawing.Size(275, 78);
 			this.RaceGroup.TabIndex = 1;
 			this.RaceGroup.TabStop = false;
-			this.RaceGroup.Text = "Race";
+			this.RaceGroup.Text = Session.I18N.Race;
 			// 
 			// NameGroup
 			// 
@@ -443,7 +443,7 @@
 			this.AdvancedPage.Padding = new System.Windows.Forms.Padding(3);
 			this.AdvancedPage.Size = new System.Drawing.Size(287, 368);
 			this.AdvancedPage.TabIndex = 1;
-			this.AdvancedPage.Text = "Advanced";
+			this.AdvancedPage.Text = Session.I18N.Advanced;
 			this.AdvancedPage.UseVisualStyleBackColor = true;
 			// 
 			// LanguageGroup
@@ -515,7 +515,7 @@
 			this.PortraitToolbar.Name = "PortraitToolbar";
 			this.PortraitToolbar.Size = new System.Drawing.Size(263, 25);
 			this.PortraitToolbar.TabIndex = 0;
-			this.PortraitToolbar.Text = "toolStrip1";
+			this.PortraitToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// PortraitBrowse
 			// 
@@ -534,7 +534,7 @@
 			this.PortraitPasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PortraitPasteBtn.Name = "PortraitPasteBtn";
 			this.PortraitPasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.PortraitPasteBtn.Text = "Paste";
+			this.PortraitPasteBtn.Text = Session.I18N.Paste;
 			this.PortraitPasteBtn.Click += new System.EventHandler(this.PortraitPaste_Click);
 			// 
 			// PortraitClear
@@ -544,7 +544,7 @@
 			this.PortraitClear.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PortraitClear.Name = "PortraitClear";
 			this.PortraitClear.Size = new System.Drawing.Size(38, 22);
-			this.PortraitClear.Text = "Clear";
+			this.PortraitClear.Text = Session.I18N.Clear;
 			this.PortraitClear.Click += new System.EventHandler(this.PortraitClear_Click);
 			// 
 			// StatsPage
@@ -830,7 +830,7 @@
 			this.EffectToolbar.Name = "EffectToolbar";
 			this.EffectToolbar.Size = new System.Drawing.Size(281, 25);
 			this.EffectToolbar.TabIndex = 0;
-			this.EffectToolbar.Text = "toolStrip1";
+			this.EffectToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// EffectAddBtn
 			// 
@@ -844,7 +844,7 @@
 			this.EffectAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EffectAddBtn.Name = "EffectAddBtn";
 			this.EffectAddBtn.Size = new System.Drawing.Size(42, 22);
-			this.EffectAddBtn.Text = "Add";
+			this.EffectAddBtn.Text = Session.I18N.Add;
 			// 
 			// effectToolStripMenuItem
 			// 
@@ -879,7 +879,7 @@
 			this.EffectRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EffectRemoveBtn.Name = "EffectRemoveBtn";
 			this.EffectRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.EffectRemoveBtn.Text = "Remove";
+			this.EffectRemoveBtn.Text = Session.I18N.Remove;
 			this.EffectRemoveBtn.Click += new System.EventHandler(this.EffectRemoveBtn_Click);
 			// 
 			// EffectEditBtn
@@ -889,7 +889,7 @@
 			this.EffectEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EffectEditBtn.Name = "EffectEditBtn";
 			this.EffectEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.EffectEditBtn.Text = "Edit";
+			this.EffectEditBtn.Text = Session.I18N.Edit;
 			this.EffectEditBtn.Click += new System.EventHandler(this.EffectEditBtn_Click);
 			// 
 			// EffectLbl

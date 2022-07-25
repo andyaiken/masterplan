@@ -44,7 +44,7 @@ namespace Masterplan.UI
 			PropertiesBox.Items.Add("Load Minor");
 			PropertiesBox.Items.Add("Off-Hand");
 			PropertiesBox.Items.Add("Reach");
-			PropertiesBox.Items.Add("Small");
+			PropertiesBox.Items.Add(Session.I18N.Small);
 			PropertiesBox.Items.Add("Stout");
 			PropertiesBox.Items.Add("Versatile");
 

@@ -93,7 +93,7 @@
 			// 
 			// CreatureHdr
 			// 
-			this.CreatureHdr.Text = "Creature";
+			this.CreatureHdr.Text = Session.I18N.Creature;
 			this.CreatureHdr.Width = 218;
 			// 
 			// CreatureInfoHdr
@@ -121,7 +121,7 @@
 			this.CreatureListToolbar.Name = "CreatureListToolbar";
 			this.CreatureListToolbar.Size = new System.Drawing.Size(379, 25);
 			this.CreatureListToolbar.TabIndex = 15;
-			this.CreatureListToolbar.Text = "toolStrip1";
+			this.CreatureListToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// ModeBtn
 			// 
@@ -181,7 +181,7 @@
 			this.PowerToolbar.Name = "PowerToolbar";
 			this.PowerToolbar.Size = new System.Drawing.Size(349, 25);
 			this.PowerToolbar.TabIndex = 3;
-			this.PowerToolbar.Text = "toolStrip1";
+			this.PowerToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// StatsBtn
 			// 

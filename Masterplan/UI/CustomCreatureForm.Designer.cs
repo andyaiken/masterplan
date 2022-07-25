@@ -169,7 +169,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 12;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// NameLbl
@@ -786,7 +786,7 @@
 			this.PowerToolbar.Name = "PowerToolbar";
 			this.PowerToolbar.Size = new System.Drawing.Size(371, 25);
 			this.PowerToolbar.TabIndex = 0;
-			this.PowerToolbar.Text = "toolStrip1";
+			this.PowerToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// PowerAddBtn
 			// 
@@ -797,7 +797,7 @@
 			this.PowerAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PowerAddBtn.Name = "PowerAddBtn";
 			this.PowerAddBtn.Size = new System.Drawing.Size(45, 22);
-			this.PowerAddBtn.Text = "Add";
+			this.PowerAddBtn.Text = Session.I18N.Add;
 			this.PowerAddBtn.ButtonClick += new System.EventHandler(this.PowerAddBtn_Click);
 			// 
 			// PowerBrowse
@@ -814,7 +814,7 @@
 			this.PowerRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PowerRemoveBtn.Name = "PowerRemoveBtn";
 			this.PowerRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.PowerRemoveBtn.Text = "Remove";
+			this.PowerRemoveBtn.Text = Session.I18N.Remove;
 			this.PowerRemoveBtn.Click += new System.EventHandler(this.PowerRemoveBtn_Click);
 			// 
 			// PowerEditBtn
@@ -824,7 +824,7 @@
 			this.PowerEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PowerEditBtn.Name = "PowerEditBtn";
 			this.PowerEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.PowerEditBtn.Text = "Edit";
+			this.PowerEditBtn.Text = Session.I18N.Edit;
 			this.PowerEditBtn.Click += new System.EventHandler(this.PowerEditBtn_Click);
 			// 
 			// toolStripSeparator1
@@ -839,7 +839,7 @@
 			this.PowerUpBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PowerUpBtn.Name = "PowerUpBtn";
 			this.PowerUpBtn.Size = new System.Drawing.Size(59, 22);
-			this.PowerUpBtn.Text = "Move Up";
+			this.PowerUpBtn.Text = Session.I18N.MoveUp;
 			this.PowerUpBtn.Click += new System.EventHandler(this.PowerUpBtn_Click);
 			// 
 			// PowerDownBtn
@@ -849,7 +849,7 @@
 			this.PowerDownBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PowerDownBtn.Name = "PowerDownBtn";
 			this.PowerDownBtn.Size = new System.Drawing.Size(75, 22);
-			this.PowerDownBtn.Text = "Move Down";
+			this.PowerDownBtn.Text = Session.I18N.MoveDown;
 			this.PowerDownBtn.Click += new System.EventHandler(this.PowerDownBtn_Click);
 			// 
 			// AuraPage
@@ -896,7 +896,7 @@
 			this.AuraToolbar.Name = "AuraToolbar";
 			this.AuraToolbar.Size = new System.Drawing.Size(371, 25);
 			this.AuraToolbar.TabIndex = 6;
-			this.AuraToolbar.Text = "toolStrip1";
+			this.AuraToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AuraAddBtn
 			// 
@@ -905,7 +905,7 @@
 			this.AuraAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AuraAddBtn.Name = "AuraAddBtn";
 			this.AuraAddBtn.Size = new System.Drawing.Size(33, 22);
-			this.AuraAddBtn.Text = "Add";
+			this.AuraAddBtn.Text = Session.I18N.Add;
 			this.AuraAddBtn.Click += new System.EventHandler(this.AuraAddBtn_Click);
 			// 
 			// AuraRemoveBtn
@@ -915,7 +915,7 @@
 			this.AuraRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AuraRemoveBtn.Name = "AuraRemoveBtn";
 			this.AuraRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.AuraRemoveBtn.Text = "Remove";
+			this.AuraRemoveBtn.Text = Session.I18N.Remove;
 			this.AuraRemoveBtn.Click += new System.EventHandler(this.AuraRemoveBtn_Click);
 			// 
 			// AuraEditBtn
@@ -925,7 +925,7 @@
 			this.AuraEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AuraEditBtn.Name = "AuraEditBtn";
 			this.AuraEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.AuraEditBtn.Text = "Edit";
+			this.AuraEditBtn.Text = Session.I18N.Edit;
 			this.AuraEditBtn.Click += new System.EventHandler(this.AuraEditBtn_Click);
 			// 
 			// DamagePage
@@ -985,7 +985,7 @@
 			this.DamageToolbar.Name = "DamageToolbar";
 			this.DamageToolbar.Size = new System.Drawing.Size(371, 25);
 			this.DamageToolbar.TabIndex = 2;
-			this.DamageToolbar.Text = "toolStrip1";
+			this.DamageToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AddDmgBtn
 			// 
@@ -994,7 +994,7 @@
 			this.AddDmgBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AddDmgBtn.Name = "AddDmgBtn";
 			this.AddDmgBtn.Size = new System.Drawing.Size(33, 22);
-			this.AddDmgBtn.Text = "Add";
+			this.AddDmgBtn.Text = Session.I18N.Add;
 			this.AddDmgBtn.Click += new System.EventHandler(this.AddDmgBtn_Click);
 			// 
 			// RemoveDmgBtn
@@ -1004,7 +1004,7 @@
 			this.RemoveDmgBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveDmgBtn.Name = "RemoveDmgBtn";
 			this.RemoveDmgBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveDmgBtn.Text = "Remove";
+			this.RemoveDmgBtn.Text = Session.I18N.Remove;
 			this.RemoveDmgBtn.Click += new System.EventHandler(this.RemoveDmgBtn_Click);
 			// 
 			// EditDmgBtn
@@ -1014,7 +1014,7 @@
 			this.EditDmgBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EditDmgBtn.Name = "EditDmgBtn";
 			this.EditDmgBtn.Size = new System.Drawing.Size(31, 22);
-			this.EditDmgBtn.Text = "Edit";
+			this.EditDmgBtn.Text = Session.I18N.Edit;
 			this.EditDmgBtn.Click += new System.EventHandler(this.EditDmgBtn_Click);
 			// 
 			// toolStripSeparator2
@@ -1029,7 +1029,7 @@
 			this.RegenBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RegenBtn.Name = "RegenBtn";
 			this.RegenBtn.Size = new System.Drawing.Size(81, 22);
-			this.RegenBtn.Text = "Regeneration";
+			this.RegenBtn.Text = Session.I18N.Regeneration;
 			this.RegenBtn.Click += new System.EventHandler(this.RegenBtn_Click);
 			// 
 			// ClearRegenLbl
@@ -1088,7 +1088,7 @@
 			this.DetailsToolbar.Name = "DetailsToolbar";
 			this.DetailsToolbar.Size = new System.Drawing.Size(371, 25);
 			this.DetailsToolbar.TabIndex = 2;
-			this.DetailsToolbar.Text = "toolStrip1";
+			this.DetailsToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// DetailsEditBtn
 			// 
@@ -1097,7 +1097,7 @@
 			this.DetailsEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.DetailsEditBtn.Name = "DetailsEditBtn";
 			this.DetailsEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.DetailsEditBtn.Text = "Edit";
+			this.DetailsEditBtn.Text = Session.I18N.Edit;
 			this.DetailsEditBtn.Click += new System.EventHandler(this.DetailsEditBtn_Click);
 			// 
 			// PicturePage
@@ -1131,7 +1131,7 @@
 			this.PortraitToolbar.Name = "PortraitToolbar";
 			this.PortraitToolbar.Size = new System.Drawing.Size(371, 25);
 			this.PortraitToolbar.TabIndex = 2;
-			this.PortraitToolbar.Text = "toolStrip1";
+			this.PortraitToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// PortraitBrowse
 			// 
@@ -1150,7 +1150,7 @@
 			this.PortraitClear.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PortraitClear.Name = "PortraitClear";
 			this.PortraitClear.Size = new System.Drawing.Size(38, 22);
-			this.PortraitClear.Text = "Clear";
+			this.PortraitClear.Text = Session.I18N.Clear;
 			this.PortraitClear.Click += new System.EventHandler(this.PortraitClear_Click);
 			// 
 			// InfoBtn

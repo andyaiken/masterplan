@@ -36,7 +36,14 @@ namespace Masterplan
         }
         static Preferences fPreferences = new Preferences();
 
-        public static PlayerViewForm PlayerView
+		public static I18N I18N
+		{
+			get { return fI18N; }
+			set { fI18N = value; }
+		}
+		static I18N fI18N = new I18N();
+		
+		public static PlayerViewForm PlayerView
         {
             get { return fPlayerView; }
             set { fPlayerView = value; }
@@ -56,6 +63,12 @@ namespace Masterplan
 			set { fFileName = value; }
 		}
 		static string fFileName = "";
+		public static string Lang
+		{
+			get { return fLang; }
+			set { fLang = value; }
+		}
+		static string fLang = "En";
 
 		public static Random Random
 		{

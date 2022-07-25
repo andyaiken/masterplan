@@ -413,7 +413,7 @@
 			this.EncToolbar.Name = "EncToolbar";
 			this.EncToolbar.Size = new System.Drawing.Size(472, 25);
 			this.EncToolbar.TabIndex = 0;
-			this.EncToolbar.Text = "toolStrip1";
+			this.EncToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AddBtn
 			// 
@@ -477,7 +477,7 @@
 			this.AddMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AddMenu.Name = "AddMenu";
 			this.AddMenu.Size = new System.Drawing.Size(42, 22);
-			this.AddMenu.Text = "Add";
+			this.AddMenu.Text = Session.I18N.Add;
 			// 
 			// ToolsAddCreature
 			// 
@@ -519,7 +519,7 @@
 			this.ToolsMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ToolsMenu.Name = "ToolsMenu";
 			this.ToolsMenu.Size = new System.Drawing.Size(49, 22);
-			this.ToolsMenu.Text = "Tools";
+			this.ToolsMenu.Text = Session.I18N.Tools;
 			this.ToolsMenu.DropDownOpening += new System.EventHandler(this.ToolsMenu_DropDownOpening);
 			// 
 			// ToolsClearAll
@@ -972,7 +972,7 @@
 			// 
 			// ThreatNameHdr
 			// 
-			this.ThreatNameHdr.Text = "Creature";
+			this.ThreatNameHdr.Text = Session.I18N.Creature;
 			this.ThreatNameHdr.Width = 171;
 			// 
 			// MapToolbar
@@ -986,7 +986,7 @@
 			this.MapToolbar.Name = "MapToolbar";
 			this.MapToolbar.Size = new System.Drawing.Size(796, 25);
 			this.MapToolbar.TabIndex = 0;
-			this.MapToolbar.Text = "toolStrip1";
+			this.MapToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// MapBtn
 			// 
@@ -1018,7 +1018,7 @@
 			this.MapToolsMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MapToolsMenu.Name = "MapToolsMenu";
 			this.MapToolsMenu.Size = new System.Drawing.Size(49, 22);
-			this.MapToolsMenu.Text = "Tools";
+			this.MapToolsMenu.Text = Session.I18N.Tools;
 			// 
 			// MapToolsLOS
 			// 
@@ -1057,7 +1057,7 @@
 			// 
 			this.MapToolsPrint.Name = "MapToolsPrint";
 			this.MapToolsPrint.Size = new System.Drawing.Size(168, 22);
-			this.MapToolsPrint.Text = "Print";
+			this.MapToolsPrint.Text = Session.I18N.Print;
 			this.MapToolsPrint.Click += new System.EventHandler(this.PrintBtn_Click);
 			// 
 			// MapToolsScreenshot
@@ -1138,7 +1138,7 @@
 			this.NotesPage.Padding = new System.Windows.Forms.Padding(3);
 			this.NotesPage.Size = new System.Drawing.Size(802, 369);
 			this.NotesPage.TabIndex = 2;
-			this.NotesPage.Text = "Notes";
+			this.NotesPage.Text = Session.I18N.Notes;
 			this.NotesPage.UseVisualStyleBackColor = true;
 			// 
 			// NoteSplitter
@@ -1179,7 +1179,7 @@
 			// 
 			// NoteHdr
 			// 
-			this.NoteHdr.Text = "Notes";
+			this.NoteHdr.Text = Session.I18N.Notes;
 			this.NoteHdr.Width = 150;
 			// 
 			// BackgroundPanel
@@ -1216,7 +1216,7 @@
 			this.NoteToolbar.Name = "NoteToolbar";
 			this.NoteToolbar.Size = new System.Drawing.Size(796, 25);
 			this.NoteToolbar.TabIndex = 1;
-			this.NoteToolbar.Text = "toolStrip1";
+			this.NoteToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// NoteAddBtn
 			// 
@@ -1225,7 +1225,7 @@
 			this.NoteAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.NoteAddBtn.Name = "NoteAddBtn";
 			this.NoteAddBtn.Size = new System.Drawing.Size(33, 22);
-			this.NoteAddBtn.Text = "Add";
+			this.NoteAddBtn.Text = Session.I18N.Add;
 			this.NoteAddBtn.Click += new System.EventHandler(this.NoteAddBtn_Click);
 			// 
 			// NoteRemoveBtn
@@ -1235,7 +1235,7 @@
 			this.NoteRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.NoteRemoveBtn.Name = "NoteRemoveBtn";
 			this.NoteRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.NoteRemoveBtn.Text = "Remove";
+			this.NoteRemoveBtn.Text = Session.I18N.Remove;
 			this.NoteRemoveBtn.Click += new System.EventHandler(this.NoteRemoveBtn_Click);
 			// 
 			// NoteEditBtn
@@ -1245,7 +1245,7 @@
 			this.NoteEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.NoteEditBtn.Name = "NoteEditBtn";
 			this.NoteEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.NoteEditBtn.Text = "Edit";
+			this.NoteEditBtn.Text = Session.I18N.Edit;
 			this.NoteEditBtn.Click += new System.EventHandler(this.NoteEditBtn_Click);
 			// 
 			// toolStripSeparator21
@@ -1260,7 +1260,7 @@
 			this.NoteUpBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.NoteUpBtn.Name = "NoteUpBtn";
 			this.NoteUpBtn.Size = new System.Drawing.Size(59, 22);
-			this.NoteUpBtn.Text = "Move Up";
+			this.NoteUpBtn.Text = Session.I18N.MoveUp;
 			this.NoteUpBtn.Click += new System.EventHandler(this.NoteUpBtn_Click);
 			// 
 			// NoteDownBtn
@@ -1270,7 +1270,7 @@
 			this.NoteDownBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.NoteDownBtn.Name = "NoteDownBtn";
 			this.NoteDownBtn.Size = new System.Drawing.Size(75, 22);
-			this.NoteDownBtn.Text = "Move Down";
+			this.NoteDownBtn.Text = Session.I18N.MoveDown;
 			this.NoteDownBtn.Click += new System.EventHandler(this.NoteDownBtn_Click);
 			// 
 			// OKBtn
@@ -1292,7 +1292,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 4;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// InfoBtn
@@ -1302,7 +1302,7 @@
 			this.InfoBtn.Name = "InfoBtn";
 			this.InfoBtn.Size = new System.Drawing.Size(75, 23);
 			this.InfoBtn.TabIndex = 1;
-			this.InfoBtn.Text = "Information";
+			this.InfoBtn.Text = Session.I18N.Information;
 			this.InfoBtn.UseVisualStyleBackColor = true;
 			this.InfoBtn.Click += new System.EventHandler(this.InfoBtn_Click);
 			// 
@@ -1313,7 +1313,7 @@
 			this.DieRollerBtn.Name = "DieRollerBtn";
 			this.DieRollerBtn.Size = new System.Drawing.Size(75, 23);
 			this.DieRollerBtn.TabIndex = 2;
-			this.DieRollerBtn.Text = "Die Roller";
+			this.DieRollerBtn.Text = Session.I18N.DieRoller;
 			this.DieRollerBtn.UseVisualStyleBackColor = true;
 			this.DieRollerBtn.Click += new System.EventHandler(this.DieRollerBtn_Click);
 			// 

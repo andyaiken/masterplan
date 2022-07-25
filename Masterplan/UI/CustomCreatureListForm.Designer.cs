@@ -66,7 +66,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(776, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AddBtn
 			// 
@@ -78,7 +78,7 @@
 			this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AddBtn.Name = "AddBtn";
 			this.AddBtn.Size = new System.Drawing.Size(42, 22);
-			this.AddBtn.Text = "Add";
+			this.AddBtn.Text = Session.I18N.Add;
 			// 
 			// AddCreature
 			// 
@@ -101,7 +101,7 @@
 			this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveBtn.Name = "RemoveBtn";
 			this.RemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveBtn.Text = "Remove";
+			this.RemoveBtn.Text = Session.I18N.Remove;
 			this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// EditBtn
@@ -111,7 +111,7 @@
 			this.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EditBtn.Name = "EditBtn";
 			this.EditBtn.Size = new System.Drawing.Size(31, 22);
-			this.EditBtn.Text = "Edit";
+			this.EditBtn.Text = Session.I18N.Edit;
 			this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
 			// 
 			// toolStripSeparator1
@@ -136,7 +136,7 @@
 			this.EncEntryBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EncEntryBtn.Name = "EncEntryBtn";
 			this.EncEntryBtn.Size = new System.Drawing.Size(111, 22);
-			this.EncEntryBtn.Text = "Encyclopedia Entry";
+			this.EncEntryBtn.Text = Session.I18N.EncyclopediaEntry;
 			this.EncEntryBtn.Click += new System.EventHandler(this.EncEntryBtn_Click);
 			// 
 			// CreatureList
@@ -168,12 +168,12 @@
 			// 
 			// NameHdr
 			// 
-			this.NameHdr.Text = "Creature";
+			this.NameHdr.Text = Session.I18N.Creature;
 			this.NameHdr.Width = 287;
 			// 
 			// InfoHdr
 			// 
-			this.InfoHdr.Text = "Information";
+			this.InfoHdr.Text = Session.I18N.Information;
 			this.InfoHdr.Width = 150;
 			// 
 			// StatsHdr
@@ -238,7 +238,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Custom Creatures and NPCs";
+			this.Text = Session.I18N.CustomCreaturesNPC;
 			this.Shown += new System.EventHandler(this.CustomCreatureListForm_Shown);
 			this.Toolbar.ResumeLayout(false);
 			this.Toolbar.PerformLayout();

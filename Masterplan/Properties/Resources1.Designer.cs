@@ -75,7 +75,7 @@ namespace Masterplan.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Aura {
             get {
-                object obj = ResourceManager.GetObject("Aura", resourceCulture);
+                object obj = ResourceManager.GetObject(Session.I18N.Aura, resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

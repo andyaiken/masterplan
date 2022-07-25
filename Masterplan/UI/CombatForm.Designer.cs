@@ -242,7 +242,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(850, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// DetailsBtn
 			// 
@@ -576,7 +576,7 @@
 			// 
 			this.MapPrint.Name = "MapPrint";
 			this.MapPrint.Size = new System.Drawing.Size(182, 22);
-			this.MapPrint.Text = "Print";
+			this.MapPrint.Text = Session.I18N.Print;
 			this.MapPrint.Click += new System.EventHandler(this.MapPrint_Click);
 			// 
 			// MapExport
@@ -607,7 +607,7 @@
 			this.PlayerViewMapMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PlayerViewMapMenu.Name = "PlayerViewMapMenu";
 			this.PlayerViewMapMenu.Size = new System.Drawing.Size(80, 22);
-			this.PlayerViewMapMenu.Text = "Player View";
+			this.PlayerViewMapMenu.Text = Session.I18N.PlayerView;
 			this.PlayerViewMapMenu.DropDownOpening += new System.EventHandler(this.PlayerViewMapMenu_DropDownOpening);
 			// 
 			// PlayerViewMap
@@ -732,7 +732,7 @@
 			this.PlayerViewNoMapMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PlayerViewNoMapMenu.Name = "PlayerViewNoMapMenu";
 			this.PlayerViewNoMapMenu.Size = new System.Drawing.Size(80, 22);
-			this.PlayerViewNoMapMenu.Text = "Player View";
+			this.PlayerViewNoMapMenu.Text = Session.I18N.PlayerView;
 			this.PlayerViewNoMapMenu.DropDownOpening += new System.EventHandler(this.PlayerViewNoMapMenu_DropDownOpening);
 			// 
 			// PlayerViewNoMapShowInitiativeList
@@ -761,7 +761,7 @@
 			this.ToolsMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ToolsMenu.Name = "ToolsMenu";
 			this.ToolsMenu.Size = new System.Drawing.Size(47, 22);
-			this.ToolsMenu.Text = "Tools";
+			this.ToolsMenu.Text = Session.I18N.Tools;
 			this.ToolsMenu.Click += new System.EventHandler(this.ToolsMenu_DopDownOpening);
 			// 
 			// ToolsEffects
@@ -789,13 +789,13 @@
             this.addinsToolStripMenuItem});
 			this.ToolsAddIns.Name = "ToolsAddIns";
 			this.ToolsAddIns.Size = new System.Drawing.Size(159, 22);
-			this.ToolsAddIns.Text = "Add-Ins";
+			this.ToolsAddIns.Text = Session.I18N.AddIns;
 			// 
 			// addinsToolStripMenuItem
 			// 
 			this.addinsToolStripMenuItem.Name = "addinsToolStripMenuItem";
 			this.addinsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-			this.addinsToolStripMenuItem.Text = "[add-ins]";
+			this.addinsToolStripMenuItem.Text = Session.I18N.TAddins;
 			// 
 			// OptionsMenu
 			// 
@@ -1168,7 +1168,7 @@
             this.ListRemoveCombat});
 			this.ListRemove.Name = "ListRemove";
 			this.ListRemove.Size = new System.Drawing.Size(184, 22);
-			this.ListRemove.Text = "Remove";
+			this.ListRemove.Text = Session.I18N.Remove;
 			// 
 			// ListRemoveMap
 			// 
@@ -1454,7 +1454,7 @@
             this.MapRemoveCombat});
 			this.MapRemove.Name = "MapRemove";
 			this.MapRemove.Size = new System.Drawing.Size(184, 22);
-			this.MapRemove.Text = "Remove";
+			this.MapRemove.Text = Session.I18N.Remove;
 			// 
 			// MapRemoveMap
 			// 
@@ -1644,7 +1644,7 @@
 			this.InfoBtn.Name = "InfoBtn";
 			this.InfoBtn.Size = new System.Drawing.Size(75, 23);
 			this.InfoBtn.TabIndex = 2;
-			this.InfoBtn.Text = "Information";
+			this.InfoBtn.Text = Session.I18N.Information;
 			this.InfoBtn.UseVisualStyleBackColor = true;
 			this.InfoBtn.Click += new System.EventHandler(this.InfoBtn_Click);
 			// 
@@ -1655,7 +1655,7 @@
 			this.DieRollerBtn.Name = "DieRollerBtn";
 			this.DieRollerBtn.Size = new System.Drawing.Size(75, 23);
 			this.DieRollerBtn.TabIndex = 3;
-			this.DieRollerBtn.Text = "Die Roller";
+			this.DieRollerBtn.Text = Session.I18N.DieRoller;
 			this.DieRollerBtn.UseVisualStyleBackColor = true;
 			this.DieRollerBtn.Click += new System.EventHandler(this.DieRollerBtn_Click);
 			// 

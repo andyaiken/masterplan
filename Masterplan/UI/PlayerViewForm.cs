@@ -307,7 +307,7 @@ namespace Masterplan.UI
 			}
 
 			Button dicebtn = new Button();
-			dicebtn.Text = "Die Roller";
+			dicebtn.Text = Session.I18N.DieRoller;
 			dicebtn.BackColor = SystemColors.Control;
 			dicebtn.Dock = DockStyle.Bottom;
 			dicebtn.Click +=new EventHandler(dicebtn_click);
@@ -393,7 +393,7 @@ namespace Masterplan.UI
 				{
 					title = creature.Category;
 					if (title == "")
-						title = "Creature";
+						title = Session.I18N.Creature;
 				}
 
 				if (ct.Data.Damage == 0)

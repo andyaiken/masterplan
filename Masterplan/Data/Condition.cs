@@ -362,12 +362,12 @@ namespace Masterplan.Data
 					{
 						if (fDamageType == DamageType.Untyped)
 						{
-							str = fValue + " ongoing damage";
+							str = fValue + " " + Session.I18N.OngoingDamage;
 						}
 						else
 						{
 							string dmg = fDamageType.ToString().ToLower();
-							str = fValue + " ongoing " + dmg + " damage";
+							str = fValue + " " + Session.I18N.Ongoing + " " + dmg + " " + Session.I18N.Damage;
 						}
 					}
 					break;
@@ -380,7 +380,7 @@ namespace Masterplan.Data
 						string defences = "";
 						if (fDefences.Count == 4)
 						{
-							defences = "defences";
+							defences = Session.I18N.OngoingDefences;
 						}
 						else
 						{
@@ -393,17 +393,17 @@ namespace Masterplan.Data
 							}
 						}
 
-						str += " to " + defences;
+						str += " " + Session.I18N.To + " " + defences;
 					}
 					break;
 				case OngoingType.DamageModifier:
 					str = fDamageModifier.ToString();
 					break;
 				case OngoingType.Regeneration:
-					str = "Regeneration " + fRegeneration.Value;
+					str = Session.I18N.Regeneration + " " + fRegeneration.Value;
 					break;
 				case OngoingType.Aura:
-					str = "Aura " + fAura.Radius + ": " + fAura.Description;
+					str = Session.I18N.Aura + " " + fAura.Radius + ": " + fAura.Description;
 					break;
 			}
 

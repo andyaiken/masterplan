@@ -62,7 +62,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(372, 25);
 			this.Toolbar.TabIndex = 3;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// DMBtn
 			// 
@@ -88,13 +88,13 @@
 			this.ExportMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ExportMenu.Name = "ExportMenu";
 			this.ExportMenu.Size = new System.Drawing.Size(53, 22);
-			this.ExportMenu.Text = "Export";
+			this.ExportMenu.Text = Session.I18N.Export;
 			// 
 			// ExportHTML
 			// 
 			this.ExportHTML.Name = "ExportHTML";
 			this.ExportHTML.Size = new System.Drawing.Size(157, 22);
-			this.ExportHTML.Text = "Export to HTML";
+			this.ExportHTML.Text = Session.I18N.ExportHTML;
 			this.ExportHTML.Click += new System.EventHandler(this.ExportHTML_Click);
 			// 
 			// PlayerViewBtn
@@ -104,7 +104,7 @@
 			this.PlayerViewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PlayerViewBtn.Name = "PlayerViewBtn";
 			this.PlayerViewBtn.Size = new System.Drawing.Size(114, 22);
-			this.PlayerViewBtn.Text = "Send to Player View";
+			this.PlayerViewBtn.Text = Session.I18N.SendPlayerView;
 			this.PlayerViewBtn.Click += new System.EventHandler(this.PlayerViewBtn_Click);
 			// 
 			// EncyclopediaEntryDetailsForm
@@ -121,7 +121,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Encyclopedia Entry";
+			this.Text = Session.I18N.EncyclopediaEntry;
 			this.Toolbar.ResumeLayout(false);
 			this.Toolbar.PerformLayout();
 			this.ResumeLayout(false);

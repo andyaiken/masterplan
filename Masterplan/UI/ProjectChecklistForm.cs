@@ -382,7 +382,7 @@ namespace Masterplan.UI
 				SaveFileDialog dlg = new SaveFileDialog();
 				dlg.Filter = Program.HTMLFilter;
 				dlg.FileName = Session.Project.Name + " Treasure";
-				dlg.Title = "Export";
+				dlg.Title = Session.I18N.Export;
 				if (pages != 1)
 					dlg.Title += " (page " + (page + 1) + ")";
 

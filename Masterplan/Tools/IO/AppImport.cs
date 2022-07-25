@@ -78,7 +78,7 @@ namespace Masterplan.Tools
 								string name = XMLHelper.NodeText(value_node, "Name");
 								int value = XMLHelper.GetIntAttribute(value_node, "FinalValue");
 
-								if (name == "AC")
+								if (name == Session.I18N.AC)
 									c.AC = value;
 
 								if (name == "Fortitude")
@@ -87,7 +87,7 @@ namespace Masterplan.Tools
 								if (name == "Reflex")
 									c.Reflex = value;
 
-								if (name == "Will")
+								if (name == Session.I18N.Will)
 									c.Will = value;
 							}
 						}
@@ -147,7 +147,7 @@ namespace Masterplan.Tools
 
 						}
 					}
-					else if (node.Name == "Level")
+					else if (node.Name == Session.I18N.Level)
 					{
 						try
 						{
@@ -159,7 +159,7 @@ namespace Masterplan.Tools
 
 						}
 					}
-					else if (node.Name == "Size")
+					else if (node.Name == Session.I18N.Size)
 					{
 						try
 						{
@@ -385,7 +385,7 @@ namespace Masterplan.Tools
 								{
 									string sense = XMLHelper.NodeText(ro_node, "Name");
 
-									string range = XMLHelper.NodeText(child, "Range");
+									string range = XMLHelper.NodeText(child, Session.I18N.Range);
 									if ((range != "") && (range != "0"))
 										sense += " " + range;
 
@@ -410,7 +410,7 @@ namespace Masterplan.Tools
 
 						}
 					}
-					else if (node.Name == "Regeneration")
+					else if (node.Name == Session.I18N.Regeneration)
 					{
 						try
 						{
@@ -750,7 +750,7 @@ namespace Masterplan.Tools
 							LogSystem.Trace("Error parsing " + node.Name);
 						}
 					}
-					else if (node.Name == "Tactics")
+					else if (node.Name == Session.I18N.Tactics)
 					{
 						try
 						{
@@ -769,7 +769,7 @@ namespace Masterplan.Tools
 					{
 						//
 					}
-					else if (node.Name == "Race")
+					else if (node.Name == Session.I18N.Race)
 					{
 						//
 					}
@@ -842,14 +842,14 @@ namespace Masterplan.Tools
 					}
 					else
 					{
-						if (usage.StartsWith("At-Will"))
+						if (usage.StartsWith(Session.I18N.AtWill))
 						{
 							power.Action.Use = PowerUseType.AtWill;
 						}
 						else
 						{
 							power.Action.Use = PowerUseType.Encounter;
-							if (!usage.StartsWith("Encounter"))
+							if (!usage.StartsWith(Session.I18N.Encounter))
 							{
 								if (usage.ToLower().StartsWith("recharge"))
 								{
@@ -894,12 +894,12 @@ namespace Masterplan.Tools
 						power.Action.Action = ActionType.Minor;
 						//power.Action.Trigger = action.Substring("minor".Length);
 					}
-					if (action.ToLower().StartsWith("immediate interrupt"))
+					if (action.ToLower().StartsWith(Session.I18N.ImmediateInterrupt))
 					{
 						power.Action.Action = ActionType.Interrupt;
 						//power.Action.Trigger = action.Substring("immediate interrupt".Length);
 					}
-					if (action.ToLower().StartsWith("immediate reaction"))
+					if (action.ToLower().StartsWith(Session.I18N.ImmediateReaction))
 					{
 						power.Action.Action = ActionType.Reaction;
 						//power.Action.Trigger = action.Substring("immediate reaction".Length);
@@ -919,7 +919,7 @@ namespace Masterplan.Tools
 						power.Action.Action = ActionType.None;
 						//power.Action.Trigger = action.Substring("none".Length);
 					}
-					if (action.ToLower().StartsWith("no action"))
+					if (action.ToLower().StartsWith(Session.I18N.NoAction))
 					{
 						power.Action.Action = ActionType.None;
 						//power.Action.Trigger = action.Substring("no action".Length);
@@ -934,7 +934,7 @@ namespace Masterplan.Tools
 					#region Aura / trait
 
 					// Might be an aura
-					XmlNode range_node = XMLHelper.FindChild(power_node, "Range");
+					XmlNode range_node = XMLHelper.FindChild(power_node, Session.I18N.Range);
 					if (range_node != null)
 					{
 						int range = XMLHelper.GetIntAttribute(range_node, "FinalValue");
@@ -1033,7 +1033,7 @@ namespace Masterplan.Tools
 							if (field_node.Name == "Name")
 								continue;
 
-							if (field_node.Name == "Range")
+							if (field_node.Name == Session.I18N.Range)
 							{
 								range = field_node.InnerText.ToLower();
 								range = range.Replace("basic ", "");
@@ -1082,7 +1082,7 @@ namespace Masterplan.Tools
 
 								string details = XMLHelper.NodeText(field_node, "Description");
 								if ((damage != "") && (details == ""))
-									details = "damage";
+									details = Session.I18N.Damage;
 								if (details == "")
 									continue;
 
@@ -1226,7 +1226,7 @@ namespace Masterplan.Tools
 					{
 						hero.Name = XMLHelper.NodeText(details_node, "name").Trim();
 						hero.Player = XMLHelper.NodeText(details_node, "Player").Trim();
-						hero.Level = int.Parse(XMLHelper.NodeText(details_node, "Level"));
+						hero.Level = int.Parse(XMLHelper.NodeText(details_node, Session.I18N.Level));
 
 						string portrait_file = XMLHelper.NodeText(details_node, "Portrait").Trim();
 						if (portrait_file != "")
@@ -1255,7 +1255,7 @@ namespace Masterplan.Tools
 							hero.HP = XMLHelper.GetIntAttribute(hp_node, "value");
 
 						// AC
-						XmlNode ac_node = get_stat_node(stats_node, "AC");
+						XmlNode ac_node = get_stat_node(stats_node, Session.I18N.AC);
 						if (ac_node != null)
 							hero.AC = XMLHelper.GetIntAttribute(ac_node, "value");
 
@@ -1294,22 +1294,22 @@ namespace Masterplan.Tools
 					if (rules_node != null)
 					{
 						// Race
-						XmlNode race_node = XMLHelper.FindChildWithAttribute(rules_node, "type", "Race");
+						XmlNode race_node = XMLHelper.FindChildWithAttribute(rules_node, "type", Session.I18N.Race);
 						if (race_node != null)
 							hero.Race = XMLHelper.GetAttribute(race_node, "name");
 
 						// Class
-						XmlNode class_node = XMLHelper.FindChildWithAttribute(rules_node, "type", "Class");
+						XmlNode class_node = XMLHelper.FindChildWithAttribute(rules_node, "type", Session.I18N.Class);
 						if (class_node != null)
 							hero.Class = XMLHelper.GetAttribute(class_node, "name");
 
 						// Paragon Path
-						XmlNode pp_node = XMLHelper.FindChildWithAttribute(rules_node, "type", "Paragon Path");
+						XmlNode pp_node = XMLHelper.FindChildWithAttribute(rules_node, "type", Session.I18N.ParagonPath);
 						if (pp_node != null)
 							hero.ParagonPath = XMLHelper.GetAttribute(pp_node, "name");
 
 						// Epic Destiny
-						XmlNode ed_node = XMLHelper.FindChildWithAttribute(rules_node, "type", "Epic Destiny");
+						XmlNode ed_node = XMLHelper.FindChildWithAttribute(rules_node, "type", Session.I18N.EpicDestiny);
 						if (ed_node != null)
 							hero.EpicDestiny = XMLHelper.GetAttribute(ed_node, "name");
 
@@ -1343,7 +1343,7 @@ namespace Masterplan.Tools
 
 				#region Levels
 
-				XmlNode level_node = XMLHelper.FindChild(doc.DocumentElement, "Level");
+				XmlNode level_node = XMLHelper.FindChild(doc.DocumentElement, Session.I18N.Level);
 				if (level_node != null)
 				{
 					XmlNode level_1 = XMLHelper.FindChildWithAttribute(level_node, "name", "1");
@@ -1351,14 +1351,14 @@ namespace Masterplan.Tools
 					{
 						if (hero.Race == "")
 						{
-							XmlNode race_node = XMLHelper.FindChildWithAttribute(level_1, "type", "Race");
+							XmlNode race_node = XMLHelper.FindChildWithAttribute(level_1, "type", Session.I18N.Race);
 							if (race_node != null)
 								hero.Race = XMLHelper.GetAttribute(race_node, "name");
 						}
 
 						if (hero.Class == "")
 						{
-							XmlNode class_node = XMLHelper.FindChildWithAttribute(level_1, "type", "Class");
+							XmlNode class_node = XMLHelper.FindChildWithAttribute(level_1, "type", Session.I18N.Class);
 							if (class_node != null)
 								hero.Class = XMLHelper.GetAttribute(class_node, "name");
 						}

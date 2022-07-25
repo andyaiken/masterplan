@@ -72,7 +72,7 @@ namespace Masterplan.Tools
 
 		public static void UpdateRegen(ICreature c)
 		{
-			Aura regen_aura = FindAura(c, "Regeneration");
+			Aura regen_aura = FindAura(c, Session.I18N.Regeneration);
 			if (regen_aura == null)
 				regen_aura = FindAura(c, "Regen");
 
@@ -96,8 +96,8 @@ namespace Masterplan.Tools
 			ranges.Add("close blast");
 			ranges.Add("close burst");
 			ranges.Add("area burst");
-			ranges.Add("melee");
-			ranges.Add("ranged");
+			ranges.Add(Session.I18N.LowerMelee);
+			ranges.Add(Session.I18N.LowerRanged);
 
 			string details = "";
 

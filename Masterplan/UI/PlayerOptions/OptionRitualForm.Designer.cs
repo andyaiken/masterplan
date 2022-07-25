@@ -126,7 +126,7 @@
 			this.InfoPage.Padding = new System.Windows.Forms.Padding(3);
 			this.InfoPage.Size = new System.Drawing.Size(332, 142);
 			this.InfoPage.TabIndex = 2;
-			this.InfoPage.Text = "Information";
+			this.InfoPage.Text = Session.I18N.Information;
 			this.InfoPage.UseVisualStyleBackColor = true;
 			// 
 			// SkillBox
@@ -270,7 +270,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 8;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// LevelLbl
@@ -280,7 +280,7 @@
 			this.LevelLbl.Name = "LevelLbl";
 			this.LevelLbl.Size = new System.Drawing.Size(33, 13);
 			this.LevelLbl.TabIndex = 2;
-			this.LevelLbl.Text = "Level";
+			this.LevelLbl.Text = Session.I18N.Level;
 			// 
 			// LevelBox
 			// 
@@ -335,7 +335,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Ritual";
+			this.Text = Session.I18N.Ritual;
 			this.Pages.ResumeLayout(false);
 			this.InfoPage.ResumeLayout(false);
 			this.InfoPage.PerformLayout();

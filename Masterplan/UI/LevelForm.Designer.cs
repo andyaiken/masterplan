@@ -64,7 +64,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 3;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// LevelBox
@@ -94,7 +94,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Level";
+			this.Text = Session.I18N.Level;
 			((System.ComponentModel.ISupportInitialize)(this.LevelBox)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

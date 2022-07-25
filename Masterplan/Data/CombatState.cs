@@ -146,7 +146,7 @@ namespace Masterplan.Data
 		/// <returns>Returns the timestamp.</returns>
 		public override string ToString()
 		{
-			return fTimestamp.ToShortDateString() + " at " + fTimestamp.ToShortTimeString();
+			return fTimestamp.ToShortDateString() + " " + Session.I18N.At + " " + fTimestamp.ToShortTimeString();
 		}
 	}
 }

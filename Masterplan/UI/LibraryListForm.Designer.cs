@@ -32,7 +32,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibraryListForm));
 			System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Functional Templates", System.Windows.Forms.HorizontalAlignment.Left);
 			System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Class Templates", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Themes", System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup(Session.I18N.Themes, System.Windows.Forms.HorizontalAlignment.Left);
 			System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Traps", System.Windows.Forms.HorizontalAlignment.Left);
 			System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Hazards", System.Windows.Forms.HorizontalAlignment.Left);
 			System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("Traps", System.Windows.Forms.HorizontalAlignment.Left);
@@ -351,7 +351,7 @@
 			this.LibraryToolbar.Name = "LibraryToolbar";
 			this.LibraryToolbar.Size = new System.Drawing.Size(249, 25);
 			this.LibraryToolbar.TabIndex = 0;
-			this.LibraryToolbar.Text = "toolStrip1";
+			this.LibraryToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// FileMenu
 			// 
@@ -364,7 +364,7 @@
 			this.FileMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.FileMenu.Name = "FileMenu";
 			this.FileMenu.Size = new System.Drawing.Size(38, 22);
-			this.FileMenu.Text = "File";
+			this.FileMenu.Text = Session.I18N.File;
 			// 
 			// FileNew
 			// 
@@ -394,7 +394,7 @@
 			this.LibraryRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.LibraryRemoveBtn.Name = "LibraryRemoveBtn";
 			this.LibraryRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.LibraryRemoveBtn.Text = "Remove";
+			this.LibraryRemoveBtn.Text = Session.I18N.Remove;
 			this.LibraryRemoveBtn.Click += new System.EventHandler(this.LibraryRemoveBtn_Click);
 			// 
 			// LibraryEditBtn
@@ -404,7 +404,7 @@
 			this.LibraryEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.LibraryEditBtn.Name = "LibraryEditBtn";
 			this.LibraryEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.LibraryEditBtn.Text = "Edit";
+			this.LibraryEditBtn.Text = Session.I18N.Edit;
 			this.LibraryEditBtn.Click += new System.EventHandler(this.LibraryEditBtn_Click);
 			// 
 			// toolStripSeparator17
@@ -486,7 +486,7 @@
 			// 
 			// CreatureNameHdr
 			// 
-			this.CreatureNameHdr.Text = "Creature";
+			this.CreatureNameHdr.Text = Session.I18N.Creature;
 			this.CreatureNameHdr.Width = 300;
 			// 
 			// CreatureInfoHdr
@@ -506,7 +506,7 @@
 			// 
 			this.CreatureContextRemove.Name = "CreatureContextRemove";
 			this.CreatureContextRemove.Size = new System.Drawing.Size(150, 22);
-			this.CreatureContextRemove.Text = "Remove";
+			this.CreatureContextRemove.Text = Session.I18N.Remove;
 			this.CreatureContextRemove.Click += new System.EventHandler(this.CreatureContextRemove_Click);
 			// 
 			// CreatureContextCategory
@@ -528,7 +528,7 @@
 			this.CreatureSearchToolbar.Name = "CreatureSearchToolbar";
 			this.CreatureSearchToolbar.Size = new System.Drawing.Size(612, 25);
 			this.CreatureSearchToolbar.TabIndex = 2;
-			this.CreatureSearchToolbar.Text = "toolStrip1";
+			this.CreatureSearchToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// SearchLbl
 			// 
@@ -599,7 +599,7 @@
 			this.CreatureAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.CreatureAddBtn.Name = "CreatureAddBtn";
 			this.CreatureAddBtn.Size = new System.Drawing.Size(42, 22);
-			this.CreatureAddBtn.Text = "Add";
+			this.CreatureAddBtn.Text = Session.I18N.Add;
 			// 
 			// CreatureAddSingle
 			// 
@@ -627,7 +627,7 @@
 			this.OppRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.OppRemoveBtn.Name = "OppRemoveBtn";
 			this.OppRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.OppRemoveBtn.Text = "Remove";
+			this.OppRemoveBtn.Text = Session.I18N.Remove;
 			this.OppRemoveBtn.Click += new System.EventHandler(this.OppRemoveBtn_Click);
 			// 
 			// OppEditBtn
@@ -637,7 +637,7 @@
 			this.OppEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.OppEditBtn.Name = "OppEditBtn";
 			this.OppEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.OppEditBtn.Text = "Edit";
+			this.OppEditBtn.Text = Session.I18N.Edit;
 			this.OppEditBtn.Click += new System.EventHandler(this.OppEditBtn_Click);
 			// 
 			// toolStripSeparator1
@@ -652,7 +652,7 @@
 			this.CreatureCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.CreatureCutBtn.Name = "CreatureCutBtn";
 			this.CreatureCutBtn.Size = new System.Drawing.Size(30, 22);
-			this.CreatureCutBtn.Text = "Cut";
+			this.CreatureCutBtn.Text = Session.I18N.Cut;
 			this.CreatureCutBtn.Click += new System.EventHandler(this.CreatureCutBtn_Click);
 			// 
 			// CreatureCopyBtn
@@ -662,7 +662,7 @@
 			this.CreatureCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.CreatureCopyBtn.Name = "CreatureCopyBtn";
 			this.CreatureCopyBtn.Size = new System.Drawing.Size(39, 22);
-			this.CreatureCopyBtn.Text = "Copy";
+			this.CreatureCopyBtn.Text = Session.I18N.Copy;
 			this.CreatureCopyBtn.Click += new System.EventHandler(this.CreatureCopyBtn_Click);
 			// 
 			// CreaturePasteBtn
@@ -672,7 +672,7 @@
 			this.CreaturePasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.CreaturePasteBtn.Name = "CreaturePasteBtn";
 			this.CreaturePasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.CreaturePasteBtn.Text = "Paste";
+			this.CreaturePasteBtn.Text = Session.I18N.Paste;
 			this.CreaturePasteBtn.Click += new System.EventHandler(this.CreaturePasteBtn_Click);
 			// 
 			// toolStripSeparator4
@@ -707,7 +707,7 @@
 			this.CreatureTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.CreatureTools.Name = "CreatureTools";
 			this.CreatureTools.Size = new System.Drawing.Size(47, 22);
-			this.CreatureTools.Text = "Tools";
+			this.CreatureTools.Text = Session.I18N.Tools;
 			// 
 			// CreatureToolsDemographics
 			// 
@@ -761,7 +761,7 @@
 			listViewGroup1.Name = "FunctionalGroup";
 			listViewGroup2.Header = "Class Templates";
 			listViewGroup2.Name = "ClassGroup";
-			listViewGroup3.Header = "Themes";
+			listViewGroup3.Header = Session.I18N.Themes;
 			listViewGroup3.Name = "ThemeGroup";
 			this.TemplateList.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
             listViewGroup1,
@@ -801,7 +801,7 @@
 			// 
 			this.TemplateContextRemove.Name = "TemplateContextRemove";
 			this.TemplateContextRemove.Size = new System.Drawing.Size(117, 22);
-			this.TemplateContextRemove.Text = "Remove";
+			this.TemplateContextRemove.Text = Session.I18N.Remove;
 			this.TemplateContextRemove.Click += new System.EventHandler(this.TemplateContextRemove_Click);
 			// 
 			// TemplateContextType
@@ -824,7 +824,7 @@
 			// 
 			this.TemplateClass.Name = "TemplateClass";
 			this.TemplateClass.Size = new System.Drawing.Size(130, 22);
-			this.TemplateClass.Text = "Class";
+			this.TemplateClass.Text = Session.I18N.Class;
 			this.TemplateClass.Click += new System.EventHandler(this.TemplateClass_Click);
 			// 
 			// TemplateToolbar
@@ -859,7 +859,7 @@
 			this.TemplateAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TemplateAddBtn.Name = "TemplateAddBtn";
 			this.TemplateAddBtn.Size = new System.Drawing.Size(42, 22);
-			this.TemplateAddBtn.Text = "Add";
+			this.TemplateAddBtn.Text = Session.I18N.Add;
 			// 
 			// addTemplateToolStripMenuItem
 			// 
@@ -894,7 +894,7 @@
 			this.TemplateRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TemplateRemoveBtn.Name = "TemplateRemoveBtn";
 			this.TemplateRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.TemplateRemoveBtn.Text = "Remove";
+			this.TemplateRemoveBtn.Text = Session.I18N.Remove;
 			this.TemplateRemoveBtn.Click += new System.EventHandler(this.TemplateRemoveBtn_Click);
 			// 
 			// TemplateEditBtn
@@ -904,7 +904,7 @@
 			this.TemplateEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TemplateEditBtn.Name = "TemplateEditBtn";
 			this.TemplateEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.TemplateEditBtn.Text = "Edit";
+			this.TemplateEditBtn.Text = Session.I18N.Edit;
 			this.TemplateEditBtn.Click += new System.EventHandler(this.TemplateEditBtn_Click);
 			// 
 			// toolStripSeparator2
@@ -919,7 +919,7 @@
 			this.TemplateCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TemplateCutBtn.Name = "TemplateCutBtn";
 			this.TemplateCutBtn.Size = new System.Drawing.Size(30, 22);
-			this.TemplateCutBtn.Text = "Cut";
+			this.TemplateCutBtn.Text = Session.I18N.Cut;
 			this.TemplateCutBtn.Click += new System.EventHandler(this.TemplateCutBtn_Click);
 			// 
 			// TemplateCopyBtn
@@ -929,7 +929,7 @@
 			this.TemplateCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TemplateCopyBtn.Name = "TemplateCopyBtn";
 			this.TemplateCopyBtn.Size = new System.Drawing.Size(39, 22);
-			this.TemplateCopyBtn.Text = "Copy";
+			this.TemplateCopyBtn.Text = Session.I18N.Copy;
 			this.TemplateCopyBtn.Click += new System.EventHandler(this.TemplateCopyBtn_Click);
 			// 
 			// TemplatePasteBtn
@@ -939,7 +939,7 @@
 			this.TemplatePasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TemplatePasteBtn.Name = "TemplatePasteBtn";
 			this.TemplatePasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.TemplatePasteBtn.Text = "Paste";
+			this.TemplatePasteBtn.Text = Session.I18N.Paste;
 			this.TemplatePasteBtn.Click += new System.EventHandler(this.TemplatePasteBtn_Click);
 			// 
 			// toolStripSeparator18
@@ -971,7 +971,7 @@
 			this.TemplateTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TemplateTools.Name = "TemplateTools";
 			this.TemplateTools.Size = new System.Drawing.Size(47, 22);
-			this.TemplateTools.Text = "Tools";
+			this.TemplateTools.Text = Session.I18N.Tools;
 			// 
 			// TemplateToolsExport
 			// 
@@ -1041,7 +1041,7 @@
 			// 
 			this.TrapContextRemove.Name = "TrapContextRemove";
 			this.TrapContextRemove.Size = new System.Drawing.Size(117, 22);
-			this.TrapContextRemove.Text = "Remove";
+			this.TrapContextRemove.Text = Session.I18N.Remove;
 			this.TrapContextRemove.Click += new System.EventHandler(this.TrapContextRemove_Click);
 			// 
 			// TrapContextType
@@ -1098,7 +1098,7 @@
 			this.TrapAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TrapAdd.Name = "TrapAdd";
 			this.TrapAdd.Size = new System.Drawing.Size(42, 22);
-			this.TrapAdd.Text = "Add";
+			this.TrapAdd.Text = Session.I18N.Add;
 			// 
 			// TrapAddAdd
 			// 
@@ -1126,7 +1126,7 @@
 			this.TrapRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TrapRemoveBtn.Name = "TrapRemoveBtn";
 			this.TrapRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.TrapRemoveBtn.Text = "Remove";
+			this.TrapRemoveBtn.Text = Session.I18N.Remove;
 			this.TrapRemoveBtn.Click += new System.EventHandler(this.TrapRemoveBtn_Click);
 			// 
 			// TrapEditBtn
@@ -1136,7 +1136,7 @@
 			this.TrapEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TrapEditBtn.Name = "TrapEditBtn";
 			this.TrapEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.TrapEditBtn.Text = "Edit";
+			this.TrapEditBtn.Text = Session.I18N.Edit;
 			this.TrapEditBtn.Click += new System.EventHandler(this.TrapEditBtn_Click);
 			// 
 			// toolStripSeparator6
@@ -1151,7 +1151,7 @@
 			this.TrapCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TrapCutBtn.Name = "TrapCutBtn";
 			this.TrapCutBtn.Size = new System.Drawing.Size(30, 22);
-			this.TrapCutBtn.Text = "Cut";
+			this.TrapCutBtn.Text = Session.I18N.Cut;
 			this.TrapCutBtn.Click += new System.EventHandler(this.TrapCutBtn_Click);
 			// 
 			// TrapCopyBtn
@@ -1161,7 +1161,7 @@
 			this.TrapCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TrapCopyBtn.Name = "TrapCopyBtn";
 			this.TrapCopyBtn.Size = new System.Drawing.Size(39, 22);
-			this.TrapCopyBtn.Text = "Copy";
+			this.TrapCopyBtn.Text = Session.I18N.Copy;
 			this.TrapCopyBtn.Click += new System.EventHandler(this.TrapCopyBtn_Click);
 			// 
 			// TrapPasteBtn
@@ -1171,7 +1171,7 @@
 			this.TrapPasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TrapPasteBtn.Name = "TrapPasteBtn";
 			this.TrapPasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.TrapPasteBtn.Text = "Paste";
+			this.TrapPasteBtn.Text = Session.I18N.Paste;
 			this.TrapPasteBtn.Click += new System.EventHandler(this.TrapPasteBtn_Click);
 			// 
 			// toolStripSeparator8
@@ -1204,7 +1204,7 @@
 			this.TrapTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TrapTools.Name = "TrapTools";
 			this.TrapTools.Size = new System.Drawing.Size(47, 22);
-			this.TrapTools.Text = "Tools";
+			this.TrapTools.Text = Session.I18N.Tools;
 			// 
 			// TrapToolsDemographics
 			// 
@@ -1299,7 +1299,7 @@
 			this.ChallengeAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ChallengeAdd.Name = "ChallengeAdd";
 			this.ChallengeAdd.Size = new System.Drawing.Size(42, 22);
-			this.ChallengeAdd.Text = "Add";
+			this.ChallengeAdd.Text = Session.I18N.Add;
 			// 
 			// ChallengeAddAdd
 			// 
@@ -1327,7 +1327,7 @@
 			this.ChallengeRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ChallengeRemoveBtn.Name = "ChallengeRemoveBtn";
 			this.ChallengeRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.ChallengeRemoveBtn.Text = "Remove";
+			this.ChallengeRemoveBtn.Text = Session.I18N.Remove;
 			this.ChallengeRemoveBtn.Click += new System.EventHandler(this.ChallengeRemoveBtn_Click);
 			// 
 			// ChallengeEditBtn
@@ -1337,7 +1337,7 @@
 			this.ChallengeEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ChallengeEditBtn.Name = "ChallengeEditBtn";
 			this.ChallengeEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.ChallengeEditBtn.Text = "Edit";
+			this.ChallengeEditBtn.Text = Session.I18N.Edit;
 			this.ChallengeEditBtn.Click += new System.EventHandler(this.ChallengeEditBtn_Click);
 			// 
 			// toolStripSeparator7
@@ -1352,7 +1352,7 @@
 			this.ChallengeCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ChallengeCutBtn.Name = "ChallengeCutBtn";
 			this.ChallengeCutBtn.Size = new System.Drawing.Size(30, 22);
-			this.ChallengeCutBtn.Text = "Cut";
+			this.ChallengeCutBtn.Text = Session.I18N.Cut;
 			this.ChallengeCutBtn.Click += new System.EventHandler(this.ChallengeCutBtn_Click);
 			// 
 			// ChallengeCopyBtn
@@ -1362,7 +1362,7 @@
 			this.ChallengeCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ChallengeCopyBtn.Name = "ChallengeCopyBtn";
 			this.ChallengeCopyBtn.Size = new System.Drawing.Size(39, 22);
-			this.ChallengeCopyBtn.Text = "Copy";
+			this.ChallengeCopyBtn.Text = Session.I18N.Copy;
 			this.ChallengeCopyBtn.Click += new System.EventHandler(this.ChallengeCopyBtn_Click);
 			// 
 			// ChallengePasteBtn
@@ -1372,7 +1372,7 @@
 			this.ChallengePasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ChallengePasteBtn.Name = "ChallengePasteBtn";
 			this.ChallengePasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.ChallengePasteBtn.Text = "Paste";
+			this.ChallengePasteBtn.Text = Session.I18N.Paste;
 			this.ChallengePasteBtn.Click += new System.EventHandler(this.ChallengePasteBtn_Click);
 			// 
 			// toolStripSeparator9
@@ -1404,7 +1404,7 @@
 			this.ChallengeTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ChallengeTools.Name = "ChallengeTools";
 			this.ChallengeTools.Size = new System.Drawing.Size(47, 22);
-			this.ChallengeTools.Text = "Tools";
+			this.ChallengeTools.Text = Session.I18N.Tools;
 			// 
 			// ChallengeToolsExport
 			// 
@@ -1478,7 +1478,7 @@
 			// 
 			this.MagicItemContextRemove.Name = "MagicItemContextRemove";
 			this.MagicItemContextRemove.Size = new System.Drawing.Size(117, 22);
-			this.MagicItemContextRemove.Text = "Remove";
+			this.MagicItemContextRemove.Text = Session.I18N.Remove;
 			this.MagicItemContextRemove.Click += new System.EventHandler(this.MagicItemContextRemove_Click);
 			// 
 			// MagicItemToolbar
@@ -1504,7 +1504,7 @@
 			this.MagicItemAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MagicItemAdd.Name = "MagicItemAdd";
 			this.MagicItemAdd.Size = new System.Drawing.Size(42, 22);
-			this.MagicItemAdd.Text = "Add";
+			this.MagicItemAdd.Text = Session.I18N.Add;
 			// 
 			// MagicItemAddAdd
 			// 
@@ -1540,7 +1540,7 @@
 			this.MagicItemTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MagicItemTools.Name = "MagicItemTools";
 			this.MagicItemTools.Size = new System.Drawing.Size(47, 22);
-			this.MagicItemTools.Text = "Tools";
+			this.MagicItemTools.Text = Session.I18N.Tools;
 			// 
 			// MagicItemToolsDemographics
 			// 
@@ -1603,7 +1603,7 @@
 			this.MagicItemVersionToolbar.Name = "MagicItemVersionToolbar";
 			this.MagicItemVersionToolbar.Size = new System.Drawing.Size(299, 25);
 			this.MagicItemVersionToolbar.TabIndex = 0;
-			this.MagicItemVersionToolbar.Text = "toolStrip1";
+			this.MagicItemVersionToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// MagicItemRemoveBtn
 			// 
@@ -1612,7 +1612,7 @@
 			this.MagicItemRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MagicItemRemoveBtn.Name = "MagicItemRemoveBtn";
 			this.MagicItemRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.MagicItemRemoveBtn.Text = "Remove";
+			this.MagicItemRemoveBtn.Text = Session.I18N.Remove;
 			this.MagicItemRemoveBtn.Click += new System.EventHandler(this.MagicItemRemoveBtn_Click);
 			// 
 			// toolStripSeparator5
@@ -1627,7 +1627,7 @@
 			this.MagicItemEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MagicItemEditBtn.Name = "MagicItemEditBtn";
 			this.MagicItemEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.MagicItemEditBtn.Text = "Edit";
+			this.MagicItemEditBtn.Text = Session.I18N.Edit;
 			this.MagicItemEditBtn.Click += new System.EventHandler(this.MagicItemEditBtn_Click);
 			// 
 			// MagicItemCutBtn
@@ -1637,7 +1637,7 @@
 			this.MagicItemCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MagicItemCutBtn.Name = "MagicItemCutBtn";
 			this.MagicItemCutBtn.Size = new System.Drawing.Size(30, 22);
-			this.MagicItemCutBtn.Text = "Cut";
+			this.MagicItemCutBtn.Text = Session.I18N.Cut;
 			this.MagicItemCutBtn.Click += new System.EventHandler(this.MagicItemCutBtn_Click);
 			// 
 			// MagicItemCopyBtn
@@ -1647,7 +1647,7 @@
 			this.MagicItemCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MagicItemCopyBtn.Name = "MagicItemCopyBtn";
 			this.MagicItemCopyBtn.Size = new System.Drawing.Size(39, 22);
-			this.MagicItemCopyBtn.Text = "Copy";
+			this.MagicItemCopyBtn.Text = Session.I18N.Copy;
 			this.MagicItemCopyBtn.Click += new System.EventHandler(this.MagicItemCopyBtn_Click);
 			// 
 			// MagicItemPasteBtn
@@ -1657,7 +1657,7 @@
 			this.MagicItemPasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MagicItemPasteBtn.Name = "MagicItemPasteBtn";
 			this.MagicItemPasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.MagicItemPasteBtn.Text = "Paste";
+			this.MagicItemPasteBtn.Text = Session.I18N.Paste;
 			this.MagicItemPasteBtn.Click += new System.EventHandler(this.MagicItemPasteBtn_Click);
 			// 
 			// toolStripSeparator12
@@ -1723,7 +1723,7 @@
 			// 
 			this.TileContextRemove.Name = "TileContextRemove";
 			this.TileContextRemove.Size = new System.Drawing.Size(141, 22);
-			this.TileContextRemove.Text = "Remove";
+			this.TileContextRemove.Text = Session.I18N.Remove;
 			this.TileContextRemove.Click += new System.EventHandler(this.TileContextRemove_Click);
 			// 
 			// TileContextCategory
@@ -1739,7 +1739,7 @@
             this.TileMap});
 			this.TileContextCategory.Name = "TileContextCategory";
 			this.TileContextCategory.Size = new System.Drawing.Size(141, 22);
-			this.TileContextCategory.Text = "Set Category";
+			this.TileContextCategory.Text = Session.I18N.SetCategory;
 			// 
 			// TilePlain
 			// 
@@ -1830,7 +1830,7 @@
 			this.TileAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TileAddBtn.Name = "TileAddBtn";
 			this.TileAddBtn.Size = new System.Drawing.Size(42, 22);
-			this.TileAddBtn.Text = "Add";
+			this.TileAddBtn.Text = Session.I18N.Add;
 			// 
 			// addTileToolStripMenuItem
 			// 
@@ -1865,7 +1865,7 @@
 			this.TileRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TileRemoveBtn.Name = "TileRemoveBtn";
 			this.TileRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.TileRemoveBtn.Text = "Remove";
+			this.TileRemoveBtn.Text = Session.I18N.Remove;
 			this.TileRemoveBtn.Click += new System.EventHandler(this.TileSetRemoveBtn_Click);
 			// 
 			// TileEditBtn
@@ -1875,7 +1875,7 @@
 			this.TileEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TileEditBtn.Name = "TileEditBtn";
 			this.TileEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.TileEditBtn.Text = "Edit";
+			this.TileEditBtn.Text = Session.I18N.Edit;
 			this.TileEditBtn.Click += new System.EventHandler(this.TileSetEditBtn_Click);
 			// 
 			// toolStripSeparator3
@@ -1890,7 +1890,7 @@
 			this.TileCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TileCutBtn.Name = "TileCutBtn";
 			this.TileCutBtn.Size = new System.Drawing.Size(30, 22);
-			this.TileCutBtn.Text = "Cut";
+			this.TileCutBtn.Text = Session.I18N.Cut;
 			this.TileCutBtn.Click += new System.EventHandler(this.TileCutBtn_Click);
 			// 
 			// TileCopyBtn
@@ -1900,7 +1900,7 @@
 			this.TileCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TileCopyBtn.Name = "TileCopyBtn";
 			this.TileCopyBtn.Size = new System.Drawing.Size(39, 22);
-			this.TileCopyBtn.Text = "Copy";
+			this.TileCopyBtn.Text = Session.I18N.Copy;
 			this.TileCopyBtn.Click += new System.EventHandler(this.TileCopyBtn_Click);
 			// 
 			// TilePasteBtn
@@ -1910,7 +1910,7 @@
 			this.TilePasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TilePasteBtn.Name = "TilePasteBtn";
 			this.TilePasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.TilePasteBtn.Text = "Paste";
+			this.TilePasteBtn.Text = Session.I18N.Paste;
 			this.TilePasteBtn.Click += new System.EventHandler(this.TilePasteBtn_Click);
 			// 
 			// toolStripSeparator23
@@ -1927,7 +1927,7 @@
 			this.TileTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TileTools.Name = "TileTools";
 			this.TileTools.Size = new System.Drawing.Size(47, 22);
-			this.TileTools.Text = "Tools";
+			this.TileTools.Text = Session.I18N.Tools;
 			// 
 			// TileToolsExport
 			// 
@@ -1996,7 +1996,7 @@
 			// 
 			this.TPContextRemove.Name = "TPContextRemove";
 			this.TPContextRemove.Size = new System.Drawing.Size(117, 22);
-			this.TPContextRemove.Text = "Remove";
+			this.TPContextRemove.Text = Session.I18N.Remove;
 			this.TPContextRemove.Click += new System.EventHandler(this.TPContextRemove_Click);
 			// 
 			// TerrainPowerToolbar
@@ -2030,7 +2030,7 @@
 			this.TPAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TPAdd.Name = "TPAdd";
 			this.TPAdd.Size = new System.Drawing.Size(42, 22);
-			this.TPAdd.Text = "Add";
+			this.TPAdd.Text = Session.I18N.Add;
 			// 
 			// TPAddTerrainPower
 			// 
@@ -2058,7 +2058,7 @@
 			this.TPRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TPRemoveBtn.Name = "TPRemoveBtn";
 			this.TPRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.TPRemoveBtn.Text = "Remove";
+			this.TPRemoveBtn.Text = Session.I18N.Remove;
 			this.TPRemoveBtn.Click += new System.EventHandler(this.TPRemoveBtn_Click);
 			// 
 			// TPEditBtn
@@ -2068,7 +2068,7 @@
 			this.TPEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TPEditBtn.Name = "TPEditBtn";
 			this.TPEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.TPEditBtn.Text = "Edit";
+			this.TPEditBtn.Text = Session.I18N.Edit;
 			this.TPEditBtn.Click += new System.EventHandler(this.TPEditBtn_Click);
 			// 
 			// toolStripSeparator29
@@ -2083,7 +2083,7 @@
 			this.TPCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TPCutBtn.Name = "TPCutBtn";
 			this.TPCutBtn.Size = new System.Drawing.Size(30, 22);
-			this.TPCutBtn.Text = "Cut";
+			this.TPCutBtn.Text = Session.I18N.Cut;
 			this.TPCutBtn.Click += new System.EventHandler(this.TPCutBtn_Click);
 			// 
 			// TPCopyBtn
@@ -2093,7 +2093,7 @@
 			this.TPCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TPCopyBtn.Name = "TPCopyBtn";
 			this.TPCopyBtn.Size = new System.Drawing.Size(39, 22);
-			this.TPCopyBtn.Text = "Copy";
+			this.TPCopyBtn.Text = Session.I18N.Copy;
 			this.TPCopyBtn.Click += new System.EventHandler(this.TPCopyBtn_Click);
 			// 
 			// TPPasteBtn
@@ -2103,7 +2103,7 @@
 			this.TPPasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TPPasteBtn.Name = "TPPasteBtn";
 			this.TPPasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.TPPasteBtn.Text = "Paste";
+			this.TPPasteBtn.Text = Session.I18N.Paste;
 			this.TPPasteBtn.Click += new System.EventHandler(this.TPPasteBtn_Click);
 			// 
 			// toolStripSeparator30
@@ -2135,7 +2135,7 @@
 			this.TPTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TPTools.Name = "TPTools";
 			this.TPTools.Size = new System.Drawing.Size(47, 22);
-			this.TPTools.Text = "Tools";
+			this.TPTools.Text = Session.I18N.Tools;
 			// 
 			// TPToolsExport
 			// 
@@ -2204,7 +2204,7 @@
 			// 
 			this.ArtifactContextRemove.Name = "ArtifactContextRemove";
 			this.ArtifactContextRemove.Size = new System.Drawing.Size(117, 22);
-			this.ArtifactContextRemove.Text = "Remove";
+			this.ArtifactContextRemove.Text = Session.I18N.Remove;
 			this.ArtifactContextRemove.Click += new System.EventHandler(this.ArtifactRemove_Click);
 			// 
 			// ArtifactToolbar
@@ -2238,7 +2238,7 @@
 			this.ArtifactAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ArtifactAdd.Name = "ArtifactAdd";
 			this.ArtifactAdd.Size = new System.Drawing.Size(42, 22);
-			this.ArtifactAdd.Text = "Add";
+			this.ArtifactAdd.Text = Session.I18N.Add;
 			// 
 			// ArtifactAddAdd
 			// 
@@ -2266,7 +2266,7 @@
 			this.ArtifactRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ArtifactRemove.Name = "ArtifactRemove";
 			this.ArtifactRemove.Size = new System.Drawing.Size(54, 22);
-			this.ArtifactRemove.Text = "Remove";
+			this.ArtifactRemove.Text = Session.I18N.Remove;
 			this.ArtifactRemove.Click += new System.EventHandler(this.ArtifactRemove_Click);
 			// 
 			// ArtifactEdit
@@ -2276,7 +2276,7 @@
 			this.ArtifactEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ArtifactEdit.Name = "ArtifactEdit";
 			this.ArtifactEdit.Size = new System.Drawing.Size(31, 22);
-			this.ArtifactEdit.Text = "Edit";
+			this.ArtifactEdit.Text = Session.I18N.Edit;
 			this.ArtifactEdit.Click += new System.EventHandler(this.ArtifactEdit_Click);
 			// 
 			// toolStripSeparator32
@@ -2291,7 +2291,7 @@
 			this.ArtifactCut.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ArtifactCut.Name = "ArtifactCut";
 			this.ArtifactCut.Size = new System.Drawing.Size(30, 22);
-			this.ArtifactCut.Text = "Cut";
+			this.ArtifactCut.Text = Session.I18N.Cut;
 			this.ArtifactCut.Click += new System.EventHandler(this.ArtifactCut_Click);
 			// 
 			// ArtifactCopy
@@ -2301,7 +2301,7 @@
 			this.ArtifactCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ArtifactCopy.Name = "ArtifactCopy";
 			this.ArtifactCopy.Size = new System.Drawing.Size(39, 22);
-			this.ArtifactCopy.Text = "Copy";
+			this.ArtifactCopy.Text = Session.I18N.Copy;
 			this.ArtifactCopy.Click += new System.EventHandler(this.ArtifactCopy_Click);
 			// 
 			// ArtifactPaste
@@ -2311,7 +2311,7 @@
 			this.ArtifactPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ArtifactPaste.Name = "ArtifactPaste";
 			this.ArtifactPaste.Size = new System.Drawing.Size(39, 22);
-			this.ArtifactPaste.Text = "Paste";
+			this.ArtifactPaste.Text = Session.I18N.Paste;
 			this.ArtifactPaste.Click += new System.EventHandler(this.ArtifactPaste_Click);
 			// 
 			// toolStripSeparator33
@@ -2343,7 +2343,7 @@
 			this.ArtifactTools.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ArtifactTools.Name = "ArtifactTools";
 			this.ArtifactTools.Size = new System.Drawing.Size(47, 22);
-			this.ArtifactTools.Text = "Tools";
+			this.ArtifactTools.Text = Session.I18N.Tools;
 			// 
 			// ArtifactToolsExport
 			// 
@@ -2373,7 +2373,7 @@
 			// 
 			this.ChallengeContextRemove.Name = "ChallengeContextRemove";
 			this.ChallengeContextRemove.Size = new System.Drawing.Size(117, 22);
-			this.ChallengeContextRemove.Text = "Remove";
+			this.ChallengeContextRemove.Text = Session.I18N.Remove;
 			this.ChallengeContextRemove.Click += new System.EventHandler(this.ChallengeContextRemove_Click);
 			// 
 			// LibraryListForm
@@ -2388,7 +2388,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Libraries";
+			this.Text = Session.I18N.Libraries;
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LibrariesForm_FormClosed);
 			this.Splitter.Panel1.ResumeLayout(false);
 			this.Splitter.Panel1.PerformLayout();

@@ -128,14 +128,14 @@
 			// 
 			this.ListContextRemove.Name = "ListContextRemove";
 			this.ListContextRemove.Size = new System.Drawing.Size(159, 22);
-			this.ListContextRemove.Text = "Remove";
+			this.ListContextRemove.Text = Session.I18N.Remove;
 			this.ListContextRemove.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// ListContextEdit
 			// 
 			this.ListContextEdit.Name = "ListContextEdit";
 			this.ListContextEdit.Size = new System.Drawing.Size(159, 22);
-			this.ListContextEdit.Text = "Edit";
+			this.ListContextEdit.Text = Session.I18N.Edit;
 			this.ListContextEdit.Click += new System.EventHandler(this.EditBtn_Click);
 			// 
 			// toolStripMenuItem1
@@ -179,7 +179,7 @@
 			this.ListToolbar.Name = "ListToolbar";
 			this.ListToolbar.Size = new System.Drawing.Size(199, 25);
 			this.ListToolbar.TabIndex = 0;
-			this.ListToolbar.Text = "toolStrip1";
+			this.ListToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AddBtn
 			// 
@@ -195,7 +195,7 @@
 			this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AddBtn.Name = "AddBtn";
 			this.AddBtn.Size = new System.Drawing.Size(42, 22);
-			this.AddBtn.Text = "Add";
+			this.AddBtn.Text = Session.I18N.Add;
 			// 
 			// AddBuild
 			// 
@@ -242,7 +242,7 @@
 			this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveBtn.Name = "RemoveBtn";
 			this.RemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveBtn.Text = "Remove";
+			this.RemoveBtn.Text = Session.I18N.Remove;
 			this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// EditBtn
@@ -252,7 +252,7 @@
 			this.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EditBtn.Name = "EditBtn";
 			this.EditBtn.Size = new System.Drawing.Size(31, 22);
-			this.EditBtn.Text = "Edit";
+			this.EditBtn.Text = Session.I18N.Edit;
 			this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
 			// 
 			// Splitter
@@ -330,7 +330,7 @@
 			this.MapToolbar.Name = "MapToolbar";
 			this.MapToolbar.Size = new System.Drawing.Size(547, 25);
 			this.MapToolbar.TabIndex = 1;
-			this.MapToolbar.Text = "toolStrip1";
+			this.MapToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// PrintMenu
 			// 
@@ -342,7 +342,7 @@
 			this.PrintMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PrintMenu.Name = "PrintMenu";
 			this.PrintMenu.Size = new System.Drawing.Size(45, 22);
-			this.PrintMenu.Text = "Print";
+			this.PrintMenu.Text = Session.I18N.Print;
 			// 
 			// PrintMap
 			// 
@@ -371,7 +371,7 @@
 			this.ToolsBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ToolsBtn.Name = "ToolsBtn";
 			this.ToolsBtn.Size = new System.Drawing.Size(49, 22);
-			this.ToolsBtn.Text = "Tools";
+			this.ToolsBtn.Text = Session.I18N.Tools;
 			// 
 			// ToolsCategory
 			// 
@@ -403,7 +403,7 @@
 			// 
 			this.ToolsPlayerView.Name = "ToolsPlayerView";
 			this.ToolsPlayerView.Size = new System.Drawing.Size(177, 22);
-			this.ToolsPlayerView.Text = "Send to Player View";
+			this.ToolsPlayerView.Text = Session.I18N.SendPlayerView;
 			this.ToolsPlayerView.Click += new System.EventHandler(this.ToolsPlayerView_Click);
 			// 
 			// DelveBtn
@@ -489,7 +489,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Tactical Maps";
+			this.Text = Session.I18N.TacticalMaps;
 			this.ListContext.ResumeLayout(false);
 			this.ListToolbar.ResumeLayout(false);
 			this.ListToolbar.PerformLayout();

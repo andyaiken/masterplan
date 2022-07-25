@@ -400,11 +400,11 @@ namespace Masterplan.Data
         /// </summary>
         public void SetStandardEncounterNotes()
         {
-            fNotes.Add(new EncounterNote("Illumination"));
-            fNotes.Add(new EncounterNote("Features of the Area"));
-            fNotes.Add(new EncounterNote("Setup"));
-            fNotes.Add(new EncounterNote("Tactics"));
-            fNotes.Add(new EncounterNote("Victory Conditions"));
+            fNotes.Add(new EncounterNote(Session.I18N.Illumination));
+            fNotes.Add(new EncounterNote(Session.I18N.LabelFeaturesArea));
+            fNotes.Add(new EncounterNote(Session.I18N.Setup));
+            fNotes.Add(new EncounterNote(Session.I18N.Tactics));
+            fNotes.Add(new EncounterNote(Session.I18N.VictoryConditions));
         }
 
 		/// <summary>

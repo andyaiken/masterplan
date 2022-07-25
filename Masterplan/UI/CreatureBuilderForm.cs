@@ -156,7 +156,7 @@ namespace Masterplan.UI
 					}
 				}
 
-				if (e.Url.LocalPath == "damage")
+				if (e.Url.LocalPath == Session.I18N.Damage)
 				{
 					e.Cancel = true;
 
@@ -738,7 +738,7 @@ namespace Masterplan.UI
 		{
 			EncounterCard card = new EncounterCard(fCreature);
 
-			List<string> lines = HTML.GetHead("Creature", "", Session.Preferences.TextSize);
+			List<string> lines = HTML.GetHead(Session.I18N.Creature, "", Session.Preferences.TextSize);
 			lines.Add("<BODY>");
 
 			if (fSidebar != SidebarType.Preview)
@@ -932,7 +932,7 @@ namespace Masterplan.UI
 									switch (cat)
 									{
 										case CreaturePowerCategory.Trait:
-											name = "Traits";
+											name = Session.I18N.Traits;
 											break;
 										case CreaturePowerCategory.Standard:
 										case CreaturePowerCategory.Move:
@@ -941,10 +941,10 @@ namespace Masterplan.UI
 											name = cat + " Actions";
 											break;
 										case CreaturePowerCategory.Triggered:
-											name = "Triggered Actions";
+											name = Session.I18N.TriggeredActions;
 											break;
 										case CreaturePowerCategory.Other:
-											name = "Other Actions";
+											name = Session.I18N.OtherActions;
 											break;
 									}
 

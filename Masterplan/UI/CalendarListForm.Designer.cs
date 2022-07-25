@@ -72,7 +72,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(485, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AddBtn
 			// 
@@ -81,7 +81,7 @@
 			this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AddBtn.Name = "AddBtn";
 			this.AddBtn.Size = new System.Drawing.Size(33, 22);
-			this.AddBtn.Text = "Add";
+			this.AddBtn.Text = Session.I18N.Add;
 			this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
 			// 
 			// RemoveBtn
@@ -91,7 +91,7 @@
 			this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveBtn.Name = "RemoveBtn";
 			this.RemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveBtn.Text = "Remove";
+			this.RemoveBtn.Text = Session.I18N.Remove;
 			this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// EditBtn
@@ -101,7 +101,7 @@
 			this.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EditBtn.Name = "EditBtn";
 			this.EditBtn.Size = new System.Drawing.Size(31, 22);
-			this.EditBtn.Text = "Edit";
+			this.EditBtn.Text = Session.I18N.Edit;
 			this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
 			// 
 			// toolStripSeparator3
@@ -116,7 +116,7 @@
 			this.ExportBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ExportBtn.Name = "ExportBtn";
 			this.ExportBtn.Size = new System.Drawing.Size(44, 22);
-			this.ExportBtn.Text = "Export";
+			this.ExportBtn.Text = Session.I18N.Export;
 			this.ExportBtn.Click += new System.EventHandler(this.ExportBtn_Click);
 			// 
 			// PlayerViewBtn
@@ -126,7 +126,7 @@
 			this.PlayerViewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PlayerViewBtn.Name = "PlayerViewBtn";
 			this.PlayerViewBtn.Size = new System.Drawing.Size(114, 22);
-			this.PlayerViewBtn.Text = "Send to Player View";
+			this.PlayerViewBtn.Text = Session.I18N.SendPlayerView;
 			this.PlayerViewBtn.Click += new System.EventHandler(this.PlayerViewBtn_Click);
 			// 
 			// CalendarList
@@ -215,7 +215,7 @@
 			this.NavigationToolbar.Name = "NavigationToolbar";
 			this.NavigationToolbar.Size = new System.Drawing.Size(485, 25);
 			this.NavigationToolbar.TabIndex = 1;
-			this.NavigationToolbar.Text = "toolStrip1";
+			this.NavigationToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// YearPrevBtn
 			// 
@@ -298,7 +298,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Calendars";
+			this.Text = Session.I18N.Calendars;
 			this.Toolbar.ResumeLayout(false);
 			this.Toolbar.PerformLayout();
 			this.Splitter.Panel1.ResumeLayout(false);

@@ -103,7 +103,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 5;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// Pages
@@ -153,7 +153,7 @@
 			this.DetailsToolbar.Name = "DetailsToolbar";
 			this.DetailsToolbar.Size = new System.Drawing.Size(373, 25);
 			this.DetailsToolbar.TabIndex = 1;
-			this.DetailsToolbar.Text = "toolStrip1";
+			this.DetailsToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// RandomDescBtn
 			// 

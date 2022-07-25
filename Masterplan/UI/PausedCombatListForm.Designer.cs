@@ -96,7 +96,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(180, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// RunBtn
 			// 
@@ -115,7 +115,7 @@
 			this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveBtn.Name = "RemoveBtn";
 			this.RemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveBtn.Text = "Remove";
+			this.RemoveBtn.Text = Session.I18N.Remove;
 			this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// MapView
@@ -175,7 +175,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Paused Encounters";
+			this.Text = Session.I18N.PausedEncounters;
 			this.Splitter.Panel1.ResumeLayout(false);
 			this.Splitter.Panel1.PerformLayout();
 			this.Splitter.Panel2.ResumeLayout(false);

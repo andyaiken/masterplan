@@ -140,7 +140,7 @@ namespace Masterplan.UI
 
 				// Attack advice
 
-				string defence = (fPower.Attack.Defence == DefenceType.AC) ? "AC" : "non-AC defence";
+				string defence = (fPower.Attack.Defence == DefenceType.AC) ? Session.I18N.AC : "non-AC defence";
 				ListViewItem lvi_attack = new ListViewItem("Attack vs " + defence + ": ");
 				lvi_attack.SubItems.Add("+" + Statistics.AttackBonus(fPower.Attack.Defence, fLevel, fRole));
 				lvi_attack.Group = AdviceList.Groups[0];

@@ -560,7 +560,7 @@ namespace Masterplan.Tools
 				switch (cat)
 				{
 					case CreaturePowerCategory.Trait:
-						name = "Traits";
+						name = Session.I18N.Traits;
 						break;
 					case CreaturePowerCategory.Standard:
 					case CreaturePowerCategory.Move:
@@ -569,10 +569,10 @@ namespace Masterplan.Tools
 						name = cat + " Actions";
 						break;
 					case CreaturePowerCategory.Triggered:
-						name = "Triggered Actions";
+						name = Session.I18N.TriggeredActions;
 						break;
 					case CreaturePowerCategory.Other:
-						name = "Other Actions";
+						name = Session.I18N.OtherActions;
 						break;
 				}
 
@@ -2156,7 +2156,7 @@ namespace Masterplan.Tools
 							if (secondary == "ref")
 								title = "Reflex";
 							if (secondary == "will")
-								title = "Will";
+								title = Session.I18N.Will;
 							if (secondary == "passiveinsight")
 								title = "Passive Insight";
 							if (secondary == "passiveperception")
@@ -2924,7 +2924,7 @@ namespace Masterplan.Tools
 		{
 			List<string> lines = new List<string>();
 
-			lines.Add(wrap("Encyclopedia", "h2"));
+			lines.Add(wrap(Session.I18N.Encyclopedia, "h2"));
 
 			foreach (NPC npc in Session.Project.NPCs)
 			{
@@ -2948,7 +2948,7 @@ namespace Masterplan.Tools
 		{
 			List<string> lines = new List<string>();
 
-			lines.Add(wrap("Encyclopedia", "h2"));
+			lines.Add(wrap(Session.I18N.Encyclopedia, "h2"));
 
 			foreach (EncyclopediaEntry e in Session.Project.Encyclopedia.Entries)
 			{
@@ -3045,7 +3045,7 @@ namespace Masterplan.Tools
 		{
 			List<string> lines = new List<string>();
 
-			lines.Add(wrap("Notes", "h2"));
+			lines.Add(wrap(Session.I18N.Notes, "h2"));
 
 			foreach (Note n in Session.Project.Notes)
 				lines.Add("<P class=note>" + Process(n.Content, true) + "</P>");
@@ -3633,7 +3633,7 @@ namespace Masterplan.Tools
 
 			string name = trap_attack.Name;
 			if (name == "")
-				name = "Attack";
+				name = Session.I18N.Attack;
 			lines.Add("<TR class=shaded>");
 			lines.Add("<TD colspan=3>");
 			lines.Add("<B>" + name + "</B>");
@@ -4279,7 +4279,7 @@ namespace Masterplan.Tools
 
 				if (cd.Altitude != 0)
 				{
-					string squares = Math.Abs(cd.Altitude) == 1 ? "square" : "squares";
+					string squares = Math.Abs(cd.Altitude) == 1 ? "square" : Session.I18N.Squares;
 					string direction = cd.Altitude > 0 ? "up" : "down";
 
 					lines.Add("<TR>");

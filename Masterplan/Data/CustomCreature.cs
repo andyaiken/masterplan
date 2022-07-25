@@ -136,7 +136,7 @@ namespace Masterplan.Data
 			get
 			{
 				if ((fMovement == null) || (fMovement == ""))
-					return Creature.GetSpeed(fSize) + " squares";
+					return Creature.GetSpeed(fSize) + " " + Session.I18N.Squares;
 				else
 					return fMovement;
 			}
@@ -567,7 +567,7 @@ namespace Masterplan.Data
 				string str = fSize + " " + fOrigin.ToString().ToLower();
 
 				if (fType == CreatureType.MagicalBeast)
-					str += " magical beast";
+					str += " " + Session.I18N.MagicalBeast;
 				else
 					str += " " + fType.ToString().ToLower();
 

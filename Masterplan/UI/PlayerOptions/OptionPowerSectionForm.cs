@@ -11,16 +11,16 @@ namespace Masterplan.UI
 		{
 			InitializeComponent();
 
-			HeaderBox.Items.Add("Attack");
+			HeaderBox.Items.Add(Session.I18N.Attack);
 			HeaderBox.Items.Add("Trigger");
 			HeaderBox.Items.Add("Effect");
 			HeaderBox.Items.Add("Aftereffect");
 			HeaderBox.Items.Add("Hit");
 			HeaderBox.Items.Add("Miss");
 			HeaderBox.Items.Add("Target");
-			HeaderBox.Items.Add("Prerequisite");
+			HeaderBox.Items.Add(Session.I18N.Prerequisite);
 			HeaderBox.Items.Add("Requirement");
-			HeaderBox.Items.Add("Sustain");
+			HeaderBox.Items.Add(Session.I18N.Sustain);
 			HeaderBox.Items.Add("Special");
 
 			fSection = section.Copy();

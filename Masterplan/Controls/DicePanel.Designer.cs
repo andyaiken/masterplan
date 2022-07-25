@@ -52,7 +52,7 @@
 			this.DiceToolbar.Name = "DiceToolbar";
 			this.DiceToolbar.Size = new System.Drawing.Size(287, 25);
 			this.DiceToolbar.TabIndex = 8;
-			this.DiceToolbar.Text = "toolStrip1";
+			this.DiceToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// RollBtn
 			// 
@@ -71,7 +71,7 @@
 			this.ClearBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ClearBtn.Name = "ClearBtn";
 			this.ClearBtn.Size = new System.Drawing.Size(38, 22);
-			this.ClearBtn.Text = "Clear";
+			this.ClearBtn.Text = Session.I18N.Clear;
 			this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
 			// 
 			// OddsBtn

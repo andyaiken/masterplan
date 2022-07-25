@@ -160,7 +160,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 6;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// Pages
@@ -252,7 +252,7 @@
 			this.MainToolbar.Name = "MainToolbar";
 			this.MainToolbar.Size = new System.Drawing.Size(611, 25);
 			this.MainToolbar.TabIndex = 0;
-			this.MainToolbar.Text = "toolStrip1";
+			this.MainToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// SettingsMenu
 			// 
@@ -277,7 +277,7 @@
 			// 
 			this.SettingsState.Name = "SettingsState";
 			this.SettingsState.Size = new System.Drawing.Size(110, 22);
-			this.SettingsState.Text = "State";
+			this.SettingsState.Text = Session.I18N.State;
 			// 
 			// toolStripSeparator2
 			// 
@@ -310,7 +310,7 @@
 			this.ClearLocationLbl.IsLink = true;
 			this.ClearLocationLbl.Name = "ClearLocationLbl";
 			this.ClearLocationLbl.Size = new System.Drawing.Size(34, 22);
-			this.ClearLocationLbl.Text = "Clear";
+			this.ClearLocationLbl.Text = Session.I18N.Clear;
 			this.ClearLocationLbl.Click += new System.EventHandler(this.ClearLocationLbl_Click);
 			// 
 			// toolStripSeparator6
@@ -333,7 +333,7 @@
 			this.ClearDateLbl.IsLink = true;
 			this.ClearDateLbl.Name = "ClearDateLbl";
 			this.ClearDateLbl.Size = new System.Drawing.Size(34, 22);
-			this.ClearDateLbl.Text = "Clear";
+			this.ClearDateLbl.Text = Session.I18N.Clear;
 			this.ClearDateLbl.Click += new System.EventHandler(this.ClearDateLbl_Click);
 			// 
 			// RPGPage
@@ -376,7 +376,7 @@
 			this.CutElementBtn.Name = "CutElementBtn";
 			this.CutElementBtn.Size = new System.Drawing.Size(65, 23);
 			this.CutElementBtn.TabIndex = 4;
-			this.CutElementBtn.Text = "Cut";
+			this.CutElementBtn.Text = Session.I18N.Cut;
 			this.CutElementBtn.UseVisualStyleBackColor = true;
 			this.CutElementBtn.Click += new System.EventHandler(this.CutElementBtn_Click);
 			// 
@@ -387,7 +387,7 @@
 			this.CopyElementBtn.Name = "CopyElementBtn";
 			this.CopyElementBtn.Size = new System.Drawing.Size(65, 23);
 			this.CopyElementBtn.TabIndex = 3;
-			this.CopyElementBtn.Text = "Copy";
+			this.CopyElementBtn.Text = Session.I18N.Copy;
 			this.CopyElementBtn.UseVisualStyleBackColor = true;
 			this.CopyElementBtn.Click += new System.EventHandler(this.CopyElementBtn_Click);
 			// 
@@ -444,7 +444,7 @@
 			this.ParcelsPage.Padding = new System.Windows.Forms.Padding(3);
 			this.ParcelsPage.Size = new System.Drawing.Size(617, 268);
 			this.ParcelsPage.TabIndex = 3;
-			this.ParcelsPage.Text = "Treasure Parcels";
+			this.ParcelsPage.Text = Session.I18N.TreasureParcels;
 			this.ParcelsPage.UseVisualStyleBackColor = true;
 			// 
 			// ParcelList
@@ -499,7 +499,7 @@
 			this.ParcelToolbar.Name = "ParcelToolbar";
 			this.ParcelToolbar.Size = new System.Drawing.Size(611, 25);
 			this.ParcelToolbar.TabIndex = 0;
-			this.ParcelToolbar.Text = "toolStrip1";
+			this.ParcelToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// ParcelAddBtn
 			// 
@@ -515,7 +515,7 @@
 			this.ParcelAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ParcelAddBtn.Name = "ParcelAddBtn";
 			this.ParcelAddBtn.Size = new System.Drawing.Size(42, 22);
-			this.ParcelAddBtn.Text = "Add";
+			this.ParcelAddBtn.Text = Session.I18N.Add;
 			// 
 			// ParcelAddParcel
 			// 
@@ -562,7 +562,7 @@
 			this.ParcelRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ParcelRemoveBtn.Name = "ParcelRemoveBtn";
 			this.ParcelRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.ParcelRemoveBtn.Text = "Remove";
+			this.ParcelRemoveBtn.Text = Session.I18N.Remove;
 			this.ParcelRemoveBtn.Click += new System.EventHandler(this.ParcelRemoveBtn_Click);
 			// 
 			// ParcelEditBtn
@@ -572,7 +572,7 @@
 			this.ParcelEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ParcelEditBtn.Name = "ParcelEditBtn";
 			this.ParcelEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.ParcelEditBtn.Text = "Edit";
+			this.ParcelEditBtn.Text = Session.I18N.Edit;
 			this.ParcelEditBtn.Click += new System.EventHandler(this.ParcelEditBtn_Click);
 			// 
 			// toolStripSeparator1
@@ -685,7 +685,7 @@
 			this.EncyclopediaToolbar.Name = "EncyclopediaToolbar";
 			this.EncyclopediaToolbar.Size = new System.Drawing.Size(331, 25);
 			this.EncyclopediaToolbar.TabIndex = 0;
-			this.EncyclopediaToolbar.Text = "toolStrip1";
+			this.EncyclopediaToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// EncyclopediaAddBtn
 			// 
@@ -694,7 +694,7 @@
 			this.EncyclopediaAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EncyclopediaAddBtn.Name = "EncyclopediaAddBtn";
 			this.EncyclopediaAddBtn.Size = new System.Drawing.Size(33, 22);
-			this.EncyclopediaAddBtn.Text = "Add";
+			this.EncyclopediaAddBtn.Text = Session.I18N.Add;
 			this.EncyclopediaAddBtn.Click += new System.EventHandler(this.EncyclopediaAddBtn_Click);
 			// 
 			// EncyclopediaRemoveBtn
@@ -704,7 +704,7 @@
 			this.EncyclopediaRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EncyclopediaRemoveBtn.Name = "EncyclopediaRemoveBtn";
 			this.EncyclopediaRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.EncyclopediaRemoveBtn.Text = "Remove";
+			this.EncyclopediaRemoveBtn.Text = Session.I18N.Remove;
 			this.EncyclopediaRemoveBtn.Click += new System.EventHandler(this.EncyclopediaRemoveBtn_Click);
 			// 
 			// EncBrowserPanel
@@ -739,7 +739,7 @@
 			this.EncBrowserToolbar.Name = "EncBrowserToolbar";
 			this.EncBrowserToolbar.Size = new System.Drawing.Size(276, 25);
 			this.EncBrowserToolbar.TabIndex = 1;
-			this.EncBrowserToolbar.Text = "toolStrip1";
+			this.EncBrowserToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// EncPlayerViewBtn
 			// 
@@ -748,7 +748,7 @@
 			this.EncPlayerViewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EncPlayerViewBtn.Name = "EncPlayerViewBtn";
 			this.EncPlayerViewBtn.Size = new System.Drawing.Size(114, 22);
-			this.EncPlayerViewBtn.Text = "Send to Player View";
+			this.EncPlayerViewBtn.Text = Session.I18N.SendPlayerView;
 			this.EncPlayerViewBtn.Click += new System.EventHandler(this.EncPlayerViewBtn_Click);
 			// 
 			// LinksPage
@@ -807,7 +807,7 @@
 			this.LinkToolbar.Name = "LinkToolbar";
 			this.LinkToolbar.Size = new System.Drawing.Size(611, 25);
 			this.LinkToolbar.TabIndex = 0;
-			this.LinkToolbar.Text = "toolStrip1";
+			this.LinkToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// RemoveBtn
 			// 
@@ -816,7 +816,7 @@
 			this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveBtn.Name = "RemoveBtn";
 			this.RemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveBtn.Text = "Remove";
+			this.RemoveBtn.Text = Session.I18N.Remove;
 			this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// InfoBtn
@@ -826,7 +826,7 @@
 			this.InfoBtn.Name = "InfoBtn";
 			this.InfoBtn.Size = new System.Drawing.Size(75, 23);
 			this.InfoBtn.TabIndex = 3;
-			this.InfoBtn.Text = "Information";
+			this.InfoBtn.Text = Session.I18N.Information;
 			this.InfoBtn.UseVisualStyleBackColor = true;
 			this.InfoBtn.Click += new System.EventHandler(this.InfoBtn_Click);
 			// 
@@ -837,7 +837,7 @@
 			this.DieRollerBtn.Name = "DieRollerBtn";
 			this.DieRollerBtn.Size = new System.Drawing.Size(75, 23);
 			this.DieRollerBtn.TabIndex = 4;
-			this.DieRollerBtn.Text = "Die Roller";
+			this.DieRollerBtn.Text = Session.I18N.DieRoller;
 			this.DieRollerBtn.UseVisualStyleBackColor = true;
 			this.DieRollerBtn.Click += new System.EventHandler(this.DieRollerBtn_Click);
 			// 

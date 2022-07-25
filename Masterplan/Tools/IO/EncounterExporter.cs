@@ -10,7 +10,7 @@ namespace Masterplan.Tools
 		public static string ExportXML(Encounter enc)
 		{
 			XmlDocument doc = new XmlDocument();
-			doc.AppendChild(doc.CreateElement("Encounter"));
+			doc.AppendChild(doc.CreateElement(Session.I18N.Encounter));
 
 			XMLHelper.CreateChild(doc, doc.DocumentElement, "Source").InnerText = "Masterplan Adventure Design Studio";
 
@@ -21,7 +21,7 @@ namespace Masterplan.Tools
 
 				foreach (CombatData cd in slot.CombatData)
 				{
-					XmlNode creature_node = XMLHelper.CreateChild(doc, creatures_node, "Creature");
+					XmlNode creature_node = XMLHelper.CreateChild(doc, creatures_node, Session.I18N.Creature);
 
 					string role = "";
 					if (creature.Role is Minion)
@@ -37,27 +37,27 @@ namespace Masterplan.Tools
 						role += " (L)";
 
 					XMLHelper.CreateChild(doc, creature_node, "Name").InnerText = cd.DisplayName;
-					XMLHelper.CreateChild(doc, creature_node, "Level").InnerText = slot.Card.Level.ToString();
+					XMLHelper.CreateChild(doc, creature_node, Session.I18N.Level).InnerText = slot.Card.Level.ToString();
 					XMLHelper.CreateChild(doc, creature_node, "Role").InnerText = role;
-					XMLHelper.CreateChild(doc, creature_node, "Size").InnerText = creature.Size.ToString();
+					XMLHelper.CreateChild(doc, creature_node, Session.I18N.Size).InnerText = creature.Size.ToString();
 					XMLHelper.CreateChild(doc, creature_node, "Type").InnerText = creature.Type.ToString();
 					XMLHelper.CreateChild(doc, creature_node, "Origin").InnerText = creature.Origin.ToString();
 					XMLHelper.CreateChild(doc, creature_node, "Keywords").InnerText = creature.Keywords;
-					XMLHelper.CreateChild(doc, creature_node, "Size").InnerText = creature.Size.ToString();
+					XMLHelper.CreateChild(doc, creature_node, Session.I18N.Size).InnerText = creature.Size.ToString();
 					XMLHelper.CreateChild(doc, creature_node, "HP").InnerText = slot.Card.HP.ToString();
 					XMLHelper.CreateChild(doc, creature_node, "InitBonus").InnerText = slot.Card.Initiative.ToString();
 					XMLHelper.CreateChild(doc, creature_node, "Speed").InnerText = slot.Card.Movement;
 
 					XmlNode defences_node = XMLHelper.CreateChild(doc, creature_node, "Defenses");
 
-					XMLHelper.CreateChild(doc, defences_node, "AC").InnerText = slot.Card.AC.ToString();
+					XMLHelper.CreateChild(doc, defences_node, Session.I18N.AC).InnerText = slot.Card.AC.ToString();
 					XMLHelper.CreateChild(doc, defences_node, "Fortitude").InnerText = slot.Card.Fortitude.ToString();
 					XMLHelper.CreateChild(doc, defences_node, "Reflex").InnerText = slot.Card.Reflex.ToString();
-					XMLHelper.CreateChild(doc, defences_node, "Will").InnerText = slot.Card.Will.ToString();
+					XMLHelper.CreateChild(doc, defences_node, Session.I18N.Will).InnerText = slot.Card.Will.ToString();
 
 					if (slot.Card.Regeneration != null)
 					{
-						XmlNode regen_node = XMLHelper.CreateChild(doc, creature_node, "Regeneration");
+						XmlNode regen_node = XMLHelper.CreateChild(doc, creature_node, Session.I18N.Regeneration);
 
 						XMLHelper.CreateChild(doc, regen_node, "Value").InnerText = slot.Card.Regeneration.Value.ToString();
 						XMLHelper.CreateChild(doc, regen_node, "Details").InnerText = slot.Card.Regeneration.Details;
@@ -69,14 +69,14 @@ namespace Masterplan.Tools
 					{
 						if (mod.Value < 0)
 						{
-							XmlNode mod_node = XMLHelper.CreateChild(doc, dmg_node, "Resist");
+							XmlNode mod_node = XMLHelper.CreateChild(doc, dmg_node, Session.I18N.Resist);
 
 							XMLHelper.CreateChild(doc, mod_node, "Type").InnerText = mod.Type.ToString();
 							XMLHelper.CreateChild(doc, mod_node, "Details").InnerText = Math.Abs(mod.Value).ToString();
 						}
 						else if (mod.Value > 0)
 						{
-							XmlNode mod_node = XMLHelper.CreateChild(doc, dmg_node, "Vulnerable");
+							XmlNode mod_node = XMLHelper.CreateChild(doc, dmg_node, Session.I18N.Vulnerable);
 
 							XMLHelper.CreateChild(doc, mod_node, "Type").InnerText = mod.Type.ToString();
 							XMLHelper.CreateChild(doc, mod_node, "Details").InnerText = Math.Abs(mod.Value).ToString();
@@ -90,9 +90,9 @@ namespace Masterplan.Tools
 					}
 
 					if (slot.Card.Resist != "")
-						XMLHelper.CreateChild(doc, dmg_node, "Resist").InnerText = slot.Card.Resist;
+						XMLHelper.CreateChild(doc, dmg_node, Session.I18N.Resist).InnerText = slot.Card.Resist;
 					if (slot.Card.Vulnerable != "")
-						XMLHelper.CreateChild(doc, dmg_node, "Vulnerable").InnerText = slot.Card.Vulnerable;
+						XMLHelper.CreateChild(doc, dmg_node, Session.I18N.Vulnerable).InnerText = slot.Card.Vulnerable;
 					if (slot.Card.Immune != "")
 						XMLHelper.CreateChild(doc, dmg_node, "Immune").InnerText = slot.Card.Immune;
 
@@ -107,7 +107,7 @@ namespace Masterplan.Tools
 					XMLHelper.CreateChild(doc, creature_node, "Senses").InnerText = slot.Card.Senses;
 					XMLHelper.CreateChild(doc, creature_node, "Skills").InnerText = slot.Card.Skills;
 					XMLHelper.CreateChild(doc, creature_node, "Equipment").InnerText = slot.Card.Equipment;
-					XMLHelper.CreateChild(doc, creature_node, "Tactics").InnerText = slot.Card.Tactics;
+					XMLHelper.CreateChild(doc, creature_node, Session.I18N.Tactics).InnerText = slot.Card.Tactics;
 				}
 			}
 
@@ -119,16 +119,16 @@ namespace Masterplan.Tools
 
 				XMLHelper.CreateChild(doc, hero_node, "Name").InnerText = hero.Name;
 				XMLHelper.CreateChild(doc, hero_node, "Description").InnerText = hero.Info;
-				XMLHelper.CreateChild(doc, hero_node, "Size").InnerText = hero.Size.ToString();
+				XMLHelper.CreateChild(doc, hero_node, Session.I18N.Size).InnerText = hero.Size.ToString();
 				XMLHelper.CreateChild(doc, hero_node, "HP").InnerText = hero.HP.ToString();
 				XMLHelper.CreateChild(doc, hero_node, "InitBonus").InnerText = hero.InitBonus.ToString();
 
 				XmlNode defences_node = XMLHelper.CreateChild(doc, hero_node, "Defenses");
 
-				XMLHelper.CreateChild(doc, defences_node, "AC").InnerText = hero.AC.ToString();
+				XMLHelper.CreateChild(doc, defences_node, Session.I18N.AC).InnerText = hero.AC.ToString();
 				XMLHelper.CreateChild(doc, defences_node, "Fortitude").InnerText = hero.Fortitude.ToString();
 				XMLHelper.CreateChild(doc, defences_node, "Reflex").InnerText = hero.Reflex.ToString();
-				XMLHelper.CreateChild(doc, defences_node, "Will").InnerText = hero.Will.ToString();
+				XMLHelper.CreateChild(doc, defences_node, Session.I18N.Will).InnerText = hero.Will.ToString();
 			}
 
 			return doc.OuterXml;

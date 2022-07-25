@@ -87,7 +87,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(684, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// FileMenu
 			// 
@@ -98,7 +98,7 @@
 			this.FileMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.FileMenu.Name = "FileMenu";
 			this.FileMenu.Size = new System.Drawing.Size(38, 22);
-			this.FileMenu.Text = "File";
+			this.FileMenu.Text = Session.I18N.File;
 			// 
 			// FileExport
 			// 
@@ -243,7 +243,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 1;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// OKBtn
@@ -316,7 +316,7 @@
 			this.PictureToolbar.Name = "PictureToolbar";
 			this.PictureToolbar.Size = new System.Drawing.Size(670, 25);
 			this.PictureToolbar.TabIndex = 6;
-			this.PictureToolbar.Text = "toolStrip1";
+			this.PictureToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// PictureBrowseBtn
 			// 
@@ -335,7 +335,7 @@
 			this.PicturePasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PicturePasteBtn.Name = "PicturePasteBtn";
 			this.PicturePasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.PicturePasteBtn.Text = "Paste";
+			this.PicturePasteBtn.Text = Session.I18N.Paste;
 			this.PicturePasteBtn.Click += new System.EventHandler(this.PicturePasteBtn_Click);
 			// 
 			// PictureClearBtn
@@ -345,7 +345,7 @@
 			this.PictureClearBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PictureClearBtn.Name = "PictureClearBtn";
 			this.PictureClearBtn.Size = new System.Drawing.Size(38, 22);
-			this.PictureClearBtn.Text = "Clear";
+			this.PictureClearBtn.Text = Session.I18N.Clear;
 			this.PictureClearBtn.Click += new System.EventHandler(this.PictureClearBtn_Click);
 			// 
 			// PortraitBox
@@ -369,7 +369,7 @@
 			this.EntryPage.Padding = new System.Windows.Forms.Padding(3);
 			this.EntryPage.Size = new System.Drawing.Size(676, 392);
 			this.EntryPage.TabIndex = 2;
-			this.EntryPage.Text = "Encyclopedia Entry";
+			this.EntryPage.Text = Session.I18N.EncyclopediaEntry;
 			this.EntryPage.UseVisualStyleBackColor = true;
 			// 
 			// EntryBrowser

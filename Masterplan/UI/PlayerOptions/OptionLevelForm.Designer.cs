@@ -110,7 +110,7 @@
 			this.FeatureToolbar.Name = "FeatureToolbar";
 			this.FeatureToolbar.Size = new System.Drawing.Size(335, 25);
 			this.FeatureToolbar.TabIndex = 0;
-			this.FeatureToolbar.Text = "toolStrip1";
+			this.FeatureToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// FeatureAddBtn
 			// 
@@ -119,7 +119,7 @@
 			this.FeatureAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.FeatureAddBtn.Name = "FeatureAddBtn";
 			this.FeatureAddBtn.Size = new System.Drawing.Size(33, 22);
-			this.FeatureAddBtn.Text = "Add";
+			this.FeatureAddBtn.Text = Session.I18N.Add;
 			this.FeatureAddBtn.Click += new System.EventHandler(this.FeatureAddBtn_Click);
 			// 
 			// FeatureRemoveBtn
@@ -129,7 +129,7 @@
 			this.FeatureRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.FeatureRemoveBtn.Name = "FeatureRemoveBtn";
 			this.FeatureRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.FeatureRemoveBtn.Text = "Remove";
+			this.FeatureRemoveBtn.Text = Session.I18N.Remove;
 			this.FeatureRemoveBtn.Click += new System.EventHandler(this.FeatureRemoveBtn_Click);
 			// 
 			// FeatureEditBtn
@@ -139,7 +139,7 @@
 			this.FeatureEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.FeatureEditBtn.Name = "FeatureEditBtn";
 			this.FeatureEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.FeatureEditBtn.Text = "Edit";
+			this.FeatureEditBtn.Text = Session.I18N.Edit;
 			this.FeatureEditBtn.Click += new System.EventHandler(this.FeatureEditBtn_Click);
 			// 
 			// PowersPage
@@ -195,7 +195,7 @@
 			this.PowerAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PowerAddBtn.Name = "PowerAddBtn";
 			this.PowerAddBtn.Size = new System.Drawing.Size(33, 22);
-			this.PowerAddBtn.Text = "Add";
+			this.PowerAddBtn.Text = Session.I18N.Add;
 			this.PowerAddBtn.Click += new System.EventHandler(this.PowerAddBtn_Click);
 			// 
 			// PowerRemoveBtn
@@ -205,7 +205,7 @@
 			this.PowerRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PowerRemoveBtn.Name = "PowerRemoveBtn";
 			this.PowerRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.PowerRemoveBtn.Text = "Remove";
+			this.PowerRemoveBtn.Text = Session.I18N.Remove;
 			this.PowerRemoveBtn.Click += new System.EventHandler(this.PowerRemoveBtn_Click);
 			// 
 			// PowerEditBtn
@@ -215,7 +215,7 @@
 			this.PowerEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PowerEditBtn.Name = "PowerEditBtn";
 			this.PowerEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.PowerEditBtn.Text = "Edit";
+			this.PowerEditBtn.Text = Session.I18N.Edit;
 			this.PowerEditBtn.Click += new System.EventHandler(this.PowerEditBtn_Click);
 			// 
 			// OKBtn
@@ -238,7 +238,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 4;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// OptionLevelForm
@@ -258,7 +258,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Level";
+			this.Text = Session.I18N.Level;
 			this.Pages.ResumeLayout(false);
 			this.FeaturesPage.ResumeLayout(false);
 			this.FeaturesPage.PerformLayout();

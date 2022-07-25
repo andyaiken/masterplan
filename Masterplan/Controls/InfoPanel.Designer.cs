@@ -109,7 +109,7 @@
 			// 
 			// DiffHdr
 			// 
-			this.DiffHdr.Text = "Information";
+			this.DiffHdr.Text = Session.I18N.Information;
 			this.DiffHdr.Width = 135;
 			// 
 			// DCHdr

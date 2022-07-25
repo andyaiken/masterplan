@@ -59,7 +59,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 1;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// OKBtn
@@ -95,7 +95,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(384, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// FileMenu
 			// 
@@ -107,7 +107,7 @@
 			this.FileMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.FileMenu.Name = "FileMenu";
 			this.FileMenu.Size = new System.Drawing.Size(38, 22);
-			this.FileMenu.Text = "File";
+			this.FileMenu.Text = Session.I18N.File;
 			// 
 			// FileImport
 			// 

@@ -71,7 +71,7 @@
 			// 
 			// CreatureHdr
 			// 
-			this.CreatureHdr.Text = "Creature";
+			this.CreatureHdr.Text = Session.I18N.Creature;
 			this.CreatureHdr.Width = 150;
 			// 
 			// RoleHdr
@@ -98,10 +98,10 @@
             this.SearchBox,
             this.SearchClearBtn});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-			this.toolStrip1.Name = "toolStrip1";
+			this.toolStrip1.Name = Session.I18N.toolStrip1;
 			this.toolStrip1.Size = new System.Drawing.Size(336, 25);
 			this.toolStrip1.TabIndex = 3;
-			this.toolStrip1.Text = "toolStrip1";
+			this.toolStrip1.Text = Session.I18N.toolStrip1;
 			// 
 			// SearchLbl
 			// 
@@ -121,7 +121,7 @@
 			this.SearchClearBtn.IsLink = true;
 			this.SearchClearBtn.Name = "SearchClearBtn";
 			this.SearchClearBtn.Size = new System.Drawing.Size(34, 22);
-			this.SearchClearBtn.Text = "Clear";
+			this.SearchClearBtn.Text = Session.I18N.Clear;
 			this.SearchClearBtn.Click += new System.EventHandler(this.SearchClearBtn_Click);
 			// 
 			// VariantBasePage

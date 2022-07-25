@@ -19,7 +19,7 @@ namespace Masterplan.Controls
 			FilterRoleBox.SelectedIndex = 0;
 
 			FilterModBox.Items.Add("Standard");
-			FilterModBox.Items.Add("Elite");
+			FilterModBox.Items.Add(Session.I18N.Elite);
 			FilterModBox.Items.Add("Solo");
 			FilterModBox.Items.Add("Minion");
 			FilterModBox.SelectedIndex = 0;
@@ -149,7 +149,7 @@ namespace Masterplan.Controls
 					{
 					}
 
-					if (FilterModBox.Text == "Elite")
+					if (FilterModBox.Text == Session.I18N.Elite)
 					{
 						flag = RoleFlag.Elite;
 					}
@@ -437,7 +437,7 @@ namespace Masterplan.Controls
 					{
 					}
 
-					if (FilterModBox.Text == "Elite")
+					if (FilterModBox.Text == Session.I18N.Elite)
 					{
 						flag = RoleFlag.Elite;
 					}

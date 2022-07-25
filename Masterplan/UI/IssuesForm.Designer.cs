@@ -55,7 +55,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Plot Design Issues";
+			this.Text = Session.I18N.PlotDesignIssues;
 			this.ResumeLayout(false);
 
 		}

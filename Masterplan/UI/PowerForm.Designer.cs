@@ -81,7 +81,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 16;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// NameLbl
@@ -150,7 +150,7 @@
 			this.ActionClearLbl.Size = new System.Drawing.Size(31, 13);
 			this.ActionClearLbl.TabIndex = 8;
 			this.ActionClearLbl.TabStop = true;
-			this.ActionClearLbl.Text = "Clear";
+			this.ActionClearLbl.Text = Session.I18N.Clear;
 			this.ActionClearLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionClearLbl_LinkClicked);
 			// 
 			// AttackLbl
@@ -183,7 +183,7 @@
 			this.AttackClearLbl.Size = new System.Drawing.Size(31, 13);
 			this.AttackClearLbl.TabIndex = 11;
 			this.AttackClearLbl.TabStop = true;
-			this.AttackClearLbl.Text = "Clear";
+			this.AttackClearLbl.Text = Session.I18N.Clear;
 			this.AttackClearLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AttackClearLbl_LinkClicked);
 			// 
 			// RangeLbl
@@ -286,7 +286,7 @@
 			// 
 			// InfoHdr
 			// 
-			this.InfoHdr.Text = "Information";
+			this.InfoHdr.Text = Session.I18N.Information;
 			this.InfoHdr.Width = 100;
 			// 
 			// ConditionBox

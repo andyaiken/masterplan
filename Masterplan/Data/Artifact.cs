@@ -124,12 +124,12 @@ namespace Masterplan.Data
 		/// </summary>
 		public void AddStandardConcordanceLevels()
 		{
-			fConcordanceLevels.Add(new ArtifactConcordance("Pleased", "16-20"));
-			fConcordanceLevels.Add(new ArtifactConcordance("Satisfied", "12-15"));
-			fConcordanceLevels.Add(new ArtifactConcordance("Normal", "5-11"));
-			fConcordanceLevels.Add(new ArtifactConcordance("Unsatisfied", "1-4"));
-			fConcordanceLevels.Add(new ArtifactConcordance("Angered", "0 or lower"));
-			fConcordanceLevels.Add(new ArtifactConcordance("Moving On", ""));
+			fConcordanceLevels.Add(new ArtifactConcordance(Session.I18N.Pleased, "16-20"));
+			fConcordanceLevels.Add(new ArtifactConcordance(Session.I18N.Satisfied, "12-15"));
+			fConcordanceLevels.Add(new ArtifactConcordance(Session.I18N.Normal, "5-11"));
+			fConcordanceLevels.Add(new ArtifactConcordance(Session.I18N.Unsatisfied, "1-4"));
+			fConcordanceLevels.Add(new ArtifactConcordance(Session.I18N.Angered, "0 or lower"));
+			fConcordanceLevels.Add(new ArtifactConcordance(Session.I18N.MovingOn, ""));
 		}
 
 		/// <summary>

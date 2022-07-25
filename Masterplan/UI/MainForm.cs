@@ -614,6 +614,9 @@ namespace Masterplan.UI
 				if (Session.FileName != "")
 					Session.Preferences.LastFile = Session.FileName;
 
+				if (Session.Lang != "")
+					Session.Preferences.Lang = Session.Lang;
+
 				Session.Preferences.Maximised = (WindowState == FormWindowState.Maximized);
 				if (!Session.Preferences.Maximised)
 				{
@@ -5090,7 +5093,7 @@ namespace Masterplan.UI
 		private void AddCreatureLore_Click(object sender, EventArgs e)
 		{
 			CreatureLore lore = new CreatureLore();
-			lore.Name = "Creature";
+			lore.Name = Session.I18N.Creature;
 			lore.SkillName = "Nature";
 
 			OptionCreatureLoreForm dlg = new OptionCreatureLoreForm(lore);
@@ -6936,7 +6939,7 @@ namespace Masterplan.UI
 					}
 				}
 				List<string> cats = bst.SortedList;
-				cats.Add("Notes");
+				cats.Add(Session.I18N.Notes);
 
 				NoteList.Groups.Clear();
 				foreach (string cat in cats)
@@ -6955,7 +6958,7 @@ namespace Masterplan.UI
 						lvi.Tag = n;
 
 						if (n.Category == "")
-							lvi.Group = NoteList.Groups["Notes"];
+							lvi.Group = NoteList.Groups[Session.I18N.Notes];
 						else
 							lvi.Group = NoteList.Groups[n.Category];
 
@@ -6967,12 +6970,12 @@ namespace Masterplan.UI
 					}
 				}
 
-				if (NoteList.Groups["Notes"].Items.Count == 0)
+				if (NoteList.Groups[Session.I18N.Notes].Items.Count == 0)
 				{
 					string str = (NoteSearchBox.Text == "") ? "(no notes)" : "(no matching notes)";
 					ListViewItem lvi = NoteList.Items.Add(str);
 					lvi.ForeColor = SystemColors.GrayText;
-					lvi.Group = NoteList.Groups["Notes"];
+					lvi.Group = NoteList.Groups[Session.I18N.Notes];
 				}
 
 				NoteList.Sort();

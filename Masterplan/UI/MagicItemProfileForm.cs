@@ -12,7 +12,7 @@ namespace Masterplan.UI
 			InitializeComponent();
 
 			TypeBox.Items.Add("Armour");
-			TypeBox.Items.Add("Weapon");
+			TypeBox.Items.Add(Session.I18N.Weapon);
 			TypeBox.Items.Add("Ammunition");
 			TypeBox.Items.Add("Item Slot (head)");
 			TypeBox.Items.Add("Item Slot (neck)");

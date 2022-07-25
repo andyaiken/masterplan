@@ -201,7 +201,7 @@ namespace Masterplan.Tools
 				string[] tokens = str.Split(null);
 				foreach (string token in tokens)
 				{
-					if ((token == "damage") || (token == "dmg"))
+					if ((token == Session.I18N.Damage) || (token == "dmg"))
 						break;
 
 					if ((token == "-") && (started))
@@ -384,15 +384,6 @@ namespace Masterplan.Tools
 			}
 
 			return adjusted;
-		}
-		public DiceExpression Adjust(double percentage_adjustment)
-		{
-			double diceExpected = Throws * (Sides + 1) / 2.0f;
-			double expected = diceExpected + Constant;
-			double adjusted = expected * percentage_adjustment;
-			double adjustedConstant = adjusted - diceExpected;
-
-			return new DiceExpression(Throws, Sides, (int)adjustedConstant);
 		}
 	}
 }

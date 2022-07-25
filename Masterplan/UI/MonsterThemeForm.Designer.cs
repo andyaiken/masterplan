@@ -144,7 +144,7 @@
 			this.PowerToolbar.Name = "PowerToolbar";
 			this.PowerToolbar.Size = new System.Drawing.Size(358, 25);
 			this.PowerToolbar.TabIndex = 0;
-			this.PowerToolbar.Text = "toolStrip1";
+			this.PowerToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// PowerAddBtn
 			// 
@@ -155,7 +155,7 @@
 			this.PowerAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PowerAddBtn.Name = "PowerAddBtn";
 			this.PowerAddBtn.Size = new System.Drawing.Size(45, 22);
-			this.PowerAddBtn.Text = "Add";
+			this.PowerAddBtn.Text = Session.I18N.Add;
 			this.PowerAddBtn.ButtonClick += new System.EventHandler(this.PowerAddBtn_Click);
 			// 
 			// PowerBrowse
@@ -172,7 +172,7 @@
 			this.PowerRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PowerRemoveBtn.Name = "PowerRemoveBtn";
 			this.PowerRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.PowerRemoveBtn.Text = "Remove";
+			this.PowerRemoveBtn.Text = Session.I18N.Remove;
 			this.PowerRemoveBtn.Click += new System.EventHandler(this.PowerRemoveBtn_Click);
 			// 
 			// SkillPage
@@ -228,7 +228,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 4;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// PowerEditBtn
@@ -241,7 +241,7 @@
 			this.PowerEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PowerEditBtn.Name = "PowerEditBtn";
 			this.PowerEditBtn.Size = new System.Drawing.Size(40, 22);
-			this.PowerEditBtn.Text = "Edit";
+			this.PowerEditBtn.Text = Session.I18N.Edit;
 			// 
 			// EditPower
 			// 
@@ -276,7 +276,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Theme";
+			this.Text = Session.I18N.Theme;
 			this.Pages.ResumeLayout(false);
 			this.PowerPage.ResumeLayout(false);
 			this.PowerPage.PerformLayout();

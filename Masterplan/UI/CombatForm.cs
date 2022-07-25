@@ -6221,7 +6221,7 @@ namespace Masterplan.UI
 
 						name = creature.Category;
 						if (name == "")
-							name = "Creature";
+							name = Session.I18N.Creature;
 					}
 				}
 

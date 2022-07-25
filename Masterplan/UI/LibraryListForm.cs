@@ -1266,7 +1266,7 @@ namespace Masterplan.UI
 			if (SelectedCreatures.Count == 1)
 			{
 				SaveFileDialog dlg = new SaveFileDialog();
-				dlg.Title = "Export";
+				dlg.Title = Session.I18N.Export;
 				dlg.Filter = Program.CreatureFilter;
 				dlg.FileName = SelectedCreatures[0].Name;
 
@@ -1739,7 +1739,7 @@ namespace Masterplan.UI
 			if (SelectedTemplates.Count == 1)
 			{
 				SaveFileDialog dlg = new SaveFileDialog();
-				dlg.Title = "Export";
+				dlg.Title = Session.I18N.Export;
 				dlg.Filter = Program.CreatureTemplateFilter;
 				dlg.FileName = SelectedTemplates[0].Name;
 
@@ -1749,7 +1749,7 @@ namespace Masterplan.UI
 			else if (SelectedThemes.Count == 1)
 			{
 				SaveFileDialog dlg = new SaveFileDialog();
-				dlg.Title = "Export";
+				dlg.Title = Session.I18N.Export;
 				dlg.Filter = Program.ThemeFilter;
 				dlg.FileName = SelectedThemes[0].Name;
 
@@ -2023,7 +2023,7 @@ namespace Masterplan.UI
 			if (SelectedTraps.Count == 1)
 			{
 				SaveFileDialog dlg = new SaveFileDialog();
-				dlg.Title = "Export";
+				dlg.Title = Session.I18N.Export;
 				dlg.Filter = Program.TrapFilter;
 				dlg.FileName = SelectedTraps[0].Name;
 
@@ -2284,7 +2284,7 @@ namespace Masterplan.UI
 			if (SelectedChallenges.Count == 1)
 			{
 				SaveFileDialog dlg = new SaveFileDialog();
-				dlg.Title = "Export";
+				dlg.Title = Session.I18N.Export;
 				dlg.Filter = Program.SkillChallengeFilter;
 				dlg.FileName = SelectedChallenges[0].Name;
 
@@ -2537,7 +2537,7 @@ namespace Masterplan.UI
 			if (SelectedMagicItemSet != "")
 			{
 				SaveFileDialog dlg = new SaveFileDialog();
-				dlg.Title = "Export";
+				dlg.Title = Session.I18N.Export;
 				dlg.Filter = Program.MagicItemFilter;
 				dlg.FileName = SelectedMagicItemSet;
 
@@ -2868,7 +2868,7 @@ namespace Masterplan.UI
 			if (SelectedTiles.Count == 1)
 			{
 				SaveFileDialog dlg = new SaveFileDialog();
-				dlg.Title = "Export";
+				dlg.Title = Session.I18N.Export;
 				dlg.Filter = Program.MapTileFilter;
 				dlg.FileName = SelectedTiles[0].ToString();
 
@@ -3234,7 +3234,7 @@ namespace Masterplan.UI
 			if (SelectedTerrainPowers.Count == 1)
 			{
 				SaveFileDialog dlg = new SaveFileDialog();
-				dlg.Title = "Export";
+				dlg.Title = Session.I18N.Export;
 				dlg.Filter = Program.TerrainPowerFilter;
 				dlg.FileName = SelectedTerrainPowers[0].Name;
 
@@ -3459,7 +3459,7 @@ namespace Masterplan.UI
 			if (SelectedArtifacts.Count == 1)
 			{
 				SaveFileDialog dlg = new SaveFileDialog();
-				dlg.Title = "Export";
+				dlg.Title = Session.I18N.Export;
 				dlg.Filter = Program.ArtifactFilter;
 				dlg.FileName = SelectedArtifacts[0].Name;
 

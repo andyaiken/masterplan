@@ -153,7 +153,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(581, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// BrowseBtn
 			// 
@@ -202,7 +202,7 @@
 			this.EntryBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EntryBtn.Name = "EntryBtn";
 			this.EntryBtn.Size = new System.Drawing.Size(111, 22);
-			this.EntryBtn.Text = "Encyclopedia Entry";
+			this.EntryBtn.Text = Session.I18N.EncyclopediaEntry;
 			this.EntryBtn.Click += new System.EventHandler(this.EntryBtn_Click);
 			// 
 			// OKBtn
@@ -225,7 +225,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 4;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// PasteBtn

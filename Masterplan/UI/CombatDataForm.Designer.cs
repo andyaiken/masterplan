@@ -84,7 +84,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 14;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// InitLbl
@@ -211,7 +211,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(335, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AddBtn
 			// 
@@ -220,7 +220,7 @@
 			this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AddBtn.Name = "AddBtn";
 			this.AddBtn.Size = new System.Drawing.Size(33, 22);
-			this.AddBtn.Text = "Add";
+			this.AddBtn.Text = Session.I18N.Add;
 			this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
 			// 
 			// RemoveBtn
@@ -230,7 +230,7 @@
 			this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveBtn.Name = "RemoveBtn";
 			this.RemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveBtn.Text = "Remove";
+			this.RemoveBtn.Text = Session.I18N.Remove;
 			this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// EditBtn
@@ -240,7 +240,7 @@
 			this.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EditBtn.Name = "EditBtn";
 			this.EditBtn.Size = new System.Drawing.Size(31, 22);
-			this.EditBtn.Text = "Edit";
+			this.EditBtn.Text = Session.I18N.Edit;
 			this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
 			// 
 			// toolStripSeparator1

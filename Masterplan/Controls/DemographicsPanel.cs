@@ -287,7 +287,7 @@ namespace Masterplan.Controls
 				case DemographicsMode.Status:
 					{
 						fBreakdown["Standard"] = 0;
-						fBreakdown["Elite"] = 0;
+						fBreakdown[Session.I18N.Elite] = 0;
 						fBreakdown["Solo"] = 0;
 						fBreakdown["Minion"] = 0;
 						fBreakdown["Leader"] = 0;

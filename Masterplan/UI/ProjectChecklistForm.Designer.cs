@@ -68,7 +68,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 2;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// Splitter
@@ -165,7 +165,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(510, 25);
 			this.Toolbar.TabIndex = 2;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// SelectAll
 			// 
@@ -219,12 +219,12 @@
 			// 
 			// columnHeader1
 			// 
-			this.columnHeader1.Text = "Creature";
+			this.columnHeader1.Text = Session.I18N.Creature;
 			this.columnHeader1.Width = 148;
 			// 
 			// columnHeader2
 			// 
-			this.columnHeader2.Text = "Size";
+			this.columnHeader2.Text = Session.I18N.Size;
 			// 
 			// columnHeader3
 			// 
@@ -267,7 +267,7 @@
 			this.ExportBtn.Name = "ExportBtn";
 			this.ExportBtn.Size = new System.Drawing.Size(75, 23);
 			this.ExportBtn.TabIndex = 1;
-			this.ExportBtn.Text = "Export";
+			this.ExportBtn.Text = Session.I18N.Export;
 			this.ExportBtn.UseVisualStyleBackColor = true;
 			this.ExportBtn.Click += new System.EventHandler(this.ExportBtn_Click);
 			// 
@@ -287,7 +287,7 @@
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Project Checklist";
+			this.Text = Session.I18N.ProjectChecklist;
 			this.Splitter.Panel1.ResumeLayout(false);
 			this.Splitter.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.Splitter)).EndInit();

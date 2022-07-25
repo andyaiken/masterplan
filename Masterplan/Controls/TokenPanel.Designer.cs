@@ -60,7 +60,7 @@
 			this.PictureToolbar.Name = "PictureToolbar";
 			this.PictureToolbar.Size = new System.Drawing.Size(237, 25);
 			this.PictureToolbar.TabIndex = 2;
-			this.PictureToolbar.Text = "toolStrip1";
+			this.PictureToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// toolStripButton1
 			// 
@@ -101,7 +101,7 @@
 			this.ImageClear.IsLink = true;
 			this.ImageClear.Name = "ImageClear";
 			this.ImageClear.Size = new System.Drawing.Size(34, 22);
-			this.ImageClear.Text = "Clear";
+			this.ImageClear.Text = Session.I18N.Clear;
 			this.ImageClear.Click += new System.EventHandler(this.ImageClear_Click);
 			// 
 			// TilePanel

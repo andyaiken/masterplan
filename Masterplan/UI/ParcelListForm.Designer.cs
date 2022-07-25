@@ -79,7 +79,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(665, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AddBtn
 			// 
@@ -94,7 +94,7 @@
 			this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AddBtn.Name = "AddBtn";
 			this.AddBtn.Size = new System.Drawing.Size(42, 22);
-			this.AddBtn.Text = "Add";
+			this.AddBtn.Text = Session.I18N.Add;
 			// 
 			// AddParcel
 			// 
@@ -136,7 +136,7 @@
 			this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveBtn.Name = "RemoveBtn";
 			this.RemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveBtn.Text = "Remove";
+			this.RemoveBtn.Text = Session.I18N.Remove;
 			this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// EditBtn
@@ -146,7 +146,7 @@
 			this.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EditBtn.Name = "EditBtn";
 			this.EditBtn.Size = new System.Drawing.Size(31, 22);
-			this.EditBtn.Text = "Edit";
+			this.EditBtn.Text = Session.I18N.Edit;
 			this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
 			// 
 			// toolStripSeparator3
@@ -180,7 +180,7 @@
 			this.ViewMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ViewMenu.Name = "ViewMenu";
 			this.ViewMenu.Size = new System.Drawing.Size(45, 22);
-			this.ViewMenu.Text = "View";
+			this.ViewMenu.Text = Session.I18N.View;
 			this.ViewMenu.DropDownOpening += new System.EventHandler(this.ViewMenu_DropDownOpening);
 			// 
 			// ViewAssigned
@@ -328,7 +328,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Treasure Parcels";
+			this.Text = Session.I18N.TreasureParcels;
 			this.Shown += new System.EventHandler(this.ParcelListForm_Shown);
 			this.Toolbar.ResumeLayout(false);
 			this.Toolbar.PerformLayout();

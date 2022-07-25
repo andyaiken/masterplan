@@ -57,7 +57,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 7;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// OKBtn
@@ -165,7 +165,7 @@
 			// 
 			// InfoHdr
 			// 
-			this.InfoHdr.Text = "Information";
+			this.InfoHdr.Text = Session.I18N.Information;
 			this.InfoHdr.Width = 100;
 			// 
 			// SkillLbl

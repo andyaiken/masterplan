@@ -60,7 +60,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 4;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// NameLbl
@@ -132,7 +132,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Regeneration";
+			this.Text = Session.I18N.Regeneration;
 			this.Pages.ResumeLayout(false);
 			this.DetailsPage.ResumeLayout(false);
 			this.DetailsPage.PerformLayout();

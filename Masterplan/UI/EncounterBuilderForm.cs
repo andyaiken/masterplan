@@ -96,7 +96,7 @@ namespace Masterplan.UI
 
 					if ((SelectedSlotTrap != null) || (SelectedSlotSkillChallenge != null))
 					{
-						RemoveBtn.Text = "Remove";
+						RemoveBtn.Text = Session.I18N.Remove;
 					}
 					else
 					{
@@ -2728,7 +2728,7 @@ namespace Masterplan.UI
 		private void ToolsExport_Click(object sender, EventArgs e)
 		{
 			SaveFileDialog dlg = new SaveFileDialog();
-			dlg.FileName = "Encounter";
+			dlg.FileName = Session.I18N.Encounter;
 			dlg.Filter = Program.EncounterFilter;
 
 			if (dlg.ShowDialog() == DialogResult.OK)

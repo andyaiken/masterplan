@@ -73,7 +73,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 3;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// DamageList
@@ -118,7 +118,7 @@
 			this.DamageToolbar.Name = "DamageToolbar";
 			this.DamageToolbar.Size = new System.Drawing.Size(330, 25);
 			this.DamageToolbar.TabIndex = 0;
-			this.DamageToolbar.Text = "toolStrip1";
+			this.DamageToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AddDmgBtn
 			// 
@@ -127,7 +127,7 @@
 			this.AddDmgBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AddDmgBtn.Name = "AddDmgBtn";
 			this.AddDmgBtn.Size = new System.Drawing.Size(33, 22);
-			this.AddDmgBtn.Text = "Add";
+			this.AddDmgBtn.Text = Session.I18N.Add;
 			this.AddDmgBtn.Click += new System.EventHandler(this.AddDmgBtn_Click);
 			// 
 			// RemoveDmgBtn
@@ -137,7 +137,7 @@
 			this.RemoveDmgBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveDmgBtn.Name = "RemoveDmgBtn";
 			this.RemoveDmgBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveDmgBtn.Text = "Remove";
+			this.RemoveDmgBtn.Text = Session.I18N.Remove;
 			this.RemoveDmgBtn.Click += new System.EventHandler(this.RemoveDmgBtn_Click);
 			// 
 			// EditDmgBtn
@@ -147,7 +147,7 @@
 			this.EditDmgBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EditDmgBtn.Name = "EditDmgBtn";
 			this.EditDmgBtn.Size = new System.Drawing.Size(31, 22);
-			this.EditDmgBtn.Text = "Edit";
+			this.EditDmgBtn.Text = Session.I18N.Edit;
 			this.EditDmgBtn.Click += new System.EventHandler(this.EditDmgBtn_Click);
 			// 
 			// ResistLbl

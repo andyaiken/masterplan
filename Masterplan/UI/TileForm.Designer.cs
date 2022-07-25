@@ -75,7 +75,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 10;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// WidthLbl
@@ -175,7 +175,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(311, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// BrowseBtn
 			// 
@@ -194,7 +194,7 @@
 			this.PasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PasteBtn.Name = "PasteBtn";
 			this.PasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.PasteBtn.Text = "Paste";
+			this.PasteBtn.Text = Session.I18N.Paste;
 			this.PasteBtn.Click += new System.EventHandler(this.PasteBtn_Click);
 			// 
 			// ClearBtn
@@ -204,7 +204,7 @@
 			this.ClearBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ClearBtn.Name = "ClearBtn";
 			this.ClearBtn.Size = new System.Drawing.Size(38, 22);
-			this.ClearBtn.Text = "Clear";
+			this.ClearBtn.Text = Session.I18N.Clear;
 			this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
 			// 
 			// toolStripSeparator1

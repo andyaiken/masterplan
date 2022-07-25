@@ -54,7 +54,7 @@ namespace Masterplan.UI
 					DetailsBox.Text = fCreature.Skills;
 					break;
 				case DetailsField.Resist:
-					Text = "Resist";
+					Text = Session.I18N.Resist;
 					DetailsBox.Text = fCreature.Resist;
 					break;
 				case DetailsField.Immune:
@@ -62,11 +62,11 @@ namespace Masterplan.UI
 					DetailsBox.Text = fCreature.Immune;
 					break;
 				case DetailsField.Vulnerable:
-					Text = "Vulnerable";
+					Text = Session.I18N.Vulnerable;
 					DetailsBox.Text = fCreature.Vulnerable;
 					break;
 				case DetailsField.Tactics:
-					Text = "Tactics";
+					Text = Session.I18N.Tactics;
 					DetailsBox.Text = fCreature.Tactics;
 					break;
 			}

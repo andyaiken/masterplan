@@ -87,7 +87,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 4;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// NameLbl
@@ -241,7 +241,7 @@
 			// 
 			// CardHdr
 			// 
-			this.CardHdr.Text = "Creature";
+			this.CardHdr.Text = Session.I18N.Creature;
 			this.CardHdr.Width = 227;
 			// 
 			// CardInfoHdr
@@ -262,7 +262,7 @@
 			this.DeckToolbar.Name = "DeckToolbar";
 			this.DeckToolbar.Size = new System.Drawing.Size(470, 25);
 			this.DeckToolbar.TabIndex = 0;
-			this.DeckToolbar.Text = "toolStrip1";
+			this.DeckToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// DuplicateBtn
 			// 
@@ -281,7 +281,7 @@
 			this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveBtn.Name = "RemoveBtn";
 			this.RemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveBtn.Text = "Remove";
+			this.RemoveBtn.Text = Session.I18N.Remove;
 			this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// toolStripSeparator1
@@ -335,7 +335,7 @@
 			// 
 			// CreatureHdr
 			// 
-			this.CreatureHdr.Text = "Creature";
+			this.CreatureHdr.Text = Session.I18N.Creature;
 			this.CreatureHdr.Width = 180;
 			// 
 			// InfoLbl

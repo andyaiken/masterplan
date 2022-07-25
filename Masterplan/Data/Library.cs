@@ -624,7 +624,7 @@ namespace Masterplan.Data
 						ta.ID = Guid.NewGuid();
 
 					if (ta.Name == null)
-						ta.Name = "Attack";
+						ta.Name = Session.I18N.Attack;
 
 					if (ta.Keywords == null)
 						ta.Keywords = "";

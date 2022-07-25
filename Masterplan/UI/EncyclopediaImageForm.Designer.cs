@@ -98,7 +98,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(381, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// BrowseBtn
 			// 
@@ -122,7 +122,7 @@
 			this.PlayerViewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PlayerViewBtn.Name = "PlayerViewBtn";
 			this.PlayerViewBtn.Size = new System.Drawing.Size(114, 22);
-			this.PlayerViewBtn.Text = "Send to Player View";
+			this.PlayerViewBtn.Text = Session.I18N.SendPlayerView;
 			this.PlayerViewBtn.Click += new System.EventHandler(this.PlayerViewBtn_Click);
 			// 
 			// OKBtn
@@ -145,7 +145,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 4;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// PasteBtn

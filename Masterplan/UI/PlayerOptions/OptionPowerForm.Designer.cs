@@ -114,7 +114,7 @@
 			this.HeaderPage.Padding = new System.Windows.Forms.Padding(3);
 			this.HeaderPage.Size = new System.Drawing.Size(333, 190);
 			this.HeaderPage.TabIndex = 2;
-			this.HeaderPage.Text = "Information";
+			this.HeaderPage.Text = Session.I18N.Information;
 			this.HeaderPage.UseVisualStyleBackColor = true;
 			// 
 			// RangeBox
@@ -261,7 +261,7 @@
 			this.SectionToolbar.Name = "SectionToolbar";
 			this.SectionToolbar.Size = new System.Drawing.Size(327, 25);
 			this.SectionToolbar.TabIndex = 0;
-			this.SectionToolbar.Text = "toolStrip1";
+			this.SectionToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// SectionAddBtn
 			// 
@@ -270,7 +270,7 @@
 			this.SectionAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.SectionAddBtn.Name = "SectionAddBtn";
 			this.SectionAddBtn.Size = new System.Drawing.Size(33, 22);
-			this.SectionAddBtn.Text = "Add";
+			this.SectionAddBtn.Text = Session.I18N.Add;
 			this.SectionAddBtn.Click += new System.EventHandler(this.SectionAddBtn_Click);
 			// 
 			// SectionRemoveBtn
@@ -280,7 +280,7 @@
 			this.SectionRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.SectionRemoveBtn.Name = "SectionRemoveBtn";
 			this.SectionRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.SectionRemoveBtn.Text = "Remove";
+			this.SectionRemoveBtn.Text = Session.I18N.Remove;
 			this.SectionRemoveBtn.Click += new System.EventHandler(this.SectionRemoveBtn_Click);
 			// 
 			// SectionEditBtn
@@ -290,7 +290,7 @@
 			this.SectionEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.SectionEditBtn.Name = "SectionEditBtn";
 			this.SectionEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.SectionEditBtn.Text = "Edit";
+			this.SectionEditBtn.Text = Session.I18N.Edit;
 			this.SectionEditBtn.Click += new System.EventHandler(this.SectionEditBtn_Click);
 			// 
 			// toolStripSeparator1
@@ -363,7 +363,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 12;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// OptionPowerForm

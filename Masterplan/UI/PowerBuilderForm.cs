@@ -48,7 +48,7 @@ namespace Masterplan.UI
 					}
 				}
 
-				if (e.Url.LocalPath == "action")
+				if (e.Url.LocalPath == Session.I18N.Action)
 				{
 					e.Cancel = true;
 

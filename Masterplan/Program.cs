@@ -27,16 +27,19 @@ namespace Masterplan
 				init_logging();
 
                 SplashScreen = new ProgressScreen("Masterplan", 0);
+				// This label cant be replaced because it's before the I18N is loaded
                 SplashScreen.CurrentAction = "Loading...";
                 SplashScreen.Show();
 
                 load_preferences();
+				load_lang();
+				SplashScreen.CurrentAction = Session.I18N.Loading + "...";
 				load_libraries();
 
 				foreach (string arg in args)
 					handle_arg(arg);
 
-				SplashScreen.CurrentAction = "Starting Masterplan...";
+				SplashScreen.CurrentAction = Session.I18N.StartingMasterplan + "...";
 				SplashScreen.Actions = 0;
 
 				try
@@ -97,7 +100,7 @@ namespace Masterplan
 		{
 			try
             {
-				SplashScreen.CurrentAction = "Loading libraries...";
+				SplashScreen.CurrentAction = Session.I18N.LoadingLibraries + "...";
 
                 Assembly ass = Assembly.GetEntryAssembly();
                 string root_dir = FileName.Directory(ass.Location);
@@ -147,6 +150,7 @@ namespace Masterplan
 
                 if (File.Exists(filename))
                 {
+					//Before preferences load
                     SplashScreen.CurrentAction = "Loading user preferences";
 
                     Preferences prefs = Serialisation<Preferences>.Load(filename, SerialisationMode.XML);
@@ -160,7 +164,35 @@ namespace Masterplan
             }
         }
 
-        static void save_preferences()
+		static void load_lang()
+		{
+			try
+			{
+				Assembly ass = Assembly.GetEntryAssembly();
+				string root_dir = FileName.Directory(ass.Location);
+				string filename = root_dir + Session.Preferences.Lang + ".xml";
+				Session.Lang = Session.Preferences.Lang;
+
+				if (File.Exists(filename))
+				{
+					//Before preferences load
+					SplashScreen.CurrentAction = "Loading Language values";
+
+					I18N i18n = Serialisation<I18N>.Load(filename, SerialisationMode.XML);
+					if (i18n != null)
+						Session.I18N = i18n;
+				}
+				// gen the file at each launch
+				// this way, the new I18N entries will be added to the existant lang pack
+				gen_lang();
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
+			}
+		}
+
+		static void save_preferences()
         {
             try
             {
@@ -175,6 +207,22 @@ namespace Masterplan
 				LogSystem.Trace(ex);
             }
         }
+
+		static void gen_lang()
+		{
+			try
+			{
+				Assembly ass = Assembly.GetEntryAssembly();
+				string root_dir = FileName.Directory(ass.Location);
+				string filename = root_dir + Session.Lang + ".xml";
+
+				Serialisation<I18N>.Save(filename, Session.I18N, SerialisationMode.XML);
+			}
+			catch (Exception ex)
+			{
+				LogSystem.Trace(ex);
+			}
+		}
 
 		static void handle_arg(string arg)
 		{

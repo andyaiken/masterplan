@@ -24,6 +24,15 @@ namespace Masterplan
 		}
 		string fLastFile = "";
 
+		/// <summary>
+		/// Gets or sets the language to use.
+		/// </summary>
+		public string Lang
+		{
+			get { return fLang; }
+			set { fLang = value; }
+		}
+		string fLang = "En";
 		#region Window
 
 		/// <summary>

@@ -386,8 +386,8 @@ namespace Masterplan.Data
 
 			if (lhs_basic && rhs_basic)
 			{
-				bool lhs_melee = fRange.ToLower().Contains("melee");
-				bool rhs_melee = rhs.Range.ToLower().Contains("melee");
+				bool lhs_melee = fRange.ToLower().Contains(Session.I18N.LowerMelee);
+				bool rhs_melee = rhs.Range.ToLower().Contains(Session.I18N.LowerMelee);
 
 				if (lhs_melee != rhs_melee)
 				{
@@ -403,8 +403,8 @@ namespace Masterplan.Data
 
 			if (!lhs_basic && !rhs_basic)
 			{
-				bool lhs_double = fRange.ToLower().Contains("double");
-				bool rhs_double = rhs.Range.ToLower().Contains("double");
+				bool lhs_double = fRange.ToLower().Contains(Session.I18N.LowerDouble);
+				bool rhs_double = rhs.Range.ToLower().Contains(Session.I18N.LowerDouble);
 
 				if (lhs_double != rhs_double)
 				{
@@ -441,29 +441,29 @@ namespace Masterplan.Data
 		{
 			bool used = ((mode == CardMode.Combat) && (cd != null) && cd.UsedPowers.Contains(fID));
 
-			string cat = "Actions";
+			string cat = Session.I18N.Actions;
 			switch (Category)
 			{
 				case CreaturePowerCategory.Trait:
-					cat = "Traits";
+					cat = Session.I18N.Traits;
 					break;
 				case CreaturePowerCategory.Standard:
-					cat = "Standard Actions";
+					cat = Session.I18N.StandardActions;
 					break;
 				case CreaturePowerCategory.Move:
-					cat = "Move Actions";
+					cat = Session.I18N.MoveActions;
 					break;
 				case CreaturePowerCategory.Minor:
-					cat = "Minor Actions";
+					cat = Session.I18N.MinorActions;
 					break;
 				case CreaturePowerCategory.Free:
-					cat = "Free Actions";
+					cat = Session.I18N.FreeActions;
 					break;
 				case CreaturePowerCategory.Triggered:
-					cat = "Triggered Actions";
+					cat = Session.I18N.TriggeredActions;
 					break;
 				case CreaturePowerCategory.Other:
-					cat = "Other Actions";
+					cat = Session.I18N.OtherActions;
 					break;
 			}
 
@@ -473,7 +473,7 @@ namespace Masterplan.Data
 			{
 				content.Add("<TR class=creature>");
 				content.Add("<TD colspan=3>");
-				content.Add("<A href=power:action style=\"color:white\"><B>" + cat + "</B> (click here to change the action)</A>");
+				content.Add("<A href=power:action style=\"color:white\"><B>" + cat + "</B> (" + Session.I18N.LabelChangeAction + ")</A>");
 				content.Add("</TD>");
 				content.Add("</TR>");
 			}
@@ -502,7 +502,7 @@ namespace Masterplan.Data
 				{
 					content.Add("<TR>");
 					content.Add("<TD class=indent colspan=3>");
-					content.Add("<A href=\"refresh:" + cd.ID + ";" + fID + "\">(recharge this power)</A>");
+					content.Add("<A href=\"refresh:" + cd.ID + ";" + fID + "\">(" + Session.I18N.LabelRechargePower + ")</A>");
 					content.Add("</TD>");
 					content.Add("</TR>");
 				}
@@ -514,7 +514,7 @@ namespace Masterplan.Data
 						{
 							content.Add("<TR>");
 							content.Add("<TD class=indent colspan=3>");
-							content.Add("<A href=\"refresh:" + cd.ID + ";" + fID + "\">(use this power)</A>");
+							content.Add("<A href=\"refresh:" + cd.ID + ";" + fID + "\">(" + Session.I18N.LabelUsePower + ")</A>");
 							content.Add("</TD>");
 							content.Add("</TR>");
 						}
@@ -526,7 +526,7 @@ namespace Masterplan.Data
 			{
 				content.Add("<TR class=shaded>");
 				content.Add("<TD colspan=3>");
-				content.Add("<B>Note</B>: This power is part of a functional template, and so its attack bonus will be increased by the level of the creature it is applied to.");
+				content.Add("<B>" + Session.I18N.Note + "</B>: " + Session.I18N.LabelNotePower);
 				content.Add("</TD>");
 				content.Add("</TR>");
 			}
@@ -540,25 +540,25 @@ namespace Masterplan.Data
 
 			Image icon = null;
 			string rng = fRange.ToLower();
-			if (rng.Contains("melee"))
+			if (rng.Contains(Session.I18N.LowerMelee))
 			{
 				if ((fAction != null) && (fAction.Use == PowerUseType.Basic))
 					icon = Resources.MeleeBasic;
 				else
 					icon = Resources.Melee;
 			}
-			if (rng.Contains("ranged"))
+			if (rng.Contains(Session.I18N.LowerRanged))
 			{
 				if ((fAction != null) && (fAction.Use == PowerUseType.Basic))
 					icon = Resources.RangedBasic;
 				else
 					icon = Resources.Ranged;
 			}
-			if (rng.Contains("area"))
+			if (rng.Contains(Session.I18N.LowerArea))
 			{
 				icon = Resources.Area;
 			}
-			if (rng.Contains("close"))
+			if (rng.Contains(Session.I18N.LowerClose))
 			{
 				icon = Resources.Close;
 			}
@@ -648,7 +648,7 @@ namespace Masterplan.Data
 			if (mode == CardMode.Build)
 			{
 				if (desc == "")
-					desc = "Set read-aloud description (optional)";
+					desc = Session.I18N.LabelReadAloud;
 
 				desc = "<A href=power:desc>" + desc + "</A>";
 			}
@@ -664,16 +664,16 @@ namespace Masterplan.Data
 				switch (fAction.Action)
 				{
 					case ActionType.Interrupt:
-						action = "immediate interrupt";
+						action = Session.I18N.ImmediateInterrupt;
 						break;
 					case ActionType.None:
-						action = "no action";
+						action = Session.I18N.NoAction;
 						break;
 					case ActionType.Reaction:
-						action = "immediate reaction";
+						action = Session.I18N.ImmediateReaction;
 						break;
 					default:
-						action = fAction.Action.ToString().ToLower() + " action";
+						action = fAction.Action.ToString().ToLower() + " " + Session.I18N.Action;
 						break;
 				}
 
@@ -689,13 +689,13 @@ namespace Masterplan.Data
 
 			string condition = HTML.Process(fCondition, true);
 			if ((condition == "") && (mode == CardMode.Build))
-				condition = "No prerequisite";
+				condition = Session.I18N.NoPrerequisite;
 			if (condition != "")
 			{
 				if (mode == CardMode.Build)
 					condition = "<A href=power:prerequisite>" + condition + "</A>";
 
-				condition = "Prerequisite: " + condition;
+				condition = Session.I18N.Prerequisite + ": " + condition;
 
 				lines.Add(condition);
 			}
@@ -705,19 +705,19 @@ namespace Masterplan.Data
 			if (mode == CardMode.Build)
 			{
 				if (range == "")
-					range = "<A href=power:range>" + "The power's range and its target(s) are not set" + "</A>";
+					range = "<A href=power:range>" + Session.I18N.LabelNoRange + "</A>";
 				else
 					range = "<A href=power:range>" + range + "</A>";
 
 				if (attack == "")
-					attack = "<A href=power:attack>Click here to make this an attack power</A>";
+					attack = "<A href=power:attack>"+ Session.I18N.LabelSetAttack + "</A>";
 				else
-					attack = "<A href=power:attack>" + attack + "</A> <A href=power:clearattack>(clear attack)</A>";
+					attack = "<A href=power:attack>" + attack + "</A> <A href=power:clearattack>(" + Session.I18N.ClearAttack + ")</A>";
 			}
 			if (range != "")
-				lines.Add("Range: " + range);
+				lines.Add(Session.I18N.Range + ": " + range);
 			if (attack != "")
-				lines.Add("Attack: " + attack);
+				lines.Add(Session.I18N.Attack + ": " + attack);
 
 			if (mode == CardMode.Build)
 				lines.Add("");
@@ -728,7 +728,7 @@ namespace Masterplan.Data
 			if (mode == CardMode.Build)
 			{
 				if (details == "")
-					details = "Specify the power's effects";
+					details = Session.I18N.LabelSpecPowEff;
 
 				details = "<A href=power:details>" + details + "</A>";
 			}
@@ -745,7 +745,7 @@ namespace Masterplan.Data
 				if (mode == CardMode.Build)
 					sustain = "<A href=power:action>" + sustain + "</A>";
 
-				lines.Add("Sustain: " + sustain);
+				lines.Add(Session.I18N.Sustain + ": " + sustain);
 			}
 
 			string str = "";
@@ -758,7 +758,7 @@ namespace Masterplan.Data
 			}
 
 			if (str == "")
-				str = "(no details)";
+				str = Session.I18N.NoDetails;
 
 			return str;
 		}
@@ -798,22 +798,22 @@ namespace Masterplan.Data
 						bool found_bonus = false;
 						bool found_defence = false;
 
-						if (suffix.Contains("AC"))
+						if (suffix.Contains(Session.I18N.AC))
 						{
 							defence = DefenceType.AC;
 							found_defence = true;
 						}
-						if (suffix.Contains("Fort"))
+						if (suffix.Contains(Session.I18N.Fort))
 						{
 							defence = DefenceType.Fortitude;
 							found_defence = true;
 						}
-						if (suffix.Contains("Ref"))
+						if (suffix.Contains(Session.I18N.Ref))
 						{
 							defence = DefenceType.Reflex;
 							found_defence = true;
 						}
-						if (suffix.Contains("Will"))
+						if (suffix.Contains(Session.I18N.Will))
 						{
 							defence = DefenceType.Will;
 							found_defence = true;
@@ -866,27 +866,27 @@ namespace Masterplan.Data
 		/// <summary>
 		/// Recharge 2-6.
 		/// </summary>
-		public const string RECHARGE_2 = "Recharges on 2-6";
+		public static string RECHARGE_2 = Session.I18N.RechargesOn + "2-6";
 
 		/// <summary>
 		/// Recharge 3-6.
 		/// </summary>
-		public const string RECHARGE_3 = "Recharges on 3-6";
+		public static string RECHARGE_3 = Session.I18N.RechargesOn + "3-6";
 
 		/// <summary>
 		/// Recharge 4-6.
 		/// </summary>
-		public const string RECHARGE_4 = "Recharges on 4-6";
+		public static string RECHARGE_4 = Session.I18N.RechargesOn + "4-6";
 
 		/// <summary>
 		/// Recharge 5-6.
 		/// </summary>
-		public const string RECHARGE_5 = "Recharges on 5-6";
+		public static string RECHARGE_5 = Session.I18N.RechargesOn + "5-6";
 
 		/// <summary>
 		/// Recharge 6.
 		/// </summary>
-		public const string RECHARGE_6 = "Recharges on 6";
+		public static string RECHARGE_6 = Session.I18N.RechargesOn + "6";
 
 		/// <summary>
 		/// Gets or sets the action required to use the power.
@@ -965,17 +965,17 @@ namespace Masterplan.Data
 
 			if ((fUse == PowerUseType.AtWill) || (fUse == PowerUseType.Basic))
 			{
-				str = "At-Will";
+				str = Session.I18N.AtWill;
 
 				if (fUse == PowerUseType.Basic)
-					str += " (basic attack)";
+					str += " " + Session.I18N.BasicAttack;
 			}
 
 			if ((fUse == PowerUseType.Encounter) && (fRecharge == ""))
-				str = "Encounter";
+				str = Session.I18N.Encounter;
 
 			if (fUse == PowerUseType.Daily)
-				str = "Daily";
+				str = Session.I18N.Daily;
 
 			if (fRecharge != "")
 			{

@@ -30,23 +30,23 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-			System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Races", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Classes", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Themes", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Paragon Paths", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Epic Destinies", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("Backgrounds", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup("Feats (heroic tier)", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup8 = new System.Windows.Forms.ListViewGroup("Feats (paragon tier)", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("Feats (epic tier)", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup10 = new System.Windows.Forms.ListViewGroup("Weapons", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup11 = new System.Windows.Forms.ListViewGroup("Rituals", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup12 = new System.Windows.Forms.ListViewGroup("Creature Lore", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup13 = new System.Windows.Forms.ListViewGroup("Diseases", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup14 = new System.Windows.Forms.ListViewGroup("Poisons", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup15 = new System.Windows.Forms.ListViewGroup("Issues", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup16 = new System.Windows.Forms.ListViewGroup("Information", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup17 = new System.Windows.Forms.ListViewGroup("Notes", System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup(Session.I18N.Races, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup(Session.I18N.Classes, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup(Session.I18N.Themes, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup(Session.I18N.ParagonPaths, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup(Session.I18N.EpicDestinies, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup(Session.I18N.Backgrounds, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup(Session.I18N.FeatsHeroicTier, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup8 = new System.Windows.Forms.ListViewGroup(Session.I18N.FeatsParagonTier, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup(Session.I18N.FeatsEpicTier, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup10 = new System.Windows.Forms.ListViewGroup(Session.I18N.Weapons, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup11 = new System.Windows.Forms.ListViewGroup(Session.I18N.Rituals, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup12 = new System.Windows.Forms.ListViewGroup(Session.I18N.CreatureLore, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup13 = new System.Windows.Forms.ListViewGroup(Session.I18N.Diseases, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup14 = new System.Windows.Forms.ListViewGroup(Session.I18N.Poisons, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup15 = new System.Windows.Forms.ListViewGroup(Session.I18N.Issues, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup16 = new System.Windows.Forms.ListViewGroup(Session.I18N.Information, System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup17 = new System.Windows.Forms.ListViewGroup(Session.I18N.Notes, System.Windows.Forms.HorizontalAlignment.Left);
 			this.WorkspaceToolbar = new System.Windows.Forms.ToolStrip();
 			this.AddBtn = new System.Windows.Forms.ToolStripSplitButton();
 			this.AddEncounter = new System.Windows.Forms.ToolStripMenuItem();
@@ -430,7 +430,7 @@
 			this.WorkspaceToolbar.Name = "WorkspaceToolbar";
 			this.WorkspaceToolbar.Size = new System.Drawing.Size(508, 25);
 			this.WorkspaceToolbar.TabIndex = 1;
-			this.WorkspaceToolbar.Text = "toolStrip1";
+			this.WorkspaceToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AddBtn
 			// 
@@ -444,35 +444,35 @@
 			this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AddBtn.Name = "AddBtn";
 			this.AddBtn.Size = new System.Drawing.Size(45, 22);
-			this.AddBtn.Text = "Add";
+			this.AddBtn.Text = Session.I18N.Add;
 			this.AddBtn.ButtonClick += new System.EventHandler(this.AddBtn_Click);
 			// 
 			// AddEncounter
 			// 
 			this.AddEncounter.Name = "AddEncounter";
 			this.AddEncounter.Size = new System.Drawing.Size(160, 22);
-			this.AddEncounter.Text = "Encounter...";
+			this.AddEncounter.Text = Session.I18N.Encounter + "...";
 			this.AddEncounter.Click += new System.EventHandler(this.AddEncounter_Click);
 			// 
 			// AddChallenge
 			// 
 			this.AddChallenge.Name = "AddChallenge";
 			this.AddChallenge.Size = new System.Drawing.Size(160, 22);
-			this.AddChallenge.Text = "Skill Challenge...";
+			this.AddChallenge.Text = Session.I18N.SkillChallenge + "...";
 			this.AddChallenge.Click += new System.EventHandler(this.AddChallenge_Click);
 			// 
 			// AddTrap
 			// 
 			this.AddTrap.Name = "AddTrap";
 			this.AddTrap.Size = new System.Drawing.Size(160, 22);
-			this.AddTrap.Text = "Trap / Hazard...";
+			this.AddTrap.Text = Session.I18N.TrapHazzard + "...";
 			this.AddTrap.Click += new System.EventHandler(this.AddTrap_Click);
 			// 
 			// AddQuest
 			// 
 			this.AddQuest.Name = "AddQuest";
 			this.AddQuest.Size = new System.Drawing.Size(160, 22);
-			this.AddQuest.Text = "Quest...";
+			this.AddQuest.Text = Session.I18N.Quest + "...";
 			this.AddQuest.Click += new System.EventHandler(this.AddQuest_Click);
 			// 
 			// RemoveBtn
@@ -482,7 +482,7 @@
 			this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveBtn.Name = "RemoveBtn";
 			this.RemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveBtn.Text = "Remove";
+			this.RemoveBtn.Text = Session.I18N.Remove;
 			this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// toolStripSeparator3
@@ -497,7 +497,7 @@
 			this.PlotCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PlotCutBtn.Name = "PlotCutBtn";
 			this.PlotCutBtn.Size = new System.Drawing.Size(30, 22);
-			this.PlotCutBtn.Text = "Cut";
+			this.PlotCutBtn.Text = Session.I18N.Cut;
 			this.PlotCutBtn.Click += new System.EventHandler(this.CutBtn_Click);
 			// 
 			// PlotCopyBtn
@@ -507,7 +507,7 @@
 			this.PlotCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PlotCopyBtn.Name = "PlotCopyBtn";
 			this.PlotCopyBtn.Size = new System.Drawing.Size(39, 22);
-			this.PlotCopyBtn.Text = "Copy";
+			this.PlotCopyBtn.Text = Session.I18N.Copy;
 			this.PlotCopyBtn.Click += new System.EventHandler(this.CopyBtn_Click);
 			// 
 			// PlotPasteBtn
@@ -517,7 +517,7 @@
 			this.PlotPasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PlotPasteBtn.Name = "PlotPasteBtn";
 			this.PlotPasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.PlotPasteBtn.Text = "Paste";
+			this.PlotPasteBtn.Text = Session.I18N.Paste;
 			this.PlotPasteBtn.Click += new System.EventHandler(this.PasteBtn_Click);
 			// 
 			// toolStripSeparator5
@@ -532,7 +532,7 @@
 			this.SearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.SearchBtn.Name = "SearchBtn";
 			this.SearchBtn.Size = new System.Drawing.Size(46, 22);
-			this.SearchBtn.Text = "Search";
+			this.SearchBtn.Text = Session.I18N.Search;
 			this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
 			// 
 			// toolStripSeparator9
@@ -561,14 +561,14 @@
             this.ViewPreview});
 			this.ViewMenu.Name = "ViewMenu";
 			this.ViewMenu.Size = new System.Drawing.Size(45, 22);
-			this.ViewMenu.Text = "View";
+			this.ViewMenu.Text = Session.I18N.View;
 			this.ViewMenu.DropDownOpening += new System.EventHandler(this.ViewMenu_DropDownOpening);
 			// 
 			// ViewDefault
 			// 
 			this.ViewDefault.Name = "ViewDefault";
 			this.ViewDefault.Size = new System.Drawing.Size(189, 22);
-			this.ViewDefault.Text = "Default View";
+			this.ViewDefault.Text = Session.I18N.DefaultView;
 			this.ViewDefault.Click += new System.EventHandler(this.ViewDefault_Click);
 			// 
 			// toolStripSeparator7
@@ -580,35 +580,35 @@
 			// 
 			this.ViewEncounters.Name = "ViewEncounters";
 			this.ViewEncounters.Size = new System.Drawing.Size(189, 22);
-			this.ViewEncounters.Text = "Show Encounters";
+			this.ViewEncounters.Text = Session.I18N.ShowEncounters;
 			this.ViewEncounters.Click += new System.EventHandler(this.ViewEncounters_Click);
 			// 
 			// ViewTraps
 			// 
 			this.ViewTraps.Name = "ViewTraps";
 			this.ViewTraps.Size = new System.Drawing.Size(189, 22);
-			this.ViewTraps.Text = "Show Traps / Hazards";
+			this.ViewTraps.Text = Session.I18N.ShowTrapsHazards;
 			this.ViewTraps.Click += new System.EventHandler(this.ViewTraps_Click);
 			// 
 			// ViewChallenges
 			// 
 			this.ViewChallenges.Name = "ViewChallenges";
 			this.ViewChallenges.Size = new System.Drawing.Size(189, 22);
-			this.ViewChallenges.Text = "Show Skill Challenges";
+			this.ViewChallenges.Text = Session.I18N.ShowSkillChallenges;
 			this.ViewChallenges.Click += new System.EventHandler(this.ViewChallenges_Click);
 			// 
 			// ViewQuests
 			// 
 			this.ViewQuests.Name = "ViewQuests";
 			this.ViewQuests.Size = new System.Drawing.Size(189, 22);
-			this.ViewQuests.Text = "Show Quests";
+			this.ViewQuests.Text = Session.I18N.ShowQuests;
 			this.ViewQuests.Click += new System.EventHandler(this.ViewQuests_Click);
 			// 
 			// ViewParcels
 			// 
 			this.ViewParcels.Name = "ViewParcels";
 			this.ViewParcels.Size = new System.Drawing.Size(189, 22);
-			this.ViewParcels.Text = "Show Treasure Parcels";
+			this.ViewParcels.Text = Session.I18N.ShowTreasureParcels;
 			this.ViewParcels.Click += new System.EventHandler(this.ViewParcels_Click);
 			// 
 			// toolStripSeparator8
@@ -620,7 +620,7 @@
 			// 
 			this.ViewHighlighting.Name = "ViewHighlighting";
 			this.ViewHighlighting.Size = new System.Drawing.Size(189, 22);
-			this.ViewHighlighting.Text = "Highlighting";
+			this.ViewHighlighting.Text = Session.I18N.Highlighting;
 			this.ViewHighlighting.Click += new System.EventHandler(this.ViewHighlighting_Click);
 			// 
 			// toolStripSeparator6
@@ -636,42 +636,42 @@
             this.ViewLinksStraight});
 			this.ViewLinks.Name = "ViewLinks";
 			this.ViewLinks.Size = new System.Drawing.Size(189, 22);
-			this.ViewLinks.Text = "Show Links";
+			this.ViewLinks.Text = Session.I18N.ShowLinks;
 			this.ViewLinks.DropDownOpening += new System.EventHandler(this.ViewLinks_DropDownOpening);
 			// 
 			// ViewLinksCurved
 			// 
 			this.ViewLinksCurved.Name = "ViewLinksCurved";
 			this.ViewLinksCurved.Size = new System.Drawing.Size(115, 22);
-			this.ViewLinksCurved.Text = "Curved";
+			this.ViewLinksCurved.Text = Session.I18N.Curved;
 			this.ViewLinksCurved.Click += new System.EventHandler(this.ViewLinksCurved_Click);
 			// 
 			// ViewLinksAngled
 			// 
 			this.ViewLinksAngled.Name = "ViewLinksAngled";
 			this.ViewLinksAngled.Size = new System.Drawing.Size(115, 22);
-			this.ViewLinksAngled.Text = "Angled";
+			this.ViewLinksAngled.Text = Session.I18N.Angled;
 			this.ViewLinksAngled.Click += new System.EventHandler(this.ViewLinksAngled_Click);
 			// 
 			// ViewLinksStraight
 			// 
 			this.ViewLinksStraight.Name = "ViewLinksStraight";
 			this.ViewLinksStraight.Size = new System.Drawing.Size(115, 22);
-			this.ViewLinksStraight.Text = "Straight";
+			this.ViewLinksStraight.Text = Session.I18N.Straight;
 			this.ViewLinksStraight.Click += new System.EventHandler(this.ViewLinksStraight_Click);
 			// 
 			// ViewLevelling
 			// 
 			this.ViewLevelling.Name = "ViewLevelling";
 			this.ViewLevelling.Size = new System.Drawing.Size(189, 22);
-			this.ViewLevelling.Text = "Show Levelling";
+			this.ViewLevelling.Text = Session.I18N.ShowLevelling;
 			this.ViewLevelling.Click += new System.EventHandler(this.ViewLevelling_Click);
 			// 
 			// ViewTooltips
 			// 
 			this.ViewTooltips.Name = "ViewTooltips";
 			this.ViewTooltips.Size = new System.Drawing.Size(189, 22);
-			this.ViewTooltips.Text = "Show Tooltips";
+			this.ViewTooltips.Text = Session.I18N.ShowTooltips;
 			this.ViewTooltips.Click += new System.EventHandler(this.ViewTooltips_Click);
 			// 
 			// toolStripSeparator11
@@ -683,14 +683,14 @@
 			// 
 			this.ViewNavigation.Name = "ViewNavigation";
 			this.ViewNavigation.Size = new System.Drawing.Size(189, 22);
-			this.ViewNavigation.Text = "Show Navigation";
+			this.ViewNavigation.Text = Session.I18N.ShowNavigation;
 			this.ViewNavigation.Click += new System.EventHandler(this.ViewNavigation_Click);
 			// 
 			// ViewPreview
 			// 
 			this.ViewPreview.Name = "ViewPreview";
 			this.ViewPreview.Size = new System.Drawing.Size(189, 22);
-			this.ViewPreview.Text = "Show Preview";
+			this.ViewPreview.Text = Session.I18N.ShowPreview;
 			this.ViewPreview.Click += new System.EventHandler(this.ViewPreview_Click);
 			// 
 			// FlowchartMenu
@@ -705,20 +705,20 @@
 			this.FlowchartMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.FlowchartMenu.Name = "FlowchartMenu";
 			this.FlowchartMenu.Size = new System.Drawing.Size(72, 22);
-			this.FlowchartMenu.Text = "Flowchart";
+			this.FlowchartMenu.Text = Session.I18N.Flowchart;
 			// 
 			// FlowchartPrint
 			// 
 			this.FlowchartPrint.Name = "FlowchartPrint";
 			this.FlowchartPrint.Size = new System.Drawing.Size(197, 22);
-			this.FlowchartPrint.Text = "Print...";
+			this.FlowchartPrint.Text = Session.I18N.Print + "...";
 			this.FlowchartPrint.Click += new System.EventHandler(this.FlowchartPrint_Click);
 			// 
 			// FlowchartExport
 			// 
 			this.FlowchartExport.Name = "FlowchartExport";
 			this.FlowchartExport.Size = new System.Drawing.Size(197, 22);
-			this.FlowchartExport.Text = "Export...";
+			this.FlowchartExport.Text = Session.I18N.Export + "...";
 			this.FlowchartExport.Click += new System.EventHandler(this.FlowchartExport_Click);
 			// 
 			// toolStripSeparator27
@@ -730,7 +730,7 @@
 			// 
 			this.FlowchartAllXP.Name = "FlowchartAllXP";
 			this.FlowchartAllXP.Size = new System.Drawing.Size(197, 22);
-			this.FlowchartAllXP.Text = "Maximum Available XP";
+			this.FlowchartAllXP.Text = Session.I18N.MaximumAvailableXP;
 			this.FlowchartAllXP.Click += new System.EventHandler(this.FlowchartAllXP_Click);
 			// 
 			// AdvancedBtn
@@ -743,20 +743,20 @@
 			this.AdvancedBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AdvancedBtn.Name = "AdvancedBtn";
 			this.AdvancedBtn.Size = new System.Drawing.Size(73, 22);
-			this.AdvancedBtn.Text = "Advanced";
+			this.AdvancedBtn.Text = Session.I18N.Advanced;
 			// 
 			// PlotAdvancedIssues
 			// 
 			this.PlotAdvancedIssues.Name = "PlotAdvancedIssues";
 			this.PlotAdvancedIssues.Size = new System.Drawing.Size(180, 22);
-			this.PlotAdvancedIssues.Text = "Plot Design Issues";
+			this.PlotAdvancedIssues.Text = Session.I18N.PlotDesignIssues;
 			this.PlotAdvancedIssues.Click += new System.EventHandler(this.PlotAdvancedIssues_Click);
 			// 
 			// PlotAdvancedDifficulty
 			// 
 			this.PlotAdvancedDifficulty.Name = "PlotAdvancedDifficulty";
 			this.PlotAdvancedDifficulty.Size = new System.Drawing.Size(180, 22);
-			this.PlotAdvancedDifficulty.Text = "Adjust Difficulty...";
+			this.PlotAdvancedDifficulty.Text = Session.I18N.AdjustDifficulty + "...";
 			this.PlotAdvancedDifficulty.Click += new System.EventHandler(this.PlotAdvancedDifficulty_Click);
 			// 
 			// PointMenu
@@ -784,14 +784,14 @@
 			// 
 			this.ContextAdd.Name = "ContextAdd";
 			this.ContextAdd.Size = new System.Drawing.Size(164, 22);
-			this.ContextAdd.Text = "Add Point...";
+			this.ContextAdd.Text = Session.I18N.AddPoint + "...";
 			this.ContextAdd.Click += new System.EventHandler(this.ContextAdd_Click);
 			// 
 			// ContextAddBetween
 			// 
 			this.ContextAddBetween.Name = "ContextAddBetween";
 			this.ContextAddBetween.Size = new System.Drawing.Size(164, 22);
-			this.ContextAddBetween.Text = "Add Point";
+			this.ContextAddBetween.Text = Session.I18N.AddPoint;
 			// 
 			// toolStripSeparator28
 			// 
@@ -802,14 +802,14 @@
 			// 
 			this.ContextDisconnectAll.Name = "ContextDisconnectAll";
 			this.ContextDisconnectAll.Size = new System.Drawing.Size(164, 22);
-			this.ContextDisconnectAll.Text = "Disconnect Point";
+			this.ContextDisconnectAll.Text = Session.I18N.DisconnectPoint;
 			this.ContextDisconnectAll.Click += new System.EventHandler(this.ContextDisconnectAll_Click);
 			// 
 			// ContextDisconnect
 			// 
 			this.ContextDisconnect.Name = "ContextDisconnect";
 			this.ContextDisconnect.Size = new System.Drawing.Size(164, 22);
-			this.ContextDisconnect.Text = "Disconnect From";
+			this.ContextDisconnect.Text = Session.I18N.DisconnectFrom;
 			// 
 			// toolStripSeparator1
 			// 
@@ -820,7 +820,7 @@
 			// 
 			this.ContextMoveTo.Name = "ContextMoveTo";
 			this.ContextMoveTo.Size = new System.Drawing.Size(164, 22);
-			this.ContextMoveTo.Text = "Move To Subplot";
+			this.ContextMoveTo.Text = Session.I18N.MoveToSubplot;
 			// 
 			// toolStripSeparator2
 			// 
@@ -835,27 +835,27 @@
             this.ContextStateSkipped});
 			this.ContextState.Name = "ContextState";
 			this.ContextState.Size = new System.Drawing.Size(164, 22);
-			this.ContextState.Text = "State";
+			this.ContextState.Text = Session.I18N.State;
 			// 
 			// ContextStateNormal
 			// 
 			this.ContextStateNormal.Name = "ContextStateNormal";
 			this.ContextStateNormal.Size = new System.Drawing.Size(133, 22);
-			this.ContextStateNormal.Text = "Normal";
+			this.ContextStateNormal.Text = Session.I18N.Normal;
 			this.ContextStateNormal.Click += new System.EventHandler(this.ContextStateNormal_Click);
 			// 
 			// ContextStateCompleted
 			// 
 			this.ContextStateCompleted.Name = "ContextStateCompleted";
 			this.ContextStateCompleted.Size = new System.Drawing.Size(133, 22);
-			this.ContextStateCompleted.Text = "Completed";
+			this.ContextStateCompleted.Text = Session.I18N.Completed;
 			this.ContextStateCompleted.Click += new System.EventHandler(this.ContextStateCompleted_Click);
 			// 
 			// ContextStateSkipped
 			// 
 			this.ContextStateSkipped.Name = "ContextStateSkipped";
 			this.ContextStateSkipped.Size = new System.Drawing.Size(133, 22);
-			this.ContextStateSkipped.Text = "Skipped";
+			this.ContextStateSkipped.Text = Session.I18N.Skipped;
 			this.ContextStateSkipped.Click += new System.EventHandler(this.ContextStateSkipped_Click);
 			// 
 			// toolStripSeparator20
@@ -867,14 +867,14 @@
 			// 
 			this.ContextEdit.Name = "ContextEdit";
 			this.ContextEdit.Size = new System.Drawing.Size(164, 22);
-			this.ContextEdit.Text = "Edit";
+			this.ContextEdit.Text = Session.I18N.Edit;
 			this.ContextEdit.Click += new System.EventHandler(this.EditBtn_Click);
 			// 
 			// ContextRemove
 			// 
 			this.ContextRemove.Name = "ContextRemove";
 			this.ContextRemove.Size = new System.Drawing.Size(164, 22);
-			this.ContextRemove.Text = "Remove";
+			this.ContextRemove.Text = Session.I18N.Remove;
 			this.ContextRemove.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// toolStripSeparator29
@@ -886,7 +886,7 @@
 			// 
 			this.ContextExplore.Name = "ContextExplore";
 			this.ContextExplore.Size = new System.Drawing.Size(164, 22);
-			this.ContextExplore.Text = "Explore Subplot";
+			this.ContextExplore.Text = Session.I18N.ExploreSubplot;
 			this.ContextExplore.Click += new System.EventHandler(this.ExploreBtn_Click);
 			// 
 			// MainMenu
@@ -918,7 +918,7 @@
             this.FileExit});
 			this.FileMenu.Name = "FileMenu";
 			this.FileMenu.Size = new System.Drawing.Size(37, 20);
-			this.FileMenu.Text = "File";
+			this.FileMenu.Text = Session.I18N.File;
 			this.FileMenu.DropDownOpening += new System.EventHandler(this.FileMenu_DropDownOpening);
 			// 
 			// FileNew
@@ -926,7 +926,7 @@
 			this.FileNew.Name = "FileNew";
 			this.FileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
 			this.FileNew.Size = new System.Drawing.Size(195, 22);
-			this.FileNew.Text = "New Project...";
+			this.FileNew.Text = Session.I18N.NewProject + "...";
 			this.FileNew.Click += new System.EventHandler(this.FileNew_Click);
 			// 
 			// toolStripMenuItem1
@@ -939,7 +939,7 @@
 			this.FileOpen.Name = "FileOpen";
 			this.FileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
 			this.FileOpen.Size = new System.Drawing.Size(195, 22);
-			this.FileOpen.Text = "Open Project...";
+			this.FileOpen.Text = Session.I18N.OpenProject + "...";
 			this.FileOpen.Click += new System.EventHandler(this.FileOpen_Click);
 			// 
 			// toolStripMenuItem2
@@ -952,14 +952,14 @@
 			this.FileSave.Name = "FileSave";
 			this.FileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
 			this.FileSave.Size = new System.Drawing.Size(195, 22);
-			this.FileSave.Text = "Save Project";
+			this.FileSave.Text = Session.I18N.SaveProject;
 			this.FileSave.Click += new System.EventHandler(this.FileSave_Click);
 			// 
 			// FileSaveAs
 			// 
 			this.FileSaveAs.Name = "FileSaveAs";
 			this.FileSaveAs.Size = new System.Drawing.Size(195, 22);
-			this.FileSaveAs.Text = "Save Project As...";
+			this.FileSaveAs.Text = Session.I18N.SaveProjectAs + "...";
 			this.FileSaveAs.Click += new System.EventHandler(this.FileSaveAs_Click);
 			// 
 			// toolStripMenuItem3
@@ -973,13 +973,13 @@
             this.AdvancedDelve});
 			this.FileAdvanced.Name = "FileAdvanced";
 			this.FileAdvanced.Size = new System.Drawing.Size(195, 22);
-			this.FileAdvanced.Text = "Advanced";
+			this.FileAdvanced.Text = Session.I18N.Advanced;
 			// 
 			// AdvancedDelve
 			// 
 			this.AdvancedDelve.Name = "AdvancedDelve";
 			this.AdvancedDelve.Size = new System.Drawing.Size(210, 22);
-			this.AdvancedDelve.Text = "Create a Dungeon Delve...";
+			this.AdvancedDelve.Text = Session.I18N.CreateDungeonDelve + "...";
 			this.AdvancedDelve.Click += new System.EventHandler(this.AdvancedDelve_Click);
 			// 
 			// toolStripSeparator42
@@ -991,7 +991,7 @@
 			// 
 			this.FileExit.Name = "FileExit";
 			this.FileExit.Size = new System.Drawing.Size(195, 22);
-			this.FileExit.Text = "Exit";
+			this.FileExit.Text = Session.I18N.Exit;
 			this.FileExit.Click += new System.EventHandler(this.FileExit_Click);
 			// 
 			// ProjectMenu
@@ -1016,7 +1016,7 @@
             this.ProjectEncounters});
 			this.ProjectMenu.Name = "ProjectMenu";
 			this.ProjectMenu.Size = new System.Drawing.Size(56, 20);
-			this.ProjectMenu.Text = "Project";
+			this.ProjectMenu.Text = Session.I18N.Project;
 			this.ProjectMenu.DropDownOpening += new System.EventHandler(this.ProjectMenu_DropDownOpening);
 			// 
 			// ProjectProject
@@ -1024,28 +1024,28 @@
 			this.ProjectProject.Name = "ProjectProject";
 			this.ProjectProject.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
 			this.ProjectProject.Size = new System.Drawing.Size(243, 22);
-			this.ProjectProject.Text = "Project Properties";
+			this.ProjectProject.Text = Session.I18N.ProjectProperties;
 			this.ProjectProject.Click += new System.EventHandler(this.ProjectProject_Click);
 			// 
 			// ProjectOverview
 			// 
 			this.ProjectOverview.Name = "ProjectOverview";
 			this.ProjectOverview.Size = new System.Drawing.Size(243, 22);
-			this.ProjectOverview.Text = "Project Overview";
+			this.ProjectOverview.Text = Session.I18N.ProjectOverview;
 			this.ProjectOverview.Click += new System.EventHandler(this.ProjectOverview_Click);
 			// 
 			// ProjectChecklist
 			// 
 			this.ProjectChecklist.Name = "ProjectChecklist";
 			this.ProjectChecklist.Size = new System.Drawing.Size(243, 22);
-			this.ProjectChecklist.Text = "Project Checklist";
+			this.ProjectChecklist.Text = Session.I18N.ProjectChecklist;
 			this.ProjectChecklist.Click += new System.EventHandler(this.ProjectChecklist_Click);
 			// 
 			// ProjectCampaignSettings
 			// 
 			this.ProjectCampaignSettings.Name = "ProjectCampaignSettings";
 			this.ProjectCampaignSettings.Size = new System.Drawing.Size(243, 22);
-			this.ProjectCampaignSettings.Text = "Campaign Settings";
+			this.ProjectCampaignSettings.Text = Session.I18N.ProjectCampaignSettings;
 			this.ProjectCampaignSettings.Click += new System.EventHandler(this.ProjectCampaignSettings_Click);
 			// 
 			// toolStripSeparator30
@@ -1057,7 +1057,7 @@
 			// 
 			this.ProjectPassword.Name = "ProjectPassword";
 			this.ProjectPassword.Size = new System.Drawing.Size(243, 22);
-			this.ProjectPassword.Text = "Password Protection";
+			this.ProjectPassword.Text = Session.I18N.PasswordProtection;
 			this.ProjectPassword.Click += new System.EventHandler(this.ProjectPassword_Click);
 			// 
 			// toolStripSeparator10
@@ -1070,7 +1070,7 @@
 			this.ProjectTacticalMaps.Name = "ProjectTacticalMaps";
 			this.ProjectTacticalMaps.ShortcutKeys = System.Windows.Forms.Keys.F2;
 			this.ProjectTacticalMaps.Size = new System.Drawing.Size(243, 22);
-			this.ProjectTacticalMaps.Text = "Tactical Maps";
+			this.ProjectTacticalMaps.Text = Session.I18N.TacticalMaps;
 			this.ProjectTacticalMaps.Click += new System.EventHandler(this.ProjectTacticalMaps_Click);
 			// 
 			// ProjectRegionalMaps
@@ -1078,7 +1078,7 @@
 			this.ProjectRegionalMaps.Name = "ProjectRegionalMaps";
 			this.ProjectRegionalMaps.ShortcutKeys = System.Windows.Forms.Keys.F3;
 			this.ProjectRegionalMaps.Size = new System.Drawing.Size(243, 22);
-			this.ProjectRegionalMaps.Text = "Regional Maps";
+			this.ProjectRegionalMaps.Text = Session.I18N.RegionalMaps;
 			this.ProjectRegionalMaps.Click += new System.EventHandler(this.ProjectRegionalMaps_Click);
 			// 
 			// toolStripSeparator4
@@ -1091,7 +1091,7 @@
 			this.ProjectPlayers.Name = "ProjectPlayers";
 			this.ProjectPlayers.ShortcutKeys = System.Windows.Forms.Keys.F4;
 			this.ProjectPlayers.Size = new System.Drawing.Size(243, 22);
-			this.ProjectPlayers.Text = "Player Characters";
+			this.ProjectPlayers.Text = Session.I18N.PlayerCharacters;
 			this.ProjectPlayers.Click += new System.EventHandler(this.ProjectPlayers_Click);
 			// 
 			// ProjectParcels
@@ -1099,7 +1099,7 @@
 			this.ProjectParcels.Name = "ProjectParcels";
 			this.ProjectParcels.ShortcutKeys = System.Windows.Forms.Keys.F5;
 			this.ProjectParcels.Size = new System.Drawing.Size(243, 22);
-			this.ProjectParcels.Text = "Treasure Parcels";
+			this.ProjectParcels.Text = Session.I18N.TreasureParcels;
 			this.ProjectParcels.Click += new System.EventHandler(this.ProjectParcels_Click);
 			// 
 			// ProjectDecks
@@ -1107,7 +1107,7 @@
 			this.ProjectDecks.Name = "ProjectDecks";
 			this.ProjectDecks.ShortcutKeys = System.Windows.Forms.Keys.F6;
 			this.ProjectDecks.Size = new System.Drawing.Size(243, 22);
-			this.ProjectDecks.Text = "Encounter Decks";
+			this.ProjectDecks.Text = Session.I18N.EncounterDecks;
 			this.ProjectDecks.Click += new System.EventHandler(this.ProjectDecks_Click);
 			// 
 			// ProjectCustomCreatures
@@ -1115,7 +1115,7 @@
 			this.ProjectCustomCreatures.Name = "ProjectCustomCreatures";
 			this.ProjectCustomCreatures.ShortcutKeys = System.Windows.Forms.Keys.F7;
 			this.ProjectCustomCreatures.Size = new System.Drawing.Size(243, 22);
-			this.ProjectCustomCreatures.Text = "Custom Creatures and NPCs";
+			this.ProjectCustomCreatures.Text = Session.I18N.CustomCreaturesNPC;
 			this.ProjectCustomCreatures.Click += new System.EventHandler(this.ProjectCustomCreatures_Click);
 			// 
 			// ProjectCalendars
@@ -1123,7 +1123,7 @@
 			this.ProjectCalendars.Name = "ProjectCalendars";
 			this.ProjectCalendars.ShortcutKeys = System.Windows.Forms.Keys.F8;
 			this.ProjectCalendars.Size = new System.Drawing.Size(243, 22);
-			this.ProjectCalendars.Text = "Calendars";
+			this.ProjectCalendars.Text = Session.I18N.Calendars;
 			this.ProjectCalendars.Click += new System.EventHandler(this.ProjectCalendars_Click);
 			// 
 			// toolStripSeparator37
@@ -1135,7 +1135,7 @@
 			// 
 			this.ProjectEncounters.Name = "ProjectEncounters";
 			this.ProjectEncounters.Size = new System.Drawing.Size(243, 22);
-			this.ProjectEncounters.Text = "Paused Encounters";
+			this.ProjectEncounters.Text = Session.I18N.PausedEncounters;
 			this.ProjectEncounters.Click += new System.EventHandler(this.ProjectEncounters_Click);
 			// 
 			// PlayerViewMenu
@@ -1145,21 +1145,21 @@
             this.PlayerViewClear});
 			this.PlayerViewMenu.Name = "PlayerViewMenu";
 			this.PlayerViewMenu.Size = new System.Drawing.Size(79, 20);
-			this.PlayerViewMenu.Text = "Player View";
+			this.PlayerViewMenu.Text = Session.I18N.PlayerView;
 			this.PlayerViewMenu.DropDownOpening += new System.EventHandler(this.PlayerViewMenu_DropDownOpening);
 			// 
 			// PlayerViewShow
 			// 
 			this.PlayerViewShow.Name = "PlayerViewShow";
 			this.PlayerViewShow.Size = new System.Drawing.Size(194, 22);
-			this.PlayerViewShow.Text = "Show";
+			this.PlayerViewShow.Text = Session.I18N.Show;
 			this.PlayerViewShow.Click += new System.EventHandler(this.ToolsPlayerView_Click);
 			// 
 			// PlayerViewClear
 			// 
 			this.PlayerViewClear.Name = "PlayerViewClear";
 			this.PlayerViewClear.Size = new System.Drawing.Size(194, 22);
-			this.PlayerViewClear.Text = "Clear";
+			this.PlayerViewClear.Text = Session.I18N.Clear;
 			this.PlayerViewClear.Click += new System.EventHandler(this.ToolsPlayerViewClear_Click);
 			// 
 			// ToolsMenu
@@ -1179,14 +1179,14 @@
             this.ToolsPreferences});
 			this.ToolsMenu.Name = "ToolsMenu";
 			this.ToolsMenu.Size = new System.Drawing.Size(46, 20);
-			this.ToolsMenu.Text = "Tools";
+			this.ToolsMenu.Text = Session.I18N.Tools;
 			this.ToolsMenu.DropDownOpening += new System.EventHandler(this.ToolsMenu_DropDownOpening);
 			// 
 			// ToolsImportProject
 			// 
 			this.ToolsImportProject.Name = "ToolsImportProject";
 			this.ToolsImportProject.Size = new System.Drawing.Size(168, 22);
-			this.ToolsImportProject.Text = "Import Project...";
+			this.ToolsImportProject.Text = Session.I18N.ImportProject + "...";
 			this.ToolsImportProject.Click += new System.EventHandler(this.ToolsImportProject_Click);
 			// 
 			// toolStripSeparator25
@@ -1198,14 +1198,14 @@
 			// 
 			this.ToolsExportProject.Name = "ToolsExportProject";
 			this.ToolsExportProject.Size = new System.Drawing.Size(168, 22);
-			this.ToolsExportProject.Text = "Export Project...";
+			this.ToolsExportProject.Text = Session.I18N.ExportProject + "...";
 			this.ToolsExportProject.Click += new System.EventHandler(this.ToolsExportProject_Click);
 			// 
 			// ToolsExportHandout
 			// 
 			this.ToolsExportHandout.Name = "ToolsExportHandout";
 			this.ToolsExportHandout.Size = new System.Drawing.Size(168, 22);
-			this.ToolsExportHandout.Text = "Export Handout...";
+			this.ToolsExportHandout.Text = Session.I18N.ExportHandout + "...";
 			this.ToolsExportHandout.Click += new System.EventHandler(this.ToolsExportHandout_Click);
 			// 
 			// toolStripSeparator34
@@ -1217,7 +1217,7 @@
 			// 
 			this.ToolsIssues.Name = "ToolsIssues";
 			this.ToolsIssues.Size = new System.Drawing.Size(168, 22);
-			this.ToolsIssues.Text = "Plot Design Issues";
+			this.ToolsIssues.Text = Session.I18N.PlotDesignIssues;
 			this.ToolsIssues.Click += new System.EventHandler(this.ToolsIssues_Click);
 			// 
 			// toolStripMenuItem4
@@ -1230,7 +1230,7 @@
 			this.ToolsLibraries.Name = "ToolsLibraries";
 			this.ToolsLibraries.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
 			this.ToolsLibraries.Size = new System.Drawing.Size(168, 22);
-			this.ToolsLibraries.Text = "Libraries";
+			this.ToolsLibraries.Text = Session.I18N.Libraries;
 			this.ToolsLibraries.Click += new System.EventHandler(this.ToolsLibraries_Click);
 			// 
 			// toolStripMenuItem5
@@ -1244,13 +1244,13 @@
             this.addinsToolStripMenuItem});
 			this.ToolsAddIns.Name = "ToolsAddIns";
 			this.ToolsAddIns.Size = new System.Drawing.Size(168, 22);
-			this.ToolsAddIns.Text = "Add-Ins";
+			this.ToolsAddIns.Text = Session.I18N.AddIns;
 			// 
 			// addinsToolStripMenuItem
 			// 
 			this.addinsToolStripMenuItem.Name = "addinsToolStripMenuItem";
 			this.addinsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-			this.addinsToolStripMenuItem.Text = "[add-ins]";
+			this.addinsToolStripMenuItem.Text = Session.I18N.TAddins;
 			// 
 			// toolStripMenuItem8
 			// 
@@ -1264,7 +1264,7 @@
             this.ToolsPreferencesPlayerView});
 			this.ToolsPreferences.Name = "ToolsPreferences";
 			this.ToolsPreferences.Size = new System.Drawing.Size(168, 22);
-			this.ToolsPreferences.Text = "Preferences";
+			this.ToolsPreferences.Text = Session.I18N.Preferences;
 			// 
 			// ToolsPreferencesTextSize
 			// 
@@ -1275,27 +1275,27 @@
             this.ToolsPreferencesTextSizeExtraLarge});
 			this.ToolsPreferencesTextSize.Name = "ToolsPreferencesTextSize";
 			this.ToolsPreferencesTextSize.Size = new System.Drawing.Size(134, 22);
-			this.ToolsPreferencesTextSize.Text = "Text Size";
+			this.ToolsPreferencesTextSize.Text = Session.I18N.TextSize;
 			// 
 			// ToolsPreferencesTextSizeSmall
 			// 
 			this.ToolsPreferencesTextSizeSmall.Name = "ToolsPreferencesTextSizeSmall";
 			this.ToolsPreferencesTextSizeSmall.Size = new System.Drawing.Size(180, 22);
-			this.ToolsPreferencesTextSizeSmall.Text = "Small";
+			this.ToolsPreferencesTextSizeSmall.Text = Session.I18N.Small;
 			this.ToolsPreferencesTextSizeSmall.Click += new System.EventHandler(this.ToolsPreferencesTextSizeSmall_Click);
 			// 
 			// ToolsPreferencesTextSizeMedium
 			// 
 			this.ToolsPreferencesTextSizeMedium.Name = "ToolsPreferencesTextSizeMedium";
 			this.ToolsPreferencesTextSizeMedium.Size = new System.Drawing.Size(180, 22);
-			this.ToolsPreferencesTextSizeMedium.Text = "Medium";
+			this.ToolsPreferencesTextSizeMedium.Text = Session.I18N.Medium;
 			this.ToolsPreferencesTextSizeMedium.Click += new System.EventHandler(this.ToolsPreferencesTextSizeMedium_Click);
 			// 
 			// ToolsPreferencesTextSizeLarge
 			// 
 			this.ToolsPreferencesTextSizeLarge.Name = "ToolsPreferencesTextSizeLarge";
 			this.ToolsPreferencesTextSizeLarge.Size = new System.Drawing.Size(180, 22);
-			this.ToolsPreferencesTextSizeLarge.Text = "Large";
+			this.ToolsPreferencesTextSizeLarge.Text = Session.I18N.Large;
 			this.ToolsPreferencesTextSizeLarge.Click += new System.EventHandler(this.ToolsPreferencesTextSizeLarge_Click);
 			// 
 			// ToolsPreferencesPlayerView
@@ -1309,27 +1309,27 @@
             this.ToolsPreferencesPlayerViewOtherDisplay});
 			this.ToolsPreferencesPlayerView.Name = "ToolsPreferencesPlayerView";
 			this.ToolsPreferencesPlayerView.Size = new System.Drawing.Size(134, 22);
-			this.ToolsPreferencesPlayerView.Text = "Player View";
+			this.ToolsPreferencesPlayerView.Text = Session.I18N.PlayerView;
 			// 
 			// ToolsPreferencesPlayerViewSmall
 			// 
 			this.ToolsPreferencesPlayerViewSmall.Name = "ToolsPreferencesPlayerViewSmall";
 			this.ToolsPreferencesPlayerViewSmall.Size = new System.Drawing.Size(194, 22);
-			this.ToolsPreferencesPlayerViewSmall.Text = "Small";
+			this.ToolsPreferencesPlayerViewSmall.Text = Session.I18N.Small;
 			this.ToolsPreferencesPlayerViewSmall.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewSmall_Click);
 			// 
 			// ToolsPreferencesPlayerViewMedium
 			// 
 			this.ToolsPreferencesPlayerViewMedium.Name = "ToolsPreferencesPlayerViewMedium";
 			this.ToolsPreferencesPlayerViewMedium.Size = new System.Drawing.Size(194, 22);
-			this.ToolsPreferencesPlayerViewMedium.Text = "Medium";
+			this.ToolsPreferencesPlayerViewMedium.Text = Session.I18N.Medium;
 			this.ToolsPreferencesPlayerViewMedium.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewMedium_Click);
 			// 
 			// ToolsPreferencesPlayerViewLarge
 			// 
 			this.ToolsPreferencesPlayerViewLarge.Name = "ToolsPreferencesPlayerViewLarge";
 			this.ToolsPreferencesPlayerViewLarge.Size = new System.Drawing.Size(194, 22);
-			this.ToolsPreferencesPlayerViewLarge.Text = "Large";
+			this.ToolsPreferencesPlayerViewLarge.Text = Session.I18N.Large;
 			this.ToolsPreferencesPlayerViewLarge.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewLarge_Click);
 			// 
 			// toolStripMenuItem19
@@ -1341,7 +1341,7 @@
 			// 
 			this.ToolsPreferencesPlayerViewOtherDisplay.Name = "ToolsPreferencesPlayerViewOtherDisplay";
 			this.ToolsPreferencesPlayerViewOtherDisplay.Size = new System.Drawing.Size(194, 22);
-			this.ToolsPreferencesPlayerViewOtherDisplay.Text = "Show on Other Display";
+			this.ToolsPreferencesPlayerViewOtherDisplay.Text = Session.I18N.ShowOtherDisplay;
 			this.ToolsPreferencesPlayerViewOtherDisplay.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewOtherDisplay_Click);
 			// 
 			// HelpMenu
@@ -1352,14 +1352,14 @@
             this.HelpAbout});
 			this.HelpMenu.Name = "HelpMenu";
 			this.HelpMenu.Size = new System.Drawing.Size(44, 20);
-			this.HelpMenu.Text = "Help";
+			this.HelpMenu.Text = Session.I18N.Help;
 			// 
 			// HelpManual
 			// 
 			this.HelpManual.Name = "HelpManual";
 			this.HelpManual.ShortcutKeys = System.Windows.Forms.Keys.F1;
 			this.HelpManual.Size = new System.Drawing.Size(133, 22);
-			this.HelpManual.Text = "Manual";
+			this.HelpManual.Text = Session.I18N.Manual;
 			this.HelpManual.Click += new System.EventHandler(this.HelpManual_Click);
 			// 
 			// toolStripSeparator12
@@ -1371,7 +1371,7 @@
 			// 
 			this.HelpAbout.Name = "HelpAbout";
 			this.HelpAbout.Size = new System.Drawing.Size(133, 22);
-			this.HelpAbout.Text = "About";
+			this.HelpAbout.Text = Session.I18N.About;
 			this.HelpAbout.Click += new System.EventHandler(this.HelpAbout_Click);
 			// 
 			// PreviewSplitter
@@ -1477,13 +1477,13 @@
 			this.WorkspaceSearchBar.Name = "WorkspaceSearchBar";
 			this.WorkspaceSearchBar.Size = new System.Drawing.Size(352, 25);
 			this.WorkspaceSearchBar.TabIndex = 3;
-			this.WorkspaceSearchBar.Text = "toolStrip1";
+			this.WorkspaceSearchBar.Text = Session.I18N.toolStrip1;
 			// 
 			// PlotSearchLbl
 			// 
 			this.PlotSearchLbl.Name = "PlotSearchLbl";
 			this.PlotSearchLbl.Size = new System.Drawing.Size(63, 22);
-			this.PlotSearchLbl.Text = "Search for:";
+			this.PlotSearchLbl.Text = Session.I18N.SearchFor + ": ";
 			// 
 			// PlotSearchBox
 			// 
@@ -1500,7 +1500,7 @@
 			this.PlotClearBtn.IsLink = true;
 			this.PlotClearBtn.Name = "PlotClearBtn";
 			this.PlotClearBtn.Size = new System.Drawing.Size(34, 22);
-			this.PlotClearBtn.Text = "Clear";
+			this.PlotClearBtn.Text = Session.I18N.Clear;
 			this.PlotClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
 			// 
 			// PreviewInfoSplitter
@@ -1553,7 +1553,7 @@
 			this.PreviewToolbar.Name = "PreviewToolbar";
 			this.PreviewToolbar.Size = new System.Drawing.Size(344, 25);
 			this.PreviewToolbar.TabIndex = 1;
-			this.PreviewToolbar.Text = "toolStrip1";
+			this.PreviewToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// EditBtn
 			// 
@@ -1562,7 +1562,7 @@
 			this.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EditBtn.Name = "EditBtn";
 			this.EditBtn.Size = new System.Drawing.Size(86, 22);
-			this.EditBtn.Text = "Edit Plot Point";
+			this.EditBtn.Text = Session.I18N.EditPlotPoint;
 			this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
 			// 
 			// ExploreBtn
@@ -1572,7 +1572,7 @@
 			this.ExploreBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ExploreBtn.Name = "ExploreBtn";
 			this.ExploreBtn.Size = new System.Drawing.Size(94, 22);
-			this.ExploreBtn.Text = "Explore Subplot";
+			this.ExploreBtn.Text = Session.I18N.ExploreSubplot;
 			this.ExploreBtn.Click += new System.EventHandler(this.ExploreBtn_Click);
 			// 
 			// toolStripSeparator41
@@ -1592,13 +1592,13 @@
 			this.PlotPointMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PlotPointMenu.Name = "PlotPointMenu";
 			this.PlotPointMenu.Size = new System.Drawing.Size(49, 22);
-			this.PlotPointMenu.Text = "Share";
+			this.PlotPointMenu.Text = Session.I18N.Share;
 			// 
 			// PlotPointPlayerView
 			// 
 			this.PlotPointPlayerView.Name = "PlotPointPlayerView";
 			this.PlotPointPlayerView.Size = new System.Drawing.Size(177, 22);
-			this.PlotPointPlayerView.Text = "Send to Player View";
+			this.PlotPointPlayerView.Text = Session.I18N.SendPlayerView;
 			this.PlotPointPlayerView.Click += new System.EventHandler(this.PlotPointPlayerView_Click);
 			// 
 			// toolStripSeparator35
@@ -1610,14 +1610,14 @@
 			// 
 			this.PlotPointExportHTML.Name = "PlotPointExportHTML";
 			this.PlotPointExportHTML.Size = new System.Drawing.Size(177, 22);
-			this.PlotPointExportHTML.Text = "Export to HTML...";
+			this.PlotPointExportHTML.Text = Session.I18N.ExportHTML + "...";
 			this.PlotPointExportHTML.Click += new System.EventHandler(this.PlotPointExportHTML_Click);
 			// 
 			// PlotPointExportFile
 			// 
 			this.PlotPointExportFile.Name = "PlotPointExportFile";
 			this.PlotPointExportFile.Size = new System.Drawing.Size(177, 22);
-			this.PlotPointExportFile.Text = "Export to File...";
+			this.PlotPointExportFile.Text = Session.I18N.ExportFile + "...";
 			this.PlotPointExportFile.Click += new System.EventHandler(this.PlotPointExportFile_Click);
 			// 
 			// Pages
@@ -1643,7 +1643,7 @@
 			this.WorkspacePage.Name = "WorkspacePage";
 			this.WorkspacePage.Size = new System.Drawing.Size(856, 410);
 			this.WorkspacePage.TabIndex = 0;
-			this.WorkspacePage.Text = "Plot Workspace";
+			this.WorkspacePage.Text = Session.I18N.PlotWorkspace;
 			this.WorkspacePage.UseVisualStyleBackColor = true;
 			// 
 			// BackgroundPage
@@ -1654,7 +1654,7 @@
 			this.BackgroundPage.Name = "BackgroundPage";
 			this.BackgroundPage.Size = new System.Drawing.Size(856, 410);
 			this.BackgroundPage.TabIndex = 4;
-			this.BackgroundPage.Text = "Background";
+			this.BackgroundPage.Text = Session.I18N.Background;
 			this.BackgroundPage.UseVisualStyleBackColor = true;
 			// 
 			// splitContainer1
@@ -1695,7 +1695,7 @@
 			// 
 			// InfoHdr
 			// 
-			this.InfoHdr.Text = "Information";
+			this.InfoHdr.Text = Session.I18N.Information;
 			this.InfoHdr.Width = 150;
 			// 
 			// BackgroundPanel
@@ -1736,7 +1736,7 @@
 			this.BackgroundToolbar.Name = "BackgroundToolbar";
 			this.BackgroundToolbar.Size = new System.Drawing.Size(856, 25);
 			this.BackgroundToolbar.TabIndex = 0;
-			this.BackgroundToolbar.Text = "toolStrip1";
+			this.BackgroundToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// BackgroundAddBtn
 			// 
@@ -1745,7 +1745,7 @@
 			this.BackgroundAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.BackgroundAddBtn.Name = "BackgroundAddBtn";
 			this.BackgroundAddBtn.Size = new System.Drawing.Size(33, 22);
-			this.BackgroundAddBtn.Text = "Add";
+			this.BackgroundAddBtn.Text = Session.I18N.Add;
 			this.BackgroundAddBtn.Click += new System.EventHandler(this.BackgroundAddBtn_Click);
 			// 
 			// BackgroundRemoveBtn
@@ -1755,7 +1755,7 @@
 			this.BackgroundRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.BackgroundRemoveBtn.Name = "BackgroundRemoveBtn";
 			this.BackgroundRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.BackgroundRemoveBtn.Text = "Remove";
+			this.BackgroundRemoveBtn.Text = Session.I18N.Remove;
 			this.BackgroundRemoveBtn.Click += new System.EventHandler(this.BackgroundRemoveBtn_Click);
 			// 
 			// BackgroundEditBtn
@@ -1765,7 +1765,7 @@
 			this.BackgroundEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.BackgroundEditBtn.Name = "BackgroundEditBtn";
 			this.BackgroundEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.BackgroundEditBtn.Text = "Edit";
+			this.BackgroundEditBtn.Text = Session.I18N.Edit;
 			this.BackgroundEditBtn.Click += new System.EventHandler(this.BackgroundEditBtn_Click);
 			// 
 			// toolStripSeparator21
@@ -1780,7 +1780,7 @@
 			this.BackgroundUpBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.BackgroundUpBtn.Name = "BackgroundUpBtn";
 			this.BackgroundUpBtn.Size = new System.Drawing.Size(59, 22);
-			this.BackgroundUpBtn.Text = "Move Up";
+			this.BackgroundUpBtn.Text = Session.I18N.MoveUp;
 			this.BackgroundUpBtn.Click += new System.EventHandler(this.BackgroundUpBtn_Click);
 			// 
 			// BackgroundDownBtn
@@ -1790,7 +1790,7 @@
 			this.BackgroundDownBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.BackgroundDownBtn.Name = "BackgroundDownBtn";
 			this.BackgroundDownBtn.Size = new System.Drawing.Size(75, 22);
-			this.BackgroundDownBtn.Text = "Move Down";
+			this.BackgroundDownBtn.Text = Session.I18N.MoveDown;
 			this.BackgroundDownBtn.Click += new System.EventHandler(this.BackgroundDownBtn_Click);
 			// 
 			// toolStripSeparator23
@@ -1808,20 +1808,20 @@
 			this.BackgroundPlayerView.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.BackgroundPlayerView.Name = "BackgroundPlayerView";
 			this.BackgroundPlayerView.Size = new System.Drawing.Size(123, 22);
-			this.BackgroundPlayerView.Text = "Send to Player View";
+			this.BackgroundPlayerView.Text = Session.I18N.SendPlayerView;
 			// 
 			// BackgroundPlayerViewSelected
 			// 
 			this.BackgroundPlayerViewSelected.Name = "BackgroundPlayerViewSelected";
 			this.BackgroundPlayerViewSelected.Size = new System.Drawing.Size(145, 22);
-			this.BackgroundPlayerViewSelected.Text = "Selected Item";
+			this.BackgroundPlayerViewSelected.Text = Session.I18N.SelectedItem;
 			this.BackgroundPlayerViewSelected.Click += new System.EventHandler(this.BackgroundPlayerViewSelected_Click);
 			// 
 			// BackgroundPlayerViewAll
 			// 
 			this.BackgroundPlayerViewAll.Name = "BackgroundPlayerViewAll";
 			this.BackgroundPlayerViewAll.Size = new System.Drawing.Size(145, 22);
-			this.BackgroundPlayerViewAll.Text = "All Items";
+			this.BackgroundPlayerViewAll.Text = Session.I18N.AllItems;
 			this.BackgroundPlayerViewAll.Click += new System.EventHandler(this.BackgroundPlayerViewAll_Click);
 			// 
 			// toolStripSeparator48
@@ -1841,20 +1841,20 @@
 			this.BackgroundShareBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.BackgroundShareBtn.Name = "BackgroundShareBtn";
 			this.BackgroundShareBtn.Size = new System.Drawing.Size(49, 22);
-			this.BackgroundShareBtn.Text = "Share";
+			this.BackgroundShareBtn.Text = Session.I18N.Share;
 			// 
 			// BackgroundShareExport
 			// 
 			this.BackgroundShareExport.Name = "BackgroundShareExport";
 			this.BackgroundShareExport.Size = new System.Drawing.Size(122, 22);
-			this.BackgroundShareExport.Text = "Export...";
+			this.BackgroundShareExport.Text = Session.I18N.Export + "...";
 			this.BackgroundShareExport.Click += new System.EventHandler(this.BackgroundShareExport_Click);
 			// 
 			// BackgroundShareImport
 			// 
 			this.BackgroundShareImport.Name = "BackgroundShareImport";
 			this.BackgroundShareImport.Size = new System.Drawing.Size(122, 22);
-			this.BackgroundShareImport.Text = "Import...";
+			this.BackgroundShareImport.Text = Session.I18N.Import + "...";
 			this.BackgroundShareImport.Click += new System.EventHandler(this.BackgroundShareImport_Click);
 			// 
 			// toolStripMenuItem10
@@ -1866,7 +1866,7 @@
 			// 
 			this.BackgroundSharePublish.Name = "BackgroundSharePublish";
 			this.BackgroundSharePublish.Size = new System.Drawing.Size(122, 22);
-			this.BackgroundSharePublish.Text = "Publish...";
+			this.BackgroundSharePublish.Text = Session.I18N.Publish + "...";
 			this.BackgroundSharePublish.Click += new System.EventHandler(this.BackgroundSharePublish_Click);
 			// 
 			// EncyclopediaPage
@@ -1877,7 +1877,7 @@
 			this.EncyclopediaPage.Name = "EncyclopediaPage";
 			this.EncyclopediaPage.Size = new System.Drawing.Size(856, 410);
 			this.EncyclopediaPage.TabIndex = 1;
-			this.EncyclopediaPage.Text = "Encyclopedia";
+			this.EncyclopediaPage.Text = Session.I18N.Encyclopedia;
 			this.EncyclopediaPage.UseVisualStyleBackColor = true;
 			// 
 			// EncyclopediaSplitter
@@ -1919,7 +1919,7 @@
 			// 
 			// EntryHdr
 			// 
-			this.EntryHdr.Text = "Entries";
+			this.EntryHdr.Text = Session.I18N.Entries;
 			this.EntryHdr.Width = 221;
 			// 
 			// EncyclopediaEntrySplitter
@@ -1996,7 +1996,7 @@
 			this.EncyclopediaToolbar.Name = "EncyclopediaToolbar";
 			this.EncyclopediaToolbar.Size = new System.Drawing.Size(856, 25);
 			this.EncyclopediaToolbar.TabIndex = 2;
-			this.EncyclopediaToolbar.Text = "toolStrip1";
+			this.EncyclopediaToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// EncAddBtn
 			// 
@@ -2008,20 +2008,20 @@
 			this.EncAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EncAddBtn.Name = "EncAddBtn";
 			this.EncAddBtn.Size = new System.Drawing.Size(42, 22);
-			this.EncAddBtn.Text = "Add";
+			this.EncAddBtn.Text = Session.I18N.Add;
 			// 
 			// EncAddEntry
 			// 
 			this.EncAddEntry.Name = "EncAddEntry";
 			this.EncAddEntry.Size = new System.Drawing.Size(142, 22);
-			this.EncAddEntry.Text = "Add an Entry";
+			this.EncAddEntry.Text = Session.I18N.AddEntry;
 			this.EncAddEntry.Click += new System.EventHandler(this.EncAddEntry_Click);
 			// 
 			// EncAddGroup
 			// 
 			this.EncAddGroup.Name = "EncAddGroup";
 			this.EncAddGroup.Size = new System.Drawing.Size(142, 22);
-			this.EncAddGroup.Text = "Add a Group";
+			this.EncAddGroup.Text = Session.I18N.AddGroup;
 			this.EncAddGroup.Click += new System.EventHandler(this.EncAddGroup_Click);
 			// 
 			// EncRemoveBtn
@@ -2031,7 +2031,7 @@
 			this.EncRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EncRemoveBtn.Name = "EncRemoveBtn";
 			this.EncRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.EncRemoveBtn.Text = "Remove";
+			this.EncRemoveBtn.Text = Session.I18N.Remove;
 			this.EncRemoveBtn.Click += new System.EventHandler(this.EncRemoveBtn_Click);
 			// 
 			// EncEditBtn
@@ -2041,7 +2041,7 @@
 			this.EncEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EncEditBtn.Name = "EncEditBtn";
 			this.EncEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.EncEditBtn.Text = "Edit";
+			this.EncEditBtn.Text = Session.I18N.Edit;
 			this.EncEditBtn.Click += new System.EventHandler(this.EncEditBtn_Click);
 			// 
 			// toolStripSeparator15
@@ -2056,7 +2056,7 @@
 			this.EncCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EncCutBtn.Name = "EncCutBtn";
 			this.EncCutBtn.Size = new System.Drawing.Size(30, 22);
-			this.EncCutBtn.Text = "Cut";
+			this.EncCutBtn.Text = Session.I18N.Cut;
 			this.EncCutBtn.Click += new System.EventHandler(this.EncCutBtn_Click);
 			// 
 			// EncCopyBtn
@@ -2066,7 +2066,7 @@
 			this.EncCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EncCopyBtn.Name = "EncCopyBtn";
 			this.EncCopyBtn.Size = new System.Drawing.Size(39, 22);
-			this.EncCopyBtn.Text = "Copy";
+			this.EncCopyBtn.Text = Session.I18N.Copy;
 			this.EncCopyBtn.Click += new System.EventHandler(this.EncCopyBtn_Click);
 			// 
 			// EncPasteBtn
@@ -2076,7 +2076,7 @@
 			this.EncPasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EncPasteBtn.Name = "EncPasteBtn";
 			this.EncPasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.EncPasteBtn.Text = "Paste";
+			this.EncPasteBtn.Text = Session.I18N.Paste;
 			this.EncPasteBtn.Click += new System.EventHandler(this.EncPasteBtn_Click);
 			// 
 			// toolStripSeparator17
@@ -2091,7 +2091,7 @@
 			this.EncPlayerView.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EncPlayerView.Name = "EncPlayerView";
 			this.EncPlayerView.Size = new System.Drawing.Size(114, 22);
-			this.EncPlayerView.Text = "Send to Player View";
+			this.EncPlayerView.Text = Session.I18N.SendPlayerView;
 			this.EncPlayerView.Click += new System.EventHandler(this.EncPlayerView_Click);
 			// 
 			// toolStripSeparator40
@@ -2111,20 +2111,20 @@
 			this.EncShareBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EncShareBtn.Name = "EncShareBtn";
 			this.EncShareBtn.Size = new System.Drawing.Size(49, 22);
-			this.EncShareBtn.Text = "Share";
+			this.EncShareBtn.Text = Session.I18N.Share;
 			// 
 			// EncShareExport
 			// 
 			this.EncShareExport.Name = "EncShareExport";
 			this.EncShareExport.Size = new System.Drawing.Size(122, 22);
-			this.EncShareExport.Text = "Export...";
+			this.EncShareExport.Text = Session.I18N.Export + "...";
 			this.EncShareExport.Click += new System.EventHandler(this.EncShareExport_Click);
 			// 
 			// EncShareImport
 			// 
 			this.EncShareImport.Name = "EncShareImport";
 			this.EncShareImport.Size = new System.Drawing.Size(122, 22);
-			this.EncShareImport.Text = "Import...";
+			this.EncShareImport.Text = Session.I18N.Import + "...";
 			this.EncShareImport.Click += new System.EventHandler(this.EncShareImport_Click);
 			// 
 			// toolStripMenuItem6
@@ -2136,7 +2136,7 @@
 			// 
 			this.EncSharePublish.Name = "EncSharePublish";
 			this.EncSharePublish.Size = new System.Drawing.Size(122, 22);
-			this.EncSharePublish.Text = "Publish...";
+			this.EncSharePublish.Text = Session.I18N.Publish + "...";
 			this.EncSharePublish.Click += new System.EventHandler(this.EncSharePublish_Click);
 			// 
 			// toolStripSeparator22
@@ -2148,7 +2148,7 @@
 			// 
 			this.EncSearchLbl.Name = "EncSearchLbl";
 			this.EncSearchLbl.Size = new System.Drawing.Size(45, 22);
-			this.EncSearchLbl.Text = "Search:";
+			this.EncSearchLbl.Text = Session.I18N.Search + ": ";
 			// 
 			// EncSearchBox
 			// 
@@ -2162,7 +2162,7 @@
 			this.EncClearLbl.IsLink = true;
 			this.EncClearLbl.Name = "EncClearLbl";
 			this.EncClearLbl.Size = new System.Drawing.Size(34, 22);
-			this.EncClearLbl.Text = "Clear";
+			this.EncClearLbl.Text = Session.I18N.Clear;
 			this.EncClearLbl.Click += new System.EventHandler(this.EncClearLbl_Click);
 			// 
 			// RulesPage
@@ -2172,7 +2172,7 @@
 			this.RulesPage.Name = "RulesPage";
 			this.RulesPage.Size = new System.Drawing.Size(856, 410);
 			this.RulesPage.TabIndex = 5;
-			this.RulesPage.Text = "Campaign Rules";
+			this.RulesPage.Text = Session.I18N.CampaignRules;
 			this.RulesPage.UseVisualStyleBackColor = true;
 			// 
 			// RulesSplitter
@@ -2201,33 +2201,33 @@
             this.RulesHdr});
 			this.RulesList.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.RulesList.FullRowSelect = true;
-			listViewGroup1.Header = "Races";
+			listViewGroup1.Header = Session.I18N.Races;
 			listViewGroup1.Name = "listViewGroup1";
-			listViewGroup2.Header = "Classes";
+			listViewGroup2.Header = Session.I18N.Classes;
 			listViewGroup2.Name = "listViewGroup9";
-			listViewGroup3.Header = "Themes";
+			listViewGroup3.Header = Session.I18N.Themes;
 			listViewGroup3.Name = "listViewGroup14";
-			listViewGroup4.Header = "Paragon Paths";
+			listViewGroup4.Header = Session.I18N.ParagonPaths;
 			listViewGroup4.Name = "listViewGroup2";
-			listViewGroup5.Header = "Epic Destinies";
+			listViewGroup5.Header = Session.I18N.EpicDestinies;
 			listViewGroup5.Name = "listViewGroup3";
-			listViewGroup6.Header = "Backgrounds";
+			listViewGroup6.Header = Session.I18N.Backgrounds;
 			listViewGroup6.Name = "listViewGroup4";
-			listViewGroup7.Header = "Feats (heroic tier)";
+			listViewGroup7.Header = Session.I18N.FeatsHeroicTier;
 			listViewGroup7.Name = "listViewGroup5";
-			listViewGroup8.Header = "Feats (paragon tier)";
+			listViewGroup8.Header = Session.I18N.FeatsParagonTier;
 			listViewGroup8.Name = "listViewGroup6";
-			listViewGroup9.Header = "Feats (epic tier)";
+			listViewGroup9.Header = Session.I18N.FeatsEpicTier;
 			listViewGroup9.Name = "listViewGroup7";
-			listViewGroup10.Header = "Weapons";
+			listViewGroup10.Header = Session.I18N.Weapons;
 			listViewGroup10.Name = "listViewGroup10";
-			listViewGroup11.Header = "Rituals";
+			listViewGroup11.Header = Session.I18N.Rituals;
 			listViewGroup11.Name = "listViewGroup8";
-			listViewGroup12.Header = "Creature Lore";
+			listViewGroup12.Header = Session.I18N.CreatureLore;
 			listViewGroup12.Name = "listViewGroup11";
-			listViewGroup13.Header = "Diseases";
+			listViewGroup13.Header = Session.I18N.Diseases;
 			listViewGroup13.Name = "listViewGroup12";
-			listViewGroup14.Header = "Poisons";
+			listViewGroup14.Header = Session.I18N.Poisons;
 			listViewGroup14.Name = "listViewGroup13";
 			this.RulesList.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
             listViewGroup1,
@@ -2259,7 +2259,7 @@
 			// 
 			// RulesHdr
 			// 
-			this.RulesHdr.Text = "Rules Elements";
+			this.RulesHdr.Text = Session.I18N.RulesElements;
 			this.RulesHdr.Width = 193;
 			// 
 			// RulesToolbar
@@ -2272,7 +2272,7 @@
 			this.RulesToolbar.Name = "RulesToolbar";
 			this.RulesToolbar.Size = new System.Drawing.Size(231, 25);
 			this.RulesToolbar.TabIndex = 0;
-			this.RulesToolbar.Text = "toolStrip1";
+			this.RulesToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// RulesAddBtn
 			// 
@@ -2297,13 +2297,13 @@
 			this.RulesAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RulesAddBtn.Name = "RulesAddBtn";
 			this.RulesAddBtn.Size = new System.Drawing.Size(42, 22);
-			this.RulesAddBtn.Text = "Add";
+			this.RulesAddBtn.Text = Session.I18N.Add;
 			// 
 			// AddRace
 			// 
 			this.AddRace.Name = "AddRace";
 			this.AddRace.Size = new System.Drawing.Size(145, 22);
-			this.AddRace.Text = "Race";
+			this.AddRace.Text = Session.I18N.Race;
 			this.AddRace.Click += new System.EventHandler(this.AddRace_Click);
 			// 
 			// toolStripSeparator31
@@ -2315,28 +2315,28 @@
 			// 
 			this.AddClass.Name = "AddClass";
 			this.AddClass.Size = new System.Drawing.Size(145, 22);
-			this.AddClass.Text = "Class";
+			this.AddClass.Text = Session.I18N.Class;
 			this.AddClass.Click += new System.EventHandler(this.AddClass_Click);
 			// 
 			// AddTheme
 			// 
 			this.AddTheme.Name = "AddTheme";
 			this.AddTheme.Size = new System.Drawing.Size(145, 22);
-			this.AddTheme.Text = "Theme";
+			this.AddTheme.Text = Session.I18N.Theme;
 			this.AddTheme.Click += new System.EventHandler(this.AddTheme_Click);
 			// 
 			// AddParagonPath
 			// 
 			this.AddParagonPath.Name = "AddParagonPath";
 			this.AddParagonPath.Size = new System.Drawing.Size(145, 22);
-			this.AddParagonPath.Text = "Paragon Path";
+			this.AddParagonPath.Text = Session.I18N.ParagonPath;
 			this.AddParagonPath.Click += new System.EventHandler(this.AddParagonPath_Click);
 			// 
 			// AddEpicDestiny
 			// 
 			this.AddEpicDestiny.Name = "AddEpicDestiny";
 			this.AddEpicDestiny.Size = new System.Drawing.Size(145, 22);
-			this.AddEpicDestiny.Text = "Epic Destiny";
+			this.AddEpicDestiny.Text = Session.I18N.EpicDestiny;
 			this.AddEpicDestiny.Click += new System.EventHandler(this.AddEpicDestiny_Click);
 			// 
 			// toolStripSeparator32
@@ -2348,28 +2348,28 @@
 			// 
 			this.AddBackground.Name = "AddBackground";
 			this.AddBackground.Size = new System.Drawing.Size(145, 22);
-			this.AddBackground.Text = "Background";
+			this.AddBackground.Text = Session.I18N.Background;
 			this.AddBackground.Click += new System.EventHandler(this.AddBackground_Click);
 			// 
 			// AddFeat
 			// 
 			this.AddFeat.Name = "AddFeat";
 			this.AddFeat.Size = new System.Drawing.Size(145, 22);
-			this.AddFeat.Text = "Feat";
+			this.AddFeat.Text = Session.I18N.Feat;
 			this.AddFeat.Click += new System.EventHandler(this.AddFeat_Click);
 			// 
 			// AddWeapon
 			// 
 			this.AddWeapon.Name = "AddWeapon";
 			this.AddWeapon.Size = new System.Drawing.Size(145, 22);
-			this.AddWeapon.Text = "Weapon";
+			this.AddWeapon.Text = Session.I18N.Weapon;
 			this.AddWeapon.Click += new System.EventHandler(this.AddWeapon_Click);
 			// 
 			// AddRitual
 			// 
 			this.AddRitual.Name = "AddRitual";
 			this.AddRitual.Size = new System.Drawing.Size(145, 22);
-			this.AddRitual.Text = "Ritual";
+			this.AddRitual.Text = Session.I18N.Ritual;
 			this.AddRitual.Click += new System.EventHandler(this.AddRitual_Click);
 			// 
 			// toolStripSeparator39
@@ -2381,21 +2381,21 @@
 			// 
 			this.AddCreatureLore.Name = "AddCreatureLore";
 			this.AddCreatureLore.Size = new System.Drawing.Size(145, 22);
-			this.AddCreatureLore.Text = "Creature Lore";
+			this.AddCreatureLore.Text = Session.I18N.CreatureLore;
 			this.AddCreatureLore.Click += new System.EventHandler(this.AddCreatureLore_Click);
 			// 
 			// AddDisease
 			// 
 			this.AddDisease.Name = "AddDisease";
 			this.AddDisease.Size = new System.Drawing.Size(145, 22);
-			this.AddDisease.Text = "Disease";
+			this.AddDisease.Text = Session.I18N.Disease;
 			this.AddDisease.Click += new System.EventHandler(this.AddDisease_Click);
 			// 
 			// AddPoison
 			// 
 			this.AddPoison.Name = "AddPoison";
 			this.AddPoison.Size = new System.Drawing.Size(145, 22);
-			this.AddPoison.Text = "Poison";
+			this.AddPoison.Text = Session.I18N.Poison;
 			this.AddPoison.Click += new System.EventHandler(this.AddPoison_Click);
 			// 
 			// toolStripSeparator33
@@ -2415,20 +2415,20 @@
 			this.RulesShareBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RulesShareBtn.Name = "RulesShareBtn";
 			this.RulesShareBtn.Size = new System.Drawing.Size(49, 22);
-			this.RulesShareBtn.Text = "Share";
+			this.RulesShareBtn.Text = Session.I18N.Share;
 			// 
 			// RulesShareExport
 			// 
 			this.RulesShareExport.Name = "RulesShareExport";
 			this.RulesShareExport.Size = new System.Drawing.Size(122, 22);
-			this.RulesShareExport.Text = "Export...";
+			this.RulesShareExport.Text = Session.I18N.Export + "...";
 			this.RulesShareExport.Click += new System.EventHandler(this.RulesShareExport_Click);
 			// 
 			// RulesShareImport
 			// 
 			this.RulesShareImport.Name = "RulesShareImport";
 			this.RulesShareImport.Size = new System.Drawing.Size(122, 22);
-			this.RulesShareImport.Text = "Import...";
+			this.RulesShareImport.Text = Session.I18N.Import + "...";
 			this.RulesShareImport.Click += new System.EventHandler(this.RulesShareImport_Click);
 			// 
 			// toolStripMenuItem9
@@ -2440,7 +2440,7 @@
 			// 
 			this.RulesSharePublish.Name = "RulesSharePublish";
 			this.RulesSharePublish.Size = new System.Drawing.Size(122, 22);
-			this.RulesSharePublish.Text = "Publish...";
+			this.RulesSharePublish.Text = Session.I18N.Publish + "...";
 			this.RulesSharePublish.Click += new System.EventHandler(this.RulesSharePublish_Click);
 			// 
 			// RulesBrowserPanel
@@ -2478,7 +2478,7 @@
 			this.EncEntryToolbar.Name = "EncEntryToolbar";
 			this.EncEntryToolbar.Size = new System.Drawing.Size(621, 25);
 			this.EncEntryToolbar.TabIndex = 2;
-			this.EncEntryToolbar.Text = "toolStrip1";
+			this.EncEntryToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// RulesRemoveBtn
 			// 
@@ -2487,7 +2487,7 @@
 			this.RulesRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RulesRemoveBtn.Name = "RulesRemoveBtn";
 			this.RulesRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.RulesRemoveBtn.Text = "Remove";
+			this.RulesRemoveBtn.Text = Session.I18N.Remove;
 			this.RulesRemoveBtn.Click += new System.EventHandler(this.RulesRemoveBtn_Click);
 			// 
 			// RulesEditBtn
@@ -2497,7 +2497,7 @@
 			this.RulesEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RulesEditBtn.Name = "RulesEditBtn";
 			this.RulesEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.RulesEditBtn.Text = "Edit";
+			this.RulesEditBtn.Text = Session.I18N.Edit;
 			this.RulesEditBtn.Click += new System.EventHandler(this.RulesEditBtn_Click);
 			// 
 			// toolStripSeparator43
@@ -2512,7 +2512,7 @@
 			this.RuleEncyclopediaBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RuleEncyclopediaBtn.Name = "RuleEncyclopediaBtn";
 			this.RuleEncyclopediaBtn.Size = new System.Drawing.Size(111, 22);
-			this.RuleEncyclopediaBtn.Text = "Encyclopedia Entry";
+			this.RuleEncyclopediaBtn.Text = Session.I18N.EncyclopediaEntry;
 			this.RuleEncyclopediaBtn.Click += new System.EventHandler(this.RuleEncyclopediaBtn_Click);
 			// 
 			// toolStripSeparator36
@@ -2527,7 +2527,7 @@
 			this.RulesPlayerViewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RulesPlayerViewBtn.Name = "RulesPlayerViewBtn";
 			this.RulesPlayerViewBtn.Size = new System.Drawing.Size(114, 22);
-			this.RulesPlayerViewBtn.Text = "Send to Player View";
+			this.RulesPlayerViewBtn.Text = Session.I18N.SendPlayerView;
 			this.RulesPlayerViewBtn.Click += new System.EventHandler(this.RulesPlayerViewBtn_Click);
 			// 
 			// AttachmentsPage
@@ -2538,7 +2538,7 @@
 			this.AttachmentsPage.Name = "AttachmentsPage";
 			this.AttachmentsPage.Size = new System.Drawing.Size(856, 410);
 			this.AttachmentsPage.TabIndex = 3;
-			this.AttachmentsPage.Text = "Attachments";
+			this.AttachmentsPage.Text = Session.I18N.Attachments;
 			this.AttachmentsPage.UseVisualStyleBackColor = true;
 			// 
 			// AttachmentList
@@ -2563,12 +2563,12 @@
 			// 
 			// AttachmentHdr
 			// 
-			this.AttachmentHdr.Text = "Attachment";
+			this.AttachmentHdr.Text = Session.I18N.Attachment;
 			this.AttachmentHdr.Width = 500;
 			// 
 			// AttachmentSizeHdr
 			// 
-			this.AttachmentSizeHdr.Text = "Size";
+			this.AttachmentSizeHdr.Text = Session.I18N.Size;
 			this.AttachmentSizeHdr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.AttachmentSizeHdr.Width = 100;
 			// 
@@ -2585,7 +2585,7 @@
 			this.AttachmentToolbar.Name = "AttachmentToolbar";
 			this.AttachmentToolbar.Size = new System.Drawing.Size(856, 25);
 			this.AttachmentToolbar.TabIndex = 0;
-			this.AttachmentToolbar.Text = "toolStrip1";
+			this.AttachmentToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AttachmentImportBtn
 			// 
@@ -2594,7 +2594,7 @@
 			this.AttachmentImportBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AttachmentImportBtn.Name = "AttachmentImportBtn";
 			this.AttachmentImportBtn.Size = new System.Drawing.Size(47, 22);
-			this.AttachmentImportBtn.Text = "Import";
+			this.AttachmentImportBtn.Text = Session.I18N.Import;
 			this.AttachmentImportBtn.Click += new System.EventHandler(this.AttachmentImportBtn_Click);
 			// 
 			// AttachmentRemoveBtn
@@ -2604,7 +2604,7 @@
 			this.AttachmentRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AttachmentRemoveBtn.Name = "AttachmentRemoveBtn";
 			this.AttachmentRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.AttachmentRemoveBtn.Text = "Remove";
+			this.AttachmentRemoveBtn.Text = Session.I18N.Remove;
 			this.AttachmentRemoveBtn.Click += new System.EventHandler(this.AttachmentRemoveBtn_Click);
 			// 
 			// toolStripSeparator19
@@ -2622,20 +2622,20 @@
 			this.AttachmentExtract.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AttachmentExtract.Name = "AttachmentExtract";
 			this.AttachmentExtract.Size = new System.Drawing.Size(56, 22);
-			this.AttachmentExtract.Text = "Extract";
+			this.AttachmentExtract.Text = Session.I18N.Extract;
 			// 
 			// AttachmentExtractSimple
 			// 
 			this.AttachmentExtractSimple.Name = "AttachmentExtractSimple";
 			this.AttachmentExtractSimple.Size = new System.Drawing.Size(225, 22);
-			this.AttachmentExtractSimple.Text = "Extract to Desktop";
+			this.AttachmentExtractSimple.Text = Session.I18N.ExtractToDesktop;
 			this.AttachmentExtractSimple.Click += new System.EventHandler(this.AttachmentExtractSimple_Click);
 			// 
 			// AttachmentExtractAndRun
 			// 
 			this.AttachmentExtractAndRun.Name = "AttachmentExtractAndRun";
 			this.AttachmentExtractAndRun.Size = new System.Drawing.Size(225, 22);
-			this.AttachmentExtractAndRun.Text = "Extract to Desktop and Open";
+			this.AttachmentExtractAndRun.Text = Session.I18N.ExtractToDesktopAndOpen;
 			this.AttachmentExtractAndRun.Click += new System.EventHandler(this.AttachmentExtractAndRun_Click);
 			// 
 			// toolStripSeparator24
@@ -2650,7 +2650,7 @@
 			this.AttachmentPlayerView.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AttachmentPlayerView.Name = "AttachmentPlayerView";
 			this.AttachmentPlayerView.Size = new System.Drawing.Size(114, 22);
-			this.AttachmentPlayerView.Text = "Send to Player View";
+			this.AttachmentPlayerView.Text = Session.I18N.SendPlayerView;
 			this.AttachmentPlayerView.Click += new System.EventHandler(this.AttachmentSendBtn_Click);
 			// 
 			// JotterPage
@@ -2661,7 +2661,7 @@
 			this.JotterPage.Name = "JotterPage";
 			this.JotterPage.Size = new System.Drawing.Size(856, 410);
 			this.JotterPage.TabIndex = 2;
-			this.JotterPage.Text = "Jotter";
+			this.JotterPage.Text = Session.I18N.Jotter;
 			this.JotterPage.UseVisualStyleBackColor = true;
 			// 
 			// JotterSplitter
@@ -2688,11 +2688,11 @@
             this.NoteHdr});
 			this.NoteList.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.NoteList.FullRowSelect = true;
-			listViewGroup15.Header = "Issues";
+			listViewGroup15.Header = Session.I18N.Issues;
 			listViewGroup15.Name = "IssueGroup";
-			listViewGroup16.Header = "Information";
+			listViewGroup16.Header = Session.I18N.Information;
 			listViewGroup16.Name = "InfoGroup";
-			listViewGroup17.Header = "Notes";
+			listViewGroup17.Header = Session.I18N.Notes;
 			listViewGroup17.Name = "NoteGroup";
 			this.NoteList.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
             listViewGroup15,
@@ -2712,7 +2712,7 @@
 			// 
 			// NoteHdr
 			// 
-			this.NoteHdr.Text = "Notes";
+			this.NoteHdr.Text = Session.I18N.Notes;
 			this.NoteHdr.Width = 150;
 			// 
 			// NoteBox
@@ -2747,7 +2747,7 @@
 			this.JotterToolbar.Name = "JotterToolbar";
 			this.JotterToolbar.Size = new System.Drawing.Size(856, 25);
 			this.JotterToolbar.TabIndex = 0;
-			this.JotterToolbar.Text = "toolStrip1";
+			this.JotterToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// NoteAddBtn
 			// 
@@ -2756,7 +2756,7 @@
 			this.NoteAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.NoteAddBtn.Name = "NoteAddBtn";
 			this.NoteAddBtn.Size = new System.Drawing.Size(62, 22);
-			this.NoteAddBtn.Text = "Add Note";
+			this.NoteAddBtn.Text = Session.I18N.AddNote;
 			this.NoteAddBtn.Click += new System.EventHandler(this.NoteAddBtn_Click);
 			// 
 			// NoteRemoveBtn
@@ -2766,7 +2766,7 @@
 			this.NoteRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.NoteRemoveBtn.Name = "NoteRemoveBtn";
 			this.NoteRemoveBtn.Size = new System.Drawing.Size(83, 22);
-			this.NoteRemoveBtn.Text = "Remove Note";
+			this.NoteRemoveBtn.Text = Session.I18N.RemoveNote;
 			this.NoteRemoveBtn.Click += new System.EventHandler(this.NoteRemoveBtn_Click);
 			// 
 			// toolStripSeparator16
@@ -2781,7 +2781,7 @@
 			this.NoteCategoryBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.NoteCategoryBtn.Name = "NoteCategoryBtn";
 			this.NoteCategoryBtn.Size = new System.Drawing.Size(78, 22);
-			this.NoteCategoryBtn.Text = "Set Category";
+			this.NoteCategoryBtn.Text = Session.I18N.SetCategory;
 			this.NoteCategoryBtn.Click += new System.EventHandler(this.NoteCategoryBtn_Click);
 			// 
 			// toolStripSeparator38
@@ -2796,7 +2796,7 @@
 			this.NoteCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.NoteCutBtn.Name = "NoteCutBtn";
 			this.NoteCutBtn.Size = new System.Drawing.Size(30, 22);
-			this.NoteCutBtn.Text = "Cut";
+			this.NoteCutBtn.Text = Session.I18N.Cut;
 			this.NoteCutBtn.Click += new System.EventHandler(this.NoteCutBtn_Click);
 			// 
 			// NoteCopyBtn
@@ -2806,7 +2806,7 @@
 			this.NoteCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.NoteCopyBtn.Name = "NoteCopyBtn";
 			this.NoteCopyBtn.Size = new System.Drawing.Size(39, 22);
-			this.NoteCopyBtn.Text = "Copy";
+			this.NoteCopyBtn.Text = Session.I18N.Copy;
 			this.NoteCopyBtn.Click += new System.EventHandler(this.NoteCopyBtn_Click);
 			// 
 			// NotePasteBtn
@@ -2816,7 +2816,7 @@
 			this.NotePasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.NotePasteBtn.Name = "NotePasteBtn";
 			this.NotePasteBtn.Size = new System.Drawing.Size(39, 22);
-			this.NotePasteBtn.Text = "Paste";
+			this.NotePasteBtn.Text = Session.I18N.Paste;
 			this.NotePasteBtn.Click += new System.EventHandler(this.NotePasteBtn_Click);
 			// 
 			// toolStripSeparator18
@@ -2828,7 +2828,7 @@
 			// 
 			this.NoteSearchLbl.Name = "NoteSearchLbl";
 			this.NoteSearchLbl.Size = new System.Drawing.Size(45, 22);
-			this.NoteSearchLbl.Text = "Search:";
+			this.NoteSearchLbl.Text = Session.I18N.Search + "...";
 			// 
 			// NoteSearchBox
 			// 
@@ -2842,7 +2842,7 @@
 			this.NoteClearLbl.IsLink = true;
 			this.NoteClearLbl.Name = "NoteClearLbl";
 			this.NoteClearLbl.Size = new System.Drawing.Size(34, 22);
-			this.NoteClearLbl.Text = "Clear";
+			this.NoteClearLbl.Text = Session.I18N.Clear;
 			this.NoteClearLbl.Click += new System.EventHandler(this.NoteClearLbl_Click);
 			// 
 			// ReferencePage
@@ -2852,7 +2852,7 @@
 			this.ReferencePage.Name = "ReferencePage";
 			this.ReferencePage.Size = new System.Drawing.Size(856, 410);
 			this.ReferencePage.TabIndex = 6;
-			this.ReferencePage.Text = "In-Session Reference";
+			this.ReferencePage.Text = Session.I18N.InSessionReference;
 			this.ReferencePage.UseVisualStyleBackColor = true;
 			// 
 			// ReferenceSplitter
@@ -2895,7 +2895,7 @@
 			this.PartyPage.Name = "PartyPage";
 			this.PartyPage.Size = new System.Drawing.Size(567, 402);
 			this.PartyPage.TabIndex = 0;
-			this.PartyPage.Text = "Party Breakdown";
+			this.PartyPage.Text = Session.I18N.PartyBreakdown;
 			this.PartyPage.UseVisualStyleBackColor = true;
 			// 
 			// PartyBrowser
@@ -2920,7 +2920,7 @@
 			this.ToolsPage.Name = "ToolsPage";
 			this.ToolsPage.Size = new System.Drawing.Size(567, 402);
 			this.ToolsPage.TabIndex = 1;
-			this.ToolsPage.Text = "Random Generators";
+			this.ToolsPage.Text = Session.I18N.RandomGenerators;
 			this.ToolsPage.UseVisualStyleBackColor = true;
 			// 
 			// ToolBrowserPanel
@@ -2973,14 +2973,14 @@
 			this.GeneratorToolbar.ShowItemToolTips = false;
 			this.GeneratorToolbar.Size = new System.Drawing.Size(107, 402);
 			this.GeneratorToolbar.TabIndex = 2;
-			this.GeneratorToolbar.Text = "toolStrip1";
+			this.GeneratorToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// toolStripLabel1
 			// 
 			this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
 			this.toolStripLabel1.Name = "toolStripLabel1";
 			this.toolStripLabel1.Size = new System.Drawing.Size(104, 15);
-			this.toolStripLabel1.Text = "Generators";
+			this.toolStripLabel1.Text = Session.I18N.Generators;
 			// 
 			// toolStripSeparator26
 			// 
@@ -2994,7 +2994,7 @@
 			this.ElfNameBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ElfNameBtn.Name = "ElfNameBtn";
 			this.ElfNameBtn.Size = new System.Drawing.Size(104, 19);
-			this.ElfNameBtn.Text = "Elvish Names";
+			this.ElfNameBtn.Text = Session.I18N.ElvishNames;
 			this.ElfNameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.ElfNameBtn.Click += new System.EventHandler(this.ElfNameBtn_Click);
 			// 
@@ -3005,7 +3005,7 @@
 			this.DwarfNameBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.DwarfNameBtn.Name = "DwarfNameBtn";
 			this.DwarfNameBtn.Size = new System.Drawing.Size(104, 19);
-			this.DwarfNameBtn.Text = "Dwarvish Names";
+			this.DwarfNameBtn.Text = Session.I18N.DwarvishNames;
 			this.DwarfNameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.DwarfNameBtn.Click += new System.EventHandler(this.DwarfNameBtn_Click);
 			// 
@@ -3016,7 +3016,7 @@
 			this.HalflingNameBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.HalflingNameBtn.Name = "HalflingNameBtn";
 			this.HalflingNameBtn.Size = new System.Drawing.Size(104, 19);
-			this.HalflingNameBtn.Text = "Halfling Names";
+			this.HalflingNameBtn.Text = Session.I18N.HalflingNames;
 			this.HalflingNameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.HalflingNameBtn.Click += new System.EventHandler(this.HalflingNameBtn_Click);
 			// 
@@ -3027,7 +3027,7 @@
 			this.ExoticNameBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ExoticNameBtn.Name = "ExoticNameBtn";
 			this.ExoticNameBtn.Size = new System.Drawing.Size(104, 19);
-			this.ExoticNameBtn.Text = "Exotic Names";
+			this.ExoticNameBtn.Text = Session.I18N.ExoticNames;
 			this.ExoticNameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.ExoticNameBtn.Click += new System.EventHandler(this.ExoticNameBtn_Click);
 			// 
@@ -3043,7 +3043,7 @@
 			this.TreasureBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TreasureBtn.Name = "TreasureBtn";
 			this.TreasureBtn.Size = new System.Drawing.Size(104, 19);
-			this.TreasureBtn.Text = "Art Objects";
+			this.TreasureBtn.Text = Session.I18N.ArtObjects;
 			this.TreasureBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.TreasureBtn.Click += new System.EventHandler(this.TreasureBtn_Click);
 			// 
@@ -3054,7 +3054,7 @@
 			this.BookTitleBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.BookTitleBtn.Name = "BookTitleBtn";
 			this.BookTitleBtn.Size = new System.Drawing.Size(104, 19);
-			this.BookTitleBtn.Text = "Book Titles";
+			this.BookTitleBtn.Text = Session.I18N.BookTitles;
 			this.BookTitleBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.BookTitleBtn.Click += new System.EventHandler(this.BookTitleBtn_Click);
 			// 
@@ -3065,7 +3065,7 @@
 			this.PotionBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PotionBtn.Name = "PotionBtn";
 			this.PotionBtn.Size = new System.Drawing.Size(104, 19);
-			this.PotionBtn.Text = "Potions";
+			this.PotionBtn.Text = Session.I18N.Potions;
 			this.PotionBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.PotionBtn.Click += new System.EventHandler(this.PotionBtn_Click);
 			// 
@@ -3081,7 +3081,7 @@
 			this.NPCBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.NPCBtn.Name = "NPCBtn";
 			this.NPCBtn.Size = new System.Drawing.Size(104, 19);
-			this.NPCBtn.Text = "NPC Description";
+			this.NPCBtn.Text = Session.I18N.NPCDescription;
 			this.NPCBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.NPCBtn.Click += new System.EventHandler(this.NPCBtn_Click);
 			// 
@@ -3092,7 +3092,7 @@
 			this.RoomBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RoomBtn.Name = "RoomBtn";
 			this.RoomBtn.Size = new System.Drawing.Size(104, 19);
-			this.RoomBtn.Text = "Room Description";
+			this.RoomBtn.Text = Session.I18N.RoomDescription;
 			this.RoomBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.RoomBtn.Click += new System.EventHandler(this.RoomBtn_Click);
 			// 
@@ -3108,7 +3108,7 @@
 			this.ElfTextBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ElfTextBtn.Name = "ElfTextBtn";
 			this.ElfTextBtn.Size = new System.Drawing.Size(104, 19);
-			this.ElfTextBtn.Text = "Elvish Text";
+			this.ElfTextBtn.Text = Session.I18N.ElvishText;
 			this.ElfTextBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.ElfTextBtn.Click += new System.EventHandler(this.ElfTextBtn_Click);
 			// 
@@ -3119,7 +3119,7 @@
 			this.DwarfTextBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.DwarfTextBtn.Name = "DwarfTextBtn";
 			this.DwarfTextBtn.Size = new System.Drawing.Size(104, 19);
-			this.DwarfTextBtn.Text = "Dwarvish Text";
+			this.DwarfTextBtn.Text = Session.I18N.DwarvishText;
 			this.DwarfTextBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.DwarfTextBtn.Click += new System.EventHandler(this.DwarfTextBtn_Click);
 			// 
@@ -3130,7 +3130,7 @@
 			this.PrimordialTextBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PrimordialTextBtn.Name = "PrimordialTextBtn";
 			this.PrimordialTextBtn.Size = new System.Drawing.Size(104, 19);
-			this.PrimordialTextBtn.Text = "Primordial Text";
+			this.PrimordialTextBtn.Text = Session.I18N.PrimordialText;
 			this.PrimordialTextBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.PrimordialTextBtn.Click += new System.EventHandler(this.PrimordialTextBtn_Click);
 			// 
@@ -3151,7 +3151,7 @@
 			this.ReferenceToolbar.Name = "ReferenceToolbar";
 			this.ReferenceToolbar.Size = new System.Drawing.Size(258, 25);
 			this.ReferenceToolbar.TabIndex = 1;
-			this.ReferenceToolbar.Text = "toolStrip1";
+			this.ReferenceToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// DieRollerBtn
 			// 
@@ -3160,21 +3160,21 @@
 			this.DieRollerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.DieRollerBtn.Name = "DieRollerBtn";
 			this.DieRollerBtn.Size = new System.Drawing.Size(61, 22);
-			this.DieRollerBtn.Text = "Die Roller";
+			this.DieRollerBtn.Text = Session.I18N.DieRoller;
 			this.DieRollerBtn.Click += new System.EventHandler(this.DieRollerBtn_Click);
 			// 
 			// ToolsPreferencesTextSizeExtraLarge
 			// 
 			this.ToolsPreferencesTextSizeExtraLarge.Name = "ToolsPreferencesTextSizeExtraLarge";
 			this.ToolsPreferencesTextSizeExtraLarge.Size = new System.Drawing.Size(180, 22);
-			this.ToolsPreferencesTextSizeExtraLarge.Text = "Extra Large";
+			this.ToolsPreferencesTextSizeExtraLarge.Text = Session.I18N.ExtraLarge;
 			this.ToolsPreferencesTextSizeExtraLarge.Click += new System.EventHandler(this.ToolsPreferencesTextSizeExtraLarge_Click);
 			// 
 			// ToolsPreferencesPlayerViewExtraLarge
 			// 
 			this.ToolsPreferencesPlayerViewExtraLarge.Name = "ToolsPreferencesPlayerViewExtraLarge";
 			this.ToolsPreferencesPlayerViewExtraLarge.Size = new System.Drawing.Size(194, 22);
-			this.ToolsPreferencesPlayerViewExtraLarge.Text = "Extra Large";
+			this.ToolsPreferencesPlayerViewExtraLarge.Text = Session.I18N.ExtraLarge;
 			this.ToolsPreferencesPlayerViewExtraLarge.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewExtraLarge_Click);
 			// 
 			// MainForm

@@ -286,7 +286,7 @@ namespace Masterplan.Data
 			if (trap != null)
 				return trap.Name;
 
-			return "Creature";
+			return Session.I18N.Creature;
 		}
 	}
 

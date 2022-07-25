@@ -435,11 +435,11 @@ namespace Masterplan.UI
 			move.SubItems.Add(fNPC.Movement);
 			move.Tag = DetailsField.Movement;
 
-			ListViewItem resist = DetailsList.Items.Add("Resist");
+			ListViewItem resist = DetailsList.Items.Add(Session.I18N.Resist);
 			resist.SubItems.Add(fNPC.Resist);
 			resist.Tag = DetailsField.Resist;
 
-			ListViewItem vuln = DetailsList.Items.Add("Vulnerable");
+			ListViewItem vuln = DetailsList.Items.Add(Session.I18N.Vulnerable);
 			vuln.SubItems.Add(fNPC.Vulnerable);
 			vuln.Tag = DetailsField.Vulnerable;
 
@@ -467,7 +467,7 @@ namespace Masterplan.UI
 			desc.SubItems.Add(fNPC.Details);
 			desc.Tag = DetailsField.Description;
 
-			ListViewItem tactics = DetailsList.Items.Add("Tactics");
+			ListViewItem tactics = DetailsList.Items.Add(Session.I18N.Tactics);
 			tactics.SubItems.Add(fNPC.Tactics);
 			tactics.Tag = DetailsField.Tactics;
 		}

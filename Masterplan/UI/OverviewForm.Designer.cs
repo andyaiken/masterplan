@@ -54,7 +54,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(513, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// EncounterBtn
 			// 
@@ -121,7 +121,7 @@
 			// 
 			// InfoHdr
 			// 
-			this.InfoHdr.Text = "Information";
+			this.InfoHdr.Text = Session.I18N.Information;
 			this.InfoHdr.Width = 384;
 			// 
 			// MainPanel
@@ -161,7 +161,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Project Overview";
+			this.Text = Session.I18N.ProjectOverview;
 			this.Toolbar.ResumeLayout(false);
 			this.Toolbar.PerformLayout();
 			this.MainPanel.ResumeLayout(false);

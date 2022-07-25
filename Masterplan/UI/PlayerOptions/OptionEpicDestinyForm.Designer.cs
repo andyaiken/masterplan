@@ -153,7 +153,7 @@
 			// 
 			// LevelHdr
 			// 
-			this.LevelHdr.Text = "Level";
+			this.LevelHdr.Text = Session.I18N.Level;
 			this.LevelHdr.Width = 300;
 			// 
 			// LevelToolbar
@@ -164,7 +164,7 @@
 			this.LevelToolbar.Name = "LevelToolbar";
 			this.LevelToolbar.Size = new System.Drawing.Size(335, 25);
 			this.LevelToolbar.TabIndex = 0;
-			this.LevelToolbar.Text = "toolStrip1";
+			this.LevelToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// LevelEditBtn
 			// 
@@ -173,7 +173,7 @@
 			this.LevelEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.LevelEditBtn.Name = "LevelEditBtn";
 			this.LevelEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.LevelEditBtn.Text = "Edit";
+			this.LevelEditBtn.Text = Session.I18N.Edit;
 			this.LevelEditBtn.Click += new System.EventHandler(this.LevelEditBtn_Click);
 			// 
 			// OKBtn
@@ -196,7 +196,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 6;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// PrereqBox
@@ -271,7 +271,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Epic Destiny";
+			this.Text = Session.I18N.EpicDestiny;
 			this.Pages.ResumeLayout(false);
 			this.DetailsPage.ResumeLayout(false);
 			this.DetailsPage.PerformLayout();

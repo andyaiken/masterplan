@@ -502,7 +502,7 @@ namespace Masterplan.Data
 			get { return fSpeed; }
 			set { fSpeed  = value; }
 		}
-		string fSpeed = "6 squares";
+		string fSpeed = "6 " + Session.I18N.Squares;
 
 		/// <summary>
 		/// Gets or sets the race's vision.
@@ -512,7 +512,7 @@ namespace Masterplan.Data
 			get { return fVision; }
 			set { fVision = value; }
 		}
-		string fVision = "Normal";
+		string fVision = Session.I18N.Normal;
 
 		/// <summary>
 		/// Gets or sets the race's starting languages.

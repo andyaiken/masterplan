@@ -868,7 +868,7 @@ namespace Masterplan.Data
 								ta.ID = Guid.NewGuid();
 
 							if (ta.Name == null)
-								ta.Name = "Attack";
+								ta.Name = Session.I18N.Attack;
 
 							if (ta.Keywords == null)
 								ta.Keywords = "";
@@ -944,7 +944,7 @@ namespace Masterplan.Data
 						sc.ID = Guid.NewGuid();
 
 					if (sc.Name == null)
-						sc.Name = "Skill Challenge";
+						sc.Name = Session.I18N.SkillChallenge;
 
 					if (sc.Level <= 0)
 						sc.Level = fParty.Level;
@@ -984,7 +984,7 @@ namespace Masterplan.Data
 							ta.ID = Guid.NewGuid();
 
 						if (ta.Name == null)
-							ta.Name = "Attack";
+							ta.Name = Session.I18N.Attack;
 
 						if (ta.Keywords == null)
 							ta.Keywords = "";

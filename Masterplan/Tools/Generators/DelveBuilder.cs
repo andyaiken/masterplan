@@ -211,7 +211,7 @@ namespace Masterplan.Tools.Generators
             // Set up notes
 
             enc.SetStandardEncounterNotes();
-            EncounterNote light_note = enc.FindNote("Illumination");
+            EncounterNote light_note = enc.FindNote(Session.I18N.Illumination);
             if (light_note != null)
             {
                 int n = Session.Random.Next(6);
@@ -232,7 +232,7 @@ namespace Masterplan.Tools.Generators
                 }
             }
 
-            EncounterNote victory_note = enc.FindNote("Victory Conditions");
+            EncounterNote victory_note = enc.FindNote(Session.I18N.VictoryConditions);
             if (victory_note != null)
             {
                 List<string> candidates = new List<string>();

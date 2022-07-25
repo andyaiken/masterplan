@@ -42,7 +42,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PlayerViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Player View";
+            this.Text = Session.I18N.PlayerView;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PlayerViewForm_FormClosed);
             this.ResumeLayout(false);
 

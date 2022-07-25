@@ -124,7 +124,7 @@ namespace Masterplan.UI
 					e.Cancel = true;
 
 					TrapAttack ta = new TrapAttack();
-					ta.Name = "Attack";
+					ta.Name = Session.I18N.Attack;
 
 					fTrap.Attacks.Add(ta);
 					update_statblock();
@@ -266,7 +266,7 @@ namespace Masterplan.UI
 				TrapAttack attack = fTrap.FindAttack(id);
 				if (attack != null)
 				{
-					DetailsForm dlg = new DetailsForm(attack.Notes, "Notes", null);
+					DetailsForm dlg = new DetailsForm(attack.Notes, Session.I18N.Notes, null);
 					if (dlg.ShowDialog() == DialogResult.OK)
 					{
 						attack.Notes = dlg.Details;

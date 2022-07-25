@@ -79,7 +79,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(372, 25);
 			this.Toolbar.TabIndex = 3;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// SelectAllBtn
 			// 

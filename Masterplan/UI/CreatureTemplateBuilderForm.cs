@@ -61,7 +61,7 @@ namespace Masterplan.UI
 					}
 				}
 
-				if (e.Url.LocalPath == "damage")
+				if (e.Url.LocalPath == Session.I18N.Damage)
 				{
 					e.Cancel = true;
 
@@ -100,7 +100,7 @@ namespace Masterplan.UI
 				{
 					e.Cancel = true;
 
-					DetailsForm dlg = new DetailsForm(fTemplate.Tactics, "Tactics", "");
+					DetailsForm dlg = new DetailsForm(fTemplate.Tactics, Session.I18N.Tactics, "");
 					if (dlg.ShowDialog() == DialogResult.OK)
 					{
 						fTemplate.Tactics = dlg.Details;

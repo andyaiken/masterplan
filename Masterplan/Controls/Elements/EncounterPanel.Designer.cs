@@ -55,7 +55,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(435, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// EditBtn
 			// 
@@ -116,7 +116,7 @@
 			// 
 			// CreatureHdr
 			// 
-			this.CreatureHdr.Text = "Creature";
+			this.CreatureHdr.Text = Session.I18N.Creature;
 			this.CreatureHdr.Width = 150;
 			// 
 			// CountHdr

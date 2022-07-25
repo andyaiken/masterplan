@@ -165,7 +165,7 @@ namespace Masterplan.Controls
 			
 			lines.Add("<TR class=heading>");
 			lines.Add("<TD>");
-			lines.Add("<B>Getting Started</B>");
+			lines.Add("<B>" + Session.I18N.GettingStarted + "</B>");
 			lines.Add("</TD>");
 			lines.Add("</TR>");
 

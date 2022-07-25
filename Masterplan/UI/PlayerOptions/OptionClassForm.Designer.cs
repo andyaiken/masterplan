@@ -110,7 +110,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 2;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// NameLbl
@@ -567,7 +567,7 @@
 			// 
 			// LevelHdr
 			// 
-			this.LevelHdr.Text = "Level";
+			this.LevelHdr.Text = Session.I18N.Level;
 			this.LevelHdr.Width = 300;
 			// 
 			// LevelToolbar
@@ -578,7 +578,7 @@
 			this.LevelToolbar.Name = "LevelToolbar";
 			this.LevelToolbar.Size = new System.Drawing.Size(335, 25);
 			this.LevelToolbar.TabIndex = 0;
-			this.LevelToolbar.Text = "toolStrip1";
+			this.LevelToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// EditBtn
 			// 
@@ -587,7 +587,7 @@
 			this.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EditBtn.Name = "EditBtn";
 			this.EditBtn.Size = new System.Drawing.Size(31, 22);
-			this.EditBtn.Text = "Edit";
+			this.EditBtn.Text = Session.I18N.Edit;
 			this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
 			// 
 			// OptionClassForm
@@ -607,7 +607,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Class";
+			this.Text = Session.I18N.Class;
 			this.Pages.ResumeLayout(false);
 			this.GeneralPage.ResumeLayout(false);
 			this.GeneralPage.PerformLayout();

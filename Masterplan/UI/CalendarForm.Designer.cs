@@ -117,7 +117,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 1;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// NameLbl
@@ -257,7 +257,7 @@
 			this.MonthToolbar.Name = "MonthToolbar";
 			this.MonthToolbar.Size = new System.Drawing.Size(309, 25);
 			this.MonthToolbar.TabIndex = 0;
-			this.MonthToolbar.Text = "toolStrip1";
+			this.MonthToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// MonthAddBtn
 			// 
@@ -266,7 +266,7 @@
 			this.MonthAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MonthAddBtn.Name = "MonthAddBtn";
 			this.MonthAddBtn.Size = new System.Drawing.Size(33, 22);
-			this.MonthAddBtn.Text = "Add";
+			this.MonthAddBtn.Text = Session.I18N.Add;
 			this.MonthAddBtn.Click += new System.EventHandler(this.MonthAddBtn_Click);
 			// 
 			// MonthRemoveBtn
@@ -276,7 +276,7 @@
 			this.MonthRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MonthRemoveBtn.Name = "MonthRemoveBtn";
 			this.MonthRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.MonthRemoveBtn.Text = "Remove";
+			this.MonthRemoveBtn.Text = Session.I18N.Remove;
 			this.MonthRemoveBtn.Click += new System.EventHandler(this.MonthRemoveBtn_Click);
 			// 
 			// MonthEditBtn
@@ -286,7 +286,7 @@
 			this.MonthEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MonthEditBtn.Name = "MonthEditBtn";
 			this.MonthEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.MonthEditBtn.Text = "Edit";
+			this.MonthEditBtn.Text = Session.I18N.Edit;
 			this.MonthEditBtn.Click += new System.EventHandler(this.MonthEditBtn_Click);
 			// 
 			// toolStripSeparator1
@@ -301,7 +301,7 @@
 			this.MonthUpBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MonthUpBtn.Name = "MonthUpBtn";
 			this.MonthUpBtn.Size = new System.Drawing.Size(59, 22);
-			this.MonthUpBtn.Text = "Move Up";
+			this.MonthUpBtn.Text = Session.I18N.MoveUp;
 			this.MonthUpBtn.Click += new System.EventHandler(this.MonthUpBtn_Click);
 			// 
 			// MonthDownBtn
@@ -311,7 +311,7 @@
 			this.MonthDownBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.MonthDownBtn.Name = "MonthDownBtn";
 			this.MonthDownBtn.Size = new System.Drawing.Size(75, 22);
-			this.MonthDownBtn.Text = "Move Down";
+			this.MonthDownBtn.Text = Session.I18N.MoveDown;
 			this.MonthDownBtn.Click += new System.EventHandler(this.MonthDownBtn_Click);
 			// 
 			// DaysPage
@@ -370,7 +370,7 @@
 			this.DayAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.DayAddBtn.Name = "DayAddBtn";
 			this.DayAddBtn.Size = new System.Drawing.Size(33, 22);
-			this.DayAddBtn.Text = "Add";
+			this.DayAddBtn.Text = Session.I18N.Add;
 			this.DayAddBtn.Click += new System.EventHandler(this.DayAddBtn_Click);
 			// 
 			// DayRemoveBtn
@@ -380,7 +380,7 @@
 			this.DayRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.DayRemoveBtn.Name = "DayRemoveBtn";
 			this.DayRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.DayRemoveBtn.Text = "Remove";
+			this.DayRemoveBtn.Text = Session.I18N.Remove;
 			this.DayRemoveBtn.Click += new System.EventHandler(this.DayRemoveBtn_Click);
 			// 
 			// DayEditBtn
@@ -390,7 +390,7 @@
 			this.DayEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.DayEditBtn.Name = "DayEditBtn";
 			this.DayEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.DayEditBtn.Text = "Edit";
+			this.DayEditBtn.Text = Session.I18N.Edit;
 			this.DayEditBtn.Click += new System.EventHandler(this.DayEditBtn_Click);
 			// 
 			// toolStripSeparator2
@@ -405,7 +405,7 @@
 			this.DayUpBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.DayUpBtn.Name = "DayUpBtn";
 			this.DayUpBtn.Size = new System.Drawing.Size(59, 22);
-			this.DayUpBtn.Text = "Move Up";
+			this.DayUpBtn.Text = Session.I18N.MoveUp;
 			this.DayUpBtn.Click += new System.EventHandler(this.DayUpBtn_Click);
 			// 
 			// DayDownBtn
@@ -415,7 +415,7 @@
 			this.DayDownBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.DayDownBtn.Name = "DayDownBtn";
 			this.DayDownBtn.Size = new System.Drawing.Size(75, 22);
-			this.DayDownBtn.Text = "Move Down";
+			this.DayDownBtn.Text = Session.I18N.MoveDown;
 			this.DayDownBtn.Click += new System.EventHandler(this.DayDownBtn_Click);
 			// 
 			// SeasonsPage
@@ -477,7 +477,7 @@
 			this.SeasonAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.SeasonAddBtn.Name = "SeasonAddBtn";
 			this.SeasonAddBtn.Size = new System.Drawing.Size(33, 22);
-			this.SeasonAddBtn.Text = "Add";
+			this.SeasonAddBtn.Text = Session.I18N.Add;
 			this.SeasonAddBtn.Click += new System.EventHandler(this.SeasonAddBtn_Click);
 			// 
 			// SeasonRemoveBtn
@@ -487,7 +487,7 @@
 			this.SeasonRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.SeasonRemoveBtn.Name = "SeasonRemoveBtn";
 			this.SeasonRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.SeasonRemoveBtn.Text = "Remove";
+			this.SeasonRemoveBtn.Text = Session.I18N.Remove;
 			this.SeasonRemoveBtn.Click += new System.EventHandler(this.SeasonRemoveBtn_Click);
 			// 
 			// SeasonEditBtn
@@ -497,7 +497,7 @@
 			this.SeasonEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.SeasonEditBtn.Name = "SeasonEditBtn";
 			this.SeasonEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.SeasonEditBtn.Text = "Edit";
+			this.SeasonEditBtn.Text = Session.I18N.Edit;
 			this.SeasonEditBtn.Click += new System.EventHandler(this.SeasonEditBtn_Click);
 			// 
 			// EventsPage
@@ -559,7 +559,7 @@
 			this.EventAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EventAddBtn.Name = "EventAddBtn";
 			this.EventAddBtn.Size = new System.Drawing.Size(33, 22);
-			this.EventAddBtn.Text = "Add";
+			this.EventAddBtn.Text = Session.I18N.Add;
 			this.EventAddBtn.Click += new System.EventHandler(this.EventAddBtn_Click);
 			// 
 			// EventRemoveBtn
@@ -569,7 +569,7 @@
 			this.EventRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EventRemoveBtn.Name = "EventRemoveBtn";
 			this.EventRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.EventRemoveBtn.Text = "Remove";
+			this.EventRemoveBtn.Text = Session.I18N.Remove;
 			this.EventRemoveBtn.Click += new System.EventHandler(this.EventRemoveBtn_Click);
 			// 
 			// EventEditBtn
@@ -579,7 +579,7 @@
 			this.EventEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EventEditBtn.Name = "EventEditBtn";
 			this.EventEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.EventEditBtn.Text = "Edit";
+			this.EventEditBtn.Text = Session.I18N.Edit;
 			this.EventEditBtn.Click += new System.EventHandler(this.EventEditBtn_Click);
 			// 
 			// SatellitePage
@@ -635,7 +635,7 @@
 			this.SatelliteAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.SatelliteAddBtn.Name = "SatelliteAddBtn";
 			this.SatelliteAddBtn.Size = new System.Drawing.Size(33, 22);
-			this.SatelliteAddBtn.Text = "Add";
+			this.SatelliteAddBtn.Text = Session.I18N.Add;
 			this.SatelliteAddBtn.Click += new System.EventHandler(this.SatelliteAddBtn_Click);
 			// 
 			// SatelliteRemoveBtn
@@ -645,7 +645,7 @@
 			this.SatelliteRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.SatelliteRemoveBtn.Name = "SatelliteRemoveBtn";
 			this.SatelliteRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.SatelliteRemoveBtn.Text = "Remove";
+			this.SatelliteRemoveBtn.Text = Session.I18N.Remove;
 			this.SatelliteRemoveBtn.Click += new System.EventHandler(this.SatelliteRemoveBtn_Click);
 			// 
 			// SatelliteEditBtn
@@ -655,7 +655,7 @@
 			this.SatelliteEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.SatelliteEditBtn.Name = "SatelliteEditBtn";
 			this.SatelliteEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.SatelliteEditBtn.Text = "Edit";
+			this.SatelliteEditBtn.Text = Session.I18N.Edit;
 			this.SatelliteEditBtn.Click += new System.EventHandler(this.SatelliteEditBtn_Click);
 			// 
 			// CalendarForm

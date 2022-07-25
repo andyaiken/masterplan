@@ -312,7 +312,7 @@ namespace Masterplan.UI
 					switch (cat)
 					{
 						case CreaturePowerCategory.Trait:
-							name = "Traits";
+							name = Session.I18N.Traits;
 							break;
 						case CreaturePowerCategory.Standard:
 						case CreaturePowerCategory.Move:
@@ -321,10 +321,10 @@ namespace Masterplan.UI
 							name = cat + " Actions";
 							break;
 						case CreaturePowerCategory.Triggered:
-							name = "Triggered Actions";
+							name = Session.I18N.TriggeredActions;
 							break;
 						case CreaturePowerCategory.Other:
-							name = "Other Actions";
+							name = Session.I18N.OtherActions;
 							break;
 					}
 

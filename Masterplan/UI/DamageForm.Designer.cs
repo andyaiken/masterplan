@@ -86,7 +86,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 12;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// DmgLbl
@@ -190,7 +190,7 @@
 			this.AmountToolbar.Name = "AmountToolbar";
 			this.AmountToolbar.Size = new System.Drawing.Size(277, 25);
 			this.AmountToolbar.TabIndex = 0;
-			this.AmountToolbar.Text = "toolStrip1";
+			this.AmountToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// Dmg1
 			// 
@@ -371,7 +371,7 @@
 			this.PoisonBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PoisonBtn.Name = "PoisonBtn";
 			this.PoisonBtn.Size = new System.Drawing.Size(60, 19);
-			this.PoisonBtn.Text = "Poison";
+			this.PoisonBtn.Text = Session.I18N.Poison;
 			this.PoisonBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.PoisonBtn.Click += new System.EventHandler(this.PoisonBtn_Click);
 			// 

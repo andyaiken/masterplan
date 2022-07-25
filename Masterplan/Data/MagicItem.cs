@@ -63,7 +63,7 @@ namespace Masterplan.Data
 			get { return fType; }
 			set { fType = value; }
 		}
-		string fType = "Weapon";
+		string fType = Session.I18N.Weapon;
 
 		/// <summary>
 		/// Gets or sets the item type.

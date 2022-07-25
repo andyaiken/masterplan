@@ -78,7 +78,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(811, 25);
 			this.Toolbar.TabIndex = 3;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// ReportBtn
 			// 
@@ -168,7 +168,7 @@
 			this.PlayerViewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PlayerViewBtn.Name = "PlayerViewBtn";
 			this.PlayerViewBtn.Size = new System.Drawing.Size(114, 22);
-			this.PlayerViewBtn.Text = "Send to Player View";
+			this.PlayerViewBtn.Text = Session.I18N.SendPlayerView;
 			this.PlayerViewBtn.Click += new System.EventHandler(this.PlayerViewBtn_Click);
 			// 
 			// ExportBtn
@@ -178,7 +178,7 @@
 			this.ExportBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.ExportBtn.Name = "ExportBtn";
 			this.ExportBtn.Size = new System.Drawing.Size(44, 22);
-			this.ExportBtn.Text = "Export";
+			this.ExportBtn.Text = Session.I18N.Export;
 			this.ExportBtn.Click += new System.EventHandler(this.ExportBtn_Click);
 			// 
 			// Splitter

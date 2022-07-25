@@ -130,7 +130,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 4;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// Pages
@@ -191,7 +191,7 @@
 			this.LevelGroup.Size = new System.Drawing.Size(230, 78);
 			this.LevelGroup.TabIndex = 10;
 			this.LevelGroup.TabStop = false;
-			this.LevelGroup.Text = "Level";
+			this.LevelGroup.Text = Session.I18N.Level;
 			// 
 			// XPLbl
 			// 
@@ -357,7 +357,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(482, 25);
 			this.Toolbar.TabIndex = 1;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// FileMenu
 			// 
@@ -368,7 +368,7 @@
 			this.FileMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.FileMenu.Name = "FileMenu";
 			this.FileMenu.Size = new System.Drawing.Size(38, 22);
-			this.FileMenu.Text = "File";
+			this.FileMenu.Text = Session.I18N.File;
 			// 
 			// FileExport
 			// 
@@ -523,7 +523,7 @@
 			this.SkillsToolbar.Name = "SkillsToolbar";
 			this.SkillsToolbar.Size = new System.Drawing.Size(482, 25);
 			this.SkillsToolbar.TabIndex = 0;
-			this.SkillsToolbar.Text = "toolStrip1";
+			this.SkillsToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// RemoveBtn
 			// 
@@ -532,7 +532,7 @@
 			this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveBtn.Name = "RemoveBtn";
 			this.RemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveBtn.Text = "Remove";
+			this.RemoveBtn.Text = Session.I18N.Remove;
 			this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// EditBtn
@@ -542,7 +542,7 @@
 			this.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EditBtn.Name = "EditBtn";
 			this.EditBtn.Size = new System.Drawing.Size(31, 22);
-			this.EditBtn.Text = "Edit";
+			this.EditBtn.Text = Session.I18N.Edit;
 			this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
 			// 
 			// toolStripSeparator1
@@ -612,7 +612,7 @@
 			this.VictoryToolbar.Name = "VictoryToolbar";
 			this.VictoryToolbar.Size = new System.Drawing.Size(237, 25);
 			this.VictoryToolbar.TabIndex = 0;
-			this.VictoryToolbar.Text = "toolStrip1";
+			this.VictoryToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// toolStripLabel1
 			// 
@@ -658,7 +658,7 @@
 			this.NotesPage.Padding = new System.Windows.Forms.Padding(3);
 			this.NotesPage.Size = new System.Drawing.Size(488, 289);
 			this.NotesPage.TabIndex = 6;
-			this.NotesPage.Text = "Notes";
+			this.NotesPage.Text = Session.I18N.Notes;
 			this.NotesPage.UseVisualStyleBackColor = true;
 			// 
 			// NotesBox

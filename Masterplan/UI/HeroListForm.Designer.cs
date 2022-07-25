@@ -88,7 +88,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(562, 25);
 			this.Toolbar.TabIndex = 0;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AddBtn
 			// 
@@ -103,7 +103,7 @@
 			this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AddBtn.Name = "AddBtn";
 			this.AddBtn.Size = new System.Drawing.Size(45, 22);
-			this.AddBtn.Text = "Add";
+			this.AddBtn.Text = Session.I18N.Add;
 			this.AddBtn.ButtonClick += new System.EventHandler(this.AddBtn_Click);
 			// 
 			// AddRandomCharacter
@@ -139,7 +139,7 @@
 			this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveBtn.Name = "RemoveBtn";
 			this.RemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.RemoveBtn.Text = "Remove";
+			this.RemoveBtn.Text = Session.I18N.Remove;
 			this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// EditBtn
@@ -149,7 +149,7 @@
 			this.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EditBtn.Name = "EditBtn";
 			this.EditBtn.Size = new System.Drawing.Size(31, 22);
-			this.EditBtn.Text = "Edit";
+			this.EditBtn.Text = Session.I18N.Edit;
 			this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
 			// 
 			// toolStripSeparator2
@@ -179,7 +179,7 @@
 			this.PlayerViewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.PlayerViewBtn.Name = "PlayerViewBtn";
 			this.PlayerViewBtn.Size = new System.Drawing.Size(114, 22);
-			this.PlayerViewBtn.Text = "Send to Player View";
+			this.PlayerViewBtn.Text = Session.I18N.SendPlayerView;
 			this.PlayerViewBtn.Click += new System.EventHandler(this.PlayerViewBtn_Click);
 			// 
 			// toolStripSeparator5
@@ -204,7 +204,7 @@
 			this.EntryBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.EntryBtn.Name = "EntryBtn";
 			this.EntryBtn.Size = new System.Drawing.Size(111, 22);
-			this.EntryBtn.Text = "Encyclopedia Entry";
+			this.EntryBtn.Text = Session.I18N.EncyclopediaEntry;
 			this.EntryBtn.Click += new System.EventHandler(this.EntryBtn_Click);
 			// 
 			// HeroList
@@ -331,7 +331,7 @@
 			this.ParcelPage.Padding = new System.Windows.Forms.Padding(3);
 			this.ParcelPage.Size = new System.Drawing.Size(568, 262);
 			this.ParcelPage.TabIndex = 2;
-			this.ParcelPage.Text = "Treasure Parcels";
+			this.ParcelPage.Text = Session.I18N.TreasureParcels;
 			this.ParcelPage.UseVisualStyleBackColor = true;
 			// 
 			// ParcelList
@@ -395,7 +395,7 @@
 			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Player Characters";
+			this.Text = Session.I18N.PlayerCharacters;
 			this.Toolbar.ResumeLayout(false);
 			this.Toolbar.PerformLayout();
 			this.Pages.ResumeLayout(false);

@@ -199,7 +199,7 @@
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(675, 25);
 			this.Toolbar.TabIndex = 1;
-			this.Toolbar.Text = "toolStrip1";
+			this.Toolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// RemoveBtn
 			// 
@@ -210,7 +210,7 @@
 			this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.RemoveBtn.Name = "RemoveBtn";
 			this.RemoveBtn.Size = new System.Drawing.Size(66, 22);
-			this.RemoveBtn.Text = "Remove";
+			this.RemoveBtn.Text = Session.I18N.Remove;
 			this.RemoveBtn.ButtonClick += new System.EventHandler(this.RemoveBtn_Click);
 			// 
 			// clearMapToolStripMenuItem
@@ -306,9 +306,9 @@
             this.ToolsAutoBuild});
 			this.at.Image = ((System.Drawing.Image)(resources.GetObject("at.Image")));
 			this.at.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.at.Name = "at";
+			this.at.Name = Session.I18N.At;
 			this.at.Size = new System.Drawing.Size(49, 22);
-			this.at.Text = "Tools";
+			this.at.Text = Session.I18N.Tools;
 			// 
 			// ToolsNavigate
 			// 
@@ -506,7 +506,7 @@
 			this.TileToolbar.Name = "TileToolbar";
 			this.TileToolbar.Size = new System.Drawing.Size(189, 25);
 			this.TileToolbar.TabIndex = 2;
-			this.TileToolbar.Text = "toolStrip1";
+			this.TileToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// TilesViewBtn
 			// 
@@ -518,7 +518,7 @@
 			this.TilesViewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TilesViewBtn.Name = "TilesViewBtn";
 			this.TilesViewBtn.Size = new System.Drawing.Size(45, 22);
-			this.TilesViewBtn.Text = "View";
+			this.TilesViewBtn.Text = Session.I18N.View;
 			// 
 			// ViewGroupBy
 			// 
@@ -559,27 +559,27 @@
             this.SizeLarge});
 			this.ViewSize.Name = "ViewSize";
 			this.ViewSize.Size = new System.Drawing.Size(152, 22);
-			this.ViewSize.Text = "Size";
+			this.ViewSize.Text = Session.I18N.Size;
 			// 
 			// SizeSmall
 			// 
 			this.SizeSmall.Name = "SizeSmall";
 			this.SizeSmall.Size = new System.Drawing.Size(119, 22);
-			this.SizeSmall.Text = "Small";
+			this.SizeSmall.Text = Session.I18N.Small;
 			this.SizeSmall.Click += new System.EventHandler(this.SizeSmall_Click);
 			// 
 			// SizeMedium
 			// 
 			this.SizeMedium.Name = "SizeMedium";
 			this.SizeMedium.Size = new System.Drawing.Size(119, 22);
-			this.SizeMedium.Text = "Medium";
+			this.SizeMedium.Text = Session.I18N.Medium;
 			this.SizeMedium.Click += new System.EventHandler(this.SizeMedium_Click);
 			// 
 			// SizeLarge
 			// 
 			this.SizeLarge.Name = "SizeLarge";
 			this.SizeLarge.Size = new System.Drawing.Size(119, 22);
-			this.SizeLarge.Text = "Large";
+			this.SizeLarge.Text = Session.I18N.Large;
 			this.SizeLarge.Click += new System.EventHandler(this.SizeLarge_Click);
 			// 
 			// FilterBtn
@@ -638,7 +638,7 @@
 			this.AreaToolbar.Name = "AreaToolbar";
 			this.AreaToolbar.Size = new System.Drawing.Size(189, 25);
 			this.AreaToolbar.TabIndex = 0;
-			this.AreaToolbar.Text = "toolStrip1";
+			this.AreaToolbar.Text = Session.I18N.toolStrip1;
 			// 
 			// AreaRemoveBtn
 			// 
@@ -647,7 +647,7 @@
 			this.AreaRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AreaRemoveBtn.Name = "AreaRemoveBtn";
 			this.AreaRemoveBtn.Size = new System.Drawing.Size(54, 22);
-			this.AreaRemoveBtn.Text = "Remove";
+			this.AreaRemoveBtn.Text = Session.I18N.Remove;
 			this.AreaRemoveBtn.Click += new System.EventHandler(this.AreaRemoveBtn_Click);
 			// 
 			// AreaEditBtn
@@ -657,7 +657,7 @@
 			this.AreaEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.AreaEditBtn.Name = "AreaEditBtn";
 			this.AreaEditBtn.Size = new System.Drawing.Size(31, 22);
-			this.AreaEditBtn.Text = "Edit";
+			this.AreaEditBtn.Text = Session.I18N.Edit;
 			this.AreaEditBtn.Click += new System.EventHandler(this.AreaEditBtn_Click);
 			// 
 			// toolStripSeparator7
@@ -771,7 +771,7 @@
 			this.CancelBtn.Name = "CancelBtn";
 			this.CancelBtn.Size = new System.Drawing.Size(75, 23);
 			this.CancelBtn.TabIndex = 5;
-			this.CancelBtn.Text = "Cancel";
+			this.CancelBtn.Text = Session.I18N.Cancel;
 			this.CancelBtn.UseVisualStyleBackColor = true;
 			// 
 			// MapForm
