@@ -104,13 +104,6 @@ namespace Masterplan.Tools
 			}
 			else
 			{
-				if ((role != null) && (role is ComplexRole))
-				{
-					ComplexRole cr = role as ComplexRole;
-					if (cr.Type == RoleType.Soldier)
-						return level + 5;
-				}
-
 				return level + 3;
 			}
 		}
