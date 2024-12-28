@@ -20,11 +20,11 @@ namespace Masterplan.Tools
 				ComplexRole cr = role as ComplexRole;
 				switch (cr.Type)
 				{
-					case RoleType.Soldier:
+					case RoleType.Lurker:
 						score += 4;
 						break;
 					case RoleType.Skirmisher:
-					case RoleType.Brute:
+					case RoleType.Soldier:
 						score += 2;
 						break;
 				}
