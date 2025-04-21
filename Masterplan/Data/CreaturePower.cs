@@ -774,6 +774,9 @@ namespace Masterplan.Data
 			if (!fDetails.Contains("vs"))
 				return;
 
+			// Setup a temporary string to hold the original details
+			string detailsHold = fDetails;
+
 			string[] sections = fDetails.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
 			fDetails = "";
 

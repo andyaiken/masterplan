@@ -114,7 +114,11 @@ namespace Masterplan.Tools
 			ranges.Add("melee");
 			ranges.Add("ranged");
 
-			string details = "";
+            // setup a hold variable to keep the original power.Details field
+            string detailsHold = power.Details;
+
+			// Clear the details field for manipulation
+            string details = "";
 
 			string[] clauses = power.Details.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
 			foreach (string clause in clauses)
