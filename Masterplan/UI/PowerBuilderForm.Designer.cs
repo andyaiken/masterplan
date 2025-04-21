@@ -46,7 +46,7 @@
             this.PowerBrowserBtn});
             this.Toolbar.Location = new System.Drawing.Point(0, 0);
             this.Toolbar.Name = "Toolbar";
-            this.Toolbar.Size = new System.Drawing.Size(885, 31);
+            this.Toolbar.Size = new System.Drawing.Size(885, 27);
             this.Toolbar.TabIndex = 0;
             this.Toolbar.Text = "toolStrip1";
             // 
@@ -56,7 +56,7 @@
             this.PowerBrowserBtn.Image = ((System.Drawing.Image)(resources.GetObject("PowerBrowserBtn.Image")));
             this.PowerBrowserBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PowerBrowserBtn.Name = "PowerBrowserBtn";
-            this.PowerBrowserBtn.Size = new System.Drawing.Size(110, 28);
+            this.PowerBrowserBtn.Size = new System.Drawing.Size(110, 24);
             this.PowerBrowserBtn.Text = "Power Browser";
             this.PowerBrowserBtn.Click += new System.EventHandler(this.PowerBrowserBtn_Click);
             // 
@@ -66,7 +66,7 @@
             this.BtnPnl.Controls.Add(this.OKBtn);
             this.BtnPnl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BtnPnl.Location = new System.Drawing.Point(0, 410);
-            this.BtnPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnPnl.Margin = new System.Windows.Forms.Padding(4);
             this.BtnPnl.Name = "BtnPnl";
             this.BtnPnl.Size = new System.Drawing.Size(885, 43);
             this.BtnPnl.TabIndex = 2;
@@ -76,7 +76,7 @@
             this.CancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.Location = new System.Drawing.Point(769, 7);
-            this.CancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CancelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(100, 28);
             this.CancelBtn.TabIndex = 1;
@@ -88,7 +88,7 @@
             this.OKBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OKBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.OKBtn.Location = new System.Drawing.Point(661, 7);
-            this.OKBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OKBtn.Margin = new System.Windows.Forms.Padding(4);
             this.OKBtn.Name = "OKBtn";
             this.OKBtn.Size = new System.Drawing.Size(100, 28);
             this.OKBtn.TabIndex = 0;
@@ -100,12 +100,12 @@
             this.StatBlockBrowser.AllowWebBrowserDrop = false;
             this.StatBlockBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StatBlockBrowser.IsWebBrowserContextMenuEnabled = false;
-            this.StatBlockBrowser.Location = new System.Drawing.Point(0, 31);
-            this.StatBlockBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StatBlockBrowser.Location = new System.Drawing.Point(0, 27);
+            this.StatBlockBrowser.Margin = new System.Windows.Forms.Padding(4);
             this.StatBlockBrowser.MinimumSize = new System.Drawing.Size(27, 25);
             this.StatBlockBrowser.Name = "StatBlockBrowser";
             this.StatBlockBrowser.ScriptErrorsSuppressed = true;
-            this.StatBlockBrowser.Size = new System.Drawing.Size(885, 379);
+            this.StatBlockBrowser.Size = new System.Drawing.Size(885, 383);
             this.StatBlockBrowser.TabIndex = 2;
             this.StatBlockBrowser.WebBrowserShortcutsEnabled = false;
             this.StatBlockBrowser.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.Browser_Navigating);
@@ -120,8 +120,7 @@
             this.Controls.Add(this.StatBlockBrowser);
             this.Controls.Add(this.BtnPnl);
             this.Controls.Add(this.Toolbar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MaximizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimizeBox = false;
             this.Name = "PowerBuilderForm";
             this.ShowIcon = false;
