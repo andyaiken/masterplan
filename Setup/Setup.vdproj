@@ -463,7 +463,7 @@
         "Debug"
         {
         "DisplayName" = "8:Debug"
-        "IsDebugOnly" = "11:TRUE"
+        "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:FALSE"
         "OutputFilename" = "8:Debug\\Setup.msi"
         "PackageFilesAs" = "3:2"
@@ -475,22 +475,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
-            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
-            {
-            "Enabled" = "11:TRUE"
-            "PromptEnabled" = "11:TRUE"
-            "PrerequisitesLocation" = "2:1"
-            "Url" = "8:"
-            "ComponentsUrl" = "8:"
-                "Items"
-                {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
-                    {
-                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
-                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
-                    }
-                }
-            }
+        }
+        "Limited"
+        {
+        "DisplayName" = "8:Limited"
+        "IsDebugOnly" = "11:FALSE"
+        "IsReleaseOnly" = "11:FALSE"
+        "OutputFilename" = "8:Limited\\Setup.msi"
+        "PackageFilesAs" = "3:2"
+        "PackageFileSize" = "3:-2147483648"
+        "CabType" = "3:1"
+        "Compression" = "3:2"
+        "SignOutput" = "11:FALSE"
+        "CertificateFile" = "8:"
+        "PrivateKeyFile" = "8:"
+        "TimeStampServer" = "8:"
+        "InstallerBootstrapper" = "3:2"
         }
         "Release"
         {
@@ -2607,7 +2607,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_24F510272FAD4FB7B59403B8E9F55E8C"
             {
-            "SourcePath" = "8:..\\Masterplan\\obj\\Release\\Masterplan.exe"
+            "SourcePath" = "8:..\\Masterplan\\obj\\Debug\\Masterplan.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_71B3AA6EE74C4D6C997DF0E87A6D06F7"
