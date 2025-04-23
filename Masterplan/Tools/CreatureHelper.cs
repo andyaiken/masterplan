@@ -89,7 +89,22 @@ namespace Masterplan.Tools
 
 		public static void UpdatePowerRange(ICreature c, CreaturePower power)
 		{
-			if ((power.Range != null) && (power.Range != ""))
+			// Change any existing entry of Range from Self to Personal
+            if (power.Range.Contains("Self") || power.Range.Contains("self"))
+            {
+                if (power.Range.Contains("self"))
+                {
+                    if (power.Range == "self")
+                    { power.Range = "Personal"; }
+
+                    return;
+                }
+
+                power.Range = "Personal";
+                return;
+            }
+
+            if ((power.Range != null) && (power.Range != ""))
 				return;
 
 			List<string> ranges = new List<string>();
@@ -99,9 +114,11 @@ namespace Masterplan.Tools
 			ranges.Add("melee");
 			ranges.Add("ranged");
 
-			string originalDetails = power.Details;
+            // setup a hold variable to keep the original power.Details field
+            string detailsHold = power.Details;
 
-			string details = "";
+			// Clear the details field for manipulation
+            string details = "";
 
 			string[] clauses = power.Details.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
 			foreach (string clause in clauses)

@@ -27,6 +27,7 @@ Global
 		{F7F557FC-1888-43F1-85DE-F7D4E81134E7}.Debug|Any CPU.ActiveCfg = Debug
 		{F7F557FC-1888-43F1-85DE-F7D4E81134E7}.Debug|Any CPU.Build.0 = Debug
 		{F7F557FC-1888-43F1-85DE-F7D4E81134E7}.Release|Any CPU.ActiveCfg = Release
+		{F7F557FC-1888-43F1-85DE-F7D4E81134E7}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
