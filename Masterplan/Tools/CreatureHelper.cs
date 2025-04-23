@@ -99,6 +99,8 @@ namespace Masterplan.Tools
 			ranges.Add("melee");
 			ranges.Add("ranged");
 
+			string originalDetails = power.Details;
+
 			string details = "";
 
 			string[] clauses = power.Details.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
@@ -109,25 +111,27 @@ namespace Masterplan.Tools
 				{
 					if (clause.ToLower().Contains(range))
 					{
-						is_range_clause = true;
-						break;
+						try
+						{
+							int startIndex = clause.ToLower().IndexOf(range);
+							int endIndex = clause.Length;
+							power.Range = clause.Substring(startIndex, endIndex - startIndex);
+							is_range_clause = true;
+							break;
+						}
+						catch { } // Error Handling
+						
 					}
 				}
 
 				if (is_range_clause)
 				{
-					power.Range = clause;
-				}
-				else
-				{
-					if (details != "")
-						details += "; ";
-
-					details += clause;
-				}
+                    System.Windows.Forms.MessageBox.Show(power.Name, c.Name);
+                }
+				
 			}
-
-			power.Details = details;
+			
+			power.Details = originalDetails;
 		}
 
 		public static Aura FindAura(ICreature c, string name)
