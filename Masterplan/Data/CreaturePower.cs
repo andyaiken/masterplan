@@ -774,9 +774,7 @@ namespace Masterplan.Data
 			// set originalDetails to hold the original before modifications and trim
 			string originalDetails = fDetails.Trim();
 
-			if (!fDetails.Contains("vs"))
-				return;
-
+			// split the details using ";" as a delimiter
 			string[] sections = fDetails.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
 
 			//clear fDetails for manipulation
