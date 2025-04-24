@@ -89,7 +89,7 @@ namespace Masterplan.Tools
 
 		public static void UpdatePowerRange(ICreature c, CreaturePower power)
 		{
-			// Change any existing entry of Range from Self to Personal
+			// DB Cleanup - change any existing entry in the range field from Self to Personal
             if (power.Range.Contains("Self") || power.Range.Contains("self"))
             {
                 if (power.Range.Contains("self"))
@@ -104,8 +104,17 @@ namespace Masterplan.Tools
                 return;
             }
 
+			// If the range field is not empty - do nothing
             if ((power.Range != null) && (power.Range != ""))
 				return;
+
+			// Malformed details will impact parsing
+			// in that case send back - do nothing
+			if (!power.Details.Contains(";"))
+				return;
+
+			// Start the parsing process to derive the
+			// range from the text on details field
 
 			List<string> ranges = new List<string>();
 			ranges.Add("close blast");
@@ -115,10 +124,11 @@ namespace Masterplan.Tools
 			ranges.Add("ranged");
 
             // setup a hold variable to keep the original power.Details field
-            string detailsHold = power.Details;
+            string originalDetails = power.Details;
 
 			// Clear the details field for manipulation
-            string details = "";
+			// currently not used - remove?
+            //string details = "";
 
 			string[] clauses = power.Details.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
 			foreach (string clause in clauses)
@@ -130,11 +140,17 @@ namespace Masterplan.Tools
 					{
 						try
 						{
+							// System.Windows.Forms.MessageBox.Show(power.Details, c.Name+": "+power.Name);
 							int startIndex = clause.ToLower().IndexOf(range);
 							int endIndex = clause.Length;
-							power.Range = clause.Substring(startIndex, endIndex - startIndex);
+							power.Range = clause.Substring(startIndex, (endIndex - startIndex));
+							if (power.Range.Contains("basic") && (power.Action.Use == PowerUseType.AtWill || power.Action.Use == PowerUseType.Basic))
+							{
+								power.Action.Use = PowerUseType.Basic;
+							}
 							is_range_clause = true;
-							break;
+                            
+                            break;
 						}
 						catch { } // Error Handling
 						
@@ -143,7 +159,7 @@ namespace Masterplan.Tools
 
 				if (is_range_clause)
 				{
-                    System.Windows.Forms.MessageBox.Show(power.Name, c.Name);
+                    // System.Windows.Forms.MessageBox.Show(power.Name, c.Name);
                 }
 				
 			}
