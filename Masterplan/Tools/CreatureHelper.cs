@@ -96,11 +96,9 @@ namespace Masterplan.Tools
                 {
                     if (power.Range == "self")
                     { power.Range = "Personal"; }
-
                     return;
                 }
-
-                power.Range = "Personal";
+				power.Range = "Personal";
                 return;
             }
 
@@ -114,8 +112,9 @@ namespace Masterplan.Tools
 				return;
 
 			// Start the parsing process to derive the
-			// range from the text on details field
+			// range of an attack from text on details field
 
+			// Define the 5 ranges to be parsed.
 			List<string> ranges = new List<string>();
 			ranges.Add("close blast");
 			ranges.Add("close burst");
@@ -126,10 +125,7 @@ namespace Masterplan.Tools
             // setup a hold variable to keep the original power.Details field
             string originalDetails = power.Details;
 
-			// Clear the details field for manipulation
-			// currently not used - remove?
-            //string details = "";
-
+			// split the details on the ";" delimiter for parsing
 			string[] clauses = power.Details.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
 			foreach (string clause in clauses)
 			{
@@ -140,11 +136,14 @@ namespace Masterplan.Tools
 					{
 						try
 						{
-							// System.Windows.Forms.MessageBox.Show(power.Details, c.Name+": "+power.Name);
 							int startIndex = clause.ToLower().IndexOf(range);
 							int endIndex = clause.Length;
 							power.Range = clause.Substring(startIndex, (endIndex - startIndex));
-							if (power.Range.Contains("basic") && (power.Action.Use == PowerUseType.AtWill || power.Action.Use == PowerUseType.Basic))
+
+							// if the details call out a basic attack, update the power to make it a basic attack
+							// exclude anything that is not an At Will attack							
+							bool is_basic = power.Range.IndexOf("basic", StringComparison.OrdinalIgnoreCase) >= 0;
+							if (is_basic && (power.Action.Use == PowerUseType.AtWill || power.Action.Use == PowerUseType.Basic))
 							{
 								power.Action.Use = PowerUseType.Basic;
 							}
@@ -156,15 +155,11 @@ namespace Masterplan.Tools
 						
 					}
 				}
-
-				if (is_range_clause)
-				{
-                    // System.Windows.Forms.MessageBox.Show(power.Name, c.Name);
-                }
-				
 			}
-			
-			power.Details = originalDetails;
+            // Retain the details for verification
+            // string parsing can be inaccurate mostly due
+            // to non-standard entries in details field
+            power.Details = originalDetails;
 		}
 
 		public static Aura FindAura(ICreature c, string name)

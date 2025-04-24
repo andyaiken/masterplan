@@ -786,9 +786,6 @@ namespace Masterplan.Data
 				// trim the section to parse
 				string str = section.Trim();
 
-				// set the flag for attack added
-				//bool added_attack = false;
-
 				int index = str.IndexOf("vs");
 				if ((index != -1) && (fAttack == null))
 				{
@@ -831,21 +828,11 @@ namespace Masterplan.Data
 							fAttack = new PowerAttack();
 							fAttack.Bonus = bonus;
 							fAttack.Defence = defence;
-
-							//added_attack = true;
 						}
 
 					}
 				}
-				// This section is not needed if we are
-				// not modifying the details section
-				/*if (!added_attack)
-				{
-					if (fDetails != "")
-						fDetails += "; ";
 
-					fDetails += str;
-				}*/
 			}
 			// This is not needed since we do 
 			// not modify the fDetails field
