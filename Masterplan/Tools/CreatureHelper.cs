@@ -129,8 +129,7 @@ namespace Masterplan.Tools
 			string[] clauses = power.Details.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
 			foreach (string clause in clauses)
 			{
-				bool is_range_clause = false;
-				foreach (string range in ranges)
+                foreach (string range in ranges)
 				{
 					if (clause.ToLower().Contains(range))
 					{
@@ -147,8 +146,7 @@ namespace Masterplan.Tools
 							{
 								power.Action.Use = PowerUseType.Basic;
 							}
-							is_range_clause = true;
-                            
+
                             break;
 						}
 						catch { } // Error Handling
