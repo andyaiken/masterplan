@@ -42,7 +42,7 @@
             this.OKBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OKBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.OKBtn.Location = new System.Drawing.Point(212, 106);
-            this.OKBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OKBtn.Margin = new System.Windows.Forms.Padding(4);
             this.OKBtn.Name = "OKBtn";
             this.OKBtn.Size = new System.Drawing.Size(100, 28);
             this.OKBtn.TabIndex = 15;
@@ -55,7 +55,7 @@
             this.CancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.Location = new System.Drawing.Point(320, 106);
-            this.CancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CancelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(100, 28);
             this.CancelBtn.TabIndex = 16;
@@ -80,7 +80,7 @@
             this.RangeBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.RangeBox.FormattingEnabled = true;
             this.RangeBox.Location = new System.Drawing.Point(80, 43);
-            this.RangeBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RangeBox.Margin = new System.Windows.Forms.Padding(4);
             this.RangeBox.Name = "RangeBox";
             this.RangeBox.Size = new System.Drawing.Size(338, 24);
             this.RangeBox.Sorted = true;
@@ -98,7 +98,7 @@
             this.TargetBox.Name = "TargetBox";
             this.TargetBox.Size = new System.Drawing.Size(338, 24);
             this.TargetBox.Sorted = true;
-            this.TargetBox.TabIndex = 18;
+            this.TargetBox.TabIndex = 14;
             // 
             // TargetLbl
             // 
@@ -135,7 +135,7 @@
             this.Controls.Add(this.RangeLbl);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.OKBtn);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PowerRangeForm";

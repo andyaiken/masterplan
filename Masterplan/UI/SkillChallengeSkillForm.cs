@@ -49,9 +49,9 @@ namespace Masterplan.UI
 			DiffBox.SelectedItem = fSkillData.Difficulty;
 			ModBox.Value = fSkillData.DCModifier;
 
-			DetailsBox.Text = fSkillData.Details;
-			SuccessBox.Text = fSkillData.Success;
-			FailureBox.Text = fSkillData.Failure;
+			DetailsBox.Text = HTML.ConvertBRToLineBreaks(fSkillData.Details);
+			SuccessBox.Text = HTML.ConvertBRToLineBreaks(fSkillData.Success);
+			FailureBox.Text = HTML.ConvertBRToLineBreaks(fSkillData.Failure);
 
 			SuccessCountBox.Value = fSkillData.Results.Successes;
 			FailureCountBox.Value = fSkillData.Results.Fails;
@@ -83,9 +83,9 @@ namespace Masterplan.UI
 			fSkillData.Difficulty = (Difficulty)DiffBox.SelectedItem;
 			fSkillData.DCModifier = (int)ModBox.Value;
 
-			fSkillData.Details = DetailsBox.Text;
-			fSkillData.Success = SuccessBox.Text;
-			fSkillData.Failure = FailureBox.Text;
+			fSkillData.Details = HTML.ConvertLineBreaksToHtml(DetailsBox.Text);
+			fSkillData.Success = HTML.ConvertLineBreaksToHtml(SuccessBox.Text);
+			fSkillData.Failure = HTML.ConvertLineBreaksToHtml(FailureBox.Text);
 
 			fSkillData.Results.Successes = (int)SuccessCountBox.Value;
 			fSkillData.Results.Fails = (int)FailureCountBox.Value;

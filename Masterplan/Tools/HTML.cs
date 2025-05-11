@@ -227,7 +227,6 @@ namespace Masterplan.Tools
 				lines.Add("</HTML>");
 			}
 
-			// string parsedChallenge = ConvertLineBreaksToHtml(Concatenate(lines));
 			return Concatenate(lines);
 		}
 
@@ -2553,11 +2552,10 @@ namespace Masterplan.Tools
 
 
         /// <summary>
-        /// Converts BR tags in HTML to line breaks.
+        /// Converts BR tags in HTML to line breaks for textbox.
         /// </summary>
         /// <param name="input">The input string containing BR tags.</param>
         /// <returns>The input string with BR tags converted to line breaks.</returns>
-        ///
         public static string ConvertBRToLineBreaks(string input)
 		{
 		  // If the input is empty - do nothing
@@ -2571,11 +2569,10 @@ namespace Masterplan.Tools
 		}
 
         /// <summary>
-        /// Converts line breaks in a string to HTML line breaks (br).
+        /// Converts line breaks in a textbox to HTML line breaks (br).
         /// </summary>
         /// <param name="input">The input string containing line breaks.</param>
         /// <returns>The input string with line breaks converted to BR tags.</returns>
-        /// 
         public static string ConvertLineBreaksToHtml(string input)
 		{
             // If the input is empty - do nothing
@@ -2588,14 +2585,6 @@ namespace Masterplan.Tools
             string result = Regex.Replace(input, @"\r\n?|\n", "<BR>");
             return result;
 
-            // Replace \r\n, \r, and \n with <br>
-            // string newText = input.Replace("\r\n", "<BR>").Replace("\r", "<BR>").Replace("\n", "<BR>");
-
-			// Encode the text to prevent HTML injection
-			// Can't encode - it displays encoded text, not interpreted
-			// HttpUtility.HtmlEncode(newText);
-			// return newText;
-
         }
         
 
@@ -2606,10 +2595,8 @@ namespace Masterplan.Tools
 			{
 				string toParseLine = line;
 				if (text != "") 
-				{
-					if (toParseLine.Contains("\r\n")) { toParseLine = ConvertLineBreaksToHtml(line); }					
-					// text += Environment.NewLine;  /// Readability formatting of HTML 
-					// Need to correct the exported HTML Formatting to improve readability (line breaks)
+				{				
+					text += Environment.NewLine;  // HTML Readability formatting 
 				}
 
 				text += toParseLine;
@@ -2798,6 +2785,7 @@ namespace Masterplan.Tools
 
 			#region External
 
+			// external css formatting
 			bool loaded = false;
 			Assembly ass = Assembly.GetEntryAssembly();
 			if (ass != null)
@@ -2814,6 +2802,7 @@ namespace Masterplan.Tools
 
 			#endregion
 
+			// internal css formatting
 			if (!loaded)
 			{
 				lines.Add("body                 { font-family: 'Segoe UI'; font-size: " + pt_sizes[9] + "pt }");
@@ -3553,7 +3542,7 @@ namespace Masterplan.Tools
 					lines.Add("<TD colspan=3>");
 					if (tsd.DC != 0)
 						lines.Add("<B>DC " + tsd.DC + "</B>:");
-					lines.Add(HTML.Process(tsd.Details, true));
+					lines.Add(HTML.Process(tsd.Details, false));
 					if (builder)
 						lines.Add("(<A href=skill:" + tsd.ID + ">edit</A> | <A href=skillremove:" + tsd.ID + ">remove</A>)");
 					lines.Add("</TD>");
@@ -3652,7 +3641,7 @@ namespace Masterplan.Tools
 					lines.Add("<TD colspan=3>");
 					if (builder)
 						lines.Add("<A href=cm:" + index + ">");
-					lines.Add(HTML.Process(cm, true));
+					lines.Add(HTML.Process(cm, false));
 					if (builder)
 						lines.Add("</A>");
 					lines.Add("</TD>");
@@ -3998,7 +3987,7 @@ namespace Masterplan.Tools
 
 				lines.Add("<TR>");
 				lines.Add("<TD colspan=3>");
-				lines.Add(Process(sc.Success, true));
+				lines.Add(Process(sc.Success, false));
 				lines.Add("</TD>");
 				lines.Add("</TR>");
 			}
@@ -4013,7 +4002,7 @@ namespace Masterplan.Tools
 
 				lines.Add("<TR>");
 				lines.Add("<TD colspan=3>");
-				lines.Add(Process(sc.Failure, true));
+				lines.Add(Process(sc.Failure, false));
 				lines.Add("</TD>");
 				lines.Add("</TR>");
 			}
@@ -4028,7 +4017,7 @@ namespace Masterplan.Tools
 
 				lines.Add("<TR>");
 				lines.Add("<TD colspan=3>");
-				lines.Add(Process(sc.Notes, true));
+				lines.Add(Process(sc.Notes, false));
 				lines.Add("</TD>");
 				lines.Add("</TR>");
 			}

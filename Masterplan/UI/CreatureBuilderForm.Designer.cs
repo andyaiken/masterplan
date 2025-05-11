@@ -86,7 +86,7 @@
             this.PreviewBtn});
             this.Toolbar.Location = new System.Drawing.Point(0, 0);
             this.Toolbar.Name = "Toolbar";
-            this.Toolbar.Size = new System.Drawing.Size(912, 27);
+            this.Toolbar.Size = new System.Drawing.Size(912, 31);
             this.Toolbar.TabIndex = 0;
             this.Toolbar.Text = "toolStrip1";
             // 
@@ -98,7 +98,7 @@
             this.FileMenu.Image = ((System.Drawing.Image)(resources.GetObject("FileMenu.Image")));
             this.FileMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.FileMenu.Name = "FileMenu";
-            this.FileMenu.Size = new System.Drawing.Size(46, 24);
+            this.FileMenu.Size = new System.Drawing.Size(46, 28);
             this.FileMenu.Text = "File";
             // 
             // FileExport
@@ -122,7 +122,7 @@
             this.OptionsMenu.Image = ((System.Drawing.Image)(resources.GetObject("OptionsMenu.Image")));
             this.OptionsMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OptionsMenu.Name = "OptionsMenu";
-            this.OptionsMenu.Size = new System.Drawing.Size(75, 24);
+            this.OptionsMenu.Size = new System.Drawing.Size(75, 28);
             this.OptionsMenu.Text = "Options";
             // 
             // OptionsImport
@@ -177,7 +177,7 @@
             this.LevelDownBtn.Image = ((System.Drawing.Image)(resources.GetObject("LevelDownBtn.Image")));
             this.LevelDownBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.LevelDownBtn.Name = "LevelDownBtn";
-            this.LevelDownBtn.Size = new System.Drawing.Size(29, 24);
+            this.LevelDownBtn.Size = new System.Drawing.Size(29, 28);
             this.LevelDownBtn.Text = "-";
             this.LevelDownBtn.ToolTipText = "Level Down";
             this.LevelDownBtn.Click += new System.EventHandler(this.LevelDownBtn_Click);
@@ -189,7 +189,7 @@
             this.LevelUpBtn.Image = ((System.Drawing.Image)(resources.GetObject("LevelUpBtn.Image")));
             this.LevelUpBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.LevelUpBtn.Name = "LevelUpBtn";
-            this.LevelUpBtn.Size = new System.Drawing.Size(29, 24);
+            this.LevelUpBtn.Size = new System.Drawing.Size(29, 28);
             this.LevelUpBtn.Text = "+";
             this.LevelUpBtn.ToolTipText = "Level Up";
             this.LevelUpBtn.Click += new System.EventHandler(this.LevelUpBtn_Click);
@@ -198,13 +198,13 @@
             // 
             this.LevelLbl.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.LevelLbl.Name = "LevelLbl";
-            this.LevelLbl.Size = new System.Drawing.Size(46, 24);
+            this.LevelLbl.Size = new System.Drawing.Size(46, 28);
             this.LevelLbl.Text = "Level:";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
             // 
             // AdviceBtn
             // 
@@ -212,7 +212,7 @@
             this.AdviceBtn.Image = ((System.Drawing.Image)(resources.GetObject("AdviceBtn.Image")));
             this.AdviceBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AdviceBtn.Name = "AdviceBtn";
-            this.AdviceBtn.Size = new System.Drawing.Size(58, 24);
+            this.AdviceBtn.Size = new System.Drawing.Size(58, 28);
             this.AdviceBtn.Text = "Advice";
             this.AdviceBtn.Click += new System.EventHandler(this.AdviceBtn_Click);
             // 
@@ -222,7 +222,7 @@
             this.PowersBtn.Image = ((System.Drawing.Image)(resources.GetObject("PowersBtn.Image")));
             this.PowersBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PowersBtn.Name = "PowersBtn";
-            this.PowersBtn.Size = new System.Drawing.Size(59, 24);
+            this.PowersBtn.Size = new System.Drawing.Size(59, 28);
             this.PowersBtn.Text = "Powers";
             this.PowersBtn.Click += new System.EventHandler(this.PowersBtn_Click);
             // 
@@ -232,7 +232,7 @@
             this.PreviewBtn.Image = ((System.Drawing.Image)(resources.GetObject("PreviewBtn.Image")));
             this.PreviewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PreviewBtn.Name = "PreviewBtn";
-            this.PreviewBtn.Size = new System.Drawing.Size(64, 24);
+            this.PreviewBtn.Size = new System.Drawing.Size(64, 28);
             this.PreviewBtn.Text = "Preview";
             this.PreviewBtn.Click += new System.EventHandler(this.PreviewBtn_Click);
             // 
@@ -242,7 +242,7 @@
             this.BtnPnl.Controls.Add(this.OKBtn);
             this.BtnPnl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BtnPnl.Location = new System.Drawing.Point(0, 545);
-            this.BtnPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnPnl.Margin = new System.Windows.Forms.Padding(4);
             this.BtnPnl.Name = "BtnPnl";
             this.BtnPnl.Size = new System.Drawing.Size(912, 43);
             this.BtnPnl.TabIndex = 2;
@@ -252,7 +252,7 @@
             this.CancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.Location = new System.Drawing.Point(796, 7);
-            this.CancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CancelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(100, 28);
             this.CancelBtn.TabIndex = 1;
@@ -264,7 +264,7 @@
             this.OKBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OKBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.OKBtn.Location = new System.Drawing.Point(688, 7);
-            this.OKBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OKBtn.Margin = new System.Windows.Forms.Padding(4);
             this.OKBtn.Name = "OKBtn";
             this.OKBtn.Size = new System.Drawing.Size(100, 28);
             this.OKBtn.TabIndex = 0;
@@ -277,21 +277,21 @@
             this.Pages.Controls.Add(this.PicturePage);
             this.Pages.Controls.Add(this.EntryPage);
             this.Pages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pages.Location = new System.Drawing.Point(0, 27);
-            this.Pages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Pages.Location = new System.Drawing.Point(0, 31);
+            this.Pages.Margin = new System.Windows.Forms.Padding(4);
             this.Pages.Name = "Pages";
             this.Pages.SelectedIndex = 0;
-            this.Pages.Size = new System.Drawing.Size(912, 518);
+            this.Pages.Size = new System.Drawing.Size(912, 514);
             this.Pages.TabIndex = 3;
             // 
             // StatBlockPage
             // 
             this.StatBlockPage.Controls.Add(this.StatBlockBrowser);
             this.StatBlockPage.Location = new System.Drawing.Point(4, 25);
-            this.StatBlockPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StatBlockPage.Margin = new System.Windows.Forms.Padding(4);
             this.StatBlockPage.Name = "StatBlockPage";
-            this.StatBlockPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.StatBlockPage.Size = new System.Drawing.Size(904, 489);
+            this.StatBlockPage.Padding = new System.Windows.Forms.Padding(4);
+            this.StatBlockPage.Size = new System.Drawing.Size(904, 485);
             this.StatBlockPage.TabIndex = 0;
             this.StatBlockPage.Text = "Stat Block";
             this.StatBlockPage.UseVisualStyleBackColor = true;
@@ -302,11 +302,11 @@
             this.StatBlockBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StatBlockBrowser.IsWebBrowserContextMenuEnabled = false;
             this.StatBlockBrowser.Location = new System.Drawing.Point(4, 4);
-            this.StatBlockBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StatBlockBrowser.Margin = new System.Windows.Forms.Padding(4);
             this.StatBlockBrowser.MinimumSize = new System.Drawing.Size(27, 25);
             this.StatBlockBrowser.Name = "StatBlockBrowser";
             this.StatBlockBrowser.ScriptErrorsSuppressed = true;
-            this.StatBlockBrowser.Size = new System.Drawing.Size(896, 481);
+            this.StatBlockBrowser.Size = new System.Drawing.Size(896, 477);
             this.StatBlockBrowser.TabIndex = 2;
             this.StatBlockBrowser.WebBrowserShortcutsEnabled = false;
             this.StatBlockBrowser.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.Browser_Navigating);
@@ -316,10 +316,10 @@
             this.PicturePage.Controls.Add(this.PictureToolbar);
             this.PicturePage.Controls.Add(this.PortraitBox);
             this.PicturePage.Location = new System.Drawing.Point(4, 25);
-            this.PicturePage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PicturePage.Margin = new System.Windows.Forms.Padding(4);
             this.PicturePage.Name = "PicturePage";
-            this.PicturePage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.PicturePage.Size = new System.Drawing.Size(904, 485);
+            this.PicturePage.Padding = new System.Windows.Forms.Padding(4);
+            this.PicturePage.Size = new System.Drawing.Size(904, 489);
             this.PicturePage.TabIndex = 1;
             this.PicturePage.Text = "Picture";
             this.PicturePage.UseVisualStyleBackColor = true;
@@ -373,9 +373,9 @@
             this.PortraitBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PortraitBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PortraitBox.Location = new System.Drawing.Point(4, 4);
-            this.PortraitBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PortraitBox.Margin = new System.Windows.Forms.Padding(4);
             this.PortraitBox.Name = "PortraitBox";
-            this.PortraitBox.Size = new System.Drawing.Size(896, 477);
+            this.PortraitBox.Size = new System.Drawing.Size(896, 481);
             this.PortraitBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PortraitBox.TabIndex = 4;
             this.PortraitBox.TabStop = false;
@@ -385,10 +385,10 @@
             // 
             this.EntryPage.Controls.Add(this.EntryBrowser);
             this.EntryPage.Location = new System.Drawing.Point(4, 25);
-            this.EntryPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EntryPage.Margin = new System.Windows.Forms.Padding(4);
             this.EntryPage.Name = "EntryPage";
-            this.EntryPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EntryPage.Size = new System.Drawing.Size(904, 485);
+            this.EntryPage.Padding = new System.Windows.Forms.Padding(4);
+            this.EntryPage.Size = new System.Drawing.Size(904, 489);
             this.EntryPage.TabIndex = 2;
             this.EntryPage.Text = "Encyclopedia Entry";
             this.EntryPage.UseVisualStyleBackColor = true;
@@ -399,11 +399,11 @@
             this.EntryBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EntryBrowser.IsWebBrowserContextMenuEnabled = false;
             this.EntryBrowser.Location = new System.Drawing.Point(4, 4);
-            this.EntryBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EntryBrowser.Margin = new System.Windows.Forms.Padding(4);
             this.EntryBrowser.MinimumSize = new System.Drawing.Size(27, 25);
             this.EntryBrowser.Name = "EntryBrowser";
             this.EntryBrowser.ScriptErrorsSuppressed = true;
-            this.EntryBrowser.Size = new System.Drawing.Size(896, 477);
+            this.EntryBrowser.Size = new System.Drawing.Size(896, 481);
             this.EntryBrowser.TabIndex = 0;
             this.EntryBrowser.WebBrowserShortcutsEnabled = false;
             // 
@@ -417,7 +417,7 @@
             this.Controls.Add(this.Pages);
             this.Controls.Add(this.BtnPnl);
             this.Controls.Add(this.Toolbar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimizeBox = false;
             this.Name = "CreatureBuilderForm";
             this.ShowIcon = false;

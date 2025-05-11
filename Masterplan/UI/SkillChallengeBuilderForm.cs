@@ -83,18 +83,18 @@ namespace Masterplan.UI
 			if (LevelBox.Enabled)
 				fChallenge.Level = (int)LevelBox.Value;
 
-			fChallenge.Success = (VictoryBox.Text != VictoryBox.DefaultText) ? VictoryBox.Text : "";
-			fChallenge.Failure = (DefeatBox.Text != DefeatBox.DefaultText) ? DefeatBox.Text : "";
-			fChallenge.Notes = (NotesBox.Text != NotesBox.DefaultText) ? NotesBox.Text : "";
+			fChallenge.Success = HTML.ConvertLineBreaksToHtml((VictoryBox.Text != VictoryBox.DefaultText) ? VictoryBox.Text : "");
+			fChallenge.Failure = HTML.ConvertLineBreaksToHtml((DefeatBox.Text != DefeatBox.DefaultText) ? DefeatBox.Text : "");
+			fChallenge.Notes = HTML.ConvertLineBreaksToHtml((NotesBox.Text != NotesBox.DefaultText) ? NotesBox.Text : "");
 		}
 
 		public void update_all()
 		{
 			NameBox.Text = fChallenge.Name;
 			CompBox.Value = fChallenge.Complexity;
-			VictoryBox.Text = fChallenge.Success;
-			DefeatBox.Text = fChallenge.Failure;
-			NotesBox.Text = fChallenge.Notes;
+			VictoryBox.Text = HTML.ConvertBRToLineBreaks(fChallenge.Success);
+			DefeatBox.Text = HTML.ConvertBRToLineBreaks(fChallenge.Failure);
+			NotesBox.Text = HTML.ConvertBRToLineBreaks(fChallenge.Notes);
 
 			if (fChallenge.Level != -1)
 			{
@@ -102,7 +102,7 @@ namespace Masterplan.UI
 			}
 			else
 			{
-				// Assigns 1 as a level for a
+				// Assigns 1 as the start level for a
 				// new SC from a library - populates DC tables 
 				fChallenge.Level = 1;
 				LevelBox.Enabled = true;

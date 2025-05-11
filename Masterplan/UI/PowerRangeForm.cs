@@ -32,14 +32,20 @@ namespace Masterplan.UI
 			TargetBox.Items.Add("(enemies in blast)");
 			TargetBox.Items.Add("(enemies in burst)");
 
-			if (power.Range != null || power.Range != "") { CurrentRangeLbl.Text = power.Range; }
+			if (power.Range != "" || power.Range is null) { CurrentRangeLbl.Text = power.Range; }
 			else { CurrentRangeLbl.Text = "<Current range is not set>"; }
 			
 			RangeBox.Text = power.Range;
         }
         public string PowerRange
         {
-            get { return RangeBox.Text + " " + TargetBox.Text; }
+            get { 
+				if (RangeBox.Text == "" && TargetBox.Text == "") 
+				{
+					return RangeBox.Text;
+				}
+				else { return RangeBox.Text + " " + TargetBox.Text; }
+				}
         }
         private void OKBtn_Click(object sender, EventArgs e)
         {

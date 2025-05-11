@@ -25,7 +25,7 @@ namespace Masterplan.UI
 			SkillBox.Text = fSkillData.SkillName;
 			DCBtn.Checked = (fSkillData.DC != 0);
 			DCBox.Value = fSkillData.DC;
-			DetailsBox.Text = fSkillData.Details;
+			DetailsBox.Text = HTML.ConvertBRToLineBreaks(fSkillData.Details);
 
 			update_advice();
 		}
@@ -58,7 +58,7 @@ namespace Masterplan.UI
 				fSkillData.DC = (int)DCBox.Value;
 			else
 				fSkillData.DC = 0;
-			fSkillData.Details = DetailsBox.Text;
+			fSkillData.Details = HTML.ConvertLineBreaksToHtml(DetailsBox.Text);
 		}
 
 		void update_advice()

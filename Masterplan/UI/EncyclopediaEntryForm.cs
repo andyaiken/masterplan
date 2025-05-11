@@ -36,8 +36,8 @@ namespace Masterplan.UI
 
 			TitleBox.Text = fEntry.Name;
 			CatBox.Text = fEntry.Category;
-			DetailsBox.Text = fEntry.Details;
-			DMBox.Text = fEntry.DMInfo;
+			DetailsBox.Text = HTML.ConvertBRToLineBreaks(fEntry.Details);
+			DMBox.Text = HTML.ConvertBRToLineBreaks(fEntry.DMInfo);
 
 			foreach (EncyclopediaEntry ee in Session.Project.Encyclopedia.Entries)
 			{
@@ -92,8 +92,8 @@ namespace Masterplan.UI
 		{
 			fEntry.Name = TitleBox.Text;
 			fEntry.Category = CatBox.Text;
-			fEntry.Details = (DetailsBox.Text != DetailsBox.DefaultText) ? DetailsBox.Text : "";
-			fEntry.DMInfo = (DMBox.Text != DMBox.DefaultText) ? DMBox.Text : "";
+			fEntry.Details = HTML.ConvertLineBreaksToHtml((DetailsBox.Text != DetailsBox.DefaultText) ? DetailsBox.Text : "");
+			fEntry.DMInfo = HTML.ConvertLineBreaksToHtml((DMBox.Text != DMBox.DefaultText) ? DMBox.Text : "");
 
 			// Remove all links containing this entry
 			List<EncyclopediaLink> obsolete = new List<EncyclopediaLink>();

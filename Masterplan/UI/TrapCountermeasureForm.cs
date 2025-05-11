@@ -12,7 +12,7 @@ namespace Masterplan.UI
 		{
 			InitializeComponent();
 
-			DetailsBox.Text = cm;
+			DetailsBox.Text = HTML.ConvertBRToLineBreaks(cm);
 			fLevel = level;
 
 			update_advice();
@@ -20,7 +20,7 @@ namespace Masterplan.UI
 
 		public string Countermeasure
 		{
-			get { return (DetailsBox.Text != DetailsBox.DefaultText) ? DetailsBox.Text : ""; }
+			get { return HTML.ConvertLineBreaksToHtml((DetailsBox.Text != DetailsBox.DefaultText) ? DetailsBox.Text : ""); }
 		}
 
 		int fLevel = 1;
