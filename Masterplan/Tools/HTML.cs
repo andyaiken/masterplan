@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -227,6 +227,7 @@ namespace Masterplan.Tools
 				lines.Add("</HTML>");
 			}
 
+			// string parsedChallenge = ConvertLineBreaksToHtml(Concatenate(lines));
 			return Concatenate(lines);
 		}
 
@@ -2551,18 +2552,20 @@ namespace Masterplan.Tools
         #region Common
 
 
+
         /// <summary>
         /// Converts BR tags in HTML to line breaks for textbox.
         /// </summary>
         /// <param name="input">The input string containing BR tags.</param>
         /// <returns>The input string with BR tags converted to line breaks.</returns>
         public static string ConvertBRToLineBreaks(string input)
-		{
-		  // If the input is empty - do nothing
+        {
+		        // If the input is empty - do nothing
             if (string.IsNullOrEmpty(input))
 			{
 				return input;
 			}
+
 			string result = input.Replace("<BR>", Environment.NewLine);
 
 			return result;
@@ -2585,6 +2588,7 @@ namespace Masterplan.Tools
             string result = Regex.Replace(input, @"\r\n?|\n", "<BR>");
             return result;
 
+
         }
         
 
@@ -2595,8 +2599,10 @@ namespace Masterplan.Tools
 			{
 				string toParseLine = line;
 				if (text != "") 
+
 				{				
 					text += Environment.NewLine;  // HTML Readability formatting 
+
 				}
 
 				text += toParseLine;
