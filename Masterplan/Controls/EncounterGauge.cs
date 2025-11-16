@@ -1,10 +1,11 @@
-﻿using System;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.Tools;
+using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace Masterplan.Controls
 {
@@ -114,6 +115,6 @@ namespace Masterplan.Controls
 
             int delta = xp - min;
             return (delta * Width) / range;
-       }
+        }
     }
 }

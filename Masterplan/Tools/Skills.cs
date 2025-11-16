@@ -1,22 +1,24 @@
-﻿using System.Collections.Generic;
+﻿#nullable disable
+
+using System.Collections.Generic;
 
 namespace Masterplan.Tools
 {
-	class Skills
-	{
-		public static List<string> GetAbilityNames()
-		{
-			List<string> abilities = new List<string>();
+    class Skills
+    {
+        public static List<string> GetAbilityNames()
+        {
+            List<string> abilities = new List<string>();
 
-			abilities.Add("Strength");
-			abilities.Add("Constitution");
-			abilities.Add("Dexterity");
-			abilities.Add("Intelligence");
-			abilities.Add("Wisdom");
-			abilities.Add("Charisma");
+            abilities.Add("Strength");
+            abilities.Add("Constitution");
+            abilities.Add("Dexterity");
+            abilities.Add("Intelligence");
+            abilities.Add("Wisdom");
+            abilities.Add("Charisma");
 
-			return abilities;
-		}
+            return abilities;
+        }
 
         public static List<string> GetSkillNames()
         {

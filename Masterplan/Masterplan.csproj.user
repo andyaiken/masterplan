@@ -6,4 +6,542 @@
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="UI\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ArtifactBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ArtifactConcordanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ArtifactDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ArtifactProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ArtifactSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\AttackRollForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\AuraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\AutoBuildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\BackgroundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CalendarEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CalendarListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CampaignSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CategoryListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CombatantSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CombatDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CombatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureAbilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureMultipleSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureSkillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureSkillsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureStatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureTemplateBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureTemplateDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureTemplateProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureTemplateSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CreatureTemplateStatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CustomCreatureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CustomCreatureListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CustomOverlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\CustomTokenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DamageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DamageModifierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DamageModifierTemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DamageModListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DamageTypesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DeckBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DeckListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DeckViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DemographicsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DieRollerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\DisplayNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\EffectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\EffectListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\EncounterBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\EncounterNoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\EncounterReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\EncyclopediaEntryDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\EncyclopediaEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\EncyclopediaEntrySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\EncyclopediaGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\EncyclopediaImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\EndedEffectsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\GroupHealthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\GroupInitiativeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\HandoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\HealForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\HeroDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\HeroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\HeroListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\HeroSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\InfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\InitiativeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\IssuesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\LevelAdjustmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\LevelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\LibraryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\LibraryListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\LibrarySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MagicItemBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MagicItemDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MagicItemProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MagicItemSectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MagicItemSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MapAreaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MapAreaSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MapBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MapListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MapLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MapLocationSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MapPrintingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MapSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MergeLibrariesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MonsterThemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MonsterThemePowerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MonsterThemeSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\MonthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\NPCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\OddsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\OngoingDamageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\OverviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ParcelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ParcelListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ParcelSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PartyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PasswordCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PasswordSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PausedCombatListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionBackgroundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionCreatureInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionDiseaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionDiseaseLevelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionEpicDestinyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionFeatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionFeatureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionLevelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionParagonPathForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionPoisonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionPowerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionPowerSectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionRaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionRitualForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionThemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerOptions\OptionWeaponForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlayerViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PlotPointForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PowerActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PowerAttackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PowerBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PowerBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PowerDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PowerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PowerInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PowerRangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\PowerStatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ProgressScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ProjectChecklistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\QuickReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\RandomCreatureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\RechargeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\RegenerationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\RegionalMapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\RegionalMapListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\RegionalMapSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\RoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\SatelliteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\SavingThrowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\SeasonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\SkillChallengeBreakdownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\SkillChallengeBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\SkillChallengeDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\SkillChallengeSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\SkillChallengeSkillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TerrainPowerDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TerrainPowerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TerrainPowerSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ThemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TileBreakdownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TileLibrarySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TileSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TileSizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TokenLinkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TokenLinkListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TrapActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TrapAttackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TrapBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TrapCountermeasureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TrapDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TrapProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TrapSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\TrapSkillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Wizards\WizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="UI\CombatForm.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

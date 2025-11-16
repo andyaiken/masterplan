@@ -1,50 +1,52 @@
-﻿using System.Windows.Forms;
+﻿#nullable disable
+
+using System.Windows.Forms;
 
 namespace Masterplan.Wizards
 {
-	partial class VariantFinishPage : UserControl, IWizardPage
-	{
-		public VariantFinishPage()
-		{
-			InitializeComponent();
-		}
+    partial class VariantFinishPage : UserControl, IWizardPage
+    {
+        public VariantFinishPage()
+        {
+            InitializeComponent();
+        }
 
-		#region IWizardPage Members
+        #region IWizardPage Members
 
-		public bool AllowNext
-		{
-			get { return false; }
-		}
+        public bool AllowNext
+        {
+            get { return false; }
+        }
 
-		public bool AllowBack
-		{
-			get { return true; }
-		}
+        public bool AllowBack
+        {
+            get { return true; }
+        }
 
-		public bool AllowFinish
-		{
-			get { return true; }
-		}
+        public bool AllowFinish
+        {
+            get { return true; }
+        }
 
-		public void OnShown(object data)
-		{
-		}
+        public void OnShown(object data)
+        {
+        }
 
-		public bool OnBack()
-		{
-			return true;
-		}
+        public bool OnBack()
+        {
+            return true;
+        }
 
-		public bool OnNext()
-		{
-			return false;
-		}
+        public bool OnNext()
+        {
+            return false;
+        }
 
-		public bool OnFinish()
-		{
-			return true;
-		}
+        public bool OnFinish()
+        {
+            return true;
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

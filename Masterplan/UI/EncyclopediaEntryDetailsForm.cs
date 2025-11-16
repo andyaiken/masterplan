@@ -1,84 +1,85 @@
-﻿using System;
-using System.IO;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.Tools;
+using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class EncyclopediaEntryDetailsForm : Form
-	{
-		public EncyclopediaEntryDetailsForm(EncyclopediaEntry entry)
-		{
-			InitializeComponent();
+    partial class EncyclopediaEntryDetailsForm : Form
+    {
+        public EncyclopediaEntryDetailsForm(EncyclopediaEntry entry)
+        {
+            InitializeComponent();
 
-			Application.Idle += new EventHandler(Application_Idle);
+            Application.Idle += new EventHandler(Application_Idle);
 
-			fEntry = entry;
+            fEntry = entry;
 
-			update_entry();
-		}
+            update_entry();
+        }
 
-		~EncyclopediaEntryDetailsForm()
-		{
-			Application.Idle -= Application_Idle;
-		}
+        ~EncyclopediaEntryDetailsForm()
+        {
+            Application.Idle -= Application_Idle;
+        }
 
-		void Application_Idle(object sender, EventArgs e)
-		{
-			DMBtn.Checked = fShowDMInfo;
-		}
+        void Application_Idle(object sender, EventArgs e)
+        {
+            DMBtn.Checked = fShowDMInfo;
+        }
 
-		EncyclopediaEntry fEntry = null;
-		bool fShowDMInfo = false;
+        EncyclopediaEntry fEntry = null;
+        bool fShowDMInfo = false;
 
-		private void PlayerViewBtn_Click(object sender, EventArgs e)
-		{
-			if (fEntry != null)
-			{
-				if (Session.PlayerView == null)
-					Session.PlayerView = new PlayerViewForm(this);
+        private void PlayerViewBtn_Click(object sender, EventArgs e)
+        {
+            if (fEntry != null)
+            {
+                if (Session.PlayerView == null)
+                    Session.PlayerView = new PlayerViewForm(this);
 
-				Session.PlayerView.ShowEncyclopediaItem(fEntry);
-			}
-		}
+                Session.PlayerView.ShowEncyclopediaItem(fEntry);
+            }
+        }
 
-		private void DMBtn_Click(object sender, EventArgs e)
-		{
-			fShowDMInfo = !fShowDMInfo;
-			update_entry();
-		}
+        private void DMBtn_Click(object sender, EventArgs e)
+        {
+            fShowDMInfo = !fShowDMInfo;
+            update_entry();
+        }
 
-		void update_entry()
-		{
-			Browser.DocumentText = HTML.EncyclopediaEntry(fEntry, Session.Project.Encyclopedia, Session.Preferences.TextSize, fShowDMInfo, false, false, true);
-		}
+        void update_entry()
+        {
+            Browser.DocumentText = HTML.EncyclopediaEntry(fEntry, Session.Project.Encyclopedia, Session.Preferences.TextSize, fShowDMInfo, false, false, true);
+        }
 
-		private void Browser_Navigating(object sender, WebBrowserNavigatingEventArgs e)
-		{
-			if (e.Url.Scheme == "picture")
-			{
-				e.Cancel = true;
-				Guid id = new Guid(e.Url.LocalPath);
+        private void Browser_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        {
+            if (e.Url.Scheme == "picture")
+            {
+                e.Cancel = true;
+                Guid id = new Guid(e.Url.LocalPath);
 
-				EncyclopediaImage img = fEntry.FindImage(id);
-				if (img != null)
-				{
-					EncyclopediaImageForm dlg = new EncyclopediaImageForm(img);
-					dlg.ShowDialog();
-				}
-			}
-		}
+                EncyclopediaImage img = fEntry.FindImage(id);
+                if (img != null)
+                {
+                    EncyclopediaImageForm dlg = new EncyclopediaImageForm(img);
+                    dlg.ShowDialog();
+                }
+            }
+        }
 
-		private void ExportHTML_Click(object sender, EventArgs e)
-		{
-			SaveFileDialog dlg = new SaveFileDialog();
-			dlg.FileName = fEntry.Name;
-			dlg.Filter = Program.HTMLFilter;
+        private void ExportHTML_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = fEntry.Name;
+            dlg.Filter = Program.HTMLFilter;
 
-			if (dlg.ShowDialog() == DialogResult.OK)
-				File.WriteAllText(dlg.FileName, Browser.DocumentText);
-		}
-	}
+            if (dlg.ShowDialog() == DialogResult.OK)
+                File.WriteAllText(dlg.FileName, Browser.DocumentText);
+        }
+    }
 }

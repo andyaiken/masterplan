@@ -1,69 +1,70 @@
-﻿using System;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
+using System;
+using System.Windows.Forms;
 
 namespace Masterplan.Wizards
 {
-	partial class VariantRolePage : UserControl, IWizardPage
-	{
-		public VariantRolePage()
-		{
-			InitializeComponent();
-		}
+    partial class VariantRolePage : UserControl, IWizardPage
+    {
+        public VariantRolePage()
+        {
+            InitializeComponent();
+        }
 
-		VariantData fData = null;
+        VariantData fData = null;
 
-		#region IWizardPage Members
+        #region IWizardPage Members
 
-		public bool AllowNext
-		{
-			get { return true; }
-		}
+        public bool AllowNext
+        {
+            get { return true; }
+        }
 
-		public bool AllowBack
-		{
-			get { return true; }
-		}
+        public bool AllowBack
+        {
+            get { return true; }
+        }
 
-		public bool AllowFinish
-		{
-			get { return false; }
-		}
+        public bool AllowFinish
+        {
+            get { return false; }
+        }
 
-		public void OnShown(object data)
-		{
-			if (fData == null)
-				fData = data as VariantData;
+        public void OnShown(object data)
+        {
+            if (fData == null)
+                fData = data as VariantData;
 
-			RoleBox.Items.Clear();
-			foreach (RoleType role in fData.Roles)
-				RoleBox.Items.Add(role);
+            RoleBox.Items.Clear();
+            foreach (RoleType role in fData.Roles)
+                RoleBox.Items.Add(role);
 
-			RoleBox.SelectedIndex = fData.SelectedRoleIndex;
-		}
+            RoleBox.SelectedIndex = fData.SelectedRoleIndex;
+        }
 
-		public bool OnBack()
-		{
-			return true;
-		}
+        public bool OnBack()
+        {
+            return true;
+        }
 
-		public bool OnNext()
-		{
+        public bool OnNext()
+        {
 
-			return true;
-		}
+            return true;
+        }
 
-		public bool OnFinish()
-		{
-			return false;
-		}
+        public bool OnFinish()
+        {
+            return false;
+        }
 
-		#endregion
+        #endregion
 
-		private void RoleBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			fData.SelectedRoleIndex = RoleBox.SelectedIndex;
-		}
-	}
+        private void RoleBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fData.SelectedRoleIndex = RoleBox.SelectedIndex;
+        }
+    }
 }

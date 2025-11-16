@@ -1,18 +1,19 @@
-﻿using System;
+﻿#nullable disable
+
+using Masterplan.Data;
+using Masterplan.Tools;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-using Masterplan.Data;
-using Masterplan.Tools;
-
 namespace Masterplan.UI
 {
-	partial class EncyclopediaEntrySelectForm : Form
-	{
+    partial class EncyclopediaEntrySelectForm : Form
+    {
         public EncyclopediaEntrySelectForm(List<Guid> ignore_ids)
-		{
-			InitializeComponent();
+        {
+            InitializeComponent();
 
             BinarySearchTree<string> bst = new BinarySearchTree<string>();
             foreach (EncyclopediaEntry entry in Session.Project.Encyclopedia.Entries)
@@ -26,19 +27,19 @@ namespace Masterplan.UI
             foreach (string cat in categories)
                 EntryList.Groups.Add(new ListViewGroup(cat, cat));
 
-			foreach (EncyclopediaEntry entry in Session.Project.Encyclopedia.Entries)
-			{
+            foreach (EncyclopediaEntry entry in Session.Project.Encyclopedia.Entries)
+            {
                 if (ignore_ids.Contains(entry.ID))
                     continue;
 
-				ListViewItem lvi = EntryList.Items.Add(entry.Name);
-				lvi.Tag = entry;
+                ListViewItem lvi = EntryList.Items.Add(entry.Name);
+                lvi.Tag = entry;
 
                 if ((entry.Category != null) && (entry.Category != ""))
                     lvi.Group = EntryList.Groups[entry.Category];
                 else
                     lvi.Group = EntryList.Groups["Miscellaneous Entries"];
-			}
+            }
 
             if (EntryList.Items.Count == 0)
             {
@@ -46,37 +47,37 @@ namespace Masterplan.UI
                 lvi.ForeColor = SystemColors.GrayText;
             }
 
-			Application.Idle += new EventHandler(Application_Idle);
-		}
+            Application.Idle += new EventHandler(Application_Idle);
+        }
 
-		~EncyclopediaEntrySelectForm()
-		{
-			Application.Idle -= Application_Idle;
-		}
+        ~EncyclopediaEntrySelectForm()
+        {
+            Application.Idle -= Application_Idle;
+        }
 
-		void Application_Idle(object sender, EventArgs e)
-		{
+        void Application_Idle(object sender, EventArgs e)
+        {
             OKBtn.Enabled = (EncyclopediaEntry != null);
-		}
+        }
 
         public EncyclopediaEntry EncyclopediaEntry
-		{
-			get
-			{
-				if (EntryList.SelectedItems.Count != 0)
+        {
+            get
+            {
+                if (EntryList.SelectedItems.Count != 0)
                     return EntryList.SelectedItems[0].Tag as EncyclopediaEntry;
 
-				return null;
-			}
-		}
+                return null;
+            }
+        }
 
-		private void TileList_DoubleClick(object sender, EventArgs e)
-		{
+        private void TileList_DoubleClick(object sender, EventArgs e)
+        {
             if (EncyclopediaEntry != null)
-			{
-				DialogResult = DialogResult.OK;
-				Close();
-			}
-		}
-	}
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+        }
+    }
 }

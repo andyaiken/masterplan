@@ -1,33 +1,34 @@
-﻿using System;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.Tools;
+using System;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class EncounterNoteForm : Form
-	{
+    partial class EncounterNoteForm : Form
+    {
         public EncounterNoteForm(EncounterNote bg)
-		{
-			InitializeComponent();
+        {
+            InitializeComponent();
 
-			fNote = bg.Copy();
+            fNote = bg.Copy();
 
-			TitleBox.Text = fNote.Title;
-			DetailsBox.Text = HTML.ConvertBRToLineBreaks(fNote.Contents);
-		}
+            TitleBox.Text = fNote.Title;
+            DetailsBox.Text = HTML.ConvertBRToLineBreaks(fNote.Contents);
+        }
 
         public EncounterNote Note
-		{
-			get { return fNote; }
-		}
+        {
+            get { return fNote; }
+        }
         EncounterNote fNote = null;
 
-		private void OKBtn_Click(object sender, EventArgs e)
-		{
-			fNote.Title = TitleBox.Text;
-			fNote.Contents = HTML.ConvertLineBreaksToHtml((DetailsBox.Text != DetailsBox.DefaultText) ? DetailsBox.Text : "");
-		}
-	}
+        private void OKBtn_Click(object sender, EventArgs e)
+        {
+            fNote.Title = TitleBox.Text;
+            fNote.Contents = HTML.ConvertLineBreaksToHtml((DetailsBox.Text != DetailsBox.DefaultText) ? DetailsBox.Text : "");
+        }
+    }
 }

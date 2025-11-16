@@ -1,49 +1,50 @@
-﻿using System;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
+using System;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class MonthForm : Form
-	{
-		public MonthForm(MonthInfo month)
-		{
-			InitializeComponent();
+    partial class MonthForm : Form
+    {
+        public MonthForm(MonthInfo month)
+        {
+            InitializeComponent();
 
-			Application.Idle += new EventHandler(Application_Idle);
+            Application.Idle += new EventHandler(Application_Idle);
 
-			fMonthInfo = month.Copy();
+            fMonthInfo = month.Copy();
 
-			NameBox.Text = fMonthInfo.Name;
-			DaysBox.Value = fMonthInfo.DayCount;
-			LeapModBox.Value = fMonthInfo.LeapModifier;
-			LeapPeriodBox.Value = Math.Max(2, fMonthInfo.LeapPeriod);
-		}
+            NameBox.Text = fMonthInfo.Name;
+            DaysBox.Value = fMonthInfo.DayCount;
+            LeapModBox.Value = fMonthInfo.LeapModifier;
+            LeapPeriodBox.Value = Math.Max(2, fMonthInfo.LeapPeriod);
+        }
 
-		~MonthForm()
-		{
-			Application.Idle -= Application_Idle;
-		}
+        ~MonthForm()
+        {
+            Application.Idle -= Application_Idle;
+        }
 
-		void Application_Idle(object sender, EventArgs e)
-		{
-			LeapPeriodLbl.Enabled = (LeapModBox.Value != 0);
-			LeapPeriodBox.Enabled = (LeapModBox.Value != 0);
-		}
+        void Application_Idle(object sender, EventArgs e)
+        {
+            LeapPeriodLbl.Enabled = (LeapModBox.Value != 0);
+            LeapPeriodBox.Enabled = (LeapModBox.Value != 0);
+        }
 
-		public MonthInfo MonthInfo
-		{
-			get { return fMonthInfo; }
-		}
-		MonthInfo fMonthInfo = null;
+        public MonthInfo MonthInfo
+        {
+            get { return fMonthInfo; }
+        }
+        MonthInfo fMonthInfo = null;
 
-		private void OKBtn_Click(object sender, EventArgs e)
-		{
-			fMonthInfo.Name = NameBox.Text;
-			fMonthInfo.DayCount = (int)DaysBox.Value;
-			fMonthInfo.LeapModifier = (int)LeapModBox.Value;
-			fMonthInfo.LeapPeriod = (int)LeapPeriodBox.Value;
-		}
-	}
+        private void OKBtn_Click(object sender, EventArgs e)
+        {
+            fMonthInfo.Name = NameBox.Text;
+            fMonthInfo.DayCount = (int)DaysBox.Value;
+            fMonthInfo.LeapModifier = (int)LeapModBox.Value;
+            fMonthInfo.LeapPeriod = (int)LeapPeriodBox.Value;
+        }
+    }
 }
