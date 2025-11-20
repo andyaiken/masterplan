@@ -1,32 +1,33 @@
-﻿using System;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
+using System;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class PartyForm : Form
-	{
-		public PartyForm(Party p)
-		{
-			InitializeComponent();
+    partial class PartyForm : Form
+    {
+        public PartyForm(Party p)
+        {
+            InitializeComponent();
 
-			fParty = p;
+            fParty = p;
 
-			SizeBox.Value = fParty.Size;
-			LevelBox.Value = fParty.Level;
-		}
+            SizeBox.Value = fParty.Size;
+            LevelBox.Value = fParty.Level;
+        }
 
-		public Party Party
-		{
-			get { return fParty; }
-		}
-		Party fParty = null;
+        public Party Party
+        {
+            get { return fParty; }
+        }
+        Party fParty = null;
 
-		private void OKBtn_Click(object sender, EventArgs e)
-		{
-			fParty.Size = (int)SizeBox.Value;
-			fParty.Level = (int)LevelBox.Value;
-		}
-	}
+        private void OKBtn_Click(object sender, EventArgs e)
+        {
+            fParty.Size = (int)SizeBox.Value;
+            fParty.Level = (int)LevelBox.Value;
+        }
+    }
 }

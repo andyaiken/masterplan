@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#nullable disable
 
 using Masterplan.Tools;
+using System;
+using System.Collections.Generic;
 
 namespace Masterplan.Data
 {
@@ -67,40 +68,40 @@ namespace Masterplan.Data
             return null;
         }
 
-		/// <summary>
-		/// Returns a list of the powers that fit the specified roles.
-		/// </summary>
-		/// <param name="creature_roles">The roles to fit.</param>
-		/// <param name="type">The power type to list (attack or utility).</param>
-		/// <returns>Returns a list of matching powers.</returns>
-		public List<ThemePowerData> ListPowers(List<RoleType> creature_roles, PowerType type)
+        /// <summary>
+        /// Returns a list of the powers that fit the specified roles.
+        /// </summary>
+        /// <param name="creature_roles">The roles to fit.</param>
+        /// <param name="type">The power type to list (attack or utility).</param>
+        /// <returns>Returns a list of matching powers.</returns>
+        public List<ThemePowerData> ListPowers(List<RoleType> creature_roles, PowerType type)
         {
-			List<ThemePowerData> candidates = new List<ThemePowerData>();
+            List<ThemePowerData> candidates = new List<ThemePowerData>();
 
             foreach (ThemePowerData power in fPowers)
             {
-				if (power.Type != type)
+                if (power.Type != type)
                     continue;
 
-				if (power.Roles.Count == 0)
-				{
-					candidates.Add(power);
-				}
-				else
-				{
-					bool match = false;
-					foreach (RoleType role in creature_roles)
-					{
-						if (power.Roles.Contains(role))
-							match = true;
-					}
+                if (power.Roles.Count == 0)
+                {
+                    candidates.Add(power);
+                }
+                else
+                {
+                    bool match = false;
+                    foreach (RoleType role in creature_roles)
+                    {
+                        if (power.Roles.Contains(role))
+                            match = true;
+                    }
 
-					if (match)
-						candidates.Add(power);
-				}
+                    if (match)
+                        candidates.Add(power);
+                }
             }
 
-			return candidates;
+            return candidates;
         }
 
         /// <summary>
@@ -133,21 +134,21 @@ namespace Masterplan.Data
         }
     }
 
-	/// <summary>
-	/// Power types.
-	/// </summary>
-	public enum PowerType
-	{
-		/// <summary>
-		/// Attack power.
-		/// </summary>
-		Attack,
+    /// <summary>
+    /// Power types.
+    /// </summary>
+    public enum PowerType
+    {
+        /// <summary>
+        /// Attack power.
+        /// </summary>
+        Attack,
 
-		/// <summary>
-		/// Utility power.
-		/// </summary>
-		Utility
-	}
+        /// <summary>
+        /// Utility power.
+        /// </summary>
+        Utility
+    }
 
     /// <summary>
     /// Class representing a power in a monster theme.
@@ -165,25 +166,25 @@ namespace Masterplan.Data
         }
         CreaturePower fPower = new CreaturePower();
 
-		/// <summary>
-		/// Gets or sets the power type (attack or utility).
-		/// </summary>
-		public PowerType Type
-		{
-			get { return fType; }
-			set { fType = value; }
-		}
-		PowerType fType = PowerType.Attack;
+        /// <summary>
+        /// Gets or sets the power type (attack or utility).
+        /// </summary>
+        public PowerType Type
+        {
+            get { return fType; }
+            set { fType = value; }
+        }
+        PowerType fType = PowerType.Attack;
 
-		/// <summary>
-		/// Gets or sets the creature roles the power is suitable for.
-		/// </summary>
-		public List<RoleType> Roles
-		{
-			get { return fRoles; }
-			set { fRoles = value; }
-		}
-		List<RoleType> fRoles = new List<RoleType>();
+        /// <summary>
+        /// Gets or sets the creature roles the power is suitable for.
+        /// </summary>
+        public List<RoleType> Roles
+        {
+            get { return fRoles; }
+            set { fRoles = value; }
+        }
+        List<RoleType> fRoles = new List<RoleType>();
 
         /// <summary>
         /// Creates a copy of the power data.
@@ -194,7 +195,7 @@ namespace Masterplan.Data
             ThemePowerData tpd = new ThemePowerData();
 
             tpd.Power = fPower.Copy();
-			tpd.Type = fType;
+            tpd.Type = fType;
 
             foreach (RoleType rt in fRoles)
                 tpd.Roles.Add(rt);
@@ -202,13 +203,13 @@ namespace Masterplan.Data
             return tpd;
         }
 
-		/// <summary>
-		/// Returns the power name.
-		/// </summary>
-		/// <returns></returns>
-		public override string ToString()
-		{
-			return fPower.Name;
-		}
+        /// <summary>
+        /// Returns the power name.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return fPower.Name;
+        }
     }
 }

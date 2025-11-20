@@ -1,127 +1,129 @@
-﻿using System;
+﻿#nullable disable
+
+using System;
 using System.Drawing;
 
 namespace Masterplan.Data
 {
-	/// <summary>
-	/// Interface for map tokens.
-	/// </summary>
-	public interface IToken
-	{
-	}
+    /// <summary>
+    /// Interface for map tokens.
+    /// </summary>
+    public interface IToken
+    {
+    }
 
-	/// <summary>
-	/// A map token for a creature.
-	/// </summary>
-	[Serializable]
-	public class CreatureToken : IToken
-	{
-		/// <summary>
-		/// Default constructor.
-		/// </summary>
-		public CreatureToken()
-		{
-		}
+    /// <summary>
+    /// A map token for a creature.
+    /// </summary>
+    [Serializable]
+    public class CreatureToken : IToken
+    {
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        public CreatureToken()
+        {
+        }
 
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="slot_id">The ID of the EncounterSlot.</param>
-		/// <param name="data">The CombatData for this creature.</param>
-		public CreatureToken(Guid slot_id, CombatData data)
-		{
-			SlotID = slot_id;
-			Data = data;
-		}
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="slot_id">The ID of the EncounterSlot.</param>
+        /// <param name="data">The CombatData for this creature.</param>
+        public CreatureToken(Guid slot_id, CombatData data)
+        {
+            SlotID = slot_id;
+            Data = data;
+        }
 
-		/// <summary>
-		/// The ID of the encounter slot.
-		/// </summary>
-		public Guid SlotID = Guid.Empty;
+        /// <summary>
+        /// The ID of the encounter slot.
+        /// </summary>
+        public Guid SlotID = Guid.Empty;
 
-		/// <summary>
-		/// The CombatData for this creature.
-		/// </summary>
-		public CombatData Data = null;
-	}
+        /// <summary>
+        /// The CombatData for this creature.
+        /// </summary>
+        public CombatData Data = null;
+    }
 
-	/// <summary>
-	/// Types of custom token.
-	/// </summary>
-	public enum CustomTokenType
-	{
-		/// <summary>
-		/// The custom token is shown as a token.
-		/// </summary>
-		Token,
+    /// <summary>
+    /// Types of custom token.
+    /// </summary>
+    public enum CustomTokenType
+    {
+        /// <summary>
+        /// The custom token is shown as a token.
+        /// </summary>
+        Token,
 
-		/// <summary>
-		/// The custom token is shown as a translucent overlay.
-		/// </summary>
-		Overlay
-	}
+        /// <summary>
+        /// The custom token is shown as a translucent overlay.
+        /// </summary>
+        Overlay
+    }
 
-	/// <summary>
-	/// Types of overlay style.
-	/// </summary>
-	public enum OverlayStyle
-	{
-		/// <summary>
-		/// A rounded, translucent overlay.
-		/// </summary>
-		Rounded,
+    /// <summary>
+    /// Types of overlay style.
+    /// </summary>
+    public enum OverlayStyle
+    {
+        /// <summary>
+        /// A rounded, translucent overlay.
+        /// </summary>
+        Rounded,
 
-		/// <summary>
-		/// A rectangular, opaque overlay.
-		/// </summary>
-		Block
-	}
+        /// <summary>
+        /// A rectangular, opaque overlay.
+        /// </summary>
+        Block
+    }
 
-	/// <summary>
-	/// A custom map token or overlay.
-	/// </summary>
-	[Serializable]
-	public class CustomToken : IToken
-	{
-		/// <summary>
-		/// Gets or sets the unique ID.
-		/// </summary>
-		public Guid ID
-		{
-			get { return fID; }
-			set { fID = value; }
-		}
-		Guid fID = Guid.NewGuid();
+    /// <summary>
+    /// A custom map token or overlay.
+    /// </summary>
+    [Serializable]
+    public class CustomToken : IToken
+    {
+        /// <summary>
+        /// Gets or sets the unique ID.
+        /// </summary>
+        public Guid ID
+        {
+            get { return fID; }
+            set { fID = value; }
+        }
+        Guid fID = Guid.NewGuid();
 
-		/// <summary>
-		/// Gets or sets the token type.
-		/// </summary>
-		public CustomTokenType Type
-		{
-			get { return fType; }
-			set { fType = value; }
-		}
-		CustomTokenType fType = CustomTokenType.Token;
+        /// <summary>
+        /// Gets or sets the token type.
+        /// </summary>
+        public CustomTokenType Type
+        {
+            get { return fType; }
+            set { fType = value; }
+        }
+        CustomTokenType fType = CustomTokenType.Token;
 
-		/// <summary>
-		/// Gets or sets the token name.
-		/// </summary>
-		public string Name
-		{
-			get { return fName; }
-			set { fName = value; }
-		}
-		string fName = "";
+        /// <summary>
+        /// Gets or sets the token name.
+        /// </summary>
+        public string Name
+        {
+            get { return fName; }
+            set { fName = value; }
+        }
+        string fName = "";
 
-		/// <summary>
-		/// Gets or sets the token details.
-		/// </summary>
-		public string Details
-		{
-			get { return fDetails; }
-			set { fDetails = value; }
-		}
-		string fDetails = "";
+        /// <summary>
+        /// Gets or sets the token details.
+        /// </summary>
+        public string Details
+        {
+            get { return fDetails; }
+            set { fDetails = value; }
+        }
+        string fDetails = "";
 
         /// <summary>
         /// Gets or sets the size of the token.
@@ -143,15 +145,15 @@ namespace Masterplan.Data
         }
         Size fOverlaySize = new Size(3, 3);
 
-		/// <summary>
-		/// Gets or sets the style of the overlay.
-		/// </summary>
-		public OverlayStyle OverlayStyle
-		{
-			get { return fOverlayStyle; }
-			set { fOverlayStyle = value; }
-		}
-		OverlayStyle fOverlayStyle = OverlayStyle.Rounded;
+        /// <summary>
+        /// Gets or sets the style of the overlay.
+        /// </summary>
+        public OverlayStyle OverlayStyle
+        {
+            get { return fOverlayStyle; }
+            set { fOverlayStyle = value; }
+        }
+        OverlayStyle fOverlayStyle = OverlayStyle.Rounded;
 
         /// <summary>
         /// Gets or sets the colour of the token.
@@ -163,15 +165,15 @@ namespace Masterplan.Data
         }
         Color fColour = Color.DarkBlue;
 
-		/// <summary>
-		/// Gets or sets the token / overlay image.
-		/// </summary>
-		public Image Image
-		{
-			get { return fImage; }
-			set { fImage = value; }
-		}
-		Image fImage = null;
+        /// <summary>
+        /// Gets or sets the token / overlay image.
+        /// </summary>
+        public Image Image
+        {
+            get { return fImage; }
+            set { fImage = value; }
+        }
+        Image fImage = null;
 
         /// <summary>
         /// Gets or sets whether the overlay represents difficult terrain.
@@ -213,42 +215,42 @@ namespace Masterplan.Data
         }
         TerrainPower fTerrainPower = null;
 
-		/// <summary>
-		/// The ID of the creature or hero on which the token is centred.
-		/// </summary>
-		public Guid CreatureID
-		{
-			get { return fCreatureID; }
-			set { fCreatureID = value; }
-		}
-		Guid fCreatureID = Guid.Empty;
+        /// <summary>
+        /// The ID of the creature or hero on which the token is centred.
+        /// </summary>
+        public Guid CreatureID
+        {
+            get { return fCreatureID; }
+            set { fCreatureID = value; }
+        }
+        Guid fCreatureID = Guid.Empty;
 
-		/// <summary>
-		/// Creates a copy of the CustomToken.
-		/// </summary>
-		/// <returns>Returns the copy.</returns>
-		public CustomToken Copy()
-		{
-			CustomToken ct = new CustomToken();
+        /// <summary>
+        /// Creates a copy of the CustomToken.
+        /// </summary>
+        /// <returns>Returns the copy.</returns>
+        public CustomToken Copy()
+        {
+            CustomToken ct = new CustomToken();
 
-			ct.ID = fID;
-			ct.Type = fType;
-			ct.Name = fName;
-			ct.Details = fDetails;
-			ct.TokenSize = fTokenSize;
+            ct.ID = fID;
+            ct.Type = fType;
+            ct.Name = fName;
+            ct.Details = fDetails;
+            ct.TokenSize = fTokenSize;
             ct.OverlaySize = fOverlaySize;
-			ct.OverlayStyle = fOverlayStyle;
-			ct.Colour = fColour;
-			ct.Image = fImage;
+            ct.OverlayStyle = fOverlayStyle;
+            ct.Colour = fColour;
+            ct.Image = fImage;
             ct.DifficultTerrain = fDifficultTerrain;
             ct.Opaque = fOpaque;
             ct.Data = fData.Copy();
             ct.TerrainPower = (fTerrainPower != null) ? fTerrainPower.Copy() : null;
-			ct.CreatureID = fCreatureID;
+            ct.CreatureID = fCreatureID;
 
-			return ct;
-		}
-	}
+            return ct;
+        }
+    }
 
     /// <summary>
     /// Types of terrain power.
@@ -272,27 +274,27 @@ namespace Masterplan.Data
     [Serializable]
     public class TerrainPower
     {
-		/// <summary>
-		/// Gets or sets the power's ID.
-		/// </summary>
-		public Guid ID
-		{
-			get { return fID; }
-			set { fID = value; }
-		}
-		Guid fID = Guid.NewGuid();
+        /// <summary>
+        /// Gets or sets the power's ID.
+        /// </summary>
+        public Guid ID
+        {
+            get { return fID; }
+            set { fID = value; }
+        }
+        Guid fID = Guid.NewGuid();
 
-		/// <summary>
-		/// Gets or sets the power name.
-		/// </summary>
-		public string Name
-		{
-			get { return fName; }
-			set { fName = value; }
-		}
-		string fName = "";
+        /// <summary>
+        /// Gets or sets the power name.
+        /// </summary>
+        public string Name
+        {
+            get { return fName; }
+            set { fName = value; }
+        }
+        string fName = "";
 
-		/// <summary>
+        /// <summary>
         /// Gets or sets the power type.
         /// </summary>
         public TerrainPowerType Type
@@ -420,7 +422,7 @@ namespace Masterplan.Data
         {
             TerrainPower tp = new TerrainPower();
 
-			tp.ID = fID;
+            tp.ID = fID;
             tp.Name = fName;
             tp.Type = fType;
             tp.FlavourText = fFlavourText;

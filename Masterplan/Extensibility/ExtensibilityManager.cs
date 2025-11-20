@@ -1,174 +1,175 @@
-﻿using System;
+﻿#nullable disable
+
+using Masterplan.Data;
+using Masterplan.Tools;
+using Masterplan.UI;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
-using Masterplan.Data;
-using Masterplan.Tools;
-using Masterplan.UI;
-
 namespace Masterplan.Extensibility
 {
-	class ExtensibilityManager : IApplication
-	{
-		public ExtensibilityManager(MainForm main_form)
-		{
-			fMainForm = main_form;
+    class ExtensibilityManager : IApplication
+    {
+        public ExtensibilityManager(MainForm main_form)
+        {
+            fMainForm = main_form;
 
-			// Find application directory
-			string dir = Application.StartupPath + "\\AddIns";
-			Load(dir);
-		}
+            // Find application directory
+            string dir = Application.StartupPath + "\\AddIns";
+            Load(dir);
+        }
 
-		MainForm fMainForm = null;
+        MainForm fMainForm = null;
 
-		#region Loading add-ins
+        #region Loading add-ins
 
-		public void Load(string path)
-		{
-			if (File.Exists(path))
-			{
-				// Load add-ins from this DLL
-				Assembly assembly = Assembly.LoadFile(path);
-				if (assembly != null)
-					load_file(assembly);
-			}
+        public void Load(string path)
+        {
+            if (File.Exists(path))
+            {
+                // Load add-ins from this DLL
+                Assembly assembly = Assembly.LoadFile(path);
+                if (assembly != null)
+                    load_file(assembly);
+            }
 
-			if (Directory.Exists(path))
-			{
-				DirectoryInfo dir = new DirectoryInfo(path);
+            if (Directory.Exists(path))
+            {
+                DirectoryInfo dir = new DirectoryInfo(path);
 
-				// Find all DLLs in this directory
-				FileInfo[] files = dir.GetFiles("*.dll");
-				foreach (FileInfo fi in files)
-					Load(fi.FullName);
+                // Find all DLLs in this directory
+                FileInfo[] files = dir.GetFiles("*.dll");
+                foreach (FileInfo fi in files)
+                    Load(fi.FullName);
 
-				// Recurse subdirectories
-				DirectoryInfo[] subdirs = dir.GetDirectories();
-				foreach (DirectoryInfo subdir in subdirs)
-					Load(subdir.FullName);
-			}
+                // Recurse subdirectories
+                DirectoryInfo[] subdirs = dir.GetDirectories();
+                foreach (DirectoryInfo subdir in subdirs)
+                    Load(subdir.FullName);
+            }
 
-			Session.AddIns.Sort(compare_addins);
-		}
+            Session.AddIns.Sort(compare_addins);
+        }
 
-		void load_file(Assembly assembly)
-		{
-			try
-			{
-				// Load add-ins from this DLL
-				Type[] types = assembly.GetTypes();
-				foreach (Type t in types)
-				{
-					if (!is_addin(t))
-						continue;
+        void load_file(Assembly assembly)
+        {
+            try
+            {
+                // Load add-ins from this DLL
+                Type[] types = assembly.GetTypes();
+                foreach (Type t in types)
+                {
+                    if (!is_addin(t))
+                        continue;
 
-					// Get the default constructor
-					ConstructorInfo ci = t.GetConstructor(Type.EmptyTypes);
-					if (ci != null)
-					{
-						IAddIn addin = ci.Invoke(null) as IAddIn;
+                    // Get the default constructor
+                    ConstructorInfo ci = t.GetConstructor(Type.EmptyTypes);
+                    if (ci != null)
+                    {
+                        IAddIn addin = ci.Invoke(null) as IAddIn;
 
-						if (addin != null)
-							install(addin);
-					}
-				}
-			}
-			catch (ReflectionTypeLoadException rtle)
-			{
-				string name = assembly.ManifestModule.Name;
-				LogSystem.Trace("The add-in '" + name + "' could not be loaded; contact the developer for an updated version.");
+                        if (addin != null)
+                            install(addin);
+                    }
+                }
+            }
+            catch (ReflectionTypeLoadException rtle)
+            {
+                string name = assembly.ManifestModule.Name;
+                LogSystem.Trace("The add-in '" + name + "' could not be loaded; contact the developer for an updated version.");
 
-				foreach (Exception ex in rtle.LoaderExceptions)
-					Console.WriteLine(ex);
-			}
-			catch (Exception ex)
-			{
-				LogSystem.Trace(ex);
-			}
-		}
+                foreach (Exception ex in rtle.LoaderExceptions)
+                    Console.WriteLine(ex);
+            }
+            catch (Exception ex)
+            {
+                LogSystem.Trace(ex);
+            }
+        }
 
-		bool is_addin(Type t)
-		{
-			foreach (Type i in t.GetInterfaces())
-			{
-				if (i == null)
-					continue;
+        bool is_addin(Type t)
+        {
+            foreach (Type i in t.GetInterfaces())
+            {
+                if (i == null)
+                    continue;
 
-				if (i == typeof(IAddIn))
-					return true;
-			}
+                if (i == typeof(IAddIn))
+                    return true;
+            }
 
-			return false;
-		}
+            return false;
+        }
 
-		void install(IAddIn addin)
-		{
-			bool ok = addin.Initialise(this);
+        void install(IAddIn addin)
+        {
+            bool ok = addin.Initialise(this);
 
-			if (ok)
-				Session.AddIns.Add(addin);
-		}
+            if (ok)
+                Session.AddIns.Add(addin);
+        }
 
-		#endregion
+        #endregion
 
-		#region IApplication Members
+        #region IApplication Members
 
-		public Project Project
-		{
-			get { return Session.Project; }
-			set { Session.Project = value; }
-		}
+        public Project Project
+        {
+            get { return Session.Project; }
+            set { Session.Project = value; }
+        }
 
-		public PlotPoint SelectedPoint
-		{
-			get { return fMainForm.PlotView.SelectedPoint; }
-		}
+        public PlotPoint SelectedPoint
+        {
+            get { return fMainForm.PlotView.SelectedPoint; }
+        }
 
-		public Encounter CurrentEncounter
-		{
-			get { return Session.CurrentEncounter; }
-		}
+        public Encounter CurrentEncounter
+        {
+            get { return Session.CurrentEncounter; }
+        }
 
-		public string ProjectFile
-		{
-			get { return Session.FileName; }
-			set { Session.FileName = value; }
-		}
+        public string ProjectFile
+        {
+            get { return Session.FileName; }
+            set { Session.FileName = value; }
+        }
 
-		public bool ProjectModified
-		{
-			get { return Session.Modified; }
-			set { Session.Modified = value; }
-		}
+        public bool ProjectModified
+        {
+            get { return Session.Modified; }
+            set { Session.Modified = value; }
+        }
 
-		public List<Library> Libraries
-		{
-			get { return Session.Libraries; }
-		}
+        public List<Library> Libraries
+        {
+            get { return Session.Libraries; }
+        }
 
-		public List<IAddIn> AddIns
-		{
-			get { return Session.AddIns; }
-		}
+        public List<IAddIn> AddIns
+        {
+            get { return Session.AddIns; }
+        }
 
-		public void UpdateView()
-		{
-			fMainForm.UpdateView();
-		}
+        public void UpdateView()
+        {
+            fMainForm.UpdateView();
+        }
 
-		public void SaveLibrary(Library lib)
-		{
-			string filename = Session.GetLibraryFilename(lib);
-			bool ok = Serialisation<Library>.Save(filename, lib, SerialisationMode.Binary);
-		}
+        public void SaveLibrary(Library lib)
+        {
+            string filename = Session.GetLibraryFilename(lib);
+            bool ok = Serialisation<Library>.Save(filename, lib, SerialisationMode.Binary);
+        }
 
-		#endregion
+        #endregion
 
-		static int compare_addins(IAddIn x, IAddIn y)
-		{
-			return x.Name.CompareTo(y.Name);
-		}
-	}
+        static int compare_addins(IAddIn x, IAddIn y)
+        {
+            return x.Name.CompareTo(y.Name);
+        }
+    }
 }

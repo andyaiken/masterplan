@@ -1,75 +1,76 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.UI;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Masterplan.Controls
 {
-	partial class TrapElementPanel : UserControl
-	{
-		public TrapElementPanel()
-		{
-			InitializeComponent();
+    partial class TrapElementPanel : UserControl
+    {
+        public TrapElementPanel()
+        {
+            InitializeComponent();
 
-			Application.Idle += new EventHandler(Application_Idle);
+            Application.Idle += new EventHandler(Application_Idle);
 
-			update_view();
-		}
+            update_view();
+        }
 
-		~TrapElementPanel()
-		{
-			Application.Idle -= Application_Idle;
-		}
+        ~TrapElementPanel()
+        {
+            Application.Idle -= Application_Idle;
+        }
 
-		void Application_Idle(object sender, EventArgs e)
-		{
-			ChooseBtn.Enabled = (Session.Traps.Count != 0);
-		}
+        void Application_Idle(object sender, EventArgs e)
+        {
+            ChooseBtn.Enabled = (Session.Traps.Count != 0);
+        }
 
-		public TrapElement Trap
-		{
-			get { return fTrapElement; }
-			set
-			{
-				fTrapElement = value;
-				update_view();
-			}
-		}
-		TrapElement fTrapElement = null;
+        public TrapElement Trap
+        {
+            get { return fTrapElement; }
+            set
+            {
+                fTrapElement = value;
+                update_view();
+            }
+        }
+        TrapElement fTrapElement = null;
 
-		public TrapSkillData SelectedSkill
-		{
-			get
-			{
-				if (TrapList.SelectedItems.Count != 0)
-					return TrapList.SelectedItems[0].Tag as TrapSkillData;
+        public TrapSkillData SelectedSkill
+        {
+            get
+            {
+                if (TrapList.SelectedItems.Count != 0)
+                    return TrapList.SelectedItems[0].Tag as TrapSkillData;
 
-				return null;
-			}
-		}
+                return null;
+            }
+        }
 
-		public string SelectedCountermeasure
-		{
-			get
-			{
-				if (TrapList.SelectedItems.Count != 0)
-					return TrapList.SelectedItems[0].Tag as string;
+        public string SelectedCountermeasure
+        {
+            get
+            {
+                if (TrapList.SelectedItems.Count != 0)
+                    return TrapList.SelectedItems[0].Tag as string;
 
-				return null;
-			}
-		}
+                return null;
+            }
+        }
 
-		private void EditBtn_Click(object sender, EventArgs e)
-		{
-			TrapBuilderForm dlg = new TrapBuilderForm(fTrapElement.Trap);
-			if (dlg.ShowDialog() == DialogResult.OK)
-			{
-				fTrapElement.Trap = dlg.Trap;
-				update_view();
-			}
-		}
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            TrapBuilderForm dlg = new TrapBuilderForm(fTrapElement.Trap);
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                fTrapElement.Trap = dlg.Trap;
+                update_view();
+            }
+        }
 
         private void LocationBtn_Click(object sender, EventArgs e)
         {
@@ -83,56 +84,56 @@ namespace Masterplan.Controls
             }
         }
 
-		private void ChooseBtn_Click(object sender, EventArgs e)
-		{
-			// Choose a standard trap
-			TrapSelectForm dlg = new TrapSelectForm();
-			if (dlg.ShowDialog() == DialogResult.OK)
-			{
-				fTrapElement.Trap = dlg.Trap.Copy();
-				update_view();
-			}
-		}
+        private void ChooseBtn_Click(object sender, EventArgs e)
+        {
+            // Choose a standard trap
+            TrapSelectForm dlg = new TrapSelectForm();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                fTrapElement.Trap = dlg.Trap.Copy();
+                update_view();
+            }
+        }
 
-		private void TrapList_DoubleClick(object sender, EventArgs e)
-		{
-			if (SelectedSkill != null)
-			{
-				int index = fTrapElement.Trap.Skills.IndexOf(SelectedSkill);
+        private void TrapList_DoubleClick(object sender, EventArgs e)
+        {
+            if (SelectedSkill != null)
+            {
+                int index = fTrapElement.Trap.Skills.IndexOf(SelectedSkill);
 
-				TrapSkillForm dlg = new TrapSkillForm(SelectedSkill, fTrapElement.Trap.Level);
-				if (dlg.ShowDialog() == DialogResult.OK)
-				{
-					fTrapElement.Trap.Skills[index] = dlg.SkillData;
-					update_view();
-				}
-			}
+                TrapSkillForm dlg = new TrapSkillForm(SelectedSkill, fTrapElement.Trap.Level);
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    fTrapElement.Trap.Skills[index] = dlg.SkillData;
+                    update_view();
+                }
+            }
 
-			if (SelectedCountermeasure != null)
-			{
-				int index = fTrapElement.Trap.Countermeasures.IndexOf(SelectedCountermeasure);
+            if (SelectedCountermeasure != null)
+            {
+                int index = fTrapElement.Trap.Countermeasures.IndexOf(SelectedCountermeasure);
 
-				TrapCountermeasureForm dlg = new TrapCountermeasureForm(SelectedCountermeasure, fTrapElement.Trap.Level);
-				if (dlg.ShowDialog() == DialogResult.OK)
-				{
-					fTrapElement.Trap.Countermeasures[index] = dlg.Countermeasure;
-					update_view();
-				}
-			}
-		}
+                TrapCountermeasureForm dlg = new TrapCountermeasureForm(SelectedCountermeasure, fTrapElement.Trap.Level);
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    fTrapElement.Trap.Countermeasures[index] = dlg.Countermeasure;
+                    update_view();
+                }
+            }
+        }
 
-		void update_view()
-		{
-			TrapList.Items.Clear();
+        void update_view()
+        {
+            TrapList.Items.Clear();
 
-			if (fTrapElement == null)
-				return;
+            if (fTrapElement == null)
+                return;
 
-			ListViewItem name_lvi = TrapList.Items.Add(fTrapElement.Trap.Name + ": " + fTrapElement.GetXP() + " XP");
-			name_lvi.Group = TrapList.Groups[0];
+            ListViewItem name_lvi = TrapList.Items.Add(fTrapElement.Trap.Name + ": " + fTrapElement.GetXP() + " XP");
+            name_lvi.Group = TrapList.Groups[0];
 
-			ListViewItem info_lvi = TrapList.Items.Add(fTrapElement.Trap.Info);
-			info_lvi.Group = TrapList.Groups[0];
+            ListViewItem info_lvi = TrapList.Items.Add(fTrapElement.Trap.Info);
+            info_lvi.Group = TrapList.Groups[0];
 
             if (fTrapElement.MapID != Guid.Empty)
             {
@@ -147,44 +148,44 @@ namespace Masterplan.Controls
                 lvi_loc.Group = TrapList.Groups[0];
             }
 
-			foreach (TrapSkillData tsd in fTrapElement.Trap.Skills)
-			{
-				ListViewItem lvi = TrapList.Items.Add(tsd.ToString());
-				lvi.Group = TrapList.Groups[1];
-				lvi.Tag = tsd;
-			}
+            foreach (TrapSkillData tsd in fTrapElement.Trap.Skills)
+            {
+                ListViewItem lvi = TrapList.Items.Add(tsd.ToString());
+                lvi.Group = TrapList.Groups[1];
+                lvi.Tag = tsd;
+            }
 
-			if (fTrapElement.Trap.Skills.Count == 0)
-			{
-				ListViewItem lvi = TrapList.Items.Add("(no skills)");
-				lvi.Group = TrapList.Groups[1];
-				lvi.ForeColor = SystemColors.GrayText;
-			}
+            if (fTrapElement.Trap.Skills.Count == 0)
+            {
+                ListViewItem lvi = TrapList.Items.Add("(no skills)");
+                lvi.Group = TrapList.Groups[1];
+                lvi.ForeColor = SystemColors.GrayText;
+            }
 
-			foreach (string cm in fTrapElement.Trap.Countermeasures)
-			{
-				ListViewItem lvi = TrapList.Items.Add(cm);
-				lvi.Group = TrapList.Groups[2];
-				lvi.Tag = cm;
-			}
+            foreach (string cm in fTrapElement.Trap.Countermeasures)
+            {
+                ListViewItem lvi = TrapList.Items.Add(cm);
+                lvi.Group = TrapList.Groups[2];
+                lvi.Tag = cm;
+            }
 
-			if (fTrapElement.Trap.Countermeasures.Count == 0)
-			{
-				ListViewItem lvi = TrapList.Items.Add("(no countermeasures)");
-				lvi.Group = TrapList.Groups[2];
-				lvi.ForeColor = SystemColors.GrayText;
-			}
-		}
+            if (fTrapElement.Trap.Countermeasures.Count == 0)
+            {
+                ListViewItem lvi = TrapList.Items.Add("(no countermeasures)");
+                lvi.Group = TrapList.Groups[2];
+                lvi.ForeColor = SystemColors.GrayText;
+            }
+        }
 
-		private void AddLibraryBtn_Click(object sender, EventArgs e)
-		{
-			LibrarySelectForm dlg = new LibrarySelectForm();
-			if (dlg.ShowDialog() == DialogResult.OK)
-			{
-				Library lib = dlg.SelectedLibrary;
+        private void AddLibraryBtn_Click(object sender, EventArgs e)
+        {
+            LibrarySelectForm dlg = new LibrarySelectForm();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Library lib = dlg.SelectedLibrary;
 
-				lib.Traps.Add(fTrapElement.Trap.Copy());
-			}
-		}
-	}
+                lib.Traps.Add(fTrapElement.Trap.Copy());
+            }
+        }
+    }
 }

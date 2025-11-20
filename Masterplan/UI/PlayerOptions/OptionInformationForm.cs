@@ -1,32 +1,33 @@
-﻿using System;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Tools;
+using System;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class OptionInformationForm : Form
-	{
-		public OptionInformationForm(Pair<int, string> info)
-		{
-			InitializeComponent();
+    partial class OptionInformationForm : Form
+    {
+        public OptionInformationForm(Pair<int, string> info)
+        {
+            InitializeComponent();
 
-			fInfo = info;
+            fInfo = info;
 
-			DCBox.Value = fInfo.First;
-			DetailsBox.Text = fInfo.Second;
-		}
+            DCBox.Value = fInfo.First;
+            DetailsBox.Text = fInfo.Second;
+        }
 
-		public Pair<int, string> Information
-		{
-			get { return fInfo; }
-		}
-		Pair<int, string> fInfo = null;
+        public Pair<int, string> Information
+        {
+            get { return fInfo; }
+        }
+        Pair<int, string> fInfo = null;
 
-		private void OKBtn_Click(object sender, EventArgs e)
-		{
-			fInfo.First = (int)DCBox.Value;
-			fInfo.Second = DetailsBox.Text;
-		}
-	}
+        private void OKBtn_Click(object sender, EventArgs e)
+        {
+            fInfo.First = (int)DCBox.Value;
+            fInfo.Second = DetailsBox.Text;
+        }
+    }
 }

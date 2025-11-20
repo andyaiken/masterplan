@@ -20,15 +20,15 @@
 			base.Dispose(disposing);
 		}
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-            this.components = new System.ComponentModel.Container();
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Races", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Classes", System.Windows.Forms.HorizontalAlignment.Left);
@@ -47,2194 +47,2063 @@
             System.Windows.Forms.ListViewGroup listViewGroup15 = new System.Windows.Forms.ListViewGroup("Issues", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup16 = new System.Windows.Forms.ListViewGroup("Information", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup17 = new System.Windows.Forms.ListViewGroup("Notes", System.Windows.Forms.HorizontalAlignment.Left);
-            this.WorkspaceToolbar = new System.Windows.Forms.ToolStrip();
-            this.AddBtn = new System.Windows.Forms.ToolStripSplitButton();
-            this.AddEncounter = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddChallenge = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddTrap = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddQuest = new System.Windows.Forms.ToolStripMenuItem();
-            this.RemoveBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.PlotCutBtn = new System.Windows.Forms.ToolStripButton();
-            this.PlotCopyBtn = new System.Windows.Forms.ToolStripButton();
-            this.PlotPasteBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.SearchBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.ViewMenu = new System.Windows.Forms.ToolStripDropDownButton();
-            this.ViewDefault = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.ViewEncounters = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewTraps = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewChallenges = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewQuests = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewParcels = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.ViewHighlighting = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.ViewLinks = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewLinksCurved = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewLinksAngled = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewLinksStraight = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewLevelling = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewTooltips = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.ViewNavigation = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewPreview = new System.Windows.Forms.ToolStripMenuItem();
-            this.FlowchartMenu = new System.Windows.Forms.ToolStripDropDownButton();
-            this.FlowchartPrint = new System.Windows.Forms.ToolStripMenuItem();
-            this.FlowchartExport = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
-            this.FlowchartAllXP = new System.Windows.Forms.ToolStripMenuItem();
-            this.AdvancedBtn = new System.Windows.Forms.ToolStripDropDownButton();
-            this.PlotAdvancedIssues = new System.Windows.Forms.ToolStripMenuItem();
-            this.PlotAdvancedDifficulty = new System.Windows.Forms.ToolStripMenuItem();
-            this.PointMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ContextAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextAddBetween = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
-            this.ContextDisconnectAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextDisconnect = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ContextMoveTo = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ContextState = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextStateNormal = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextStateCompleted = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextStateSkipped = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
-            this.ContextEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextRemove = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
-            this.ContextExplore = new System.Windows.Forms.ToolStripMenuItem();
-            this.MainMenu = new System.Windows.Forms.MenuStrip();
-            this.FileMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.FileNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.FileOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.FileSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.FileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.FileAdvanced = new System.Windows.Forms.ToolStripMenuItem();
-            this.AdvancedDelve = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator42 = new System.Windows.Forms.ToolStripSeparator();
-            this.FileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProjectMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProjectProject = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProjectOverview = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProjectChecklist = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProjectCampaignSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
-            this.ProjectPassword = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.ProjectTacticalMaps = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProjectRegionalMaps = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.ProjectPlayers = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProjectParcels = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProjectDecks = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProjectCustomCreatures = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProjectCalendars = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator37 = new System.Windows.Forms.ToolStripSeparator();
-            this.ProjectEncounters = new System.Windows.Forms.ToolStripMenuItem();
-            this.PlayerViewMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.PlayerViewShow = new System.Windows.Forms.ToolStripMenuItem();
-            this.PlayerViewClear = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsImportProject = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolsExportProject = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsExportHandout = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolsIssues = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolsLibraries = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolsAddIns = new System.Windows.Forms.ToolStripMenuItem();
-            this.addinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolsPreferences = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsPreferencesTextSize = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsPreferencesTextSizeSmall = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsPreferencesTextSizeMedium = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsPreferencesTextSizeLarge = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsPreferencesTextSizeExtraLarge = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsPreferencesPlayerView = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsPreferencesPlayerViewSmall = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsPreferencesPlayerViewMedium = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsPreferencesPlayerViewLarge = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolsPreferencesPlayerViewExtraLarge = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolsPreferencesPlayerViewOtherDisplay = new System.Windows.Forms.ToolStripMenuItem();
-            this.HelpMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.HelpManual = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.HelpAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.PreviewSplitter = new System.Windows.Forms.SplitContainer();
-            this.NavigationSplitter = new System.Windows.Forms.SplitContainer();
-            this.NavigationTree = new System.Windows.Forms.TreeView();
-            this.PlotPanel = new System.Windows.Forms.Panel();
-            this.BreadcrumbBar = new System.Windows.Forms.StatusStrip();
-            this.WorkspaceSearchBar = new System.Windows.Forms.ToolStrip();
-            this.PlotSearchLbl = new System.Windows.Forms.ToolStripLabel();
-            this.PlotSearchBox = new System.Windows.Forms.ToolStripTextBox();
-            this.PlotClearBtn = new System.Windows.Forms.ToolStripLabel();
-            this.PreviewInfoSplitter = new System.Windows.Forms.SplitContainer();
-            this.PreviewPanel = new System.Windows.Forms.Panel();
-            this.Preview = new System.Windows.Forms.WebBrowser();
-            this.PreviewToolbar = new System.Windows.Forms.ToolStrip();
-            this.EditBtn = new System.Windows.Forms.ToolStripButton();
-            this.ExploreBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator41 = new System.Windows.Forms.ToolStripSeparator();
-            this.PlotPointMenu = new System.Windows.Forms.ToolStripDropDownButton();
-            this.PlotPointPlayerView = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator35 = new System.Windows.Forms.ToolStripSeparator();
-            this.PlotPointExportHTML = new System.Windows.Forms.ToolStripMenuItem();
-            this.PlotPointExportFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.Pages = new System.Windows.Forms.TabControl();
-            this.WorkspacePage = new System.Windows.Forms.TabPage();
-            this.BackgroundPage = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.BackgroundList = new System.Windows.Forms.ListView();
-            this.InfoHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.BackgroundPanel = new System.Windows.Forms.Panel();
-            this.BackgroundDetails = new System.Windows.Forms.WebBrowser();
-            this.BackgroundToolbar = new System.Windows.Forms.ToolStrip();
-            this.BackgroundAddBtn = new System.Windows.Forms.ToolStripButton();
-            this.BackgroundRemoveBtn = new System.Windows.Forms.ToolStripButton();
-            this.BackgroundEditBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
-            this.BackgroundUpBtn = new System.Windows.Forms.ToolStripButton();
-            this.BackgroundDownBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
-            this.BackgroundPlayerView = new System.Windows.Forms.ToolStripDropDownButton();
-            this.BackgroundPlayerViewSelected = new System.Windows.Forms.ToolStripMenuItem();
-            this.BackgroundPlayerViewAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator48 = new System.Windows.Forms.ToolStripSeparator();
-            this.BackgroundShareBtn = new System.Windows.Forms.ToolStripDropDownButton();
-            this.BackgroundShareExport = new System.Windows.Forms.ToolStripMenuItem();
-            this.BackgroundShareImport = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
-            this.BackgroundSharePublish = new System.Windows.Forms.ToolStripMenuItem();
-            this.EncyclopediaPage = new System.Windows.Forms.TabPage();
-            this.EncyclopediaSplitter = new System.Windows.Forms.SplitContainer();
-            this.EntryList = new System.Windows.Forms.ListView();
-            this.EntryHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.EncyclopediaEntrySplitter = new System.Windows.Forms.SplitContainer();
-            this.EntryPanel = new System.Windows.Forms.Panel();
-            this.EntryDetails = new System.Windows.Forms.WebBrowser();
-            this.EntryImageList = new System.Windows.Forms.ListView();
-            this.EncyclopediaToolbar = new System.Windows.Forms.ToolStrip();
-            this.EncAddBtn = new System.Windows.Forms.ToolStripDropDownButton();
-            this.EncAddEntry = new System.Windows.Forms.ToolStripMenuItem();
-            this.EncAddGroup = new System.Windows.Forms.ToolStripMenuItem();
-            this.EncRemoveBtn = new System.Windows.Forms.ToolStripButton();
-            this.EncEditBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
-            this.EncCutBtn = new System.Windows.Forms.ToolStripButton();
-            this.EncCopyBtn = new System.Windows.Forms.ToolStripButton();
-            this.EncPasteBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
-            this.EncPlayerView = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator40 = new System.Windows.Forms.ToolStripSeparator();
-            this.EncShareBtn = new System.Windows.Forms.ToolStripDropDownButton();
-            this.EncShareExport = new System.Windows.Forms.ToolStripMenuItem();
-            this.EncShareImport = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
-            this.EncSharePublish = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
-            this.EncSearchLbl = new System.Windows.Forms.ToolStripLabel();
-            this.EncSearchBox = new System.Windows.Forms.ToolStripTextBox();
-            this.EncClearLbl = new System.Windows.Forms.ToolStripLabel();
-            this.RulesPage = new System.Windows.Forms.TabPage();
-            this.RulesSplitter = new System.Windows.Forms.SplitContainer();
-            this.RulesList = new System.Windows.Forms.ListView();
-            this.RulesHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.RulesToolbar = new System.Windows.Forms.ToolStrip();
-            this.RulesAddBtn = new System.Windows.Forms.ToolStripDropDownButton();
-            this.AddRace = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
-            this.AddClass = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddTheme = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddParagonPath = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddEpicDestiny = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
-            this.AddBackground = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddFeat = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddWeapon = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddRitual = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator39 = new System.Windows.Forms.ToolStripSeparator();
-            this.AddCreatureLore = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddDisease = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddPoison = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
-            this.RulesShareBtn = new System.Windows.Forms.ToolStripDropDownButton();
-            this.RulesShareExport = new System.Windows.Forms.ToolStripMenuItem();
-            this.RulesShareImport = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
-            this.RulesSharePublish = new System.Windows.Forms.ToolStripMenuItem();
-            this.RulesBrowserPanel = new System.Windows.Forms.Panel();
-            this.RulesBrowser = new System.Windows.Forms.WebBrowser();
-            this.EncEntryToolbar = new System.Windows.Forms.ToolStrip();
-            this.RulesRemoveBtn = new System.Windows.Forms.ToolStripButton();
-            this.RulesEditBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator43 = new System.Windows.Forms.ToolStripSeparator();
-            this.RuleEncyclopediaBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator36 = new System.Windows.Forms.ToolStripSeparator();
-            this.RulesPlayerViewBtn = new System.Windows.Forms.ToolStripButton();
-            this.AttachmentsPage = new System.Windows.Forms.TabPage();
-            this.AttachmentList = new System.Windows.Forms.ListView();
-            this.AttachmentHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.AttachmentSizeHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.AttachmentToolbar = new System.Windows.Forms.ToolStrip();
-            this.AttachmentImportBtn = new System.Windows.Forms.ToolStripButton();
-            this.AttachmentRemoveBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
-            this.AttachmentExtract = new System.Windows.Forms.ToolStripDropDownButton();
-            this.AttachmentExtractSimple = new System.Windows.Forms.ToolStripMenuItem();
-            this.AttachmentExtractAndRun = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
-            this.AttachmentPlayerView = new System.Windows.Forms.ToolStripButton();
-            this.JotterPage = new System.Windows.Forms.TabPage();
-            this.JotterSplitter = new System.Windows.Forms.SplitContainer();
-            this.NoteList = new System.Windows.Forms.ListView();
-            this.NoteHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.NoteBox = new System.Windows.Forms.TextBox();
-            this.JotterToolbar = new System.Windows.Forms.ToolStrip();
-            this.NoteAddBtn = new System.Windows.Forms.ToolStripButton();
-            this.NoteRemoveBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-            this.NoteCategoryBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator38 = new System.Windows.Forms.ToolStripSeparator();
-            this.NoteCutBtn = new System.Windows.Forms.ToolStripButton();
-            this.NoteCopyBtn = new System.Windows.Forms.ToolStripButton();
-            this.NotePasteBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
-            this.NoteSearchLbl = new System.Windows.Forms.ToolStripLabel();
-            this.NoteSearchBox = new System.Windows.Forms.ToolStripTextBox();
-            this.NoteClearLbl = new System.Windows.Forms.ToolStripLabel();
-            this.ReferencePage = new System.Windows.Forms.TabPage();
-            this.ReferenceSplitter = new System.Windows.Forms.SplitContainer();
-            this.ReferencePages = new System.Windows.Forms.TabControl();
-            this.PartyPage = new System.Windows.Forms.TabPage();
-            this.PartyBrowser = new System.Windows.Forms.WebBrowser();
-            this.ToolsPage = new System.Windows.Forms.TabPage();
-            this.ToolBrowserPanel = new System.Windows.Forms.Panel();
-            this.GeneratorBrowser = new System.Windows.Forms.WebBrowser();
-            this.GeneratorToolbar = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
-            this.ElfNameBtn = new System.Windows.Forms.ToolStripButton();
-            this.DwarfNameBtn = new System.Windows.Forms.ToolStripButton();
-            this.HalflingNameBtn = new System.Windows.Forms.ToolStripButton();
-            this.ExoticNameBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator44 = new System.Windows.Forms.ToolStripSeparator();
-            this.TreasureBtn = new System.Windows.Forms.ToolStripButton();
-            this.BookTitleBtn = new System.Windows.Forms.ToolStripButton();
-            this.PotionBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator45 = new System.Windows.Forms.ToolStripSeparator();
-            this.NPCBtn = new System.Windows.Forms.ToolStripButton();
-            this.RoomBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator46 = new System.Windows.Forms.ToolStripSeparator();
-            this.ElfTextBtn = new System.Windows.Forms.ToolStripButton();
-            this.DwarfTextBtn = new System.Windows.Forms.ToolStripButton();
-            this.PrimordialTextBtn = new System.Windows.Forms.ToolStripButton();
-            this.ReferenceToolbar = new System.Windows.Forms.ToolStrip();
-            this.DieRollerBtn = new System.Windows.Forms.ToolStripButton();
-            this.PlotView = new Masterplan.Controls.PlotView();
-            this.InfoPanel = new Masterplan.Controls.InfoPanel();
-            this.WorkspaceToolbar.SuspendLayout();
-            this.PointMenu.SuspendLayout();
-            this.MainMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PreviewSplitter)).BeginInit();
-            this.PreviewSplitter.Panel1.SuspendLayout();
-            this.PreviewSplitter.Panel2.SuspendLayout();
-            this.PreviewSplitter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NavigationSplitter)).BeginInit();
-            this.NavigationSplitter.Panel1.SuspendLayout();
-            this.NavigationSplitter.Panel2.SuspendLayout();
-            this.NavigationSplitter.SuspendLayout();
-            this.PlotPanel.SuspendLayout();
-            this.WorkspaceSearchBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PreviewInfoSplitter)).BeginInit();
-            this.PreviewInfoSplitter.Panel1.SuspendLayout();
-            this.PreviewInfoSplitter.SuspendLayout();
-            this.PreviewPanel.SuspendLayout();
-            this.PreviewToolbar.SuspendLayout();
-            this.Pages.SuspendLayout();
-            this.WorkspacePage.SuspendLayout();
-            this.BackgroundPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.BackgroundPanel.SuspendLayout();
-            this.BackgroundToolbar.SuspendLayout();
-            this.EncyclopediaPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EncyclopediaSplitter)).BeginInit();
-            this.EncyclopediaSplitter.Panel1.SuspendLayout();
-            this.EncyclopediaSplitter.Panel2.SuspendLayout();
-            this.EncyclopediaSplitter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EncyclopediaEntrySplitter)).BeginInit();
-            this.EncyclopediaEntrySplitter.Panel1.SuspendLayout();
-            this.EncyclopediaEntrySplitter.Panel2.SuspendLayout();
-            this.EncyclopediaEntrySplitter.SuspendLayout();
-            this.EntryPanel.SuspendLayout();
-            this.EncyclopediaToolbar.SuspendLayout();
-            this.RulesPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RulesSplitter)).BeginInit();
-            this.RulesSplitter.Panel1.SuspendLayout();
-            this.RulesSplitter.Panel2.SuspendLayout();
-            this.RulesSplitter.SuspendLayout();
-            this.RulesToolbar.SuspendLayout();
-            this.RulesBrowserPanel.SuspendLayout();
-            this.EncEntryToolbar.SuspendLayout();
-            this.AttachmentsPage.SuspendLayout();
-            this.AttachmentToolbar.SuspendLayout();
-            this.JotterPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.JotterSplitter)).BeginInit();
-            this.JotterSplitter.Panel1.SuspendLayout();
-            this.JotterSplitter.Panel2.SuspendLayout();
-            this.JotterSplitter.SuspendLayout();
-            this.JotterToolbar.SuspendLayout();
-            this.ReferencePage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ReferenceSplitter)).BeginInit();
-            this.ReferenceSplitter.Panel1.SuspendLayout();
-            this.ReferenceSplitter.Panel2.SuspendLayout();
-            this.ReferenceSplitter.SuspendLayout();
-            this.ReferencePages.SuspendLayout();
-            this.PartyPage.SuspendLayout();
-            this.ToolsPage.SuspendLayout();
-            this.ToolBrowserPanel.SuspendLayout();
-            this.GeneratorToolbar.SuspendLayout();
-            this.ReferenceToolbar.SuspendLayout();
-            this.SuspendLayout();
+            WorkspaceToolbar = new System.Windows.Forms.ToolStrip();
+            AddBtn = new System.Windows.Forms.ToolStripSplitButton();
+            AddEncounter = new System.Windows.Forms.ToolStripMenuItem();
+            AddChallenge = new System.Windows.Forms.ToolStripMenuItem();
+            AddTrap = new System.Windows.Forms.ToolStripMenuItem();
+            AddQuest = new System.Windows.Forms.ToolStripMenuItem();
+            RemoveBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            PlotCutBtn = new System.Windows.Forms.ToolStripButton();
+            PlotCopyBtn = new System.Windows.Forms.ToolStripButton();
+            PlotPasteBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            SearchBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            ViewMenu = new System.Windows.Forms.ToolStripDropDownButton();
+            ViewDefault = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            ViewEncounters = new System.Windows.Forms.ToolStripMenuItem();
+            ViewTraps = new System.Windows.Forms.ToolStripMenuItem();
+            ViewChallenges = new System.Windows.Forms.ToolStripMenuItem();
+            ViewQuests = new System.Windows.Forms.ToolStripMenuItem();
+            ViewParcels = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            ViewHighlighting = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            ViewLinks = new System.Windows.Forms.ToolStripMenuItem();
+            ViewLinksCurved = new System.Windows.Forms.ToolStripMenuItem();
+            ViewLinksAngled = new System.Windows.Forms.ToolStripMenuItem();
+            ViewLinksStraight = new System.Windows.Forms.ToolStripMenuItem();
+            ViewLevelling = new System.Windows.Forms.ToolStripMenuItem();
+            ViewTooltips = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            ViewNavigation = new System.Windows.Forms.ToolStripMenuItem();
+            ViewPreview = new System.Windows.Forms.ToolStripMenuItem();
+            FlowchartMenu = new System.Windows.Forms.ToolStripDropDownButton();
+            FlowchartPrint = new System.Windows.Forms.ToolStripMenuItem();
+            FlowchartExport = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
+            FlowchartAllXP = new System.Windows.Forms.ToolStripMenuItem();
+            AdvancedBtn = new System.Windows.Forms.ToolStripDropDownButton();
+            PlotAdvancedIssues = new System.Windows.Forms.ToolStripMenuItem();
+            PlotAdvancedDifficulty = new System.Windows.Forms.ToolStripMenuItem();
+            PointMenu = new System.Windows.Forms.ContextMenuStrip(components);
+            ContextAdd = new System.Windows.Forms.ToolStripMenuItem();
+            ContextAddBetween = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
+            ContextDisconnectAll = new System.Windows.Forms.ToolStripMenuItem();
+            ContextDisconnect = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            ContextMoveTo = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            ContextState = new System.Windows.Forms.ToolStripMenuItem();
+            ContextStateNormal = new System.Windows.Forms.ToolStripMenuItem();
+            ContextStateCompleted = new System.Windows.Forms.ToolStripMenuItem();
+            ContextStateSkipped = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
+            ContextEdit = new System.Windows.Forms.ToolStripMenuItem();
+            ContextRemove = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
+            ContextExplore = new System.Windows.Forms.ToolStripMenuItem();
+            MainMenu = new System.Windows.Forms.MenuStrip();
+            FileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            FileNew = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            FileOpen = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            FileSave = new System.Windows.Forms.ToolStripMenuItem();
+            FileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            FileAdvanced = new System.Windows.Forms.ToolStripMenuItem();
+            AdvancedDelve = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator42 = new System.Windows.Forms.ToolStripSeparator();
+            FileExit = new System.Windows.Forms.ToolStripMenuItem();
+            ProjectMenu = new System.Windows.Forms.ToolStripMenuItem();
+            ProjectProject = new System.Windows.Forms.ToolStripMenuItem();
+            ProjectOverview = new System.Windows.Forms.ToolStripMenuItem();
+            ProjectChecklist = new System.Windows.Forms.ToolStripMenuItem();
+            ProjectCampaignSettings = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
+            ProjectPassword = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            ProjectTacticalMaps = new System.Windows.Forms.ToolStripMenuItem();
+            ProjectRegionalMaps = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            ProjectPlayers = new System.Windows.Forms.ToolStripMenuItem();
+            ProjectParcels = new System.Windows.Forms.ToolStripMenuItem();
+            ProjectDecks = new System.Windows.Forms.ToolStripMenuItem();
+            ProjectCustomCreatures = new System.Windows.Forms.ToolStripMenuItem();
+            ProjectCalendars = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator37 = new System.Windows.Forms.ToolStripSeparator();
+            ProjectEncounters = new System.Windows.Forms.ToolStripMenuItem();
+            PlayerViewMenu = new System.Windows.Forms.ToolStripMenuItem();
+            PlayerViewShow = new System.Windows.Forms.ToolStripMenuItem();
+            PlayerViewClear = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsImportProject = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
+            ToolsExportProject = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsExportHandout = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
+            ToolsIssues = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            ToolsLibraries = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+            ToolsAddIns = new System.Windows.Forms.ToolStripMenuItem();
+            addinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
+            ToolsPreferences = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferencesTextSize = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferencesTextSizeSmall = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferencesTextSizeMedium = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferencesTextSizeLarge = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferencesTextSizeExtraLarge = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferencesPlayerView = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferencesPlayerViewSmall = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferencesPlayerViewMedium = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferencesPlayerViewLarge = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferencesPlayerViewExtraLarge = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem19 = new System.Windows.Forms.ToolStripSeparator();
+            ToolsPreferencesPlayerViewOtherDisplay = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferenceEditFormat = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferenceEditFormatNarrow = new System.Windows.Forms.ToolStripMenuItem();
+            ToolsPreferenceEditFormatFull = new System.Windows.Forms.ToolStripMenuItem();
+            HelpMenu = new System.Windows.Forms.ToolStripMenuItem();
+            HelpManual = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            HelpAbout = new System.Windows.Forms.ToolStripMenuItem();
+            PreviewSplitter = new System.Windows.Forms.SplitContainer();
+            NavigationSplitter = new System.Windows.Forms.SplitContainer();
+            NavigationTree = new System.Windows.Forms.TreeView();
+            PlotPanel = new System.Windows.Forms.Panel();
+            PlotView = new Masterplan.Controls.PlotView();
+            BreadcrumbBar = new System.Windows.Forms.StatusStrip();
+            WorkspaceSearchBar = new System.Windows.Forms.ToolStrip();
+            PlotSearchLbl = new System.Windows.Forms.ToolStripLabel();
+            PlotSearchBox = new System.Windows.Forms.ToolStripTextBox();
+            PlotClearBtn = new System.Windows.Forms.ToolStripLabel();
+            PreviewInfoSplitter = new System.Windows.Forms.SplitContainer();
+            PreviewPanel = new System.Windows.Forms.Panel();
+            Preview = new System.Windows.Forms.WebBrowser();
+            PreviewToolbar = new System.Windows.Forms.ToolStrip();
+            EditBtn = new System.Windows.Forms.ToolStripButton();
+            ExploreBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator41 = new System.Windows.Forms.ToolStripSeparator();
+            PlotPointMenu = new System.Windows.Forms.ToolStripDropDownButton();
+            PlotPointPlayerView = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator35 = new System.Windows.Forms.ToolStripSeparator();
+            PlotPointExportHTML = new System.Windows.Forms.ToolStripMenuItem();
+            PlotPointExportFile = new System.Windows.Forms.ToolStripMenuItem();
+            Pages = new System.Windows.Forms.TabControl();
+            WorkspacePage = new System.Windows.Forms.TabPage();
+            BackgroundPage = new System.Windows.Forms.TabPage();
+            splitContainer1 = new System.Windows.Forms.SplitContainer();
+            BackgroundList = new System.Windows.Forms.ListView();
+            InfoHdr = new System.Windows.Forms.ColumnHeader();
+            BackgroundPanel = new System.Windows.Forms.Panel();
+            BackgroundDetails = new System.Windows.Forms.WebBrowser();
+            BackgroundToolbar = new System.Windows.Forms.ToolStrip();
+            BackgroundAddBtn = new System.Windows.Forms.ToolStripButton();
+            BackgroundRemoveBtn = new System.Windows.Forms.ToolStripButton();
+            BackgroundEditBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
+            BackgroundUpBtn = new System.Windows.Forms.ToolStripButton();
+            BackgroundDownBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
+            BackgroundPlayerView = new System.Windows.Forms.ToolStripDropDownButton();
+            BackgroundPlayerViewSelected = new System.Windows.Forms.ToolStripMenuItem();
+            BackgroundPlayerViewAll = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator48 = new System.Windows.Forms.ToolStripSeparator();
+            BackgroundShareBtn = new System.Windows.Forms.ToolStripDropDownButton();
+            BackgroundShareExport = new System.Windows.Forms.ToolStripMenuItem();
+            BackgroundShareImport = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
+            BackgroundSharePublish = new System.Windows.Forms.ToolStripMenuItem();
+            EncyclopediaPage = new System.Windows.Forms.TabPage();
+            EncyclopediaSplitter = new System.Windows.Forms.SplitContainer();
+            EntryList = new System.Windows.Forms.ListView();
+            EntryHdr = new System.Windows.Forms.ColumnHeader();
+            EncyclopediaEntrySplitter = new System.Windows.Forms.SplitContainer();
+            EntryPanel = new System.Windows.Forms.Panel();
+            EntryDetails = new System.Windows.Forms.WebBrowser();
+            EntryImageList = new System.Windows.Forms.ListView();
+            EncyclopediaToolbar = new System.Windows.Forms.ToolStrip();
+            EncAddBtn = new System.Windows.Forms.ToolStripDropDownButton();
+            EncAddEntry = new System.Windows.Forms.ToolStripMenuItem();
+            EncAddGroup = new System.Windows.Forms.ToolStripMenuItem();
+            EncRemoveBtn = new System.Windows.Forms.ToolStripButton();
+            EncEditBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            EncCutBtn = new System.Windows.Forms.ToolStripButton();
+            EncCopyBtn = new System.Windows.Forms.ToolStripButton();
+            EncPasteBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
+            EncPlayerView = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator40 = new System.Windows.Forms.ToolStripSeparator();
+            EncShareBtn = new System.Windows.Forms.ToolStripDropDownButton();
+            EncShareExport = new System.Windows.Forms.ToolStripMenuItem();
+            EncShareImport = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            EncSharePublish = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
+            EncSearchLbl = new System.Windows.Forms.ToolStripLabel();
+            EncSearchBox = new System.Windows.Forms.ToolStripTextBox();
+            EncClearLbl = new System.Windows.Forms.ToolStripLabel();
+            RulesPage = new System.Windows.Forms.TabPage();
+            RulesSplitter = new System.Windows.Forms.SplitContainer();
+            RulesList = new System.Windows.Forms.ListView();
+            RulesHdr = new System.Windows.Forms.ColumnHeader();
+            RulesToolbar = new System.Windows.Forms.ToolStrip();
+            RulesAddBtn = new System.Windows.Forms.ToolStripDropDownButton();
+            AddRace = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
+            AddClass = new System.Windows.Forms.ToolStripMenuItem();
+            AddTheme = new System.Windows.Forms.ToolStripMenuItem();
+            AddParagonPath = new System.Windows.Forms.ToolStripMenuItem();
+            AddEpicDestiny = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
+            AddBackground = new System.Windows.Forms.ToolStripMenuItem();
+            AddFeat = new System.Windows.Forms.ToolStripMenuItem();
+            AddWeapon = new System.Windows.Forms.ToolStripMenuItem();
+            AddRitual = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator39 = new System.Windows.Forms.ToolStripSeparator();
+            AddCreatureLore = new System.Windows.Forms.ToolStripMenuItem();
+            AddDisease = new System.Windows.Forms.ToolStripMenuItem();
+            AddPoison = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
+            RulesShareBtn = new System.Windows.Forms.ToolStripDropDownButton();
+            RulesShareExport = new System.Windows.Forms.ToolStripMenuItem();
+            RulesShareImport = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
+            RulesSharePublish = new System.Windows.Forms.ToolStripMenuItem();
+            RulesBrowserPanel = new System.Windows.Forms.Panel();
+            RulesBrowser = new System.Windows.Forms.WebBrowser();
+            EncEntryToolbar = new System.Windows.Forms.ToolStrip();
+            RulesRemoveBtn = new System.Windows.Forms.ToolStripButton();
+            RulesEditBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator43 = new System.Windows.Forms.ToolStripSeparator();
+            RuleEncyclopediaBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator36 = new System.Windows.Forms.ToolStripSeparator();
+            RulesPlayerViewBtn = new System.Windows.Forms.ToolStripButton();
+            AttachmentsPage = new System.Windows.Forms.TabPage();
+            AttachmentList = new System.Windows.Forms.ListView();
+            AttachmentHdr = new System.Windows.Forms.ColumnHeader();
+            AttachmentSizeHdr = new System.Windows.Forms.ColumnHeader();
+            AttachmentToolbar = new System.Windows.Forms.ToolStrip();
+            AttachmentImportBtn = new System.Windows.Forms.ToolStripButton();
+            AttachmentRemoveBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
+            AttachmentExtract = new System.Windows.Forms.ToolStripDropDownButton();
+            AttachmentExtractSimple = new System.Windows.Forms.ToolStripMenuItem();
+            AttachmentExtractAndRun = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
+            AttachmentPlayerView = new System.Windows.Forms.ToolStripButton();
+            JotterPage = new System.Windows.Forms.TabPage();
+            JotterSplitter = new System.Windows.Forms.SplitContainer();
+            NoteList = new System.Windows.Forms.ListView();
+            NoteHdr = new System.Windows.Forms.ColumnHeader();
+            NoteBox = new System.Windows.Forms.TextBox();
+            JotterToolbar = new System.Windows.Forms.ToolStrip();
+            NoteAddBtn = new System.Windows.Forms.ToolStripButton();
+            NoteRemoveBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+            NoteCategoryBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator38 = new System.Windows.Forms.ToolStripSeparator();
+            NoteCutBtn = new System.Windows.Forms.ToolStripButton();
+            NoteCopyBtn = new System.Windows.Forms.ToolStripButton();
+            NotePasteBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
+            NoteSearchLbl = new System.Windows.Forms.ToolStripLabel();
+            NoteSearchBox = new System.Windows.Forms.ToolStripTextBox();
+            NoteClearLbl = new System.Windows.Forms.ToolStripLabel();
+            ReferencePage = new System.Windows.Forms.TabPage();
+            ReferenceSplitter = new System.Windows.Forms.SplitContainer();
+            ReferencePages = new System.Windows.Forms.TabControl();
+            PartyPage = new System.Windows.Forms.TabPage();
+            PartyBrowser = new System.Windows.Forms.WebBrowser();
+            ToolsPage = new System.Windows.Forms.TabPage();
+            ToolBrowserPanel = new System.Windows.Forms.Panel();
+            GeneratorBrowser = new System.Windows.Forms.WebBrowser();
+            GeneratorToolbar = new System.Windows.Forms.ToolStrip();
+            toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
+            ElfNameBtn = new System.Windows.Forms.ToolStripButton();
+            DwarfNameBtn = new System.Windows.Forms.ToolStripButton();
+            HalflingNameBtn = new System.Windows.Forms.ToolStripButton();
+            ExoticNameBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator44 = new System.Windows.Forms.ToolStripSeparator();
+            TreasureBtn = new System.Windows.Forms.ToolStripButton();
+            BookTitleBtn = new System.Windows.Forms.ToolStripButton();
+            PotionBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator45 = new System.Windows.Forms.ToolStripSeparator();
+            NPCBtn = new System.Windows.Forms.ToolStripButton();
+            RoomBtn = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator46 = new System.Windows.Forms.ToolStripSeparator();
+            ElfTextBtn = new System.Windows.Forms.ToolStripButton();
+            DwarfTextBtn = new System.Windows.Forms.ToolStripButton();
+            PrimordialTextBtn = new System.Windows.Forms.ToolStripButton();
+            InfoPanel = new Masterplan.Controls.InfoPanel();
+            ReferenceToolbar = new System.Windows.Forms.ToolStrip();
+            DieRollerBtn = new System.Windows.Forms.ToolStripButton();
+            WorkspaceToolbar.SuspendLayout();
+            PointMenu.SuspendLayout();
+            MainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PreviewSplitter).BeginInit();
+            PreviewSplitter.Panel1.SuspendLayout();
+            PreviewSplitter.Panel2.SuspendLayout();
+            PreviewSplitter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)NavigationSplitter).BeginInit();
+            NavigationSplitter.Panel1.SuspendLayout();
+            NavigationSplitter.Panel2.SuspendLayout();
+            NavigationSplitter.SuspendLayout();
+            PlotPanel.SuspendLayout();
+            WorkspaceSearchBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PreviewInfoSplitter).BeginInit();
+            PreviewInfoSplitter.Panel1.SuspendLayout();
+            PreviewInfoSplitter.SuspendLayout();
+            PreviewPanel.SuspendLayout();
+            PreviewToolbar.SuspendLayout();
+            Pages.SuspendLayout();
+            WorkspacePage.SuspendLayout();
+            BackgroundPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            BackgroundPanel.SuspendLayout();
+            BackgroundToolbar.SuspendLayout();
+            EncyclopediaPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)EncyclopediaSplitter).BeginInit();
+            EncyclopediaSplitter.Panel1.SuspendLayout();
+            EncyclopediaSplitter.Panel2.SuspendLayout();
+            EncyclopediaSplitter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)EncyclopediaEntrySplitter).BeginInit();
+            EncyclopediaEntrySplitter.Panel1.SuspendLayout();
+            EncyclopediaEntrySplitter.Panel2.SuspendLayout();
+            EncyclopediaEntrySplitter.SuspendLayout();
+            EntryPanel.SuspendLayout();
+            EncyclopediaToolbar.SuspendLayout();
+            RulesPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)RulesSplitter).BeginInit();
+            RulesSplitter.Panel1.SuspendLayout();
+            RulesSplitter.Panel2.SuspendLayout();
+            RulesSplitter.SuspendLayout();
+            RulesToolbar.SuspendLayout();
+            RulesBrowserPanel.SuspendLayout();
+            EncEntryToolbar.SuspendLayout();
+            AttachmentsPage.SuspendLayout();
+            AttachmentToolbar.SuspendLayout();
+            JotterPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)JotterSplitter).BeginInit();
+            JotterSplitter.Panel1.SuspendLayout();
+            JotterSplitter.Panel2.SuspendLayout();
+            JotterSplitter.SuspendLayout();
+            JotterToolbar.SuspendLayout();
+            ReferencePage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ReferenceSplitter).BeginInit();
+            ReferenceSplitter.Panel1.SuspendLayout();
+            ReferenceSplitter.Panel2.SuspendLayout();
+            ReferenceSplitter.SuspendLayout();
+            ReferencePages.SuspendLayout();
+            PartyPage.SuspendLayout();
+            ToolsPage.SuspendLayout();
+            ToolBrowserPanel.SuspendLayout();
+            GeneratorToolbar.SuspendLayout();
+            ReferenceToolbar.SuspendLayout();
+            SuspendLayout();
             // 
             // WorkspaceToolbar
             // 
-            this.WorkspaceToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.WorkspaceToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddBtn,
-            this.RemoveBtn,
-            this.toolStripSeparator3,
-            this.PlotCutBtn,
-            this.PlotCopyBtn,
-            this.PlotPasteBtn,
-            this.toolStripSeparator5,
-            this.SearchBtn,
-            this.toolStripSeparator9,
-            this.ViewMenu,
-            this.FlowchartMenu,
-            this.AdvancedBtn});
-            this.WorkspaceToolbar.Location = new System.Drawing.Point(0, 0);
-            this.WorkspaceToolbar.Name = "WorkspaceToolbar";
-            this.WorkspaceToolbar.Size = new System.Drawing.Size(795, 27);
-            this.WorkspaceToolbar.TabIndex = 1;
-            this.WorkspaceToolbar.Text = "toolStrip1";
+            WorkspaceToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            WorkspaceToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { AddBtn, RemoveBtn, toolStripSeparator3, PlotCutBtn, PlotCopyBtn, PlotPasteBtn, toolStripSeparator5, SearchBtn, toolStripSeparator9, ViewMenu, FlowchartMenu, AdvancedBtn });
+            WorkspaceToolbar.Location = new System.Drawing.Point(0, 0);
+            WorkspaceToolbar.Name = "WorkspaceToolbar";
+            WorkspaceToolbar.Size = new System.Drawing.Size(791, 27);
+            WorkspaceToolbar.TabIndex = 1;
+            WorkspaceToolbar.Text = "toolStrip1";
             // 
             // AddBtn
             // 
-            this.AddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.AddBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddEncounter,
-            this.AddChallenge,
-            this.AddTrap,
-            this.AddQuest});
-            this.AddBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddBtn.Image")));
-            this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(56, 24);
-            this.AddBtn.Text = "Add";
-            this.AddBtn.ButtonClick += new System.EventHandler(this.AddBtn_Click);
+            AddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            AddBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { AddEncounter, AddChallenge, AddTrap, AddQuest });
+            AddBtn.Image = (System.Drawing.Image)resources.GetObject("AddBtn.Image");
+            AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            AddBtn.Name = "AddBtn";
+            AddBtn.Size = new System.Drawing.Size(56, 24);
+            AddBtn.Text = "Add";
+            AddBtn.ButtonClick += AddBtn_Click;
             // 
             // AddEncounter
             // 
-            this.AddEncounter.Name = "AddEncounter";
-            this.AddEncounter.Size = new System.Drawing.Size(198, 26);
-            this.AddEncounter.Text = "Encounter...";
-            this.AddEncounter.Click += new System.EventHandler(this.AddEncounter_Click);
+            AddEncounter.Name = "AddEncounter";
+            AddEncounter.Size = new System.Drawing.Size(198, 26);
+            AddEncounter.Text = "Encounter...";
+            AddEncounter.Click += AddEncounter_Click;
             // 
             // AddChallenge
             // 
-            this.AddChallenge.Name = "AddChallenge";
-            this.AddChallenge.Size = new System.Drawing.Size(198, 26);
-            this.AddChallenge.Text = "Skill Challenge...";
-            this.AddChallenge.Click += new System.EventHandler(this.AddChallenge_Click);
+            AddChallenge.Name = "AddChallenge";
+            AddChallenge.Size = new System.Drawing.Size(198, 26);
+            AddChallenge.Text = "Skill Challenge...";
+            AddChallenge.Click += AddChallenge_Click;
             // 
             // AddTrap
             // 
-            this.AddTrap.Name = "AddTrap";
-            this.AddTrap.Size = new System.Drawing.Size(198, 26);
-            this.AddTrap.Text = "Trap / Hazard...";
-            this.AddTrap.Click += new System.EventHandler(this.AddTrap_Click);
+            AddTrap.Name = "AddTrap";
+            AddTrap.Size = new System.Drawing.Size(198, 26);
+            AddTrap.Text = "Trap / Hazard...";
+            AddTrap.Click += AddTrap_Click;
             // 
             // AddQuest
             // 
-            this.AddQuest.Name = "AddQuest";
-            this.AddQuest.Size = new System.Drawing.Size(198, 26);
-            this.AddQuest.Text = "Quest...";
-            this.AddQuest.Click += new System.EventHandler(this.AddQuest_Click);
+            AddQuest.Name = "AddQuest";
+            AddQuest.Size = new System.Drawing.Size(198, 26);
+            AddQuest.Text = "Quest...";
+            AddQuest.Click += AddQuest_Click;
             // 
             // RemoveBtn
             // 
-            this.RemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.RemoveBtn.Image = ((System.Drawing.Image)(resources.GetObject("RemoveBtn.Image")));
-            this.RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RemoveBtn.Name = "RemoveBtn";
-            this.RemoveBtn.Size = new System.Drawing.Size(67, 24);
-            this.RemoveBtn.Text = "Remove";
-            this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
+            RemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            RemoveBtn.Image = (System.Drawing.Image)resources.GetObject("RemoveBtn.Image");
+            RemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            RemoveBtn.Name = "RemoveBtn";
+            RemoveBtn.Size = new System.Drawing.Size(67, 24);
+            RemoveBtn.Text = "Remove";
+            RemoveBtn.Click += RemoveBtn_Click;
             // 
             // toolStripSeparator3
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
             // 
             // PlotCutBtn
             // 
-            this.PlotCutBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.PlotCutBtn.Image = ((System.Drawing.Image)(resources.GetObject("PlotCutBtn.Image")));
-            this.PlotCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.PlotCutBtn.Name = "PlotCutBtn";
-            this.PlotCutBtn.Size = new System.Drawing.Size(35, 24);
-            this.PlotCutBtn.Text = "Cut";
-            this.PlotCutBtn.Click += new System.EventHandler(this.CutBtn_Click);
+            PlotCutBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            PlotCutBtn.Image = (System.Drawing.Image)resources.GetObject("PlotCutBtn.Image");
+            PlotCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            PlotCutBtn.Name = "PlotCutBtn";
+            PlotCutBtn.Size = new System.Drawing.Size(35, 24);
+            PlotCutBtn.Text = "Cut";
+            PlotCutBtn.Click += CutBtn_Click;
             // 
             // PlotCopyBtn
             // 
-            this.PlotCopyBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.PlotCopyBtn.Image = ((System.Drawing.Image)(resources.GetObject("PlotCopyBtn.Image")));
-            this.PlotCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.PlotCopyBtn.Name = "PlotCopyBtn";
-            this.PlotCopyBtn.Size = new System.Drawing.Size(47, 24);
-            this.PlotCopyBtn.Text = "Copy";
-            this.PlotCopyBtn.Click += new System.EventHandler(this.CopyBtn_Click);
+            PlotCopyBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            PlotCopyBtn.Image = (System.Drawing.Image)resources.GetObject("PlotCopyBtn.Image");
+            PlotCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            PlotCopyBtn.Name = "PlotCopyBtn";
+            PlotCopyBtn.Size = new System.Drawing.Size(47, 24);
+            PlotCopyBtn.Text = "Copy";
+            PlotCopyBtn.Click += CopyBtn_Click;
             // 
             // PlotPasteBtn
             // 
-            this.PlotPasteBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.PlotPasteBtn.Image = ((System.Drawing.Image)(resources.GetObject("PlotPasteBtn.Image")));
-            this.PlotPasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.PlotPasteBtn.Name = "PlotPasteBtn";
-            this.PlotPasteBtn.Size = new System.Drawing.Size(47, 24);
-            this.PlotPasteBtn.Text = "Paste";
-            this.PlotPasteBtn.Click += new System.EventHandler(this.PasteBtn_Click);
+            PlotPasteBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            PlotPasteBtn.Image = (System.Drawing.Image)resources.GetObject("PlotPasteBtn.Image");
+            PlotPasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            PlotPasteBtn.Name = "PlotPasteBtn";
+            PlotPasteBtn.Size = new System.Drawing.Size(47, 24);
+            PlotPasteBtn.Text = "Paste";
+            PlotPasteBtn.Click += PasteBtn_Click;
             // 
             // toolStripSeparator5
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator5.Name = "toolStripSeparator5";
+            toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
             // 
             // SearchBtn
             // 
-            this.SearchBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.SearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("SearchBtn.Image")));
-            this.SearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(57, 24);
-            this.SearchBtn.Text = "Search";
-            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            SearchBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            SearchBtn.Image = (System.Drawing.Image)resources.GetObject("SearchBtn.Image");
+            SearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            SearchBtn.Name = "SearchBtn";
+            SearchBtn.Size = new System.Drawing.Size(57, 24);
+            SearchBtn.Text = "Search";
+            SearchBtn.Click += SearchBtn_Click;
             // 
             // toolStripSeparator9
             // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator9.Name = "toolStripSeparator9";
+            toolStripSeparator9.Size = new System.Drawing.Size(6, 27);
             // 
             // ViewMenu
             // 
-            this.ViewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ViewDefault,
-            this.toolStripSeparator7,
-            this.ViewEncounters,
-            this.ViewTraps,
-            this.ViewChallenges,
-            this.ViewQuests,
-            this.ViewParcels,
-            this.toolStripSeparator8,
-            this.ViewHighlighting,
-            this.toolStripSeparator6,
-            this.ViewLinks,
-            this.ViewLevelling,
-            this.ViewTooltips,
-            this.toolStripSeparator11,
-            this.ViewNavigation,
-            this.ViewPreview});
-            this.ViewMenu.Name = "ViewMenu";
-            this.ViewMenu.Size = new System.Drawing.Size(55, 24);
-            this.ViewMenu.Text = "View";
-            this.ViewMenu.DropDownOpening += new System.EventHandler(this.ViewMenu_DropDownOpening);
+            ViewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ViewDefault, toolStripSeparator7, ViewEncounters, ViewTraps, ViewChallenges, ViewQuests, ViewParcels, toolStripSeparator8, ViewHighlighting, toolStripSeparator6, ViewLinks, ViewLevelling, ViewTooltips, toolStripSeparator11, ViewNavigation, ViewPreview });
+            ViewMenu.Name = "ViewMenu";
+            ViewMenu.Size = new System.Drawing.Size(55, 24);
+            ViewMenu.Text = "View";
+            ViewMenu.DropDownOpening += ViewMenu_DropDownOpening;
             // 
             // ViewDefault
             // 
-            this.ViewDefault.Name = "ViewDefault";
-            this.ViewDefault.Size = new System.Drawing.Size(236, 26);
-            this.ViewDefault.Text = "Default View";
-            this.ViewDefault.Click += new System.EventHandler(this.ViewDefault_Click);
+            ViewDefault.Name = "ViewDefault";
+            ViewDefault.Size = new System.Drawing.Size(236, 26);
+            ViewDefault.Text = "Default View";
+            ViewDefault.Click += ViewDefault_Click;
             // 
             // toolStripSeparator7
             // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(233, 6);
+            toolStripSeparator7.Name = "toolStripSeparator7";
+            toolStripSeparator7.Size = new System.Drawing.Size(233, 6);
             // 
             // ViewEncounters
             // 
-            this.ViewEncounters.Name = "ViewEncounters";
-            this.ViewEncounters.Size = new System.Drawing.Size(236, 26);
-            this.ViewEncounters.Text = "Show Encounters";
-            this.ViewEncounters.Click += new System.EventHandler(this.ViewEncounters_Click);
+            ViewEncounters.Name = "ViewEncounters";
+            ViewEncounters.Size = new System.Drawing.Size(236, 26);
+            ViewEncounters.Text = "Show Encounters";
+            ViewEncounters.Click += ViewEncounters_Click;
             // 
             // ViewTraps
             // 
-            this.ViewTraps.Name = "ViewTraps";
-            this.ViewTraps.Size = new System.Drawing.Size(236, 26);
-            this.ViewTraps.Text = "Show Traps / Hazards";
-            this.ViewTraps.Click += new System.EventHandler(this.ViewTraps_Click);
+            ViewTraps.Name = "ViewTraps";
+            ViewTraps.Size = new System.Drawing.Size(236, 26);
+            ViewTraps.Text = "Show Traps / Hazards";
+            ViewTraps.Click += ViewTraps_Click;
             // 
             // ViewChallenges
             // 
-            this.ViewChallenges.Name = "ViewChallenges";
-            this.ViewChallenges.Size = new System.Drawing.Size(236, 26);
-            this.ViewChallenges.Text = "Show Skill Challenges";
-            this.ViewChallenges.Click += new System.EventHandler(this.ViewChallenges_Click);
+            ViewChallenges.Name = "ViewChallenges";
+            ViewChallenges.Size = new System.Drawing.Size(236, 26);
+            ViewChallenges.Text = "Show Skill Challenges";
+            ViewChallenges.Click += ViewChallenges_Click;
             // 
             // ViewQuests
             // 
-            this.ViewQuests.Name = "ViewQuests";
-            this.ViewQuests.Size = new System.Drawing.Size(236, 26);
-            this.ViewQuests.Text = "Show Quests";
-            this.ViewQuests.Click += new System.EventHandler(this.ViewQuests_Click);
+            ViewQuests.Name = "ViewQuests";
+            ViewQuests.Size = new System.Drawing.Size(236, 26);
+            ViewQuests.Text = "Show Quests";
+            ViewQuests.Click += ViewQuests_Click;
             // 
             // ViewParcels
             // 
-            this.ViewParcels.Name = "ViewParcels";
-            this.ViewParcels.Size = new System.Drawing.Size(236, 26);
-            this.ViewParcels.Text = "Show Treasure Parcels";
-            this.ViewParcels.Click += new System.EventHandler(this.ViewParcels_Click);
+            ViewParcels.Name = "ViewParcels";
+            ViewParcels.Size = new System.Drawing.Size(236, 26);
+            ViewParcels.Text = "Show Treasure Parcels";
+            ViewParcels.Click += ViewParcels_Click;
             // 
             // toolStripSeparator8
             // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(233, 6);
+            toolStripSeparator8.Name = "toolStripSeparator8";
+            toolStripSeparator8.Size = new System.Drawing.Size(233, 6);
             // 
             // ViewHighlighting
             // 
-            this.ViewHighlighting.Name = "ViewHighlighting";
-            this.ViewHighlighting.Size = new System.Drawing.Size(236, 26);
-            this.ViewHighlighting.Text = "Highlighting";
-            this.ViewHighlighting.Click += new System.EventHandler(this.ViewHighlighting_Click);
+            ViewHighlighting.Name = "ViewHighlighting";
+            ViewHighlighting.Size = new System.Drawing.Size(236, 26);
+            ViewHighlighting.Text = "Highlighting";
+            ViewHighlighting.Click += ViewHighlighting_Click;
             // 
             // toolStripSeparator6
             // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(233, 6);
+            toolStripSeparator6.Name = "toolStripSeparator6";
+            toolStripSeparator6.Size = new System.Drawing.Size(233, 6);
             // 
             // ViewLinks
             // 
-            this.ViewLinks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ViewLinksCurved,
-            this.ViewLinksAngled,
-            this.ViewLinksStraight});
-            this.ViewLinks.Name = "ViewLinks";
-            this.ViewLinks.Size = new System.Drawing.Size(236, 26);
-            this.ViewLinks.Text = "Show Links";
-            this.ViewLinks.DropDownOpening += new System.EventHandler(this.ViewLinks_DropDownOpening);
+            ViewLinks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ViewLinksCurved, ViewLinksAngled, ViewLinksStraight });
+            ViewLinks.Name = "ViewLinks";
+            ViewLinks.Size = new System.Drawing.Size(236, 26);
+            ViewLinks.Text = "Show Links";
+            ViewLinks.DropDownOpening += ViewLinks_DropDownOpening;
             // 
             // ViewLinksCurved
             // 
-            this.ViewLinksCurved.Name = "ViewLinksCurved";
-            this.ViewLinksCurved.Size = new System.Drawing.Size(144, 26);
-            this.ViewLinksCurved.Text = "Curved";
-            this.ViewLinksCurved.Click += new System.EventHandler(this.ViewLinksCurved_Click);
+            ViewLinksCurved.Name = "ViewLinksCurved";
+            ViewLinksCurved.Size = new System.Drawing.Size(144, 26);
+            ViewLinksCurved.Text = "Curved";
+            ViewLinksCurved.Click += ViewLinksCurved_Click;
             // 
             // ViewLinksAngled
             // 
-            this.ViewLinksAngled.Name = "ViewLinksAngled";
-            this.ViewLinksAngled.Size = new System.Drawing.Size(144, 26);
-            this.ViewLinksAngled.Text = "Angled";
-            this.ViewLinksAngled.Click += new System.EventHandler(this.ViewLinksAngled_Click);
+            ViewLinksAngled.Name = "ViewLinksAngled";
+            ViewLinksAngled.Size = new System.Drawing.Size(144, 26);
+            ViewLinksAngled.Text = "Angled";
+            ViewLinksAngled.Click += ViewLinksAngled_Click;
             // 
             // ViewLinksStraight
             // 
-            this.ViewLinksStraight.Name = "ViewLinksStraight";
-            this.ViewLinksStraight.Size = new System.Drawing.Size(144, 26);
-            this.ViewLinksStraight.Text = "Straight";
-            this.ViewLinksStraight.Click += new System.EventHandler(this.ViewLinksStraight_Click);
+            ViewLinksStraight.Name = "ViewLinksStraight";
+            ViewLinksStraight.Size = new System.Drawing.Size(144, 26);
+            ViewLinksStraight.Text = "Straight";
+            ViewLinksStraight.Click += ViewLinksStraight_Click;
             // 
             // ViewLevelling
             // 
-            this.ViewLevelling.Name = "ViewLevelling";
-            this.ViewLevelling.Size = new System.Drawing.Size(236, 26);
-            this.ViewLevelling.Text = "Show Levelling";
-            this.ViewLevelling.Click += new System.EventHandler(this.ViewLevelling_Click);
+            ViewLevelling.Name = "ViewLevelling";
+            ViewLevelling.Size = new System.Drawing.Size(236, 26);
+            ViewLevelling.Text = "Show Levelling";
+            ViewLevelling.Click += ViewLevelling_Click;
             // 
             // ViewTooltips
             // 
-            this.ViewTooltips.Name = "ViewTooltips";
-            this.ViewTooltips.Size = new System.Drawing.Size(236, 26);
-            this.ViewTooltips.Text = "Show Tooltips";
-            this.ViewTooltips.Click += new System.EventHandler(this.ViewTooltips_Click);
+            ViewTooltips.Name = "ViewTooltips";
+            ViewTooltips.Size = new System.Drawing.Size(236, 26);
+            ViewTooltips.Text = "Show Tooltips";
+            ViewTooltips.Click += ViewTooltips_Click;
             // 
             // toolStripSeparator11
             // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(233, 6);
+            toolStripSeparator11.Name = "toolStripSeparator11";
+            toolStripSeparator11.Size = new System.Drawing.Size(233, 6);
             // 
             // ViewNavigation
             // 
-            this.ViewNavigation.Name = "ViewNavigation";
-            this.ViewNavigation.Size = new System.Drawing.Size(236, 26);
-            this.ViewNavigation.Text = "Show Navigation";
-            this.ViewNavigation.Click += new System.EventHandler(this.ViewNavigation_Click);
+            ViewNavigation.Name = "ViewNavigation";
+            ViewNavigation.Size = new System.Drawing.Size(236, 26);
+            ViewNavigation.Text = "Show Navigation";
+            ViewNavigation.Click += ViewNavigation_Click;
             // 
             // ViewPreview
             // 
-            this.ViewPreview.Name = "ViewPreview";
-            this.ViewPreview.Size = new System.Drawing.Size(236, 26);
-            this.ViewPreview.Text = "Show Preview";
-            this.ViewPreview.Click += new System.EventHandler(this.ViewPreview_Click);
+            ViewPreview.Name = "ViewPreview";
+            ViewPreview.Size = new System.Drawing.Size(236, 26);
+            ViewPreview.Text = "Show Preview";
+            ViewPreview.Click += ViewPreview_Click;
             // 
             // FlowchartMenu
             // 
-            this.FlowchartMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.FlowchartMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FlowchartPrint,
-            this.FlowchartExport,
-            this.toolStripSeparator27,
-            this.FlowchartAllXP});
-            this.FlowchartMenu.Image = ((System.Drawing.Image)(resources.GetObject("FlowchartMenu.Image")));
-            this.FlowchartMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.FlowchartMenu.Name = "FlowchartMenu";
-            this.FlowchartMenu.Size = new System.Drawing.Size(87, 24);
-            this.FlowchartMenu.Text = "Flowchart";
+            FlowchartMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            FlowchartMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { FlowchartPrint, FlowchartExport, toolStripSeparator27, FlowchartAllXP });
+            FlowchartMenu.Image = (System.Drawing.Image)resources.GetObject("FlowchartMenu.Image");
+            FlowchartMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            FlowchartMenu.Name = "FlowchartMenu";
+            FlowchartMenu.Size = new System.Drawing.Size(87, 24);
+            FlowchartMenu.Text = "Flowchart";
             // 
             // FlowchartPrint
             // 
-            this.FlowchartPrint.Name = "FlowchartPrint";
-            this.FlowchartPrint.Size = new System.Drawing.Size(245, 26);
-            this.FlowchartPrint.Text = "Print...";
-            this.FlowchartPrint.Click += new System.EventHandler(this.FlowchartPrint_Click);
+            FlowchartPrint.Name = "FlowchartPrint";
+            FlowchartPrint.Size = new System.Drawing.Size(245, 26);
+            FlowchartPrint.Text = "Print...";
+            FlowchartPrint.Click += FlowchartPrint_Click;
             // 
             // FlowchartExport
             // 
-            this.FlowchartExport.Name = "FlowchartExport";
-            this.FlowchartExport.Size = new System.Drawing.Size(245, 26);
-            this.FlowchartExport.Text = "Export...";
-            this.FlowchartExport.Click += new System.EventHandler(this.FlowchartExport_Click);
+            FlowchartExport.Name = "FlowchartExport";
+            FlowchartExport.Size = new System.Drawing.Size(245, 26);
+            FlowchartExport.Text = "Export...";
+            FlowchartExport.Click += FlowchartExport_Click;
             // 
             // toolStripSeparator27
             // 
-            this.toolStripSeparator27.Name = "toolStripSeparator27";
-            this.toolStripSeparator27.Size = new System.Drawing.Size(242, 6);
+            toolStripSeparator27.Name = "toolStripSeparator27";
+            toolStripSeparator27.Size = new System.Drawing.Size(242, 6);
             // 
             // FlowchartAllXP
             // 
-            this.FlowchartAllXP.Name = "FlowchartAllXP";
-            this.FlowchartAllXP.Size = new System.Drawing.Size(245, 26);
-            this.FlowchartAllXP.Text = "Maximum Available XP";
-            this.FlowchartAllXP.Click += new System.EventHandler(this.FlowchartAllXP_Click);
+            FlowchartAllXP.Name = "FlowchartAllXP";
+            FlowchartAllXP.Size = new System.Drawing.Size(245, 26);
+            FlowchartAllXP.Text = "Maximum Available XP";
+            FlowchartAllXP.Click += FlowchartAllXP_Click;
             // 
             // AdvancedBtn
             // 
-            this.AdvancedBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.AdvancedBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.PlotAdvancedIssues,
-            this.PlotAdvancedDifficulty});
-            this.AdvancedBtn.Image = ((System.Drawing.Image)(resources.GetObject("AdvancedBtn.Image")));
-            this.AdvancedBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AdvancedBtn.Name = "AdvancedBtn";
-            this.AdvancedBtn.Size = new System.Drawing.Size(89, 24);
-            this.AdvancedBtn.Text = "Advanced";
+            AdvancedBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            AdvancedBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { PlotAdvancedIssues, PlotAdvancedDifficulty });
+            AdvancedBtn.Image = (System.Drawing.Image)resources.GetObject("AdvancedBtn.Image");
+            AdvancedBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            AdvancedBtn.Name = "AdvancedBtn";
+            AdvancedBtn.Size = new System.Drawing.Size(89, 24);
+            AdvancedBtn.Text = "Advanced";
             // 
             // PlotAdvancedIssues
             // 
-            this.PlotAdvancedIssues.Name = "PlotAdvancedIssues";
-            this.PlotAdvancedIssues.Size = new System.Drawing.Size(210, 26);
-            this.PlotAdvancedIssues.Text = "Plot Design Issues";
-            this.PlotAdvancedIssues.Click += new System.EventHandler(this.PlotAdvancedIssues_Click);
+            PlotAdvancedIssues.Name = "PlotAdvancedIssues";
+            PlotAdvancedIssues.Size = new System.Drawing.Size(210, 26);
+            PlotAdvancedIssues.Text = "Plot Design Issues";
+            PlotAdvancedIssues.Click += PlotAdvancedIssues_Click;
             // 
             // PlotAdvancedDifficulty
             // 
-            this.PlotAdvancedDifficulty.Name = "PlotAdvancedDifficulty";
-            this.PlotAdvancedDifficulty.Size = new System.Drawing.Size(210, 26);
-            this.PlotAdvancedDifficulty.Text = "Adjust Difficulty...";
-            this.PlotAdvancedDifficulty.Click += new System.EventHandler(this.PlotAdvancedDifficulty_Click);
+            PlotAdvancedDifficulty.Name = "PlotAdvancedDifficulty";
+            PlotAdvancedDifficulty.Size = new System.Drawing.Size(210, 26);
+            PlotAdvancedDifficulty.Text = "Adjust Difficulty...";
+            PlotAdvancedDifficulty.Click += PlotAdvancedDifficulty_Click;
             // 
             // PointMenu
             // 
-            this.PointMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.PointMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ContextAdd,
-            this.ContextAddBetween,
-            this.toolStripSeparator28,
-            this.ContextDisconnectAll,
-            this.ContextDisconnect,
-            this.toolStripSeparator1,
-            this.ContextMoveTo,
-            this.toolStripSeparator2,
-            this.ContextState,
-            this.toolStripSeparator20,
-            this.ContextEdit,
-            this.ContextRemove,
-            this.toolStripSeparator29,
-            this.ContextExplore});
-            this.PointMenu.Name = "PointMenu";
-            this.PointMenu.Size = new System.Drawing.Size(192, 250);
-            this.PointMenu.Opening += new System.ComponentModel.CancelEventHandler(this.PointMenu_Opening);
+            PointMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            PointMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { ContextAdd, ContextAddBetween, toolStripSeparator28, ContextDisconnectAll, ContextDisconnect, toolStripSeparator1, ContextMoveTo, toolStripSeparator2, ContextState, toolStripSeparator20, ContextEdit, ContextRemove, toolStripSeparator29, ContextExplore });
+            PointMenu.Name = "PointMenu";
+            PointMenu.Size = new System.Drawing.Size(192, 250);
+            PointMenu.Opening += PointMenu_Opening;
             // 
             // ContextAdd
             // 
-            this.ContextAdd.Name = "ContextAdd";
-            this.ContextAdd.Size = new System.Drawing.Size(191, 24);
-            this.ContextAdd.Text = "Add Point...";
-            this.ContextAdd.Click += new System.EventHandler(this.ContextAdd_Click);
+            ContextAdd.Name = "ContextAdd";
+            ContextAdd.Size = new System.Drawing.Size(191, 24);
+            ContextAdd.Text = "Add Point...";
+            ContextAdd.Click += ContextAdd_Click;
             // 
             // ContextAddBetween
             // 
-            this.ContextAddBetween.Name = "ContextAddBetween";
-            this.ContextAddBetween.Size = new System.Drawing.Size(191, 24);
-            this.ContextAddBetween.Text = "Add Point";
+            ContextAddBetween.Name = "ContextAddBetween";
+            ContextAddBetween.Size = new System.Drawing.Size(191, 24);
+            ContextAddBetween.Text = "Add Point";
             // 
             // toolStripSeparator28
             // 
-            this.toolStripSeparator28.Name = "toolStripSeparator28";
-            this.toolStripSeparator28.Size = new System.Drawing.Size(188, 6);
+            toolStripSeparator28.Name = "toolStripSeparator28";
+            toolStripSeparator28.Size = new System.Drawing.Size(188, 6);
             // 
             // ContextDisconnectAll
             // 
-            this.ContextDisconnectAll.Name = "ContextDisconnectAll";
-            this.ContextDisconnectAll.Size = new System.Drawing.Size(191, 24);
-            this.ContextDisconnectAll.Text = "Disconnect Point";
-            this.ContextDisconnectAll.Click += new System.EventHandler(this.ContextDisconnectAll_Click);
+            ContextDisconnectAll.Name = "ContextDisconnectAll";
+            ContextDisconnectAll.Size = new System.Drawing.Size(191, 24);
+            ContextDisconnectAll.Text = "Disconnect Point";
+            ContextDisconnectAll.Click += ContextDisconnectAll_Click;
             // 
             // ContextDisconnect
             // 
-            this.ContextDisconnect.Name = "ContextDisconnect";
-            this.ContextDisconnect.Size = new System.Drawing.Size(191, 24);
-            this.ContextDisconnect.Text = "Disconnect From";
+            ContextDisconnect.Name = "ContextDisconnect";
+            ContextDisconnect.Size = new System.Drawing.Size(191, 24);
+            ContextDisconnect.Text = "Disconnect From";
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(188, 6);
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new System.Drawing.Size(188, 6);
             // 
             // ContextMoveTo
             // 
-            this.ContextMoveTo.Name = "ContextMoveTo";
-            this.ContextMoveTo.Size = new System.Drawing.Size(191, 24);
-            this.ContextMoveTo.Text = "Move To Subplot";
+            ContextMoveTo.Name = "ContextMoveTo";
+            ContextMoveTo.Size = new System.Drawing.Size(191, 24);
+            ContextMoveTo.Text = "Move To Subplot";
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(188, 6);
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new System.Drawing.Size(188, 6);
             // 
             // ContextState
             // 
-            this.ContextState.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ContextStateNormal,
-            this.ContextStateCompleted,
-            this.ContextStateSkipped});
-            this.ContextState.Name = "ContextState";
-            this.ContextState.Size = new System.Drawing.Size(191, 24);
-            this.ContextState.Text = "State";
+            ContextState.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ContextStateNormal, ContextStateCompleted, ContextStateSkipped });
+            ContextState.Name = "ContextState";
+            ContextState.Size = new System.Drawing.Size(191, 24);
+            ContextState.Text = "State";
             // 
             // ContextStateNormal
             // 
-            this.ContextStateNormal.Name = "ContextStateNormal";
-            this.ContextStateNormal.Size = new System.Drawing.Size(166, 26);
-            this.ContextStateNormal.Text = "Normal";
-            this.ContextStateNormal.Click += new System.EventHandler(this.ContextStateNormal_Click);
+            ContextStateNormal.Name = "ContextStateNormal";
+            ContextStateNormal.Size = new System.Drawing.Size(166, 26);
+            ContextStateNormal.Text = "Normal";
+            ContextStateNormal.Click += ContextStateNormal_Click;
             // 
             // ContextStateCompleted
             // 
-            this.ContextStateCompleted.Name = "ContextStateCompleted";
-            this.ContextStateCompleted.Size = new System.Drawing.Size(166, 26);
-            this.ContextStateCompleted.Text = "Completed";
-            this.ContextStateCompleted.Click += new System.EventHandler(this.ContextStateCompleted_Click);
+            ContextStateCompleted.Name = "ContextStateCompleted";
+            ContextStateCompleted.Size = new System.Drawing.Size(166, 26);
+            ContextStateCompleted.Text = "Completed";
+            ContextStateCompleted.Click += ContextStateCompleted_Click;
             // 
             // ContextStateSkipped
             // 
-            this.ContextStateSkipped.Name = "ContextStateSkipped";
-            this.ContextStateSkipped.Size = new System.Drawing.Size(166, 26);
-            this.ContextStateSkipped.Text = "Skipped";
-            this.ContextStateSkipped.Click += new System.EventHandler(this.ContextStateSkipped_Click);
+            ContextStateSkipped.Name = "ContextStateSkipped";
+            ContextStateSkipped.Size = new System.Drawing.Size(166, 26);
+            ContextStateSkipped.Text = "Skipped";
+            ContextStateSkipped.Click += ContextStateSkipped_Click;
             // 
             // toolStripSeparator20
             // 
-            this.toolStripSeparator20.Name = "toolStripSeparator20";
-            this.toolStripSeparator20.Size = new System.Drawing.Size(188, 6);
+            toolStripSeparator20.Name = "toolStripSeparator20";
+            toolStripSeparator20.Size = new System.Drawing.Size(188, 6);
             // 
             // ContextEdit
             // 
-            this.ContextEdit.Name = "ContextEdit";
-            this.ContextEdit.Size = new System.Drawing.Size(191, 24);
-            this.ContextEdit.Text = "Edit";
-            this.ContextEdit.Click += new System.EventHandler(this.EditBtn_Click);
+            ContextEdit.Name = "ContextEdit";
+            ContextEdit.Size = new System.Drawing.Size(191, 24);
+            ContextEdit.Text = "Edit";
+            ContextEdit.Click += EditBtn_Click;
             // 
             // ContextRemove
             // 
-            this.ContextRemove.Name = "ContextRemove";
-            this.ContextRemove.Size = new System.Drawing.Size(191, 24);
-            this.ContextRemove.Text = "Remove";
-            this.ContextRemove.Click += new System.EventHandler(this.RemoveBtn_Click);
+            ContextRemove.Name = "ContextRemove";
+            ContextRemove.Size = new System.Drawing.Size(191, 24);
+            ContextRemove.Text = "Remove";
+            ContextRemove.Click += RemoveBtn_Click;
             // 
             // toolStripSeparator29
             // 
-            this.toolStripSeparator29.Name = "toolStripSeparator29";
-            this.toolStripSeparator29.Size = new System.Drawing.Size(188, 6);
+            toolStripSeparator29.Name = "toolStripSeparator29";
+            toolStripSeparator29.Size = new System.Drawing.Size(188, 6);
             // 
             // ContextExplore
             // 
-            this.ContextExplore.Name = "ContextExplore";
-            this.ContextExplore.Size = new System.Drawing.Size(191, 24);
-            this.ContextExplore.Text = "Explore Subplot";
-            this.ContextExplore.Click += new System.EventHandler(this.ExploreBtn_Click);
+            ContextExplore.Name = "ContextExplore";
+            ContextExplore.Size = new System.Drawing.Size(191, 24);
+            ContextExplore.Text = "Explore Subplot";
+            ContextExplore.Click += ExploreBtn_Click;
             // 
             // MainMenu
             // 
-            this.MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FileMenu,
-            this.ProjectMenu,
-            this.PlayerViewMenu,
-            this.ToolsMenu,
-            this.HelpMenu});
-            this.MainMenu.Location = new System.Drawing.Point(0, 0);
-            this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(1152, 30);
-            this.MainMenu.TabIndex = 4;
-            this.MainMenu.Text = "menuStrip1";
+            MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { FileMenu, ProjectMenu, PlayerViewMenu, ToolsMenu, HelpMenu });
+            MainMenu.Location = new System.Drawing.Point(0, 0);
+            MainMenu.Name = "MainMenu";
+            MainMenu.Size = new System.Drawing.Size(1152, 28);
+            MainMenu.TabIndex = 4;
+            MainMenu.Text = "menuStrip1";
             // 
             // FileMenu
             // 
-            this.FileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FileNew,
-            this.toolStripMenuItem1,
-            this.FileOpen,
-            this.toolStripMenuItem2,
-            this.FileSave,
-            this.FileSaveAs,
-            this.toolStripMenuItem3,
-            this.FileAdvanced,
-            this.toolStripSeparator42,
-            this.FileExit});
-            this.FileMenu.Name = "FileMenu";
-            this.FileMenu.Size = new System.Drawing.Size(46, 26);
-            this.FileMenu.Text = "File";
-            this.FileMenu.DropDownOpening += new System.EventHandler(this.FileMenu_DropDownOpening);
+            FileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { FileNew, toolStripMenuItem1, FileOpen, toolStripMenuItem2, FileSave, FileSaveAs, toolStripMenuItem3, FileAdvanced, toolStripSeparator42, FileExit });
+            FileMenu.Name = "FileMenu";
+            FileMenu.Size = new System.Drawing.Size(46, 24);
+            FileMenu.Text = "File";
+            FileMenu.DropDownOpening += FileMenu_DropDownOpening;
             // 
             // FileNew
             // 
-            this.FileNew.Name = "FileNew";
-            this.FileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.FileNew.Size = new System.Drawing.Size(240, 26);
-            this.FileNew.Text = "New Project...";
-            this.FileNew.Click += new System.EventHandler(this.FileNew_Click);
+            FileNew.Name = "FileNew";
+            FileNew.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N;
+            FileNew.Size = new System.Drawing.Size(240, 26);
+            FileNew.Text = "New Project...";
+            FileNew.Click += FileNew_Click;
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(237, 6);
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new System.Drawing.Size(237, 6);
             // 
             // FileOpen
             // 
-            this.FileOpen.Name = "FileOpen";
-            this.FileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.FileOpen.Size = new System.Drawing.Size(240, 26);
-            this.FileOpen.Text = "Open Project...";
-            this.FileOpen.Click += new System.EventHandler(this.FileOpen_Click);
+            FileOpen.Name = "FileOpen";
+            FileOpen.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O;
+            FileOpen.Size = new System.Drawing.Size(240, 26);
+            FileOpen.Text = "Open Project...";
+            FileOpen.Click += FileOpen_Click;
             // 
             // toolStripMenuItem2
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(237, 6);
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new System.Drawing.Size(237, 6);
             // 
             // FileSave
             // 
-            this.FileSave.Name = "FileSave";
-            this.FileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.FileSave.Size = new System.Drawing.Size(240, 26);
-            this.FileSave.Text = "Save Project";
-            this.FileSave.Click += new System.EventHandler(this.FileSave_Click);
+            FileSave.Name = "FileSave";
+            FileSave.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S;
+            FileSave.Size = new System.Drawing.Size(240, 26);
+            FileSave.Text = "Save Project";
+            FileSave.Click += FileSave_Click;
             // 
             // FileSaveAs
             // 
-            this.FileSaveAs.Name = "FileSaveAs";
-            this.FileSaveAs.Size = new System.Drawing.Size(240, 26);
-            this.FileSaveAs.Text = "Save Project As...";
-            this.FileSaveAs.Click += new System.EventHandler(this.FileSaveAs_Click);
+            FileSaveAs.Name = "FileSaveAs";
+            FileSaveAs.Size = new System.Drawing.Size(240, 26);
+            FileSaveAs.Text = "Save Project As...";
+            FileSaveAs.Click += FileSaveAs_Click;
             // 
             // toolStripMenuItem3
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(237, 6);
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new System.Drawing.Size(237, 6);
             // 
             // FileAdvanced
             // 
-            this.FileAdvanced.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AdvancedDelve});
-            this.FileAdvanced.Name = "FileAdvanced";
-            this.FileAdvanced.Size = new System.Drawing.Size(240, 26);
-            this.FileAdvanced.Text = "Advanced";
+            FileAdvanced.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { AdvancedDelve });
+            FileAdvanced.Name = "FileAdvanced";
+            FileAdvanced.Size = new System.Drawing.Size(240, 26);
+            FileAdvanced.Text = "Advanced";
             // 
             // AdvancedDelve
             // 
-            this.AdvancedDelve.Name = "AdvancedDelve";
-            this.AdvancedDelve.Size = new System.Drawing.Size(263, 26);
-            this.AdvancedDelve.Text = "Create a Dungeon Delve...";
-            this.AdvancedDelve.Click += new System.EventHandler(this.AdvancedDelve_Click);
+            AdvancedDelve.Name = "AdvancedDelve";
+            AdvancedDelve.Size = new System.Drawing.Size(263, 26);
+            AdvancedDelve.Text = "Create a Dungeon Delve...";
+            AdvancedDelve.Click += AdvancedDelve_Click;
             // 
             // toolStripSeparator42
             // 
-            this.toolStripSeparator42.Name = "toolStripSeparator42";
-            this.toolStripSeparator42.Size = new System.Drawing.Size(237, 6);
+            toolStripSeparator42.Name = "toolStripSeparator42";
+            toolStripSeparator42.Size = new System.Drawing.Size(237, 6);
             // 
             // FileExit
             // 
-            this.FileExit.Name = "FileExit";
-            this.FileExit.Size = new System.Drawing.Size(240, 26);
-            this.FileExit.Text = "Exit";
-            this.FileExit.Click += new System.EventHandler(this.FileExit_Click);
+            FileExit.Name = "FileExit";
+            FileExit.Size = new System.Drawing.Size(240, 26);
+            FileExit.Text = "Exit";
+            FileExit.Click += FileExit_Click;
             // 
             // ProjectMenu
             // 
-            this.ProjectMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ProjectProject,
-            this.ProjectOverview,
-            this.ProjectChecklist,
-            this.ProjectCampaignSettings,
-            this.toolStripSeparator30,
-            this.ProjectPassword,
-            this.toolStripSeparator10,
-            this.ProjectTacticalMaps,
-            this.ProjectRegionalMaps,
-            this.toolStripSeparator4,
-            this.ProjectPlayers,
-            this.ProjectParcels,
-            this.ProjectDecks,
-            this.ProjectCustomCreatures,
-            this.ProjectCalendars,
-            this.toolStripSeparator37,
-            this.ProjectEncounters});
-            this.ProjectMenu.Name = "ProjectMenu";
-            this.ProjectMenu.Size = new System.Drawing.Size(69, 26);
-            this.ProjectMenu.Text = "Project";
-            this.ProjectMenu.DropDownOpening += new System.EventHandler(this.ProjectMenu_DropDownOpening);
+            ProjectMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ProjectProject, ProjectOverview, ProjectChecklist, ProjectCampaignSettings, toolStripSeparator30, ProjectPassword, toolStripSeparator10, ProjectTacticalMaps, ProjectRegionalMaps, toolStripSeparator4, ProjectPlayers, ProjectParcels, ProjectDecks, ProjectCustomCreatures, ProjectCalendars, toolStripSeparator37, ProjectEncounters });
+            ProjectMenu.Name = "ProjectMenu";
+            ProjectMenu.Size = new System.Drawing.Size(69, 24);
+            ProjectMenu.Text = "Project";
+            ProjectMenu.DropDownOpening += ProjectMenu_DropDownOpening;
             // 
             // ProjectProject
             // 
-            this.ProjectProject.Name = "ProjectProject";
-            this.ProjectProject.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.ProjectProject.Size = new System.Drawing.Size(299, 26);
-            this.ProjectProject.Text = "Project Properties";
-            this.ProjectProject.Click += new System.EventHandler(this.ProjectProject_Click);
+            ProjectProject.Name = "ProjectProject";
+            ProjectProject.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P;
+            ProjectProject.Size = new System.Drawing.Size(299, 26);
+            ProjectProject.Text = "Project Properties";
+            ProjectProject.Click += ProjectProject_Click;
             // 
             // ProjectOverview
             // 
-            this.ProjectOverview.Name = "ProjectOverview";
-            this.ProjectOverview.Size = new System.Drawing.Size(299, 26);
-            this.ProjectOverview.Text = "Project Overview";
-            this.ProjectOverview.Click += new System.EventHandler(this.ProjectOverview_Click);
+            ProjectOverview.Name = "ProjectOverview";
+            ProjectOverview.Size = new System.Drawing.Size(299, 26);
+            ProjectOverview.Text = "Project Overview";
+            ProjectOverview.Click += ProjectOverview_Click;
             // 
             // ProjectChecklist
             // 
-            this.ProjectChecklist.Name = "ProjectChecklist";
-            this.ProjectChecklist.Size = new System.Drawing.Size(299, 26);
-            this.ProjectChecklist.Text = "Project Checklist";
-            this.ProjectChecklist.Click += new System.EventHandler(this.ProjectChecklist_Click);
+            ProjectChecklist.Name = "ProjectChecklist";
+            ProjectChecklist.Size = new System.Drawing.Size(299, 26);
+            ProjectChecklist.Text = "Project Checklist";
+            ProjectChecklist.Click += ProjectChecklist_Click;
             // 
             // ProjectCampaignSettings
             // 
-            this.ProjectCampaignSettings.Name = "ProjectCampaignSettings";
-            this.ProjectCampaignSettings.Size = new System.Drawing.Size(299, 26);
-            this.ProjectCampaignSettings.Text = "Campaign Settings";
-            this.ProjectCampaignSettings.Click += new System.EventHandler(this.ProjectCampaignSettings_Click);
+            ProjectCampaignSettings.Name = "ProjectCampaignSettings";
+            ProjectCampaignSettings.Size = new System.Drawing.Size(299, 26);
+            ProjectCampaignSettings.Text = "Campaign Settings";
+            ProjectCampaignSettings.Click += ProjectCampaignSettings_Click;
             // 
             // toolStripSeparator30
             // 
-            this.toolStripSeparator30.Name = "toolStripSeparator30";
-            this.toolStripSeparator30.Size = new System.Drawing.Size(296, 6);
+            toolStripSeparator30.Name = "toolStripSeparator30";
+            toolStripSeparator30.Size = new System.Drawing.Size(296, 6);
             // 
             // ProjectPassword
             // 
-            this.ProjectPassword.Name = "ProjectPassword";
-            this.ProjectPassword.Size = new System.Drawing.Size(299, 26);
-            this.ProjectPassword.Text = "Password Protection";
-            this.ProjectPassword.Click += new System.EventHandler(this.ProjectPassword_Click);
+            ProjectPassword.Name = "ProjectPassword";
+            ProjectPassword.Size = new System.Drawing.Size(299, 26);
+            ProjectPassword.Text = "Password Protection";
+            ProjectPassword.Click += ProjectPassword_Click;
             // 
             // toolStripSeparator10
             // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(296, 6);
+            toolStripSeparator10.Name = "toolStripSeparator10";
+            toolStripSeparator10.Size = new System.Drawing.Size(296, 6);
             // 
             // ProjectTacticalMaps
             // 
-            this.ProjectTacticalMaps.Name = "ProjectTacticalMaps";
-            this.ProjectTacticalMaps.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.ProjectTacticalMaps.Size = new System.Drawing.Size(299, 26);
-            this.ProjectTacticalMaps.Text = "Tactical Maps";
-            this.ProjectTacticalMaps.Click += new System.EventHandler(this.ProjectTacticalMaps_Click);
+            ProjectTacticalMaps.Name = "ProjectTacticalMaps";
+            ProjectTacticalMaps.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            ProjectTacticalMaps.Size = new System.Drawing.Size(299, 26);
+            ProjectTacticalMaps.Text = "Tactical Maps";
+            ProjectTacticalMaps.Click += ProjectTacticalMaps_Click;
             // 
             // ProjectRegionalMaps
             // 
-            this.ProjectRegionalMaps.Name = "ProjectRegionalMaps";
-            this.ProjectRegionalMaps.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.ProjectRegionalMaps.Size = new System.Drawing.Size(299, 26);
-            this.ProjectRegionalMaps.Text = "Regional Maps";
-            this.ProjectRegionalMaps.Click += new System.EventHandler(this.ProjectRegionalMaps_Click);
+            ProjectRegionalMaps.Name = "ProjectRegionalMaps";
+            ProjectRegionalMaps.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            ProjectRegionalMaps.Size = new System.Drawing.Size(299, 26);
+            ProjectRegionalMaps.Text = "Regional Maps";
+            ProjectRegionalMaps.Click += ProjectRegionalMaps_Click;
             // 
             // toolStripSeparator4
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(296, 6);
+            toolStripSeparator4.Name = "toolStripSeparator4";
+            toolStripSeparator4.Size = new System.Drawing.Size(296, 6);
             // 
             // ProjectPlayers
             // 
-            this.ProjectPlayers.Name = "ProjectPlayers";
-            this.ProjectPlayers.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.ProjectPlayers.Size = new System.Drawing.Size(299, 26);
-            this.ProjectPlayers.Text = "Player Characters";
-            this.ProjectPlayers.Click += new System.EventHandler(this.ProjectPlayers_Click);
+            ProjectPlayers.Name = "ProjectPlayers";
+            ProjectPlayers.ShortcutKeys = System.Windows.Forms.Keys.F4;
+            ProjectPlayers.Size = new System.Drawing.Size(299, 26);
+            ProjectPlayers.Text = "Player Characters";
+            ProjectPlayers.Click += ProjectPlayers_Click;
             // 
             // ProjectParcels
             // 
-            this.ProjectParcels.Name = "ProjectParcels";
-            this.ProjectParcels.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.ProjectParcels.Size = new System.Drawing.Size(299, 26);
-            this.ProjectParcels.Text = "Treasure Parcels";
-            this.ProjectParcels.Click += new System.EventHandler(this.ProjectParcels_Click);
+            ProjectParcels.Name = "ProjectParcels";
+            ProjectParcels.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            ProjectParcels.Size = new System.Drawing.Size(299, 26);
+            ProjectParcels.Text = "Treasure Parcels";
+            ProjectParcels.Click += ProjectParcels_Click;
             // 
             // ProjectDecks
             // 
-            this.ProjectDecks.Name = "ProjectDecks";
-            this.ProjectDecks.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.ProjectDecks.Size = new System.Drawing.Size(299, 26);
-            this.ProjectDecks.Text = "Encounter Decks";
-            this.ProjectDecks.Click += new System.EventHandler(this.ProjectDecks_Click);
+            ProjectDecks.Name = "ProjectDecks";
+            ProjectDecks.ShortcutKeys = System.Windows.Forms.Keys.F6;
+            ProjectDecks.Size = new System.Drawing.Size(299, 26);
+            ProjectDecks.Text = "Encounter Decks";
+            ProjectDecks.Click += ProjectDecks_Click;
             // 
             // ProjectCustomCreatures
             // 
-            this.ProjectCustomCreatures.Name = "ProjectCustomCreatures";
-            this.ProjectCustomCreatures.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.ProjectCustomCreatures.Size = new System.Drawing.Size(299, 26);
-            this.ProjectCustomCreatures.Text = "Custom Creatures and NPCs";
-            this.ProjectCustomCreatures.Click += new System.EventHandler(this.ProjectCustomCreatures_Click);
+            ProjectCustomCreatures.Name = "ProjectCustomCreatures";
+            ProjectCustomCreatures.ShortcutKeys = System.Windows.Forms.Keys.F7;
+            ProjectCustomCreatures.Size = new System.Drawing.Size(299, 26);
+            ProjectCustomCreatures.Text = "Custom Creatures and NPCs";
+            ProjectCustomCreatures.Click += ProjectCustomCreatures_Click;
             // 
             // ProjectCalendars
             // 
-            this.ProjectCalendars.Name = "ProjectCalendars";
-            this.ProjectCalendars.ShortcutKeys = System.Windows.Forms.Keys.F8;
-            this.ProjectCalendars.Size = new System.Drawing.Size(299, 26);
-            this.ProjectCalendars.Text = "Calendars";
-            this.ProjectCalendars.Click += new System.EventHandler(this.ProjectCalendars_Click);
+            ProjectCalendars.Name = "ProjectCalendars";
+            ProjectCalendars.ShortcutKeys = System.Windows.Forms.Keys.F8;
+            ProjectCalendars.Size = new System.Drawing.Size(299, 26);
+            ProjectCalendars.Text = "Calendars";
+            ProjectCalendars.Click += ProjectCalendars_Click;
             // 
             // toolStripSeparator37
             // 
-            this.toolStripSeparator37.Name = "toolStripSeparator37";
-            this.toolStripSeparator37.Size = new System.Drawing.Size(296, 6);
+            toolStripSeparator37.Name = "toolStripSeparator37";
+            toolStripSeparator37.Size = new System.Drawing.Size(296, 6);
             // 
             // ProjectEncounters
             // 
-            this.ProjectEncounters.Name = "ProjectEncounters";
-            this.ProjectEncounters.Size = new System.Drawing.Size(299, 26);
-            this.ProjectEncounters.Text = "Paused Encounters";
-            this.ProjectEncounters.Click += new System.EventHandler(this.ProjectEncounters_Click);
+            ProjectEncounters.Name = "ProjectEncounters";
+            ProjectEncounters.Size = new System.Drawing.Size(299, 26);
+            ProjectEncounters.Text = "Paused Encounters";
+            ProjectEncounters.Click += ProjectEncounters_Click;
             // 
             // PlayerViewMenu
             // 
-            this.PlayerViewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.PlayerViewShow,
-            this.PlayerViewClear});
-            this.PlayerViewMenu.Name = "PlayerViewMenu";
-            this.PlayerViewMenu.Size = new System.Drawing.Size(99, 26);
-            this.PlayerViewMenu.Text = "Player View";
-            this.PlayerViewMenu.DropDownOpening += new System.EventHandler(this.PlayerViewMenu_DropDownOpening);
+            PlayerViewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { PlayerViewShow, PlayerViewClear });
+            PlayerViewMenu.Name = "PlayerViewMenu";
+            PlayerViewMenu.Size = new System.Drawing.Size(99, 24);
+            PlayerViewMenu.Text = "Player View";
+            PlayerViewMenu.DropDownOpening += PlayerViewMenu_DropDownOpening;
             // 
             // PlayerViewShow
             // 
-            this.PlayerViewShow.Name = "PlayerViewShow";
-            this.PlayerViewShow.Size = new System.Drawing.Size(128, 26);
-            this.PlayerViewShow.Text = "Show";
-            this.PlayerViewShow.Click += new System.EventHandler(this.ToolsPlayerView_Click);
+            PlayerViewShow.Name = "PlayerViewShow";
+            PlayerViewShow.Size = new System.Drawing.Size(128, 26);
+            PlayerViewShow.Text = "Show";
+            PlayerViewShow.Click += ToolsPlayerView_Click;
             // 
             // PlayerViewClear
             // 
-            this.PlayerViewClear.Name = "PlayerViewClear";
-            this.PlayerViewClear.Size = new System.Drawing.Size(128, 26);
-            this.PlayerViewClear.Text = "Clear";
-            this.PlayerViewClear.Click += new System.EventHandler(this.ToolsPlayerViewClear_Click);
+            PlayerViewClear.Name = "PlayerViewClear";
+            PlayerViewClear.Size = new System.Drawing.Size(128, 26);
+            PlayerViewClear.Text = "Clear";
+            PlayerViewClear.Click += ToolsPlayerViewClear_Click;
             // 
             // ToolsMenu
             // 
-            this.ToolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolsImportProject,
-            this.toolStripSeparator25,
-            this.ToolsExportProject,
-            this.ToolsExportHandout,
-            this.toolStripSeparator34,
-            this.ToolsIssues,
-            this.toolStripMenuItem4,
-            this.ToolsLibraries,
-            this.toolStripMenuItem5,
-            this.ToolsAddIns,
-            this.toolStripMenuItem8,
-            this.ToolsPreferences});
-            this.ToolsMenu.Name = "ToolsMenu";
-            this.ToolsMenu.Size = new System.Drawing.Size(58, 26);
-            this.ToolsMenu.Text = "Tools";
-            this.ToolsMenu.DropDownOpening += new System.EventHandler(this.ToolsMenu_DropDownOpening);
+            ToolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ToolsImportProject, toolStripSeparator25, ToolsExportProject, ToolsExportHandout, toolStripSeparator34, ToolsIssues, toolStripMenuItem4, ToolsLibraries, toolStripMenuItem5, ToolsAddIns, toolStripMenuItem8, ToolsPreferences });
+            ToolsMenu.Name = "ToolsMenu";
+            ToolsMenu.Size = new System.Drawing.Size(58, 24);
+            ToolsMenu.Text = "Tools";
+            ToolsMenu.DropDownOpening += ToolsMenu_DropDownOpening;
             // 
             // ToolsImportProject
             // 
-            this.ToolsImportProject.Name = "ToolsImportProject";
-            this.ToolsImportProject.Size = new System.Drawing.Size(210, 26);
-            this.ToolsImportProject.Text = "Import Project...";
-            this.ToolsImportProject.Click += new System.EventHandler(this.ToolsImportProject_Click);
+            ToolsImportProject.Name = "ToolsImportProject";
+            ToolsImportProject.Size = new System.Drawing.Size(224, 26);
+            ToolsImportProject.Text = "Import Project...";
+            ToolsImportProject.Click += ToolsImportProject_Click;
             // 
             // toolStripSeparator25
             // 
-            this.toolStripSeparator25.Name = "toolStripSeparator25";
-            this.toolStripSeparator25.Size = new System.Drawing.Size(207, 6);
+            toolStripSeparator25.Name = "toolStripSeparator25";
+            toolStripSeparator25.Size = new System.Drawing.Size(221, 6);
             // 
             // ToolsExportProject
             // 
-            this.ToolsExportProject.Name = "ToolsExportProject";
-            this.ToolsExportProject.Size = new System.Drawing.Size(210, 26);
-            this.ToolsExportProject.Text = "Export Project...";
-            this.ToolsExportProject.Click += new System.EventHandler(this.ToolsExportProject_Click);
+            ToolsExportProject.Name = "ToolsExportProject";
+            ToolsExportProject.Size = new System.Drawing.Size(224, 26);
+            ToolsExportProject.Text = "Export Project...";
+            ToolsExportProject.Click += ToolsExportProject_Click;
             // 
             // ToolsExportHandout
             // 
-            this.ToolsExportHandout.Name = "ToolsExportHandout";
-            this.ToolsExportHandout.Size = new System.Drawing.Size(210, 26);
-            this.ToolsExportHandout.Text = "Export Handout...";
-            this.ToolsExportHandout.Click += new System.EventHandler(this.ToolsExportHandout_Click);
+            ToolsExportHandout.Name = "ToolsExportHandout";
+            ToolsExportHandout.Size = new System.Drawing.Size(224, 26);
+            ToolsExportHandout.Text = "Export Handout...";
+            ToolsExportHandout.Click += ToolsExportHandout_Click;
             // 
             // toolStripSeparator34
             // 
-            this.toolStripSeparator34.Name = "toolStripSeparator34";
-            this.toolStripSeparator34.Size = new System.Drawing.Size(207, 6);
+            toolStripSeparator34.Name = "toolStripSeparator34";
+            toolStripSeparator34.Size = new System.Drawing.Size(221, 6);
             // 
             // ToolsIssues
             // 
-            this.ToolsIssues.Name = "ToolsIssues";
-            this.ToolsIssues.Size = new System.Drawing.Size(210, 26);
-            this.ToolsIssues.Text = "Plot Design Issues";
-            this.ToolsIssues.Click += new System.EventHandler(this.ToolsIssues_Click);
+            ToolsIssues.Name = "ToolsIssues";
+            ToolsIssues.Size = new System.Drawing.Size(224, 26);
+            ToolsIssues.Text = "Plot Design Issues";
+            ToolsIssues.Click += ToolsIssues_Click;
             // 
             // toolStripMenuItem4
             // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(207, 6);
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            toolStripMenuItem4.Size = new System.Drawing.Size(221, 6);
             // 
             // ToolsLibraries
             // 
-            this.ToolsLibraries.Name = "ToolsLibraries";
-            this.ToolsLibraries.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.ToolsLibraries.Size = new System.Drawing.Size(210, 26);
-            this.ToolsLibraries.Text = "Libraries";
-            this.ToolsLibraries.Click += new System.EventHandler(this.ToolsLibraries_Click);
+            ToolsLibraries.Name = "ToolsLibraries";
+            ToolsLibraries.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L;
+            ToolsLibraries.Size = new System.Drawing.Size(224, 26);
+            ToolsLibraries.Text = "Libraries";
+            ToolsLibraries.Click += ToolsLibraries_Click;
             // 
             // toolStripMenuItem5
             // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(207, 6);
+            toolStripMenuItem5.Name = "toolStripMenuItem5";
+            toolStripMenuItem5.Size = new System.Drawing.Size(221, 6);
             // 
             // ToolsAddIns
             // 
-            this.ToolsAddIns.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addinsToolStripMenuItem});
-            this.ToolsAddIns.Name = "ToolsAddIns";
-            this.ToolsAddIns.Size = new System.Drawing.Size(210, 26);
-            this.ToolsAddIns.Text = "Add-Ins";
+            ToolsAddIns.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { addinsToolStripMenuItem });
+            ToolsAddIns.Name = "ToolsAddIns";
+            ToolsAddIns.Size = new System.Drawing.Size(224, 26);
+            ToolsAddIns.Text = "Add-Ins";
             // 
             // addinsToolStripMenuItem
             // 
-            this.addinsToolStripMenuItem.Name = "addinsToolStripMenuItem";
-            this.addinsToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
-            this.addinsToolStripMenuItem.Text = "[add-ins]";
+            addinsToolStripMenuItem.Name = "addinsToolStripMenuItem";
+            addinsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            addinsToolStripMenuItem.Text = "[add-ins]";
             // 
             // toolStripMenuItem8
             // 
-            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(207, 6);
+            toolStripMenuItem8.Name = "toolStripMenuItem8";
+            toolStripMenuItem8.Size = new System.Drawing.Size(221, 6);
             // 
             // ToolsPreferences
             // 
-            this.ToolsPreferences.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolsPreferencesTextSize,
-            this.ToolsPreferencesPlayerView});
-            this.ToolsPreferences.Name = "ToolsPreferences";
-            this.ToolsPreferences.Size = new System.Drawing.Size(210, 26);
-            this.ToolsPreferences.Text = "Preferences";
+            ToolsPreferences.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ToolsPreferencesTextSize, ToolsPreferencesPlayerView, ToolsPreferenceEditFormat });
+            ToolsPreferences.Name = "ToolsPreferences";
+            ToolsPreferences.Size = new System.Drawing.Size(224, 26);
+            ToolsPreferences.Text = "Preferences";
             // 
             // ToolsPreferencesTextSize
             // 
-            this.ToolsPreferencesTextSize.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolsPreferencesTextSizeSmall,
-            this.ToolsPreferencesTextSizeMedium,
-            this.ToolsPreferencesTextSizeLarge,
-            this.ToolsPreferencesTextSizeExtraLarge});
-            this.ToolsPreferencesTextSize.Name = "ToolsPreferencesTextSize";
-            this.ToolsPreferencesTextSize.Size = new System.Drawing.Size(168, 26);
-            this.ToolsPreferencesTextSize.Text = "Text Size";
+            ToolsPreferencesTextSize.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ToolsPreferencesTextSizeSmall, ToolsPreferencesTextSizeMedium, ToolsPreferencesTextSizeLarge, ToolsPreferencesTextSizeExtraLarge });
+            ToolsPreferencesTextSize.Name = "ToolsPreferencesTextSize";
+            ToolsPreferencesTextSize.Size = new System.Drawing.Size(234, 26);
+            ToolsPreferencesTextSize.Text = "Text Size";
             // 
             // ToolsPreferencesTextSizeSmall
             // 
-            this.ToolsPreferencesTextSizeSmall.Name = "ToolsPreferencesTextSizeSmall";
-            this.ToolsPreferencesTextSizeSmall.Size = new System.Drawing.Size(166, 26);
-            this.ToolsPreferencesTextSizeSmall.Text = "Small";
-            this.ToolsPreferencesTextSizeSmall.Click += new System.EventHandler(this.ToolsPreferencesTextSizeSmall_Click);
+            ToolsPreferencesTextSizeSmall.Name = "ToolsPreferencesTextSizeSmall";
+            ToolsPreferencesTextSizeSmall.Size = new System.Drawing.Size(166, 26);
+            ToolsPreferencesTextSizeSmall.Text = "Small";
+            ToolsPreferencesTextSizeSmall.Click += ToolsPreferencesTextSizeSmall_Click;
             // 
             // ToolsPreferencesTextSizeMedium
             // 
-            this.ToolsPreferencesTextSizeMedium.Name = "ToolsPreferencesTextSizeMedium";
-            this.ToolsPreferencesTextSizeMedium.Size = new System.Drawing.Size(166, 26);
-            this.ToolsPreferencesTextSizeMedium.Text = "Medium";
-            this.ToolsPreferencesTextSizeMedium.Click += new System.EventHandler(this.ToolsPreferencesTextSizeMedium_Click);
+            ToolsPreferencesTextSizeMedium.Name = "ToolsPreferencesTextSizeMedium";
+            ToolsPreferencesTextSizeMedium.Size = new System.Drawing.Size(166, 26);
+            ToolsPreferencesTextSizeMedium.Text = "Medium";
+            ToolsPreferencesTextSizeMedium.Click += ToolsPreferencesTextSizeMedium_Click;
             // 
             // ToolsPreferencesTextSizeLarge
             // 
-            this.ToolsPreferencesTextSizeLarge.Name = "ToolsPreferencesTextSizeLarge";
-            this.ToolsPreferencesTextSizeLarge.Size = new System.Drawing.Size(166, 26);
-            this.ToolsPreferencesTextSizeLarge.Text = "Large";
-            this.ToolsPreferencesTextSizeLarge.Click += new System.EventHandler(this.ToolsPreferencesTextSizeLarge_Click);
+            ToolsPreferencesTextSizeLarge.Name = "ToolsPreferencesTextSizeLarge";
+            ToolsPreferencesTextSizeLarge.Size = new System.Drawing.Size(166, 26);
+            ToolsPreferencesTextSizeLarge.Text = "Large";
+            ToolsPreferencesTextSizeLarge.Click += ToolsPreferencesTextSizeLarge_Click;
             // 
             // ToolsPreferencesTextSizeExtraLarge
             // 
-            this.ToolsPreferencesTextSizeExtraLarge.Name = "ToolsPreferencesTextSizeExtraLarge";
-            this.ToolsPreferencesTextSizeExtraLarge.Size = new System.Drawing.Size(166, 26);
-            this.ToolsPreferencesTextSizeExtraLarge.Text = "Extra Large";
-            this.ToolsPreferencesTextSizeExtraLarge.Click += new System.EventHandler(this.ToolsPreferencesTextSizeExtraLarge_Click);
+            ToolsPreferencesTextSizeExtraLarge.Name = "ToolsPreferencesTextSizeExtraLarge";
+            ToolsPreferencesTextSizeExtraLarge.Size = new System.Drawing.Size(166, 26);
+            ToolsPreferencesTextSizeExtraLarge.Text = "Extra Large";
+            ToolsPreferencesTextSizeExtraLarge.Click += ToolsPreferencesTextSizeExtraLarge_Click;
             // 
             // ToolsPreferencesPlayerView
             // 
-            this.ToolsPreferencesPlayerView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolsPreferencesPlayerViewSmall,
-            this.ToolsPreferencesPlayerViewMedium,
-            this.ToolsPreferencesPlayerViewLarge,
-            this.ToolsPreferencesPlayerViewExtraLarge,
-            this.toolStripMenuItem19,
-            this.ToolsPreferencesPlayerViewOtherDisplay});
-            this.ToolsPreferencesPlayerView.Name = "ToolsPreferencesPlayerView";
-            this.ToolsPreferencesPlayerView.Size = new System.Drawing.Size(168, 26);
-            this.ToolsPreferencesPlayerView.Text = "Player View";
+            ToolsPreferencesPlayerView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ToolsPreferencesPlayerViewSmall, ToolsPreferencesPlayerViewMedium, ToolsPreferencesPlayerViewLarge, ToolsPreferencesPlayerViewExtraLarge, toolStripMenuItem19, ToolsPreferencesPlayerViewOtherDisplay });
+            ToolsPreferencesPlayerView.Name = "ToolsPreferencesPlayerView";
+            ToolsPreferencesPlayerView.Size = new System.Drawing.Size(234, 26);
+            ToolsPreferencesPlayerView.Text = "Player View";
             // 
             // ToolsPreferencesPlayerViewSmall
             // 
-            this.ToolsPreferencesPlayerViewSmall.Name = "ToolsPreferencesPlayerViewSmall";
-            this.ToolsPreferencesPlayerViewSmall.Size = new System.Drawing.Size(243, 26);
-            this.ToolsPreferencesPlayerViewSmall.Text = "Small";
-            this.ToolsPreferencesPlayerViewSmall.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewSmall_Click);
+            ToolsPreferencesPlayerViewSmall.Name = "ToolsPreferencesPlayerViewSmall";
+            ToolsPreferencesPlayerViewSmall.Size = new System.Drawing.Size(243, 26);
+            ToolsPreferencesPlayerViewSmall.Text = "Small";
+            ToolsPreferencesPlayerViewSmall.Click += ToolsPreferencesPlayerViewSmall_Click;
             // 
             // ToolsPreferencesPlayerViewMedium
             // 
-            this.ToolsPreferencesPlayerViewMedium.Name = "ToolsPreferencesPlayerViewMedium";
-            this.ToolsPreferencesPlayerViewMedium.Size = new System.Drawing.Size(243, 26);
-            this.ToolsPreferencesPlayerViewMedium.Text = "Medium";
-            this.ToolsPreferencesPlayerViewMedium.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewMedium_Click);
+            ToolsPreferencesPlayerViewMedium.Name = "ToolsPreferencesPlayerViewMedium";
+            ToolsPreferencesPlayerViewMedium.Size = new System.Drawing.Size(243, 26);
+            ToolsPreferencesPlayerViewMedium.Text = "Medium";
+            ToolsPreferencesPlayerViewMedium.Click += ToolsPreferencesPlayerViewMedium_Click;
             // 
             // ToolsPreferencesPlayerViewLarge
             // 
-            this.ToolsPreferencesPlayerViewLarge.Name = "ToolsPreferencesPlayerViewLarge";
-            this.ToolsPreferencesPlayerViewLarge.Size = new System.Drawing.Size(243, 26);
-            this.ToolsPreferencesPlayerViewLarge.Text = "Large";
-            this.ToolsPreferencesPlayerViewLarge.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewLarge_Click);
+            ToolsPreferencesPlayerViewLarge.Name = "ToolsPreferencesPlayerViewLarge";
+            ToolsPreferencesPlayerViewLarge.Size = new System.Drawing.Size(243, 26);
+            ToolsPreferencesPlayerViewLarge.Text = "Large";
+            ToolsPreferencesPlayerViewLarge.Click += ToolsPreferencesPlayerViewLarge_Click;
             // 
             // ToolsPreferencesPlayerViewExtraLarge
             // 
-            this.ToolsPreferencesPlayerViewExtraLarge.Name = "ToolsPreferencesPlayerViewExtraLarge";
-            this.ToolsPreferencesPlayerViewExtraLarge.Size = new System.Drawing.Size(243, 26);
-            this.ToolsPreferencesPlayerViewExtraLarge.Text = "Extra Large";
-            this.ToolsPreferencesPlayerViewExtraLarge.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewExtraLarge_Click);
+            ToolsPreferencesPlayerViewExtraLarge.Name = "ToolsPreferencesPlayerViewExtraLarge";
+            ToolsPreferencesPlayerViewExtraLarge.Size = new System.Drawing.Size(243, 26);
+            ToolsPreferencesPlayerViewExtraLarge.Text = "Extra Large";
+            ToolsPreferencesPlayerViewExtraLarge.Click += ToolsPreferencesPlayerViewExtraLarge_Click;
             // 
             // toolStripMenuItem19
             // 
-            this.toolStripMenuItem19.Name = "toolStripMenuItem19";
-            this.toolStripMenuItem19.Size = new System.Drawing.Size(240, 6);
+            toolStripMenuItem19.Name = "toolStripMenuItem19";
+            toolStripMenuItem19.Size = new System.Drawing.Size(240, 6);
             // 
             // ToolsPreferencesPlayerViewOtherDisplay
             // 
-            this.ToolsPreferencesPlayerViewOtherDisplay.Name = "ToolsPreferencesPlayerViewOtherDisplay";
-            this.ToolsPreferencesPlayerViewOtherDisplay.Size = new System.Drawing.Size(243, 26);
-            this.ToolsPreferencesPlayerViewOtherDisplay.Text = "Show on Other Display";
-            this.ToolsPreferencesPlayerViewOtherDisplay.Click += new System.EventHandler(this.ToolsPreferencesPlayerViewOtherDisplay_Click);
+            ToolsPreferencesPlayerViewOtherDisplay.Name = "ToolsPreferencesPlayerViewOtherDisplay";
+            ToolsPreferencesPlayerViewOtherDisplay.Size = new System.Drawing.Size(243, 26);
+            ToolsPreferencesPlayerViewOtherDisplay.Text = "Show on Other Display";
+            ToolsPreferencesPlayerViewOtherDisplay.Click += ToolsPreferencesPlayerViewOtherDisplay_Click;
+            // 
+            // ToolsPreferenceEditFormat
+            // 
+            ToolsPreferenceEditFormat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ToolsPreferenceEditFormatNarrow, ToolsPreferenceEditFormatFull });
+            ToolsPreferenceEditFormat.Name = "ToolsPreferenceEditFormat";
+            ToolsPreferenceEditFormat.Size = new System.Drawing.Size(234, 26);
+            ToolsPreferenceEditFormat.Text = "(Beta) Editing Format";
+            // 
+            // ToolsPreferenceEditFormatNarrow
+            // 
+            ToolsPreferenceEditFormatNarrow.Name = "ToolsPreferenceEditFormatNarrow";
+            ToolsPreferenceEditFormatNarrow.Size = new System.Drawing.Size(224, 26);
+            ToolsPreferenceEditFormatNarrow.Text = "Narrow";
+            ToolsPreferenceEditFormatNarrow.Click += ToolsPreferenceEditFormatNarrow_Click;
+            // 
+            // ToolsPreferenceEditFormatFull
+            // 
+            ToolsPreferenceEditFormatFull.Name = "ToolsPreferenceEditFormatFull";
+            ToolsPreferenceEditFormatFull.Size = new System.Drawing.Size(224, 26);
+            ToolsPreferenceEditFormatFull.Text = "Full";
+            ToolsPreferenceEditFormatFull.Click += ToolsPreferenceEditFormatFull_Click;
             // 
             // HelpMenu
             // 
-            this.HelpMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.HelpManual,
-            this.toolStripSeparator12,
-            this.HelpAbout});
-            this.HelpMenu.Name = "HelpMenu";
-            this.HelpMenu.Size = new System.Drawing.Size(55, 26);
-            this.HelpMenu.Text = "Help";
+            HelpMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { HelpManual, toolStripSeparator12, HelpAbout });
+            HelpMenu.Name = "HelpMenu";
+            HelpMenu.Size = new System.Drawing.Size(55, 24);
+            HelpMenu.Text = "Help";
             // 
             // HelpManual
             // 
-            this.HelpManual.Name = "HelpManual";
-            this.HelpManual.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.HelpManual.Size = new System.Drawing.Size(165, 26);
-            this.HelpManual.Text = "Manual";
-            this.HelpManual.Click += new System.EventHandler(this.HelpManual_Click);
+            HelpManual.Name = "HelpManual";
+            HelpManual.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            HelpManual.Size = new System.Drawing.Size(165, 26);
+            HelpManual.Text = "Manual";
+            HelpManual.Click += HelpManual_Click;
             // 
             // toolStripSeparator12
             // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(162, 6);
+            toolStripSeparator12.Name = "toolStripSeparator12";
+            toolStripSeparator12.Size = new System.Drawing.Size(162, 6);
             // 
             // HelpAbout
             // 
-            this.HelpAbout.Name = "HelpAbout";
-            this.HelpAbout.Size = new System.Drawing.Size(165, 26);
-            this.HelpAbout.Text = "About";
-            this.HelpAbout.Click += new System.EventHandler(this.HelpAbout_Click);
+            HelpAbout.Name = "HelpAbout";
+            HelpAbout.Size = new System.Drawing.Size(165, 26);
+            HelpAbout.Text = "About";
+            HelpAbout.Click += HelpAbout_Click;
             // 
             // PreviewSplitter
             // 
-            this.PreviewSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PreviewSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.PreviewSplitter.Location = new System.Drawing.Point(0, 0);
-            this.PreviewSplitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.PreviewSplitter.Name = "PreviewSplitter";
+            PreviewSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            PreviewSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            PreviewSplitter.Location = new System.Drawing.Point(0, 0);
+            PreviewSplitter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            PreviewSplitter.Name = "PreviewSplitter";
             // 
             // PreviewSplitter.Panel1
             // 
-            this.PreviewSplitter.Panel1.Controls.Add(this.NavigationSplitter);
-            this.PreviewSplitter.Panel1.Controls.Add(this.WorkspaceToolbar);
+            PreviewSplitter.Panel1.Controls.Add(NavigationSplitter);
+            PreviewSplitter.Panel1.Controls.Add(WorkspaceToolbar);
             // 
             // PreviewSplitter.Panel2
             // 
-            this.PreviewSplitter.Panel2.Controls.Add(this.PreviewInfoSplitter);
-            this.PreviewSplitter.Size = new System.Drawing.Size(1144, 507);
-            this.PreviewSplitter.SplitterDistance = 795;
-            this.PreviewSplitter.SplitterWidth = 5;
-            this.PreviewSplitter.TabIndex = 6;
+            PreviewSplitter.Panel2.Controls.Add(PreviewInfoSplitter);
+            PreviewSplitter.Size = new System.Drawing.Size(1144, 647);
+            PreviewSplitter.SplitterDistance = 791;
+            PreviewSplitter.SplitterWidth = 5;
+            PreviewSplitter.TabIndex = 6;
             // 
             // NavigationSplitter
             // 
-            this.NavigationSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NavigationSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.NavigationSplitter.Location = new System.Drawing.Point(0, 27);
-            this.NavigationSplitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.NavigationSplitter.Name = "NavigationSplitter";
+            NavigationSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            NavigationSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            NavigationSplitter.Location = new System.Drawing.Point(0, 27);
+            NavigationSplitter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            NavigationSplitter.Name = "NavigationSplitter";
             // 
             // NavigationSplitter.Panel1
             // 
-            this.NavigationSplitter.Panel1.Controls.Add(this.NavigationTree);
+            NavigationSplitter.Panel1.Controls.Add(NavigationTree);
             // 
             // NavigationSplitter.Panel2
             // 
-            this.NavigationSplitter.Panel2.Controls.Add(this.PlotPanel);
-            this.NavigationSplitter.Panel2.Controls.Add(this.WorkspaceSearchBar);
-            this.NavigationSplitter.Size = new System.Drawing.Size(795, 480);
-            this.NavigationSplitter.SplitterDistance = 152;
-            this.NavigationSplitter.SplitterWidth = 5;
-            this.NavigationSplitter.TabIndex = 4;
+            NavigationSplitter.Panel2.Controls.Add(PlotPanel);
+            NavigationSplitter.Panel2.Controls.Add(WorkspaceSearchBar);
+            NavigationSplitter.Size = new System.Drawing.Size(791, 620);
+            NavigationSplitter.SplitterDistance = 152;
+            NavigationSplitter.SplitterWidth = 5;
+            NavigationSplitter.TabIndex = 4;
             // 
             // NavigationTree
             // 
-            this.NavigationTree.AllowDrop = true;
-            this.NavigationTree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NavigationTree.HideSelection = false;
-            this.NavigationTree.Location = new System.Drawing.Point(0, 0);
-            this.NavigationTree.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.NavigationTree.Name = "NavigationTree";
-            this.NavigationTree.ShowRootLines = false;
-            this.NavigationTree.Size = new System.Drawing.Size(152, 480);
-            this.NavigationTree.TabIndex = 0;
-            this.NavigationTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.NavigationTree_AfterSelect);
-            this.NavigationTree.DragDrop += new System.Windows.Forms.DragEventHandler(this.NavigationTree_DragDrop);
-            this.NavigationTree.DragOver += new System.Windows.Forms.DragEventHandler(this.NavigationTree_DragOver);
+            NavigationTree.AllowDrop = true;
+            NavigationTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            NavigationTree.HideSelection = false;
+            NavigationTree.Location = new System.Drawing.Point(0, 0);
+            NavigationTree.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            NavigationTree.Name = "NavigationTree";
+            NavigationTree.ShowRootLines = false;
+            NavigationTree.Size = new System.Drawing.Size(152, 620);
+            NavigationTree.TabIndex = 0;
+            NavigationTree.AfterSelect += NavigationTree_AfterSelect;
+            NavigationTree.DragDrop += NavigationTree_DragDrop;
+            NavigationTree.DragOver += NavigationTree_DragOver;
             // 
             // PlotPanel
             // 
-            this.PlotPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlotPanel.Controls.Add(this.PlotView);
-            this.PlotPanel.Controls.Add(this.BreadcrumbBar);
-            this.PlotPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlotPanel.Location = new System.Drawing.Point(0, 27);
-            this.PlotPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.PlotPanel.Name = "PlotPanel";
-            this.PlotPanel.Size = new System.Drawing.Size(638, 453);
-            this.PlotPanel.TabIndex = 5;
+            PlotPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            PlotPanel.Controls.Add(PlotView);
+            PlotPanel.Controls.Add(BreadcrumbBar);
+            PlotPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            PlotPanel.Location = new System.Drawing.Point(0, 27);
+            PlotPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            PlotPanel.Name = "PlotPanel";
+            PlotPanel.Size = new System.Drawing.Size(634, 593);
+            PlotPanel.TabIndex = 5;
+            // 
+            // PlotView
+            // 
+            PlotView.AllowDrop = true;
+            PlotView.ContextMenuStrip = PointMenu;
+            PlotView.Dock = System.Windows.Forms.DockStyle.Fill;
+            PlotView.Filter = "";
+            PlotView.LinkStyle = Masterplan.Controls.PlotViewLinkStyle.Curved;
+            PlotView.Location = new System.Drawing.Point(0, 0);
+            PlotView.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            PlotView.Mode = Masterplan.Controls.PlotViewMode.Normal;
+            PlotView.Name = "PlotView";
+            PlotView.Plot = null;
+            PlotView.SelectedPoint = null;
+            PlotView.ShowLevels = true;
+            PlotView.ShowTooltips = true;
+            PlotView.Size = new System.Drawing.Size(632, 569);
+            PlotView.TabIndex = 2;
+            PlotView.SelectionChanged += PlotView_SelectionChanged;
+            PlotView.PlotLayoutChanged += PlotView_PlotLayoutChanged;
+            PlotView.PlotChanged += PlotView_PlotChanged;
+            PlotView.DoubleClick += PlotView_DoubleClick;
             // 
             // BreadcrumbBar
             // 
-            this.BreadcrumbBar.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.BreadcrumbBar.Location = new System.Drawing.Point(0, 429);
-            this.BreadcrumbBar.Name = "BreadcrumbBar";
-            this.BreadcrumbBar.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.BreadcrumbBar.Size = new System.Drawing.Size(636, 22);
-            this.BreadcrumbBar.SizingGrip = false;
-            this.BreadcrumbBar.TabIndex = 4;
-            this.BreadcrumbBar.Text = "statusStrip1";
+            BreadcrumbBar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            BreadcrumbBar.Location = new System.Drawing.Point(0, 569);
+            BreadcrumbBar.Name = "BreadcrumbBar";
+            BreadcrumbBar.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            BreadcrumbBar.Size = new System.Drawing.Size(632, 22);
+            BreadcrumbBar.SizingGrip = false;
+            BreadcrumbBar.TabIndex = 4;
+            BreadcrumbBar.Text = "statusStrip1";
             // 
             // WorkspaceSearchBar
             // 
-            this.WorkspaceSearchBar.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.WorkspaceSearchBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.PlotSearchLbl,
-            this.PlotSearchBox,
-            this.PlotClearBtn});
-            this.WorkspaceSearchBar.Location = new System.Drawing.Point(0, 0);
-            this.WorkspaceSearchBar.Name = "WorkspaceSearchBar";
-            this.WorkspaceSearchBar.Size = new System.Drawing.Size(638, 27);
-            this.WorkspaceSearchBar.TabIndex = 3;
-            this.WorkspaceSearchBar.Text = "toolStrip1";
+            WorkspaceSearchBar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            WorkspaceSearchBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { PlotSearchLbl, PlotSearchBox, PlotClearBtn });
+            WorkspaceSearchBar.Location = new System.Drawing.Point(0, 0);
+            WorkspaceSearchBar.Name = "WorkspaceSearchBar";
+            WorkspaceSearchBar.Size = new System.Drawing.Size(634, 27);
+            WorkspaceSearchBar.TabIndex = 3;
+            WorkspaceSearchBar.Text = "toolStrip1";
             // 
             // PlotSearchLbl
             // 
-            this.PlotSearchLbl.Name = "PlotSearchLbl";
-            this.PlotSearchLbl.Size = new System.Drawing.Size(79, 24);
-            this.PlotSearchLbl.Text = "Search for:";
+            PlotSearchLbl.Name = "PlotSearchLbl";
+            PlotSearchLbl.Size = new System.Drawing.Size(79, 24);
+            PlotSearchLbl.Text = "Search for:";
             // 
             // PlotSearchBox
             // 
-            this.PlotSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlotSearchBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.PlotSearchBox.Name = "PlotSearchBox";
-            this.PlotSearchBox.Size = new System.Drawing.Size(266, 27);
-            this.PlotSearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
+            PlotSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            PlotSearchBox.Name = "PlotSearchBox";
+            PlotSearchBox.Size = new System.Drawing.Size(266, 27);
+            PlotSearchBox.TextChanged += SearchBox_TextChanged;
             // 
             // PlotClearBtn
             // 
-            this.PlotClearBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.PlotClearBtn.Image = ((System.Drawing.Image)(resources.GetObject("PlotClearBtn.Image")));
-            this.PlotClearBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.PlotClearBtn.IsLink = true;
-            this.PlotClearBtn.Name = "PlotClearBtn";
-            this.PlotClearBtn.Size = new System.Drawing.Size(43, 24);
-            this.PlotClearBtn.Text = "Clear";
-            this.PlotClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
+            PlotClearBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            PlotClearBtn.Image = (System.Drawing.Image)resources.GetObject("PlotClearBtn.Image");
+            PlotClearBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            PlotClearBtn.IsLink = true;
+            PlotClearBtn.Name = "PlotClearBtn";
+            PlotClearBtn.Size = new System.Drawing.Size(43, 24);
+            PlotClearBtn.Text = "Clear";
+            PlotClearBtn.Click += ClearBtn_Click;
             // 
             // PreviewInfoSplitter
             // 
-            this.PreviewInfoSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PreviewInfoSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.PreviewInfoSplitter.Location = new System.Drawing.Point(0, 0);
-            this.PreviewInfoSplitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.PreviewInfoSplitter.Name = "PreviewInfoSplitter";
-            this.PreviewInfoSplitter.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            PreviewInfoSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            PreviewInfoSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            PreviewInfoSplitter.Location = new System.Drawing.Point(0, 0);
+            PreviewInfoSplitter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            PreviewInfoSplitter.Name = "PreviewInfoSplitter";
+            PreviewInfoSplitter.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // PreviewInfoSplitter.Panel1
             // 
-            this.PreviewInfoSplitter.Panel1.Controls.Add(this.PreviewPanel);
-            this.PreviewInfoSplitter.Panel1.Controls.Add(this.PreviewToolbar);
-            this.PreviewInfoSplitter.Size = new System.Drawing.Size(344, 507);
-            this.PreviewInfoSplitter.SplitterDistance = 323;
-            this.PreviewInfoSplitter.SplitterWidth = 5;
-            this.PreviewInfoSplitter.TabIndex = 1;
+            PreviewInfoSplitter.Panel1.Controls.Add(PreviewPanel);
+            PreviewInfoSplitter.Panel1.Controls.Add(PreviewToolbar);
+            PreviewInfoSplitter.Size = new System.Drawing.Size(348, 647);
+            PreviewInfoSplitter.SplitterDistance = 410;
+            PreviewInfoSplitter.SplitterWidth = 6;
+            PreviewInfoSplitter.TabIndex = 1;
             // 
             // PreviewPanel
             // 
-            this.PreviewPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PreviewPanel.Controls.Add(this.Preview);
-            this.PreviewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PreviewPanel.Location = new System.Drawing.Point(0, 27);
-            this.PreviewPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.PreviewPanel.Name = "PreviewPanel";
-            this.PreviewPanel.Size = new System.Drawing.Size(344, 296);
-            this.PreviewPanel.TabIndex = 1;
+            PreviewPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            PreviewPanel.Controls.Add(Preview);
+            PreviewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            PreviewPanel.Location = new System.Drawing.Point(0, 27);
+            PreviewPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            PreviewPanel.Name = "PreviewPanel";
+            PreviewPanel.Size = new System.Drawing.Size(348, 383);
+            PreviewPanel.TabIndex = 1;
             // 
             // Preview
             // 
-            this.Preview.AllowWebBrowserDrop = false;
-            this.Preview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Preview.IsWebBrowserContextMenuEnabled = false;
-            this.Preview.Location = new System.Drawing.Point(0, 0);
-            this.Preview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Preview.MinimumSize = new System.Drawing.Size(27, 25);
-            this.Preview.Name = "Preview";
-            this.Preview.ScriptErrorsSuppressed = true;
-            this.Preview.Size = new System.Drawing.Size(342, 294);
-            this.Preview.TabIndex = 0;
-            this.Preview.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.Preview_Navigating);
+            Preview.AllowWebBrowserDrop = false;
+            Preview.Dock = System.Windows.Forms.DockStyle.Fill;
+            Preview.IsWebBrowserContextMenuEnabled = false;
+            Preview.Location = new System.Drawing.Point(0, 0);
+            Preview.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Preview.MinimumSize = new System.Drawing.Size(27, 31);
+            Preview.Name = "Preview";
+            Preview.ScriptErrorsSuppressed = true;
+            Preview.Size = new System.Drawing.Size(346, 381);
+            Preview.TabIndex = 0;
+            Preview.Navigating += Preview_Navigating;
             // 
             // PreviewToolbar
             // 
-            this.PreviewToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.PreviewToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.EditBtn,
-            this.ExploreBtn,
-            this.toolStripSeparator41,
-            this.PlotPointMenu});
-            this.PreviewToolbar.Location = new System.Drawing.Point(0, 0);
-            this.PreviewToolbar.Name = "PreviewToolbar";
-            this.PreviewToolbar.Size = new System.Drawing.Size(344, 27);
-            this.PreviewToolbar.TabIndex = 1;
-            this.PreviewToolbar.Text = "toolStrip1";
+            PreviewToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            PreviewToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { EditBtn, ExploreBtn, toolStripSeparator41, PlotPointMenu });
+            PreviewToolbar.Location = new System.Drawing.Point(0, 0);
+            PreviewToolbar.Name = "PreviewToolbar";
+            PreviewToolbar.Size = new System.Drawing.Size(348, 27);
+            PreviewToolbar.TabIndex = 1;
+            PreviewToolbar.Text = "toolStrip1";
             // 
             // EditBtn
             // 
-            this.EditBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.EditBtn.Image = ((System.Drawing.Image)(resources.GetObject("EditBtn.Image")));
-            this.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(106, 24);
-            this.EditBtn.Text = "Edit Plot Point";
-            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
+            EditBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            EditBtn.Image = (System.Drawing.Image)resources.GetObject("EditBtn.Image");
+            EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            EditBtn.Name = "EditBtn";
+            EditBtn.Size = new System.Drawing.Size(106, 24);
+            EditBtn.Text = "Edit Plot Point";
+            EditBtn.Click += EditBtn_Click;
             // 
             // ExploreBtn
             // 
-            this.ExploreBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ExploreBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExploreBtn.Image")));
-            this.ExploreBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ExploreBtn.Name = "ExploreBtn";
-            this.ExploreBtn.Size = new System.Drawing.Size(119, 24);
-            this.ExploreBtn.Text = "Explore Subplot";
-            this.ExploreBtn.Click += new System.EventHandler(this.ExploreBtn_Click);
+            ExploreBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            ExploreBtn.Image = (System.Drawing.Image)resources.GetObject("ExploreBtn.Image");
+            ExploreBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ExploreBtn.Name = "ExploreBtn";
+            ExploreBtn.Size = new System.Drawing.Size(119, 24);
+            ExploreBtn.Text = "Explore Subplot";
+            ExploreBtn.Click += ExploreBtn_Click;
             // 
             // toolStripSeparator41
             // 
-            this.toolStripSeparator41.Name = "toolStripSeparator41";
-            this.toolStripSeparator41.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator41.Name = "toolStripSeparator41";
+            toolStripSeparator41.Size = new System.Drawing.Size(6, 27);
             // 
             // PlotPointMenu
             // 
-            this.PlotPointMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.PlotPointMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.PlotPointPlayerView,
-            this.toolStripSeparator35,
-            this.PlotPointExportHTML,
-            this.PlotPointExportFile});
-            this.PlotPointMenu.Image = ((System.Drawing.Image)(resources.GetObject("PlotPointMenu.Image")));
-            this.PlotPointMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.PlotPointMenu.Name = "PlotPointMenu";
-            this.PlotPointMenu.Size = new System.Drawing.Size(60, 24);
-            this.PlotPointMenu.Text = "Share";
+            PlotPointMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            PlotPointMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { PlotPointPlayerView, toolStripSeparator35, PlotPointExportHTML, PlotPointExportFile });
+            PlotPointMenu.Image = (System.Drawing.Image)resources.GetObject("PlotPointMenu.Image");
+            PlotPointMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            PlotPointMenu.Name = "PlotPointMenu";
+            PlotPointMenu.Size = new System.Drawing.Size(60, 24);
+            PlotPointMenu.Text = "Share";
             // 
             // PlotPointPlayerView
             // 
-            this.PlotPointPlayerView.Name = "PlotPointPlayerView";
-            this.PlotPointPlayerView.Size = new System.Drawing.Size(223, 26);
-            this.PlotPointPlayerView.Text = "Send to Player View";
-            this.PlotPointPlayerView.Click += new System.EventHandler(this.PlotPointPlayerView_Click);
+            PlotPointPlayerView.Name = "PlotPointPlayerView";
+            PlotPointPlayerView.Size = new System.Drawing.Size(223, 26);
+            PlotPointPlayerView.Text = "Send to Player View";
+            PlotPointPlayerView.Click += PlotPointPlayerView_Click;
             // 
             // toolStripSeparator35
             // 
-            this.toolStripSeparator35.Name = "toolStripSeparator35";
-            this.toolStripSeparator35.Size = new System.Drawing.Size(220, 6);
+            toolStripSeparator35.Name = "toolStripSeparator35";
+            toolStripSeparator35.Size = new System.Drawing.Size(220, 6);
             // 
             // PlotPointExportHTML
             // 
-            this.PlotPointExportHTML.Name = "PlotPointExportHTML";
-            this.PlotPointExportHTML.Size = new System.Drawing.Size(223, 26);
-            this.PlotPointExportHTML.Text = "Export to HTML...";
-            this.PlotPointExportHTML.Click += new System.EventHandler(this.PlotPointExportHTML_Click);
+            PlotPointExportHTML.Name = "PlotPointExportHTML";
+            PlotPointExportHTML.Size = new System.Drawing.Size(223, 26);
+            PlotPointExportHTML.Text = "Export to HTML...";
+            PlotPointExportHTML.Click += PlotPointExportHTML_Click;
             // 
             // PlotPointExportFile
             // 
-            this.PlotPointExportFile.Name = "PlotPointExportFile";
-            this.PlotPointExportFile.Size = new System.Drawing.Size(223, 26);
-            this.PlotPointExportFile.Text = "Export to File...";
-            this.PlotPointExportFile.Click += new System.EventHandler(this.PlotPointExportFile_Click);
+            PlotPointExportFile.Name = "PlotPointExportFile";
+            PlotPointExportFile.Size = new System.Drawing.Size(223, 26);
+            PlotPointExportFile.Text = "Export to File...";
+            PlotPointExportFile.Click += PlotPointExportFile_Click;
             // 
             // Pages
             // 
-            this.Pages.Controls.Add(this.WorkspacePage);
-            this.Pages.Controls.Add(this.BackgroundPage);
-            this.Pages.Controls.Add(this.EncyclopediaPage);
-            this.Pages.Controls.Add(this.RulesPage);
-            this.Pages.Controls.Add(this.AttachmentsPage);
-            this.Pages.Controls.Add(this.JotterPage);
-            this.Pages.Controls.Add(this.ReferencePage);
-            this.Pages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pages.Location = new System.Drawing.Point(0, 30);
-            this.Pages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Pages.Name = "Pages";
-            this.Pages.SelectedIndex = 0;
-            this.Pages.Size = new System.Drawing.Size(1152, 536);
-            this.Pages.TabIndex = 5;
+            Pages.Controls.Add(WorkspacePage);
+            Pages.Controls.Add(BackgroundPage);
+            Pages.Controls.Add(EncyclopediaPage);
+            Pages.Controls.Add(RulesPage);
+            Pages.Controls.Add(AttachmentsPage);
+            Pages.Controls.Add(JotterPage);
+            Pages.Controls.Add(ReferencePage);
+            Pages.Dock = System.Windows.Forms.DockStyle.Fill;
+            Pages.Location = new System.Drawing.Point(0, 28);
+            Pages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Pages.Name = "Pages";
+            Pages.SelectedIndex = 0;
+            Pages.Size = new System.Drawing.Size(1152, 680);
+            Pages.TabIndex = 5;
             // 
             // WorkspacePage
             // 
-            this.WorkspacePage.Controls.Add(this.PreviewSplitter);
-            this.WorkspacePage.Location = new System.Drawing.Point(4, 25);
-            this.WorkspacePage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.WorkspacePage.Name = "WorkspacePage";
-            this.WorkspacePage.Size = new System.Drawing.Size(1144, 507);
-            this.WorkspacePage.TabIndex = 0;
-            this.WorkspacePage.Text = "Plot Workspace";
-            this.WorkspacePage.UseVisualStyleBackColor = true;
+            WorkspacePage.Controls.Add(PreviewSplitter);
+            WorkspacePage.Location = new System.Drawing.Point(4, 29);
+            WorkspacePage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            WorkspacePage.Name = "WorkspacePage";
+            WorkspacePage.Size = new System.Drawing.Size(1144, 647);
+            WorkspacePage.TabIndex = 0;
+            WorkspacePage.Text = "Plot Workspace";
+            WorkspacePage.UseVisualStyleBackColor = true;
             // 
             // BackgroundPage
             // 
-            this.BackgroundPage.Controls.Add(this.splitContainer1);
-            this.BackgroundPage.Controls.Add(this.BackgroundToolbar);
-            this.BackgroundPage.Location = new System.Drawing.Point(4, 25);
-            this.BackgroundPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BackgroundPage.Name = "BackgroundPage";
-            this.BackgroundPage.Size = new System.Drawing.Size(1144, 507);
-            this.BackgroundPage.TabIndex = 4;
-            this.BackgroundPage.Text = "Background";
-            this.BackgroundPage.UseVisualStyleBackColor = true;
+            BackgroundPage.Controls.Add(splitContainer1);
+            BackgroundPage.Controls.Add(BackgroundToolbar);
+            BackgroundPage.Location = new System.Drawing.Point(4, 29);
+            BackgroundPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            BackgroundPage.Name = "BackgroundPage";
+            BackgroundPage.Size = new System.Drawing.Size(1144, 647);
+            BackgroundPage.TabIndex = 4;
+            BackgroundPage.Text = "Background";
+            BackgroundPage.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 27);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.splitContainer1.Name = "splitContainer1";
+            splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            splitContainer1.Location = new System.Drawing.Point(0, 27);
+            splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.BackgroundList);
+            splitContainer1.Panel1.Controls.Add(BackgroundList);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.BackgroundPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(1144, 480);
-            this.splitContainer1.SplitterDistance = 180;
-            this.splitContainer1.SplitterWidth = 5;
-            this.splitContainer1.TabIndex = 1;
+            splitContainer1.Panel2.Controls.Add(BackgroundPanel);
+            splitContainer1.Size = new System.Drawing.Size(1144, 620);
+            splitContainer1.SplitterDistance = 180;
+            splitContainer1.SplitterWidth = 5;
+            splitContainer1.TabIndex = 1;
             // 
             // BackgroundList
             // 
-            this.BackgroundList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.InfoHdr});
-            this.BackgroundList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackgroundList.FullRowSelect = true;
-            this.BackgroundList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.BackgroundList.HideSelection = false;
-            this.BackgroundList.Location = new System.Drawing.Point(0, 0);
-            this.BackgroundList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BackgroundList.MultiSelect = false;
-            this.BackgroundList.Name = "BackgroundList";
-            this.BackgroundList.Size = new System.Drawing.Size(180, 480);
-            this.BackgroundList.TabIndex = 0;
-            this.BackgroundList.UseCompatibleStateImageBehavior = false;
-            this.BackgroundList.View = System.Windows.Forms.View.Details;
-            this.BackgroundList.SelectedIndexChanged += new System.EventHandler(this.BackgroundList_SelectedIndexChanged);
-            this.BackgroundList.DoubleClick += new System.EventHandler(this.BackgroundEditBtn_Click);
+            BackgroundList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { InfoHdr });
+            BackgroundList.Dock = System.Windows.Forms.DockStyle.Fill;
+            BackgroundList.FullRowSelect = true;
+            BackgroundList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            BackgroundList.Location = new System.Drawing.Point(0, 0);
+            BackgroundList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            BackgroundList.MultiSelect = false;
+            BackgroundList.Name = "BackgroundList";
+            BackgroundList.Size = new System.Drawing.Size(180, 620);
+            BackgroundList.TabIndex = 0;
+            BackgroundList.UseCompatibleStateImageBehavior = false;
+            BackgroundList.View = System.Windows.Forms.View.Details;
+            BackgroundList.SelectedIndexChanged += BackgroundList_SelectedIndexChanged;
+            BackgroundList.DoubleClick += BackgroundEditBtn_Click;
             // 
             // InfoHdr
             // 
-            this.InfoHdr.Text = "Information";
-            this.InfoHdr.Width = 150;
+            InfoHdr.Text = "Information";
+            InfoHdr.Width = 150;
             // 
             // BackgroundPanel
             // 
-            this.BackgroundPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BackgroundPanel.Controls.Add(this.BackgroundDetails);
-            this.BackgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackgroundPanel.Location = new System.Drawing.Point(0, 0);
-            this.BackgroundPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BackgroundPanel.Name = "BackgroundPanel";
-            this.BackgroundPanel.Size = new System.Drawing.Size(959, 480);
-            this.BackgroundPanel.TabIndex = 0;
+            BackgroundPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            BackgroundPanel.Controls.Add(BackgroundDetails);
+            BackgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            BackgroundPanel.Location = new System.Drawing.Point(0, 0);
+            BackgroundPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            BackgroundPanel.Name = "BackgroundPanel";
+            BackgroundPanel.Size = new System.Drawing.Size(959, 620);
+            BackgroundPanel.TabIndex = 0;
             // 
             // BackgroundDetails
             // 
-            this.BackgroundDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackgroundDetails.IsWebBrowserContextMenuEnabled = false;
-            this.BackgroundDetails.Location = new System.Drawing.Point(0, 0);
-            this.BackgroundDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BackgroundDetails.MinimumSize = new System.Drawing.Size(27, 25);
-            this.BackgroundDetails.Name = "BackgroundDetails";
-            this.BackgroundDetails.Size = new System.Drawing.Size(957, 478);
-            this.BackgroundDetails.TabIndex = 0;
-            this.BackgroundDetails.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.BackgroundDetails_Navigating);
+            BackgroundDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            BackgroundDetails.IsWebBrowserContextMenuEnabled = false;
+            BackgroundDetails.Location = new System.Drawing.Point(0, 0);
+            BackgroundDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            BackgroundDetails.MinimumSize = new System.Drawing.Size(27, 31);
+            BackgroundDetails.Name = "BackgroundDetails";
+            BackgroundDetails.Size = new System.Drawing.Size(957, 618);
+            BackgroundDetails.TabIndex = 0;
+            BackgroundDetails.Navigating += BackgroundDetails_Navigating;
             // 
             // BackgroundToolbar
             // 
-            this.BackgroundToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.BackgroundToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BackgroundAddBtn,
-            this.BackgroundRemoveBtn,
-            this.BackgroundEditBtn,
-            this.toolStripSeparator21,
-            this.BackgroundUpBtn,
-            this.BackgroundDownBtn,
-            this.toolStripSeparator23,
-            this.BackgroundPlayerView,
-            this.toolStripSeparator48,
-            this.BackgroundShareBtn});
-            this.BackgroundToolbar.Location = new System.Drawing.Point(0, 0);
-            this.BackgroundToolbar.Name = "BackgroundToolbar";
-            this.BackgroundToolbar.Size = new System.Drawing.Size(1144, 27);
-            this.BackgroundToolbar.TabIndex = 0;
-            this.BackgroundToolbar.Text = "toolStrip1";
+            BackgroundToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            BackgroundToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { BackgroundAddBtn, BackgroundRemoveBtn, BackgroundEditBtn, toolStripSeparator21, BackgroundUpBtn, BackgroundDownBtn, toolStripSeparator23, BackgroundPlayerView, toolStripSeparator48, BackgroundShareBtn });
+            BackgroundToolbar.Location = new System.Drawing.Point(0, 0);
+            BackgroundToolbar.Name = "BackgroundToolbar";
+            BackgroundToolbar.Size = new System.Drawing.Size(1144, 27);
+            BackgroundToolbar.TabIndex = 0;
+            BackgroundToolbar.Text = "toolStrip1";
             // 
             // BackgroundAddBtn
             // 
-            this.BackgroundAddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BackgroundAddBtn.Image = ((System.Drawing.Image)(resources.GetObject("BackgroundAddBtn.Image")));
-            this.BackgroundAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BackgroundAddBtn.Name = "BackgroundAddBtn";
-            this.BackgroundAddBtn.Size = new System.Drawing.Size(41, 24);
-            this.BackgroundAddBtn.Text = "Add";
-            this.BackgroundAddBtn.Click += new System.EventHandler(this.BackgroundAddBtn_Click);
+            BackgroundAddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            BackgroundAddBtn.Image = (System.Drawing.Image)resources.GetObject("BackgroundAddBtn.Image");
+            BackgroundAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            BackgroundAddBtn.Name = "BackgroundAddBtn";
+            BackgroundAddBtn.Size = new System.Drawing.Size(41, 24);
+            BackgroundAddBtn.Text = "Add";
+            BackgroundAddBtn.Click += BackgroundAddBtn_Click;
             // 
             // BackgroundRemoveBtn
             // 
-            this.BackgroundRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BackgroundRemoveBtn.Image = ((System.Drawing.Image)(resources.GetObject("BackgroundRemoveBtn.Image")));
-            this.BackgroundRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BackgroundRemoveBtn.Name = "BackgroundRemoveBtn";
-            this.BackgroundRemoveBtn.Size = new System.Drawing.Size(67, 24);
-            this.BackgroundRemoveBtn.Text = "Remove";
-            this.BackgroundRemoveBtn.Click += new System.EventHandler(this.BackgroundRemoveBtn_Click);
+            BackgroundRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            BackgroundRemoveBtn.Image = (System.Drawing.Image)resources.GetObject("BackgroundRemoveBtn.Image");
+            BackgroundRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            BackgroundRemoveBtn.Name = "BackgroundRemoveBtn";
+            BackgroundRemoveBtn.Size = new System.Drawing.Size(67, 24);
+            BackgroundRemoveBtn.Text = "Remove";
+            BackgroundRemoveBtn.Click += BackgroundRemoveBtn_Click;
             // 
             // BackgroundEditBtn
             // 
-            this.BackgroundEditBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BackgroundEditBtn.Image = ((System.Drawing.Image)(resources.GetObject("BackgroundEditBtn.Image")));
-            this.BackgroundEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BackgroundEditBtn.Name = "BackgroundEditBtn";
-            this.BackgroundEditBtn.Size = new System.Drawing.Size(39, 24);
-            this.BackgroundEditBtn.Text = "Edit";
-            this.BackgroundEditBtn.Click += new System.EventHandler(this.BackgroundEditBtn_Click);
+            BackgroundEditBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            BackgroundEditBtn.Image = (System.Drawing.Image)resources.GetObject("BackgroundEditBtn.Image");
+            BackgroundEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            BackgroundEditBtn.Name = "BackgroundEditBtn";
+            BackgroundEditBtn.Size = new System.Drawing.Size(39, 24);
+            BackgroundEditBtn.Text = "Edit";
+            BackgroundEditBtn.Click += BackgroundEditBtn_Click;
             // 
             // toolStripSeparator21
             // 
-            this.toolStripSeparator21.Name = "toolStripSeparator21";
-            this.toolStripSeparator21.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator21.Name = "toolStripSeparator21";
+            toolStripSeparator21.Size = new System.Drawing.Size(6, 27);
             // 
             // BackgroundUpBtn
             // 
-            this.BackgroundUpBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BackgroundUpBtn.Image = ((System.Drawing.Image)(resources.GetObject("BackgroundUpBtn.Image")));
-            this.BackgroundUpBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BackgroundUpBtn.Name = "BackgroundUpBtn";
-            this.BackgroundUpBtn.Size = new System.Drawing.Size(73, 24);
-            this.BackgroundUpBtn.Text = "Move Up";
-            this.BackgroundUpBtn.Click += new System.EventHandler(this.BackgroundUpBtn_Click);
+            BackgroundUpBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            BackgroundUpBtn.Image = (System.Drawing.Image)resources.GetObject("BackgroundUpBtn.Image");
+            BackgroundUpBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            BackgroundUpBtn.Name = "BackgroundUpBtn";
+            BackgroundUpBtn.Size = new System.Drawing.Size(73, 24);
+            BackgroundUpBtn.Text = "Move Up";
+            BackgroundUpBtn.Click += BackgroundUpBtn_Click;
             // 
             // BackgroundDownBtn
             // 
-            this.BackgroundDownBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BackgroundDownBtn.Image = ((System.Drawing.Image)(resources.GetObject("BackgroundDownBtn.Image")));
-            this.BackgroundDownBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BackgroundDownBtn.Name = "BackgroundDownBtn";
-            this.BackgroundDownBtn.Size = new System.Drawing.Size(93, 24);
-            this.BackgroundDownBtn.Text = "Move Down";
-            this.BackgroundDownBtn.Click += new System.EventHandler(this.BackgroundDownBtn_Click);
+            BackgroundDownBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            BackgroundDownBtn.Image = (System.Drawing.Image)resources.GetObject("BackgroundDownBtn.Image");
+            BackgroundDownBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            BackgroundDownBtn.Name = "BackgroundDownBtn";
+            BackgroundDownBtn.Size = new System.Drawing.Size(93, 24);
+            BackgroundDownBtn.Text = "Move Down";
+            BackgroundDownBtn.Click += BackgroundDownBtn_Click;
             // 
             // toolStripSeparator23
             // 
-            this.toolStripSeparator23.Name = "toolStripSeparator23";
-            this.toolStripSeparator23.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator23.Name = "toolStripSeparator23";
+            toolStripSeparator23.Size = new System.Drawing.Size(6, 27);
             // 
             // BackgroundPlayerView
             // 
-            this.BackgroundPlayerView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BackgroundPlayerView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BackgroundPlayerViewSelected,
-            this.BackgroundPlayerViewAll});
-            this.BackgroundPlayerView.Image = ((System.Drawing.Image)(resources.GetObject("BackgroundPlayerView.Image")));
-            this.BackgroundPlayerView.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BackgroundPlayerView.Name = "BackgroundPlayerView";
-            this.BackgroundPlayerView.Size = new System.Drawing.Size(154, 24);
-            this.BackgroundPlayerView.Text = "Send to Player View";
+            BackgroundPlayerView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            BackgroundPlayerView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { BackgroundPlayerViewSelected, BackgroundPlayerViewAll });
+            BackgroundPlayerView.Image = (System.Drawing.Image)resources.GetObject("BackgroundPlayerView.Image");
+            BackgroundPlayerView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            BackgroundPlayerView.Name = "BackgroundPlayerView";
+            BackgroundPlayerView.Size = new System.Drawing.Size(154, 24);
+            BackgroundPlayerView.Text = "Send to Player View";
             // 
             // BackgroundPlayerViewSelected
             // 
-            this.BackgroundPlayerViewSelected.Name = "BackgroundPlayerViewSelected";
-            this.BackgroundPlayerViewSelected.Size = new System.Drawing.Size(183, 26);
-            this.BackgroundPlayerViewSelected.Text = "Selected Item";
-            this.BackgroundPlayerViewSelected.Click += new System.EventHandler(this.BackgroundPlayerViewSelected_Click);
+            BackgroundPlayerViewSelected.Name = "BackgroundPlayerViewSelected";
+            BackgroundPlayerViewSelected.Size = new System.Drawing.Size(183, 26);
+            BackgroundPlayerViewSelected.Text = "Selected Item";
+            BackgroundPlayerViewSelected.Click += BackgroundPlayerViewSelected_Click;
             // 
             // BackgroundPlayerViewAll
             // 
-            this.BackgroundPlayerViewAll.Name = "BackgroundPlayerViewAll";
-            this.BackgroundPlayerViewAll.Size = new System.Drawing.Size(183, 26);
-            this.BackgroundPlayerViewAll.Text = "All Items";
-            this.BackgroundPlayerViewAll.Click += new System.EventHandler(this.BackgroundPlayerViewAll_Click);
+            BackgroundPlayerViewAll.Name = "BackgroundPlayerViewAll";
+            BackgroundPlayerViewAll.Size = new System.Drawing.Size(183, 26);
+            BackgroundPlayerViewAll.Text = "All Items";
+            BackgroundPlayerViewAll.Click += BackgroundPlayerViewAll_Click;
             // 
             // toolStripSeparator48
             // 
-            this.toolStripSeparator48.Name = "toolStripSeparator48";
-            this.toolStripSeparator48.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator48.Name = "toolStripSeparator48";
+            toolStripSeparator48.Size = new System.Drawing.Size(6, 27);
             // 
             // BackgroundShareBtn
             // 
-            this.BackgroundShareBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BackgroundShareBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BackgroundShareExport,
-            this.BackgroundShareImport,
-            this.toolStripMenuItem10,
-            this.BackgroundSharePublish});
-            this.BackgroundShareBtn.Image = ((System.Drawing.Image)(resources.GetObject("BackgroundShareBtn.Image")));
-            this.BackgroundShareBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BackgroundShareBtn.Name = "BackgroundShareBtn";
-            this.BackgroundShareBtn.Size = new System.Drawing.Size(60, 24);
-            this.BackgroundShareBtn.Text = "Share";
+            BackgroundShareBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            BackgroundShareBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { BackgroundShareExport, BackgroundShareImport, toolStripMenuItem10, BackgroundSharePublish });
+            BackgroundShareBtn.Image = (System.Drawing.Image)resources.GetObject("BackgroundShareBtn.Image");
+            BackgroundShareBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            BackgroundShareBtn.Name = "BackgroundShareBtn";
+            BackgroundShareBtn.Size = new System.Drawing.Size(60, 24);
+            BackgroundShareBtn.Text = "Share";
             // 
             // BackgroundShareExport
             // 
-            this.BackgroundShareExport.Name = "BackgroundShareExport";
-            this.BackgroundShareExport.Size = new System.Drawing.Size(148, 26);
-            this.BackgroundShareExport.Text = "Export...";
-            this.BackgroundShareExport.Click += new System.EventHandler(this.BackgroundShareExport_Click);
+            BackgroundShareExport.Name = "BackgroundShareExport";
+            BackgroundShareExport.Size = new System.Drawing.Size(148, 26);
+            BackgroundShareExport.Text = "Export...";
+            BackgroundShareExport.Click += BackgroundShareExport_Click;
             // 
             // BackgroundShareImport
             // 
-            this.BackgroundShareImport.Name = "BackgroundShareImport";
-            this.BackgroundShareImport.Size = new System.Drawing.Size(148, 26);
-            this.BackgroundShareImport.Text = "Import...";
-            this.BackgroundShareImport.Click += new System.EventHandler(this.BackgroundShareImport_Click);
+            BackgroundShareImport.Name = "BackgroundShareImport";
+            BackgroundShareImport.Size = new System.Drawing.Size(148, 26);
+            BackgroundShareImport.Text = "Import...";
+            BackgroundShareImport.Click += BackgroundShareImport_Click;
             // 
             // toolStripMenuItem10
             // 
-            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(145, 6);
+            toolStripMenuItem10.Name = "toolStripMenuItem10";
+            toolStripMenuItem10.Size = new System.Drawing.Size(145, 6);
             // 
             // BackgroundSharePublish
             // 
-            this.BackgroundSharePublish.Name = "BackgroundSharePublish";
-            this.BackgroundSharePublish.Size = new System.Drawing.Size(148, 26);
-            this.BackgroundSharePublish.Text = "Publish...";
-            this.BackgroundSharePublish.Click += new System.EventHandler(this.BackgroundSharePublish_Click);
+            BackgroundSharePublish.Name = "BackgroundSharePublish";
+            BackgroundSharePublish.Size = new System.Drawing.Size(148, 26);
+            BackgroundSharePublish.Text = "Publish...";
+            BackgroundSharePublish.Click += BackgroundSharePublish_Click;
             // 
             // EncyclopediaPage
             // 
-            this.EncyclopediaPage.Controls.Add(this.EncyclopediaSplitter);
-            this.EncyclopediaPage.Controls.Add(this.EncyclopediaToolbar);
-            this.EncyclopediaPage.Location = new System.Drawing.Point(4, 25);
-            this.EncyclopediaPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EncyclopediaPage.Name = "EncyclopediaPage";
-            this.EncyclopediaPage.Size = new System.Drawing.Size(1144, 509);
-            this.EncyclopediaPage.TabIndex = 1;
-            this.EncyclopediaPage.Text = "Encyclopedia";
-            this.EncyclopediaPage.UseVisualStyleBackColor = true;
+            EncyclopediaPage.Controls.Add(EncyclopediaSplitter);
+            EncyclopediaPage.Controls.Add(EncyclopediaToolbar);
+            EncyclopediaPage.Location = new System.Drawing.Point(4, 29);
+            EncyclopediaPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            EncyclopediaPage.Name = "EncyclopediaPage";
+            EncyclopediaPage.Size = new System.Drawing.Size(1144, 647);
+            EncyclopediaPage.TabIndex = 1;
+            EncyclopediaPage.Text = "Encyclopedia";
+            EncyclopediaPage.UseVisualStyleBackColor = true;
             // 
             // EncyclopediaSplitter
             // 
-            this.EncyclopediaSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EncyclopediaSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.EncyclopediaSplitter.Location = new System.Drawing.Point(0, 27);
-            this.EncyclopediaSplitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EncyclopediaSplitter.Name = "EncyclopediaSplitter";
+            EncyclopediaSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            EncyclopediaSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            EncyclopediaSplitter.Location = new System.Drawing.Point(0, 27);
+            EncyclopediaSplitter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            EncyclopediaSplitter.Name = "EncyclopediaSplitter";
             // 
             // EncyclopediaSplitter.Panel1
             // 
-            this.EncyclopediaSplitter.Panel1.Controls.Add(this.EntryList);
+            EncyclopediaSplitter.Panel1.Controls.Add(EntryList);
             // 
             // EncyclopediaSplitter.Panel2
             // 
-            this.EncyclopediaSplitter.Panel2.Controls.Add(this.EncyclopediaEntrySplitter);
-            this.EncyclopediaSplitter.Size = new System.Drawing.Size(1144, 482);
-            this.EncyclopediaSplitter.SplitterDistance = 255;
-            this.EncyclopediaSplitter.SplitterWidth = 5;
-            this.EncyclopediaSplitter.TabIndex = 3;
+            EncyclopediaSplitter.Panel2.Controls.Add(EncyclopediaEntrySplitter);
+            EncyclopediaSplitter.Size = new System.Drawing.Size(1144, 620);
+            EncyclopediaSplitter.SplitterDistance = 255;
+            EncyclopediaSplitter.SplitterWidth = 5;
+            EncyclopediaSplitter.TabIndex = 3;
             // 
             // EntryList
             // 
-            this.EntryList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.EntryHdr});
-            this.EntryList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EntryList.FullRowSelect = true;
-            this.EntryList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.EntryList.HideSelection = false;
-            this.EntryList.Location = new System.Drawing.Point(0, 0);
-            this.EntryList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EntryList.MultiSelect = false;
-            this.EntryList.Name = "EntryList";
-            this.EntryList.Size = new System.Drawing.Size(255, 482);
-            this.EntryList.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.EntryList.TabIndex = 0;
-            this.EntryList.UseCompatibleStateImageBehavior = false;
-            this.EntryList.View = System.Windows.Forms.View.Details;
-            this.EntryList.SelectedIndexChanged += new System.EventHandler(this.EntryList_SelectedIndexChanged);
-            this.EntryList.DoubleClick += new System.EventHandler(this.EncEditBtn_Click);
+            EntryList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { EntryHdr });
+            EntryList.Dock = System.Windows.Forms.DockStyle.Fill;
+            EntryList.FullRowSelect = true;
+            EntryList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            EntryList.Location = new System.Drawing.Point(0, 0);
+            EntryList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            EntryList.MultiSelect = false;
+            EntryList.Name = "EntryList";
+            EntryList.Size = new System.Drawing.Size(255, 620);
+            EntryList.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            EntryList.TabIndex = 0;
+            EntryList.UseCompatibleStateImageBehavior = false;
+            EntryList.View = System.Windows.Forms.View.Details;
+            EntryList.SelectedIndexChanged += EntryList_SelectedIndexChanged;
+            EntryList.DoubleClick += EncEditBtn_Click;
             // 
             // EntryHdr
             // 
-            this.EntryHdr.Text = "Entries";
-            this.EntryHdr.Width = 221;
+            EntryHdr.Text = "Entries";
+            EntryHdr.Width = 221;
             // 
             // EncyclopediaEntrySplitter
             // 
-            this.EncyclopediaEntrySplitter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EncyclopediaEntrySplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.EncyclopediaEntrySplitter.Location = new System.Drawing.Point(0, 0);
-            this.EncyclopediaEntrySplitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EncyclopediaEntrySplitter.Name = "EncyclopediaEntrySplitter";
+            EncyclopediaEntrySplitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            EncyclopediaEntrySplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            EncyclopediaEntrySplitter.Location = new System.Drawing.Point(0, 0);
+            EncyclopediaEntrySplitter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            EncyclopediaEntrySplitter.Name = "EncyclopediaEntrySplitter";
             // 
             // EncyclopediaEntrySplitter.Panel1
             // 
-            this.EncyclopediaEntrySplitter.Panel1.Controls.Add(this.EntryPanel);
+            EncyclopediaEntrySplitter.Panel1.Controls.Add(EntryPanel);
             // 
             // EncyclopediaEntrySplitter.Panel2
             // 
-            this.EncyclopediaEntrySplitter.Panel2.Controls.Add(this.EntryImageList);
-            this.EncyclopediaEntrySplitter.Size = new System.Drawing.Size(884, 482);
-            this.EncyclopediaEntrySplitter.SplitterDistance = 751;
-            this.EncyclopediaEntrySplitter.SplitterWidth = 5;
-            this.EncyclopediaEntrySplitter.TabIndex = 5;
+            EncyclopediaEntrySplitter.Panel2.Controls.Add(EntryImageList);
+            EncyclopediaEntrySplitter.Size = new System.Drawing.Size(884, 620);
+            EncyclopediaEntrySplitter.SplitterDistance = 747;
+            EncyclopediaEntrySplitter.SplitterWidth = 5;
+            EncyclopediaEntrySplitter.TabIndex = 5;
             // 
             // EntryPanel
             // 
-            this.EntryPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EntryPanel.Controls.Add(this.EntryDetails);
-            this.EntryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EntryPanel.Location = new System.Drawing.Point(0, 0);
-            this.EntryPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EntryPanel.Name = "EntryPanel";
-            this.EntryPanel.Size = new System.Drawing.Size(751, 482);
-            this.EntryPanel.TabIndex = 0;
+            EntryPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            EntryPanel.Controls.Add(EntryDetails);
+            EntryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            EntryPanel.Location = new System.Drawing.Point(0, 0);
+            EntryPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            EntryPanel.Name = "EntryPanel";
+            EntryPanel.Size = new System.Drawing.Size(747, 620);
+            EntryPanel.TabIndex = 0;
             // 
             // EntryDetails
             // 
-            this.EntryDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EntryDetails.IsWebBrowserContextMenuEnabled = false;
-            this.EntryDetails.Location = new System.Drawing.Point(0, 0);
-            this.EntryDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EntryDetails.MinimumSize = new System.Drawing.Size(27, 25);
-            this.EntryDetails.Name = "EntryDetails";
-            this.EntryDetails.ScriptErrorsSuppressed = true;
-            this.EntryDetails.Size = new System.Drawing.Size(749, 480);
-            this.EntryDetails.TabIndex = 4;
-            this.EntryDetails.WebBrowserShortcutsEnabled = false;
-            this.EntryDetails.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.EntryDetails_Navigating);
+            EntryDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            EntryDetails.IsWebBrowserContextMenuEnabled = false;
+            EntryDetails.Location = new System.Drawing.Point(0, 0);
+            EntryDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            EntryDetails.MinimumSize = new System.Drawing.Size(27, 31);
+            EntryDetails.Name = "EntryDetails";
+            EntryDetails.ScriptErrorsSuppressed = true;
+            EntryDetails.Size = new System.Drawing.Size(745, 618);
+            EntryDetails.TabIndex = 4;
+            EntryDetails.WebBrowserShortcutsEnabled = false;
+            EntryDetails.Navigating += EntryDetails_Navigating;
             // 
             // EntryImageList
             // 
-            this.EntryImageList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EntryImageList.HideSelection = false;
-            this.EntryImageList.Location = new System.Drawing.Point(0, 0);
-            this.EntryImageList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EntryImageList.Name = "EntryImageList";
-            this.EntryImageList.Size = new System.Drawing.Size(128, 482);
-            this.EntryImageList.TabIndex = 0;
-            this.EntryImageList.UseCompatibleStateImageBehavior = false;
-            this.EntryImageList.DoubleClick += new System.EventHandler(this.EntryImageList_DoubleClick);
+            EntryImageList.Dock = System.Windows.Forms.DockStyle.Fill;
+            EntryImageList.Location = new System.Drawing.Point(0, 0);
+            EntryImageList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            EntryImageList.Name = "EntryImageList";
+            EntryImageList.Size = new System.Drawing.Size(132, 620);
+            EntryImageList.TabIndex = 0;
+            EntryImageList.UseCompatibleStateImageBehavior = false;
+            EntryImageList.DoubleClick += EntryImageList_DoubleClick;
             // 
             // EncyclopediaToolbar
             // 
-            this.EncyclopediaToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.EncyclopediaToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.EncAddBtn,
-            this.EncRemoveBtn,
-            this.EncEditBtn,
-            this.toolStripSeparator15,
-            this.EncCutBtn,
-            this.EncCopyBtn,
-            this.EncPasteBtn,
-            this.toolStripSeparator17,
-            this.EncPlayerView,
-            this.toolStripSeparator40,
-            this.EncShareBtn,
-            this.toolStripSeparator22,
-            this.EncSearchLbl,
-            this.EncSearchBox,
-            this.EncClearLbl});
-            this.EncyclopediaToolbar.Location = new System.Drawing.Point(0, 0);
-            this.EncyclopediaToolbar.Name = "EncyclopediaToolbar";
-            this.EncyclopediaToolbar.Size = new System.Drawing.Size(1144, 27);
-            this.EncyclopediaToolbar.TabIndex = 2;
-            this.EncyclopediaToolbar.Text = "toolStrip1";
+            EncyclopediaToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            EncyclopediaToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { EncAddBtn, EncRemoveBtn, EncEditBtn, toolStripSeparator15, EncCutBtn, EncCopyBtn, EncPasteBtn, toolStripSeparator17, EncPlayerView, toolStripSeparator40, EncShareBtn, toolStripSeparator22, EncSearchLbl, EncSearchBox, EncClearLbl });
+            EncyclopediaToolbar.Location = new System.Drawing.Point(0, 0);
+            EncyclopediaToolbar.Name = "EncyclopediaToolbar";
+            EncyclopediaToolbar.Size = new System.Drawing.Size(1144, 27);
+            EncyclopediaToolbar.TabIndex = 2;
+            EncyclopediaToolbar.Text = "toolStrip1";
             // 
             // EncAddBtn
             // 
-            this.EncAddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.EncAddBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.EncAddEntry,
-            this.EncAddGroup});
-            this.EncAddBtn.Image = ((System.Drawing.Image)(resources.GetObject("EncAddBtn.Image")));
-            this.EncAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EncAddBtn.Name = "EncAddBtn";
-            this.EncAddBtn.Size = new System.Drawing.Size(51, 24);
-            this.EncAddBtn.Text = "Add";
+            EncAddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            EncAddBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { EncAddEntry, EncAddGroup });
+            EncAddBtn.Image = (System.Drawing.Image)resources.GetObject("EncAddBtn.Image");
+            EncAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            EncAddBtn.Name = "EncAddBtn";
+            EncAddBtn.Size = new System.Drawing.Size(51, 24);
+            EncAddBtn.Text = "Add";
             // 
             // EncAddEntry
             // 
-            this.EncAddEntry.Name = "EncAddEntry";
-            this.EncAddEntry.Size = new System.Drawing.Size(177, 26);
-            this.EncAddEntry.Text = "Add an Entry";
-            this.EncAddEntry.Click += new System.EventHandler(this.EncAddEntry_Click);
+            EncAddEntry.Name = "EncAddEntry";
+            EncAddEntry.Size = new System.Drawing.Size(177, 26);
+            EncAddEntry.Text = "Add an Entry";
+            EncAddEntry.Click += EncAddEntry_Click;
             // 
             // EncAddGroup
             // 
-            this.EncAddGroup.Name = "EncAddGroup";
-            this.EncAddGroup.Size = new System.Drawing.Size(177, 26);
-            this.EncAddGroup.Text = "Add a Group";
-            this.EncAddGroup.Click += new System.EventHandler(this.EncAddGroup_Click);
+            EncAddGroup.Name = "EncAddGroup";
+            EncAddGroup.Size = new System.Drawing.Size(177, 26);
+            EncAddGroup.Text = "Add a Group";
+            EncAddGroup.Click += EncAddGroup_Click;
             // 
             // EncRemoveBtn
             // 
-            this.EncRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.EncRemoveBtn.Image = ((System.Drawing.Image)(resources.GetObject("EncRemoveBtn.Image")));
-            this.EncRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EncRemoveBtn.Name = "EncRemoveBtn";
-            this.EncRemoveBtn.Size = new System.Drawing.Size(67, 24);
-            this.EncRemoveBtn.Text = "Remove";
-            this.EncRemoveBtn.Click += new System.EventHandler(this.EncRemoveBtn_Click);
+            EncRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            EncRemoveBtn.Image = (System.Drawing.Image)resources.GetObject("EncRemoveBtn.Image");
+            EncRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            EncRemoveBtn.Name = "EncRemoveBtn";
+            EncRemoveBtn.Size = new System.Drawing.Size(67, 24);
+            EncRemoveBtn.Text = "Remove";
+            EncRemoveBtn.Click += EncRemoveBtn_Click;
             // 
             // EncEditBtn
             // 
-            this.EncEditBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.EncEditBtn.Image = ((System.Drawing.Image)(resources.GetObject("EncEditBtn.Image")));
-            this.EncEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EncEditBtn.Name = "EncEditBtn";
-            this.EncEditBtn.Size = new System.Drawing.Size(39, 24);
-            this.EncEditBtn.Text = "Edit";
-            this.EncEditBtn.Click += new System.EventHandler(this.EncEditBtn_Click);
+            EncEditBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            EncEditBtn.Image = (System.Drawing.Image)resources.GetObject("EncEditBtn.Image");
+            EncEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            EncEditBtn.Name = "EncEditBtn";
+            EncEditBtn.Size = new System.Drawing.Size(39, 24);
+            EncEditBtn.Text = "Edit";
+            EncEditBtn.Click += EncEditBtn_Click;
             // 
             // toolStripSeparator15
             // 
-            this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator15.Name = "toolStripSeparator15";
+            toolStripSeparator15.Size = new System.Drawing.Size(6, 27);
             // 
             // EncCutBtn
             // 
-            this.EncCutBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.EncCutBtn.Image = ((System.Drawing.Image)(resources.GetObject("EncCutBtn.Image")));
-            this.EncCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EncCutBtn.Name = "EncCutBtn";
-            this.EncCutBtn.Size = new System.Drawing.Size(35, 24);
-            this.EncCutBtn.Text = "Cut";
-            this.EncCutBtn.Click += new System.EventHandler(this.EncCutBtn_Click);
+            EncCutBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            EncCutBtn.Image = (System.Drawing.Image)resources.GetObject("EncCutBtn.Image");
+            EncCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            EncCutBtn.Name = "EncCutBtn";
+            EncCutBtn.Size = new System.Drawing.Size(35, 24);
+            EncCutBtn.Text = "Cut";
+            EncCutBtn.Click += EncCutBtn_Click;
             // 
             // EncCopyBtn
             // 
-            this.EncCopyBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.EncCopyBtn.Image = ((System.Drawing.Image)(resources.GetObject("EncCopyBtn.Image")));
-            this.EncCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EncCopyBtn.Name = "EncCopyBtn";
-            this.EncCopyBtn.Size = new System.Drawing.Size(47, 24);
-            this.EncCopyBtn.Text = "Copy";
-            this.EncCopyBtn.Click += new System.EventHandler(this.EncCopyBtn_Click);
+            EncCopyBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            EncCopyBtn.Image = (System.Drawing.Image)resources.GetObject("EncCopyBtn.Image");
+            EncCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            EncCopyBtn.Name = "EncCopyBtn";
+            EncCopyBtn.Size = new System.Drawing.Size(47, 24);
+            EncCopyBtn.Text = "Copy";
+            EncCopyBtn.Click += EncCopyBtn_Click;
             // 
             // EncPasteBtn
             // 
-            this.EncPasteBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.EncPasteBtn.Image = ((System.Drawing.Image)(resources.GetObject("EncPasteBtn.Image")));
-            this.EncPasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EncPasteBtn.Name = "EncPasteBtn";
-            this.EncPasteBtn.Size = new System.Drawing.Size(47, 24);
-            this.EncPasteBtn.Text = "Paste";
-            this.EncPasteBtn.Click += new System.EventHandler(this.EncPasteBtn_Click);
+            EncPasteBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            EncPasteBtn.Image = (System.Drawing.Image)resources.GetObject("EncPasteBtn.Image");
+            EncPasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            EncPasteBtn.Name = "EncPasteBtn";
+            EncPasteBtn.Size = new System.Drawing.Size(47, 24);
+            EncPasteBtn.Text = "Paste";
+            EncPasteBtn.Click += EncPasteBtn_Click;
             // 
             // toolStripSeparator17
             // 
-            this.toolStripSeparator17.Name = "toolStripSeparator17";
-            this.toolStripSeparator17.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator17.Name = "toolStripSeparator17";
+            toolStripSeparator17.Size = new System.Drawing.Size(6, 27);
             // 
             // EncPlayerView
             // 
-            this.EncPlayerView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.EncPlayerView.Image = ((System.Drawing.Image)(resources.GetObject("EncPlayerView.Image")));
-            this.EncPlayerView.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EncPlayerView.Name = "EncPlayerView";
-            this.EncPlayerView.Size = new System.Drawing.Size(144, 24);
-            this.EncPlayerView.Text = "Send to Player View";
-            this.EncPlayerView.Click += new System.EventHandler(this.EncPlayerView_Click);
+            EncPlayerView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            EncPlayerView.Image = (System.Drawing.Image)resources.GetObject("EncPlayerView.Image");
+            EncPlayerView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            EncPlayerView.Name = "EncPlayerView";
+            EncPlayerView.Size = new System.Drawing.Size(144, 24);
+            EncPlayerView.Text = "Send to Player View";
+            EncPlayerView.Click += EncPlayerView_Click;
             // 
             // toolStripSeparator40
             // 
-            this.toolStripSeparator40.Name = "toolStripSeparator40";
-            this.toolStripSeparator40.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator40.Name = "toolStripSeparator40";
+            toolStripSeparator40.Size = new System.Drawing.Size(6, 27);
             // 
             // EncShareBtn
             // 
-            this.EncShareBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.EncShareBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.EncShareExport,
-            this.EncShareImport,
-            this.toolStripMenuItem6,
-            this.EncSharePublish});
-            this.EncShareBtn.Image = ((System.Drawing.Image)(resources.GetObject("EncShareBtn.Image")));
-            this.EncShareBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EncShareBtn.Name = "EncShareBtn";
-            this.EncShareBtn.Size = new System.Drawing.Size(60, 24);
-            this.EncShareBtn.Text = "Share";
+            EncShareBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            EncShareBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { EncShareExport, EncShareImport, toolStripMenuItem6, EncSharePublish });
+            EncShareBtn.Image = (System.Drawing.Image)resources.GetObject("EncShareBtn.Image");
+            EncShareBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            EncShareBtn.Name = "EncShareBtn";
+            EncShareBtn.Size = new System.Drawing.Size(60, 24);
+            EncShareBtn.Text = "Share";
             // 
             // EncShareExport
             // 
-            this.EncShareExport.Name = "EncShareExport";
-            this.EncShareExport.Size = new System.Drawing.Size(148, 26);
-            this.EncShareExport.Text = "Export...";
-            this.EncShareExport.Click += new System.EventHandler(this.EncShareExport_Click);
+            EncShareExport.Name = "EncShareExport";
+            EncShareExport.Size = new System.Drawing.Size(148, 26);
+            EncShareExport.Text = "Export...";
+            EncShareExport.Click += EncShareExport_Click;
             // 
             // EncShareImport
             // 
-            this.EncShareImport.Name = "EncShareImport";
-            this.EncShareImport.Size = new System.Drawing.Size(148, 26);
-            this.EncShareImport.Text = "Import...";
-            this.EncShareImport.Click += new System.EventHandler(this.EncShareImport_Click);
+            EncShareImport.Name = "EncShareImport";
+            EncShareImport.Size = new System.Drawing.Size(148, 26);
+            EncShareImport.Text = "Import...";
+            EncShareImport.Click += EncShareImport_Click;
             // 
             // toolStripMenuItem6
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(145, 6);
+            toolStripMenuItem6.Name = "toolStripMenuItem6";
+            toolStripMenuItem6.Size = new System.Drawing.Size(145, 6);
             // 
             // EncSharePublish
             // 
-            this.EncSharePublish.Name = "EncSharePublish";
-            this.EncSharePublish.Size = new System.Drawing.Size(148, 26);
-            this.EncSharePublish.Text = "Publish...";
-            this.EncSharePublish.Click += new System.EventHandler(this.EncSharePublish_Click);
+            EncSharePublish.Name = "EncSharePublish";
+            EncSharePublish.Size = new System.Drawing.Size(148, 26);
+            EncSharePublish.Text = "Publish...";
+            EncSharePublish.Click += EncSharePublish_Click;
             // 
             // toolStripSeparator22
             // 
-            this.toolStripSeparator22.Name = "toolStripSeparator22";
-            this.toolStripSeparator22.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator22.Name = "toolStripSeparator22";
+            toolStripSeparator22.Size = new System.Drawing.Size(6, 27);
             // 
             // EncSearchLbl
             // 
-            this.EncSearchLbl.Name = "EncSearchLbl";
-            this.EncSearchLbl.Size = new System.Drawing.Size(56, 24);
-            this.EncSearchLbl.Text = "Search:";
+            EncSearchLbl.Name = "EncSearchLbl";
+            EncSearchLbl.Size = new System.Drawing.Size(56, 24);
+            EncSearchLbl.Text = "Search:";
             // 
             // EncSearchBox
             // 
-            this.EncSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EncSearchBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.EncSearchBox.Name = "EncSearchBox";
-            this.EncSearchBox.Size = new System.Drawing.Size(199, 27);
-            this.EncSearchBox.TextChanged += new System.EventHandler(this.EncSearchBox_TextChanged);
+            EncSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            EncSearchBox.Name = "EncSearchBox";
+            EncSearchBox.Size = new System.Drawing.Size(199, 27);
+            EncSearchBox.TextChanged += EncSearchBox_TextChanged;
             // 
             // EncClearLbl
             // 
-            this.EncClearLbl.IsLink = true;
-            this.EncClearLbl.Name = "EncClearLbl";
-            this.EncClearLbl.Size = new System.Drawing.Size(43, 24);
-            this.EncClearLbl.Text = "Clear";
-            this.EncClearLbl.Click += new System.EventHandler(this.EncClearLbl_Click);
+            EncClearLbl.IsLink = true;
+            EncClearLbl.Name = "EncClearLbl";
+            EncClearLbl.Size = new System.Drawing.Size(43, 24);
+            EncClearLbl.Text = "Clear";
+            EncClearLbl.Click += EncClearLbl_Click;
             // 
             // RulesPage
             // 
-            this.RulesPage.Controls.Add(this.RulesSplitter);
-            this.RulesPage.Location = new System.Drawing.Point(4, 25);
-            this.RulesPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.RulesPage.Name = "RulesPage";
-            this.RulesPage.Size = new System.Drawing.Size(1144, 509);
-            this.RulesPage.TabIndex = 5;
-            this.RulesPage.Text = "Campaign Rules";
-            this.RulesPage.UseVisualStyleBackColor = true;
+            RulesPage.Controls.Add(RulesSplitter);
+            RulesPage.Location = new System.Drawing.Point(4, 29);
+            RulesPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            RulesPage.Name = "RulesPage";
+            RulesPage.Size = new System.Drawing.Size(1144, 647);
+            RulesPage.TabIndex = 5;
+            RulesPage.Text = "Campaign Rules";
+            RulesPage.UseVisualStyleBackColor = true;
             // 
             // RulesSplitter
             // 
-            this.RulesSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RulesSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.RulesSplitter.Location = new System.Drawing.Point(0, 0);
-            this.RulesSplitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.RulesSplitter.Name = "RulesSplitter";
+            RulesSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            RulesSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            RulesSplitter.Location = new System.Drawing.Point(0, 0);
+            RulesSplitter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            RulesSplitter.Name = "RulesSplitter";
             // 
             // RulesSplitter.Panel1
             // 
-            this.RulesSplitter.Panel1.Controls.Add(this.RulesList);
-            this.RulesSplitter.Panel1.Controls.Add(this.RulesToolbar);
+            RulesSplitter.Panel1.Controls.Add(RulesList);
+            RulesSplitter.Panel1.Controls.Add(RulesToolbar);
             // 
             // RulesSplitter.Panel2
             // 
-            this.RulesSplitter.Panel2.Controls.Add(this.RulesBrowserPanel);
-            this.RulesSplitter.Panel2.Controls.Add(this.EncEntryToolbar);
-            this.RulesSplitter.Size = new System.Drawing.Size(1144, 509);
-            this.RulesSplitter.SplitterDistance = 231;
-            this.RulesSplitter.SplitterWidth = 5;
-            this.RulesSplitter.TabIndex = 1;
+            RulesSplitter.Panel2.Controls.Add(RulesBrowserPanel);
+            RulesSplitter.Panel2.Controls.Add(EncEntryToolbar);
+            RulesSplitter.Size = new System.Drawing.Size(1144, 647);
+            RulesSplitter.SplitterDistance = 231;
+            RulesSplitter.SplitterWidth = 5;
+            RulesSplitter.TabIndex = 1;
             // 
             // RulesList
             // 
-            this.RulesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.RulesHdr});
-            this.RulesList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RulesList.FullRowSelect = true;
+            RulesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { RulesHdr });
+            RulesList.Dock = System.Windows.Forms.DockStyle.Fill;
+            RulesList.FullRowSelect = true;
             listViewGroup1.Header = "Races";
             listViewGroup1.Name = "listViewGroup1";
             listViewGroup2.Header = "Classes";
@@ -2263,1103 +2132,991 @@
             listViewGroup13.Name = "listViewGroup12";
             listViewGroup14.Header = "Poisons";
             listViewGroup14.Name = "listViewGroup13";
-            this.RulesList.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3,
-            listViewGroup4,
-            listViewGroup5,
-            listViewGroup6,
-            listViewGroup7,
-            listViewGroup8,
-            listViewGroup9,
-            listViewGroup10,
-            listViewGroup11,
-            listViewGroup12,
-            listViewGroup13,
-            listViewGroup14});
-            this.RulesList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.RulesList.HideSelection = false;
-            this.RulesList.Location = new System.Drawing.Point(0, 27);
-            this.RulesList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.RulesList.MultiSelect = false;
-            this.RulesList.Name = "RulesList";
-            this.RulesList.Size = new System.Drawing.Size(231, 482);
-            this.RulesList.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.RulesList.TabIndex = 1;
-            this.RulesList.UseCompatibleStateImageBehavior = false;
-            this.RulesList.View = System.Windows.Forms.View.Details;
-            this.RulesList.SelectedIndexChanged += new System.EventHandler(this.RulesList_SelectedIndexChanged);
-            this.RulesList.DoubleClick += new System.EventHandler(this.RulesEditBtn_Click);
+            RulesList.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] { listViewGroup1, listViewGroup2, listViewGroup3, listViewGroup4, listViewGroup5, listViewGroup6, listViewGroup7, listViewGroup8, listViewGroup9, listViewGroup10, listViewGroup11, listViewGroup12, listViewGroup13, listViewGroup14 });
+            RulesList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            RulesList.Location = new System.Drawing.Point(0, 27);
+            RulesList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            RulesList.MultiSelect = false;
+            RulesList.Name = "RulesList";
+            RulesList.Size = new System.Drawing.Size(231, 620);
+            RulesList.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            RulesList.TabIndex = 1;
+            RulesList.UseCompatibleStateImageBehavior = false;
+            RulesList.View = System.Windows.Forms.View.Details;
+            RulesList.SelectedIndexChanged += RulesList_SelectedIndexChanged;
+            RulesList.DoubleClick += RulesEditBtn_Click;
             // 
             // RulesHdr
             // 
-            this.RulesHdr.Text = "Rules Elements";
-            this.RulesHdr.Width = 193;
+            RulesHdr.Text = "Rules Elements";
+            RulesHdr.Width = 193;
             // 
             // RulesToolbar
             // 
-            this.RulesToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.RulesToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RulesAddBtn,
-            this.toolStripSeparator33,
-            this.RulesShareBtn});
-            this.RulesToolbar.Location = new System.Drawing.Point(0, 0);
-            this.RulesToolbar.Name = "RulesToolbar";
-            this.RulesToolbar.Size = new System.Drawing.Size(231, 27);
-            this.RulesToolbar.TabIndex = 0;
-            this.RulesToolbar.Text = "toolStrip1";
+            RulesToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            RulesToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { RulesAddBtn, toolStripSeparator33, RulesShareBtn });
+            RulesToolbar.Location = new System.Drawing.Point(0, 0);
+            RulesToolbar.Name = "RulesToolbar";
+            RulesToolbar.Size = new System.Drawing.Size(231, 27);
+            RulesToolbar.TabIndex = 0;
+            RulesToolbar.Text = "toolStrip1";
             // 
             // RulesAddBtn
             // 
-            this.RulesAddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.RulesAddBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddRace,
-            this.toolStripSeparator31,
-            this.AddClass,
-            this.AddTheme,
-            this.AddParagonPath,
-            this.AddEpicDestiny,
-            this.toolStripSeparator32,
-            this.AddBackground,
-            this.AddFeat,
-            this.AddWeapon,
-            this.AddRitual,
-            this.toolStripSeparator39,
-            this.AddCreatureLore,
-            this.AddDisease,
-            this.AddPoison});
-            this.RulesAddBtn.Image = ((System.Drawing.Image)(resources.GetObject("RulesAddBtn.Image")));
-            this.RulesAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RulesAddBtn.Name = "RulesAddBtn";
-            this.RulesAddBtn.Size = new System.Drawing.Size(51, 24);
-            this.RulesAddBtn.Text = "Add";
+            RulesAddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            RulesAddBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { AddRace, toolStripSeparator31, AddClass, AddTheme, AddParagonPath, AddEpicDestiny, toolStripSeparator32, AddBackground, AddFeat, AddWeapon, AddRitual, toolStripSeparator39, AddCreatureLore, AddDisease, AddPoison });
+            RulesAddBtn.Image = (System.Drawing.Image)resources.GetObject("RulesAddBtn.Image");
+            RulesAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            RulesAddBtn.Name = "RulesAddBtn";
+            RulesAddBtn.Size = new System.Drawing.Size(51, 24);
+            RulesAddBtn.Text = "Add";
             // 
             // AddRace
             // 
-            this.AddRace.Name = "AddRace";
-            this.AddRace.Size = new System.Drawing.Size(181, 26);
-            this.AddRace.Text = "Race";
-            this.AddRace.Click += new System.EventHandler(this.AddRace_Click);
+            AddRace.Name = "AddRace";
+            AddRace.Size = new System.Drawing.Size(181, 26);
+            AddRace.Text = "Race";
+            AddRace.Click += AddRace_Click;
             // 
             // toolStripSeparator31
             // 
-            this.toolStripSeparator31.Name = "toolStripSeparator31";
-            this.toolStripSeparator31.Size = new System.Drawing.Size(178, 6);
+            toolStripSeparator31.Name = "toolStripSeparator31";
+            toolStripSeparator31.Size = new System.Drawing.Size(178, 6);
             // 
             // AddClass
             // 
-            this.AddClass.Name = "AddClass";
-            this.AddClass.Size = new System.Drawing.Size(181, 26);
-            this.AddClass.Text = "Class";
-            this.AddClass.Click += new System.EventHandler(this.AddClass_Click);
+            AddClass.Name = "AddClass";
+            AddClass.Size = new System.Drawing.Size(181, 26);
+            AddClass.Text = "Class";
+            AddClass.Click += AddClass_Click;
             // 
             // AddTheme
             // 
-            this.AddTheme.Name = "AddTheme";
-            this.AddTheme.Size = new System.Drawing.Size(181, 26);
-            this.AddTheme.Text = "Theme";
-            this.AddTheme.Click += new System.EventHandler(this.AddTheme_Click);
+            AddTheme.Name = "AddTheme";
+            AddTheme.Size = new System.Drawing.Size(181, 26);
+            AddTheme.Text = "Theme";
+            AddTheme.Click += AddTheme_Click;
             // 
             // AddParagonPath
             // 
-            this.AddParagonPath.Name = "AddParagonPath";
-            this.AddParagonPath.Size = new System.Drawing.Size(181, 26);
-            this.AddParagonPath.Text = "Paragon Path";
-            this.AddParagonPath.Click += new System.EventHandler(this.AddParagonPath_Click);
+            AddParagonPath.Name = "AddParagonPath";
+            AddParagonPath.Size = new System.Drawing.Size(181, 26);
+            AddParagonPath.Text = "Paragon Path";
+            AddParagonPath.Click += AddParagonPath_Click;
             // 
             // AddEpicDestiny
             // 
-            this.AddEpicDestiny.Name = "AddEpicDestiny";
-            this.AddEpicDestiny.Size = new System.Drawing.Size(181, 26);
-            this.AddEpicDestiny.Text = "Epic Destiny";
-            this.AddEpicDestiny.Click += new System.EventHandler(this.AddEpicDestiny_Click);
+            AddEpicDestiny.Name = "AddEpicDestiny";
+            AddEpicDestiny.Size = new System.Drawing.Size(181, 26);
+            AddEpicDestiny.Text = "Epic Destiny";
+            AddEpicDestiny.Click += AddEpicDestiny_Click;
             // 
             // toolStripSeparator32
             // 
-            this.toolStripSeparator32.Name = "toolStripSeparator32";
-            this.toolStripSeparator32.Size = new System.Drawing.Size(178, 6);
+            toolStripSeparator32.Name = "toolStripSeparator32";
+            toolStripSeparator32.Size = new System.Drawing.Size(178, 6);
             // 
             // AddBackground
             // 
-            this.AddBackground.Name = "AddBackground";
-            this.AddBackground.Size = new System.Drawing.Size(181, 26);
-            this.AddBackground.Text = "Background";
-            this.AddBackground.Click += new System.EventHandler(this.AddBackground_Click);
+            AddBackground.Name = "AddBackground";
+            AddBackground.Size = new System.Drawing.Size(181, 26);
+            AddBackground.Text = "Background";
+            AddBackground.Click += AddBackground_Click;
             // 
             // AddFeat
             // 
-            this.AddFeat.Name = "AddFeat";
-            this.AddFeat.Size = new System.Drawing.Size(181, 26);
-            this.AddFeat.Text = "Feat";
-            this.AddFeat.Click += new System.EventHandler(this.AddFeat_Click);
+            AddFeat.Name = "AddFeat";
+            AddFeat.Size = new System.Drawing.Size(181, 26);
+            AddFeat.Text = "Feat";
+            AddFeat.Click += AddFeat_Click;
             // 
             // AddWeapon
             // 
-            this.AddWeapon.Name = "AddWeapon";
-            this.AddWeapon.Size = new System.Drawing.Size(181, 26);
-            this.AddWeapon.Text = "Weapon";
-            this.AddWeapon.Click += new System.EventHandler(this.AddWeapon_Click);
+            AddWeapon.Name = "AddWeapon";
+            AddWeapon.Size = new System.Drawing.Size(181, 26);
+            AddWeapon.Text = "Weapon";
+            AddWeapon.Click += AddWeapon_Click;
             // 
             // AddRitual
             // 
-            this.AddRitual.Name = "AddRitual";
-            this.AddRitual.Size = new System.Drawing.Size(181, 26);
-            this.AddRitual.Text = "Ritual";
-            this.AddRitual.Click += new System.EventHandler(this.AddRitual_Click);
+            AddRitual.Name = "AddRitual";
+            AddRitual.Size = new System.Drawing.Size(181, 26);
+            AddRitual.Text = "Ritual";
+            AddRitual.Click += AddRitual_Click;
             // 
             // toolStripSeparator39
             // 
-            this.toolStripSeparator39.Name = "toolStripSeparator39";
-            this.toolStripSeparator39.Size = new System.Drawing.Size(178, 6);
+            toolStripSeparator39.Name = "toolStripSeparator39";
+            toolStripSeparator39.Size = new System.Drawing.Size(178, 6);
             // 
             // AddCreatureLore
             // 
-            this.AddCreatureLore.Name = "AddCreatureLore";
-            this.AddCreatureLore.Size = new System.Drawing.Size(181, 26);
-            this.AddCreatureLore.Text = "Creature Lore";
-            this.AddCreatureLore.Click += new System.EventHandler(this.AddCreatureLore_Click);
+            AddCreatureLore.Name = "AddCreatureLore";
+            AddCreatureLore.Size = new System.Drawing.Size(181, 26);
+            AddCreatureLore.Text = "Creature Lore";
+            AddCreatureLore.Click += AddCreatureLore_Click;
             // 
             // AddDisease
             // 
-            this.AddDisease.Name = "AddDisease";
-            this.AddDisease.Size = new System.Drawing.Size(181, 26);
-            this.AddDisease.Text = "Disease";
-            this.AddDisease.Click += new System.EventHandler(this.AddDisease_Click);
+            AddDisease.Name = "AddDisease";
+            AddDisease.Size = new System.Drawing.Size(181, 26);
+            AddDisease.Text = "Disease";
+            AddDisease.Click += AddDisease_Click;
             // 
             // AddPoison
             // 
-            this.AddPoison.Name = "AddPoison";
-            this.AddPoison.Size = new System.Drawing.Size(181, 26);
-            this.AddPoison.Text = "Poison";
-            this.AddPoison.Click += new System.EventHandler(this.AddPoison_Click);
+            AddPoison.Name = "AddPoison";
+            AddPoison.Size = new System.Drawing.Size(181, 26);
+            AddPoison.Text = "Poison";
+            AddPoison.Click += AddPoison_Click;
             // 
             // toolStripSeparator33
             // 
-            this.toolStripSeparator33.Name = "toolStripSeparator33";
-            this.toolStripSeparator33.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator33.Name = "toolStripSeparator33";
+            toolStripSeparator33.Size = new System.Drawing.Size(6, 27);
             // 
             // RulesShareBtn
             // 
-            this.RulesShareBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.RulesShareBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RulesShareExport,
-            this.RulesShareImport,
-            this.toolStripMenuItem9,
-            this.RulesSharePublish});
-            this.RulesShareBtn.Image = ((System.Drawing.Image)(resources.GetObject("RulesShareBtn.Image")));
-            this.RulesShareBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RulesShareBtn.Name = "RulesShareBtn";
-            this.RulesShareBtn.Size = new System.Drawing.Size(60, 24);
-            this.RulesShareBtn.Text = "Share";
+            RulesShareBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            RulesShareBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { RulesShareExport, RulesShareImport, toolStripMenuItem9, RulesSharePublish });
+            RulesShareBtn.Image = (System.Drawing.Image)resources.GetObject("RulesShareBtn.Image");
+            RulesShareBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            RulesShareBtn.Name = "RulesShareBtn";
+            RulesShareBtn.Size = new System.Drawing.Size(60, 24);
+            RulesShareBtn.Text = "Share";
             // 
             // RulesShareExport
             // 
-            this.RulesShareExport.Name = "RulesShareExport";
-            this.RulesShareExport.Size = new System.Drawing.Size(148, 26);
-            this.RulesShareExport.Text = "Export...";
-            this.RulesShareExport.Click += new System.EventHandler(this.RulesShareExport_Click);
+            RulesShareExport.Name = "RulesShareExport";
+            RulesShareExport.Size = new System.Drawing.Size(148, 26);
+            RulesShareExport.Text = "Export...";
+            RulesShareExport.Click += RulesShareExport_Click;
             // 
             // RulesShareImport
             // 
-            this.RulesShareImport.Name = "RulesShareImport";
-            this.RulesShareImport.Size = new System.Drawing.Size(148, 26);
-            this.RulesShareImport.Text = "Import...";
-            this.RulesShareImport.Click += new System.EventHandler(this.RulesShareImport_Click);
+            RulesShareImport.Name = "RulesShareImport";
+            RulesShareImport.Size = new System.Drawing.Size(148, 26);
+            RulesShareImport.Text = "Import...";
+            RulesShareImport.Click += RulesShareImport_Click;
             // 
             // toolStripMenuItem9
             // 
-            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(145, 6);
+            toolStripMenuItem9.Name = "toolStripMenuItem9";
+            toolStripMenuItem9.Size = new System.Drawing.Size(145, 6);
             // 
             // RulesSharePublish
             // 
-            this.RulesSharePublish.Name = "RulesSharePublish";
-            this.RulesSharePublish.Size = new System.Drawing.Size(148, 26);
-            this.RulesSharePublish.Text = "Publish...";
-            this.RulesSharePublish.Click += new System.EventHandler(this.RulesSharePublish_Click);
+            RulesSharePublish.Name = "RulesSharePublish";
+            RulesSharePublish.Size = new System.Drawing.Size(148, 26);
+            RulesSharePublish.Text = "Publish...";
+            RulesSharePublish.Click += RulesSharePublish_Click;
             // 
             // RulesBrowserPanel
             // 
-            this.RulesBrowserPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RulesBrowserPanel.Controls.Add(this.RulesBrowser);
-            this.RulesBrowserPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RulesBrowserPanel.Location = new System.Drawing.Point(0, 27);
-            this.RulesBrowserPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.RulesBrowserPanel.Name = "RulesBrowserPanel";
-            this.RulesBrowserPanel.Size = new System.Drawing.Size(908, 482);
-            this.RulesBrowserPanel.TabIndex = 0;
+            RulesBrowserPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            RulesBrowserPanel.Controls.Add(RulesBrowser);
+            RulesBrowserPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            RulesBrowserPanel.Location = new System.Drawing.Point(0, 27);
+            RulesBrowserPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            RulesBrowserPanel.Name = "RulesBrowserPanel";
+            RulesBrowserPanel.Size = new System.Drawing.Size(908, 620);
+            RulesBrowserPanel.TabIndex = 0;
             // 
             // RulesBrowser
             // 
-            this.RulesBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RulesBrowser.IsWebBrowserContextMenuEnabled = false;
-            this.RulesBrowser.Location = new System.Drawing.Point(0, 0);
-            this.RulesBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.RulesBrowser.MinimumSize = new System.Drawing.Size(27, 25);
-            this.RulesBrowser.Name = "RulesBrowser";
-            this.RulesBrowser.ScriptErrorsSuppressed = true;
-            this.RulesBrowser.Size = new System.Drawing.Size(906, 480);
-            this.RulesBrowser.TabIndex = 1;
-            this.RulesBrowser.WebBrowserShortcutsEnabled = false;
+            RulesBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            RulesBrowser.IsWebBrowserContextMenuEnabled = false;
+            RulesBrowser.Location = new System.Drawing.Point(0, 0);
+            RulesBrowser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            RulesBrowser.MinimumSize = new System.Drawing.Size(27, 31);
+            RulesBrowser.Name = "RulesBrowser";
+            RulesBrowser.ScriptErrorsSuppressed = true;
+            RulesBrowser.Size = new System.Drawing.Size(906, 618);
+            RulesBrowser.TabIndex = 1;
+            RulesBrowser.WebBrowserShortcutsEnabled = false;
             // 
             // EncEntryToolbar
             // 
-            this.EncEntryToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.EncEntryToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RulesRemoveBtn,
-            this.RulesEditBtn,
-            this.toolStripSeparator43,
-            this.RuleEncyclopediaBtn,
-            this.toolStripSeparator36,
-            this.RulesPlayerViewBtn});
-            this.EncEntryToolbar.Location = new System.Drawing.Point(0, 0);
-            this.EncEntryToolbar.Name = "EncEntryToolbar";
-            this.EncEntryToolbar.Size = new System.Drawing.Size(908, 27);
-            this.EncEntryToolbar.TabIndex = 2;
-            this.EncEntryToolbar.Text = "toolStrip1";
+            EncEntryToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            EncEntryToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { RulesRemoveBtn, RulesEditBtn, toolStripSeparator43, RuleEncyclopediaBtn, toolStripSeparator36, RulesPlayerViewBtn });
+            EncEntryToolbar.Location = new System.Drawing.Point(0, 0);
+            EncEntryToolbar.Name = "EncEntryToolbar";
+            EncEntryToolbar.Size = new System.Drawing.Size(908, 27);
+            EncEntryToolbar.TabIndex = 2;
+            EncEntryToolbar.Text = "toolStrip1";
             // 
             // RulesRemoveBtn
             // 
-            this.RulesRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.RulesRemoveBtn.Image = ((System.Drawing.Image)(resources.GetObject("RulesRemoveBtn.Image")));
-            this.RulesRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RulesRemoveBtn.Name = "RulesRemoveBtn";
-            this.RulesRemoveBtn.Size = new System.Drawing.Size(67, 24);
-            this.RulesRemoveBtn.Text = "Remove";
-            this.RulesRemoveBtn.Click += new System.EventHandler(this.RulesRemoveBtn_Click);
+            RulesRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            RulesRemoveBtn.Image = (System.Drawing.Image)resources.GetObject("RulesRemoveBtn.Image");
+            RulesRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            RulesRemoveBtn.Name = "RulesRemoveBtn";
+            RulesRemoveBtn.Size = new System.Drawing.Size(67, 24);
+            RulesRemoveBtn.Text = "Remove";
+            RulesRemoveBtn.Click += RulesRemoveBtn_Click;
             // 
             // RulesEditBtn
             // 
-            this.RulesEditBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.RulesEditBtn.Image = ((System.Drawing.Image)(resources.GetObject("RulesEditBtn.Image")));
-            this.RulesEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RulesEditBtn.Name = "RulesEditBtn";
-            this.RulesEditBtn.Size = new System.Drawing.Size(39, 24);
-            this.RulesEditBtn.Text = "Edit";
-            this.RulesEditBtn.Click += new System.EventHandler(this.RulesEditBtn_Click);
+            RulesEditBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            RulesEditBtn.Image = (System.Drawing.Image)resources.GetObject("RulesEditBtn.Image");
+            RulesEditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            RulesEditBtn.Name = "RulesEditBtn";
+            RulesEditBtn.Size = new System.Drawing.Size(39, 24);
+            RulesEditBtn.Text = "Edit";
+            RulesEditBtn.Click += RulesEditBtn_Click;
             // 
             // toolStripSeparator43
             // 
-            this.toolStripSeparator43.Name = "toolStripSeparator43";
-            this.toolStripSeparator43.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator43.Name = "toolStripSeparator43";
+            toolStripSeparator43.Size = new System.Drawing.Size(6, 27);
             // 
             // RuleEncyclopediaBtn
             // 
-            this.RuleEncyclopediaBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.RuleEncyclopediaBtn.Image = ((System.Drawing.Image)(resources.GetObject("RuleEncyclopediaBtn.Image")));
-            this.RuleEncyclopediaBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RuleEncyclopediaBtn.Name = "RuleEncyclopediaBtn";
-            this.RuleEncyclopediaBtn.Size = new System.Drawing.Size(138, 24);
-            this.RuleEncyclopediaBtn.Text = "Encyclopedia Entry";
-            this.RuleEncyclopediaBtn.Click += new System.EventHandler(this.RuleEncyclopediaBtn_Click);
+            RuleEncyclopediaBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            RuleEncyclopediaBtn.Image = (System.Drawing.Image)resources.GetObject("RuleEncyclopediaBtn.Image");
+            RuleEncyclopediaBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            RuleEncyclopediaBtn.Name = "RuleEncyclopediaBtn";
+            RuleEncyclopediaBtn.Size = new System.Drawing.Size(138, 24);
+            RuleEncyclopediaBtn.Text = "Encyclopedia Entry";
+            RuleEncyclopediaBtn.Click += RuleEncyclopediaBtn_Click;
             // 
             // toolStripSeparator36
             // 
-            this.toolStripSeparator36.Name = "toolStripSeparator36";
-            this.toolStripSeparator36.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator36.Name = "toolStripSeparator36";
+            toolStripSeparator36.Size = new System.Drawing.Size(6, 27);
             // 
             // RulesPlayerViewBtn
             // 
-            this.RulesPlayerViewBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.RulesPlayerViewBtn.Image = ((System.Drawing.Image)(resources.GetObject("RulesPlayerViewBtn.Image")));
-            this.RulesPlayerViewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RulesPlayerViewBtn.Name = "RulesPlayerViewBtn";
-            this.RulesPlayerViewBtn.Size = new System.Drawing.Size(144, 24);
-            this.RulesPlayerViewBtn.Text = "Send to Player View";
-            this.RulesPlayerViewBtn.Click += new System.EventHandler(this.RulesPlayerViewBtn_Click);
+            RulesPlayerViewBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            RulesPlayerViewBtn.Image = (System.Drawing.Image)resources.GetObject("RulesPlayerViewBtn.Image");
+            RulesPlayerViewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            RulesPlayerViewBtn.Name = "RulesPlayerViewBtn";
+            RulesPlayerViewBtn.Size = new System.Drawing.Size(144, 24);
+            RulesPlayerViewBtn.Text = "Send to Player View";
+            RulesPlayerViewBtn.Click += RulesPlayerViewBtn_Click;
             // 
             // AttachmentsPage
             // 
-            this.AttachmentsPage.Controls.Add(this.AttachmentList);
-            this.AttachmentsPage.Controls.Add(this.AttachmentToolbar);
-            this.AttachmentsPage.Location = new System.Drawing.Point(4, 25);
-            this.AttachmentsPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.AttachmentsPage.Name = "AttachmentsPage";
-            this.AttachmentsPage.Size = new System.Drawing.Size(1144, 509);
-            this.AttachmentsPage.TabIndex = 3;
-            this.AttachmentsPage.Text = "Attachments";
-            this.AttachmentsPage.UseVisualStyleBackColor = true;
+            AttachmentsPage.Controls.Add(AttachmentList);
+            AttachmentsPage.Controls.Add(AttachmentToolbar);
+            AttachmentsPage.Location = new System.Drawing.Point(4, 29);
+            AttachmentsPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            AttachmentsPage.Name = "AttachmentsPage";
+            AttachmentsPage.Size = new System.Drawing.Size(1144, 647);
+            AttachmentsPage.TabIndex = 3;
+            AttachmentsPage.Text = "Attachments";
+            AttachmentsPage.UseVisualStyleBackColor = true;
             // 
             // AttachmentList
             // 
-            this.AttachmentList.AllowDrop = true;
-            this.AttachmentList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.AttachmentHdr,
-            this.AttachmentSizeHdr});
-            this.AttachmentList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AttachmentList.FullRowSelect = true;
-            this.AttachmentList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.AttachmentList.HideSelection = false;
-            this.AttachmentList.Location = new System.Drawing.Point(0, 27);
-            this.AttachmentList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.AttachmentList.Name = "AttachmentList";
-            this.AttachmentList.Size = new System.Drawing.Size(1144, 482);
-            this.AttachmentList.TabIndex = 1;
-            this.AttachmentList.UseCompatibleStateImageBehavior = false;
-            this.AttachmentList.View = System.Windows.Forms.View.Details;
-            this.AttachmentList.DragDrop += new System.Windows.Forms.DragEventHandler(this.AttachmentList_DragDrop);
-            this.AttachmentList.DragOver += new System.Windows.Forms.DragEventHandler(this.AttachmentList_DragOver);
-            this.AttachmentList.DoubleClick += new System.EventHandler(this.AttachmentExtractAndRun_Click);
+            AttachmentList.AllowDrop = true;
+            AttachmentList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { AttachmentHdr, AttachmentSizeHdr });
+            AttachmentList.Dock = System.Windows.Forms.DockStyle.Fill;
+            AttachmentList.FullRowSelect = true;
+            AttachmentList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            AttachmentList.Location = new System.Drawing.Point(0, 27);
+            AttachmentList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            AttachmentList.Name = "AttachmentList";
+            AttachmentList.Size = new System.Drawing.Size(1144, 620);
+            AttachmentList.TabIndex = 1;
+            AttachmentList.UseCompatibleStateImageBehavior = false;
+            AttachmentList.View = System.Windows.Forms.View.Details;
+            AttachmentList.DragDrop += AttachmentList_DragDrop;
+            AttachmentList.DragOver += AttachmentList_DragOver;
+            AttachmentList.DoubleClick += AttachmentExtractAndRun_Click;
             // 
             // AttachmentHdr
             // 
-            this.AttachmentHdr.Text = "Attachment";
-            this.AttachmentHdr.Width = 500;
+            AttachmentHdr.Text = "Attachment";
+            AttachmentHdr.Width = 500;
             // 
             // AttachmentSizeHdr
             // 
-            this.AttachmentSizeHdr.Text = "Size";
-            this.AttachmentSizeHdr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.AttachmentSizeHdr.Width = 100;
+            AttachmentSizeHdr.Text = "Size";
+            AttachmentSizeHdr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            AttachmentSizeHdr.Width = 100;
             // 
             // AttachmentToolbar
             // 
-            this.AttachmentToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.AttachmentToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AttachmentImportBtn,
-            this.AttachmentRemoveBtn,
-            this.toolStripSeparator19,
-            this.AttachmentExtract,
-            this.toolStripSeparator24,
-            this.AttachmentPlayerView});
-            this.AttachmentToolbar.Location = new System.Drawing.Point(0, 0);
-            this.AttachmentToolbar.Name = "AttachmentToolbar";
-            this.AttachmentToolbar.Size = new System.Drawing.Size(1144, 27);
-            this.AttachmentToolbar.TabIndex = 0;
-            this.AttachmentToolbar.Text = "toolStrip1";
+            AttachmentToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            AttachmentToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { AttachmentImportBtn, AttachmentRemoveBtn, toolStripSeparator19, AttachmentExtract, toolStripSeparator24, AttachmentPlayerView });
+            AttachmentToolbar.Location = new System.Drawing.Point(0, 0);
+            AttachmentToolbar.Name = "AttachmentToolbar";
+            AttachmentToolbar.Size = new System.Drawing.Size(1144, 27);
+            AttachmentToolbar.TabIndex = 0;
+            AttachmentToolbar.Text = "toolStrip1";
             // 
             // AttachmentImportBtn
             // 
-            this.AttachmentImportBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.AttachmentImportBtn.Image = ((System.Drawing.Image)(resources.GetObject("AttachmentImportBtn.Image")));
-            this.AttachmentImportBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AttachmentImportBtn.Name = "AttachmentImportBtn";
-            this.AttachmentImportBtn.Size = new System.Drawing.Size(58, 24);
-            this.AttachmentImportBtn.Text = "Import";
-            this.AttachmentImportBtn.Click += new System.EventHandler(this.AttachmentImportBtn_Click);
+            AttachmentImportBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            AttachmentImportBtn.Image = (System.Drawing.Image)resources.GetObject("AttachmentImportBtn.Image");
+            AttachmentImportBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            AttachmentImportBtn.Name = "AttachmentImportBtn";
+            AttachmentImportBtn.Size = new System.Drawing.Size(58, 24);
+            AttachmentImportBtn.Text = "Import";
+            AttachmentImportBtn.Click += AttachmentImportBtn_Click;
             // 
             // AttachmentRemoveBtn
             // 
-            this.AttachmentRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.AttachmentRemoveBtn.Image = ((System.Drawing.Image)(resources.GetObject("AttachmentRemoveBtn.Image")));
-            this.AttachmentRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AttachmentRemoveBtn.Name = "AttachmentRemoveBtn";
-            this.AttachmentRemoveBtn.Size = new System.Drawing.Size(67, 24);
-            this.AttachmentRemoveBtn.Text = "Remove";
-            this.AttachmentRemoveBtn.Click += new System.EventHandler(this.AttachmentRemoveBtn_Click);
+            AttachmentRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            AttachmentRemoveBtn.Image = (System.Drawing.Image)resources.GetObject("AttachmentRemoveBtn.Image");
+            AttachmentRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            AttachmentRemoveBtn.Name = "AttachmentRemoveBtn";
+            AttachmentRemoveBtn.Size = new System.Drawing.Size(67, 24);
+            AttachmentRemoveBtn.Text = "Remove";
+            AttachmentRemoveBtn.Click += AttachmentRemoveBtn_Click;
             // 
             // toolStripSeparator19
             // 
-            this.toolStripSeparator19.Name = "toolStripSeparator19";
-            this.toolStripSeparator19.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator19.Name = "toolStripSeparator19";
+            toolStripSeparator19.Size = new System.Drawing.Size(6, 27);
             // 
             // AttachmentExtract
             // 
-            this.AttachmentExtract.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.AttachmentExtract.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AttachmentExtractSimple,
-            this.AttachmentExtractAndRun});
-            this.AttachmentExtract.Image = ((System.Drawing.Image)(resources.GetObject("AttachmentExtract.Image")));
-            this.AttachmentExtract.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AttachmentExtract.Name = "AttachmentExtract";
-            this.AttachmentExtract.Size = new System.Drawing.Size(68, 24);
-            this.AttachmentExtract.Text = "Extract";
+            AttachmentExtract.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            AttachmentExtract.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { AttachmentExtractSimple, AttachmentExtractAndRun });
+            AttachmentExtract.Image = (System.Drawing.Image)resources.GetObject("AttachmentExtract.Image");
+            AttachmentExtract.ImageTransparentColor = System.Drawing.Color.Magenta;
+            AttachmentExtract.Name = "AttachmentExtract";
+            AttachmentExtract.Size = new System.Drawing.Size(68, 24);
+            AttachmentExtract.Text = "Extract";
             // 
             // AttachmentExtractSimple
             // 
-            this.AttachmentExtractSimple.Name = "AttachmentExtractSimple";
-            this.AttachmentExtractSimple.Size = new System.Drawing.Size(283, 26);
-            this.AttachmentExtractSimple.Text = "Extract to Desktop";
-            this.AttachmentExtractSimple.Click += new System.EventHandler(this.AttachmentExtractSimple_Click);
+            AttachmentExtractSimple.Name = "AttachmentExtractSimple";
+            AttachmentExtractSimple.Size = new System.Drawing.Size(283, 26);
+            AttachmentExtractSimple.Text = "Extract to Desktop";
+            AttachmentExtractSimple.Click += AttachmentExtractSimple_Click;
             // 
             // AttachmentExtractAndRun
             // 
-            this.AttachmentExtractAndRun.Name = "AttachmentExtractAndRun";
-            this.AttachmentExtractAndRun.Size = new System.Drawing.Size(283, 26);
-            this.AttachmentExtractAndRun.Text = "Extract to Desktop and Open";
-            this.AttachmentExtractAndRun.Click += new System.EventHandler(this.AttachmentExtractAndRun_Click);
+            AttachmentExtractAndRun.Name = "AttachmentExtractAndRun";
+            AttachmentExtractAndRun.Size = new System.Drawing.Size(283, 26);
+            AttachmentExtractAndRun.Text = "Extract to Desktop and Open";
+            AttachmentExtractAndRun.Click += AttachmentExtractAndRun_Click;
             // 
             // toolStripSeparator24
             // 
-            this.toolStripSeparator24.Name = "toolStripSeparator24";
-            this.toolStripSeparator24.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator24.Name = "toolStripSeparator24";
+            toolStripSeparator24.Size = new System.Drawing.Size(6, 27);
             // 
             // AttachmentPlayerView
             // 
-            this.AttachmentPlayerView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.AttachmentPlayerView.Image = ((System.Drawing.Image)(resources.GetObject("AttachmentPlayerView.Image")));
-            this.AttachmentPlayerView.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AttachmentPlayerView.Name = "AttachmentPlayerView";
-            this.AttachmentPlayerView.Size = new System.Drawing.Size(144, 24);
-            this.AttachmentPlayerView.Text = "Send to Player View";
-            this.AttachmentPlayerView.Click += new System.EventHandler(this.AttachmentSendBtn_Click);
+            AttachmentPlayerView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            AttachmentPlayerView.Image = (System.Drawing.Image)resources.GetObject("AttachmentPlayerView.Image");
+            AttachmentPlayerView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            AttachmentPlayerView.Name = "AttachmentPlayerView";
+            AttachmentPlayerView.Size = new System.Drawing.Size(144, 24);
+            AttachmentPlayerView.Text = "Send to Player View";
+            AttachmentPlayerView.Click += AttachmentSendBtn_Click;
             // 
             // JotterPage
             // 
-            this.JotterPage.Controls.Add(this.JotterSplitter);
-            this.JotterPage.Controls.Add(this.JotterToolbar);
-            this.JotterPage.Location = new System.Drawing.Point(4, 25);
-            this.JotterPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.JotterPage.Name = "JotterPage";
-            this.JotterPage.Size = new System.Drawing.Size(1144, 509);
-            this.JotterPage.TabIndex = 2;
-            this.JotterPage.Text = "Jotter";
-            this.JotterPage.UseVisualStyleBackColor = true;
+            JotterPage.Controls.Add(JotterSplitter);
+            JotterPage.Controls.Add(JotterToolbar);
+            JotterPage.Location = new System.Drawing.Point(4, 29);
+            JotterPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            JotterPage.Name = "JotterPage";
+            JotterPage.Size = new System.Drawing.Size(1144, 647);
+            JotterPage.TabIndex = 2;
+            JotterPage.Text = "Jotter";
+            JotterPage.UseVisualStyleBackColor = true;
             // 
             // JotterSplitter
             // 
-            this.JotterSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.JotterSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.JotterSplitter.Location = new System.Drawing.Point(0, 27);
-            this.JotterSplitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.JotterSplitter.Name = "JotterSplitter";
+            JotterSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            JotterSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            JotterSplitter.Location = new System.Drawing.Point(0, 27);
+            JotterSplitter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            JotterSplitter.Name = "JotterSplitter";
             // 
             // JotterSplitter.Panel1
             // 
-            this.JotterSplitter.Panel1.Controls.Add(this.NoteList);
+            JotterSplitter.Panel1.Controls.Add(NoteList);
             // 
             // JotterSplitter.Panel2
             // 
-            this.JotterSplitter.Panel2.Controls.Add(this.NoteBox);
-            this.JotterSplitter.Size = new System.Drawing.Size(1144, 482);
-            this.JotterSplitter.SplitterDistance = 180;
-            this.JotterSplitter.SplitterWidth = 5;
-            this.JotterSplitter.TabIndex = 1;
+            JotterSplitter.Panel2.Controls.Add(NoteBox);
+            JotterSplitter.Size = new System.Drawing.Size(1144, 620);
+            JotterSplitter.SplitterDistance = 180;
+            JotterSplitter.SplitterWidth = 5;
+            JotterSplitter.TabIndex = 1;
             // 
             // NoteList
             // 
-            this.NoteList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.NoteHdr});
-            this.NoteList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NoteList.FullRowSelect = true;
+            NoteList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { NoteHdr });
+            NoteList.Dock = System.Windows.Forms.DockStyle.Fill;
+            NoteList.FullRowSelect = true;
             listViewGroup15.Header = "Issues";
             listViewGroup15.Name = "IssueGroup";
             listViewGroup16.Header = "Information";
             listViewGroup16.Name = "InfoGroup";
             listViewGroup17.Header = "Notes";
             listViewGroup17.Name = "NoteGroup";
-            this.NoteList.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup15,
-            listViewGroup16,
-            listViewGroup17});
-            this.NoteList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.NoteList.HideSelection = false;
-            this.NoteList.Location = new System.Drawing.Point(0, 0);
-            this.NoteList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.NoteList.MultiSelect = false;
-            this.NoteList.Name = "NoteList";
-            this.NoteList.Size = new System.Drawing.Size(180, 482);
-            this.NoteList.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.NoteList.TabIndex = 0;
-            this.NoteList.UseCompatibleStateImageBehavior = false;
-            this.NoteList.View = System.Windows.Forms.View.Details;
-            this.NoteList.SelectedIndexChanged += new System.EventHandler(this.NoteList_SelectedIndexChanged);
+            NoteList.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] { listViewGroup15, listViewGroup16, listViewGroup17 });
+            NoteList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            NoteList.Location = new System.Drawing.Point(0, 0);
+            NoteList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            NoteList.MultiSelect = false;
+            NoteList.Name = "NoteList";
+            NoteList.Size = new System.Drawing.Size(180, 620);
+            NoteList.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            NoteList.TabIndex = 0;
+            NoteList.UseCompatibleStateImageBehavior = false;
+            NoteList.View = System.Windows.Forms.View.Details;
+            NoteList.SelectedIndexChanged += NoteList_SelectedIndexChanged;
             // 
             // NoteHdr
             // 
-            this.NoteHdr.Text = "Notes";
-            this.NoteHdr.Width = 150;
+            NoteHdr.Text = "Notes";
+            NoteHdr.Width = 150;
             // 
             // NoteBox
             // 
-            this.NoteBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NoteBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NoteBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoteBox.Location = new System.Drawing.Point(0, 0);
-            this.NoteBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.NoteBox.Multiline = true;
-            this.NoteBox.Name = "NoteBox";
-            this.NoteBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.NoteBox.Size = new System.Drawing.Size(959, 482);
-            this.NoteBox.TabIndex = 0;
-            this.NoteBox.TextChanged += new System.EventHandler(this.NoteBox_TextChanged);
+            NoteBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            NoteBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            NoteBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            NoteBox.Location = new System.Drawing.Point(0, 0);
+            NoteBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            NoteBox.Multiline = true;
+            NoteBox.Name = "NoteBox";
+            NoteBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            NoteBox.Size = new System.Drawing.Size(959, 620);
+            NoteBox.TabIndex = 0;
+            NoteBox.TextChanged += NoteBox_TextChanged;
             // 
             // JotterToolbar
             // 
-            this.JotterToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.JotterToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.NoteAddBtn,
-            this.NoteRemoveBtn,
-            this.toolStripSeparator16,
-            this.NoteCategoryBtn,
-            this.toolStripSeparator38,
-            this.NoteCutBtn,
-            this.NoteCopyBtn,
-            this.NotePasteBtn,
-            this.toolStripSeparator18,
-            this.NoteSearchLbl,
-            this.NoteSearchBox,
-            this.NoteClearLbl});
-            this.JotterToolbar.Location = new System.Drawing.Point(0, 0);
-            this.JotterToolbar.Name = "JotterToolbar";
-            this.JotterToolbar.Size = new System.Drawing.Size(1144, 27);
-            this.JotterToolbar.TabIndex = 0;
-            this.JotterToolbar.Text = "toolStrip1";
+            JotterToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            JotterToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { NoteAddBtn, NoteRemoveBtn, toolStripSeparator16, NoteCategoryBtn, toolStripSeparator38, NoteCutBtn, NoteCopyBtn, NotePasteBtn, toolStripSeparator18, NoteSearchLbl, NoteSearchBox, NoteClearLbl });
+            JotterToolbar.Location = new System.Drawing.Point(0, 0);
+            JotterToolbar.Name = "JotterToolbar";
+            JotterToolbar.Size = new System.Drawing.Size(1144, 27);
+            JotterToolbar.TabIndex = 0;
+            JotterToolbar.Text = "toolStrip1";
             // 
             // NoteAddBtn
             // 
-            this.NoteAddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.NoteAddBtn.Image = ((System.Drawing.Image)(resources.GetObject("NoteAddBtn.Image")));
-            this.NoteAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.NoteAddBtn.Name = "NoteAddBtn";
-            this.NoteAddBtn.Size = new System.Drawing.Size(78, 24);
-            this.NoteAddBtn.Text = "Add Note";
-            this.NoteAddBtn.Click += new System.EventHandler(this.NoteAddBtn_Click);
+            NoteAddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            NoteAddBtn.Image = (System.Drawing.Image)resources.GetObject("NoteAddBtn.Image");
+            NoteAddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            NoteAddBtn.Name = "NoteAddBtn";
+            NoteAddBtn.Size = new System.Drawing.Size(78, 24);
+            NoteAddBtn.Text = "Add Note";
+            NoteAddBtn.Click += NoteAddBtn_Click;
             // 
             // NoteRemoveBtn
             // 
-            this.NoteRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.NoteRemoveBtn.Image = ((System.Drawing.Image)(resources.GetObject("NoteRemoveBtn.Image")));
-            this.NoteRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.NoteRemoveBtn.Name = "NoteRemoveBtn";
-            this.NoteRemoveBtn.Size = new System.Drawing.Size(104, 24);
-            this.NoteRemoveBtn.Text = "Remove Note";
-            this.NoteRemoveBtn.Click += new System.EventHandler(this.NoteRemoveBtn_Click);
+            NoteRemoveBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            NoteRemoveBtn.Image = (System.Drawing.Image)resources.GetObject("NoteRemoveBtn.Image");
+            NoteRemoveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            NoteRemoveBtn.Name = "NoteRemoveBtn";
+            NoteRemoveBtn.Size = new System.Drawing.Size(104, 24);
+            NoteRemoveBtn.Text = "Remove Note";
+            NoteRemoveBtn.Click += NoteRemoveBtn_Click;
             // 
             // toolStripSeparator16
             // 
-            this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator16.Name = "toolStripSeparator16";
+            toolStripSeparator16.Size = new System.Drawing.Size(6, 27);
             // 
             // NoteCategoryBtn
             // 
-            this.NoteCategoryBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.NoteCategoryBtn.Image = ((System.Drawing.Image)(resources.GetObject("NoteCategoryBtn.Image")));
-            this.NoteCategoryBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.NoteCategoryBtn.Name = "NoteCategoryBtn";
-            this.NoteCategoryBtn.Size = new System.Drawing.Size(98, 24);
-            this.NoteCategoryBtn.Text = "Set Category";
-            this.NoteCategoryBtn.Click += new System.EventHandler(this.NoteCategoryBtn_Click);
+            NoteCategoryBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            NoteCategoryBtn.Image = (System.Drawing.Image)resources.GetObject("NoteCategoryBtn.Image");
+            NoteCategoryBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            NoteCategoryBtn.Name = "NoteCategoryBtn";
+            NoteCategoryBtn.Size = new System.Drawing.Size(98, 24);
+            NoteCategoryBtn.Text = "Set Category";
+            NoteCategoryBtn.Click += NoteCategoryBtn_Click;
             // 
             // toolStripSeparator38
             // 
-            this.toolStripSeparator38.Name = "toolStripSeparator38";
-            this.toolStripSeparator38.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator38.Name = "toolStripSeparator38";
+            toolStripSeparator38.Size = new System.Drawing.Size(6, 27);
             // 
             // NoteCutBtn
             // 
-            this.NoteCutBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.NoteCutBtn.Image = ((System.Drawing.Image)(resources.GetObject("NoteCutBtn.Image")));
-            this.NoteCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.NoteCutBtn.Name = "NoteCutBtn";
-            this.NoteCutBtn.Size = new System.Drawing.Size(35, 24);
-            this.NoteCutBtn.Text = "Cut";
-            this.NoteCutBtn.Click += new System.EventHandler(this.NoteCutBtn_Click);
+            NoteCutBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            NoteCutBtn.Image = (System.Drawing.Image)resources.GetObject("NoteCutBtn.Image");
+            NoteCutBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            NoteCutBtn.Name = "NoteCutBtn";
+            NoteCutBtn.Size = new System.Drawing.Size(35, 24);
+            NoteCutBtn.Text = "Cut";
+            NoteCutBtn.Click += NoteCutBtn_Click;
             // 
             // NoteCopyBtn
             // 
-            this.NoteCopyBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.NoteCopyBtn.Image = ((System.Drawing.Image)(resources.GetObject("NoteCopyBtn.Image")));
-            this.NoteCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.NoteCopyBtn.Name = "NoteCopyBtn";
-            this.NoteCopyBtn.Size = new System.Drawing.Size(47, 24);
-            this.NoteCopyBtn.Text = "Copy";
-            this.NoteCopyBtn.Click += new System.EventHandler(this.NoteCopyBtn_Click);
+            NoteCopyBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            NoteCopyBtn.Image = (System.Drawing.Image)resources.GetObject("NoteCopyBtn.Image");
+            NoteCopyBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            NoteCopyBtn.Name = "NoteCopyBtn";
+            NoteCopyBtn.Size = new System.Drawing.Size(47, 24);
+            NoteCopyBtn.Text = "Copy";
+            NoteCopyBtn.Click += NoteCopyBtn_Click;
             // 
             // NotePasteBtn
             // 
-            this.NotePasteBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.NotePasteBtn.Image = ((System.Drawing.Image)(resources.GetObject("NotePasteBtn.Image")));
-            this.NotePasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.NotePasteBtn.Name = "NotePasteBtn";
-            this.NotePasteBtn.Size = new System.Drawing.Size(47, 24);
-            this.NotePasteBtn.Text = "Paste";
-            this.NotePasteBtn.Click += new System.EventHandler(this.NotePasteBtn_Click);
+            NotePasteBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            NotePasteBtn.Image = (System.Drawing.Image)resources.GetObject("NotePasteBtn.Image");
+            NotePasteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            NotePasteBtn.Name = "NotePasteBtn";
+            NotePasteBtn.Size = new System.Drawing.Size(47, 24);
+            NotePasteBtn.Text = "Paste";
+            NotePasteBtn.Click += NotePasteBtn_Click;
             // 
             // toolStripSeparator18
             // 
-            this.toolStripSeparator18.Name = "toolStripSeparator18";
-            this.toolStripSeparator18.Size = new System.Drawing.Size(6, 27);
+            toolStripSeparator18.Name = "toolStripSeparator18";
+            toolStripSeparator18.Size = new System.Drawing.Size(6, 27);
             // 
             // NoteSearchLbl
             // 
-            this.NoteSearchLbl.Name = "NoteSearchLbl";
-            this.NoteSearchLbl.Size = new System.Drawing.Size(56, 24);
-            this.NoteSearchLbl.Text = "Search:";
+            NoteSearchLbl.Name = "NoteSearchLbl";
+            NoteSearchLbl.Size = new System.Drawing.Size(56, 24);
+            NoteSearchLbl.Text = "Search:";
             // 
             // NoteSearchBox
             // 
-            this.NoteSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NoteSearchBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NoteSearchBox.Name = "NoteSearchBox";
-            this.NoteSearchBox.Size = new System.Drawing.Size(199, 27);
-            this.NoteSearchBox.TextChanged += new System.EventHandler(this.NoteSearchBox_TextChanged);
+            NoteSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            NoteSearchBox.Name = "NoteSearchBox";
+            NoteSearchBox.Size = new System.Drawing.Size(199, 27);
+            NoteSearchBox.TextChanged += NoteSearchBox_TextChanged;
             // 
             // NoteClearLbl
             // 
-            this.NoteClearLbl.IsLink = true;
-            this.NoteClearLbl.Name = "NoteClearLbl";
-            this.NoteClearLbl.Size = new System.Drawing.Size(43, 24);
-            this.NoteClearLbl.Text = "Clear";
-            this.NoteClearLbl.Click += new System.EventHandler(this.NoteClearLbl_Click);
+            NoteClearLbl.IsLink = true;
+            NoteClearLbl.Name = "NoteClearLbl";
+            NoteClearLbl.Size = new System.Drawing.Size(43, 24);
+            NoteClearLbl.Text = "Clear";
+            NoteClearLbl.Click += NoteClearLbl_Click;
             // 
             // ReferencePage
             // 
-            this.ReferencePage.Controls.Add(this.ReferenceSplitter);
-            this.ReferencePage.Location = new System.Drawing.Point(4, 25);
-            this.ReferencePage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ReferencePage.Name = "ReferencePage";
-            this.ReferencePage.Size = new System.Drawing.Size(1144, 509);
-            this.ReferencePage.TabIndex = 6;
-            this.ReferencePage.Text = "In-Session Reference";
-            this.ReferencePage.UseVisualStyleBackColor = true;
+            ReferencePage.Controls.Add(ReferenceSplitter);
+            ReferencePage.Location = new System.Drawing.Point(4, 29);
+            ReferencePage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            ReferencePage.Name = "ReferencePage";
+            ReferencePage.Size = new System.Drawing.Size(1144, 647);
+            ReferencePage.TabIndex = 6;
+            ReferencePage.Text = "In-Session Reference";
+            ReferencePage.UseVisualStyleBackColor = true;
             // 
             // ReferenceSplitter
             // 
-            this.ReferenceSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReferenceSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.ReferenceSplitter.Location = new System.Drawing.Point(0, 0);
-            this.ReferenceSplitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ReferenceSplitter.Name = "ReferenceSplitter";
+            ReferenceSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            ReferenceSplitter.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            ReferenceSplitter.Location = new System.Drawing.Point(0, 0);
+            ReferenceSplitter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            ReferenceSplitter.Name = "ReferenceSplitter";
             // 
             // ReferenceSplitter.Panel1
             // 
-            this.ReferenceSplitter.Panel1.Controls.Add(this.ReferencePages);
+            ReferenceSplitter.Panel1.Controls.Add(ReferencePages);
             // 
             // ReferenceSplitter.Panel2
             // 
-            this.ReferenceSplitter.Panel2.Controls.Add(this.InfoPanel);
-            this.ReferenceSplitter.Panel2.Controls.Add(this.ReferenceToolbar);
-            this.ReferenceSplitter.Size = new System.Drawing.Size(1144, 509);
-            this.ReferenceSplitter.SplitterDistance = 881;
-            this.ReferenceSplitter.SplitterWidth = 5;
-            this.ReferenceSplitter.TabIndex = 1;
+            ReferenceSplitter.Panel2.Controls.Add(InfoPanel);
+            ReferenceSplitter.Panel2.Controls.Add(ReferenceToolbar);
+            ReferenceSplitter.Size = new System.Drawing.Size(1144, 647);
+            ReferenceSplitter.SplitterDistance = 877;
+            ReferenceSplitter.SplitterWidth = 5;
+            ReferenceSplitter.TabIndex = 1;
             // 
             // ReferencePages
             // 
-            this.ReferencePages.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.ReferencePages.Controls.Add(this.PartyPage);
-            this.ReferencePages.Controls.Add(this.ToolsPage);
-            this.ReferencePages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReferencePages.Location = new System.Drawing.Point(0, 0);
-            this.ReferencePages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ReferencePages.Multiline = true;
-            this.ReferencePages.Name = "ReferencePages";
-            this.ReferencePages.SelectedIndex = 0;
-            this.ReferencePages.Size = new System.Drawing.Size(881, 509);
-            this.ReferencePages.TabIndex = 0;
-            this.ReferencePages.SelectedIndexChanged += new System.EventHandler(this.ReferencePages_SelectedIndexChanged);
+            ReferencePages.Alignment = System.Windows.Forms.TabAlignment.Left;
+            ReferencePages.Controls.Add(PartyPage);
+            ReferencePages.Controls.Add(ToolsPage);
+            ReferencePages.Dock = System.Windows.Forms.DockStyle.Fill;
+            ReferencePages.Location = new System.Drawing.Point(0, 0);
+            ReferencePages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            ReferencePages.Multiline = true;
+            ReferencePages.Name = "ReferencePages";
+            ReferencePages.SelectedIndex = 0;
+            ReferencePages.Size = new System.Drawing.Size(877, 647);
+            ReferencePages.TabIndex = 0;
+            ReferencePages.SelectedIndexChanged += ReferencePages_SelectedIndexChanged;
             // 
             // PartyPage
             // 
-            this.PartyPage.Controls.Add(this.PartyBrowser);
-            this.PartyPage.Location = new System.Drawing.Point(25, 4);
-            this.PartyPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.PartyPage.Name = "PartyPage";
-            this.PartyPage.Size = new System.Drawing.Size(852, 501);
-            this.PartyPage.TabIndex = 0;
-            this.PartyPage.Text = "Party Breakdown";
-            this.PartyPage.UseVisualStyleBackColor = true;
+            PartyPage.Controls.Add(PartyBrowser);
+            PartyPage.Location = new System.Drawing.Point(30, 4);
+            PartyPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            PartyPage.Name = "PartyPage";
+            PartyPage.Size = new System.Drawing.Size(843, 639);
+            PartyPage.TabIndex = 0;
+            PartyPage.Text = "Party Breakdown";
+            PartyPage.UseVisualStyleBackColor = true;
             // 
             // PartyBrowser
             // 
-            this.PartyBrowser.AllowWebBrowserDrop = false;
-            this.PartyBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PartyBrowser.IsWebBrowserContextMenuEnabled = false;
-            this.PartyBrowser.Location = new System.Drawing.Point(0, 0);
-            this.PartyBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.PartyBrowser.MinimumSize = new System.Drawing.Size(27, 25);
-            this.PartyBrowser.Name = "PartyBrowser";
-            this.PartyBrowser.ScriptErrorsSuppressed = true;
-            this.PartyBrowser.Size = new System.Drawing.Size(852, 501);
-            this.PartyBrowser.TabIndex = 0;
-            this.PartyBrowser.WebBrowserShortcutsEnabled = false;
-            this.PartyBrowser.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.PartyBrowser_Navigating);
+            PartyBrowser.AllowWebBrowserDrop = false;
+            PartyBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            PartyBrowser.IsWebBrowserContextMenuEnabled = false;
+            PartyBrowser.Location = new System.Drawing.Point(0, 0);
+            PartyBrowser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            PartyBrowser.MinimumSize = new System.Drawing.Size(27, 31);
+            PartyBrowser.Name = "PartyBrowser";
+            PartyBrowser.ScriptErrorsSuppressed = true;
+            PartyBrowser.Size = new System.Drawing.Size(843, 639);
+            PartyBrowser.TabIndex = 0;
+            PartyBrowser.WebBrowserShortcutsEnabled = false;
+            PartyBrowser.Navigating += PartyBrowser_Navigating;
             // 
             // ToolsPage
             // 
-            this.ToolsPage.Controls.Add(this.ToolBrowserPanel);
-            this.ToolsPage.Controls.Add(this.GeneratorToolbar);
-            this.ToolsPage.Location = new System.Drawing.Point(25, 4);
-            this.ToolsPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ToolsPage.Name = "ToolsPage";
-            this.ToolsPage.Size = new System.Drawing.Size(852, 501);
-            this.ToolsPage.TabIndex = 1;
-            this.ToolsPage.Text = "Random Generators";
-            this.ToolsPage.UseVisualStyleBackColor = true;
+            ToolsPage.Controls.Add(ToolBrowserPanel);
+            ToolsPage.Controls.Add(GeneratorToolbar);
+            ToolsPage.Location = new System.Drawing.Point(30, 4);
+            ToolsPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            ToolsPage.Name = "ToolsPage";
+            ToolsPage.Size = new System.Drawing.Size(844, 639);
+            ToolsPage.TabIndex = 1;
+            ToolsPage.Text = "Random Generators";
+            ToolsPage.UseVisualStyleBackColor = true;
             // 
             // ToolBrowserPanel
             // 
-            this.ToolBrowserPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ToolBrowserPanel.Controls.Add(this.GeneratorBrowser);
-            this.ToolBrowserPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ToolBrowserPanel.Location = new System.Drawing.Point(134, 0);
-            this.ToolBrowserPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ToolBrowserPanel.Name = "ToolBrowserPanel";
-            this.ToolBrowserPanel.Size = new System.Drawing.Size(718, 501);
-            this.ToolBrowserPanel.TabIndex = 3;
+            ToolBrowserPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            ToolBrowserPanel.Controls.Add(GeneratorBrowser);
+            ToolBrowserPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            ToolBrowserPanel.Location = new System.Drawing.Point(134, 0);
+            ToolBrowserPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            ToolBrowserPanel.Name = "ToolBrowserPanel";
+            ToolBrowserPanel.Size = new System.Drawing.Size(710, 639);
+            ToolBrowserPanel.TabIndex = 3;
             // 
             // GeneratorBrowser
             // 
-            this.GeneratorBrowser.AllowWebBrowserDrop = false;
-            this.GeneratorBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GeneratorBrowser.IsWebBrowserContextMenuEnabled = false;
-            this.GeneratorBrowser.Location = new System.Drawing.Point(0, 0);
-            this.GeneratorBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.GeneratorBrowser.MinimumSize = new System.Drawing.Size(27, 25);
-            this.GeneratorBrowser.Name = "GeneratorBrowser";
-            this.GeneratorBrowser.ScriptErrorsSuppressed = true;
-            this.GeneratorBrowser.Size = new System.Drawing.Size(716, 499);
-            this.GeneratorBrowser.TabIndex = 1;
-            this.GeneratorBrowser.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.GeneratorBrowser_Navigating);
+            GeneratorBrowser.AllowWebBrowserDrop = false;
+            GeneratorBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            GeneratorBrowser.IsWebBrowserContextMenuEnabled = false;
+            GeneratorBrowser.Location = new System.Drawing.Point(0, 0);
+            GeneratorBrowser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            GeneratorBrowser.MinimumSize = new System.Drawing.Size(27, 31);
+            GeneratorBrowser.Name = "GeneratorBrowser";
+            GeneratorBrowser.ScriptErrorsSuppressed = true;
+            GeneratorBrowser.Size = new System.Drawing.Size(708, 637);
+            GeneratorBrowser.TabIndex = 1;
+            GeneratorBrowser.Navigating += GeneratorBrowser_Navigating;
             // 
             // GeneratorToolbar
             // 
-            this.GeneratorToolbar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.GeneratorToolbar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.GeneratorToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.GeneratorToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.toolStripSeparator26,
-            this.ElfNameBtn,
-            this.DwarfNameBtn,
-            this.HalflingNameBtn,
-            this.ExoticNameBtn,
-            this.toolStripSeparator44,
-            this.TreasureBtn,
-            this.BookTitleBtn,
-            this.PotionBtn,
-            this.toolStripSeparator45,
-            this.NPCBtn,
-            this.RoomBtn,
-            this.toolStripSeparator46,
-            this.ElfTextBtn,
-            this.DwarfTextBtn,
-            this.PrimordialTextBtn});
-            this.GeneratorToolbar.Location = new System.Drawing.Point(0, 0);
-            this.GeneratorToolbar.Name = "GeneratorToolbar";
-            this.GeneratorToolbar.ShowItemToolTips = false;
-            this.GeneratorToolbar.Size = new System.Drawing.Size(134, 501);
-            this.GeneratorToolbar.TabIndex = 2;
-            this.GeneratorToolbar.Text = "toolStrip1";
+            GeneratorToolbar.Dock = System.Windows.Forms.DockStyle.Left;
+            GeneratorToolbar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            GeneratorToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            GeneratorToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { toolStripLabel1, toolStripSeparator26, ElfNameBtn, DwarfNameBtn, HalflingNameBtn, ExoticNameBtn, toolStripSeparator44, TreasureBtn, BookTitleBtn, PotionBtn, toolStripSeparator45, NPCBtn, RoomBtn, toolStripSeparator46, ElfTextBtn, DwarfTextBtn, PrimordialTextBtn });
+            GeneratorToolbar.Location = new System.Drawing.Point(0, 0);
+            GeneratorToolbar.Name = "GeneratorToolbar";
+            GeneratorToolbar.ShowItemToolTips = false;
+            GeneratorToolbar.Size = new System.Drawing.Size(134, 639);
+            GeneratorToolbar.TabIndex = 2;
+            GeneratorToolbar.Text = "toolStrip1";
             // 
             // toolStripLabel1
             // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(131, 20);
-            this.toolStripLabel1.Text = "Generators";
+            toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            toolStripLabel1.Name = "toolStripLabel1";
+            toolStripLabel1.Size = new System.Drawing.Size(131, 20);
+            toolStripLabel1.Text = "Generators";
             // 
             // toolStripSeparator26
             // 
-            this.toolStripSeparator26.Name = "toolStripSeparator26";
-            this.toolStripSeparator26.Size = new System.Drawing.Size(131, 6);
+            toolStripSeparator26.Name = "toolStripSeparator26";
+            toolStripSeparator26.Size = new System.Drawing.Size(131, 6);
             // 
             // ElfNameBtn
             // 
-            this.ElfNameBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ElfNameBtn.Image = ((System.Drawing.Image)(resources.GetObject("ElfNameBtn.Image")));
-            this.ElfNameBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ElfNameBtn.Name = "ElfNameBtn";
-            this.ElfNameBtn.Size = new System.Drawing.Size(131, 24);
-            this.ElfNameBtn.Text = "Elvish Names";
-            this.ElfNameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ElfNameBtn.Click += new System.EventHandler(this.ElfNameBtn_Click);
+            ElfNameBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            ElfNameBtn.Image = (System.Drawing.Image)resources.GetObject("ElfNameBtn.Image");
+            ElfNameBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ElfNameBtn.Name = "ElfNameBtn";
+            ElfNameBtn.Size = new System.Drawing.Size(131, 24);
+            ElfNameBtn.Text = "Elvish Names";
+            ElfNameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            ElfNameBtn.Click += ElfNameBtn_Click;
             // 
             // DwarfNameBtn
             // 
-            this.DwarfNameBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.DwarfNameBtn.Image = ((System.Drawing.Image)(resources.GetObject("DwarfNameBtn.Image")));
-            this.DwarfNameBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.DwarfNameBtn.Name = "DwarfNameBtn";
-            this.DwarfNameBtn.Size = new System.Drawing.Size(131, 24);
-            this.DwarfNameBtn.Text = "Dwarvish Names";
-            this.DwarfNameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DwarfNameBtn.Click += new System.EventHandler(this.DwarfNameBtn_Click);
+            DwarfNameBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            DwarfNameBtn.Image = (System.Drawing.Image)resources.GetObject("DwarfNameBtn.Image");
+            DwarfNameBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            DwarfNameBtn.Name = "DwarfNameBtn";
+            DwarfNameBtn.Size = new System.Drawing.Size(131, 24);
+            DwarfNameBtn.Text = "Dwarvish Names";
+            DwarfNameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            DwarfNameBtn.Click += DwarfNameBtn_Click;
             // 
             // HalflingNameBtn
             // 
-            this.HalflingNameBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.HalflingNameBtn.Image = ((System.Drawing.Image)(resources.GetObject("HalflingNameBtn.Image")));
-            this.HalflingNameBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.HalflingNameBtn.Name = "HalflingNameBtn";
-            this.HalflingNameBtn.Size = new System.Drawing.Size(131, 24);
-            this.HalflingNameBtn.Text = "Halfling Names";
-            this.HalflingNameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HalflingNameBtn.Click += new System.EventHandler(this.HalflingNameBtn_Click);
+            HalflingNameBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            HalflingNameBtn.Image = (System.Drawing.Image)resources.GetObject("HalflingNameBtn.Image");
+            HalflingNameBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            HalflingNameBtn.Name = "HalflingNameBtn";
+            HalflingNameBtn.Size = new System.Drawing.Size(131, 24);
+            HalflingNameBtn.Text = "Halfling Names";
+            HalflingNameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            HalflingNameBtn.Click += HalflingNameBtn_Click;
             // 
             // ExoticNameBtn
             // 
-            this.ExoticNameBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ExoticNameBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExoticNameBtn.Image")));
-            this.ExoticNameBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ExoticNameBtn.Name = "ExoticNameBtn";
-            this.ExoticNameBtn.Size = new System.Drawing.Size(131, 24);
-            this.ExoticNameBtn.Text = "Exotic Names";
-            this.ExoticNameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExoticNameBtn.Click += new System.EventHandler(this.ExoticNameBtn_Click);
+            ExoticNameBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            ExoticNameBtn.Image = (System.Drawing.Image)resources.GetObject("ExoticNameBtn.Image");
+            ExoticNameBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ExoticNameBtn.Name = "ExoticNameBtn";
+            ExoticNameBtn.Size = new System.Drawing.Size(131, 24);
+            ExoticNameBtn.Text = "Exotic Names";
+            ExoticNameBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            ExoticNameBtn.Click += ExoticNameBtn_Click;
             // 
             // toolStripSeparator44
             // 
-            this.toolStripSeparator44.Name = "toolStripSeparator44";
-            this.toolStripSeparator44.Size = new System.Drawing.Size(131, 6);
+            toolStripSeparator44.Name = "toolStripSeparator44";
+            toolStripSeparator44.Size = new System.Drawing.Size(131, 6);
             // 
             // TreasureBtn
             // 
-            this.TreasureBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.TreasureBtn.Image = ((System.Drawing.Image)(resources.GetObject("TreasureBtn.Image")));
-            this.TreasureBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TreasureBtn.Name = "TreasureBtn";
-            this.TreasureBtn.Size = new System.Drawing.Size(131, 24);
-            this.TreasureBtn.Text = "Art Objects";
-            this.TreasureBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TreasureBtn.Click += new System.EventHandler(this.TreasureBtn_Click);
+            TreasureBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            TreasureBtn.Image = (System.Drawing.Image)resources.GetObject("TreasureBtn.Image");
+            TreasureBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            TreasureBtn.Name = "TreasureBtn";
+            TreasureBtn.Size = new System.Drawing.Size(131, 24);
+            TreasureBtn.Text = "Art Objects";
+            TreasureBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            TreasureBtn.Click += TreasureBtn_Click;
             // 
             // BookTitleBtn
             // 
-            this.BookTitleBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BookTitleBtn.Image = ((System.Drawing.Image)(resources.GetObject("BookTitleBtn.Image")));
-            this.BookTitleBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BookTitleBtn.Name = "BookTitleBtn";
-            this.BookTitleBtn.Size = new System.Drawing.Size(131, 24);
-            this.BookTitleBtn.Text = "Book Titles";
-            this.BookTitleBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BookTitleBtn.Click += new System.EventHandler(this.BookTitleBtn_Click);
+            BookTitleBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            BookTitleBtn.Image = (System.Drawing.Image)resources.GetObject("BookTitleBtn.Image");
+            BookTitleBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            BookTitleBtn.Name = "BookTitleBtn";
+            BookTitleBtn.Size = new System.Drawing.Size(131, 24);
+            BookTitleBtn.Text = "Book Titles";
+            BookTitleBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            BookTitleBtn.Click += BookTitleBtn_Click;
             // 
             // PotionBtn
             // 
-            this.PotionBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.PotionBtn.Image = ((System.Drawing.Image)(resources.GetObject("PotionBtn.Image")));
-            this.PotionBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.PotionBtn.Name = "PotionBtn";
-            this.PotionBtn.Size = new System.Drawing.Size(131, 24);
-            this.PotionBtn.Text = "Potions";
-            this.PotionBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PotionBtn.Click += new System.EventHandler(this.PotionBtn_Click);
+            PotionBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            PotionBtn.Image = (System.Drawing.Image)resources.GetObject("PotionBtn.Image");
+            PotionBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            PotionBtn.Name = "PotionBtn";
+            PotionBtn.Size = new System.Drawing.Size(131, 24);
+            PotionBtn.Text = "Potions";
+            PotionBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            PotionBtn.Click += PotionBtn_Click;
             // 
             // toolStripSeparator45
             // 
-            this.toolStripSeparator45.Name = "toolStripSeparator45";
-            this.toolStripSeparator45.Size = new System.Drawing.Size(131, 6);
+            toolStripSeparator45.Name = "toolStripSeparator45";
+            toolStripSeparator45.Size = new System.Drawing.Size(131, 6);
             // 
             // NPCBtn
             // 
-            this.NPCBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.NPCBtn.Image = ((System.Drawing.Image)(resources.GetObject("NPCBtn.Image")));
-            this.NPCBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.NPCBtn.Name = "NPCBtn";
-            this.NPCBtn.Size = new System.Drawing.Size(131, 24);
-            this.NPCBtn.Text = "NPC Description";
-            this.NPCBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NPCBtn.Click += new System.EventHandler(this.NPCBtn_Click);
+            NPCBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            NPCBtn.Image = (System.Drawing.Image)resources.GetObject("NPCBtn.Image");
+            NPCBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            NPCBtn.Name = "NPCBtn";
+            NPCBtn.Size = new System.Drawing.Size(131, 24);
+            NPCBtn.Text = "NPC Description";
+            NPCBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            NPCBtn.Click += NPCBtn_Click;
             // 
             // RoomBtn
             // 
-            this.RoomBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.RoomBtn.Image = ((System.Drawing.Image)(resources.GetObject("RoomBtn.Image")));
-            this.RoomBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RoomBtn.Name = "RoomBtn";
-            this.RoomBtn.Size = new System.Drawing.Size(131, 24);
-            this.RoomBtn.Text = "Room Description";
-            this.RoomBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RoomBtn.Click += new System.EventHandler(this.RoomBtn_Click);
+            RoomBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            RoomBtn.Image = (System.Drawing.Image)resources.GetObject("RoomBtn.Image");
+            RoomBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            RoomBtn.Name = "RoomBtn";
+            RoomBtn.Size = new System.Drawing.Size(131, 24);
+            RoomBtn.Text = "Room Description";
+            RoomBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            RoomBtn.Click += RoomBtn_Click;
             // 
             // toolStripSeparator46
             // 
-            this.toolStripSeparator46.Name = "toolStripSeparator46";
-            this.toolStripSeparator46.Size = new System.Drawing.Size(131, 6);
+            toolStripSeparator46.Name = "toolStripSeparator46";
+            toolStripSeparator46.Size = new System.Drawing.Size(131, 6);
             // 
             // ElfTextBtn
             // 
-            this.ElfTextBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ElfTextBtn.Image = ((System.Drawing.Image)(resources.GetObject("ElfTextBtn.Image")));
-            this.ElfTextBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ElfTextBtn.Name = "ElfTextBtn";
-            this.ElfTextBtn.Size = new System.Drawing.Size(131, 24);
-            this.ElfTextBtn.Text = "Elvish Text";
-            this.ElfTextBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ElfTextBtn.Click += new System.EventHandler(this.ElfTextBtn_Click);
+            ElfTextBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            ElfTextBtn.Image = (System.Drawing.Image)resources.GetObject("ElfTextBtn.Image");
+            ElfTextBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ElfTextBtn.Name = "ElfTextBtn";
+            ElfTextBtn.Size = new System.Drawing.Size(131, 24);
+            ElfTextBtn.Text = "Elvish Text";
+            ElfTextBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            ElfTextBtn.Click += ElfTextBtn_Click;
             // 
             // DwarfTextBtn
             // 
-            this.DwarfTextBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.DwarfTextBtn.Image = ((System.Drawing.Image)(resources.GetObject("DwarfTextBtn.Image")));
-            this.DwarfTextBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.DwarfTextBtn.Name = "DwarfTextBtn";
-            this.DwarfTextBtn.Size = new System.Drawing.Size(131, 24);
-            this.DwarfTextBtn.Text = "Dwarvish Text";
-            this.DwarfTextBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DwarfTextBtn.Click += new System.EventHandler(this.DwarfTextBtn_Click);
+            DwarfTextBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            DwarfTextBtn.Image = (System.Drawing.Image)resources.GetObject("DwarfTextBtn.Image");
+            DwarfTextBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            DwarfTextBtn.Name = "DwarfTextBtn";
+            DwarfTextBtn.Size = new System.Drawing.Size(131, 24);
+            DwarfTextBtn.Text = "Dwarvish Text";
+            DwarfTextBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            DwarfTextBtn.Click += DwarfTextBtn_Click;
             // 
             // PrimordialTextBtn
             // 
-            this.PrimordialTextBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.PrimordialTextBtn.Image = ((System.Drawing.Image)(resources.GetObject("PrimordialTextBtn.Image")));
-            this.PrimordialTextBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.PrimordialTextBtn.Name = "PrimordialTextBtn";
-            this.PrimordialTextBtn.Size = new System.Drawing.Size(131, 24);
-            this.PrimordialTextBtn.Text = "Primordial Text";
-            this.PrimordialTextBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PrimordialTextBtn.Click += new System.EventHandler(this.PrimordialTextBtn_Click);
-            // 
-            // ReferenceToolbar
-            // 
-            this.ReferenceToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ReferenceToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DieRollerBtn});
-            this.ReferenceToolbar.Location = new System.Drawing.Point(0, 0);
-            this.ReferenceToolbar.Name = "ReferenceToolbar";
-            this.ReferenceToolbar.Size = new System.Drawing.Size(258, 27);
-            this.ReferenceToolbar.TabIndex = 1;
-            this.ReferenceToolbar.Text = "toolStrip1";
-            // 
-            // DieRollerBtn
-            // 
-            this.DieRollerBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.DieRollerBtn.Image = ((System.Drawing.Image)(resources.GetObject("DieRollerBtn.Image")));
-            this.DieRollerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.DieRollerBtn.Name = "DieRollerBtn";
-            this.DieRollerBtn.Size = new System.Drawing.Size(79, 24);
-            this.DieRollerBtn.Text = "Die Roller";
-            this.DieRollerBtn.Click += new System.EventHandler(this.DieRollerBtn_Click);
-            // 
-            // PlotView
-            // 
-            this.PlotView.AllowDrop = true;
-            this.PlotView.ContextMenuStrip = this.PointMenu;
-            this.PlotView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlotView.Filter = "";
-            this.PlotView.LinkStyle = Masterplan.Controls.PlotViewLinkStyle.Curved;
-            this.PlotView.Location = new System.Drawing.Point(0, 0);
-            this.PlotView.Margin = new System.Windows.Forms.Padding(5);
-            this.PlotView.Mode = Masterplan.Controls.PlotViewMode.Normal;
-            this.PlotView.Name = "PlotView";
-            this.PlotView.Plot = null;
-            this.PlotView.SelectedPoint = null;
-            this.PlotView.ShowLevels = true;
-            this.PlotView.ShowTooltips = true;
-            this.PlotView.Size = new System.Drawing.Size(636, 429);
-            this.PlotView.TabIndex = 2;
-            this.PlotView.SelectionChanged += new System.EventHandler(this.PlotView_SelectionChanged);
-            this.PlotView.PlotLayoutChanged += new System.EventHandler(this.PlotView_PlotLayoutChanged);
-            this.PlotView.PlotChanged += new System.EventHandler(this.PlotView_PlotChanged);
-            this.PlotView.DoubleClick += new System.EventHandler(this.PlotView_DoubleClick);
+            PrimordialTextBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            PrimordialTextBtn.Image = (System.Drawing.Image)resources.GetObject("PrimordialTextBtn.Image");
+            PrimordialTextBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            PrimordialTextBtn.Name = "PrimordialTextBtn";
+            PrimordialTextBtn.Size = new System.Drawing.Size(131, 24);
+            PrimordialTextBtn.Text = "Primordial Text";
+            PrimordialTextBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            PrimordialTextBtn.Click += PrimordialTextBtn_Click;
             // 
             // InfoPanel
             // 
-            this.InfoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.InfoPanel.Level = 1;
-            this.InfoPanel.Location = new System.Drawing.Point(0, 27);
-            this.InfoPanel.Margin = new System.Windows.Forms.Padding(5);
-            this.InfoPanel.Name = "InfoPanel";
-            this.InfoPanel.Size = new System.Drawing.Size(258, 482);
-            this.InfoPanel.TabIndex = 0;
+            InfoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            InfoPanel.Level = 1;
+            InfoPanel.Location = new System.Drawing.Point(0, 27);
+            InfoPanel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            InfoPanel.Name = "InfoPanel";
+            InfoPanel.Size = new System.Drawing.Size(262, 620);
+            InfoPanel.TabIndex = 0;
+            // 
+            // ReferenceToolbar
+            // 
+            ReferenceToolbar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            ReferenceToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { DieRollerBtn });
+            ReferenceToolbar.Location = new System.Drawing.Point(0, 0);
+            ReferenceToolbar.Name = "ReferenceToolbar";
+            ReferenceToolbar.Size = new System.Drawing.Size(262, 27);
+            ReferenceToolbar.TabIndex = 1;
+            ReferenceToolbar.Text = "toolStrip1";
+            // 
+            // DieRollerBtn
+            // 
+            DieRollerBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            DieRollerBtn.Image = (System.Drawing.Image)resources.GetObject("DieRollerBtn.Image");
+            DieRollerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            DieRollerBtn.Name = "DieRollerBtn";
+            DieRollerBtn.Size = new System.Drawing.Size(79, 24);
+            DieRollerBtn.Text = "Die Roller";
+            DieRollerBtn.Click += DieRollerBtn_Click;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 566);
-            this.Controls.Add(this.Pages);
-            this.Controls.Add(this.MainMenu);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.MainMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Masterplan";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Shown += new System.EventHandler(this.MainForm_Shown);
-            this.Layout += new System.Windows.Forms.LayoutEventHandler(this.MainForm_Layout);
-            this.WorkspaceToolbar.ResumeLayout(false);
-            this.WorkspaceToolbar.PerformLayout();
-            this.PointMenu.ResumeLayout(false);
-            this.MainMenu.ResumeLayout(false);
-            this.MainMenu.PerformLayout();
-            this.PreviewSplitter.Panel1.ResumeLayout(false);
-            this.PreviewSplitter.Panel1.PerformLayout();
-            this.PreviewSplitter.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PreviewSplitter)).EndInit();
-            this.PreviewSplitter.ResumeLayout(false);
-            this.NavigationSplitter.Panel1.ResumeLayout(false);
-            this.NavigationSplitter.Panel2.ResumeLayout(false);
-            this.NavigationSplitter.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NavigationSplitter)).EndInit();
-            this.NavigationSplitter.ResumeLayout(false);
-            this.PlotPanel.ResumeLayout(false);
-            this.PlotPanel.PerformLayout();
-            this.WorkspaceSearchBar.ResumeLayout(false);
-            this.WorkspaceSearchBar.PerformLayout();
-            this.PreviewInfoSplitter.Panel1.ResumeLayout(false);
-            this.PreviewInfoSplitter.Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PreviewInfoSplitter)).EndInit();
-            this.PreviewInfoSplitter.ResumeLayout(false);
-            this.PreviewPanel.ResumeLayout(false);
-            this.PreviewToolbar.ResumeLayout(false);
-            this.PreviewToolbar.PerformLayout();
-            this.Pages.ResumeLayout(false);
-            this.WorkspacePage.ResumeLayout(false);
-            this.BackgroundPage.ResumeLayout(false);
-            this.BackgroundPage.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.BackgroundPanel.ResumeLayout(false);
-            this.BackgroundToolbar.ResumeLayout(false);
-            this.BackgroundToolbar.PerformLayout();
-            this.EncyclopediaPage.ResumeLayout(false);
-            this.EncyclopediaPage.PerformLayout();
-            this.EncyclopediaSplitter.Panel1.ResumeLayout(false);
-            this.EncyclopediaSplitter.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.EncyclopediaSplitter)).EndInit();
-            this.EncyclopediaSplitter.ResumeLayout(false);
-            this.EncyclopediaEntrySplitter.Panel1.ResumeLayout(false);
-            this.EncyclopediaEntrySplitter.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.EncyclopediaEntrySplitter)).EndInit();
-            this.EncyclopediaEntrySplitter.ResumeLayout(false);
-            this.EntryPanel.ResumeLayout(false);
-            this.EncyclopediaToolbar.ResumeLayout(false);
-            this.EncyclopediaToolbar.PerformLayout();
-            this.RulesPage.ResumeLayout(false);
-            this.RulesSplitter.Panel1.ResumeLayout(false);
-            this.RulesSplitter.Panel1.PerformLayout();
-            this.RulesSplitter.Panel2.ResumeLayout(false);
-            this.RulesSplitter.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RulesSplitter)).EndInit();
-            this.RulesSplitter.ResumeLayout(false);
-            this.RulesToolbar.ResumeLayout(false);
-            this.RulesToolbar.PerformLayout();
-            this.RulesBrowserPanel.ResumeLayout(false);
-            this.EncEntryToolbar.ResumeLayout(false);
-            this.EncEntryToolbar.PerformLayout();
-            this.AttachmentsPage.ResumeLayout(false);
-            this.AttachmentsPage.PerformLayout();
-            this.AttachmentToolbar.ResumeLayout(false);
-            this.AttachmentToolbar.PerformLayout();
-            this.JotterPage.ResumeLayout(false);
-            this.JotterPage.PerformLayout();
-            this.JotterSplitter.Panel1.ResumeLayout(false);
-            this.JotterSplitter.Panel2.ResumeLayout(false);
-            this.JotterSplitter.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.JotterSplitter)).EndInit();
-            this.JotterSplitter.ResumeLayout(false);
-            this.JotterToolbar.ResumeLayout(false);
-            this.JotterToolbar.PerformLayout();
-            this.ReferencePage.ResumeLayout(false);
-            this.ReferenceSplitter.Panel1.ResumeLayout(false);
-            this.ReferenceSplitter.Panel2.ResumeLayout(false);
-            this.ReferenceSplitter.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ReferenceSplitter)).EndInit();
-            this.ReferenceSplitter.ResumeLayout(false);
-            this.ReferencePages.ResumeLayout(false);
-            this.PartyPage.ResumeLayout(false);
-            this.ToolsPage.ResumeLayout(false);
-            this.ToolsPage.PerformLayout();
-            this.ToolBrowserPanel.ResumeLayout(false);
-            this.GeneratorToolbar.ResumeLayout(false);
-            this.GeneratorToolbar.PerformLayout();
-            this.ReferenceToolbar.ResumeLayout(false);
-            this.ReferenceToolbar.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1152, 708);
+            Controls.Add(Pages);
+            Controls.Add(MainMenu);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = MainMenu;
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Name = "MainForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Masterplan";
+            FormClosing += MainForm_FormClosing;
+            Shown += MainForm_Shown;
+            Layout += MainForm_Layout;
+            WorkspaceToolbar.ResumeLayout(false);
+            WorkspaceToolbar.PerformLayout();
+            PointMenu.ResumeLayout(false);
+            MainMenu.ResumeLayout(false);
+            MainMenu.PerformLayout();
+            PreviewSplitter.Panel1.ResumeLayout(false);
+            PreviewSplitter.Panel1.PerformLayout();
+            PreviewSplitter.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)PreviewSplitter).EndInit();
+            PreviewSplitter.ResumeLayout(false);
+            NavigationSplitter.Panel1.ResumeLayout(false);
+            NavigationSplitter.Panel2.ResumeLayout(false);
+            NavigationSplitter.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)NavigationSplitter).EndInit();
+            NavigationSplitter.ResumeLayout(false);
+            PlotPanel.ResumeLayout(false);
+            PlotPanel.PerformLayout();
+            WorkspaceSearchBar.ResumeLayout(false);
+            WorkspaceSearchBar.PerformLayout();
+            PreviewInfoSplitter.Panel1.ResumeLayout(false);
+            PreviewInfoSplitter.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PreviewInfoSplitter).EndInit();
+            PreviewInfoSplitter.ResumeLayout(false);
+            PreviewPanel.ResumeLayout(false);
+            PreviewToolbar.ResumeLayout(false);
+            PreviewToolbar.PerformLayout();
+            Pages.ResumeLayout(false);
+            WorkspacePage.ResumeLayout(false);
+            BackgroundPage.ResumeLayout(false);
+            BackgroundPage.PerformLayout();
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            BackgroundPanel.ResumeLayout(false);
+            BackgroundToolbar.ResumeLayout(false);
+            BackgroundToolbar.PerformLayout();
+            EncyclopediaPage.ResumeLayout(false);
+            EncyclopediaPage.PerformLayout();
+            EncyclopediaSplitter.Panel1.ResumeLayout(false);
+            EncyclopediaSplitter.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)EncyclopediaSplitter).EndInit();
+            EncyclopediaSplitter.ResumeLayout(false);
+            EncyclopediaEntrySplitter.Panel1.ResumeLayout(false);
+            EncyclopediaEntrySplitter.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)EncyclopediaEntrySplitter).EndInit();
+            EncyclopediaEntrySplitter.ResumeLayout(false);
+            EntryPanel.ResumeLayout(false);
+            EncyclopediaToolbar.ResumeLayout(false);
+            EncyclopediaToolbar.PerformLayout();
+            RulesPage.ResumeLayout(false);
+            RulesSplitter.Panel1.ResumeLayout(false);
+            RulesSplitter.Panel1.PerformLayout();
+            RulesSplitter.Panel2.ResumeLayout(false);
+            RulesSplitter.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)RulesSplitter).EndInit();
+            RulesSplitter.ResumeLayout(false);
+            RulesToolbar.ResumeLayout(false);
+            RulesToolbar.PerformLayout();
+            RulesBrowserPanel.ResumeLayout(false);
+            EncEntryToolbar.ResumeLayout(false);
+            EncEntryToolbar.PerformLayout();
+            AttachmentsPage.ResumeLayout(false);
+            AttachmentsPage.PerformLayout();
+            AttachmentToolbar.ResumeLayout(false);
+            AttachmentToolbar.PerformLayout();
+            JotterPage.ResumeLayout(false);
+            JotterPage.PerformLayout();
+            JotterSplitter.Panel1.ResumeLayout(false);
+            JotterSplitter.Panel2.ResumeLayout(false);
+            JotterSplitter.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)JotterSplitter).EndInit();
+            JotterSplitter.ResumeLayout(false);
+            JotterToolbar.ResumeLayout(false);
+            JotterToolbar.PerformLayout();
+            ReferencePage.ResumeLayout(false);
+            ReferenceSplitter.Panel1.ResumeLayout(false);
+            ReferenceSplitter.Panel2.ResumeLayout(false);
+            ReferenceSplitter.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ReferenceSplitter).EndInit();
+            ReferenceSplitter.ResumeLayout(false);
+            ReferencePages.ResumeLayout(false);
+            PartyPage.ResumeLayout(false);
+            ToolsPage.ResumeLayout(false);
+            ToolsPage.PerformLayout();
+            ToolBrowserPanel.ResumeLayout(false);
+            GeneratorToolbar.ResumeLayout(false);
+            GeneratorToolbar.PerformLayout();
+            ReferenceToolbar.ResumeLayout(false);
+            ReferenceToolbar.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private System.Windows.Forms.ToolStrip WorkspaceToolbar;
+        private System.Windows.Forms.ToolStrip WorkspaceToolbar;
 		private System.Windows.Forms.ToolStripButton RemoveBtn;
 		private System.Windows.Forms.ContextMenuStrip PointMenu;
 		private System.Windows.Forms.ToolStripMenuItem ContextAdd;
@@ -3656,6 +3413,9 @@
 		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesPlayerViewOtherDisplay;
 		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesTextSizeExtraLarge;
 		private System.Windows.Forms.ToolStripMenuItem ToolsPreferencesPlayerViewExtraLarge;
-	}
+        private System.Windows.Forms.ToolStripMenuItem ToolsPreferenceEditFormat;
+        private System.Windows.Forms.ToolStripMenuItem ToolsPreferenceEditFormatNarrow;
+        private System.Windows.Forms.ToolStripMenuItem ToolsPreferenceEditFormatFull;
+    }
 }
 

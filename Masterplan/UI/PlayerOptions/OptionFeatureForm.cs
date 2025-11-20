@@ -1,32 +1,33 @@
-﻿using System;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
+using System;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class OptionFeatureForm : Form
-	{
-		public OptionFeatureForm(Feature feature)
-		{
-			InitializeComponent();
+    partial class OptionFeatureForm : Form
+    {
+        public OptionFeatureForm(Feature feature)
+        {
+            InitializeComponent();
 
-			fFeature = feature.Copy();
+            fFeature = feature.Copy();
 
-			NameBox.Text = fFeature.Name;
-			DetailsBox.Text = fFeature.Details;
-		}
+            NameBox.Text = fFeature.Name;
+            DetailsBox.Text = fFeature.Details;
+        }
 
-		public Feature Feature
-		{
-			get { return fFeature; }
-		}
-		Feature fFeature = null;
+        public Feature Feature
+        {
+            get { return fFeature; }
+        }
+        Feature fFeature = null;
 
-		private void OKBtn_Click(object sender, EventArgs e)
-		{
-			fFeature.Name = NameBox.Text;
-			fFeature.Details = DetailsBox.Text;
-		}
-	}
+        private void OKBtn_Click(object sender, EventArgs e)
+        {
+            fFeature.Name = NameBox.Text;
+            fFeature.Details = DetailsBox.Text;
+        }
+    }
 }

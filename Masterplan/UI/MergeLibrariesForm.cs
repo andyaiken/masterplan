@@ -1,62 +1,63 @@
-﻿using System;
+﻿#nullable disable
+
+using Masterplan.Data;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-using Masterplan.Data;
-
 namespace Masterplan.UI
 {
-	partial class MergeLibrariesForm : Form
-	{
-		public MergeLibrariesForm()
-		{
-			InitializeComponent();
+    partial class MergeLibrariesForm : Form
+    {
+        public MergeLibrariesForm()
+        {
+            InitializeComponent();
 
             foreach (Library lib in Session.Libraries)
-			{
-				ListViewItem lvi = ThemeList.Items.Add(lib.Name);
-				lvi.Tag = lib;
-			}
+            {
+                ListViewItem lvi = ThemeList.Items.Add(lib.Name);
+                lvi.Tag = lib;
+            }
 
-			NameBox.Text = "Merged Library";
+            NameBox.Text = "Merged Library";
 
-			Application.Idle += new EventHandler(Application_Idle);
-		}
+            Application.Idle += new EventHandler(Application_Idle);
+        }
 
-		~MergeLibrariesForm()
-		{
-			Application.Idle -= Application_Idle;
-		}
+        ~MergeLibrariesForm()
+        {
+            Application.Idle -= Application_Idle;
+        }
 
-		void Application_Idle(object sender, EventArgs e)
-		{
-			OKBtn.Enabled = (SelectedLibraries.Count >= 2);
-		}
+        void Application_Idle(object sender, EventArgs e)
+        {
+            OKBtn.Enabled = (SelectedLibraries.Count >= 2);
+        }
 
         public List<Library> SelectedLibraries
-		{
-			get
-			{
-				List<Library> list = new List<Library>();
+        {
+            get
+            {
+                List<Library> list = new List<Library>();
 
-				foreach (ListViewItem lvi in ThemeList.CheckedItems)
-				{
-					Library lib = lvi.Tag as Library;
-					if (lib != null)
-						list.Add(lib);
-				}
+                foreach (ListViewItem lvi in ThemeList.CheckedItems)
+                {
+                    Library lib = lvi.Tag as Library;
+                    if (lib != null)
+                        list.Add(lib);
+                }
 
-				return list;
-			}
-		}
+                return list;
+            }
+        }
 
-		public string LibraryName
-		{
-			get { return NameBox.Text; }
-		}
+        public string LibraryName
+        {
+            get { return NameBox.Text; }
+        }
 
-		private void TileList_DoubleClick(object sender, EventArgs e)
-		{
-		}
-	}
+        private void TileList_DoubleClick(object sender, EventArgs e)
+        {
+        }
+    }
 }
