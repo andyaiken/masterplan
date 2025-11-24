@@ -1,5 +1,9 @@
 #nullable disable
 
+using Masterplan.Tools;
+using MessagePack; // Added for resolver initialization
+using MessagePack.Formatters;
+using MessagePack.Resolvers; // <-- ADDED for CompositeResolver
 using System;
 using System.IO;
 using System.Runtime.Serialization;
@@ -16,14 +20,19 @@ namespace Masterplan.Tools
     public enum SerialisationMode
     {
         /// <summary>
-        /// Binary file format.
+        /// Binary file format (deprecated).
         /// </summary>
         Binary,
 
         /// <summary>
         /// XML text format.
         /// </summary>
-        XML
+        XML,
+
+        /// <summary>
+        /// MessagePack binary format (new).
+        /// </summary>
+        MessagePack // Added new mode
     }
 
     /// <summary>
@@ -48,43 +57,57 @@ namespace Masterplan.Tools
                 {
                     case SerialisationMode.Binary:
                         {
-                            Stream stream = new FileStream(filename, FileMode.Open);
-
+                            // Load using BinaryFormatter (deprecated format)
                             try
                             {
-                                IFormatter formatter = new BinaryFormatter();
-                                result = (T)formatter.Deserialize(stream);
+                                FileStream stream = new(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+                                BinaryFormatter s = new();
+                                result = (T)s.Deserialize(stream);
+                                stream.Close();
                             }
-                            catch
+                            catch (Exception)
                             {
-                                result = default(T);
+                                // Binary load failed, attempt XML load for backwards compatibility
+                                result = Load(filename, SerialisationMode.XML);
                             }
-
-                            stream.Close();
                         }
                         break;
                     case SerialisationMode.XML:
                         {
-                            XmlTextReader reader = new XmlTextReader(filename);
-
+                            // Load using XmlSerializer
                             try
                             {
-                                XmlSerializer s = new XmlSerializer(typeof(T));
+                                XmlTextReader reader = new(filename);
+                                XmlSerializer s = new(typeof(T));
                                 result = (T)s.Deserialize(reader);
+                                reader.Close();
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                result = default(T);
+                                LogSystem.Trace(ex);
                             }
-
-                            reader.Close();
+                        }
+                        break;
+                    case SerialisationMode.MessagePack:
+                        {
+                            // Load using MessagePack (new, preferred format)
+                            try
+                            {
+                                byte[] bytes = File.ReadAllBytes(filename);
+                                result = MessagePackSerializer.Deserialize<T>(bytes);
+                            }
+                            catch (Exception ex)
+                            {
+                                LogSystem.Trace(ex);
+                                // MessagePack load failed, attempt Binary load for backwards compatibility
+                                result = Load(filename, SerialisationMode.Binary);
+                            }
                         }
                         break;
                 }
             }
             catch (Exception)
             {
-                result = default(T);
             }
 
             return result;
@@ -95,13 +118,12 @@ namespace Masterplan.Tools
         /// </summary>
         /// <param name="filename">The full path of the file.</param>
         /// <param name="obj">The object to be saved.</param>
-        /// <param name="mode">The mode in which the object was saved.</param>
-        /// <returns>Returns true if the object was saved successfully; false otherwise.</returns>
+        /// <param name="mode">The mode in which the object will be saved.</param>
+        /// <returns>Returns true if the object was saved successfully, and false otherwise.</returns>
         public static bool Save(string filename, T obj, SerialisationMode mode)
         {
+            string temp_filename = filename + ".tmp";
             bool ok = false;
-
-            string temp_filename = filename + ".save";
 
             try
             {
@@ -109,19 +131,20 @@ namespace Masterplan.Tools
                 {
                     case SerialisationMode.Binary:
                         {
-                            Stream stream = new FileStream(temp_filename, FileMode.Create);
+                            // Save using BinaryFormatter (deprecated format)
+                            FileStream stream = new(temp_filename, FileMode.Create, FileAccess.Write, FileShare.None);
 
                             try
                             {
-                                IFormatter formatter = new BinaryFormatter();
-                                formatter.Serialize(stream, obj);
-                                stream.Flush();
+                                BinaryFormatter s = new();
+                                s.Serialize(stream, obj);
 
                                 ok = true;
                             }
                             catch (Exception ex)
                             {
                                 Console.WriteLine(ex);
+                                LogSystem.Trace(ex);
                                 ok = false;
                             }
 
@@ -130,12 +153,15 @@ namespace Masterplan.Tools
                         break;
                     case SerialisationMode.XML:
                         {
-                            XmlTextWriter writer = new XmlTextWriter(temp_filename, Encoding.UTF8);
-                            writer.Formatting = Formatting.Indented;
+                            // Save using XmlSerializer
+                            XmlTextWriter writer = new(temp_filename, Encoding.UTF8)
+                            {
+                                Formatting = Formatting.Indented
+                            };
 
                             try
                             {
-                                XmlSerializer s = new XmlSerializer(typeof(T));
+                                XmlSerializer s = new(typeof(T));
                                 s.Serialize(writer, obj);
                                 writer.Flush();
 
@@ -144,25 +170,64 @@ namespace Masterplan.Tools
                             catch (Exception ex)
                             {
                                 Console.WriteLine(ex);
+                                LogSystem.Trace(ex);
                                 ok = false;
                             }
 
                             writer.Close();
                         }
                         break;
+                    case SerialisationMode.MessagePack:
+                        {
+                            // Save using MessagePack (new, preferred format)
+                            try
+                            {
+                                // Serialize the object to a byte array
+                                byte[] bytes = MessagePackSerializer.Serialize(obj);
+
+                                // --- FIX FOR CS7036 ERROR: Using explicit FileStream with FileShare ---
+                                // Replaced File.WriteAllBytes to avoid conflict with FileSystemAclExtensions
+                                using (FileStream fs = new(
+                                    temp_filename,
+                                    FileMode.Create, // Create the file
+                                    FileAccess.Write,
+                                    FileShare.Read // <-- Explicitly specify FileShare
+                                ))
+                                {
+                                    fs.Write(bytes, 0, bytes.Length);
+                                }
+                                // --- END FIX ---
+
+                                ok = true;
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex);
+                                LogSystem.Trace(ex);
+                                ok = false;
+                            }
+                        }
+                        break;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                LogSystem.Trace(ex);
                 ok = false;
             }
 
             if (ok)
             {
+                // Atomically replace the target file with the temporary file
                 if (File.Exists(filename))
                     File.Delete(filename);
 
                 File.Move(temp_filename, filename);
+            }
+            else if (File.Exists(temp_filename))
+            {
+                // Clean up temp file on failure
+                File.Delete(temp_filename);
             }
 
             return ok;

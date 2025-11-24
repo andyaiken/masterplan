@@ -1,19 +1,22 @@
-#nullable disable
-
+﻿#nullable disable
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.IO;
-using System.Security.AccessControl; // Required for FileSystemRights and FileSecurity
+using System.Security.AccessControl; // ADDED: Required for FileSystemRights and FileSecurity
 
 namespace Masterplan.Tools
 {
+
     /// <summary>
     /// Class containing static methods and properties used for diagnostic logging.
     /// </summary>
     public class LogSystem
     {
         /// <summary>
-        /// Sends a message to the console (and also to the logfile if one is defined).
-        /// </summary>
+        /// Sends a message to the console (and also to the logfile if one is defined).\r\n            /// </summary>
         /// <param name="message">The message to be displayed.</param>
         public static void Trace(string message)
         {
@@ -34,14 +37,13 @@ namespace Masterplan.Tools
                         string line = DateTime.Now + "\t" + str;
 
                         // --- FIX FOR CS7036 ERROR: Using explicit FileStream with FileShare ---
-                        // We use the FileStream constructor that explicitly defines FileShare 
-                        // and FileAccess to resolve the compilation error caused by missing 
-                        // the 'share' parameter. This ensures we can append data correctly.
+                        // This replaces the implicit file append to explicitly use FileShare.Read 
+                        // which resolves the conflict with System.IO.FileSystemAclExtensions.
                         using (FileStream fs = new FileStream(
                             fLogFile,
                             FileMode.Append,
                             FileAccess.Write,
-                            FileShare.Read // <-- This is the required 'share' parameter
+                            FileShare.Read // <-- The required 'share' parameter
                         ))
                         using (StreamWriter sw = new StreamWriter(fs))
                         {

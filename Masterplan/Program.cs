@@ -3,6 +3,9 @@
 using Masterplan.Data;
 using Masterplan.Tools;
 using Masterplan.UI;
+using MessagePack;
+using MessagePack.Formatters;
+using MessagePack.Resolvers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -21,24 +24,29 @@ namespace Masterplan
         [STAThread]
         public static void Main(string[] args)
         {
+            // Set up MessagePack options before any library loading occurs.
+            SetupMessagePackResolvers();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // var pngExporter = new StatBlockExporter();
+          
 
             try
             {
-                init_logging();
+                // The CS7036 error was fixed by modifying the file creation logic inside LogSystem.cs.
+        #region Bootstrapping
+                Init_logging();
 
                 SplashScreen = new ProgressScreen("Masterplan", 0);
                 SplashScreen.CurrentAction = "Loading...";
                 SplashScreen.Show();
 
-                load_preferences();
-                load_libraries();
+                Load_preferences();
+                Load_libraries();
 
                 foreach (string arg in args)
-                    handle_arg(arg);
+                    Handle_arg(arg);
 
                 SplashScreen.CurrentAction = "Starting Masterplan...";
                 SplashScreen.Actions = 0;
@@ -59,10 +67,10 @@ namespace Masterplan
                 foreach (Form form in forms)
                     form.Close();
 
-                save_preferences();
+                Save_preferences();
 
                 if (IsBeta)
-                    check_for_logs();
+                    Check_for_logs();
             }
             catch (Exception ex)
             {
@@ -70,78 +78,72 @@ namespace Masterplan
             }
         }
 
-        #region Bootstrapping
 
-        static void init_logging()
+        /// <summary>
+        /// Sets up the MessagePack serializer options with custom and composite resolvers.
+        /// This ensures System.Drawing.Color, System.Drawing.Bitmap, and polymorphic types are handled correctly.
+        /// </summary>
+        private static void SetupMessagePackResolvers()
         {
             try
             {
-                // Logging
-                string mp_dir = FileName.Directory(Application.ExecutablePath);
+                // Combine custom formatters and standard resolvers into a single chain.
+                var resolver = CompositeResolver.Create(
+                    // 1. Custom formatters (highest priority)
+                    new IMessagePackFormatter[] {
+                        ColorFormatter.Instance,
+                        BitmapFormatter.Instance // ADDED: Custom formatter for System.Drawing.Bitmap
+                    },
+                    // 2. Standard resolvers (order matters)
+                    new IFormatterResolver[] {
+                        NativeDateTimeResolver.Instance,
+                        TypelessContractlessStandardResolver.Instance, // For interfaces, Bitmap, and dynamic types
+                        StandardResolver.Instance,
+                        ContractlessStandardResolver.Instance
+                    }
+                );
 
-                // Make sure the log directory exists
-                string logdir = mp_dir + "Log" + Path.DirectorySeparatorChar;
-                if (!Directory.Exists(logdir))
+                MessagePackSerializer.DefaultOptions = MessagePackSerializerOptions.Standard.WithResolver(resolver);
+            }
+            catch (Exception ex)
+            {
+                // Log initialization errors without crashing the main thread
+                // Console.WriteLine($"Error initializing MessagePack resolver: {ex.Message}");
+                LogSystem.Trace(ex);
+            }
+        }
+
+        // This method's body is external (in LogSystem.cs)
+        static void Init_logging()
+        {
+            // Logging
+            string mp_dir = FileName.Directory(Application.ExecutablePath);
+
+            // Make sure the log directory exists
+            string logdir = mp_dir + "Log" + Path.DirectorySeparatorChar;
+
+            // FIX 2: Explicitly check for existence before calling CreateDirectory.
+            // This works around the conflict with FileSystemAclExtensions.Create(DirectoryInfo, DirectorySecurity).
+            if (!Directory.Exists(logdir))
+            {
+                try
                 {
+                    // Use the simple overload that doesn't conflict
                     DirectoryInfo di = Directory.CreateDirectory(logdir);
                     if (di == null)
                         throw new UnauthorizedAccessException();
                 }
-
-                // Begin logging
-                string logfile = logdir + DateTime.Now.Ticks + ".log";
-                LogSystem.LogFile = logfile;
-            }
-            catch
-            {
-            }
-        }
-
-        static void load_libraries()
-        {
-            try
-            {
-                SplashScreen.CurrentAction = "Loading libraries...";
-
-                Assembly ass = Assembly.GetEntryAssembly();
-                string root_dir = FileName.Directory(ass.Location);
-
-                string lib_dir = root_dir + "Libraries\\";
-                if (!Directory.Exists(lib_dir))
-                    Directory.CreateDirectory(lib_dir);
-
-                // Move libraries from root directory
-                string[] files = Directory.GetFiles(root_dir, "*.library");
-                foreach (string filename in files)
+                catch
                 {
-                    try
-                    {
-                        string lib_name = lib_dir + FileName.Name(filename) + ".library";
-
-                        if (!File.Exists(lib_name))
-                            File.Move(filename, lib_name);
-                    }
-                    catch (Exception ex)
-                    {
-                        LogSystem.Trace(ex);
-                    }
+                    // Ignore directory creation errors if logging will still work to console/default.
                 }
-
-                // Load libraries
-                string[] libraries = Directory.GetFiles(lib_dir, "*.library");
-                SplashScreen.Actions = libraries.Length;
-                foreach (string filename in libraries)
-                    Session.LoadLibrary(filename);
-
-                Session.Libraries.Sort();
             }
-            catch (Exception ex)
-            {
-                LogSystem.Trace(ex);
-            }
+
+            // Begin logging
+            string logfile = logdir + DateTime.Now.Ticks + ".log";
+            LogSystem.LogFile = logfile;
         }
-
-        static void load_preferences()
+        static void Load_preferences()
         {
             try
             {
@@ -164,7 +166,7 @@ namespace Masterplan
             }
         }
 
-        static void save_preferences()
+        static void Save_preferences()
         {
             try
             {
@@ -180,13 +182,85 @@ namespace Masterplan
             }
         }
 
-        static void handle_arg(string arg)
+        static void Load_libraries()
+        {
+            try
+            {
+                SplashScreen.CurrentAction = "Loading libraries...";
+
+                Assembly ass = Assembly.GetEntryAssembly();
+                string root_dir = FileName.Directory(ass.Location);
+
+                string lib_dir = root_dir + "Libraries" + Path.DirectorySeparatorChar;
+
+                // FIX 3: Use explicit existence check before creating directories to avoid ACL error.
+                if (!Directory.Exists(lib_dir))
+                    Directory.CreateDirectory(lib_dir);
+
+                // --- NEW CONVERSION SETUP ---
+                // Create directory for converted library files (MessagePack fix)
+                string new_lib_dir = lib_dir + "Converted" + Path.DirectorySeparatorChar;
+
+                // FIX 4: Use explicit existence check before creating directories to avoid ACL error.
+                if (!Directory.Exists(new_lib_dir))
+                    Directory.CreateDirectory(new_lib_dir);
+                // ----------------------------
+
+                // Move libraries from root directory
+                string[] files = Directory.GetFiles(root_dir, "*.library");
+                foreach (string filename in files)
+                {
+                    try
+                    {
+                        string lib_name = lib_dir + FileName.Name(filename) + ".library";
+
+                        if (!File.Exists(lib_name))
+                            File.Move(filename, lib_name);
+                    }
+                    catch (Exception ex)
+                    {
+                        LogSystem.Trace(ex);
+                    }
+                }
+
+                // Load and convert libraries
+                string[] libraries = Directory.GetFiles(lib_dir, "*.library");
+                SplashScreen.Actions = libraries.Length;
+
+                // 1. Load all libraries. Session.LoadLibrary will check for the new .xLibrary 
+                //    format first for maximum speed on subsequent loads.
+                foreach (string filename in libraries)
+                {
+                    Session.LoadLibrary(filename);
+                }
+
+                // 2. Convert old .library files to the new .xLibrary format.
+                //    This conversion is necessary to phase out BinaryFormatter.
+                // NOT READY FOR RELEASE - COMMENT OUT
+                //foreach (string filename in libraries)
+                //{
+                //    Session.ConvertLibrary(new_lib_dir, filename);
+                //}
+
+                Session.Libraries.Sort();
+            }
+            catch (Exception ex)
+            {
+                LogSystem.Trace(ex);
+            }
+        }
+
+
+
+
+
+        static void Handle_arg(string arg)
         {
             try
             {
                 if (arg == "-creaturestats")
                 {
-                    run_creature_stats();
+                    Run_creature_stats();
                 }
 
                 FileInfo fi = new FileInfo(arg);
@@ -224,7 +298,7 @@ namespace Masterplan
             }
         }
 
-        static void check_for_logs()
+        static void Check_for_logs()
         {
             string logfile = LogSystem.LogFile;
 
@@ -238,11 +312,11 @@ namespace Masterplan
             Process.Start(logdir);
         }
 
-        #endregion
+#endregion
 
         #region Stats
 
-        private static void run_creature_stats()
+        private static void Run_creature_stats()
         {
             // Run stats
             List<Creature> creatures = Session.Creatures;
@@ -272,7 +346,7 @@ namespace Masterplan
                             {
                                 foreach (RoleFlag flag in Enum.GetValues(typeof(RoleFlag)))
                                 {
-                                    List<Creature> list = get_creatures(creatures, level, is_minion, is_leader, role, flag);
+                                    List<Creature> list = Get_creatures(creatures, level, is_minion, is_leader, role, flag);
 
                                     List<CreaturePower> powers = new List<CreaturePower>();
                                     foreach (Creature c in list)
@@ -361,7 +435,7 @@ namespace Masterplan
             }
         }
 
-        private static List<Creature> get_creatures(List<Creature> creatures, int level, bool is_minion, bool is_leader, RoleType role, RoleFlag flag)
+        private static List<Creature> Get_creatures(List<Creature> creatures, int level, bool is_minion, bool is_leader, RoleType role, RoleFlag flag)
         {
             List<Creature> list = new List<Creature>();
 
@@ -445,7 +519,7 @@ namespace Masterplan
         public static ProgressScreen SplashScreen = null;
 
         public static string ProjectFilter = "Masterplan Project|*.masterplan";
-        public static string LibraryFilter = "Masterplan Library|*.library";
+        public static string LibraryFilter = "Masterplan Library|*.library;*.xlibrary";
         public static string EncounterFilter = "Masterplan Encounter|*.encounter";
         public static string BackgroundFilter = "Masterplan Campaign Background|*.background";
         public static string EncyclopediaFilter = "Masterplan Campaign Encyclopedia|*.encyclopedia";
@@ -463,11 +537,11 @@ namespace Masterplan
         public static string ArtifactFilter = "Artifacts|*.artifact";
         public static string MapTileFilter = "Map Tiles|*.maptile";
         public static string TerrainPowerFilter = "Terrain Powers|*.terrainpower";
-        // added hero filter for export & import
-        public static string HeroAndPCFilter = "Hero|*.hero;*.pc";
 
         public static string HTMLFilter = "HTML File|*.htm";
         public static string ImageFilter = "Image File|*.bmp;*.jpg;*.jpeg;*.gif;*.png;*.tga";
-        public static string PNGFilter = "Image File|*.png";
+        public static string PNGFilter = "Image File|*.png";        // Added for the PNG Export
+        public static string HeroAndPCFilter = "Hero File|*.hero";  // Added for the Hero Export
+
     }
 }

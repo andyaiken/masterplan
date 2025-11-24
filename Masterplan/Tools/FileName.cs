@@ -31,6 +31,20 @@ namespace Masterplan.Tools
         }
 
         /// <summary>
+        /// Generates the MessagePack-compatible filename (.xLibrary) 
+        /// from the old BinaryFormatter filename (.library).
+        /// </summary>
+        /// <param name="oldFilename">The full path of the old .library file.</param>
+        /// <returns>The full path of the new .xLibrary file.</returns>
+        public static string GetNewLibraryFilename(string oldFilename)
+        {
+            // Path.ChangeExtension is the robust way to replace the file extension.
+            // It safely handles various path formats.
+            return Path.ChangeExtension(oldFilename, ".xLibrary");
+        }
+
+
+        /// <summary>
         /// Returns the extension part of a filename.
         /// </summary>
         /// <param name="filename">The full filename.</param>
@@ -114,8 +128,8 @@ namespace Masterplan.Tools
         public static string MakeRelative(string filename, string directory)
         {
             // Strip initial protocol bit from each
-            filename = remove_protocol(filename);
-            directory = remove_protocol(directory);
+            filename = Remove_protocol(filename);
+            directory = Remove_protocol(directory);
 
             // Make sure the directory ends with "\\"
             string separator = Path.DirectorySeparatorChar.ToString();
@@ -123,8 +137,8 @@ namespace Masterplan.Tools
                 directory += separator;
 
             // Make sure the first bit (the device) is the same
-            string f_device = first_folder(filename);
-            string p_device = first_folder(directory);
+            string f_device = First_folder(filename);
+            string p_device = First_folder(directory);
             if (f_device == p_device)
             {
                 // Remove them
@@ -140,7 +154,7 @@ namespace Masterplan.Tools
             // Remove the common part
             while (true)
             {
-                string d_folder = first_folder(directory);
+                string d_folder = First_folder(directory);
                 if (d_folder == "")
                     break;
 
@@ -157,7 +171,7 @@ namespace Masterplan.Tools
             string prefix = "";
             while (true)
             {
-                string folder = first_folder(directory);
+                string folder = First_folder(directory);
                 if (folder == "")
                     break;
 
@@ -195,7 +209,7 @@ namespace Masterplan.Tools
             return directory + separator + filename;
         }
 
-        private static string remove_protocol(string path)
+        private static string Remove_protocol(string path)
         {
             string sep = "://";
             int index = path.IndexOf(sep);
@@ -205,7 +219,7 @@ namespace Masterplan.Tools
             return path.Remove(0, index + sep.Length);
         }
 
-        private static string first_folder(string path)
+        private static string First_folder(string path)
         {
             string separator = Path.DirectorySeparatorChar.ToString();
             int index = path.IndexOf(separator);

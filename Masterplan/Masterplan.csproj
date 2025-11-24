@@ -7,14 +7,16 @@
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+	<ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+	<ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
 	<GenerateResourceWarnOnBinaryFormatterUse>false</GenerateResourceWarnOnBinaryFormatterUse>
     <NoWarn>$(NoWarn);SYSLIB0011</NoWarn>
-    <AssemblyVersion>13.0.1.0</AssemblyVersion>
+    <AssemblyVersion>13.0.2.0</AssemblyVersion>
     <Copyright>Copyright © 2021 - 2025 - Habitual Indolence / Gamers' Syndicate - All rights reserved. This product is protected by copyright and distributed under licences restricting copying, distribution and decompilation.</Copyright>
-    <FileVersion>13.0.1.0</FileVersion>
+    <FileVersion>13.0.2.0</FileVersion>
     <Title>Masterplan</Title>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
-    <Version>13.0.1.0</Version>
+    <Version>13.0.2.0</Version>
     <Product>Masterplan Adventure Design Studio</Product>
     <Description>A Dungeons &amp; Dragons 4e Adventure Design Tool</Description>
   </PropertyGroup>
@@ -22,6 +24,12 @@
     <Optimize>false</Optimize>
     <DocumentationFile>bin\Release\Masterplan.XML</DocumentationFile>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Tools\LogSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\masterplan_scroll.svg" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Update="Controls\BreakdownPanel.cs">
       <SubType>UserControl</SubType>
@@ -143,6 +151,7 @@
     <DocumentationFile>bin\Release\Masterplan.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\masterplan_scroll.svg" />
     <EmbeddedResource Include="Scroll.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -237,7 +246,19 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MessagePack" Version="3.1.4" />
+    <PackageReference Include="MessagePack.Annotations" Version="3.1.4" />
+    <PackageReference Include="MessagePackAnalyzer" Version="3.1.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="PuppeteerSharp" Version="20.2.4" />
+    <PackageReference Include="SkiaSharp" Version="3.119.1" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Win32" Version="3.119.1" />
+    <PackageReference Include="Svg.Skia" Version="3.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tools\MessagePack\" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="REM 1. Copy Manual.pdf only if it exists&#xA;if exist &quot;$(ProjectDir)..\Manual.pdf&quot; xcopy /y &quot;$(ProjectDir)..\Manual.pdf&quot; &quot;$(TargetDir)&quot;&#xA;&#xA;REM 2. Create Libraries folder if it does NOT exist (using &quot;if not exist&quot;)&#xA;if not exist &quot;$(TargetDir)Libraries&quot; md &quot;$(TargetDir)Libraries&quot;&#xA;&#xA;REM 3. Copy .library files only if the source directory exists&#xA;if exist &quot;$(ProjectDir)..\Libraries\&quot; xcopy /y &quot;$(ProjectDir)..\Libraries\*.library&quot; &quot;$(TargetDir)Libraries\&quot;" />

@@ -56,8 +56,8 @@
 			this.TitlePanel.Name = "TitlePanel";
 			this.TitlePanel.Size = new System.Drawing.Size(364, 429);
 			this.TitlePanel.TabIndex = 4;
-			this.TitlePanel.Title = "Masterplan";
-			this.TitlePanel.Zooming = false;
+			this.TitlePanel.Title = "Masterplan - BETA";
+            this.TitlePanel.Zooming = false;
 			this.TitlePanel.FadeFinished += new System.EventHandler(this.TitlePanel_FadeFinished);
 			// 
 			// WelcomePanel

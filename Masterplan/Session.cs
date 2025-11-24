@@ -111,7 +111,44 @@ namespace Masterplan
             return null;
         }
 
-        public static Library LoadLibrary(string filename)
+        //public static Library LoadLibrary(string filename)
+        //{
+        //    try
+        //    {
+        //        if (Program.SplashScreen != null)
+        //        {
+        //            Program.SplashScreen.CurrentSubAction = Tools.FileName.Name(filename);
+        //            Program.SplashScreen.Progress += 1;
+        //        }
+
+        //        Library lib = Serialisation<Library>.Load(filename, SerialisationMode.Binary);
+        //        if (lib != null)
+        //        {
+        //            lib.Name = Tools.FileName.Name(filename);
+        //            lib.Update();
+
+        //            Session.Libraries.Add(lib);
+        //        }
+        //        else
+        //        {
+        //            LogSystem.Trace("Could not load " + Tools.FileName.Name(filename));
+        //        }
+
+        //        return lib;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        LogSystem.Trace(ex);
+        //    }
+
+        //    return null;
+        //}
+
+        //public static void ConvertLibrary(string new_lib_dir, string filename);
+        //{
+        
+        //}
+public static Library LoadLibrary(string filename)
         {
             try
             {
@@ -121,7 +158,21 @@ namespace Masterplan
                     Program.SplashScreen.Progress += 1;
                 }
 
-                Library lib = Serialisation<Library>.Load(filename, SerialisationMode.Binary);
+                // 1. Try to load the NEW MessagePack file first (if it exists)
+                string new_filename = Tools.FileName.GetNewLibraryFilename(filename); // New helper to get .xLibrary name
+                Library lib = null;
+                
+                if (File.Exists(new_filename))
+                {
+                    lib = Serialisation<Library>.Load(new_filename, SerialisationMode.MessagePack);
+                }
+
+                // 2. If the MessagePack load failed, fall back to the OLD BinaryFormatter file
+                if (lib == null)
+                {
+                    lib = Serialisation<Library>.Load(filename, SerialisationMode.Binary);
+                }
+                
                 if (lib != null)
                 {
                     lib.Name = Tools.FileName.Name(filename);
@@ -144,6 +195,34 @@ namespace Masterplan
             return null;
         }
 
+        // ... (other methods)
+
+        public static void ConvertLibrary(string new_lib_dir, string filename)
+        {
+            try
+            {
+                // Load the library using the existing LoadLibrary logic (will load Binary or MessagePack)
+                Library lib = Serialisation<Library>.Load(filename, SerialisationMode.Binary); // Use Binary mode to ensure load attempts the old .library file if new is missing.
+                
+                // Get the intended new filename (e.g., C:\Libraries\Converted\LibraryName.xLibrary)
+                string new_filename = new_lib_dir + Tools.FileName.Name(filename) + ".xLibrary";
+                
+                // Only save/convert if the new file doesn't already exist.
+                if (lib != null && !File.Exists(new_filename))
+                {
+                    Program.SplashScreen.CurrentSubAction = "Converting " + Tools.FileName.Name(filename);
+                    
+                    // Save the loaded object in the new MessagePack format.
+                    Serialisation<Library>.Save(new_filename, lib, SerialisationMode.MessagePack);
+                }
+            }
+            catch (Exception ex)
+            {
+                LogSystem.Trace(ex);
+            }
+        }
+
+
         public static void DeleteLibrary(Library lib)
         {
             // Delete library file
@@ -153,6 +232,8 @@ namespace Masterplan
 
             Session.Libraries.Remove(lib);
         }
+
+
 
         #region Find library by item
 

@@ -9,6 +9,9 @@ using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.Reflection;
 using System.Windows.Forms;
+using Svg.Skia; // <-- ADDED for SVG processing
+using SkiaSharp; // <-- ADDED for low-level drawing
+using System.IO; // <-- ADDED for reading embedded resource streams
 
 namespace Masterplan.Controls
 {
@@ -19,6 +22,12 @@ namespace Masterplan.Controls
             WelcomeScreen,
             PlayerView
         }
+
+        // NEW FIELD: Store the Svg.Skia object (the vector data)
+        private SKSvg fMasterPlanSvg;
+
+        // IMPORTANT: Update this to match the resource path for your embedded SVG file
+        private const string MasterPlanResourceName = "Masterplan.Resources.masterplan_scroll.svg";
 
         public TitlePanel()
         {
@@ -33,7 +42,31 @@ namespace Masterplan.Controls
             fFormat.LineAlignment = StringAlignment.Center;
             fFormat.Trimming = StringTrimming.EllipsisWord;
 
+            LoadSvgResource(); // <-- NEW CALL to load SVG
             FadeTimer.Enabled = true;
+        }
+
+        // NEW METHOD: Load the SVG vector data once
+        private void LoadSvgResource()
+        {
+            try
+            {
+                Assembly assembly = Assembly.GetExecutingAssembly();
+                using (Stream stream = assembly.GetManifestResourceStream(MasterPlanResourceName))
+                {
+                    if (stream == null)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"Error: Embedded resource '{MasterPlanResourceName}' not found. Make sure 'masterplan.svg' is added as an Embedded Resource.");
+                        return;
+                    }
+                    fMasterPlanSvg = new SKSvg();
+                    fMasterPlanSvg.Load(stream);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error loading SVG: {ex.Message}");
+            }
         }
 
         [Category("Appearance")]
@@ -123,29 +156,74 @@ namespace Masterplan.Controls
                     fVersionRect = new Rectangle(rect.Left, fTitleRect.Bottom, rect.Width - 1, (int)version_height);
                 }
 
-                if (fMode == TitlePanelMode.WelcomeScreen)
+                if (fMode == TitlePanelMode.WelcomeScreen && fMasterPlanSvg?.Picture != null)
                 {
-                    ColorMatrix cm = new ColorMatrix();
-                    cm.Matrix33 = (0.25F * fAlpha) / MAX_ALPHA;
+                    // --- SVG DRAWING LOGIC (Using manual SKCanvas rendering to bypass ToBitmap overloads) ---
 
-                    ImageAttributes ia = new ImageAttributes();
-                    ia.SetColorMatrix(cm);
+                    SKRect svgBounds = fMasterPlanSvg.Picture.CullRect;
 
-                    Image scroll_img = Masterplan.Properties.Resources.Scroll;
+                    // 1. Determine target dimensions for the image based on client area (same logic as original PNG)
+                    int y_start = ClientRectangle.Y + (int)(ClientRectangle.Height * 0.1);
+                    int max_height = (int)(ClientRectangle.Height * 0.8);
 
-                    int y = ClientRectangle.Y + (int)(ClientRectangle.Height * 0.1);
-                    int img_height = (int)(ClientRectangle.Height * 0.8);
-                    int img_width = scroll_img.Width * img_height / scroll_img.Height;
+                    float aspect_ratio = svgBounds.Width / svgBounds.Height;
+                    int img_height = max_height;
+                    int img_width = (int)(img_height * aspect_ratio);
+
+                    // Adjust if image is too wide for the panel
                     if (img_width > ClientRectangle.Width)
                     {
                         img_width = ClientRectangle.Width;
-                        img_height = scroll_img.Height * img_width / scroll_img.Width;
+                        img_height = (int)(img_width / aspect_ratio);
                     }
-                    int x = ClientRectangle.X + ((ClientRectangle.Width - img_width) / 2);
+                    int x_start = ClientRectangle.X + ((ClientRectangle.Width - img_width) / 2);
 
-                    Rectangle img_rect = new Rectangle(x, y, img_width, img_height);
-                    e.Graphics.DrawImage(scroll_img, img_rect, 0, 0, scroll_img.Width, scroll_img.Height, GraphicsUnit.Pixel, ia);
+                    Rectangle img_rect = new Rectangle(x_start, y_start, img_width, img_height);
+
+                    // 2. Define the target rendering surface information
+                    var info = new SKImageInfo(img_width, img_height, SKColorType.Rgba8888, SKAlphaType.Premul);
+
+                    // 3. Create the SKBitmap and SKCanvas manually
+                    using (SKBitmap skBitmap = new SKBitmap(info))
+                    using (SKCanvas skCanvas = new SKCanvas(skBitmap))
+                    {
+                        // Set the drawing environment
+                        skCanvas.Clear(SKColors.Transparent);
+
+                        // Calculate scale to fit the determined pixel size
+                        float scaleX = (float)img_width / svgBounds.Width;
+                        float scaleY = (float)img_height / svgBounds.Height;
+                        float scale = Math.Min(scaleX, scaleY);
+
+                        // Apply transformation and transparency based on fAlpha
+                        SKMatrix matrix = SKMatrix.CreateScale(scale, scale);
+
+                        using (SKPaint paint = new SKPaint())
+                        {
+                            // Set the calculated alpha (transparency)
+                            // Original formula: (0.25F * fAlpha) / MAX_ALPHA
+                            // We scale this to a byte value (0-255) for SKPaint
+                            byte alpha_byte = (byte)((0.25F * fAlpha / MAX_ALPHA) * 255);
+                            paint.Color = paint.Color.WithAlpha(alpha_byte);
+
+                            // 4. Draw the vector picture onto the canvas
+                            skCanvas.DrawPicture(fMasterPlanSvg.Picture, in matrix, paint);
+                        }
+
+                        // 5. Convert the SKBitmap to a System.Drawing.Bitmap for GDI+ drawing
+                        using (SKImage image = SKImage.FromBitmap(skBitmap))
+                        using (SKData data = image.Encode(SkiaSharp.SKEncodedImageFormat.Png, 100))
+                        using (MemoryStream ms = new MemoryStream(data.ToArray()))
+                        {
+                            System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
+                            e.Graphics.DrawImage(bitmap, img_rect);
+                            // Use bitmap with GDI+
+
+                        }
+                        
+                    }
                 }
+                // --- END SVG DRAWING LOGIC ---
 
                 using (Brush title_brush = new SolidBrush(Color.FromArgb(fAlpha, ForeColor)))
                 {
