@@ -1,3 +1,6 @@
+# This branch is to upgrade Masterplan from .Net 4.x to .Net 8.0 at a minimum
+Download the latest .Net from their site - https://dotnet.microsoft.com/en-us/download/dotnet/8.0 
+
 # Masterplan
 
 Masterplan is an application that helps you to build D&D 4E campaigns.
