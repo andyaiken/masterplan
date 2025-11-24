@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="D20Rules">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="RulesElement">
+					<xs:complexType mixed="true">
+						<xs:sequence minOccurs="0">
+							<xs:choice maxOccurs="unbounded">
+								<xs:element name="Category" type="xs:string" />
+								<xs:element name="Prereqs" type="xs:string" />
+								<xs:element name="print-prereqs" type="xs:string" />
+								<xs:element name="Flavor" type="xs:string" />
+								<xs:element maxOccurs="unbounded" name="specific">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="name" type="xs:string" use="required" />
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="rules">
+									<xs:complexType mixed="true">
+										<xs:sequence>
+											<xs:choice maxOccurs="unbounded">
+												<xs:element name="grant">
+													<xs:complexType>
+														<xs:attribute name="name" type="xs:string" use="required" />
+														<xs:attribute name="type" type="xs:string" use="optional" />
+														<xs:attribute name="Level" type="xs:string" use="optional" />
+														<xs:attribute name="requires" type="xs:string" use="optional" />
+														<xs:attribute name="level" type="xs:unsignedByte" use="optional" />
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="statadd">
+													<xs:complexType>
+														<xs:attribute name="name" type="xs:string" use="required" />
+														<xs:attribute name="value" type="xs:string" use="required" />
+														<xs:attribute name="requires" type="xs:string" use="optional" />
+														<xs:attribute name="half-point" type="xs:boolean" use="optional" />
+														<xs:attribute name="condition" type="xs:string" use="optional" />
+														<xs:attribute name="type" type="xs:string" use="optional" />
+														<xs:attribute name="wearing" type="xs:string" use="optional" />
+														<xs:attribute name="non-zero" type="xs:boolean" use="optional" />
+														<xs:attribute name="not-wearing" type="xs:string" use="optional" />
+														<xs:attribute name="zero" type="xs:boolean" use="optional" />
+														<xs:attribute name="statmin" type="xs:string" use="optional" />
+														<xs:attribute name="Type" type="xs:string" use="optional" />
+													</xs:complexType>
+												</xs:element>
+												<xs:element maxOccurs="unbounded" name="textstring">
+													<xs:complexType>
+														<xs:attribute name="name" type="xs:string" use="required" />
+														<xs:attribute name="value" type="xs:string" use="required" />
+														<xs:attribute name="condition" type="xs:string" use="optional" />
+														<xs:attribute name="requires" type="xs:string" use="optional" />
+														<xs:attribute name="wearing" type="xs:string" use="optional" />
+													</xs:complexType>
+												</xs:element>
+												<xs:element maxOccurs="unbounded" name="select">
+													<xs:complexType>
+														<xs:simpleContent>
+															<xs:extension base="xs:string">
+																<xs:attribute name="type" type="xs:string" use="required" />
+																<xs:attribute name="number" type="xs:unsignedByte" use="optional" />
+																<xs:attribute name="Category" type="xs:string" use="optional" />
+																<xs:attribute name="optional" type="xs:string" use="optional" />
+																<xs:attribute name="name" type="xs:string" use="optional" />
+																<xs:attribute name="Level" type="xs:string" use="optional" />
+																<xs:attribute name="requires" type="xs:string" use="optional" />
+																<xs:attribute name="spellbook" type="xs:string" use="optional" />
+																<xs:attribute name="Prepare" type="xs:string" use="optional" />
+																<xs:attribute name="existing" type="xs:boolean" use="optional" />
+																<xs:attribute name="default" type="xs:string" use="optional" />
+																<xs:attribute name="grant" type="xs:string" use="optional" />
+																<xs:attribute name="category" type="xs:string" use="optional" />
+																<xs:attribute name="level" type="xs:unsignedByte" use="optional" />
+															</xs:extension>
+														</xs:simpleContent>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="replace">
+													<xs:complexType>
+														<xs:simpleContent>
+															<xs:extension base="xs:string">
+																<xs:attribute name="name" type="xs:string" use="optional" />
+																<xs:attribute name="requires" type="xs:string" use="optional" />
+																<xs:attribute name="Level" type="xs:unsignedByte" use="optional" />
+																<xs:attribute name="multiclass" type="xs:string" use="optional" />
+																<xs:attribute name="optional" type="xs:boolean" use="optional" />
+																<xs:attribute name="power-replace" type="xs:string" use="optional" />
+																<xs:attribute name="powerswap" type="xs:string" use="optional" />
+																<xs:attribute name="retrain" type="xs:boolean" use="optional" />
+															</xs:extension>
+														</xs:simpleContent>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="modify">
+													<xs:complexType>
+														<xs:attribute name="name" type="xs:string" use="optional" />
+														<xs:attribute name="field" type="xs:string" use="optional" />
+														<xs:attribute name="value" type="xs:string" use="optional" />
+														<xs:attribute name="type" type="xs:string" use="optional" />
+														<xs:attribute name="Field" type="xs:string" use="optional" />
+														<xs:attribute name="list-addition" type="xs:string" use="optional" />
+														<xs:attribute name="select" type="xs:string" use="optional" />
+														<xs:attribute name="requires" type="xs:string" use="optional" />
+														<xs:attribute name="wearing" type="xs:string" use="optional" />
+														<xs:attribute name="die-increase" type="xs:string" use="optional" />
+														<xs:attribute name="Requires" type="xs:string" use="optional" />
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="drop">
+													<xs:complexType>
+														<xs:attribute name="select" type="xs:string" use="optional" />
+														<xs:attribute name="name" type="xs:string" use="optional" />
+														<xs:attribute name="type" type="xs:string" use="optional" />
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="suggest">
+													<xs:complexType>
+														<xs:attribute name="name" type="xs:string" use="required" />
+														<xs:attribute name="type" type="xs:string" use="required" />
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="statalias">
+													<xs:complexType>
+														<xs:attribute name="name" type="xs:string" use="required" />
+														<xs:attribute name="alias" type="xs:string" use="required" />
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="Grant">
+													<xs:complexType>
+														<xs:attribute name="name" type="xs:string" use="required" />
+														<xs:attribute name="type" type="xs:string" use="required" />
+														<xs:attribute name="requires" type="xs:string" use="required" />
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="prereqs" type="xs:string" />
+								<xs:element name="flavor" type="xs:string" />
+							</xs:choice>
+						</xs:sequence>
+						<xs:attribute name="internal-id" type="xs:string" use="required" />
+						<xs:attribute name="name" type="xs:string" use="required" />
+						<xs:attribute name="type" type="xs:string" use="required" />
+						<xs:attribute name="source" type="xs:string" use="optional" />
+						<xs:attribute name="revision-date" type="xs:string" use="optional" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="game-system" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

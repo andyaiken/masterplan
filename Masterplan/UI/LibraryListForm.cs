@@ -24,7 +24,7 @@ namespace Masterplan.UI
 
             Application.Idle += new EventHandler(Application_Idle);
 
-            update_libraries();
+            Update_libraries();
         }
 
         ~LibraryListForm()
@@ -47,7 +47,7 @@ namespace Masterplan.UI
             {
                 List<TreeNode> nodes = new List<TreeNode>();
                 foreach (TreeNode tn in LibraryTree.Nodes)
-                    get_nodes(tn, nodes);
+                    Get_nodes(tn, nodes);
 
                 foreach (TreeNode tn in nodes)
                 {
@@ -60,12 +60,12 @@ namespace Masterplan.UI
             }
         }
 
-        void get_nodes(TreeNode tn, List<TreeNode> nodes)
+        void Get_nodes(TreeNode tn, List<TreeNode> nodes)
         {
             nodes.Add(tn);
 
             foreach (TreeNode child in tn.Nodes)
-                get_nodes(child, nodes);
+                Get_nodes(child, nodes);
         }
 
         public List<Creature> SelectedCreatures
@@ -430,7 +430,7 @@ namespace Masterplan.UI
                 if ((fModified.ContainsKey(lib)) && (!fModified[lib]))
                     continue;
 
-                save(lib);
+                Save(lib);
             }
         }
 
@@ -445,13 +445,13 @@ namespace Masterplan.UI
                 Session.Libraries.Add(dlg.Library);
                 Session.Libraries.Sort();
 
-                save(dlg.Library);
+                Save(dlg.Library);
                 fModified[dlg.Library] = true;
 
-                update_libraries();
+                Update_libraries();
 
                 SelectedLibrary = dlg.Library;
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -510,8 +510,8 @@ namespace Masterplan.UI
                     Session.Project.SimplifyProjectLibrary();
 
                 Session.Libraries.Sort();
-                update_libraries();
-                update_content(true);
+                Update_libraries();
+                Update_content(true);
             }
         }
 
@@ -538,8 +538,8 @@ namespace Masterplan.UI
             if (Session.Project != null)
                 Session.Project.SimplifyProjectLibrary();
 
-            update_libraries();
-            update_content(true);
+            Update_libraries();
+            Update_content(true);
 
             GC.Collect();
         }
@@ -553,10 +553,10 @@ namespace Masterplan.UI
                     return;
 
                 Session.DeleteLibrary(SelectedLibrary);
-                update_libraries();
+                Update_libraries();
 
                 SelectedLibrary = null;
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -592,8 +592,8 @@ namespace Masterplan.UI
 
                     fModified[dlg.Library] = true;
 
-                    update_libraries();
-                    update_content(true);
+                    Update_libraries();
+                    Update_content(true);
                 }
             }
         }
@@ -615,17 +615,17 @@ namespace Masterplan.UI
                 Session.Libraries.Add(newlib);
                 Session.Libraries.Sort();
 
-                save(newlib);
-                update_libraries();
+                Save(newlib);
+                Update_libraries();
 
                 SelectedLibrary = newlib;
-                update_content(true);
+                Update_content(true);
             }
         }
 
         private void LibraryTree_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            update_content(true);
+            Update_content(true);
         }
 
         private void LibraryList_ItemDrag(object sender, ItemDragEventArgs e)
@@ -642,12 +642,12 @@ namespace Masterplan.UI
 
         private void HelpBtn_Click(object sender, EventArgs e)
         {
-            show_help(!HelpPanel.Visible);
+            Show_help(!HelpPanel.Visible);
         }
 
         private void Pages_SelectedIndexChanged(object sender, EventArgs e)
         {
-            update_content(false);
+            Update_content(false);
         }
 
         #endregion
@@ -855,7 +855,7 @@ namespace Masterplan.UI
 
                 Session.DeleteLibrary(dragged_lib);
 
-                update_content(true);
+                Update_content(true);
             }
 
             List<Creature> creatures = e.Data.GetData(typeof(List<Creature>)) as List<Creature>;
@@ -993,7 +993,7 @@ namespace Masterplan.UI
                     fModified[SelectedLibrary] = true;
                 }
 
-                update_tiles();
+                Update_tiles();
             }
 
             List<TerrainPower> terrainpowers = e.Data.GetData(typeof(List<TerrainPower>)) as List<TerrainPower>;
@@ -1016,7 +1016,7 @@ namespace Masterplan.UI
                     fModified[SelectedLibrary] = true;
                 }
 
-                update_terrain_powers();
+                Update_terrain_powers();
             }
 
             List<Artifact> artifacts = e.Data.GetData(typeof(List<Artifact>)) as List<Artifact>;
@@ -1039,7 +1039,7 @@ namespace Masterplan.UI
                     fModified[SelectedLibrary] = true;
                 }
 
-                update_artifacts();
+                Update_artifacts();
             }
         }
 
@@ -1061,7 +1061,7 @@ namespace Masterplan.UI
                 SelectedLibrary.Creatures.Add(dlg.Creature as Creature);
                 fModified[SelectedLibrary] = true;
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -1105,7 +1105,7 @@ namespace Masterplan.UI
                             SelectedLibrary.Creatures.Add(c);
                             fModified[SelectedLibrary] = true;
 
-                            update_content(true);
+                            Update_content(true);
                         }
                     }
                 }
@@ -1130,7 +1130,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -1150,7 +1150,7 @@ namespace Masterplan.UI
                     lib.Creatures[index] = dlg.Creature as Creature;
                     fModified[lib] = true;
 
-                    update_content(true);
+                    Update_content(true);
                 }
             }
         }
@@ -1187,7 +1187,7 @@ namespace Masterplan.UI
                     fModified[SelectedLibrary] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -1259,7 +1259,7 @@ namespace Masterplan.UI
         private void FilterBtn_Click(object sender, EventArgs e)
         {
             CreatureSearchToolbar.Visible = !CreatureSearchToolbar.Visible;
-            update_content(true);
+            Update_content(true);
         }
 
         private void CreatureToolsExport_Click(object sender, EventArgs e)
@@ -1278,21 +1278,21 @@ namespace Masterplan.UI
 
         private void SearchBox_TextChanged(object sender, EventArgs e)
         {
-            update_content(true);
+            Update_content(true);
         }
 
         private void CreatureFilterCategorised_Click(object sender, EventArgs e)
         {
             fShowCategorised = !fShowCategorised;
 
-            update_content(true);
+            Update_content(true);
         }
 
         private void CreatureFilterUncategorised_Click(object sender, EventArgs e)
         {
             fShowUncategorised = !fShowUncategorised;
 
-            update_content(true);
+            Update_content(true);
         }
 
         private void OppList_ItemDrag(object sender, ItemDragEventArgs e)
@@ -1531,7 +1531,7 @@ namespace Masterplan.UI
                 SelectedLibrary.Templates.Add(dlg.Template);
                 fModified[SelectedLibrary] = true;
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -1546,7 +1546,7 @@ namespace Masterplan.UI
                 SelectedLibrary.Themes.Add(dlg.Theme);
                 fModified[SelectedLibrary] = true;
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -1573,7 +1573,7 @@ namespace Masterplan.UI
                                 SelectedLibrary.Templates.Add(ct);
                                 fModified[SelectedLibrary] = true;
 
-                                update_content(true);
+                                Update_content(true);
                             }
                         }
 
@@ -1585,7 +1585,7 @@ namespace Masterplan.UI
                                 SelectedLibrary.Themes.Add(theme);
                                 fModified[SelectedLibrary] = true;
 
-                                update_content(true);
+                                Update_content(true);
                             }
                         }
                     }
@@ -1611,7 +1611,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
 
             if (SelectedThemes.Count != 0)
@@ -1626,7 +1626,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -1646,7 +1646,7 @@ namespace Masterplan.UI
                     lib.Templates[index] = dlg.Template;
                     fModified[lib] = true;
 
-                    update_content(true);
+                    Update_content(true);
                 }
             }
 
@@ -1664,7 +1664,7 @@ namespace Masterplan.UI
                     lib.Themes[index] = dlg.Theme;
                     fModified[lib] = true;
 
-                    update_content(true);
+                    Update_content(true);
                 }
             }
         }
@@ -1706,7 +1706,7 @@ namespace Masterplan.UI
                     fModified[SelectedLibrary] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
 
             if (Clipboard.ContainsData(typeof(List<MonsterTheme>).ToString()))
@@ -1722,7 +1722,7 @@ namespace Masterplan.UI
                     fModified[SelectedLibrary] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -1878,7 +1878,7 @@ namespace Masterplan.UI
                 SelectedLibrary.Traps.Add(dlg.Trap);
                 fModified[SelectedLibrary] = true;
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -1911,7 +1911,7 @@ namespace Masterplan.UI
                             SelectedLibrary.Traps.Add(t);
                             fModified[SelectedLibrary] = true;
 
-                            update_content(true);
+                            Update_content(true);
                         }
                     }
                 }
@@ -1936,7 +1936,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -1956,7 +1956,7 @@ namespace Masterplan.UI
                     lib.Traps[index] = dlg.Trap;
                     fModified[lib] = true;
 
-                    update_content(true);
+                    Update_content(true);
                 }
             }
         }
@@ -1993,7 +1993,7 @@ namespace Masterplan.UI
                     fModified[SelectedLibrary] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -2160,7 +2160,7 @@ namespace Masterplan.UI
                 SelectedLibrary.SkillChallenges.Add(dlg.SkillChallenge);
                 fModified[SelectedLibrary] = true;
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -2185,7 +2185,7 @@ namespace Masterplan.UI
                             SelectedLibrary.SkillChallenges.Add(c);
                             fModified[SelectedLibrary] = true;
 
-                            update_content(true);
+                            Update_content(true);
                         }
                     }
                 }
@@ -2210,7 +2210,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -2230,7 +2230,7 @@ namespace Masterplan.UI
                     lib.SkillChallenges[index] = dlg.SkillChallenge;
                     fModified[lib] = true;
 
-                    update_content(true);
+                    Update_content(true);
                 }
             }
         }
@@ -2267,7 +2267,7 @@ namespace Masterplan.UI
                     fModified[SelectedLibrary] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -2384,7 +2384,7 @@ namespace Masterplan.UI
                 SelectedLibrary.MagicItems.Add(dlg.MagicItem);
                 fModified[SelectedLibrary] = true;
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -2419,7 +2419,7 @@ namespace Masterplan.UI
                                 SelectedLibrary.MagicItems.Add(mi);
                                 fModified[SelectedLibrary] = true;
 
-                                update_content(true);
+                                Update_content(true);
                             }
                         }
                     }
@@ -2445,7 +2445,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -2465,7 +2465,7 @@ namespace Masterplan.UI
                     lib.MagicItems[index] = dlg.MagicItem;
                     fModified[lib] = true;
 
-                    update_content(true);
+                    Update_content(true);
                 }
             }
         }
@@ -2502,7 +2502,7 @@ namespace Masterplan.UI
                     fModified[SelectedLibrary] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -2530,7 +2530,7 @@ namespace Masterplan.UI
 
         private void MagicItemList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            update_magic_item_versions();
+            Update_magic_item_versions();
         }
 
         private void MagicItemsToolsExport_Click(object sender, EventArgs e)
@@ -2660,7 +2660,7 @@ namespace Masterplan.UI
             Cursor.Current = Cursors.Default;
         }
 
-        void update_magic_item_versions()
+        void Update_magic_item_versions()
         {
             if (SelectedMagicItemSet != "")
             {
@@ -2721,7 +2721,7 @@ namespace Masterplan.UI
                 SelectedLibrary.Tiles.Add(dlg.Tile);
                 fModified[SelectedLibrary] = true;
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -2775,7 +2775,7 @@ namespace Masterplan.UI
 
                 fModified[SelectedLibrary] = true;
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -2800,7 +2800,7 @@ namespace Masterplan.UI
                             SelectedLibrary.Tiles.Add(tile);
                             fModified[SelectedLibrary] = true;
 
-                            update_content(true);
+                            Update_content(true);
                         }
                     }
                 }
@@ -2825,7 +2825,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -2845,7 +2845,7 @@ namespace Masterplan.UI
                     lib.Tiles[index] = dlg.Tile;
                     fModified[lib] = true;
 
-                    update_content(true);
+                    Update_content(true);
                 }
             }
         }
@@ -2896,7 +2896,7 @@ namespace Masterplan.UI
                     fModified[SelectedLibrary] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -2922,7 +2922,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
             }
 
-            update_tiles();
+            Update_tiles();
         }
 
         private void TileDoorway_Click(object sender, EventArgs e)
@@ -2936,7 +2936,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
             }
 
-            update_tiles();
+            Update_tiles();
         }
 
         private void TileStairway_Click(object sender, EventArgs e)
@@ -2950,7 +2950,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
             }
 
-            update_tiles();
+            Update_tiles();
         }
 
         private void TileFeature_Click(object sender, EventArgs e)
@@ -2964,7 +2964,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
             }
 
-            update_tiles();
+            Update_tiles();
         }
 
         private void TileMap_Click(object sender, EventArgs e)
@@ -2978,7 +2978,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
             }
 
-            update_tiles();
+            Update_tiles();
         }
 
         private void TileSpecial_Click(object sender, EventArgs e)
@@ -2992,7 +2992,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
             }
 
-            update_tiles();
+            Update_tiles();
         }
 
         private void TileContextSize_Click(object sender, EventArgs e)
@@ -3009,11 +3009,11 @@ namespace Masterplan.UI
                         fModified[lib] = true;
                 }
 
-                update_tiles();
+                Update_tiles();
             }
         }
 
-        void update_tiles()
+        void Update_tiles()
         {
             Cursor.Current = Cursors.WaitCursor;
 
@@ -3110,7 +3110,7 @@ namespace Masterplan.UI
                 SelectedLibrary.TerrainPowers.Add(dlg.Power);
                 fModified[SelectedLibrary] = true;
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -3135,7 +3135,7 @@ namespace Masterplan.UI
                             SelectedLibrary.TerrainPowers.Add(c);
                             fModified[SelectedLibrary] = true;
 
-                            update_content(true);
+                            Update_content(true);
                         }
                     }
                 }
@@ -3160,7 +3160,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -3180,7 +3180,7 @@ namespace Masterplan.UI
                     lib.TerrainPowers[index] = dlg.Power;
                     fModified[lib] = true;
 
-                    update_content(true);
+                    Update_content(true);
                 }
             }
         }
@@ -3217,7 +3217,7 @@ namespace Masterplan.UI
                     fModified[SelectedLibrary] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -3255,7 +3255,7 @@ namespace Masterplan.UI
             TPRemoveBtn_Click(sender, e);
         }
 
-        void update_terrain_powers()
+        void Update_terrain_powers()
         {
             Cursor.Current = Cursors.WaitCursor;
 
@@ -3335,7 +3335,7 @@ namespace Masterplan.UI
                 SelectedLibrary.Artifacts.Add(dlg.Artifact);
                 fModified[SelectedLibrary] = true;
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -3360,7 +3360,7 @@ namespace Masterplan.UI
                             SelectedLibrary.Artifacts.Add(a);
                             fModified[SelectedLibrary] = true;
 
-                            update_content(true);
+                            Update_content(true);
                         }
                     }
                 }
@@ -3385,7 +3385,7 @@ namespace Masterplan.UI
                     fModified[lib] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -3405,7 +3405,7 @@ namespace Masterplan.UI
                     lib.Artifacts[index] = dlg.Artifact;
                     fModified[lib] = true;
 
-                    update_content(true);
+                    Update_content(true);
                 }
             }
         }
@@ -3442,7 +3442,7 @@ namespace Masterplan.UI
                     fModified[SelectedLibrary] = true;
                 }
 
-                update_content(true);
+                Update_content(true);
             }
         }
 
@@ -3475,7 +3475,7 @@ namespace Masterplan.UI
                 DoDragDrop(SelectedArtifacts, DragDropEffects.Move);
         }
 
-        void update_artifacts()
+        void Update_artifacts()
         {
             Cursor.Current = Cursors.WaitCursor;
 
@@ -3554,20 +3554,21 @@ namespace Masterplan.UI
 
         #endregion
 
-        void save(Library lib)
+        void Save(Library lib)
         {
             GC.Collect();
 
             string filename = Session.GetLibraryFilename(lib);
             Serialisation<Library>.Save(filename, lib, SerialisationMode.Binary);
+
         }
 
-        void show_help(bool show)
+        void Show_help(bool show)
         {
             HelpPanel.Visible = show;
         }
 
-        void update_libraries()
+        void Update_libraries()
         {
             LibraryTree.Nodes.Clear();
 
@@ -3591,7 +3592,7 @@ namespace Masterplan.UI
                     TreeNode lvi = LibraryTree.Nodes.Add("(no libraries installed)");
                     lvi.ForeColor = SystemColors.GrayText;
 
-                    show_help(true);
+                    Show_help(true);
                 }
             }
 
@@ -3602,7 +3603,7 @@ namespace Masterplan.UI
             }
         }
 
-        void update_content(bool force_refresh)
+        void Update_content(bool force_refresh)
         {
             if (force_refresh)
                 fCleanPages.Clear();
@@ -3648,7 +3649,7 @@ namespace Masterplan.UI
                 if (!fCleanPages.Contains(MagicItemsPage))
                 {
                     update_magic_item_sets();
-                    update_magic_item_versions();
+                    Update_magic_item_versions();
                     fCleanPages.Add(MagicItemsPage);
                 }
             }
@@ -3657,7 +3658,7 @@ namespace Masterplan.UI
             {
                 if (!fCleanPages.Contains(TilesPage))
                 {
-                    update_tiles();
+                    Update_tiles();
                     fCleanPages.Add(TilesPage);
                 }
             }
@@ -3666,7 +3667,7 @@ namespace Masterplan.UI
             {
                 if (!fCleanPages.Contains(TerrainPowersPage))
                 {
-                    update_terrain_powers();
+                    Update_terrain_powers();
                     fCleanPages.Add(TerrainPowersPage);
                 }
             }
@@ -3675,10 +3676,18 @@ namespace Masterplan.UI
             {
                 if (!fCleanPages.Contains(ArtifactPage))
                 {
-                    update_artifacts();
+                    Update_artifacts();
                     fCleanPages.Add(ArtifactPage);
                 }
             }
+        }
+
+      
+        private void LibraryBtnConvert_Click(object sender, EventArgs e)
+        {
+            // Convert the selected library
+            MessageBox.Show("BETA - Coming Feature");
+
         }
     }
 }

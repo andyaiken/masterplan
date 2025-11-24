@@ -2645,6 +2645,26 @@ namespace Masterplan.UI
                 ToolsPreferenceEditFormatNarrow.Checked = ((Session.Preferences.EditSize == EditFormat.Narrow));
                 ToolsPreferenceEditFormatFull.Checked = ((Session.Preferences.EditSize == EditFormat.Wide));
 
+                if (Session.Preferences.EditSize == EditFormat.Wide)
+                {
+                    // MessageBox.Show("Wide");
+                    // Pending Code
+                    // Set the desired width (99%)
+                    var generator = CssGenerator.Instance;
+                    generator.LayoutStyle = "wide";
+
+
+                }
+                else
+                {
+                    // MessageBox.Show("Narrow");
+                    // Pending Code
+                    // Set the desired width (300px)
+                    var generator = CssGenerator.Instance;
+                    generator.LayoutStyle = "narrow";
+
+                }
+
                 ToolsAddIns.DropDownItems.Clear();
                 foreach (IAddIn addin in Session.AddIns)
                 {
@@ -3472,15 +3492,15 @@ namespace Masterplan.UI
                 update_preview();
                 if (fWelcome != null)
                     fWelcome.RefreshOptions();
-                
+
                 //Pending Code
                 // Set the desired width (300px)
                 var generator = CssGenerator.Instance;
                 generator.LayoutStyle = "narrow";
 
-                string newWidth = "Narrow";
+                // string newWidth = "Narrow";
 
-                MessageBox.Show("Pending Feature - (Default) This feature will allow using the Narrow format for creature editing. (" + newWidth + ")");
+                // MessageBox.Show("Pending Feature - (Default) This feature will allow using the Narrow format for creature editing. (" + newWidth + ")");
 
             }
             catch (Exception ex)
@@ -3489,7 +3509,7 @@ namespace Masterplan.UI
             }
 
 
-            
+
         }
 
         private void ToolsPreferenceEditFormatFull_Click(Object sender, EventArgs e)
@@ -3506,9 +3526,9 @@ namespace Masterplan.UI
                 var generator = CssGenerator.Instance;
                 generator.LayoutStyle = "wide";
 
-                string newWidth = "wide";
+                // string newWidth = "wide";
 
-                MessageBox.Show("Pending Feature - This feature will allow using the Full Window format for creature editing. (" + newWidth + ")");
+                // MessageBox.Show("Pending Feature - This feature will allow using the Full Window format for creature editing. (" + newWidth + ")");
 
             }
             catch (Exception ex)
@@ -7324,5 +7344,6 @@ namespace Masterplan.UI
         }
 
         #endregion
+
     }
 }
