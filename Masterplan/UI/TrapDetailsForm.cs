@@ -1,41 +1,42 @@
-﻿using System;
-using System.IO;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.Tools;
+using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class TrapDetailsForm : Form
-	{
-		public TrapDetailsForm(Trap trap)
-		{
-			InitializeComponent();
+    partial class TrapDetailsForm : Form
+    {
+        public TrapDetailsForm(Trap trap)
+        {
+            InitializeComponent();
 
-			fTrap = trap.Copy();
+            fTrap = trap.Copy();
 
-			Browser.DocumentText = HTML.Trap(fTrap, null, true, false, false, Session.Preferences.TextSize);
-		}
+            Browser.DocumentText = HTML.Trap(fTrap, null, true, false, false, Session.Preferences.TextSize);
+        }
 
-		Trap fTrap = null;
+        Trap fTrap = null;
 
-		private void PlayerViewBtn_Click(object sender, EventArgs e)
-		{
-			if (Session.PlayerView == null)
-				Session.PlayerView = new PlayerViewForm(this);
+        private void PlayerViewBtn_Click(object sender, EventArgs e)
+        {
+            if (Session.PlayerView == null)
+                Session.PlayerView = new PlayerViewForm(this);
 
-			Session.PlayerView.ShowTrap(fTrap);
-		}
+            Session.PlayerView.ShowTrap(fTrap);
+        }
 
-		private void ExportHTML_Click(object sender, EventArgs e)
-		{
-			SaveFileDialog dlg = new SaveFileDialog();
-			dlg.FileName = fTrap.Name;
-			dlg.Filter = Program.HTMLFilter;
+        private void ExportHTML_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = fTrap.Name;
+            dlg.Filter = Program.HTMLFilter;
 
-			if (dlg.ShowDialog() == DialogResult.OK)
-				File.WriteAllText(dlg.FileName, Browser.DocumentText);
-		}
-	}
+            if (dlg.ShowDialog() == DialogResult.OK)
+                File.WriteAllText(dlg.FileName, Browser.DocumentText);
+        }
+    }
 }

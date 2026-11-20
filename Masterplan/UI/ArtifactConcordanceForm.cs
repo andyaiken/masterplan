@@ -1,32 +1,33 @@
-﻿using System;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Tools;
+using System;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class ArtifactConcordanceForm : Form
-	{
-		public ArtifactConcordanceForm(Pair<string, string> concordance)
-		{
-			InitializeComponent();
+    partial class ArtifactConcordanceForm : Form
+    {
+        public ArtifactConcordanceForm(Pair<string, string> concordance)
+        {
+            InitializeComponent();
 
-			fConcordance = concordance;
+            fConcordance = concordance;
 
-			RuleBox.Text = fConcordance.First;
-			ValueBox.Text = fConcordance.Second;
-		}
+            RuleBox.Text = fConcordance.First;
+            ValueBox.Text = fConcordance.Second;
+        }
 
-		public Pair<string, string> Concordance
-		{
-			get { return fConcordance; }
-		}
-		Pair<string, string> fConcordance = null;
+        public Pair<string, string> Concordance
+        {
+            get { return fConcordance; }
+        }
+        Pair<string, string> fConcordance = null;
 
-		private void OKBtn_Click(object sender, EventArgs e)
-		{
-			fConcordance.First = RuleBox.Text;
-			fConcordance.Second = ValueBox.Text;
-		}
-	}
+        private void OKBtn_Click(object sender, EventArgs e)
+        {
+            fConcordance.First = RuleBox.Text;
+            fConcordance.Second = ValueBox.Text;
+        }
+    }
 }

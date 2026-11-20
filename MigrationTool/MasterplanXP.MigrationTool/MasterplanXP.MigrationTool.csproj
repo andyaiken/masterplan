@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Version, AssemblyVersion and FileVersion come from ..\..\Version.props, shared with Masterplan
+       (M14) so both always carry the same version. Bump it THERE (rules in that file), not here. -->
+  <Import Project="..\..\Version.props" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- The exe's own icon (Explorer, Start menu, shortcuts): the Masterplan scroll with a blue
+         "convert" badge, so users recognise the tool as part of Masterplan and safe to run.
+         The same file is the window/taskbar icon (Icon= in Views\MainWindow.axaml and SplashScreen.axaml). -->
+    <ApplicationIcon>Assets\MigrationTool.ico</ApplicationIcon>
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<Folder Include="Assets\Images\" />
+	  <AvaloniaResource Include="Assets\**" />
+	  <AvaloniaXaml Remove="Logic\**" />
+	  <AvaloniaXaml Remove="ScratchFiles\**" />
+	  <Compile Remove="Logic\**" />
+	  <Compile Remove="ScratchFiles\**" />
+	  <EmbeddedResource Remove="Logic\**" />
+	  <EmbeddedResource Remove="ScratchFiles\**" />
+	  <None Remove="Logic\**" />
+	  <None Remove="ScratchFiles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="12.1.6" />
+    <PackageReference Include="Avalonia.Desktop" Version="12.1.6" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="12.1.6" />
+    <PackageReference Include="Avalonia.Svg.Skia" Version="11.3.0" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.6" />
+    <PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.3" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageReference Include="MessagePack" Version="3.1.9" />
+    <PackageReference Include="MessagePack.Annotations" Version="3.1.9" />
+    <PackageReference Include="MessagePackAnalyzer" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="10.0.15" />
+    <PackageReference Include="Svg.Controls.Skia.Avalonia" Version="11.3.9.5" />
+    <PackageReference Include="Svg.Skia" Version="5.2.3" />
+    <PackageReference Include="System.Drawing.Common" Version="10.0.15" />
+    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="10.0.15" />
+  </ItemGroup>
+
+  <!-- ExcludeNativePdbs (same as Masterplan.csproj): the SkiaSharp / HarfBuzzSharp packages ship native
+       debug files (libSkiaSharp.pdb ~88 MB, libHarfBuzzSharp.pdb ~23 MB) that otherwise land next to the
+       published exe. They only help when debugging inside SkiaSharp's own C++ code, so they are dropped
+       right after NuGet works out which package files to copy. Only .pdb files are removed.
+       - RuntimeTargetsCopyLocalItems: the runtimes\<platform>\native\ files of a normal build.
+       - NativeCopyLocalItems: the native files when a RuntimeIdentifier is set (the win-x64 publish). -->
+  <Target Name="ExcludeNativePdbs" AfterTargets="ResolvePackageAssets">
+    <ItemGroup>
+      <RuntimeTargetsCopyLocalItems Remove="@(RuntimeTargetsCopyLocalItems)" Condition="'%(Extension)' == '.pdb'" />
+      <NativeCopyLocalItems Remove="@(NativeCopyLocalItems)" Condition="'%(Extension)' == '.pdb'" />
+    </ItemGroup>
+  </Target>
+</Project>

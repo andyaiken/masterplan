@@ -1,169 +1,167 @@
+#nullable disable
+
+using Masterplan.Data;
+using MessagePack;
 using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Xml.Serialization;
-using System.Xml;
 using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Masterplan.Tools
 {
-	/// <summary>
-	/// Enumeration defining the supported serialisation modes.
-	/// </summary>
-	public enum SerialisationMode
-	{
-		/// <summary>
-		/// Binary file format.
-		/// </summary>
-		Binary,
+    /// <summary>
+    /// File formats understood by <see cref="Serialisation{T}"/>.
+    /// </summary>
+    /// <remarks>
+    /// HISTORY: there used to be a "Binary" member (value 0) for .NET's BinaryFormatter, which was
+    /// removed from .NET 9 and later. M14 reads and writes only MessagePack (plus XML for settings), so
+    /// the member was deleted. The remaining members keep their old numeric values on purpose, so a
+    /// number stored anywhere (or used by an add-in) still means the same format.
+    /// Old BinaryFormatter files are handled by Tools/LegacyFiles.cs and Tools/ItemFiles.cs, which tell
+    /// the user what to do instead of trying to read them.
+    /// </remarks>
+    public enum SerialisationMode
+    {
+        /// <summary>XmlSerializer (used for Preferences.xml, encyclopedia and hero files).</summary>
+        XML = 1,
 
-		/// <summary>
-		/// XML text format.
-		/// </summary>
-		XML
-	}
+        /// <summary>
+        /// MessagePack. Library, Project, List&lt;IPlayerOption&gt; (rules) and List&lt;Hero&gt;
+        /// (hero/party files) go through LibraryConversionService (DTO mapping); any other type is
+        /// refused (logged; Load returns null, Save returns false), because only those four have a
+        /// stable file format. (Before 14.1.0.11 other types were serialised directly.)
+        /// </summary>
+        MessagePack = 2,
 
-	/// <summary>
-	/// Class containing static methods for serialising (loading and saving) an object.
-	/// </summary>
-	/// <typeparam name="T">The type of object to be serialised.</typeparam>
-	public class Serialisation<T>
-	{
-		/// <summary>
-		/// Loads an object of type T from a file.
-		/// </summary>
-		/// <param name="filename">The full path of the file.</param>
-		/// <param name="mode">The mode in which the object was saved.</param>
-		/// <returns>Returns the loaded object, or default(T) if the object could not be loaded.</returns>
-		public static T Load(string filename, SerialisationMode mode)
-		{
-			T result = default(T);
+        /// <summary>XmlSerializer for DTO types.</summary>
+        XMLDTO = 3
+    }
 
-			try
-			{
-				switch (mode)
-				{
-					case SerialisationMode.Binary:
-						{
-							Stream stream = new FileStream(filename, FileMode.Open);
+    public class Serialisation<T>
+    {
+        private static string SafeStr(string s) => string.IsNullOrWhiteSpace(s) ? "nodata" : s;
 
-							try
-							{
-								IFormatter formatter = new BinaryFormatter();
-								result = (T)formatter.Deserialize(stream);
-							}
-							catch
-							{
-								result = default(T);
-							}
+        public static T Load(string filename, SerialisationMode mode)
+        {
+            T result = default(T);
+            try
+            {
+                switch (mode)
+                {
+                    case SerialisationMode.XML:
+                    case SerialisationMode.XMLDTO:
+                        using (XmlTextReader reader = new(filename))
+                        {
+                            result = (T)new XmlSerializer(typeof(T)).Deserialize(reader);
+                        }
+                        break;
 
-							stream.Close();
-						}
-						break;
-					case SerialisationMode.XML:
-						{
-							XmlTextReader reader = new XmlTextReader(filename);
+                    case SerialisationMode.MessagePack:
+                        // Library and Project are never serialised directly. They are mapped to DTOs
+                        // (Dto/DtoModels.cs) by LibraryConversionService so the file layout is stable.
+                        if (typeof(T) == typeof(Library))
+                        {
+                            result = (T)(object)LibraryConversionService.Instance.LoadXLibrary(filename);
+                        }
+                        else if (typeof(T) == typeof(Project))
+                        {
+                            result = (T)(object)LibraryConversionService.Instance.LoadXProject(filename);
+                        }
+                        else if (typeof(T) == typeof(List<IPlayerOption>))
+                        {
+                            // Rules files (.mpxcrunch). IPlayerOption is an interface with many
+                            // implementations, so it is mapped to PlayerOptionDto rather than
+                            // serialised directly.
+                            result = (T)(object)LibraryConversionService.Instance.LoadXRules(filename);
+                        }
+                        else if (typeof(T) == typeof(List<Hero>))
+                        {
+                            // Hero (.mpxhero) and party (.mpxparty) files: mapped to HeroDto, because
+                            // Hero holds things (e.g. the portrait Image) that are not serialised directly.
+                            result = (T)(object)LibraryConversionService.Instance.LoadXHeroes(filename);
+                        }
+                        else
+                        {
+                            // Only the four types above have a stable file format (DTOs). Anything else
+                            // is refused instead of being read in an unstable, direct form.
+                            throw new NotSupportedException("No MessagePack file format for " + typeof(T).Name);
+                        }
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                LogSystem.Trace(ex);
+            }
+            return result;
+        }
 
-							try
-							{
-								XmlSerializer s = new XmlSerializer(typeof(T));
-								result = (T)s.Deserialize(reader);
-							}
-							catch
-							{
-								result = default(T);
-							}
+        /// <summary>
+        /// Saves an object to a file.
+        /// </summary>
+        /// <remarks>
+        /// SAFE SAVE PATTERN: the data is written to "filename.tmp" first. Only if that fully succeeds is
+        /// the real file replaced. A crash or error halfway through therefore never corrupts the existing
+        /// file; at worst a .tmp file is left behind.
+        /// </remarks>
+        /// <returns>True if the file was written.</returns>
+        public static bool Save(string filename, T obj, SerialisationMode mode)
+        {
+            string temp_filename = filename + ".tmp";
+            bool ok = false;
+            try
+            {
+                switch (mode)
+                {
+                    case SerialisationMode.MessagePack:
+                        if (obj is Library lib)
+                        {
+                            ok = LibraryConversionService.Instance.SaveXLibrary(lib, temp_filename);
+                        }
+                        else if (obj is Project p)
+                        {
+                            ok = LibraryConversionService.Instance.SaveXProject(p, temp_filename);
+                        }
+                        else if (obj is List<IPlayerOption> rules)
+                        {
+                            // Rules files (.mpxcrunch): see the matching branch in Load.
+                            ok = LibraryConversionService.Instance.SaveXRules(rules, temp_filename);
+                        }
+                        else if (obj is List<Hero> heroes)
+                        {
+                            // Hero and party files: see the matching branch in Load.
+                            ok = LibraryConversionService.Instance.SaveXHeroes(heroes, temp_filename);
+                        }
+                        else
+                        {
+                            // Only the four types above have a stable file format (DTOs). Anything else
+                            // is refused instead of being written in an unstable, direct form.
+                            throw new NotSupportedException("No MessagePack file format for " + typeof(T).Name);
+                        }
+                        break;
+                    case SerialisationMode.XML:
+                        using (XmlTextWriter writer = new(temp_filename, Encoding.UTF8) { Formatting = Formatting.Indented })
+                        {
+                            new XmlSerializer(typeof(T)).Serialize(writer, obj);
+                        }
+                        ok = true;
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                LogSystem.Trace(ex);
+                ok = false;
+            }
 
-							reader.Close();
-						}
-						break;
-				}
-			}
-			catch (Exception)
-			{
-				result = default(T);
-			}
-
-			return result;
-		}
-
-		/// <summary>
-		/// Saves an object of type T to a file.
-		/// </summary>
-		/// <param name="filename">The full path of the file.</param>
-		/// <param name="obj">The object to be saved.</param>
-		/// <param name="mode">The mode in which the object was saved.</param>
-		/// <returns>Returns true if the object was saved successfully; false otherwise.</returns>
-		public static bool Save(string filename, T obj, SerialisationMode mode)
-		{
-			bool ok = false;
-
-			string temp_filename = filename + ".save";
-
-			try
-			{
-				switch (mode)
-				{
-					case SerialisationMode.Binary:
-						{
-							Stream stream = new FileStream(temp_filename, FileMode.Create);
-
-							try
-							{
-								IFormatter formatter = new BinaryFormatter();
-								formatter.Serialize(stream, obj);
-								stream.Flush();
-
-								ok = true;
-							}
-							catch (Exception ex)
-							{
-								Console.WriteLine(ex);
-								ok = false;
-							}
-
-							stream.Close();
-						}
-						break;
-					case SerialisationMode.XML:
-						{
-							XmlTextWriter writer = new XmlTextWriter(temp_filename, Encoding.UTF8);
-							writer.Formatting = Formatting.Indented;
-
-							try
-							{
-								XmlSerializer s = new XmlSerializer(typeof(T));
-								s.Serialize(writer, obj);
-								writer.Flush();
-
-								ok = true;
-							}
-							catch (Exception ex)
-							{
-								Console.WriteLine(ex);
-								ok = false;
-							}
-
-							writer.Close();
-						}
-						break;
-				}
-			}
-			catch (Exception)
-			{
-				ok = false;
-			}
-
-			if (ok)
-			{
-				if (File.Exists(filename))
-					File.Delete(filename);
-
-				File.Move(temp_filename, filename);
-			}
-
-			return ok;
-		}
-	}
+            if (ok)
+            {
+                if (File.Exists(filename)) File.Delete(filename);
+                File.Move(temp_filename, filename);
+            }
+            return ok;
+        }
+    }
 }

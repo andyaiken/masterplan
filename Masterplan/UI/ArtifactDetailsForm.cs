@@ -1,41 +1,42 @@
-﻿using System;
-using System.IO;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.Tools;
+using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class ArtifactDetailsForm : Form
-	{
-		public ArtifactDetailsForm(Artifact artifact)
-		{
-			InitializeComponent();
+    partial class ArtifactDetailsForm : Form
+    {
+        public ArtifactDetailsForm(Artifact artifact)
+        {
+            InitializeComponent();
 
-			fArtifact = artifact.Copy();
+            fArtifact = artifact.Copy();
 
-			Browser.DocumentText = HTML.Artifact(fArtifact, Session.Preferences.TextSize, false, true);
-		}
+            Browser.DocumentText = HTML.Artifact(fArtifact, Session.Preferences.TextSize, false, true);
+        }
 
-		Artifact fArtifact = null;
+        Artifact fArtifact = null;
 
-		private void PlayerViewBtn_Click(object sender, EventArgs e)
-		{
-			if (Session.PlayerView == null)
-				Session.PlayerView = new PlayerViewForm(this);
+        private void PlayerViewBtn_Click(object sender, EventArgs e)
+        {
+            if (Session.PlayerView == null)
+                Session.PlayerView = new PlayerViewForm(this);
 
-			Session.PlayerView.ShowArtifact(fArtifact);
-		}
+            Session.PlayerView.ShowArtifact(fArtifact);
+        }
 
-		private void ExportHTML_Click(object sender, EventArgs e)
-		{
-			SaveFileDialog dlg = new SaveFileDialog();
-			dlg.FileName = fArtifact.Name;
-			dlg.Filter = Program.HTMLFilter;
+        private void ExportHTML_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = fArtifact.Name;
+            dlg.Filter = Program.HTMLFilter;
 
-			if (dlg.ShowDialog() == DialogResult.OK)
-				File.WriteAllText(dlg.FileName, Browser.DocumentText);
-		}
-	}
+            if (dlg.ShowDialog() == DialogResult.OK)
+                File.WriteAllText(dlg.FileName, Browser.DocumentText);
+        }
+    }
 }

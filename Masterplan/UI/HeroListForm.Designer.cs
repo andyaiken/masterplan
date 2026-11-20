@@ -63,6 +63,10 @@
 			this.ParcelDetailsHdr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.CloseBtn = new System.Windows.Forms.Button();
 			this.ImportCB = new System.Windows.Forms.ToolStripMenuItem();
+			this.ImportHeroFile = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparatorExport = new System.Windows.Forms.ToolStripSeparator();
+			this.ExportHeroBtn = new System.Windows.Forms.ToolStripButton();
+			this.ExportPartyBtn = new System.Windows.Forms.ToolStripButton();
 			this.Toolbar.SuspendLayout();
 			this.Pages.SuspendLayout();
 			this.DetailsPage.SuspendLayout();
@@ -83,7 +87,10 @@
             this.PlayerViewBtn,
             this.toolStripSeparator5,
             this.StatBlockBtn,
-            this.EntryBtn});
+            this.EntryBtn,
+            this.toolStripSeparatorExport,
+            this.ExportHeroBtn,
+            this.ExportPartyBtn});
 			this.Toolbar.Location = new System.Drawing.Point(3, 3);
 			this.Toolbar.Name = "Toolbar";
 			this.Toolbar.Size = new System.Drawing.Size(562, 25);
@@ -95,6 +102,7 @@
 			this.AddBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.AddBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ImportCB,
+            this.ImportHeroFile,
             this.AddRandomCharacter,
             this.AddRandomParty,
             this.toolStripSeparator6,
@@ -380,6 +388,34 @@
 			this.ImportCB.Text = "Import from Character Builder...";
 			this.ImportCB.Click += new System.EventHandler(this.Import_CB_Click);
 			// 
+			// ImportHeroFile
+			// 
+			this.ImportHeroFile.Name = "ImportHeroFile";
+			this.ImportHeroFile.Size = new System.Drawing.Size(242, 22);
+			this.ImportHeroFile.Text = "Import Hero or Party File...";
+			this.ImportHeroFile.Click += new System.EventHandler(this.ImportHeroFile_Click);
+			// 
+			// toolStripSeparatorExport
+			// 
+			this.toolStripSeparatorExport.Name = "toolStripSeparatorExport";
+			this.toolStripSeparatorExport.Size = new System.Drawing.Size(6, 25);
+			// 
+			// ExportHeroBtn
+			// 
+			this.ExportHeroBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.ExportHeroBtn.Name = "ExportHeroBtn";
+			this.ExportHeroBtn.Size = new System.Drawing.Size(78, 22);
+			this.ExportHeroBtn.Text = "Export Hero...";
+			this.ExportHeroBtn.Click += new System.EventHandler(this.ExportHero_Click);
+			// 
+			// ExportPartyBtn
+			// 
+			this.ExportPartyBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.ExportPartyBtn.Name = "ExportPartyBtn";
+			this.ExportPartyBtn.Size = new System.Drawing.Size(80, 22);
+			this.ExportPartyBtn.Text = "Export Party...";
+			this.ExportPartyBtn.Click += new System.EventHandler(this.ExportParty_Click);
+			// 
 			// HeroListForm
 			// 
 			this.AcceptButton = this.CloseBtn;
@@ -443,5 +479,9 @@
 		private System.Windows.Forms.StatusStrip StatusBar;
 		private System.Windows.Forms.ToolStripStatusLabel PartySizeLbl;
 		private System.Windows.Forms.ToolStripMenuItem ImportCB;
+		private System.Windows.Forms.ToolStripMenuItem ImportHeroFile;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparatorExport;
+		private System.Windows.Forms.ToolStripButton ExportHeroBtn;
+		private System.Windows.Forms.ToolStripButton ExportPartyBtn;
 	}
 }

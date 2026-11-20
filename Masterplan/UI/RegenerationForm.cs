@@ -1,32 +1,33 @@
-﻿using System;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
+using System;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class RegenerationForm : Form
-	{
-		public RegenerationForm(Regeneration regen)
-		{
-			InitializeComponent();
+    partial class RegenerationForm : Form
+    {
+        public RegenerationForm(Regeneration regen)
+        {
+            InitializeComponent();
 
-			fRegeneration = regen.Copy();
+            fRegeneration = regen.Copy();
 
-			ValueBox.Value = fRegeneration.Value;
-			DetailsBox.Text = fRegeneration.Details;
-		}
+            ValueBox.Value = fRegeneration.Value;
+            DetailsBox.Text = fRegeneration.Details;
+        }
 
-		public Regeneration Regeneration
-		{
-			get { return fRegeneration; }
-		}
-		Regeneration fRegeneration = null;
+        public Regeneration Regeneration
+        {
+            get { return fRegeneration; }
+        }
+        Regeneration fRegeneration = null;
 
-		private void OKBtn_Click(object sender, EventArgs e)
-		{
-			fRegeneration.Value = (int)ValueBox.Value;
-			fRegeneration.Details = DetailsBox.Text;
-		}
-	}
+        private void OKBtn_Click(object sender, EventArgs e)
+        {
+            fRegeneration.Value = (int)ValueBox.Value;
+            fRegeneration.Details = DetailsBox.Text;
+        }
+    }
 }

@@ -1,9 +1,10 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.Tools;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
@@ -77,7 +78,7 @@ namespace Masterplan.UI
             CreaturePower power = new CreaturePower();
             power.Name = "New Power";
 
-			PowerBuilderForm dlg = new PowerBuilderForm(power, null, false);
+            PowerBuilderForm dlg = new PowerBuilderForm(power, null, false);
             if (dlg.ShowDialog() == DialogResult.OK)
                 add_power(dlg.Power);
         }
@@ -112,7 +113,7 @@ namespace Masterplan.UI
             {
                 int index = fTheme.Powers.IndexOf(SelectedPower);
 
-				PowerBuilderForm dlg = new PowerBuilderForm(SelectedPower.Power, null, false);
+                PowerBuilderForm dlg = new PowerBuilderForm(SelectedPower.Power, null, false);
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     fTheme.Powers[index].Power = dlg.Power;
@@ -121,20 +122,20 @@ namespace Masterplan.UI
             }
         }
 
-		private void EditClassification_Click(object sender, EventArgs e)
-		{
-			if (SelectedPower != null)
-			{
-				int index = fTheme.Powers.IndexOf(SelectedPower);
+        private void EditClassification_Click(object sender, EventArgs e)
+        {
+            if (SelectedPower != null)
+            {
+                int index = fTheme.Powers.IndexOf(SelectedPower);
 
-				MonsterThemePowerForm dlg = new MonsterThemePowerForm(SelectedPower);
-				if (dlg.ShowDialog() == DialogResult.OK)
-				{
-					fTheme.Powers[index] = dlg.Power;
-					update_powers();
-				}
-			}
-		}
+                MonsterThemePowerForm dlg = new MonsterThemePowerForm(SelectedPower);
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    fTheme.Powers[index] = dlg.Power;
+                    update_powers();
+                }
+            }
+        }
 
         void update_powers()
         {
@@ -144,34 +145,34 @@ namespace Masterplan.UI
             foreach (ThemePowerData p in fTheme.Powers)
             {
                 string role_str = "";
-				if (p.Roles.Count == 6)
-				{
-					role_str = "(any)";
-				}
-				else
-				{
-					foreach (RoleType rt in p.Roles)
-					{
-						if (role_str != "")
-							role_str += ", ";
+                if (p.Roles.Count == 6)
+                {
+                    role_str = "(any)";
+                }
+                else
+                {
+                    foreach (RoleType rt in p.Roles)
+                    {
+                        if (role_str != "")
+                            role_str += ", ";
 
-						role_str += rt.ToString();
-					}
-				}
+                        role_str += rt.ToString();
+                    }
+                }
 
                 ListViewItem lvi = PowerList.Items.Add(p.Power.Name);
                 lvi.SubItems.Add(role_str);
                 lvi.Tag = p;
 
-				switch (p.Type)
-				{
-					case PowerType.Attack:
-						lvi.Group = PowerList.Groups[0];
-						break;
-					case PowerType.Utility:
-						lvi.Group = PowerList.Groups[1];
-						break;
-				}
+                switch (p.Type)
+                {
+                    case PowerType.Attack:
+                        lvi.Group = PowerList.Groups[0];
+                        break;
+                    case PowerType.Utility:
+                        lvi.Group = PowerList.Groups[1];
+                        break;
+                }
             }
 
             if (PowerList.Items.Count == 0)

@@ -1,51 +1,52 @@
-﻿using System;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Controls;
 using Masterplan.Data;
+using System;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class DemographicsForm : Form
-	{
-		public DemographicsForm(Library library, DemographicsSource source)
-		{
-			InitializeComponent();
+    partial class DemographicsForm : Form
+    {
+        public DemographicsForm(Library library, DemographicsSource source)
+        {
+            InitializeComponent();
 
-			Application.Idle += new EventHandler(Application_Idle);
+            Application.Idle += new EventHandler(Application_Idle);
 
-			BreakdownPanel.Library = library;
-			BreakdownPanel.Source = source;
-		}
+            BreakdownPanel.Library = library;
+            BreakdownPanel.Source = source;
+        }
 
-		~DemographicsForm()
-		{
-			Application.Idle -= Application_Idle;
-		}
+        ~DemographicsForm()
+        {
+            Application.Idle -= Application_Idle;
+        }
 
-		void Application_Idle(object sender, EventArgs e)
-		{
-			RoleBtn.Enabled = (BreakdownPanel.Source != DemographicsSource.MagicItems);
-			StatusBtn.Enabled = (BreakdownPanel.Source != DemographicsSource.MagicItems);
+        void Application_Idle(object sender, EventArgs e)
+        {
+            RoleBtn.Enabled = (BreakdownPanel.Source != DemographicsSource.MagicItems);
+            StatusBtn.Enabled = (BreakdownPanel.Source != DemographicsSource.MagicItems);
 
-			LevelBtn.Checked = (BreakdownPanel.Mode == Masterplan.Controls.DemographicsMode.Level);
-			RoleBtn.Checked = (BreakdownPanel.Mode == Masterplan.Controls.DemographicsMode.Role);
-			StatusBtn.Checked = (BreakdownPanel.Mode == Masterplan.Controls.DemographicsMode.Status);
-		}
+            LevelBtn.Checked = (BreakdownPanel.Mode == Masterplan.Controls.DemographicsMode.Level);
+            RoleBtn.Checked = (BreakdownPanel.Mode == Masterplan.Controls.DemographicsMode.Role);
+            StatusBtn.Checked = (BreakdownPanel.Mode == Masterplan.Controls.DemographicsMode.Status);
+        }
 
-		private void LevelBtn_Click(object sender, EventArgs e)
-		{
-			BreakdownPanel.Mode = DemographicsMode.Level;
-		}
+        private void LevelBtn_Click(object sender, EventArgs e)
+        {
+            BreakdownPanel.Mode = DemographicsMode.Level;
+        }
 
-		private void RoleBtn_Click(object sender, EventArgs e)
-		{
-			BreakdownPanel.Mode = DemographicsMode.Role;
-		}
+        private void RoleBtn_Click(object sender, EventArgs e)
+        {
+            BreakdownPanel.Mode = DemographicsMode.Role;
+        }
 
-		private void StatusBtn_Click(object sender, EventArgs e)
-		{
-			BreakdownPanel.Mode = DemographicsMode.Status;
-		}
-	}
+        private void StatusBtn_Click(object sender, EventArgs e)
+        {
+            BreakdownPanel.Mode = DemographicsMode.Status;
+        }
+    }
 }
