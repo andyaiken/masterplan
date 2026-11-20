@@ -1,22 +1,23 @@
-﻿using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Tools;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class DieRollerForm : Form
-	{
-		public DieRollerForm()
-		{
-			InitializeComponent();
+    partial class DieRollerForm : Form
+    {
+        public DieRollerForm()
+        {
+            InitializeComponent();
 
-			DicePanel.UpdateView();
-		}
+            DicePanel.UpdateView();
+        }
 
-		public DiceExpression Expression
-		{
-			get { return DicePanel.Expression; }
-			set { DicePanel.Expression = value; }
-		}
-	}
+        public DiceExpression Expression
+        {
+            get { return DicePanel.Expression; }
+            set { DicePanel.Expression = value; }
+        }
+    }
 }

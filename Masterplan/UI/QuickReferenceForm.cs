@@ -1,9 +1,10 @@
-﻿using System;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.Extensibility;
 using Masterplan.Tools;
+using System;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
@@ -27,29 +28,29 @@ namespace Masterplan.UI
                 }
             }
 
-			UpdateView();
+            UpdateView();
         }
 
         private void QuickReferenceForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-		}
+        }
 
-		public void UpdateView()
-		{
-			if (Session.Project != null)
-				LevelBox.Value = Session.Project.Party.Level;
-			update_skills();
+        public void UpdateView()
+        {
+            if (Session.Project != null)
+                LevelBox.Value = Session.Project.Party.Level;
+            update_skills();
 
-			foreach (IAddIn addin in Session.AddIns)
-			{
-				foreach (IPage page in addin.QuickReferencePages)
-					page.UpdateView();
-			}
-		}
+            foreach (IAddIn addin in Session.AddIns)
+            {
+                foreach (IPage page in addin.QuickReferencePages)
+                    page.UpdateView();
+            }
+        }
 
-		#region Skills
+        #region Skills
 
-		private void LevelBox_ValueChanged(object sender, EventArgs e)
+        private void LevelBox_ValueChanged(object sender, EventArgs e)
         {
             update_skills();
         }
@@ -60,7 +61,7 @@ namespace Masterplan.UI
 
             SkillList.BeginUpdate();
             SkillList.Items.Clear();
-            
+
             ListViewItem lvi_easy = SkillList.Items.Add("Easy");
             lvi_easy.SubItems.Add(AI.GetSkillDC(Difficulty.Easy, level).ToString());
 
@@ -75,19 +76,19 @@ namespace Masterplan.UI
             DamageList.BeginUpdate();
             DamageList.Items.Clear();
 
-			DamageList.ShowGroups = false;
+            DamageList.ShowGroups = false;
 
-			ListViewItem lvi_damage = DamageList.Items.Add("Against a single target");
-			lvi_damage.SubItems.Add(Statistics.NormalDamage(level));
-			lvi_damage.Group = DamageList.Groups[0];
+            ListViewItem lvi_damage = DamageList.Items.Add("Against a single target");
+            lvi_damage.SubItems.Add(Statistics.NormalDamage(level));
+            lvi_damage.Group = DamageList.Groups[0];
 
-			ListViewItem lvi_multiple = DamageList.Items.Add("Against multiple targets");
-			lvi_multiple.SubItems.Add(Statistics.MultipleDamage(level));
-			lvi_multiple.Group = DamageList.Groups[0];
+            ListViewItem lvi_multiple = DamageList.Items.Add("Against multiple targets");
+            lvi_multiple.SubItems.Add(Statistics.MultipleDamage(level));
+            lvi_multiple.Group = DamageList.Groups[0];
 
             DamageList.EndUpdate();
-		}
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

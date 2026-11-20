@@ -1,135 +1,136 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.Tools;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class MagicItemSelectForm : Form
-	{
-		public MagicItemSelectForm(int level)
-		{
-			InitializeComponent();
+    partial class MagicItemSelectForm : Form
+    {
+        public MagicItemSelectForm(int level)
+        {
+            InitializeComponent();
 
-			Application.Idle += new EventHandler(Application_Idle);
+            Application.Idle += new EventHandler(Application_Idle);
 
-			if (level > 0)
-				LevelRangePanel.SetLevelRange(level, level);
+            if (level > 0)
+                LevelRangePanel.SetLevelRange(level, level);
 
-			Browser.DocumentText = "";
-			ItemList_SelectedIndexChanged(null, null);
-	
-			update_list();
-		}
+            Browser.DocumentText = "";
+            ItemList_SelectedIndexChanged(null, null);
 
-		~MagicItemSelectForm()
-		{
-			Application.Idle -= Application_Idle;
-		}
+            update_list();
+        }
 
-		void Application_Idle(object sender, EventArgs e)
-		{
-			OKBtn.Enabled = (MagicItem != null);
-		}
+        ~MagicItemSelectForm()
+        {
+            Application.Idle -= Application_Idle;
+        }
 
-		public MagicItem MagicItem
-		{
-			get
-			{
-				if (ItemList.SelectedItems.Count != 0)
-					return ItemList.SelectedItems[0].Tag as MagicItem;
+        void Application_Idle(object sender, EventArgs e)
+        {
+            OKBtn.Enabled = (MagicItem != null);
+        }
 
-				return null;
-			}
-		}
+        public MagicItem MagicItem
+        {
+            get
+            {
+                if (ItemList.SelectedItems.Count != 0)
+                    return ItemList.SelectedItems[0].Tag as MagicItem;
 
-		private void ItemList_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			string html = HTML.MagicItem(MagicItem, Session.Preferences.TextSize, false, true);
+                return null;
+            }
+        }
 
-			Browser.Document.OpenNew(true);
-			Browser.Document.Write(html);
-		}
+        private void ItemList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string html = HTML.MagicItem(MagicItem, Session.Preferences.TextSize, false, true);
 
-		private void ItemList_DoubleClick(object sender, EventArgs e)
-		{
-			if (MagicItem != null)
-			{
-				DialogResult = DialogResult.OK;
-				Close();
-			}
-		}
+            Browser.Document.OpenNew(true);
+            Browser.Document.Write(html);
+        }
 
-		private void LevelRangePanel_RangeChanged(object sender, EventArgs e)
-		{
-			update_list();
-		}
+        private void ItemList_DoubleClick(object sender, EventArgs e)
+        {
+            if (MagicItem != null)
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+        }
 
-		void update_list()
-		{
-			List<MagicItem> selection = new List<MagicItem>();
+        private void LevelRangePanel_RangeChanged(object sender, EventArgs e)
+        {
+            update_list();
+        }
 
-			List<MagicItem> items = Session.MagicItems;
-			foreach (MagicItem item in items)
-			{
-				if ((item.Level >= LevelRangePanel.MinimumLevel) && (item.Level <= LevelRangePanel.MaximumLevel) && match(item, LevelRangePanel.NameQuery))
-					selection.Add(item);
-			}
+        void update_list()
+        {
+            List<MagicItem> selection = new List<MagicItem>();
 
-			BinarySearchTree<string> bst = new BinarySearchTree<string>();
-			foreach (MagicItem item in selection)
-			{
-				if (item.Type != "")
-					bst.Add(item.Type);
-			}
+            List<MagicItem> items = Session.MagicItems;
+            foreach (MagicItem item in items)
+            {
+                if ((item.Level >= LevelRangePanel.MinimumLevel) && (item.Level <= LevelRangePanel.MaximumLevel) && match(item, LevelRangePanel.NameQuery))
+                    selection.Add(item);
+            }
 
-			List<string> cats = bst.SortedList;
-			cats.Add("Miscellaneous Items");
-			foreach (string cat in cats)
-				ItemList.Groups.Add(cat, cat);
+            BinarySearchTree<string> bst = new BinarySearchTree<string>();
+            foreach (MagicItem item in selection)
+            {
+                if (item.Type != "")
+                    bst.Add(item.Type);
+            }
 
-			List<ListViewItem> list_items = new List<ListViewItem>();
-			foreach (MagicItem item in selection)
-			{
-				ListViewItem lvi = new ListViewItem(item.Name);
-				lvi.SubItems.Add(item.Info);
-				lvi.Tag = item;
+            List<string> cats = bst.SortedList;
+            cats.Add("Miscellaneous Items");
+            foreach (string cat in cats)
+                ItemList.Groups.Add(cat, cat);
 
-				if (item.Type != "")
-					lvi.Group = ItemList.Groups[item.Type];
-				else
-					lvi.Group = ItemList.Groups["Miscellaneous Items"];
+            List<ListViewItem> list_items = new List<ListViewItem>();
+            foreach (MagicItem item in selection)
+            {
+                ListViewItem lvi = new ListViewItem(item.Name);
+                lvi.SubItems.Add(item.Info);
+                lvi.Tag = item;
 
-				list_items.Add(lvi);
-			}
+                if (item.Type != "")
+                    lvi.Group = ItemList.Groups[item.Type];
+                else
+                    lvi.Group = ItemList.Groups["Miscellaneous Items"];
 
-			ItemList.BeginUpdate();
-			ItemList.Items.Clear();
-			ItemList.Items.AddRange(list_items.ToArray());
-			ItemList.EndUpdate();
-		}
+                list_items.Add(lvi);
+            }
 
-		bool match(MagicItem item, string query)
-		{
-			string[] tokens = query.ToLower().Split();
+            ItemList.BeginUpdate();
+            ItemList.Items.Clear();
+            ItemList.Items.AddRange(list_items.ToArray());
+            ItemList.EndUpdate();
+        }
 
-			foreach (string token in tokens)
-			{
-				if (!match_token(item, token))
-					return false;
-			}
+        bool match(MagicItem item, string query)
+        {
+            string[] tokens = query.ToLower().Split();
 
-			return true;
-		}
+            foreach (string token in tokens)
+            {
+                if (!match_token(item, token))
+                    return false;
+            }
 
-		bool match_token(MagicItem item, string token)
-		{
-			if (item.Name.ToLower().Contains(token))
-				return true;
+            return true;
+        }
 
-			return false;
-		}
-	}
+        bool match_token(MagicItem item, string token)
+        {
+            if (item.Name.ToLower().Contains(token))
+                return true;
+
+            return false;
+        }
+    }
 }

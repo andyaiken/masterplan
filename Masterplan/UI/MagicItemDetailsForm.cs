@@ -1,41 +1,42 @@
-﻿using System;
-using System.IO;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.Tools;
+using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class MagicItemDetailsForm : Form
-	{
-		public MagicItemDetailsForm(MagicItem item)
-		{
-			InitializeComponent();
+    partial class MagicItemDetailsForm : Form
+    {
+        public MagicItemDetailsForm(MagicItem item)
+        {
+            InitializeComponent();
 
-			fItem = item.Copy();
+            fItem = item.Copy();
 
-			Browser.DocumentText = HTML.MagicItem(fItem, Session.Preferences.TextSize, false, true);
-		}
+            Browser.DocumentText = HTML.MagicItem(fItem, Session.Preferences.TextSize, false, true);
+        }
 
-		MagicItem fItem = null;
+        MagicItem fItem = null;
 
-		private void PlayerViewBtn_Click(object sender, EventArgs e)
-		{
-			if (Session.PlayerView == null)
-				Session.PlayerView = new PlayerViewForm(this);
+        private void PlayerViewBtn_Click(object sender, EventArgs e)
+        {
+            if (Session.PlayerView == null)
+                Session.PlayerView = new PlayerViewForm(this);
 
-			Session.PlayerView.ShowMagicItem(fItem);
-		}
+            Session.PlayerView.ShowMagicItem(fItem);
+        }
 
-		private void ExportHTML_Click(object sender, EventArgs e)
-		{
-			SaveFileDialog dlg = new SaveFileDialog();
-			dlg.FileName = fItem.Name;
-			dlg.Filter = Program.HTMLFilter;
+        private void ExportHTML_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = fItem.Name;
+            dlg.Filter = Program.HTMLFilter;
 
-			if (dlg.ShowDialog() == DialogResult.OK)
-				File.WriteAllText(dlg.FileName, Browser.DocumentText);
-		}
-	}
+            if (dlg.ShowDialog() == DialogResult.OK)
+                File.WriteAllText(dlg.FileName, Browser.DocumentText);
+        }
+    }
 }

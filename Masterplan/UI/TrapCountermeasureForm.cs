@@ -1,49 +1,50 @@
-﻿using System;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.Tools;
+using System;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class TrapCountermeasureForm : Form
-	{
-		public TrapCountermeasureForm(string cm, int level)
-		{
-			InitializeComponent();
+    partial class TrapCountermeasureForm : Form
+    {
+        public TrapCountermeasureForm(string cm, int level)
+        {
+            InitializeComponent();
 
-			DetailsBox.Text = HTML.ConvertBRToLineBreaks(cm);
-			fLevel = level;
+            DetailsBox.Text = HTML.ConvertBRToLineBreaks(cm);
+            fLevel = level;
 
-			update_advice();
-		}
+            update_advice();
+        }
 
-		public string Countermeasure
-		{
-			get { return HTML.ConvertLineBreaksToHtml((DetailsBox.Text != DetailsBox.DefaultText) ? DetailsBox.Text : ""); }
-		}
+        public string Countermeasure
+        {
+            get { return HTML.ConvertLineBreaksToHtml((DetailsBox.Text != DetailsBox.DefaultText) ? DetailsBox.Text : ""); }
+        }
 
-		int fLevel = 1;
+        int fLevel = 1;
 
-		void update_advice()
-		{
-			ListViewItem lvi_easy = AdviceList.Items.Add("Skill DC (easy)");
-			lvi_easy.SubItems.Add(AI.GetSkillDC(Difficulty.Easy, fLevel).ToString());
-			lvi_easy.Group = AdviceList.Groups[0];
+        void update_advice()
+        {
+            ListViewItem lvi_easy = AdviceList.Items.Add("Skill DC (easy)");
+            lvi_easy.SubItems.Add(AI.GetSkillDC(Difficulty.Easy, fLevel).ToString());
+            lvi_easy.Group = AdviceList.Groups[0];
 
-			ListViewItem lvi_mod = AdviceList.Items.Add("Skill DC (moderate)");
-			lvi_mod.SubItems.Add(AI.GetSkillDC(Difficulty.Moderate, fLevel).ToString());
-			lvi_mod.Group = AdviceList.Groups[0];
+            ListViewItem lvi_mod = AdviceList.Items.Add("Skill DC (moderate)");
+            lvi_mod.SubItems.Add(AI.GetSkillDC(Difficulty.Moderate, fLevel).ToString());
+            lvi_mod.Group = AdviceList.Groups[0];
 
-			ListViewItem lvi_hard = AdviceList.Items.Add("Skill DC (hard)");
-			lvi_hard.SubItems.Add(AI.GetSkillDC(Difficulty.Hard, fLevel).ToString());
-			lvi_hard.Group = AdviceList.Groups[0];
-		}
+            ListViewItem lvi_hard = AdviceList.Items.Add("Skill DC (hard)");
+            lvi_hard.SubItems.Add(AI.GetSkillDC(Difficulty.Hard, fLevel).ToString());
+            lvi_hard.Group = AdviceList.Groups[0];
+        }
 
-		private void TrapCountermeasureForm_Shown(object sender, EventArgs e)
-		{
-			DetailsBox.Focus();
-			DetailsBox.SelectAll();
-		}
-	}
+        private void TrapCountermeasureForm_Shown(object sender, EventArgs e)
+        {
+            DetailsBox.Focus();
+            DetailsBox.SelectAll();
+        }
+    }
 }
