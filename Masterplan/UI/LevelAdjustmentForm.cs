@@ -1,38 +1,40 @@
-﻿using System;
+﻿#nullable disable
+
+using System;
 using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class LevelAdjustmentForm : Form
-	{
-		const string LEVEL_UP = "More difficult";
-		const string LEVEL_DOWN = "Less difficult";
+    partial class LevelAdjustmentForm : Form
+    {
+        const string LEVEL_UP = "More difficult";
+        const string LEVEL_DOWN = "Less difficult";
 
-		public LevelAdjustmentForm()
-		{
-			InitializeComponent();
+        public LevelAdjustmentForm()
+        {
+            InitializeComponent();
 
-			DirectionBox.Items.Add(LEVEL_UP);
-			DirectionBox.Items.Add(LEVEL_DOWN);
+            DirectionBox.Items.Add(LEVEL_UP);
+            DirectionBox.Items.Add(LEVEL_DOWN);
 
-			DirectionBox.SelectedIndex = 0;
-		}
+            DirectionBox.SelectedIndex = 0;
+        }
 
-		public int LevelAdjustment
-		{
-			get
-			{
-				int levels = (int)LevelBox.Value;
+        public int LevelAdjustment
+        {
+            get
+            {
+                int levels = (int)LevelBox.Value;
 
-				if (DirectionBox.SelectedItem.ToString() == LEVEL_DOWN)
-					levels *= -1;
+                if (DirectionBox.SelectedItem.ToString() == LEVEL_DOWN)
+                    levels *= -1;
 
-				return levels;
-			}
-		}
+                return levels;
+            }
+        }
 
-		private void OKBtn_Click(object sender, EventArgs e)
-		{
-		}
-	}
+        private void OKBtn_Click(object sender, EventArgs e)
+        {
+        }
+    }
 }

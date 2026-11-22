@@ -1,130 +1,131 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.Tools;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class ArtifactSelectForm : Form
-	{
-		public ArtifactSelectForm()
-		{
-			InitializeComponent();
+    partial class ArtifactSelectForm : Form
+    {
+        public ArtifactSelectForm()
+        {
+            InitializeComponent();
 
-			Application.Idle += new EventHandler(Application_Idle);
+            Application.Idle += new EventHandler(Application_Idle);
 
-			Browser.DocumentText = "";
-			ItemList_SelectedIndexChanged(null, null);
-	
-			update_list();
-		}
+            Browser.DocumentText = "";
+            ItemList_SelectedIndexChanged(null, null);
 
-		~ArtifactSelectForm()
-		{
-			Application.Idle -= Application_Idle;
-		}
+            update_list();
+        }
 
-		void Application_Idle(object sender, EventArgs e)
-		{
-			OKBtn.Enabled = (Artifact != null);
-		}
+        ~ArtifactSelectForm()
+        {
+            Application.Idle -= Application_Idle;
+        }
 
-		public Artifact Artifact
-		{
-			get
-			{
-				if (ItemList.SelectedItems.Count != 0)
-					return ItemList.SelectedItems[0].Tag as Artifact;
+        void Application_Idle(object sender, EventArgs e)
+        {
+            OKBtn.Enabled = (Artifact != null);
+        }
 
-				return null;
-			}
-		}
+        public Artifact Artifact
+        {
+            get
+            {
+                if (ItemList.SelectedItems.Count != 0)
+                    return ItemList.SelectedItems[0].Tag as Artifact;
 
-		private void NameBox_TextChanged(object sender, EventArgs e)
-		{
-			update_list();
-		}
+                return null;
+            }
+        }
 
-		private void ItemList_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			string html = HTML.Artifact(Artifact, Session.Preferences.TextSize, false, true);
+        private void NameBox_TextChanged(object sender, EventArgs e)
+        {
+            update_list();
+        }
 
-			Browser.Document.OpenNew(true);
-			Browser.Document.Write(html);
-		}
+        private void ItemList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string html = HTML.Artifact(Artifact, Session.Preferences.TextSize, false, true);
 
-		private void ItemList_DoubleClick(object sender, EventArgs e)
-		{
-			if (Artifact != null)
-			{
-				DialogResult = DialogResult.OK;
-				Close();
-			}
-		}
+            Browser.Document.OpenNew(true);
+            Browser.Document.Write(html);
+        }
 
-		void update_list()
-		{
-			List<Artifact> artifacts = new List<Artifact>();
-			foreach (Artifact a in Session.Artifacts)
-			{
-				if (match(a, NameBox.Text))
-					artifacts.Add(a);
-			}
+        private void ItemList_DoubleClick(object sender, EventArgs e)
+        {
+            if (Artifact != null)
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+        }
 
-			ListViewGroup lvg_heroic = ItemList.Groups.Add("Heroic Tier", "Heroic Tier");
-			ListViewGroup lvg_paragon = ItemList.Groups.Add("Paragon Tier", "Paragon Tier");
-			ListViewGroup lvg_epic = ItemList.Groups.Add("Epic Tier", "Epic Tier");
+        void update_list()
+        {
+            List<Artifact> artifacts = new List<Artifact>();
+            foreach (Artifact a in Session.Artifacts)
+            {
+                if (match(a, NameBox.Text))
+                    artifacts.Add(a);
+            }
 
-			List<ListViewItem> list_items = new List<ListViewItem>();
-			foreach (Artifact item in artifacts)
-			{
-				ListViewItem lvi = new ListViewItem(item.Name);
-				lvi.SubItems.Add(item.Tier + " Tier");
-				lvi.Tag = item;
+            ListViewGroup lvg_heroic = ItemList.Groups.Add("Heroic Tier", "Heroic Tier");
+            ListViewGroup lvg_paragon = ItemList.Groups.Add("Paragon Tier", "Paragon Tier");
+            ListViewGroup lvg_epic = ItemList.Groups.Add("Epic Tier", "Epic Tier");
 
-				switch (item.Tier)
-				{
-					case Tier.Heroic:
-						lvi.Group = lvg_heroic;
-						break;
-					case Tier.Paragon:
-						lvi.Group = lvg_paragon;
-						break;
-					case Tier.Epic:
-						lvi.Group = lvg_epic;
-						break;
-				}
+            List<ListViewItem> list_items = new List<ListViewItem>();
+            foreach (Artifact item in artifacts)
+            {
+                ListViewItem lvi = new ListViewItem(item.Name);
+                lvi.SubItems.Add(item.Tier + " Tier");
+                lvi.Tag = item;
 
-				list_items.Add(lvi);
-			}
+                switch (item.Tier)
+                {
+                    case Tier.Heroic:
+                        lvi.Group = lvg_heroic;
+                        break;
+                    case Tier.Paragon:
+                        lvi.Group = lvg_paragon;
+                        break;
+                    case Tier.Epic:
+                        lvi.Group = lvg_epic;
+                        break;
+                }
 
-			ItemList.BeginUpdate();
-			ItemList.Items.Clear();
-			ItemList.Items.AddRange(list_items.ToArray());
-			ItemList.EndUpdate();
-		}
+                list_items.Add(lvi);
+            }
 
-		bool match(Artifact item, string query)
-		{
-			string[] tokens = query.ToLower().Split();
+            ItemList.BeginUpdate();
+            ItemList.Items.Clear();
+            ItemList.Items.AddRange(list_items.ToArray());
+            ItemList.EndUpdate();
+        }
 
-			foreach (string token in tokens)
-			{
-				if (!match_token(item, token))
-					return false;
-			}
+        bool match(Artifact item, string query)
+        {
+            string[] tokens = query.ToLower().Split();
 
-			return true;
-		}
+            foreach (string token in tokens)
+            {
+                if (!match_token(item, token))
+                    return false;
+            }
 
-		bool match_token(Artifact item, string token)
-		{
-			if (item.Name.ToLower().Contains(token))
-				return true;
+            return true;
+        }
 
-			return false;
-		}
-	}
+        bool match_token(Artifact item, string token)
+        {
+            if (item.Name.ToLower().Contains(token))
+                return true;
+
+            return false;
+        }
+    }
 }

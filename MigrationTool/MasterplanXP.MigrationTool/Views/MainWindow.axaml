@@ -1,0 +1,152 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MasterplanXP.MigrationTool.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="MasterplanXP.MigrationTool.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/MigrationTool.ico"
+        Title="MasterplanXP Migration Tool"
+        WindowStartupLocation="CenterScreen">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto, Auto, *, Auto">
+        <!-- Header & Theme Toggle -->
+        <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Margin="20,10">
+            <TextBlock Text="MasterplanXP Migration Tool" 
+                       FontSize="22" FontWeight="Bold" VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <!-- Audit: read the staged files and report their .NET types (security allow-list
+                     check). Nothing is converted or refused. See TypeAllowList / LegacySerializationBinder. -->
+                <TextBlock Text="Audit file types" VerticalAlignment="Center" Margin="0,0,5,0"
+                           ToolTip.Tip="Read the staged files and log every type they contain, without converting anything"/>
+                <ToggleSwitch IsChecked="{Binding AuditTypes}"
+                              OnContent="" OffContent=""
+                              Margin="0,0,20,0"/>
+
+                <!-- Image compression: shrinks oversized images and keeps transparency
+                     (see Services/Utils/ImageCompression.cs). Replaces the old "JPEG Compression". -->
+                <TextBlock Text="Compress images" VerticalAlignment="Center" Margin="0,0,5,0"
+                           ToolTip.Tip="Shrink oversized images to keep files small. Transparency is kept."/>
+                <ToggleSwitch IsChecked="{Binding CompressImages}" 
+                              OnContent="" OffContent=""
+                              Margin="0,0,20,0">
+                    <ToggleSwitch.Resources>
+                        <!-- Standard Avalonia 11 Fluent Theme Keys -->
+                        <SolidColorBrush x:Key="ToggleSwitchOnBackground">Green</SolidColorBrush>
+                        <SolidColorBrush x:Key="ToggleSwitchOffBackground">Red</SolidColorBrush>
+                        
+                        <SolidColorBrush x:Key="ToggleSwitchOnPointerOverBackground">#006400</SolidColorBrush> <!-- DarkGreen -->
+                        <SolidColorBrush x:Key="ToggleSwitchOffPointerOverBackground">#8B0000</SolidColorBrush> <!-- DarkRed -->
+
+                        <!-- Also override the "Fill" keys which some versions use -->
+                        <SolidColorBrush x:Key="ToggleSwitchFillOn">Green</SolidColorBrush>
+                        <SolidColorBrush x:Key="ToggleSwitchFillOff">Red</SolidColorBrush>
+                    </ToggleSwitch.Resources>
+                </ToggleSwitch>
+
+                <!-- Image size used when compressing: Low (smallest files), Regular (default), High. -->
+                <ComboBox ItemsSource="{Binding ImageSizeLevels}"
+                          SelectedItem="{Binding ImageSizeLevel}"
+                          IsEnabled="{Binding CompressImages}"
+                          VerticalAlignment="Center" MinWidth="100" Margin="0,0,20,0"
+                          ToolTip.Tip="Low: smallest files. Regular: sharp in normal use. High: for large screens."/>
+                
+                <TextBlock Text="Light" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <ToggleSwitch IsChecked="{Binding IsDarkTheme}" 
+                              Command="{Binding ToggleThemeCommand}"
+                              OnContent="" OffContent=""/>
+                <TextBlock Text="Dark" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Folder Selection -->
+        <Border Grid.Row="1" Background="{DynamicResource SystemAccentColorLight}" 
+                CornerRadius="5" Margin="20,0" Padding="15,10">
+            <Grid ColumnDefinitions="*, Auto">
+                <!-- PlaceholderText: the grey hint shown while the box is empty. Avalonia 12 renamed
+                     it from "Watermark" (now obsolete, warning AVLN5001); it works the same way. -->
+                <TextBox Grid.Column="0" Text="{Binding SelectedFolderPath}"
+                         PlaceholderText="Select source folder..." IsReadOnly="True"
+                         VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <Button Grid.Column="1" Content="Browse..." 
+                        Click="OnBrowseClick"
+                        Padding="15,5"/>
+            </Grid>
+        </Border>
+
+        <!-- Main Dual-Pane Content -->
+        <Grid Grid.Row="2" ColumnDefinitions="*, Auto, *" Margin="20">
+            <!-- Left Pane: Available Files -->
+            <DockPanel Grid.Column="0">
+                <TextBlock DockPanel.Dock="Top" Text="Available Files" 
+                           Foreground="{DynamicResource SystemBaseHighColor}" Margin="0,0,0,5" FontWeight="SemiBold"/>
+                <ListBox x:Name="AvailableListBox"
+                         ItemsSource="{Binding AvailableFiles}"
+                         SelectionMode="Multiple"
+                         DoubleTapped="OnAvailableDoubleTapped"
+                         BorderBrush="{DynamicResource SystemBaseLowColor}" BorderThickness="1"/>
+            </DockPanel>
+
+            <!-- Middle Column: Transfer Buttons
+                 Ordered from "move everything" to "move nothing":
+                   Add All »     every available file  -> staged   (AddAllFilesCommand)
+                   Add >         the selected files     -> staged   (AddFileCommand)
+                   < Remove      the selected files     -> available (RemoveFileCommand)
+                   « Remove All  every staged file      -> available (RemoveAllFilesCommand)
+                 "All" buttons are disabled when their list is empty. Files moved back to the
+                 Available list are put in alphabetical order. All buttons share one width so the
+                 column stays aligned. -->
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="15,0">
+                <Button Command="{Binding AddAllFilesCommand}"
+                        Content="Add All &#187;"
+                        ToolTip.Tip="Stage every file in the list"
+                        Width="110" HorizontalContentAlignment="Center"
+                        Margin="0,0,0,10"/>
+                <Button Command="{Binding AddFileCommand}" 
+                        CommandParameter="{Binding #AvailableListBox.SelectedItems}"
+                        Content="Add &gt;" 
+                        ToolTip.Tip="Stage the selected files"
+                        Width="110" HorizontalContentAlignment="Center"
+                        Margin="0,0,0,10"/>
+                <Button Command="{Binding RemoveFileCommand}" 
+                        CommandParameter="{Binding #StagedListBox.SelectedItems}"
+                        Content="&lt; Remove" 
+                        ToolTip.Tip="Return the selected files to the list"
+                        Width="110" HorizontalContentAlignment="Center"
+                        Margin="0,0,0,10"/>
+                <Button Command="{Binding RemoveAllFilesCommand}"
+                        Content="&#171; Remove All"
+                        ToolTip.Tip="Return every staged file to the list"
+                        Width="110" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+
+            <!-- Right Pane: Staged Files -->
+            <DockPanel Grid.Column="2">
+                <TextBlock DockPanel.Dock="Top" Text="{Binding StagedFilesHeader}" 
+                           Foreground="{DynamicResource SystemBaseHighColor}" Margin="0,0,0,5" FontWeight="SemiBold"/>
+                <ListBox x:Name="StagedListBox"
+                         ItemsSource="{Binding StagedFiles}"
+                         SelectionMode="Multiple"
+                         DoubleTapped="OnStagedDoubleTapped"
+                         BorderBrush="{DynamicResource SystemBaseLowColor}" BorderThickness="1"/>
+            </DockPanel>
+        </Grid>
+
+        <!-- Footer: Action Buttons -->
+        <Border Grid.Row="3" Background="{DynamicResource SystemChromeLowColor}" Padding="20,15">
+            <Grid ColumnDefinitions="*, Auto">
+                <TextBlock Grid.Column="0" Text="{Binding MigrationStatus}" 
+                           VerticalAlignment="Center" Foreground="{DynamicResource SystemAccentColorLight}"/>
+                <Button Grid.Column="1" Command="{Binding MigrateCommand}" 
+                        Content="Migrate Selected Files" 
+                        Classes="accent"
+                        Padding="30,10" FontWeight="Bold"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

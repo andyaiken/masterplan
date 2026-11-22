@@ -1,64 +1,65 @@
-﻿using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Tools.Generators;
+using System.Windows.Forms;
 
 namespace Masterplan.Wizards
 {
-	partial class MapSizePage : UserControl, IWizardPage
-	{
-		public MapSizePage()
-		{
-			InitializeComponent();
-		}
+    partial class MapSizePage : UserControl, IWizardPage
+    {
+        public MapSizePage()
+        {
+            InitializeComponent();
+        }
 
-		MapBuilderData fData = null;
+        MapBuilderData fData = null;
 
-		#region IWizardPage Members
+        #region IWizardPage Members
 
-		public bool AllowNext
-		{
-			get { return false; }
-		}
+        public bool AllowNext
+        {
+            get { return false; }
+        }
 
-		public bool AllowBack
-		{
-			get { return true; }
-		}
+        public bool AllowBack
+        {
+            get { return true; }
+        }
 
-		public bool AllowFinish
-		{
-			get { return true; }
-		}
+        public bool AllowFinish
+        {
+            get { return true; }
+        }
 
-		public void OnShown(object data)
-		{
-			if (fData == null)
-			{
-				fData = data as MapBuilderData;
+        public void OnShown(object data)
+        {
+            if (fData == null)
+            {
+                fData = data as MapBuilderData;
 
-				WidthBox.Value = fData.Width;
-				HeightBox.Value = fData.Height;
-			}
-		}
+                WidthBox.Value = fData.Width;
+                HeightBox.Value = fData.Height;
+            }
+        }
 
-		public bool OnBack()
-		{
-			return true;
-		}
+        public bool OnBack()
+        {
+            return true;
+        }
 
-		public bool OnNext()
-		{
-			return true;
-		}
+        public bool OnNext()
+        {
+            return true;
+        }
 
-		public bool OnFinish()
-		{
-			fData.Width = (int)WidthBox.Value;
-			fData.Height = (int)HeightBox.Value;
+        public bool OnFinish()
+        {
+            fData.Width = (int)WidthBox.Value;
+            fData.Height = (int)HeightBox.Value;
 
-			return true;
-		}
+            return true;
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

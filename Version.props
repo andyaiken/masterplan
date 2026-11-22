@@ -1,0 +1,26 @@
+<Project>
+  <!--
+    THE ONE VERSION NUMBER for Masterplan (M14) and the MasterplanXP Migration Tool.
+
+    Both projects import this file (Masterplan141\Masterplan.csproj and
+    MigrationTool\MasterplanXP.MigrationTool\MasterplanXP.MigrationTool.csproj), so they always carry
+    the same version, and Release\Build-Release.ps1 reads it from here for the zip names.
+    Never put <Version>, <AssemblyVersion> or <FileVersion> in either .csproj again: change it HERE.
+
+    WHEN TO BUMP (format 14.1.<format>.<build>), once per commit that changes either program
+    (code, XAML, project files), not once per edit. Commits that only change documentation do not bump.
+      - Any change to M14 or to the migration tool:       4th number   14.1.0.4 -> 14.1.0.5
+      - File format change (a new [Key] in DtoModels.cs,  3rd number,  14.1.0.9 -> 14.1.1.0
+        in either copy):                                  4th resets
+      - M14.2 / MPX milestones: 1st / 2nd number, decided by the project owner.
+
+    Why one number: every release zip ships both programs together, and the tool writes the
+    .mpxlib / .mpxplan files that M14 reads, so the two must always be built from the same state.
+    The migration tool shows this version in its window title and in migration_log.txt.
+  -->
+  <PropertyGroup>
+    <Version>14.1.0.18</Version>
+    <AssemblyVersion>14.1.0.18</AssemblyVersion>
+    <FileVersion>14.1.0.18</FileVersion>
+  </PropertyGroup>
+</Project>

@@ -1,19 +1,21 @@
-﻿using System.Windows.Forms;
+﻿#nullable disable
+
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class OptionDiseaseLevelForm : Form
-	{
-		public OptionDiseaseLevelForm(string level)
-		{
-			InitializeComponent();
+    partial class OptionDiseaseLevelForm : Form
+    {
+        public OptionDiseaseLevelForm(string level)
+        {
+            InitializeComponent();
 
-			DetailsBox.Text = level;
-		}
+            DetailsBox.Text = level;
+        }
 
-		public string DiseaseLevel
-		{
-			get { return DetailsBox.Text; }
-		}
-	}
+        public string DiseaseLevel
+        {
+            get { return DetailsBox.Text; }
+        }
+    }
 }

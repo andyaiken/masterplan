@@ -1,41 +1,42 @@
-﻿using System;
-using System.IO;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
 using Masterplan.Tools;
+using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
-	partial class SkillChallengeDetailsForm : Form
-	{
-		public SkillChallengeDetailsForm(SkillChallenge sc)
-		{
-			InitializeComponent();
+    partial class SkillChallengeDetailsForm : Form
+    {
+        public SkillChallengeDetailsForm(SkillChallenge sc)
+        {
+            InitializeComponent();
 
-			fChallenge = sc.Copy() as SkillChallenge;
+            fChallenge = sc.Copy() as SkillChallenge;
 
-			Browser.DocumentText = HTML.SkillChallenge(fChallenge, false, true, Session.Preferences.TextSize);
-		}
+            Browser.DocumentText = HTML.SkillChallenge(fChallenge, false, true, Session.Preferences.TextSize);
+        }
 
-		SkillChallenge fChallenge = null;
+        SkillChallenge fChallenge = null;
 
-		private void PlayerViewBtn_Click(object sender, EventArgs e)
-		{
-			if (Session.PlayerView == null)
-				Session.PlayerView = new PlayerViewForm(this);
+        private void PlayerViewBtn_Click(object sender, EventArgs e)
+        {
+            if (Session.PlayerView == null)
+                Session.PlayerView = new PlayerViewForm(this);
 
-			Session.PlayerView.ShowSkillChallenge(fChallenge);
-		}
+            Session.PlayerView.ShowSkillChallenge(fChallenge);
+        }
 
-		private void ExportHTML_Click(object sender, EventArgs e)
-		{
-			SaveFileDialog dlg = new SaveFileDialog();
-			dlg.FileName = fChallenge.Name;
-			dlg.Filter = Program.HTMLFilter;
+        private void ExportHTML_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = fChallenge.Name;
+            dlg.Filter = Program.HTMLFilter;
 
-			if (dlg.ShowDialog() == DialogResult.OK)
-				File.WriteAllText(dlg.FileName, Browser.DocumentText);
-		}
-	}
+            if (dlg.ShowDialog() == DialogResult.OK)
+                File.WriteAllText(dlg.FileName, Browser.DocumentText);
+        }
+    }
 }

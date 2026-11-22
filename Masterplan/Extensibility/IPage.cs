@@ -1,25 +1,34 @@
-﻿using System.Windows.Forms;
+﻿#nullable disable
+
+using System.Windows.Forms;
 
 namespace Masterplan.Extensibility
 {
-	/// <summary>
-	/// Interface for an add-in page.
-	/// </summary>
-	public interface IPage
-	{
-		/// <summary>
-		/// Gets the name of the page.
-		/// </summary>
-		string Name { get; }
+    /// <summary>
+    /// A tab supplied by an add-in (see <see cref="IAddIn.Pages"/> and
+    /// <see cref="IAddIn.QuickReferencePages"/>).
+    /// </summary>
+    public interface IPage
+    {
+        /// <summary>
+        /// The tab's title.
+        /// </summary>
+        string Name { get; }
 
-		/// <summary>
-		/// Gets the control to be shown on the new page.
-		/// </summary>
-		Control Control { get; }
+        /// <summary>
+        /// The control shown in the tab; Masterplan docks it to fill the tab.
+        /// </summary>
+        /// <remarks>
+        /// Create it once and always return the same instance: Masterplan adds it to its tab at
+        /// start-up, and a WinForms control can only be in one place at a time.
+        /// </remarks>
+        Control Control { get; }
 
-		/// <summary>
-		/// Sent by the application when the page should be updated.
-		/// </summary>
-		void UpdateView();
-	}
+        /// <summary>
+        /// Called whenever Masterplan refreshes its view (for example after a project is opened or
+        /// changed): update the control from the current project here. If it throws, the error is
+        /// logged and Masterplan carries on.
+        /// </summary>
+        void UpdateView();
+    }
 }

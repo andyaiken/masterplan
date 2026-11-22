@@ -1,13 +1,14 @@
-﻿using System;
-using System.Windows.Forms;
+﻿#nullable disable
 
 using Masterplan.Data;
+using System;
+using System.Windows.Forms;
 
 namespace Masterplan.UI
 {
     partial class MapLocationSelectForm : Form
     {
-		public MapLocationSelectForm(Guid map_id, Guid map_location_id)
+        public MapLocationSelectForm(Guid map_id, Guid map_location_id)
         {
             InitializeComponent();
 
@@ -22,7 +23,7 @@ namespace Masterplan.UI
             {
                 MapBox.SelectedItem = map;
 
-				MapLocation loc = map.FindLocation(map_location_id);
+                MapLocation loc = map.FindLocation(map_location_id);
                 if (loc != null)
                 {
                     LocationBox.SelectedItem = loc;
@@ -36,8 +37,8 @@ namespace Masterplan.UI
             {
                 MapBox.SelectedIndex = 0;
 
-				LocationBox.Items.Add("(no map)");
-				LocationBox.SelectedIndex = 0;
+                LocationBox.Items.Add("(no map)");
+                LocationBox.SelectedIndex = 0;
             }
         }
 
@@ -48,21 +49,21 @@ namespace Masterplan.UI
 
         void Application_Idle(object sender, EventArgs e)
         {
-			MapLbl.Enabled = (Session.Project.RegionalMaps.Count != 0);
-			MapBox.Enabled = (Session.Project.RegionalMaps.Count != 0);
+            MapLbl.Enabled = (Session.Project.RegionalMaps.Count != 0);
+            MapBox.Enabled = (Session.Project.RegionalMaps.Count != 0);
 
-			RegionalMap m = MapBox.SelectedItem as RegionalMap;
+            RegionalMap m = MapBox.SelectedItem as RegionalMap;
             bool locations = ((m != null) && (m.Locations.Count != 0));
 
             LocationLbl.Enabled = locations;
             LocationBox.Enabled = locations;
 
-			OKBtn.Enabled = (MapLocation != null);
+            OKBtn.Enabled = (MapLocation != null);
         }
 
-		public RegionalMap Map
+        public RegionalMap Map
         {
-			get { return MapBox.SelectedItem as RegionalMap; }
+            get { return MapBox.SelectedItem as RegionalMap; }
         }
 
         public MapLocation MapLocation
@@ -74,16 +75,16 @@ namespace Masterplan.UI
         {
             LocationBox.Items.Clear();
 
-			RegionalMap m = MapBox.SelectedItem as RegionalMap;
-			if (m != null)
-			{
-				LocationBox.Items.Add("(entire map)");
+            RegionalMap m = MapBox.SelectedItem as RegionalMap;
+            if (m != null)
+            {
+                LocationBox.Items.Add("(entire map)");
 
-				foreach (MapLocation loc in m.Locations)
-					LocationBox.Items.Add(loc);
+                foreach (MapLocation loc in m.Locations)
+                    LocationBox.Items.Add(loc);
 
-				LocationBox.SelectedIndex = 0;
-			}
+                LocationBox.SelectedIndex = 0;
+            }
 
             show_map();
         }
@@ -95,18 +96,18 @@ namespace Masterplan.UI
 
         void show_map()
         {
-			RegionalMap m = MapBox.SelectedItem as RegionalMap;
+            RegionalMap m = MapBox.SelectedItem as RegionalMap;
             if (m != null)
             {
                 MapPanel.Map = m;
 
                 MapLocation loc = LocationBox.SelectedItem as MapLocation;
-				MapPanel.HighlightedLocation = loc;
+                MapPanel.HighlightedLocation = loc;
             }
             else
             {
                 MapPanel.Map = null;
             }
         }
-	}
+    }
 }

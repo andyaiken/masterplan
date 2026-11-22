@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:svg="clr-namespace:Avalonia.Svg.Skia;assembly=Avalonia.Svg.Skia"
+        mc:Ignorable="d" Width="400" Height="300"
+        x:Class="MasterplanXP.MigrationTool.Views.SplashScreen"
+        Title="SplashScreen"
+        Icon="/Assets/MigrationTool.ico"
+        WindowStartupLocation="CenterScreen"
+        WindowDecorations="None"
+        Background="Transparent"
+        TransparencyLevelHint="Transparent">
+    <!-- WindowDecorations="None": no title bar or border, so only the rounded splash panel shows.
+         Avalonia 12 renamed it from "SystemDecorations" (now obsolete, warning AVLN5001). -->
+    <Panel>
+        <Border Background="#2D2D2D" CornerRadius="10" Padding="20">
+            <!-- Same imagery as the tool's icon (Assets/MigrationTool.ico): the Masterplan scroll
+                 with the blue "convert" badge (slightly smaller badge here than on the icon).
+                 Every Masterplan tool uses the scroll + its own function badge for icon and splash. -->
+            <Grid RowDefinitions="*, Auto, Auto">
+                <Image Source="/Assets/Images/MigrationTool-256.png" Width="190" Height="190"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Text="MasterplanXP Migration Tool"
+                           Foreground="White" HorizontalAlignment="Center"
+                           FontSize="18" FontWeight="Bold" Margin="0,8,0,0"/>
+                <TextBlock Grid.Row="2" Text="Converts old Masterplan libraries and projects"
+                           Foreground="#BEBEBE" HorizontalAlignment="Center"
+                           FontSize="12" Margin="0,4,0,0"/>
+            </Grid>
+        </Border>
+    </Panel>
+</Window>

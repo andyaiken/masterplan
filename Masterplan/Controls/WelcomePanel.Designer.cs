@@ -20,62 +20,65 @@
 			base.Dispose(disposing);
 		}
 
-		#region Component Designer generated code
+        #region Component Designer generated code
 
-		/// <summary> 
-		/// Required method for Designer support - do not modify 
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-			this.MenuBrowser = new System.Windows.Forms.WebBrowser();
-			this.TitlePanel = new Masterplan.Controls.TitlePanel();
-			this.SuspendLayout();
-			// 
-			// MenuBrowser
-			// 
-			this.MenuBrowser.Dock = System.Windows.Forms.DockStyle.Right;
-			this.MenuBrowser.IsWebBrowserContextMenuEnabled = false;
-			this.MenuBrowser.Location = new System.Drawing.Point(364, 0);
-			this.MenuBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-			this.MenuBrowser.Name = "MenuBrowser";
-			this.MenuBrowser.ScriptErrorsSuppressed = true;
-			this.MenuBrowser.Size = new System.Drawing.Size(345, 429);
-			this.MenuBrowser.TabIndex = 5;
-			this.MenuBrowser.WebBrowserShortcutsEnabled = false;
-			this.MenuBrowser.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.MenuBrowser_Navigating);
-			// 
-			// TitlePanel
-			// 
-			this.TitlePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.TitlePanel.Font = new System.Drawing.Font("Calibri", 11F);
-			this.TitlePanel.ForeColor = System.Drawing.Color.MidnightBlue;
-			this.TitlePanel.Location = new System.Drawing.Point(0, 0);
-			this.TitlePanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.TitlePanel.Mode = Masterplan.Controls.TitlePanel.TitlePanelMode.WelcomeScreen;
-			this.TitlePanel.Name = "TitlePanel";
-			this.TitlePanel.Size = new System.Drawing.Size(364, 429);
-			this.TitlePanel.TabIndex = 4;
-			this.TitlePanel.Title = "Masterplan";
-			this.TitlePanel.Zooming = false;
-			this.TitlePanel.FadeFinished += new System.EventHandler(this.TitlePanel_FadeFinished);
-			// 
-			// WelcomePanel
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.White;
-			this.Controls.Add(this.TitlePanel);
-			this.Controls.Add(this.MenuBrowser);
-			this.Name = "WelcomePanel";
-			this.Size = new System.Drawing.Size(709, 429);
-			this.ResumeLayout(false);
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            MenuBrowser = new System.Windows.Forms.WebBrowser();
+            TitlePanel = new TitlePanel();
+            SuspendLayout();
+            // 
+            // MenuBrowser
+            // 
+            MenuBrowser.Dock = System.Windows.Forms.DockStyle.Right;
+            MenuBrowser.IsWebBrowserContextMenuEnabled = false;
+            MenuBrowser.Location = new System.Drawing.Point(425, 0);
+            MenuBrowser.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MenuBrowser.MinimumSize = new System.Drawing.Size(23, 23);
+            MenuBrowser.Name = "MenuBrowser";
+            MenuBrowser.ScriptErrorsSuppressed = true;
+            MenuBrowser.Size = new System.Drawing.Size(402, 495);
+            MenuBrowser.TabIndex = 5;
+            MenuBrowser.WebBrowserShortcutsEnabled = false;
+            MenuBrowser.Navigating += MenuBrowser_Navigating;
+            // 
+            // TitlePanel
+            // 
+            TitlePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            TitlePanel.Font = new System.Drawing.Font("Calibri", 11F);
+            TitlePanel.ForeColor = System.Drawing.Color.MidnightBlue;
+            TitlePanel.Location = new System.Drawing.Point(0, 0);
+            TitlePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            TitlePanel.Mode = TitlePanel.TitlePanelMode.WelcomeScreen;
+            TitlePanel.Name = "TitlePanel";
+            TitlePanel.Size = new System.Drawing.Size(425, 495);
+            TitlePanel.TabIndex = 4;
+            TitlePanel.Title = "Masterplan - Transition";
+            TitlePanel.Zooming = false;
+            TitlePanel.FadeFinished += TitlePanel_FadeFinished;
+            TitlePanel.Load += TitlePanel_Load;
+            // 
+            // WelcomePanel
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.White;
+            Controls.Add(TitlePanel);
+            Controls.Add(MenuBrowser);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "WelcomePanel";
+            Size = new System.Drawing.Size(827, 495);
+            ResumeLayout(false);
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private TitlePanel TitlePanel;
+        private TitlePanel TitlePanel;
         private System.Windows.Forms.WebBrowser MenuBrowser;
 
 	}
