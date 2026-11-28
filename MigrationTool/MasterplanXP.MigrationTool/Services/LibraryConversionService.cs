@@ -402,6 +402,11 @@ namespace MasterplanXP.MigrationTool.Services
             else if (option is PlayerPower pow)
             {
                 dto.Type = "PlayerPower";
+                // "Type" above says what KIND of player option this is, so the power's own usage type
+                // (at-will, encounter, daily) has its own key. Not written until 14.1.1.0.
+                // At-will is what a power gets when the key is empty, so it is NOT written: such a
+                // power is saved exactly as older versions saved it.
+                dto.UsageType = (pow.Type == PlayerPowerType.AtWill) ? null : pow.Type.ToString();
                 dto.ReadAloud = pow.ReadAloud;
                 dto.Keywords = pow.Keywords;
                 dto.Action = pow.Action.ToString();
@@ -1283,7 +1288,7 @@ namespace MasterplanXP.MigrationTool.Services
         {
             if (dto == null) return null;
             var d = new EncounterDeck { ID = dto.ID, Name = dto.Name, Level = dto.Level };
-            if (dto.Cards != null) foreach (var c in dto.Cards) d.Cards.Add(new EncounterCard { CreatureID = c.CreatureID, TemplateIDs = c.TemplateIDs ?? new List<Guid>(), LevelAdjustment = c.LevelAdjustment, ThemeID = c.ThemeID });
+            if (dto.Cards != null) foreach (var c in dto.Cards) d.Cards.Add(new EncounterCard { CreatureID = c.CreatureID, TemplateIDs = c.TemplateIDs ?? new List<Guid>(), LevelAdjustment = c.LevelAdjustment, ThemeID = c.ThemeID, ThemeAttackPowerID = c.ThemeAttackPowerID, ThemeUtilityPowerID = c.ThemeUtilityPowerID, Drawn = c.Drawn });
             return d;
         }
 
@@ -1292,7 +1297,7 @@ namespace MasterplanXP.MigrationTool.Services
         {
             if (d == null) return null;
             var dto = new DeckDto { ID = d.ID, Name = d.Name, Level = d.Level };
-            foreach (var c in d.Cards) dto.Cards.Add(new EncounterCardDto { CreatureID = c.CreatureID, TemplateIDs = c.TemplateIDs, LevelAdjustment = c.LevelAdjustment, ThemeID = c.ThemeID, Title = c.Title, XP = c.XP });
+            foreach (var c in d.Cards) dto.Cards.Add(new EncounterCardDto { CreatureID = c.CreatureID, TemplateIDs = c.TemplateIDs, LevelAdjustment = c.LevelAdjustment, ThemeID = c.ThemeID, ThemeAttackPowerID = c.ThemeAttackPowerID, ThemeUtilityPowerID = c.ThemeUtilityPowerID, Drawn = c.Drawn, Title = c.Title, XP = c.XP });
             return dto;
         }
 
@@ -1477,12 +1482,52 @@ namespace MasterplanXP.MigrationTool.Services
             return dto;
         }
 
+        // ONE SKILL OF A SKILL CHALLENGE (for new developers): every value of a skill must appear in
+        // BOTH methods below. A value left out of either one is silently lost when a file is saved and
+        // loaded; that is how the type and the progress were lost until 14.1.1.0.
+
+        /// <summary>Turns a saved skill back into a skill.</summary>
+        private SkillChallengeData MapToSkillChallengeData(SkillChallengeDataDto s)
+        {
+            return new SkillChallengeData
+            {
+                SkillName = s.SkillName,
+                Difficulty = SafeParseEnum<Difficulty>(s.Difficulty, Difficulty.Moderate, "SkillChallenge Difficulty"),
+                DCModifier = s.DCModifier,
+                Details = s.Details,
+                Success = s.Success,
+                Failure = s.Failure,
+                // A file from before 14.1.1.0 has no type (null), which gives Primary.
+                Type = SafeParseEnum<SkillType>(s.Type, SkillType.Primary, "SkillChallenge SkillType"),
+                // The program keeps the two progress numbers together in one "result" object.
+                Results = new SkillChallengeResult { Successes = s.Successes, Fails = s.Fails }
+            };
+        }
+
+        /// <summary>Turns a skill into the form that is saved.</summary>
+        private SkillChallengeDataDto MapToSkillChallengeDataDto(SkillChallengeData s)
+        {
+            return new SkillChallengeDataDto
+            {
+                SkillName = s.SkillName,
+                Difficulty = s.Difficulty.ToString(),
+                DCModifier = s.DCModifier,
+                Details = s.Details,
+                Success = s.Success,
+                Failure = s.Failure,
+                Type = s.Type.ToString(),
+                // "?." and "??": a skill without a result object counts as no progress.
+                Successes = s.Results?.Successes ?? 0,
+                Fails = s.Results?.Fails ?? 0
+            };
+        }
+
         [return: NotNullIfNotNull(nameof(dto))]
         private SkillChallenge? MapToSkillChallenge(SkillChallengeDto? dto)
         {
             if (dto == null) return null;
             var sc = new SkillChallenge { ID = dto.ID, Name = dto.Name, Level = dto.Level, Complexity = dto.Complexity, Success = dto.Success, Failure = dto.Failure, Notes = dto.Notes, MapID = dto.MapID, MapAreaID = dto.MapAreaID };
-            if (dto.Skills != null) foreach (var s in dto.Skills) sc.Skills.Add(new SkillChallengeData { SkillName = s.SkillName, Difficulty = SafeParseEnum<Difficulty>(s.Difficulty, Difficulty.Moderate, "SkillChallenge Difficulty"), DCModifier = s.DCModifier, Details = s.Details, Success = s.Success, Failure = s.Failure });
+            if (dto.Skills != null) foreach (var s in dto.Skills) sc.Skills.Add(MapToSkillChallengeData(s));
             return sc;
         }
 
@@ -1491,7 +1536,7 @@ namespace MasterplanXP.MigrationTool.Services
         {
             if (sc == null) return null;
             var dto = new SkillChallengeDto { ID = sc.ID, Name = sc.Name, Level = sc.Level, Complexity = sc.Complexity, Success = sc.Success, Failure = sc.Failure, Notes = sc.Notes, MapID = sc.MapID, MapAreaID = sc.MapAreaID, Successes = sc.Successes, Info = sc.Info };
-            foreach (var s in sc.Skills) dto.Skills.Add(new SkillChallengeDataDto { SkillName = s.SkillName, Difficulty = s.Difficulty.ToString(), DCModifier = s.DCModifier, Details = s.Details, Success = s.Success, Failure = s.Failure });
+            foreach (var s in sc.Skills) dto.Skills.Add(MapToSkillChallengeDataDto(s));
             return dto;
         }
 

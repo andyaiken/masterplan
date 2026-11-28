@@ -18,14 +18,11 @@
   <ItemGroup>
 	<Folder Include="Assets\Images\" />
 	  <AvaloniaResource Include="Assets\**" />
-	  <AvaloniaXaml Remove="Logic\**" />
 	  <AvaloniaXaml Remove="ScratchFiles\**" />
-	  <Compile Remove="Logic\**" />
 	  <Compile Remove="ScratchFiles\**" />
-	  <EmbeddedResource Remove="Logic\**" />
 	  <EmbeddedResource Remove="ScratchFiles\**" />
-	  <None Remove="Logic\**" />
 	  <None Remove="ScratchFiles\**" />
+	<Folder Include="Logic\" />
   </ItemGroup>
 
   <ItemGroup>

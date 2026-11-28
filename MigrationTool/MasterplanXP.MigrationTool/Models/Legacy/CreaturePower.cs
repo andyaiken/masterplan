@@ -299,7 +299,8 @@ namespace MasterplanXP.MigrationTool.Models.Legacy
         {
             get
             {
-                return AI.ExtractDamage(fDetails);
+                // Saving reads this, so missing details must not fail here.
+                return AI.ExtractDamage(fDetails ?? "");
             }
         }
 
@@ -775,17 +776,16 @@ namespace MasterplanXP.MigrationTool.Models.Legacy
         /// </summary>
         public void ExtractAttackDetails()
         {
-            // If the attack field is not empty or fDetails does not have "vs" - do nothing
-            if (fAttack != null || !fDetails.Contains("vs"))
+            // This only ever ADDS an attack to a power that has none. It must never change the
+            // details: they are the user's text. (Until 14.1.1.4 it trimmed the spaces and line
+            // breaks around them.)
+
+            // If there already is an attack, or the details are missing or have no "vs" - do nothing
+            if ((fAttack != null) || (fDetails == null) || !fDetails.Contains("vs"))
                 return;
-            // set originalDetails to hold the original before modifications and trim
-            string originalDetails = fDetails.Trim();
 
-            // split the details using ";" as a delimiter
+            // split the details using ";" as a delimiter (a working copy: fDetails stays as it is)
             string[] sections = fDetails.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
-
-            //clear fDetails for manipulation
-            fDetails = "";
 
             // parse through each section to find the Attack Bonus and the target Defence
             foreach (string section in sections)
@@ -841,9 +841,6 @@ namespace MasterplanXP.MigrationTool.Models.Legacy
                 }
 
             }
-            // This is not needed since we do 
-            // not modify the fDetails field
-            fDetails = originalDetails;
         }
     }
 

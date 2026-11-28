@@ -138,16 +138,18 @@ namespace Masterplan.Tools
         {
             if (dto == null) return null;
 
-            var b = new ClipboardBundle
-            {
-                PlotPoint = (dto.PlotPoint != null) ? MapToPlotPoint(dto.PlotPoint) : null,
-                Element = (dto.Element != null) ? MapToElement(dto.Element) : null
-            };
+            var b = new ClipboardBundle();
+            // The creatures that travel with the copy are read first, so that the copied encounter's
+            // cards can find them (see "Creatures stored in the data being loaded").
             if (dto.Library != null) b.Library = MapToLibrary(dto.Library) ?? b.Library;
             if (dto.Maps != null) foreach (var m in dto.Maps) { var map = MapToMap(m); if (map != null) b.Maps.Add(map); }
             if (dto.RegionalMaps != null) foreach (var rm in dto.RegionalMaps) { var map = MapToRegionalMap(rm); if (map != null) b.RegionalMaps.Add(map); }
             if (dto.CustomCreatures != null) foreach (var cc in dto.CustomCreatures) { var c = MapToCustomCreature(cc); if (c != null) b.CustomCreatures.Add(c); }
             if (dto.NPCs != null) foreach (var n in dto.NPCs) { var npc = MapToNPC(n); if (npc != null) b.NPCs.Add(npc); }
+
+            using var look_in = LookIn(b.Library, b.CustomCreatures, b.NPCs);
+            b.PlotPoint = (dto.PlotPoint != null) ? MapToPlotPoint(dto.PlotPoint) : null;
+            b.Element = (dto.Element != null) ? MapToElement(dto.Element) : null;
             return b;
         }
 
@@ -339,6 +341,86 @@ namespace Masterplan.Tools
 
         #endregion
 
+        #region Creatures stored in the data being loaded
+
+        // WHY THIS EXISTS (for new developers): an encounter card is saved as its creature's ID plus
+        // the card's own changes (level adjustment, templates, theme). That creature is often stored
+        // in the SAME data as the card: a custom creature, an NPC, or a copy in the project's own
+        // library (see MainForm.save_project). But Session only knows the CURRENT project, and while
+        // a project is loading, the current one is still the previous project (or none). So until
+        // 14.1.1.0 such creatures were "not found" and the card was replaced by a stand-in that lost
+        // the level adjustment and templates and got a higher HP and the theme again at every save.
+        //
+        // HOW IT WORKS: before any card is read, the mapping code reads the stored creatures and says
+        // where they are with LookIn(...). ConnectCard asks there as well as in Session.
+        //
+        // Example flow (MapToProject): read Library, CustomCreatures, NPCs -> LookIn(them) -> read
+        // decks, plot and saved combats -> Dispose (the end of "using") restores what was there before.
+
+        /// <summary>
+        /// Looks up a creature stored in the data being loaded; null when nothing is being loaded.
+        /// [ThreadStatic] gives every thread its own value, so two loads cannot disturb each other.
+        /// </summary>
+        [ThreadStatic] private static Func<Guid, ICreature?>? fStoredCreatures;
+
+        /// <summary>
+        /// Makes the given creatures findable until the returned object is disposed.
+        /// Use it as: <c>using var look_in = LookIn(...);</c>
+        /// </summary>
+        private static StoredCreatureScope LookIn(Library? library, List<CustomCreature> custom_creatures, List<NPC> npcs)
+        {
+            var scope = new StoredCreatureScope(fStoredCreatures);
+
+            // The same order in which Session looks through the current project.
+            fStoredCreatures = id => (ICreature?)library?.FindCreature(id)
+                                     ?? (ICreature?)custom_creatures.FirstOrDefault(c => c.ID == id)
+                                     ?? npcs.FirstOrDefault(n => n.ID == id);
+            return scope;
+        }
+
+        /// <summary>Puts the earlier lookup back when a "using" block ends, also after an error.</summary>
+        private readonly struct StoredCreatureScope : IDisposable
+        {
+            private readonly Func<Guid, ICreature?>? fPrevious;
+
+            public StoredCreatureScope(Func<Guid, ICreature?>? previous) { fPrevious = previous; }
+
+            public void Dispose() { fStoredCreatures = fPrevious; }
+        }
+
+        /// <summary>
+        /// True if a card for this creature can be rebuilt from the creature itself: it is in an
+        /// installed library, in the data being loaded, or in the running program.
+        /// </summary>
+        private static bool CanFindCreature(Guid id)
+        {
+            if (id == Guid.Empty) return false;
+            return fStoredCreatures?.Invoke(id) != null || Session.FindCreature(id, SearchType.Global) != null;
+        }
+
+        /// <summary>Gives a loaded card its creature ID.</summary>
+        private static void ConnectCard(EncounterCard card, Guid creature_id)
+        {
+            bool installed = Session.FindCreature(creature_id, SearchType.External) != null;
+
+            ICreature? stored = installed ? null : fStoredCreatures?.Invoke(creature_id);
+
+            if (stored != null)
+            {
+                // The creature belongs to the data being loaded. The card must not look it up now:
+                // Session might still return the creature of the previously open project. Later it
+                // looks the creature up each time, with this object as the fallback.
+                card.ConnectToLoadedCreature(creature_id, stored);
+            }
+            else
+            {
+                // As before: the property looks the creature up and the card remembers it.
+                card.CreatureID = creature_id;
+            }
+        }
+
+        #endregion
+
         #region Project Mapping
         [return: NotNullIfNotNull(nameof(dto))]
         public Project? MapToProject(ProjectDto? dto)
@@ -363,6 +445,14 @@ namespace Masterplan.Tools
                 LogSystem.Trace("[Conversion] Project missing Party data. Using defaults.");
             }
 
+            // ORDER MATTERS: the creatures stored in this project must be read before anything that
+            // holds encounter cards (decks, plot, saved combats). See "Creatures stored in the data
+            // being loaded" above.
+            if (dto.Library != null) p.Library = MapToLibrary(dto.Library);
+            if (dto.CustomCreatures != null) foreach (var cc in dto.CustomCreatures) { var mapped = MapToCustomCreature(cc); if (mapped != null) p.CustomCreatures.Add(mapped); else LogSystem.Trace("[Conversion] Null custom creature skipped."); }
+            if (dto.NPCs != null) foreach (var npc in dto.NPCs) { var mapped = MapToNPC(npc); if (mapped != null) p.NPCs.Add(mapped); else LogSystem.Trace("[Conversion] Null NPC skipped."); }
+            using var look_in = LookIn(p.Library, p.CustomCreatures, p.NPCs);
+
             if (dto.Heroes != null) foreach (var h in dto.Heroes) { var mapped = MapToHero(h); if (mapped != null) p.Heroes.Add(mapped); else LogSystem.Trace("[Conversion] Null hero skipped."); }
             if (dto.InactiveHeroes != null) foreach (var h in dto.InactiveHeroes) { var mapped = MapToHero(h); if (mapped != null) p.InactiveHeroes.Add(mapped); else LogSystem.Trace("[Conversion] Null inactive hero skipped."); }
             if (dto.Plot != null) p.Plot = MapToPlot(dto.Plot);
@@ -371,14 +461,11 @@ namespace Masterplan.Tools
             if (dto.Maps != null) foreach (var m in dto.Maps) { var mapped = MapToMap(m); if (mapped != null) p.Maps.Add(mapped); else LogSystem.Trace("[Conversion] Null map skipped."); }
             if (dto.RegionalMaps != null) foreach (var rm in dto.RegionalMaps) { var mapped = MapToRegionalMap(rm); if (mapped != null) p.RegionalMaps.Add(mapped); else LogSystem.Trace("[Conversion] Null regional map skipped."); }
             if (dto.Decks != null) foreach (var d in dto.Decks) { var mapped = MapToDeck(d); if (mapped != null) p.Decks.Add(mapped); else LogSystem.Trace("[Conversion] Null deck skipped."); }
-            if (dto.NPCs != null) foreach (var npc in dto.NPCs) { var mapped = MapToNPC(npc); if (mapped != null) p.NPCs.Add(mapped); else LogSystem.Trace("[Conversion] Null NPC skipped."); }
-            if (dto.CustomCreatures != null) foreach (var cc in dto.CustomCreatures) { var mapped = MapToCustomCreature(cc); if (mapped != null) p.CustomCreatures.Add(mapped); else LogSystem.Trace("[Conversion] Null custom creature skipped."); }
             if (dto.Calendars != null) foreach (var c in dto.Calendars) { var mapped = MapToCalendar(c); if (mapped != null) p.Calendars.Add(mapped); else LogSystem.Trace("[Conversion] Null calendar skipped."); }
             if (dto.Attachments != null) foreach (var a in dto.Attachments) if (a != null) p.Attachments.Add(MapToAttachment(a));
             if (dto.Backgrounds != null) foreach (var b in dto.Backgrounds) if (b != null) p.Backgrounds.Add(MapToBackground(b));
             if (dto.TreasureParcels != null) foreach (var tp in dto.TreasureParcels) if (tp != null) p.TreasureParcels.Add(MapToParcel(tp));
             if (dto.CampaignSettings != null) p.CampaignSettings = MapToCampaignSettings(dto.CampaignSettings);
-            if (dto.Library != null) p.Library = MapToLibrary(dto.Library);
             if (dto.SavedCombats != null) foreach (var sc in dto.SavedCombats) { var mapped = MapToCombatState(sc, p); if (mapped != null) p.SavedCombats.Add(mapped); else LogSystem.Trace("[Conversion] Null saved combat skipped."); }
             if (dto.AddInData != null) foreach (var kv in dto.AddInData) p.AddInData[kv.Key] = kv.Value;
 
@@ -648,6 +735,11 @@ namespace Masterplan.Tools
             else if (option is PlayerPower pow)
             {
                 dto.Type = "PlayerPower";
+                // "Type" above says what KIND of player option this is, so the power's own usage type
+                // (at-will, encounter, daily) has its own key. Not written until 14.1.1.0.
+                // At-will is what a power gets when the key is empty, so it is NOT written: such a
+                // power is saved exactly as older versions saved it.
+                dto.UsageType = (pow.Type == PlayerPowerType.AtWill) ? null : pow.Type.ToString();
                 dto.ReadAloud = pow.ReadAloud;
                 dto.Keywords = pow.Keywords;
                 dto.Action = pow.Action.ToString();
@@ -1411,28 +1503,60 @@ namespace Masterplan.Tools
             var slot = new EncounterSlot { ID = dto.ID, Type = SafeParseEnum<EncounterSlotType>(dto.Type, default(EncounterSlotType)) };
             if (dto.Card != null)
             {
-                ICreature? libCreature = (dto.Card.CreatureID != Guid.Empty) ? Session.FindCreature(dto.Card.CreatureID, SearchType.Global) : null;
-                if (libCreature != null)
+                if (CanFindCreature(dto.Card.CreatureID))
                 {
-                    slot.Card = new EncounterCard { CreatureID = dto.Card.CreatureID, TemplateIDs = dto.Card.TemplateIDs ?? new List<Guid>(), LevelAdjustment = dto.Card.LevelAdjustment, ThemeID = dto.Card.ThemeID, ThemeAttackPowerID = dto.Card.ThemeAttackPowerID, ThemeUtilityPowerID = dto.Card.ThemeUtilityPowerID, Drawn = dto.Card.Drawn };
+                    slot.Card = new EncounterCard { TemplateIDs = dto.Card.TemplateIDs ?? new List<Guid>(), LevelAdjustment = dto.Card.LevelAdjustment, ThemeID = dto.Card.ThemeID, ThemeAttackPowerID = dto.Card.ThemeAttackPowerID, ThemeUtilityPowerID = dto.Card.ThemeUtilityPowerID, Drawn = dto.Card.Drawn };
+                    ConnectCard(slot.Card, dto.Card.CreatureID);
                 }
                 else
                 {
-                    var ghost = new CustomCreature
-                    {
-                        ID = dto.Card.CreatureID, Name = dto.Card.Title ?? "Unknown Creature", Level = dto.Card.Level, HP = dto.Card.HP, AC = dto.Card.AC, Fortitude = dto.Card.Fortitude, Reflex = dto.Card.Reflex, Will = dto.Card.Will, Initiative = dto.Card.Initiative,
-                        Senses = dto.Card.Senses ?? "", Movement = dto.Card.Movement ?? "", Regeneration = MapToRegeneration(dto.Card.Regeneration), Resist = dto.Card.Resist ?? "", Vulnerable = dto.Card.Vulnerable ?? "", Immune = dto.Card.Immune ?? "", Tactics = dto.Card.Tactics ?? "", Skills = dto.Card.Skills ?? "", Equipment = dto.Card.Equipment ?? "", Category = dto.Card.Category ?? "", Details = dto.Card.Info ?? ""
-                    };
-                    string roleType = dto.Card.Roles != null && dto.Card.Roles.Count > 0 ? dto.Card.Roles[0] : "Artillery";
-                    ghost.Role = MapToRole(new RoleDto { Type = roleType, Flag = dto.Card.Flag ?? "Standard", Leader = dto.Card.Leader });
-                    if (dto.Card.Auras != null) foreach (var a in dto.Card.Auras) ghost.Auras.Add(MapToAura(a));
-                    if (dto.Card.CreaturePowers != null) foreach (var p in dto.Card.CreaturePowers) ghost.CreaturePowers.Add(MapToPower(p));
-                    if (dto.Card.DamageModifiers != null) foreach (var dm in dto.Card.DamageModifiers) ghost.DamageModifiers.Add(MapToDamageModifier(dm));
-                    slot.Card = new EncounterCard(ghost) { ThemeID = dto.Card.ThemeID, ThemeAttackPowerID = dto.Card.ThemeAttackPowerID, ThemeUtilityPowerID = dto.Card.ThemeUtilityPowerID, Drawn = dto.Card.Drawn };
+                    // The creature is nowhere: keep the card's settings and show the saved values.
+                    slot.Card = new EncounterCard { TemplateIDs = dto.Card.TemplateIDs ?? new List<Guid>(), LevelAdjustment = dto.Card.LevelAdjustment, ThemeID = dto.Card.ThemeID, ThemeAttackPowerID = dto.Card.ThemeAttackPowerID, ThemeUtilityPowerID = dto.Card.ThemeUtilityPowerID, Drawn = dto.Card.Drawn };
+                    slot.Card.KeepSavedValues(dto.Card.CreatureID, MapToSavedCardValues(dto.Card));
                 }
             }
             if (dto.CombatData != null) foreach (var cd in dto.CombatData) slot.CombatData.Add(MapToCombatData(cd));
             return slot;
+        }
+
+        /// <summary>
+        /// The copy of a card's results that a file keeps, for a card whose creature is missing.
+        /// The other direction is MapToEncounterSlotDto below, which saves what the card's properties
+        /// return; for such a card these are exactly these values.
+        /// </summary>
+        private SavedCardValues MapToSavedCardValues(EncounterCardDto dto)
+        {
+            // "??" gives an empty text or the default where the file holds nothing.
+            var values = new SavedCardValues
+            {
+                Title = dto.Title ?? "Unknown Creature",
+                Info = dto.Info ?? "",
+                XP = dto.XP,
+                Level = dto.Level,
+                Flag = SafeParseEnum<RoleFlag>(dto.Flag, RoleFlag.Standard, "Card RoleFlag"),
+                Leader = dto.Leader,
+                Category = SafeParseEnum<CardCategory>(dto.Category, CardCategory.SoldierBrute, "Card Category"),
+                HP = dto.HP,
+                AC = dto.AC,
+                Fortitude = dto.Fortitude,
+                Reflex = dto.Reflex,
+                Will = dto.Will,
+                Initiative = dto.Initiative,
+                Regeneration = MapToRegeneration(dto.Regeneration),
+                Senses = dto.Senses ?? "",
+                Movement = dto.Movement ?? "",
+                Equipment = dto.Equipment ?? "",
+                Skills = dto.Skills ?? "",
+                Resist = dto.Resist ?? "",
+                Vulnerable = dto.Vulnerable ?? "",
+                Immune = dto.Immune ?? "",
+                Tactics = dto.Tactics ?? ""
+            };
+            if (dto.Roles != null) foreach (var r in dto.Roles) values.Roles.Add(SafeParseEnum<RoleType>(r, RoleType.Artillery, "Card RoleType"));
+            if (dto.Auras != null) foreach (var a in dto.Auras) values.Auras.Add(MapToAura(a));
+            if (dto.CreaturePowers != null) foreach (var p in dto.CreaturePowers) values.CreaturePowers.Add(MapToPower(p));
+            if (dto.DamageModifiers != null) foreach (var dm in dto.DamageModifiers) values.DamageModifiers.Add(MapToDamageModifier(dm));
+            return values;
         }
 
         [return: NotNullIfNotNull(nameof(slot))]
@@ -1572,7 +1696,12 @@ namespace Masterplan.Tools
         {
             if (dto == null) return null;
             var d = new EncounterDeck { ID = dto.ID, Name = dto.Name, Level = dto.Level };
-            if (dto.Cards != null) foreach (var c in dto.Cards) d.Cards.Add(new EncounterCard { CreatureID = c.CreatureID, TemplateIDs = c.TemplateIDs ?? new List<Guid>(), LevelAdjustment = c.LevelAdjustment, ThemeID = c.ThemeID });
+            if (dto.Cards != null) foreach (var c in dto.Cards)
+            {
+                var card = new EncounterCard { TemplateIDs = c.TemplateIDs ?? new List<Guid>(), LevelAdjustment = c.LevelAdjustment, ThemeID = c.ThemeID, ThemeAttackPowerID = c.ThemeAttackPowerID, ThemeUtilityPowerID = c.ThemeUtilityPowerID, Drawn = c.Drawn };
+                ConnectCard(card, c.CreatureID);
+                d.Cards.Add(card);
+            }
             return d;
         }
 
@@ -1581,7 +1710,7 @@ namespace Masterplan.Tools
         {
             if (d == null) return null;
             var dto = new DeckDto { ID = d.ID, Name = d.Name, Level = d.Level };
-            foreach (var c in d.Cards) dto.Cards.Add(new EncounterCardDto { CreatureID = c.CreatureID, TemplateIDs = c.TemplateIDs, LevelAdjustment = c.LevelAdjustment, ThemeID = c.ThemeID, Title = c.Title, XP = c.XP });
+            foreach (var c in d.Cards) dto.Cards.Add(new EncounterCardDto { CreatureID = c.CreatureID, TemplateIDs = c.TemplateIDs, LevelAdjustment = c.LevelAdjustment, ThemeID = c.ThemeID, ThemeAttackPowerID = c.ThemeAttackPowerID, ThemeUtilityPowerID = c.ThemeUtilityPowerID, Drawn = c.Drawn, Title = c.Title, XP = c.XP });
             return dto;
         }
 
@@ -1766,12 +1895,52 @@ namespace Masterplan.Tools
             return dto;
         }
 
+        // ONE SKILL OF A SKILL CHALLENGE (for new developers): every value of a skill must appear in
+        // BOTH methods below. A value left out of either one is silently lost when a file is saved and
+        // loaded; that is how the type and the progress were lost until 14.1.1.0.
+
+        /// <summary>Turns a saved skill back into a skill.</summary>
+        private SkillChallengeData MapToSkillChallengeData(SkillChallengeDataDto s)
+        {
+            return new SkillChallengeData
+            {
+                SkillName = s.SkillName,
+                Difficulty = SafeParseEnum<Difficulty>(s.Difficulty, Difficulty.Moderate, "SkillChallenge Difficulty"),
+                DCModifier = s.DCModifier,
+                Details = s.Details,
+                Success = s.Success,
+                Failure = s.Failure,
+                // A file from before 14.1.1.0 has no type (null), which gives Primary.
+                Type = SafeParseEnum<SkillType>(s.Type, SkillType.Primary, "SkillChallenge SkillType"),
+                // The program keeps the two progress numbers together in one "result" object.
+                Results = new SkillChallengeResult { Successes = s.Successes, Fails = s.Fails }
+            };
+        }
+
+        /// <summary>Turns a skill into the form that is saved.</summary>
+        private SkillChallengeDataDto MapToSkillChallengeDataDto(SkillChallengeData s)
+        {
+            return new SkillChallengeDataDto
+            {
+                SkillName = s.SkillName,
+                Difficulty = s.Difficulty.ToString(),
+                DCModifier = s.DCModifier,
+                Details = s.Details,
+                Success = s.Success,
+                Failure = s.Failure,
+                Type = s.Type.ToString(),
+                // "?." and "??": a skill without a result object counts as no progress.
+                Successes = s.Results?.Successes ?? 0,
+                Fails = s.Results?.Fails ?? 0
+            };
+        }
+
         [return: NotNullIfNotNull(nameof(dto))]
         private SkillChallenge? MapToSkillChallenge(SkillChallengeDto? dto)
         {
             if (dto == null) return null;
             var sc = new SkillChallenge { ID = dto.ID, Name = dto.Name, Level = dto.Level, Complexity = dto.Complexity, Success = dto.Success, Failure = dto.Failure, Notes = dto.Notes, MapID = dto.MapID, MapAreaID = dto.MapAreaID };
-            if (dto.Skills != null) foreach (var s in dto.Skills) sc.Skills.Add(new SkillChallengeData { SkillName = s.SkillName, Difficulty = SafeParseEnum<Difficulty>(s.Difficulty, Difficulty.Moderate, "SkillChallenge Difficulty"), DCModifier = s.DCModifier, Details = s.Details, Success = s.Success, Failure = s.Failure });
+            if (dto.Skills != null) foreach (var s in dto.Skills) sc.Skills.Add(MapToSkillChallengeData(s));
             return sc;
         }
 
@@ -1780,7 +1949,7 @@ namespace Masterplan.Tools
         {
             if (sc == null) return null;
             var dto = new SkillChallengeDto { ID = sc.ID, Name = sc.Name, Level = sc.Level, Complexity = sc.Complexity, Success = sc.Success, Failure = sc.Failure, Notes = sc.Notes, MapID = sc.MapID, MapAreaID = sc.MapAreaID, Successes = sc.Successes, Info = sc.Info };
-            foreach (var s in sc.Skills) dto.Skills.Add(new SkillChallengeDataDto { SkillName = s.SkillName, Difficulty = s.Difficulty.ToString(), DCModifier = s.DCModifier, Details = s.Details, Success = s.Success, Failure = s.Failure });
+            foreach (var s in sc.Skills) dto.Skills.Add(MapToSkillChallengeDataDto(s));
             return dto;
         }
 
@@ -1890,7 +2059,9 @@ namespace Masterplan.Tools
         private CreaturePower? MapToPower(CreaturePowerDto? dto)
         {
             if (dto == null) return null;
-            var p = new CreaturePower { ID = dto.ID, Name = dto.Name, Keywords = dto.Keywords, Condition = dto.Condition, Range = dto.Range, Description = dto.Description, Details = dto.Details };
+            // A range or details value missing from the file reads as blank: the load steps, the stat
+            // blocks and the power window all expect text.
+            var p = new CreaturePower { ID = dto.ID, Name = dto.Name, Keywords = dto.Keywords, Condition = dto.Condition, Range = dto.Range ?? "", Description = dto.Description, Details = dto.Details ?? "" };
             if (dto.Action != null) p.Action = new PowerAction { Action = SafeParseEnum<ActionType>(dto.Action.Action, ActionType.Standard, "PowerAction Action"), Trigger = dto.Action.Trigger, SustainAction = SafeParseEnum<ActionType>(dto.Action.SustainAction, ActionType.Standard, "PowerAction SustainAction"), Use = SafeParseEnum<PowerUseType>(dto.Action.Use, PowerUseType.AtWill, "PowerAction Use"), Recharge = dto.Action.Recharge };
             if (dto.Attack != null) p.Attack = new PowerAttack { Bonus = dto.Attack.Bonus, Defence = SafeParseEnum<DefenceType>(dto.Attack.Defence, DefenceType.AC, "PowerAttack Defence") };
             return p;
