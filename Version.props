@@ -2,7 +2,7 @@
   <!--
     THE ONE VERSION NUMBER for Masterplan (M14) and the MasterplanXP Migration Tool.
 
-    Both projects import this file (Masterplan141\Masterplan.csproj and
+    Both projects import this file (Masterplan\Masterplan.csproj and
     MigrationTool\MasterplanXP.MigrationTool\MasterplanXP.MigrationTool.csproj), so they always carry
     the same version, and Release\Build-Release.ps1 reads it from here for the zip names.
     Never put <Version>, <AssemblyVersion> or <FileVersion> in either .csproj again: change it HERE.
@@ -19,8 +19,8 @@
     The migration tool shows this version in its window title and in migration_log.txt.
   -->
   <PropertyGroup>
-    <Version>14.1.0.18</Version>
-    <AssemblyVersion>14.1.0.18</AssemblyVersion>
-    <FileVersion>14.1.0.18</FileVersion>
+    <Version>14.1.1.4</Version>
+    <AssemblyVersion>14.1.1.4</AssemblyVersion>
+    <FileVersion>14.1.1.4</FileVersion>
   </PropertyGroup>
 </Project>

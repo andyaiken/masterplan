@@ -697,7 +697,6 @@ namespace MasterplanXP.MigrationTool.Models.Legacy
                 if (npc.CreaturePowers == null)
                     npc.CreaturePowers = new List<CreaturePower>();
 
-                CreatureHelper.UpdateRegen(npc);
                 foreach (CreaturePower power in npc.CreaturePowers)
                     CreatureHelper.UpdatePowerRange(npc, power);
 
@@ -730,7 +729,6 @@ namespace MasterplanXP.MigrationTool.Models.Legacy
                 if (cc.DamageModifiers == null)
                     cc.DamageModifiers = new List<DamageModifier>();
 
-                CreatureHelper.UpdateRegen(cc);
                 foreach (CreaturePower power in cc.CreaturePowers)
                     CreatureHelper.UpdatePowerRange(cc, power);
 

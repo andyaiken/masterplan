@@ -13,14 +13,18 @@ namespace Masterplan.Tools
      * CreatureHelper is a utility class containing static methods for manipulating Creature data.
      * It handles three main types of tasks:
      * 1. Data Management: Copying fields between creature instances.
-     * 2. Statblock Parsing: Extracting structured data (like Regeneration or Range) from raw text fields.
+     * 2. Statblock Parsing: Extracting structured data (like a power's Range) from raw text fields.
+     *    An aura is NEVER turned into regeneration, whatever its name. Until 14.1.1.3 loading a file
+     *    did that to an aura named "Regeneration" or "Regen": it replaced the creature's own
+     *    regeneration, removed the aura and its keywords, and could read the aura's radius as the
+     *    regeneration value. User data stays as it was saved; do not bring the conversion back.
      * 3. Math & Scaling: Adjusting a creature's level and automatically scaling its stats (HP, Defences, Attack Bonuses) 
      *    according to D&D 4th Edition rules.
      * 
      * THINNING PROCESS NOTES (MasterplanXP Migration):
      * 1. Scaling Logic (AdjustCreatureLevel): This contains pure D&D 4e business rules. It should be moved 
      *    to 'MasterplanXP.Core' so it can be reused by both the UI and any CLI tools without legacy dependencies.
-     * 2. Parsing Logic (UpdatePowerRange, ConvertAura, ParseSkills): Legacy Masterplan relies heavily on 
+     * 2. Parsing Logic (UpdatePowerRange, ParseSkills): Legacy Masterplan relies heavily on 
      *    string parsing of "Details" fields. In MasterplanXP, we should prefer structured data at the DTO level, 
      *    but these methods should be moved to a 'StatblockParsingService' in 'MasterplanXP.Infrastructure'.
      * 3. CopyFields: This manual mapping is fragile. In the new architecture, we use DTOs and the Bridge project 
@@ -191,28 +195,6 @@ namespace Masterplan.Tools
         }
 
         /// <summary>
-        /// Searches for "Regeneration" in a creature's auras and promotes it to the structured Regeneration property.
-        /// THINNING NOTE: This is parsing logic. Move to a parsing service.
-        /// </summary>
-        /// <param name="c">The creature to update.</param>
-        public static void UpdateRegen(ICreature c)
-        {
-            Aura regen_aura = FindAura(c, "Regeneration");
-            if (regen_aura == null)
-                regen_aura = FindAura(c, "Regen");
-
-            if (regen_aura != null)
-            {
-                Regeneration regen = ConvertAura(regen_aura.Details);
-                if (regen != null)
-                {
-                    c.Regeneration = regen;
-                    c.Auras.Remove(regen_aura);
-                }
-            }
-        }
-
-        /// <summary>
         /// Attempts to parse and update a power's Range field based on keywords in its Details text.
         /// THINNING NOTE: Move to a 'StatblockParsingService'.
         /// </summary>
@@ -220,26 +202,27 @@ namespace Masterplan.Tools
         /// <param name="power">The power to analyze.</param>
         public static void UpdatePowerRange(ICreature c, CreaturePower power)
         {
-            // DB Cleanup - change any existing entry in the range field from Self to Personal
-            if (power.Range.Contains("Self") || power.Range.Contains("self"))
+            // A missing range counts as a blank one.
+            if (power.Range == null)
+                power.Range = "";
+
+            // A range that is ONLY the word "Self" (any capitals, spaces around it ignored) is
+            // written as "Personal". The WHOLE range must be that word: any other text, such as
+            // "Close burst 2 (Self and allies)", stays exactly as stored. Until 14.1.1.4 such a
+            // range was replaced by "Personal" if it had "Self" and no lowercase "self".
+            if (power.Range.Trim().Equals("Self", StringComparison.OrdinalIgnoreCase))
             {
-                if (power.Range.Contains("self"))
-                {
-                    if (power.Range == "self")
-                    { power.Range = "Personal"; }
-                    return;
-                }
                 power.Range = "Personal";
                 return;
             }
 
             // If the range field is not empty - do nothing
-            if ((power.Range != null) && (power.Range != ""))
+            if (power.Range != "")
                 return;
 
             // Malformed details will impact parsing
             // in that case send back - do nothing
-            if (!power.Details.Contains(";"))
+            if ((power.Details == null) || !power.Details.Contains(";"))
                 return;
 
             // Start the parsing process to derive the
@@ -252,9 +235,6 @@ namespace Masterplan.Tools
             ranges.Add("area burst");
             ranges.Add("melee");
             ranges.Add("ranged");
-
-            // setup a hold variable to keep the original power.Details field
-            string originalDetails = power.Details;
 
             // split the details on the ";" delimiter for parsing
             string[] clauses = power.Details.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
@@ -270,89 +250,14 @@ namespace Masterplan.Tools
                             int endIndex = clause.Length;
                             power.Range = clause.Substring(startIndex, (endIndex - startIndex));
 
-                            // if the details call out a basic attack, update the power to make it a basic attack
-                            // exclude anything that is not an At Will attack							
-                            bool is_basic = power.Range.IndexOf("basic", StringComparison.OrdinalIgnoreCase) >= 0;
-                            if (is_basic && (power.Action.Use == PowerUseType.AtWill || power.Action.Use == PowerUseType.Basic))
-                            {
-                                power.Action.Use = PowerUseType.Basic;
-                            }
-
+                            // Only the range is filled in. The power's usage is never changed: until
+                            // 14.1.1.4 the word "basic" here turned an at-will power into a basic attack.
                             break;
                         }
                         catch { } // Error Handling
 
                     }
                 }
-            }
-            // Retain the details for verification
-            // string parsing can be inaccurate mostly due
-            // to non-standard entries in details field
-            power.Details = originalDetails;
-        }
-
-        /// <summary>
-        /// Finds an aura by its case-sensitive name.
-        /// </summary>
-        /// <param name="c">The creature.</param>
-        /// <param name="name">Aura name.</param>
-        /// <returns>The Aura if found, otherwise null.</returns>
-        public static Aura FindAura(ICreature c, string name)
-        {
-            foreach (Aura a in c.Auras)
-            {
-                if (a.Name == name)
-                    return a;
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Parses a string like "5 (when bloodied)" into a Regeneration object.
-        /// THINNING NOTE: Move to parsing service.
-        /// </summary>
-        /// <param name="aura_details">The raw detail string.</param>
-        /// <returns>A structured Regeneration object.</returns>
-        public static Regeneration ConvertAura(string aura_details)
-        {
-            aura_details = aura_details.Trim();
-
-            bool parsing_value = true;
-            string val_str = "";
-            string details = "";
-
-            foreach (char ch in aura_details)
-            {
-                if (!char.IsDigit(ch))
-                    parsing_value = false;
-
-                if (parsing_value)
-                    val_str += ch;
-                else
-                    details += ch;
-            }
-
-            details = details.Trim();
-            if (details.StartsWith("(") && details.EndsWith(")"))
-            {
-                details = details.Substring(1);
-                details = details.Substring(0, details.Length - 1);
-
-                details.Trim();
-            }
-
-            try
-            {
-                int value = (val_str != "") ? int.Parse(val_str) : 0;
-
-                return new Regeneration(value, details);
-            }
-            catch (Exception ex)
-            {
-                LogSystem.Trace(ex);
-
-                return null;
             }
         }
 
