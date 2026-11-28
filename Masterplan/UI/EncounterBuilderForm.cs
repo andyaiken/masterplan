@@ -296,6 +296,9 @@ namespace Masterplan.UI
             {
                 if ((ModifierKeys & Keys.Shift) == Keys.Shift)
                 {
+                    if (MissingCreatureCards.Blocks(this, SelectedSlot.Card))
+                        return;
+
                     SelectedSlot.Card.LevelAdjustment += 1;
 
                     update_encounter();
@@ -338,6 +341,9 @@ namespace Masterplan.UI
             {
                 if ((ModifierKeys & Keys.Shift) == Keys.Shift)
                 {
+                    if (MissingCreatureCards.Blocks(this, SelectedSlot.Card))
+                        return;
+
                     if (SelectedSlot.Card.Level > 1)
                     {
                         SelectedSlot.Card.LevelAdjustment -= 1;
@@ -402,6 +408,9 @@ namespace Masterplan.UI
 
         private void EditStatBlock_Click(object sender, EventArgs e)
         {
+            if ((SelectedSlot != null) && MissingCreatureCards.Blocks(this, SelectedSlot.Card))
+                return;
+
             if (SelectedSlot != null)
             {
                 Guid id = SelectedSlot.Card.CreatureID;
@@ -555,6 +564,9 @@ namespace Masterplan.UI
         {
             if ((SelectedSlot != null) && (SelectedSlot.Card.TemplateIDs.Count != 0))
             {
+                if (MissingCreatureCards.Blocks(this, SelectedSlot.Card))
+                    return;
+
                 SelectedSlot.Card.TemplateIDs.Clear();
 
                 update_encounter();
@@ -566,6 +578,9 @@ namespace Masterplan.UI
         {
             if ((SelectedSlot != null) && (SelectedSlot.Card.LevelAdjustment != 0))
             {
+                if (MissingCreatureCards.Blocks(this, SelectedSlot.Card))
+                    return;
+
                 SelectedSlot.Card.LevelAdjustment = 0;
 
                 update_encounter();
@@ -577,6 +592,9 @@ namespace Masterplan.UI
 
         private void SwapStandard_Click(object sender, EventArgs e)
         {
+            if (MissingCreatureCards.Blocks(this, SelectedSlot.Card))
+                return;
+
             EncounterCard card = SelectedSlot.Card;
             ICreature selected = Session.FindCreature(card.CreatureID, SearchType.Global);
 
@@ -620,6 +638,9 @@ namespace Masterplan.UI
 
         private void SwapElite_Click(object sender, EventArgs e)
         {
+            if (MissingCreatureCards.Blocks(this, SelectedSlot.Card))
+                return;
+
             EncounterCard card = SelectedSlot.Card;
             ICreature selected = Session.FindCreature(card.CreatureID, SearchType.Global);
 
@@ -663,6 +684,9 @@ namespace Masterplan.UI
 
         private void SwapSolo_Click(object sender, EventArgs e)
         {
+            if (MissingCreatureCards.Blocks(this, SelectedSlot.Card))
+                return;
+
             EncounterCard card = SelectedSlot.Card;
             ICreature selected = Session.FindCreature(card.CreatureID, SearchType.Global);
 
@@ -706,6 +730,9 @@ namespace Masterplan.UI
 
         private void SwapMinions_Click(object sender, EventArgs e)
         {
+            if (MissingCreatureCards.Blocks(this, SelectedSlot.Card))
+                return;
+
             EncounterCard card = SelectedSlot.Card;
             ICreature selected = Session.FindCreature(card.CreatureID, SearchType.Global);
 
@@ -823,6 +850,9 @@ namespace Masterplan.UI
             if (SelectedSlot == null)
                 return;
 
+            if (MissingCreatureCards.Blocks(this, SelectedSlot.Card))
+                return;
+
             ThemeForm dlg = new ThemeForm(SelectedSlot.Card);
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -835,6 +865,9 @@ namespace Masterplan.UI
 
         private void EditClearTheme_Click(object sender, EventArgs e)
         {
+            if ((SelectedSlot != null) && MissingCreatureCards.Blocks(this, SelectedSlot.Card))
+                return;
+
             if (SelectedSlot == null)
                 return;
 
@@ -999,8 +1032,15 @@ namespace Masterplan.UI
             {
                 if (dlg.MonsterTheme != null)
                 {
+                    bool skipped = false;
                     foreach (EncounterSlot slot in fEncounter.Slots)
                     {
+                        if (slot.Card.CreatureMissing)
+                        {
+                            skipped = true;
+                            continue;
+                        }
+
                         slot.Card.ThemeID = dlg.MonsterTheme.ID;
 
                         slot.Card.ThemeAttackPowerID = Guid.Empty;
@@ -1025,6 +1065,9 @@ namespace Masterplan.UI
 
                     update_encounter();
                     update_mapthreats();
+
+                    if (skipped)
+                        MissingCreatureCards.ShowSomeSkipped(this);
                 }
             }
         }
@@ -1296,6 +1339,9 @@ namespace Masterplan.UI
 
         bool allow_template_drop(EncounterSlot slot, CreatureTemplate template)
         {
+            if (slot.Card.CreatureMissing)
+                return true; // add_template then says why nothing changes
+
             // You can't add the same template twice
             if (slot.Card.TemplateIDs.Contains(template.ID))
                 return false;
@@ -1356,6 +1402,9 @@ namespace Masterplan.UI
 
         void add_template(CreatureTemplate template, EncounterSlot slot)
         {
+            if (MissingCreatureCards.Blocks(this, slot.Card))
+                return;
+
             slot.Card.TemplateIDs.Add(template.ID);
 
             update_encounter();

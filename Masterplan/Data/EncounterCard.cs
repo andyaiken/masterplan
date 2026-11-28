@@ -88,6 +88,9 @@ namespace Masterplan.Data
             set
             {
                 fCreatureID = value;
+                fLoadedCreature = null;
+                fSaved = null;
+                fStandIn = null;
 
                 // This will save us some time later
                 if (fCreatureID != Guid.Empty)
@@ -95,6 +98,93 @@ namespace Masterplan.Data
             }
         }
         Guid fCreatureID = Guid.Empty;
+
+        // The creature a loaded card was connected to, when it is stored in the loaded project.
+        // Only used when a normal lookup finds nothing (see CardCreature).
+        ICreature fLoadedCreature = null;
+
+        /// <summary>
+        /// The card's real creature, or null if it cannot be found.
+        /// </summary>
+        /// <remarks>
+        /// In this order:
+        ///   1. the object the card remembers (cards made while the program runs);
+        ///   2. a lookup by ID, which gives the CURRENT object, also after the creature was edited
+        ///      (editing a custom creature or NPC replaces its object);
+        ///   3. for a loaded card, the creature it was loaded with. Without this, deleting a custom
+        ///      creature or NPC that an encounter still uses would leave its cards empty, and the
+        ///      next save would write those empty values into the file.
+        /// </remarks>
+        ICreature RealCreature()
+        {
+            if (fCreature != null)
+                return fCreature;
+
+            return Session.FindCreature(fCreatureID, SearchType.Global) ?? fLoadedCreature;
+        }
+
+        /// <summary>
+        /// The creature the card works with: the real one; for a card with saved values whose
+        /// creature is missing, a temporary stand-in; otherwise null.
+        /// </summary>
+        ICreature CardCreature()
+        {
+            return RealCreature() ?? fStandIn;
+        }
+
+        // For a loaded card whose creature could not be found: what the file says the card showed.
+        SavedCardValues fSaved = null;
+        ICreature fStandIn = null;
+
+        /// <summary>
+        /// True if the card's creature cannot be found and the card shows the values saved in the
+        /// file. Such a card must not be given a new level, templates or theme: nothing could be
+        /// recalculated (the screens check this, see UI\MissingCreatureCards.cs).
+        /// </summary>
+        public bool CreatureMissing
+        {
+            get { return (fSaved != null) && (RealCreature() == null); }
+        }
+
+        /// <summary>The saved values while the creature is missing; otherwise null.</summary>
+        /// <remarks>
+        /// Every calculated property starts with this check and returns the saved value as it is.
+        /// It is asked each time, so the card works normally as soon as the creature is found again.
+        /// </remarks>
+        SavedCardValues MissingValues()
+        {
+            return CreatureMissing ? fSaved : null;
+        }
+
+        /// <summary>
+        /// For the load code only: the creature cannot be found, so the card is to show the values
+        /// saved in the file. The card's settings (level adjustment, templates, theme) stay as they
+        /// are, so nothing is lost when the file is saved again.
+        /// </summary>
+        internal void KeepSavedValues(Guid creature_id, SavedCardValues values)
+        {
+            fCreatureID = creature_id;
+            fCreature = null;
+            fLoadedCreature = null;
+            fSaved = values;
+            fStandIn = values.MakeStandIn(creature_id);
+        }
+
+        /// <summary>
+        /// For the load code only (LibraryConversionService.ConnectCard): connects the card to a
+        /// creature that is stored in the data being loaded.
+        /// </summary>
+        /// <remarks>
+        /// Unlike the CreatureID property this does not look the creature up now: while a file is
+        /// loading, a lookup could return an object of the previously open project. The loaded
+        /// creature is only kept as the fallback (step 3 of CardCreature).
+        /// </remarks>
+        internal void ConnectToLoadedCreature(Guid creature_id, ICreature loaded_creature)
+        {
+            fCreatureID = creature_id;
+            fCreature = null;
+            fLoadedCreature = loaded_creature;
+        }
 
         /// <summary>
         /// Gets or sets the list of template IDs.
@@ -171,9 +261,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.XP;
+
                 int xp = 0;
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                 {
                     if (creature.Role is Minion)
@@ -213,7 +306,10 @@ namespace Masterplan.Data
         {
             get
             {
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Title;
+
+                ICreature creature = CardCreature();
                 string name = (creature != null) ? creature.Name : "(unknown creature)";
 
                 foreach (Guid template_id in fTemplateIDs)
@@ -241,7 +337,10 @@ namespace Masterplan.Data
         {
             get
             {
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Info;
+
+                ICreature creature = CardCreature();
                 if (creature != null)
                 {
                     int level = creature.Level + fLevelAdjustment;
@@ -290,7 +389,10 @@ namespace Masterplan.Data
         {
             get
             {
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Level;
+
+                ICreature creature = CardCreature();
                 if (creature == null)
                     return fLevelAdjustment;
 
@@ -305,9 +407,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show a copy of the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return new List<RoleType>(saved.Roles);
+
                 List<RoleType> result = new List<RoleType>();
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if ((creature == null) || (creature.Role is Minion))
                     return result;
 
@@ -333,7 +438,10 @@ namespace Masterplan.Data
         {
             get
             {
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Flag;
+
+                ICreature creature = CardCreature();
                 if ((creature == null) || (creature.Role is Minion))
                     return RoleFlag.Standard;
 
@@ -369,7 +477,10 @@ namespace Masterplan.Data
         {
             get
             {
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Leader;
+
+                ICreature creature = CardCreature();
                 if ((creature == null) || (creature.Role is Minion))
                     return false;
 
@@ -395,7 +506,10 @@ namespace Masterplan.Data
         {
             get
             {
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                // A missing creature: show a copy of the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Regeneration?.Copy();
+
+                ICreature creature = CardCreature();
                 if (creature == null)
                     return null;
 
@@ -432,9 +546,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show a copy of the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Auras.ConvertAll(a => a.Copy());
+
                 List<Aura> auras = new List<Aura>();
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                     auras.AddRange(creature.Auras);
 
@@ -456,9 +573,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Senses;
+
                 List<string> senses = new List<string>();
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature == null)
                 {
                     if (fCreatureID != Guid.Empty)
@@ -498,18 +618,10 @@ namespace Masterplan.Data
         {
             get
             {
-                    ICreature creature;
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Movement;
 
-                    if (fCreature != null)
-                    {
-                        creature = fCreature;
-                    }
-                    else
-                    {
-                        // Session is a static type in this codebase; it cannot be null.
-                        // Call FindCreature directly and handle a null result.
-                        creature = Session.FindCreature(fCreatureID, SearchType.Global);
-                    }
+                    ICreature creature = CardCreature();
 
                     if (creature == null)
                     {
@@ -542,7 +654,10 @@ namespace Masterplan.Data
         {
             get
             {
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Equipment;
+
+                ICreature creature = CardCreature();
                 return (creature != null && creature.Equipment != null) ? creature.Equipment : "";
             }
         }
@@ -554,7 +669,10 @@ namespace Masterplan.Data
         {
             get
             {
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Category;
+
+                ICreature creature = CardCreature();
 
                 if (creature == null)
                     return CardCategory.SoldierBrute; // default when creature data missing
@@ -589,9 +707,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.HP;
+
                 int hp = 0;
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                     hp += creature.HP;
 
@@ -673,9 +794,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Initiative;
+
                 int init = 0;
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                     init += creature.Initiative;
 
@@ -700,9 +824,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.AC;
+
                 int ac = 0;
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                     ac += creature.AC;
 
@@ -733,9 +860,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Fortitude;
+
                 int fort = 0;
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                     fort += creature.Fortitude;
 
@@ -766,9 +896,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Reflex;
+
                 int reflex = 0;
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                     reflex += creature.Reflex;
 
@@ -799,9 +932,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Will;
+
                 int will = 0;
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                     will += creature.Will;
 
@@ -832,12 +968,15 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show a copy of the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.CreaturePowers.ConvertAll(p => p.Copy());
+
                 Array dmg_categories = Enum.GetValues(typeof(DamageCategory));
                 Array dmg_degrees = Enum.GetValues(typeof(DamageDegree));
 
                 List<CreaturePower> powers = new List<CreaturePower>();
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                 {
                     foreach (CreaturePower cp in creature.CreaturePowers)
@@ -948,9 +1087,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show a copy of the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.DamageModifiers.ConvertAll(m => m.Copy());
+
                 List<DamageModifier> mods = new List<DamageModifier>();
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                 {
                     foreach (DamageModifier dm in creature.DamageModifiers)
@@ -1025,9 +1167,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Resist;
+
                 string str = "";
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                     str += creature.Resist;
 
@@ -1054,9 +1199,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Vulnerable;
+
                 string str = "";
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                     str += creature.Vulnerable;
 
@@ -1083,9 +1231,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Immune;
+
                 string str = "";
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                     str += creature.Immune;
 
@@ -1112,9 +1263,12 @@ namespace Masterplan.Data
         {
             get
             {
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Tactics;
+
                 string str = "";
 
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                ICreature creature = CardCreature();
                 if (creature != null)
                     str += creature.Tactics;
 
@@ -1149,7 +1303,10 @@ namespace Masterplan.Data
         {
             get
             {
-                ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+                // A missing creature: show the saved value (see MissingValues).
+                if (MissingValues() is SavedCardValues saved) return saved.Skills;
+
+                ICreature creature = CardCreature();
                 if (creature == null)
                     return "";
 
@@ -1381,6 +1538,9 @@ namespace Masterplan.Data
             EncounterCard card = new EncounterCard();
 
             card.CreatureID = fCreatureID;
+            card.fLoadedCreature = fLoadedCreature;
+            card.fSaved = fSaved;       // the saved values are never changed, so they can be shared
+            card.fStandIn = fStandIn;
 
             foreach (Guid template_id in fTemplateIDs)
                 card.TemplateIDs.Add(template_id);
@@ -1404,7 +1564,7 @@ namespace Masterplan.Data
         /// <returns>Returns the text of the card.</returns>
         public List<string> AsText(CombatData combat_data, CardMode mode, bool full)
         {
-            ICreature creature = (fCreature != null) ? fCreature : Session.FindCreature(fCreatureID, SearchType.Global);
+            ICreature creature = CardCreature();
 
             #region If not found
 
@@ -2097,8 +2257,10 @@ namespace Masterplan.Data
                             content.Add("<TD colspan=3>");
                             content.Add("<img src=data:image/png;base64," + data + ">");
                             content.Add("<B>" + HTML.Process(aura.Name, true) + "</B>");
-                            if (aura.Keywords != "")
-                                content.Add("(" + aura.Keywords + ")");
+                            // Keywords from their own field and from the start of the details (14.1.1.2).
+                            string aura_keywords = aura.ShownKeywords;
+                            if (aura_keywords != "")
+                                content.Add("(" + aura_keywords + ")");
                             if (aura.Radius > 0)
                                 content.Add(" &diams; Aura " + aura.Radius);
                             content.Add("</TD>");

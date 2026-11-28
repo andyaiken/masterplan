@@ -19,8 +19,8 @@
     The migration tool shows this version in its window title and in migration_log.txt.
   -->
   <PropertyGroup>
-    <Version>14.1.0.18</Version>
-    <AssemblyVersion>14.1.0.18</AssemblyVersion>
-    <FileVersion>14.1.0.18</FileVersion>
+    <Version>14.1.1.4</Version>
+    <AssemblyVersion>14.1.1.4</AssemblyVersion>
+    <FileVersion>14.1.1.4</FileVersion>
   </PropertyGroup>
 </Project>

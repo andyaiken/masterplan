@@ -78,41 +78,29 @@ namespace MasterplanXP.MigrationTool.Services.Utils
             }
         }
 
-        public static void UpdateRegen(ICreature c)
-        {
-            Aura regen_aura = FindAura(c, "Regeneration");
-            if (regen_aura == null)
-                regen_aura = FindAura(c, "Regen");
-
-            if (regen_aura != null)
-            {
-                Regeneration regen = ConvertAura(regen_aura.Details);
-                if (regen != null)
-                {
-                    c.Regeneration = regen;
-                    c.Auras.Remove(regen_aura);
-                }
-            }
-        }
-
         public static void UpdatePowerRange(ICreature c, CreaturePower power)
         {
-            if (power.Range.Contains("Self") || power.Range.Contains("self"))
+            // A missing range counts as a blank one.
+            if (power.Range == null)
+                power.Range = "";
+
+            // A range that is ONLY the word "Self" (any capitals, spaces around it ignored) is
+            // written as "Personal". The WHOLE range must be that word: any other text, such as
+            // "Close burst 2 (Self and allies)", stays exactly as stored. Until 14.1.1.4 such a
+            // range was replaced by "Personal" if it had "Self" and no lowercase "self".
+            if (power.Range.Trim().Equals("Self", StringComparison.OrdinalIgnoreCase))
             {
-                if (power.Range.Contains("self"))
-                {
-                    if (power.Range == "self")
-                    { power.Range = "Personal"; }
-                    return;
-                }
                 power.Range = "Personal";
                 return;
             }
 
-            if ((power.Range != null) && (power.Range != ""))
+            // If the range field is not empty - do nothing
+            if (power.Range != "")
                 return;
 
-            if (!power.Details.Contains(";"))
+            // Malformed details will impact parsing
+            // in that case send back - do nothing
+            if ((power.Details == null) || !power.Details.Contains(";"))
                 return;
 
             List<string> ranges = new List<string>();
@@ -122,7 +110,6 @@ namespace MasterplanXP.MigrationTool.Services.Utils
             ranges.Add("melee");
             ranges.Add("ranged");
 
-            string originalDetails = power.Details;
             string[] clauses = power.Details.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string clause in clauses)
             {
@@ -136,69 +123,13 @@ namespace MasterplanXP.MigrationTool.Services.Utils
                             int endIndex = clause.Length;
                             power.Range = clause.Substring(startIndex, (endIndex - startIndex));
 
-                            bool is_basic = power.Range.IndexOf("basic", StringComparison.OrdinalIgnoreCase) >= 0;
-                            if (is_basic && (power.Action.Use == PowerUseType.AtWill || power.Action.Use == PowerUseType.Basic))
-                            {
-                                power.Action.Use = PowerUseType.Basic;
-                            }
-
+                            // Only the range is filled in. The power's usage is never changed: until
+                            // 14.1.1.4 the word "basic" here turned an at-will power into a basic attack.
                             break;
                         }
                         catch { } 
                     }
                 }
-            }
-            power.Details = originalDetails;
-        }
-
-        public static Aura FindAura(ICreature c, string name)
-        {
-            foreach (Aura a in c.Auras)
-            {
-                if (a.Name == name)
-                    return a;
-            }
-
-            return null;
-        }
-
-        public static Regeneration ConvertAura(string aura_details)
-        {
-            aura_details = aura_details.Trim();
-
-            bool parsing_value = true;
-            string val_str = "";
-            string details = "";
-
-            foreach (char ch in aura_details)
-            {
-                if (!char.IsDigit(ch))
-                    parsing_value = false;
-
-                if (parsing_value)
-                    val_str += ch;
-                else
-                    details += ch;
-            }
-
-            details = details.Trim();
-            if (details.StartsWith("(") && details.EndsWith(")"))
-            {
-                details = details.Substring(1);
-                details = details.Substring(0, details.Length - 1);
-
-                details.Trim();
-            }
-
-            try
-            {
-                int value = (val_str != "") ? int.Parse(val_str) : 0;
-                return new Regeneration(value, details);
-            }
-            catch (Exception ex)
-            {
-                LogSystem.Trace(ex);
-                return null;
             }
         }
 

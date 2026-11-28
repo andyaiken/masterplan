@@ -540,7 +540,6 @@ namespace Masterplan.Data
                     cp.ExtractAttackDetails();
                 }
 
-                CreatureHelper.UpdateRegen(c);
                 foreach (CreaturePower power in c.CreaturePowers)
                     CreatureHelper.UpdatePowerRange(c, power);
 

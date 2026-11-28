@@ -554,6 +554,15 @@ namespace Masterplan.Dto
         [Key(3)] public string? Details { get; set; }
         [Key(4)] public string? Success { get; set; }
         [Key(5)] public string? Failure { get; set; }
+
+        // Added in 14.1.1.0. Until then these three values were never saved, so every skill loaded as
+        // Primary with no progress. They are AT THE END on purpose: the record is stored as an array,
+        // so an older version reads the six values it knows and skips the rest (and drops them if it
+        // saves the file again). A file written before 14.1.1.0 does not have them: they read back as
+        // null / 0 / 0, which means Primary with no progress. Never renumber.
+        [Key(6)] public string? Type { get; set; }   // SkillType, stored as its name (like Difficulty)
+        [Key(7)] public int Successes { get; set; }  // progress: successes counted for this skill
+        [Key(8)] public int Fails { get; set; }      // progress: failures counted for this skill
     }
     #endregion
 

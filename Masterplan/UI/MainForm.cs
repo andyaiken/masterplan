@@ -166,6 +166,17 @@ namespace Masterplan.UI
                     int x = Math.Max(Left, Session.Preferences.Location.X);
                     int y = Math.Max(Top, Session.Preferences.Location.Y);
                     Location = new Point(x, y);
+
+                    // The saved position may belong to a screen that is no longer there (a second
+                    // monitor that was unplugged, a changed resolution or scale). The window would
+                    // then open off-screen and be unreachable (taskbar icon only). If the title bar
+                    // is not on any screen, forget the saved position and centre the window instead.
+                    if (!WindowPlacement.TitleBarIsOnScreen(new Rectangle(x, y, width, height), WindowPlacement.ScreenAreas()))
+                    {
+                        Rectangle area = Screen.PrimaryScreen.WorkingArea;
+                        Size = new Size(Math.Min(width, area.Width), Math.Min(height, area.Height));
+                        StartPosition = FormStartPosition.CenterScreen;
+                    }
                 }
                 else
                 {
@@ -4324,6 +4335,7 @@ namespace Masterplan.UI
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 int delta = dlg.LevelAdjustment;
+                bool skipped_cards = false; // cards whose creature is missing are left as they are
 
                 List<PlotPoint> points = PlotView.Plot.AllPlotPoints;
                 foreach (PlotPoint point in points)
@@ -4332,7 +4344,12 @@ namespace Masterplan.UI
                     {
                         Encounter enc = point.Element as Encounter;
                         foreach (EncounterSlot slot in enc.Slots)
-                            slot.Card.LevelAdjustment += delta;
+                        {
+                            if (slot.Card.CreatureMissing)
+                                skipped_cards = true;
+                            else
+                                slot.Card.LevelAdjustment += delta;
+                        }
 
                         foreach (Trap t in enc.Traps)
                         {
@@ -4373,6 +4390,9 @@ namespace Masterplan.UI
                 Session.Modified = true;
 
                 PlotView.Invalidate();
+
+                if (skipped_cards)
+                    MissingCreatureCards.ShowSomeSkipped(this);
             }
         }
 

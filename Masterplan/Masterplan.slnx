@@ -1,3 +1,10 @@
 <Solution>
   <Project Path="Masterplan.csproj" />
+  <!-- Automated tests (sibling folder). Not referenced by Masterplan.csproj, so never shipped. -->
+  <Project Path="../Masterplan.Tests/Masterplan.Tests.csproj" />
+  <!-- Sample add-in and template for add-in developers (sibling folder). Copies itself into
+       bin\<Configuration>\net10.0-windows\AddIns\ after building; never shipped. -->
+  <Project Path="../Masterplan.SampleAddIn/Masterplan.SampleAddIn.csproj" />
+  <!-- Developer tool that builds the shipped sample library/project (dotnet run); never shipped. -->
+  <Project Path="../Masterplan.SampleBuilder/Masterplan.SampleBuilder.csproj" />
 </Solution>
